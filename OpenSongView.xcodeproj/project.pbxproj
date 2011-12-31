@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
+		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
+		3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */; };
+		3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
+		3EDDA40F14AEC3A400BB781C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
+		3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* AppDelegate.m */; };
+		3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */; };
+		3EDDA41914AEC3A400BB781C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSongView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3EDDA40A14AEC3A400BB781C /* OpenSongView-Info.plist */ = {isa = PBXFileReference; path = "OpenSongView-Info.plist"; sourceTree = "<group>"; };
+		3EDDA40C14AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3EDDA40E14AEC3A400BB781C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EDDA41014AEC3A400BB781C /* OpenSongView-Prefix.pch */ = {isa = PBXFileReference; path = "OpenSongView-Prefix.pch"; sourceTree = "<group>"; };
+		3EDDA41114AEC3A400BB781C /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3EDDA41214AEC3A400BB781C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3EDDA41714AEC3A400BB781C /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		3EDDA41814AEC3A400BB781C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EDDA3FB14AEC3A400BB781C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
+				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
+				3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EDDA3F314AEC3A300BB781C = {
+			isa = PBXGroup;
+			children = (
+				3EDDA40814AEC3A400BB781C /* OpenSongView */,
+				3EDDA40114AEC3A400BB781C /* Frameworks */,
+				3EDDA3FF14AEC3A400BB781C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EDDA3FF14AEC3A400BB781C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EDDA40114AEC3A400BB781C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
+				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
+				3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EDDA40814AEC3A400BB781C /* OpenSongView */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
+				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
+				3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */,
+				3EDDA41714AEC3A400BB781C /* ViewController.h */,
+				3EDDA41814AEC3A400BB781C /* ViewController.m */,
+				3EDDA40914AEC3A400BB781C /* Supporting Files */,
+			);
+			path = OpenSongView;
+			sourceTree = "<group>";
+		};
+		3EDDA40914AEC3A400BB781C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA40A14AEC3A400BB781C /* OpenSongView-Info.plist */,
+				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
+				3EDDA40E14AEC3A400BB781C /* main.m */,
+				3EDDA41014AEC3A400BB781C /* OpenSongView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EDDA3FD14AEC3A400BB781C /* OpenSongView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "OpenSongView" */;
+			buildPhases = (
+				3EDDA3FA14AEC3A400BB781C /* Sources */,
+				3EDDA3FB14AEC3A400BB781C /* Frameworks */,
+				3EDDA3FC14AEC3A400BB781C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenSongView;
+			productName = OpenSongView;
+			productReference = 3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EDDA3F514AEC3A300BB781C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Open iT Norge AS";
+			};
+			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "OpenSongView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3EDDA3F314AEC3A300BB781C;
+			productRefGroup = 3EDDA3FF14AEC3A400BB781C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EDDA3FD14AEC3A400BB781C /* OpenSongView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EDDA3FC14AEC3A400BB781C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
+				3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EDDA3FA14AEC3A400BB781C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDDA40F14AEC3A400BB781C /* main.m in Sources */,
+				3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */,
+				3EDDA41914AEC3A400BB781C /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDDA40C14AEC3A400BB781C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDDA41514AEC3A400BB781C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EDDA41A14AEC3A400BB781C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3EDDA41B14AEC3A400BB781C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EDDA41D14AEC3A400BB781C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSongView/OpenSongView-Prefix.pch";
+				INFOPLIST_FILE = "OpenSongView/OpenSongView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3EDDA41E14AEC3A400BB781C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenSongView/OpenSongView-Prefix.pch";
+				INFOPLIST_FILE = "OpenSongView/OpenSongView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "OpenSongView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDDA41A14AEC3A400BB781C /* Debug */,
+				3EDDA41B14AEC3A400BB781C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "OpenSongView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDDA41D14AEC3A400BB781C /* Debug */,
+				3EDDA41E14AEC3A400BB781C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EDDA3F514AEC3A300BB781C /* Project object */;
+}
