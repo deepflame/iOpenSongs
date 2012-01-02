@@ -25,14 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSongView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3EDDA40A14AEC3A400BB781C /* OpenSongView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenSongView-Info.plist"; sourceTree = "<group>"; };
+		3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */ = {isa = PBXFileReference; path = "iOpenSongs-Info.plist"; sourceTree = "<group>"; };
 		3EDDA40C14AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EDDA40E14AEC3A400BB781C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3EDDA41014AEC3A400BB781C /* OpenSongView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenSongView-Prefix.pch"; sourceTree = "<group>"; };
+		3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */ = {isa = PBXFileReference; path = "iOpenSongs-Prefix.pch"; sourceTree = "<group>"; };
 		3EDDA41114AEC3A400BB781C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EDDA41214AEC3A400BB781C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDDA47314B08D1700BB781C /* Songs */,
-				3EDDA40814AEC3A400BB781C /* OpenSongView */,
+				3EDDA40814AEC3A400BB781C /* iOpenSongs */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
 			);
@@ -77,7 +77,7 @@
 		3EDDA3FF14AEC3A400BB781C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */,
+				3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3EDDA40814AEC3A400BB781C /* OpenSongView */ = {
+		3EDDA40814AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXGroup;
 			children = (
 				3EDDA43614AEE6EF00BB781C /* Song.h */,
@@ -108,6 +108,7 @@
 				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
 				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
 			);
+			name = iOpenSongs;
 			path = OpenSongView;
 			sourceTree = "<group>";
 		};
@@ -115,10 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
-				3EDDA40A14AEC3A400BB781C /* OpenSongView-Info.plist */,
+				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3EDDA40E14AEC3A400BB781C /* main.m */,
-				3EDDA41014AEC3A400BB781C /* OpenSongView-Prefix.pch */,
+				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EDDA3FD14AEC3A400BB781C /* OpenSongView */ = {
+		3EDDA3FD14AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "OpenSongView" */;
+			buildConfigurationList = 3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "iOpenSongs" */;
 			buildPhases = (
 				3EDDA3FA14AEC3A400BB781C /* Sources */,
 				3EDDA3FB14AEC3A400BB781C /* Frameworks */,
@@ -148,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = OpenSongView;
+			name = iOpenSongs;
 			productName = OpenSongView;
-			productReference = 3EDDA3FE14AEC3A400BB781C /* OpenSongView.app */;
+			productReference = 3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +163,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Open iT Norge AS";
 			};
-			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "OpenSongView" */;
+			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -174,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EDDA3FD14AEC3A400BB781C /* OpenSongView */,
+				3EDDA3FD14AEC3A400BB781C /* iOpenSongs */,
 			);
 		};
 /* End PBXProject section */
@@ -282,9 +283,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OpenSongView/OpenSongView-Prefix.pch";
-				INFOPLIST_FILE = "OpenSongView/OpenSongView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				PRODUCT_NAME = iOpenSongs;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -293,9 +294,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OpenSongView/OpenSongView-Prefix.pch";
-				INFOPLIST_FILE = "OpenSongView/OpenSongView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				PRODUCT_NAME = iOpenSongs;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -303,7 +304,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "OpenSongView" */ = {
+		3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EDDA41A14AEC3A400BB781C /* Debug */,
@@ -312,7 +313,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "OpenSongView" */ = {
+		3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "iOpenSongs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EDDA41D14AEC3A400BB781C /* Debug */,
