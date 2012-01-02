@@ -49,6 +49,8 @@
         songTitle.text = _song.title;
         songAuthor.text = _song.author;
         songLyrics.text = _song.lyrics;
+        
+        self.navigationItem.title = _song.title; 
     }
 }
 
@@ -173,7 +175,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Songs", @"Songs");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
