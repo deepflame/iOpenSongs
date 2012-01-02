@@ -1,0 +1,188 @@
+//
+//  ViewController.m
+//  OpenSongView
+//
+//  Created by Andreas Böhrnsen on 12/31/11.
+//  Copyright (c) 2011 Open iT Norge AS. All rights reserved.
+//
+
+#import "SongViewController.h"
+#import "OpenSongParseOperation.h"
+#import "Song.h"
+
+#pragma mark ViewController () 
+
+// forward declarations
+@interface SongViewController ()
+
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing earthquake data
+
+- (void)displaySong;
+- (void)handleError:(NSError *)error;
+@end
+
+@implementation SongViewController
+
+@synthesize masterPopoverController = _masterPopoverController;
+@synthesize song = _song;
+@synthesize operationQueue;
+
+#pragma mark - Managing the song
+
+- (void)setSong:(id)newSong
+{
+    if (_song != newSong) {
+        _song = newSong;
+        
+        // Update the view.
+        [self displaySong];
+    }
+    
+    if (self.masterPopoverController != nil) {
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
+}
+
+- (void)displaySong {
+    if (self.song) {
+        songTitle.text = _song.title;
+        songAuthor.text = _song.author;
+        songLyrics.text = _song.lyrics;
+    }
+}
+
+#pragma mark -
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(songParseCallback:)
+                                                 name:kSongSuccessNotif
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(songParseErrback:)
+                                                 name:kSongErrorNotif
+                                               object:nil];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES;
+}
+
+#pragma mark -
+#pragma mark OpenSong File Parsing
+
+- (void)parseSongFromFile:(NSString *)songFileName
+{    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:songFileName ofType:@""];    
+    NSData *songData = [[NSData alloc] initWithContentsOfFile:filePath];
+    [self parseSongData:songData];
+}
+
+- (void)parseSongData:(NSData *)songData
+{    
+    // Spawn an NSOperation to parse the earthquake data so that the UI is not blocked while the
+    // application parses the XML data.
+    //
+    // IMPORTANT! - Don't access or affect UIKit objects on secondary threads.
+    //
+    OpenSongParseOperation *parseOperation = [[OpenSongParseOperation alloc] initWithData:songData];
+    //operationQueue = [NSOperationQueue new];
+    //[self.operationQueue addOperation:parseOperation];
+    [parseOperation start];
+}
+
+// Our NSNotification callback from the running NSOperation to add the earthquakes
+//
+- (void)songParseCallback:(NSNotification *)notif {
+    assert([NSThread isMainThread]);
+    
+    self.song = [[notif userInfo] valueForKey:kSongSuccessKey];
+}
+
+// Our NSNotification callback from the running NSOperation when a parsing error has occurred
+//
+- (void)songParseErrback:(NSNotification *)notif {
+    assert([NSThread isMainThread]);
+    
+    [self handleError:[[notif userInfo] valueForKey:kSongErrorKey]];
+}
+
+#pragma mark -
+
+// Handle errors in the download by showing an alert to the user. This is a very
+// simple way of handling the error, partly because this application does not have any offline
+// functionality for the user. Most real applications should handle the error in a less obtrusive
+// way and provide offline functionality to the user.
+//
+- (void)handleError:(NSError *)error {
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView =
+    [[UIAlertView alloc] initWithTitle:
+     NSLocalizedString(@"Error Title",
+                       @"Title for alert displayed when download or parse error occurs.")
+                               message:errorMessage
+                              delegate:nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+    [alertView show];
+}
+
+#pragma mark - Split view
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+{
+    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
+@end
