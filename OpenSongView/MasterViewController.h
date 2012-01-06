@@ -10,8 +10,12 @@
 
 @class SongViewController;
 
-@interface MasterViewController : UITableViewController <UITableViewDelegate>
+@interface MasterViewController : UITableViewController
+{
+    NSMutableArray *documentURLs;
+}
 
 @property (strong, nonatomic) SongViewController *detailViewController;
+@property (strong, nonatomic) NSMutableArray *documentURLs;
 
 @end

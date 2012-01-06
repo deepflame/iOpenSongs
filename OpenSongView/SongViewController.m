@@ -115,10 +115,9 @@
 #pragma mark -
 #pragma mark OpenSong File Parsing
 
-- (void)parseSongFromFile:(NSString *)songFileName
+- (void)parseSongFromUrl:(NSURL *)songFileUrl
 {    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:songFileName ofType:@""];    
-    NSData *songData = [[NSData alloc] initWithContentsOfFile:filePath];
+    NSData *songData = [[NSData alloc] initWithContentsOfURL:songFileUrl];
     [self parseSongData:songData];
 }
 

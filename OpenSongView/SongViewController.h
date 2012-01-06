@@ -23,6 +23,6 @@
 @property (strong, nonatomic) Song *song;
 
 - (void)parseSongData:(NSData *)songData;
-- (void)parseSongFromFile:(NSString *)songFileName;
+- (void)parseSongFromUrl:(NSURL *)songFileUrl;
 
 @end

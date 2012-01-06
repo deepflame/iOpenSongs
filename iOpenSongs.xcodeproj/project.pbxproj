@@ -15,37 +15,32 @@
 		3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* AppDelegate.m */; };
 		3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */; };
 		3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* SongViewController.m */; };
-		3EDDA42914AEC6BA00BB781C /* Facedown in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA42814AEC6BA00BB781C /* Facedown */; };
 		3EDDA43814AEE6EF00BB781C /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43714AEE6EF00BB781C /* Song.m */; };
 		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
-		3EDDA47614B08DAF00BB781C /* How Did You Know in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA47414B08DAF00BB781C /* How Did You Know */; };
-		3EDDA47714B08DAF00BB781C /* Ikaw ang Pagarap in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA47514B08DAF00BB781C /* Ikaw ang Pagarap */; };
 		3EDDA47A14B098F700BB781C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* MasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EAF421A14B5E03D00696FD7 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */ = {isa = PBXFileReference; path = "iOpenSongs-Info.plist"; sourceTree = "<group>"; };
+		3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs-Info.plist"; sourceTree = "<group>"; };
 		3EDDA40C14AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EDDA40E14AEC3A400BB781C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */ = {isa = PBXFileReference; path = "iOpenSongs-Prefix.pch"; sourceTree = "<group>"; };
+		3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOpenSongs-Prefix.pch"; sourceTree = "<group>"; };
 		3EDDA41114AEC3A400BB781C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EDDA41214AEC3A400BB781C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3EDDA41714AEC3A400BB781C /* SongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
-		3EDDA42814AEC6BA00BB781C /* Facedown */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; path = Facedown; sourceTree = "<group>"; };
 		3EDDA43614AEE6EF00BB781C /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3EDDA43714AEE6EF00BB781C /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
 		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
-		3EDDA47414B08DAF00BB781C /* How Did You Know */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "How Did You Know"; sourceTree = "<group>"; };
-		3EDDA47514B08DAF00BB781C /* Ikaw ang Pagarap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Ikaw ang Pagarap"; sourceTree = "<group>"; };
 		3EDDA47814B098F700BB781C /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +62,6 @@
 		3EDDA3F314AEC3A300BB781C = {
 			isa = PBXGroup;
 			children = (
-				3EDDA47314B08D1700BB781C /* Songs */,
 				3EDDA40814AEC3A400BB781C /* iOpenSongs */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
@@ -95,6 +89,7 @@
 		3EDDA40814AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXGroup;
 			children = (
+				3EAF421A14B5E03D00696FD7 /* iOpenSongs.entitlements */,
 				3EDDA43614AEE6EF00BB781C /* Song.h */,
 				3EDDA43714AEE6EF00BB781C /* Song.m */,
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
@@ -122,16 +117,6 @@
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3EDDA47314B08D1700BB781C /* Songs */ = {
-			isa = PBXGroup;
-			children = (
-				3EDDA47414B08DAF00BB781C /* How Did You Know */,
-				3EDDA47514B08DAF00BB781C /* Ikaw ang Pagarap */,
-				3EDDA42814AEC6BA00BB781C /* Facedown */,
-			);
-			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,10 +172,7 @@
 			files = (
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */,
-				3EDDA42914AEC6BA00BB781C /* Facedown in Resources */,
 				3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */,
-				3EDDA47614B08DAF00BB781C /* How Did You Know in Resources */,
-				3EDDA47714B08DAF00BB781C /* Ikaw ang Pagarap in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +302,7 @@
 				3EDDA41E14AEC3A400BB781C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
