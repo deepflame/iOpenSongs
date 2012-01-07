@@ -41,6 +41,12 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // Add refresh button to the navigation view
+    UIBarButtonItem *refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAction:)];
+    [self navigationItem].rightBarButtonItem = refreshBarButtonItem;
+    
+    
     self.detailViewController = (SongViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
     self.documentURLs = [NSMutableArray array];
@@ -190,6 +196,13 @@
 	}
 	
 	[self.tableView reloadData];
+}
+
+- (IBAction)refreshAction:(id)sender 
+// Called when the user taps the Refresh button.
+{
+#pragma unused(sender)
+    [self reloadFiles];
 }
 
 @end
