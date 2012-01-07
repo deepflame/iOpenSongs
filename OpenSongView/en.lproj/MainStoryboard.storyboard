@@ -53,6 +53,7 @@
                 <navigationController id="SKH-Iw-Dtd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rfw-qk-Ycj">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="aCn-16-UXf" kind="relationship" relationship="rootViewController" id="TVt-ka-Xvv"/>
@@ -82,6 +83,7 @@
                 <navigationController definesPresentationContext="YES" id="iJ5-mZ-1Ue" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VcW-aI-AlI">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.3333333432674408" green="0.039215687662363052" blue="0.32549020648002625" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="TWl-YN-pwv"/>
@@ -94,30 +96,33 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="SongViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                    <webView key="view" contentMode="scaleAspectFill" scalesPageToFit="YES" id="h8n-Fw-IT7">
+                        <rect key="frame" x="0.0" y="20" width="703" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Select a Song from the list" id="GY1-P6-xKw" userLabel="lyrics">
-                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.11995532460308804" green="0.0047122731111765796" blue="0.1219308035714286" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
+                        <dataDetectorType key="dataDetectorTypes"/>
+                    </webView>
                     <navigationItem key="navigationItem" id="Q6b-81-Hhr"/>
                     <connections>
-                        <outlet property="songLyrics" destination="GY1-P6-xKw" id="9tp-m8-U0x"/>
+                        <outlet property="songLyrics" destination="h8n-Fw-IT7" id="ULU-fU-T4H"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="587" y="-750"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="SongViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="songLyrics" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

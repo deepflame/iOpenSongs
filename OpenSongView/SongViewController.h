@@ -11,9 +11,7 @@
 
 @interface SongViewController : UIViewController <NSXMLParserDelegate> {
     Song *song;
-    IBOutlet UILabel *songTitle;
-    IBOutlet UILabel *songAuthor;
-    IBOutlet UITextView *songLyrics;
+    IBOutlet UIWebView *songLyrics;
     
 @private
     NSOperationQueue *operationQueue;

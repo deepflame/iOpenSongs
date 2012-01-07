@@ -138,11 +138,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    //[self.detailViewController.navigationController popToRootViewControllerAnimated:NO];
-    //[self.detailViewController.navigationController pushViewController:controller animated:YES];
-}
 
 /*
 // Override to support conditional editing of the table view.

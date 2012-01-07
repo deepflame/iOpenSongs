@@ -16,7 +16,7 @@
 @interface SongViewController ()
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (nonatomic, retain) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing earthquake data
+@property (nonatomic, retain) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
 
 - (void)displaySong;
 - (void)handleError:(NSError *)error;
@@ -24,7 +24,7 @@
 
 @implementation SongViewController
 
-@synthesize masterPopoverController = _masterPopoverController;
+@synthesize masterPopoverController;
 @synthesize song = _song;
 @synthesize operationQueue;
 
@@ -46,9 +46,7 @@
 
 - (void)displaySong {
     if (self.song) {
-        songTitle.text = _song.title;
-        songAuthor.text = _song.author;
-        songLyrics.text = _song.lyrics;
+        [songLyrics loadHTMLString:[_song lyricsAsHtml] baseURL:NULL];
         
         self.navigationItem.title = _song.title; 
     }
