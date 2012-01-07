@@ -92,6 +92,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ([self.documentURLs count] == 0) {
+        return 1; //we will display a Demo file
+    }
     return self.documentURLs.count;
 }
 
@@ -104,8 +107,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
     }
-    
-    NSURL *fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+
+    // display the DemoFile when there is no file transferred yet
+    NSURL *fileUrl = nil;
+    if ([self.documentURLs count] == 0) {
+        fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+    } else {
+        fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+    }
     cell.textLabel.text = fileUrl.lastPathComponent;
     
     return cell;
@@ -116,7 +125,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+    // display the DemoFile when there is no file transferred yet
+    NSURL *fileUrl = nil;
+    if ([self.documentURLs count] == 0) {
+        fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];  
+    } else {
+        fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+    }
+    
     [_detailViewController parseSongFromUrl:fileUrl];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
