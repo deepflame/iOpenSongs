@@ -1,0 +1,16 @@
+body {
+    font-family:Verdana,sans-serif;
+}
+
+.comments {
+    font-style:italic;
+    font-size:0.8em;
+}
+
+tr.chords td {
+    font-weight:bold;
+    font-size:1.0em;
+}
+tr.lyrics td {
+    font-size:1.0em;
+}
