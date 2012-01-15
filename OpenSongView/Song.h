@@ -19,6 +19,4 @@
 @property (nonatomic, retain) NSString *author;
 @property (nonatomic, retain) NSString *lyrics;
 
-- (NSString *)lyricsAsHtml;
-
 @end
