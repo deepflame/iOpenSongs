@@ -6,18 +6,17 @@
 //  Copyright (c) 2012 Open iT Norge AS. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "SongMasterViewController.h"
 
-#import "SongViewController.h"
+@interface SongMasterViewController ()
 
-@interface MasterViewController (private)
 - (NSString *)applicationDocumentsDirectory;
 - (void)reloadFiles;
 @end
 
-@implementation MasterViewController
 
 @synthesize documentURLs;
+@implementation SongMasterViewController
 @synthesize detailViewController = _detailViewController;
 
 

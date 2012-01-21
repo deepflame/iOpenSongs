@@ -23,7 +23,7 @@
 		3EDDA43814AEE6EF00BB781C /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43714AEE6EF00BB781C /* Song.m */; };
 		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
-		3EDDA47A14B098F700BB781C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* MasterViewController.m */; };
+		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +51,8 @@
 		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
 		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
-		3EDDA47814B098F700BB781C /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		3EDDA47914B098F700BB781C /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SongMasterViewController.h; sourceTree = "<group>"; };
+		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
 				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
 				3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */,
-				3EDDA47814B098F700BB781C /* MasterViewController.h */,
-				3EDDA47914B098F700BB781C /* MasterViewController.m */,
+				3EDDA47814B098F700BB781C /* SongMasterViewController.h */,
+				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
 				3EDDA41714AEC3A400BB781C /* SongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* SongViewController.m */,
 				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
@@ -216,7 +216,7 @@
 				3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */,
 				3EDDA43814AEE6EF00BB781C /* Song.m in Sources */,
 				3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */,
-				3EDDA47A14B098F700BB781C /* MasterViewController.m in Sources */,
+				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
