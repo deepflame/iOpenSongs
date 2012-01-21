@@ -8,15 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Song : NSObject {
-@private
-    NSString *title;
-    NSString *author;
-    NSString *lyrics;
-}
+@interface Song : NSObject 
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *author;
-@property (nonatomic, retain) NSString *lyrics;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *author;
+@property (nonatomic, strong) NSString *lyrics;
 
 @end
