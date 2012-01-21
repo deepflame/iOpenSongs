@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SongViewController.h"
 
 @class SongViewController;
 
-@interface MasterViewController : UITableViewController
-{
-    NSMutableArray *documentURLs;
-}
+@interface SongMasterViewController : UITableViewController 
 
 @property (strong, nonatomic) SongViewController *detailViewController;
-@property (strong, nonatomic) NSMutableArray *documentURLs;
 
 @end

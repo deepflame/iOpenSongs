@@ -9,14 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Song.h"
 
-@interface SongViewController : UIViewController <NSXMLParserDelegate> {
-    Song *song;
-    IBOutlet UIWebView *songLyrics;
-    
-@private
-    NSOperationQueue *operationQueue;
-    
-}
+// public interface
+@interface SongViewController : UIViewController <NSXMLParserDelegate> 
 
 @property (strong, nonatomic) Song *song;
 

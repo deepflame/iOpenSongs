@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  SongViewController.m
 //  OpenSongView
 //
 //  Created by Andreas Böhrnsen on 12/31/11.
@@ -8,26 +8,31 @@
 
 #import "SongViewController.h"
 #import "OpenSongParseOperation.h"
-#import "Song.h"
 
-#pragma mark ViewController () 
+#pragma mark SongViewController () 
 
-// forward declarations
-@interface SongViewController ()
+// private interface
+@interface SongViewController () 
+{
+    IBOutlet UIWebView *songLyrics;
+}
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (nonatomic, retain) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
+@property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
+
+- (NSString*)escapeJavaScript:(NSString*)unescaped;
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
 - (void)handleError:(NSError *)error;
 @end
 
+
 @implementation SongViewController
 
-@synthesize masterPopoverController;
+@synthesize masterPopoverController = _masterPopoverController;
 @synthesize song = _song;
-@synthesize operationQueue;
+@synthesize operationQueue = _operationQueue;
 
 #pragma mark - Managing the song
 
@@ -80,14 +85,6 @@
 }
 
 
-#pragma mark -
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -112,26 +109,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -159,6 +136,8 @@
     OpenSongParseOperation *parseOperation = [[OpenSongParseOperation alloc] initWithData:songData];
     //operationQueue = [NSOperationQueue new];
     //[self.operationQueue addOperation:parseOperation];
+    
+    //TODO: this should run on a different thread
     [parseOperation start];
 }
 
