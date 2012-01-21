@@ -48,21 +48,23 @@
 - (void)displaySong 
 {
     if (self.song) {
-        
-        
-        NSString* lyricsJsEscaped = _song.lyrics;
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"</" withString:@"<\\/"];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\\n"];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"\r" withString:@"\\n"];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\\\""];
-        lyricsJsEscaped = [lyricsJsEscaped stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
-
-        NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", lyricsJsEscaped];
+        NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self escapeJavaScript:self.song.lyrics]];
         [songLyrics stringByEvaluatingJavaScriptFromString:jsString];
-        self.navigationItem.title = _song.title; 
+        self.navigationItem.title = self.song.title; 
     }
+}
+
+- (NSString*)escapeJavaScript:(NSString*)unescaped
+{
+    NSString* jsEscaped = unescaped;
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"</" withString:@"<\\/"];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\\n"];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\r" withString:@"\\n"];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
+    return jsEscaped;
 }
 
 - (void)loadHtmlTemplate 
