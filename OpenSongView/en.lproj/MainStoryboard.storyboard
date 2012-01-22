@@ -42,7 +42,15 @@
                             <outlet property="delegate" destination="aCn-16-UXf" id="pq4-SN-Zgl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Song List" id="b4l-cV-f2m"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Song List" id="b4l-cV-f2m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Be9-Q2-l2b">
+                            <connections>
+                                <action selector="refreshList:" destination="aCn-16-UXf" id="IAy-qm-Cht"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="285" y="-1799"/>

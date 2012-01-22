@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) SongViewController *detailViewController;
 
+- (IBAction)refreshList:(id)sender;
+
 @end
