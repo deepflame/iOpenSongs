@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5E878514DD7680003B645A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* WebViewController.m */; };
+		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
+		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
+		3E5E878D14DE6277003B645A /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878C14DE6277003B645A /* help.html */; };
+		3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */; };
 		3E5E8F1514C2B97E00D62BC3 /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E8F1314C2B97E00D62BC3 /* jquery-1.7.1.min.js */; };
 		3E5E8F1614C2B97E00D62BC3 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E8F1414C2B97E00D62BC3 /* opensong.js */; };
 		3E5E8F1914C2BAD500D62BC3 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E8F1814C2BAD500D62BC3 /* opensong.css */; };
@@ -27,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5E878314DD7680003B645A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		3E5E878414DD7680003B645A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		3E5E878C14DE6277003B645A /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasTableViewController.h; sourceTree = "<group>"; };
+		3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasTableViewController.m; sourceTree = "<group>"; };
 		3E5E8F1314C2B97E00D62BC3 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.7.1.min.js"; sourceTree = "<group>"; };
 		3E5E8F1414C2B97E00D62BC3 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.js; sourceTree = "<group>"; };
 		3E5E8F1814C2BAD500D62BC3 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = opensong.css; sourceTree = "<group>"; };
@@ -51,7 +63,7 @@
 		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
 		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
-		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SongMasterViewController.h; sourceTree = "<group>"; };
+		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E5E878914DE6166003B645A /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				3E5E878A14DE61CB003B645A /* about.html */,
+				3E5E878C14DE6277003B645A /* help.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
 		3E663A9014B88ECF009F1340 /* Song Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				3E5E878714DE556C003B645A /* default.css */,
 				3E663A8E14B836CD009F1340 /* SongTemplate.html */,
 				3E5E8F1314C2B97E00D62BC3 /* jquery-1.7.1.min.js */,
 				3E5E8F1414C2B97E00D62BC3 /* opensong.js */,
@@ -124,6 +146,10 @@
 				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
 				3E663A9014B88ECF009F1340 /* Song Rendering */,
 				3EDDA40914AEC3A400BB781C /* Supporting Files */,
+				3E5E878314DD7680003B645A /* WebViewController.h */,
+				3E5E878414DD7680003B645A /* WebViewController.m */,
+				3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */,
+				3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */,
 			);
 			name = iOpenSongs;
 			path = OpenSongView;
@@ -132,6 +158,7 @@
 		3EDDA40914AEC3A400BB781C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E5E878914DE6166003B645A /* HTML */,
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
@@ -201,6 +228,9 @@
 				3E5E8F1614C2B97E00D62BC3 /* opensong.js in Resources */,
 				3E663A8F14B836CD009F1340 /* SongTemplate.html in Resources */,
 				3E5E8F1914C2BAD500D62BC3 /* opensong.css in Resources */,
+				3E5E878814DE556C003B645A /* default.css in Resources */,
+				3E5E878B14DE61CB003B645A /* about.html in Resources */,
+				3E5E878D14DE6277003B645A /* help.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +247,8 @@
 				3EDDA43814AEE6EF00BB781C /* Song.m in Sources */,
 				3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */,
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
+				3E5E878514DD7680003B645A /* WebViewController.m in Sources */,
+				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
