@@ -66,11 +66,11 @@
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" id="WHM-Zb-nV3">
                                 <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="iOpenSongs" id="mdL-Kq-vMc">
@@ -191,7 +191,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2333" y="-742"/>
+            <point key="canvasLocation" x="2333" y="-750"/>
         </scene>
         <scene sceneID="OQ8-qE-RCp">
             <objects>
@@ -217,7 +217,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2871" y="-1644"/>
+            <point key="canvasLocation" x="2843" y="-750"/>
         </scene>
         <scene sceneID="BDo-Ky-lZx">
             <objects>
@@ -290,7 +290,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1795" y="-742"/>
+            <point key="canvasLocation" x="1795" y="-750"/>
         </scene>
     </scenes>
     <classes>
