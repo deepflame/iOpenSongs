@@ -2,11 +2,30 @@
 <html>
 <head>
     <title>OpenSong</title>
+    <link rel="stylesheet" type="text/css" href="default.css" />
     <link rel="stylesheet" type="text/css" href="opensong.css" />
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="opensong.js"></script>
 </head>
 <body>
-    <div id="lyrics"></div>
+    <div id="lyrics">
+      <div id="intro">
+        <h1>Welcome to iOpenSongs</h1>
+        <p>
+        Select a song from the list in the upper left corner.
+        </p><p>
+        No Songs yet? No problem!<br />
+        Just transfer them in the application sharing section in <strong>iTunes</strong><br />
+        and click the <strong>refresh</strong> icon in the song list.
+        </p><p>
+        Have fun!<br />
+        Andreas
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+        document.documentElement.style.webkitTouchCallout = "none";
+    </script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
