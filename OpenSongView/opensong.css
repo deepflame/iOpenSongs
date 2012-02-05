@@ -1,16 +1,26 @@
-body {
-    font-family:Verdana,sans-serif;
+.opensong {
+  font-family:Verdana,sans-serif;
 }
 
-.comments {
-    font-style:italic;
-    font-size:0.8em;
+.opensong .comments {
+  font-style:italic;
+  font-size:0.8em;
 }
 
-tr.chords td {
-    font-weight:bold;
-    font-size:1.0em;
+.opensong table {
+  border-width: 0px;
+} 
+
+.opensong tr.chords td {
+  font-weight:bold;
+  font-size:1.0em;
 }
-tr.lyrics td {
-    font-size:1.0em;
+
+.opensong tr.lyrics td {
+  font-size:1.0em;
+}
+
+.nightmode {
+  color: white;
+  background-color: black;
 }
