@@ -8,13 +8,14 @@
 
 #import "SongViewController.h"
 #import "OpenSongParseOperation.h"
+#import "ExtrasTableViewController.h"
 
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () 
+@interface SongViewController () <ExtrasTableViewControllerDelegate>
 {
-    IBOutlet UIWebView *songLyrics;
+    IBOutlet UIWebView *songWebView;
 }
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -33,6 +34,7 @@
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize song = _song;
 @synthesize operationQueue = _operationQueue;
+
 
 #pragma mark - Managing the song
 
@@ -54,7 +56,7 @@
 {
     if (self.song) {
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self escapeJavaScript:self.song.lyrics]];
-        [songLyrics stringByEvaluatingJavaScriptFromString:jsString];
+        [songWebView stringByEvaluatingJavaScriptFromString:jsString];
         self.navigationItem.title = self.song.title; 
     }
 }
@@ -81,7 +83,7 @@
     NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl 
                                                  encoding:NSUTF8StringEncoding
                                                     error:NULL];
-    [songLyrics loadHTMLString:htmlDoc baseURL:baseURL];
+    [songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
 
@@ -192,5 +194,31 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
+
+#pragma mark - ExtrasTableViewControllerDelegate
+
+- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)status
+{
+    if (status == TRUE) {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
+    }
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show Extra Popup"]) {
+        UINavigationController *navCon = segue.destinationViewController;
+        ExtrasTableViewController *etvCon = (ExtrasTableViewController *) navCon.topViewController;
+
+        BOOL nightModeEnabled = [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
+        etvCon.nightModeEnabled = nightModeEnabled;
+        etvCon.delegate = self;        
+    }
+}
+
 
 @end
