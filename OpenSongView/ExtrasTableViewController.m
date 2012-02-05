@@ -7,8 +7,7 @@
 //
 
 #import "ExtrasTableViewController.h"
-#import "WebViewController.h"
-#import "SongViewController.h"
+#import "HtmlViewController.h"
 
 @interface ExtrasTableViewController ()
 {
@@ -91,17 +90,21 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    //UIViewController *newController = segue.destinationViewController;
-    
-    if ([segue.identifier isEqualToString:@"help"]) {
-        //newController.title = @"Help";
-    } else if ([segue.identifier isEqualToString:@"about"]) {
-        //newController.title = @"About";
+{    
+    if ([segue.identifier isEqualToString:@"Show Help"]) {
+        HtmlViewController *htmlVC = (HtmlViewController *) segue.destinationViewController;
+
+        htmlVC.title = @"Help";
+        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"help" withExtension:@"html"];
+    } else if ([segue.identifier isEqualToString:@"Show About"]) {
+        HtmlViewController *htmlVC = (HtmlViewController *) segue.destinationViewController;
+        
+        htmlVC.title = @"About";
+        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
     }
 }
 
-#pragma mark
+#pragma mark - IBActions
 
 - (IBAction)nightMode:(UISwitch *)sender {
     [self.delegate extrasTableViewControllerDelegate:self changedNightMode:sender.on];
