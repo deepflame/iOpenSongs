@@ -1,9 +1,27 @@
-(function($)
+/*
+ *  Project: opensong.js
+ *  Description: displays OpenSong files nicely on a web page
+ *  Author: Andreas Boehrnsen
+ *  License: LGPL 2.1
+ */
+
+// the semi-colon before function invocation is a safety net against concatenated 
+// scripts and/or other plugins which may not be closed properly.
+;(function($)
 {
-  // 
+  // jQuery wrapper around openSongLyrics function
   $.fn.openSongLyrics = function(lyrics) {
-    // clear Html Element
-    $(this).html("");
+    try {
+      openSongLyrics(this, lyrics);
+    } catch(e) {
+      alert(e);
+    }
+  }
+  
+  // displays Opensong 
+  function openSongLyrics(domElem, lyrics) {
+    // clear Html Element and add opensong class
+    $(domElem).html("").addClass("opensong");
   
     var lyricsLines = lyrics.split("\n");
   
@@ -12,21 +30,11 @@
     
       switch(line[0]) {
         case "[":
-          var header = line;
-          var number = "";
+          var header = line.match(/\[(.*)\]/)[1]
+          // replace first char (e.g. V -> Verse)
+          header = header.replace(header[0], replaceHeader(header[0]));
           
-          // try to match default style
-          var m = /\[(\w)(\d)?\]/g.exec(line);
-          if (m) {
-            header = replaceHeader(m[1]);
-            number = m[2] ? m[2] : "";
-          } else {
-            // try to match 'custom style'
-            m = /\[(\w*)\]/g.exec(line);
-            header = m ? m[1] : line;
-          }
-          
-          $(this).append("<h2>" + header + " " + number + "</h2>");
+          $(domElem).append("<h2>" + header + "</h2>");
           break
         case ".":
           var chordsLine = line.substr(1);
@@ -43,42 +51,44 @@
             chordArr.push(chordsLine);            
           }
         
-          var lyricsLine = lyricsLines.shift().substr(1);
+          // write html table row for the chords
+          var htmlTableRows = "<tr class='chords'><td></td><td>" + chordArr.join("</td><td>") + "</td></tr>\n";
         
-          var lyricsArr = new Array();
-          // split lyrics line based on chord length
-          for (var i in chordArr) {
-          
-            if (i < chordArr.length - 1) {
-              var chordLength = chordArr[i].length;          
-              // split String with RegExp (is there a better way?)
-              var m = lyricsLine.match(new RegExp("(.{"+ chordLength +"})(.*)"));
-          
-              if(m === null) {
-                lyricsArr.push("");
+          var textLine = "", m = null, cleanRegExp = /_|\||---|-!!/g;
+                    
+          // while we have lines that match a textLine create an html table row
+          while ((textLine = lyricsLines.shift()) && (m = textLine.match(/^([ 1-9])(.*)/))) {
+            var textArr = new Array();
+            var textLineNr = m[1];
+            textLine = m[2];
+            
+            // split lyrics line based on chord length
+            for (var i in chordArr) {
+              if (i < chordArr.length - 1) {
+                var chordLength = chordArr[i].length;          
+                // split String with RegExp (is there a better way?)
+                var m = textLine.match(new RegExp("(.{0,"+ chordLength +"})(.*)"));
+
+                textArr.push(m[1].replace(cleanRegExp, ""));
+                textLine = m[2];
               } else {
-                lyricsArr.push(m[1]);
-                lyricsLine = m[2];
+                // add the whole string if at the end of the chord arr
+                textArr.push(textLine.replace(cleanRegExp, ""));
               }
-            } else {
-              // add the whole string if at the end of the chord arr
-              lyricsArr.push(lyricsLine);
             }
+            // write html table row for the text (lyrics)
+            htmlTableRows = htmlTableRows + "<tr class='lyrics'><td>" + textLineNr + "</td><td>" + textArr.join("</td><td>") + "</td></tr>\n";
           }
+          // attach the line again in front (we cut it off in the while loop)
+          if(textLine !== undefined) lyricsLines.unshift(textLine);
         
-          //console.log(chordArr);        
-          //console.log(lyricsArr);
-        
-          var htmlTableRows = "<tr class='chords'><td>" + chordArr.join("</td><td>") + "</td></tr>\n";
-          htmlTableRows = htmlTableRows + "<tr class='lyrics'><td>" + lyricsArr.join("</td><td>") + "</td></tr>\n";
-        
-          $(this).append("<table>" + htmlTableRows + "</table>");
+          $(domElem).append("<table>" + htmlTableRows + "</table>");
           break;
         case " ":
-          $(this).append("<div class='lyrics'>" + line.substr(1) + "</div>");
+          $(domElem).append("<div class='lyrics'>" + line.substr(1) + "</div>");
           break;
         case ";":
-          $(this).append("<div class='comments'>" + line.substr(1) + "</div>");
+          $(domElem).append("<div class='comments'>" + line.substr(1) + "</div>");
           break;
         default:
           var error_text = "no support for :" + line;
@@ -90,19 +100,17 @@
     function replaceHeader(abbr) {
       switch(abbr) {
         case "C":
-          return "Chorus";
+          return "Chorus ";
         case "V":
-          return "Verse";
+          return "Verse ";
         case "B":
-          return "Bridge";
+          return "Bridge ";
         case "T":
-          return "Tag";
+          return "Tag ";
         case "P":
-          return "Pre-Chorus";
-        case "I":
-          return "Intro";
-        case "O":
-          return "Outro";
+          return "Pre-Chorus ";
+        default:
+          return abbr;
         }
     }
   }

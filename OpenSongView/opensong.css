@@ -1,3 +1,10 @@
+/*
+ *  Project: opensong.js
+ *  Description: displays OpenSong files nicely on a web page
+ *  Author: Andreas Boehrnsen
+ *  License: LGPL 2.1
+ */
+
 .opensong {
   font-family:Verdana,sans-serif;
 }
@@ -8,19 +15,18 @@
 }
 
 .opensong table {
-  border-width: 0px;
-} 
+  border-collapse: collapse;
+}
+
+.opensong td {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 .opensong tr.chords td {
   font-weight:bold;
   font-size:1.0em;
 }
-
 .opensong tr.lyrics td {
   font-size:1.0em;
-}
-
-.nightmode {
-  color: white;
-  background-color: black;
 }
