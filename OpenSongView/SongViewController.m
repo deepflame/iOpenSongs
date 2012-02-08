@@ -13,7 +13,7 @@
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () <ExtrasTableViewControllerDelegate>
+@interface SongViewController () <ExtrasTableViewControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
 {
     IBOutlet UIWebView *songWebView;
 }
@@ -25,6 +25,7 @@
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
+- (void)setNightMode:(BOOL)state;
 - (void)handleError:(NSError *)error;
 @end
 
@@ -94,7 +95,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    songWebView.delegate = self;
     [self loadHtmlTemplate];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(songParseCallback:)
@@ -179,7 +182,7 @@
     [alertView show];
 }
 
-#pragma mark - Split view
+#pragma mark - UISplitViewControllerDelegate
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
@@ -197,13 +200,34 @@
 
 #pragma mark - ExtrasTableViewControllerDelegate
 
+#define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
+
 - (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)status
 {
-    if (status == TRUE) {
+    [self setNightMode:status];
+    
+    // set user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *nightModeState = [NSNumber numberWithBool:status];
+    [defaults setObject:nightModeState forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
+    [defaults synchronize];
+}
+
+- (void)setNightMode:(BOOL)state
+{
+    if (state == TRUE) {
         [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
     } else {
         [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
     }
+}
+
+# pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    BOOL nightModeState = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
+    [self setNightMode:nightModeState];
 }
 
 #pragma mark - Segues
