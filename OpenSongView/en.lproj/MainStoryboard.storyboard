@@ -77,14 +77,16 @@
                         <barButtonItem key="leftBarButtonItem" title="Songs" id="83r-mf-Pgr"/>
                         <barButtonItem key="rightBarButtonItem" title="Extras" id="gBf-ZS-KCG">
                             <connections>
-                                <segue destination="CA6-Pj-qMW" kind="popover" identifier="Show Extra Popup" popoverAnchorBarButtonItem="gBf-ZS-KCG" id="dbw-Ak-V1u">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <action selector="showExtrasPopup:" destination="hse-Mc-r8g" id="8iI-Yq-Kra"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="extrasBarButtonItem" destination="gBf-ZS-KCG" id="CHP-PU-XX0"/>
                         <outlet property="songWebView" destination="WHM-Zb-nV3" id="ARx-cJ-aUk"/>
+                        <segue destination="CA6-Pj-qMW" kind="popover" identifier="Show Extras Popup" popoverAnchorBarButtonItem="gBf-ZS-KCG" id="96F-le-9Lb">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
             </objects>
@@ -276,7 +278,7 @@
         <scene sceneID="EyR-RX-Ttl">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-KH-EPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="CA6-Pj-qMW" sceneMemberID="viewController">
+                <navigationController id="CA6-Pj-qMW" userLabel="Extras Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -315,6 +317,7 @@
         <class className="SongViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="extrasBarButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="songWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>

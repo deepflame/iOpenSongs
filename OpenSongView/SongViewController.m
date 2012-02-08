@@ -16,9 +16,12 @@
 @interface SongViewController () <ExtrasTableViewControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
 {
     IBOutlet UIWebView *songWebView;
+    IBOutlet UIBarButtonItem *extrasBarButtonItem;
 }
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) UIPopoverController *extrasPopoverController;
+
 @property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
 
 - (NSString*)escapeJavaScript:(NSString*)unescaped;
@@ -33,6 +36,7 @@
 @implementation SongViewController
 
 @synthesize masterPopoverController = _masterPopoverController;
+@synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize song = _song;
 @synthesize operationQueue = _operationQueue;
 
@@ -222,6 +226,15 @@
     }
 }
 
+- (IBAction)showExtrasPopup:(UIBarButtonItem *)sender 
+{
+    if (self.extrasPopoverController.popoverVisible) {
+        [self.extrasPopoverController dismissPopoverAnimated:YES];
+    } else {
+        [self performSegueWithIdentifier:@"Show Extras Popup" sender:self];
+    }
+}
+
 # pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -234,7 +247,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Show Extra Popup"]) {
+    if ([segue.identifier isEqualToString:@"Show Extras Popup"]) {
+        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
+            UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
+            [self.extrasPopoverController dismissPopoverAnimated:NO];
+            self.extrasPopoverController = popoverSegue.popoverController; // might want to be popover's delegate and self.popoverController = nil on dismiss?
+        }
+        
         UINavigationController *navCon = segue.destinationViewController;
         ExtrasTableViewController *etvCon = (ExtrasTableViewController *) navCon.topViewController;
 
