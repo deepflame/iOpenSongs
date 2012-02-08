@@ -1,6 +1,13 @@
-body 
+body#song
 {
     font-family:Verdana,sans-serif;
+}
+
+body#help h1
+{
+    font-size: 1.05em;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
 }
 
 #intro h1
