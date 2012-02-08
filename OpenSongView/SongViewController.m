@@ -23,6 +23,8 @@
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 
+@property BOOL nightMode;
+
 @property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
 
 - (NSString*)escapeJavaScript:(NSString*)unescaped;
@@ -92,6 +94,19 @@
     [songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
+- (void)setNightMode:(BOOL)state
+{
+    if (state == TRUE) {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
+    }
+}
+
+- (BOOL)nightMode
+{
+    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
+}
 
 #pragma mark - View lifecycle
 
@@ -218,15 +233,6 @@
     [defaults synchronize];
 }
 
-- (void)setNightMode:(BOOL)state
-{
-    if (state == TRUE) {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
-    } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
-    }
-}
-
 - (IBAction)showExtrasPopup:(UIBarButtonItem *)sender 
 {
     if (self.extrasPopoverController.popoverVisible) {
@@ -241,7 +247,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     BOOL nightModeState = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
-    [self setNightMode:nightModeState];
+    self.nightMode = nightModeState;
 }
 
 #pragma mark - Segues
@@ -258,8 +264,7 @@
         UINavigationController *navCon = segue.destinationViewController;
         ExtrasTableViewController *etvCon = (ExtrasTableViewController *) navCon.topViewController;
 
-        BOOL nightModeEnabled = [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
-        etvCon.nightModeEnabled = nightModeEnabled;
+        etvCon.nightModeEnabled = self.nightMode;
         etvCon.delegate = self;        
     }
 }
