@@ -107,7 +107,8 @@
 #pragma mark - IBActions
 
 - (IBAction)nightMode:(UISwitch *)sender {
-    [self.delegate extrasTableViewControllerDelegate:self changedNightMode:sender.on];
+    self.nightModeEnabled = sender.on;
+    [self.delegate extrasTableViewControllerDelegate:self changedNightMode:self.nightModeEnabled];
 }
 
 
