@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
+		3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E586F1714E3389600345743 /* MessageUI.framework */; };
 		3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* HtmlViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
+		3E586F1714E3389600345743 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
 		3E5E878414DD7680003B645A /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
 				3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */,
+				3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 		3E5E878914DE6166003B645A /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				3E586F1514E2A8D200345743 /* ios.css */,
 				3E5E878A14DE61CB003B645A /* about.html */,
 				3E5E878C14DE6277003B645A /* help.html */,
 			);
@@ -128,6 +134,7 @@
 		3EDDA40114AEC3A400BB781C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E586F1714E3389600345743 /* MessageUI.framework */,
 				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
 				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
 				3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */,
@@ -245,6 +252,7 @@
 				3E5E878814DE556C003B645A /* default.css in Resources */,
 				3E5E878B14DE61CB003B645A /* about.html in Resources */,
 				3E5E878D14DE6277003B645A /* help.html in Resources */,
+				3E586F1614E2A8D200345743 /* ios.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
