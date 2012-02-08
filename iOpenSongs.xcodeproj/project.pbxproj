@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E5E878514DD7680003B645A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* WebViewController.m */; };
+		3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* HtmlViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
 		3E5E878D14DE6277003B645A /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878C14DE6277003B645A /* help.html */; };
@@ -29,11 +29,15 @@
 		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
+		3EFBED3314DF765C008EF01D /* jquery.effects.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */; };
+		3EFBED3414DF765C008EF01D /* jquery.ui.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */; };
+		3EFBED3614DF780F008EF01D /* jquery.effects.core.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */; };
+		3EFBED3714DF7815008EF01D /* jquery.ui.core.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E5E878314DD7680003B645A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		3E5E878414DD7680003B645A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
+		3E5E878414DD7680003B645A /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
 		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		3E5E878C14DE6277003B645A /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
 		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
+		3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.effects.core.min.js; sourceTree = "<group>"; };
+		3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.ui.core.min.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 				3E5E878714DE556C003B645A /* default.css */,
 				3E663A8E14B836CD009F1340 /* SongTemplate.html */,
 				3E5E8F1314C2B97E00D62BC3 /* jquery-1.7.1.min.js */,
+				3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */,
+				3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */,
 				3E5E8F1414C2B97E00D62BC3 /* opensong.js */,
 				3E5E8F1814C2BAD500D62BC3 /* opensong.css */,
 			);
@@ -132,9 +140,8 @@
 		3EDDA40814AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXGroup;
 			children = (
+				3EFBED3814DF7ADD008EF01D /* Model */,
 				3EAF421A14B5E03D00696FD7 /* iOpenSongs.entitlements */,
-				3EDDA43614AEE6EF00BB781C /* Song.h */,
-				3EDDA43714AEE6EF00BB781C /* Song.m */,
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
 				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
 				3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */,
@@ -142,14 +149,12 @@
 				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
 				3EDDA41714AEC3A400BB781C /* SongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* SongViewController.m */,
-				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
-				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
-				3E663A9014B88ECF009F1340 /* Song Rendering */,
-				3EDDA40914AEC3A400BB781C /* Supporting Files */,
-				3E5E878314DD7680003B645A /* WebViewController.h */,
-				3E5E878414DD7680003B645A /* WebViewController.m */,
+				3E5E878314DD7680003B645A /* HtmlViewController.h */,
+				3E5E878414DD7680003B645A /* HtmlViewController.m */,
 				3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */,
 				3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */,
+				3E663A9014B88ECF009F1340 /* Song Rendering */,
+				3EDDA40914AEC3A400BB781C /* Supporting Files */,
 			);
 			name = iOpenSongs;
 			path = OpenSongView;
@@ -167,6 +172,17 @@
 				3E663A8B14B80BCF009F1340 /* DemoFile */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EFBED3814DF7ADD008EF01D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA43714AEE6EF00BB781C /* Song.m */,
+				3EDDA43614AEE6EF00BB781C /* Song.h */,
+				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
+				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EFBED3714DF7815008EF01D /* jquery.ui.core.min.js in Resources */,
+				3EFBED3614DF780F008EF01D /* jquery.effects.core.min.js in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */,
 				3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */,
@@ -247,8 +265,10 @@
 				3EDDA43814AEE6EF00BB781C /* Song.m in Sources */,
 				3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */,
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
-				3E5E878514DD7680003B645A /* WebViewController.m in Sources */,
+				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
+				3EFBED3314DF765C008EF01D /* jquery.effects.core.min.js in Sources */,
+				3EFBED3414DF765C008EF01D /* jquery.ui.core.min.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
