@@ -31,8 +31,6 @@
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
 		3EFBED3314DF765C008EF01D /* jquery.effects.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */; };
 		3EFBED3414DF765C008EF01D /* jquery.ui.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */; };
-		3EFBED3614DF780F008EF01D /* jquery.effects.core.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */; };
-		3EFBED3714DF7815008EF01D /* jquery.ui.core.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -236,8 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EFBED3714DF7815008EF01D /* jquery.ui.core.min.js in Resources */,
-				3EFBED3614DF780F008EF01D /* jquery.effects.core.min.js in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3EDDA41614AEC3A400BB781C /* MainStoryboard.storyboard in Resources */,
 				3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */,
