@@ -21,6 +21,7 @@
 .opensong td {
   padding-left: 0px;
   padding-right: 0px;
+  white-space: pre;
 }
 
 .opensong tr.chords td {
