@@ -7,6 +7,7 @@
 //
 
 #import "SongViewController.h"
+#import "Song.h"
 #import "OpenSongParseOperation.h"
 #import "ExtrasTableViewController.h"
 
@@ -43,10 +44,10 @@
 
 #pragma mark - Managing the song
 
-- (void)setSong:(id)newSong
+- (void)setSong:(Song *)song
 {
-    if (_song != newSong) {
-        _song = newSong;
+    if (_song != song) {
+        _song = song;
         
         // Update the view.
         [self displaySong];
