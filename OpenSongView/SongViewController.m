@@ -23,7 +23,7 @@
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 
-@property BOOL nightMode;
+@property (nonatomic) BOOL nightMode;
 
 @property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
 
@@ -54,9 +54,7 @@
         [self displaySong];
     }
     
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }
+    [self.masterPopoverController dismissPopoverAnimated:YES];
 }
 
 - (void)displaySong 
@@ -130,14 +128,12 @@
 
 - (void)viewDidUnload
 {
+    extrasBarButtonItem = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return YES;
 }
 
@@ -223,7 +219,7 @@
 
 - (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)status
 {
-    [self setNightMode:status];
+    self.nightMode = status; 
     
     // set user defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
