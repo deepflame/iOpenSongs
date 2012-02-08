@@ -31,7 +31,6 @@
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
-- (void)setNightMode:(BOOL)state;
 - (void)handleError:(NSError *)error;
 @end
 
@@ -108,7 +107,7 @@
     return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
 }
 
-#pragma mark - View lifecycle
+#pragma mark - UIView (view lifecycle)
 
 - (void)viewDidLoad
 {
@@ -233,6 +232,17 @@
     [defaults synchronize];
 }
 
+# pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
+    
+    [songWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout = 'none';"];
+}
+
+# pragma mark - IBActions
+
 - (IBAction)showExtrasPopup:(UIBarButtonItem *)sender 
 {
     if (self.extrasPopoverController.popoverVisible) {
@@ -240,14 +250,6 @@
     } else {
         [self performSegueWithIdentifier:@"Show Extras Popup" sender:self];
     }
-}
-
-# pragma mark - UIWebViewDelegate
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    BOOL nightModeState = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
-    self.nightMode = nightModeState;
 }
 
 #pragma mark - Segues
@@ -268,6 +270,5 @@
         etvCon.delegate = self;        
     }
 }
-
 
 @end
