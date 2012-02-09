@@ -217,14 +217,13 @@
 
 #define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
 
-- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)status
+- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)state
 {
-    self.nightMode = status; 
+    self.nightMode = state;
     
     // set user defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *nightModeState = [NSNumber numberWithBool:status];
-    [defaults setObject:nightModeState forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
+    [defaults setObject:[NSNumber numberWithBool:state] forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
     [defaults synchronize];
 }
 
