@@ -15,6 +15,8 @@
 @optional
 - (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender
                          changedNightMode:(BOOL)status;
+- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender
+                 dismissMyPopoverAnimated:(BOOL)animated;
 @end
 
 

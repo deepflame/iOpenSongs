@@ -61,6 +61,7 @@
                                                  
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
     [self dismissModalViewControllerAnimated:YES];
+    [self.delegate extrasTableViewControllerDelegate:self dismissMyPopoverAnimated:FALSE];
 }
                                                  
 #pragma mark - Segues

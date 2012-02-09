@@ -228,6 +228,11 @@
     [defaults synchronize];
 }
 
+- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
+{
+    [self.extrasPopoverController dismissPopoverAnimated:animated];
+}
+
 # pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
