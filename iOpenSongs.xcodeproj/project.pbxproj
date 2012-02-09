@@ -31,8 +31,6 @@
 		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
-		3EFBED3314DF765C008EF01D /* jquery.effects.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3114DF765C008EF01D /* jquery.effects.core.min.js */; };
-		3EFBED3414DF765C008EF01D /* jquery.ui.core.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBED3214DF765C008EF01D /* jquery.ui.core.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +48,6 @@
 		3E5E8F1814C2BAD500D62BC3 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = opensong.css; sourceTree = "<group>"; };
 		3E663A8B14B80BCF009F1340 /* DemoFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DemoFile; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* SongTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SongTemplate.html; sourceTree = "<group>"; };
-		3EAF421A14B5E03D00696FD7 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				3EFBED3814DF7ADD008EF01D /* Model */,
-				3EAF421A14B5E03D00696FD7 /* iOpenSongs.entitlements */,
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
 				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
 				3EDDA41414AEC3A400BB781C /* MainStoryboard.storyboard */,
@@ -217,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "Open iT Norge AS";
+				ORGANIZATIONNAME = "Andreas Boehrnsen";
 			};
 			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -271,8 +267,6 @@
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
-				3EFBED3314DF765C008EF01D /* jquery.effects.core.min.js in Sources */,
-				3EFBED3414DF765C008EF01D /* jquery.ui.core.min.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +324,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -339,6 +334,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -348,10 +345,13 @@
 		3EDDA41D14AEC3A400BB781C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
 				PRODUCT_NAME = iOpenSongs;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -359,10 +359,14 @@
 		3EDDA41E14AEC3A400BB781C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
 				PRODUCT_NAME = iOpenSongs;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
