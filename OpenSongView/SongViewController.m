@@ -16,7 +16,7 @@
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () <ExtrasTableViewControllerDelegate, SongMasterViewControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
+@interface SongViewController () <ExtrasTableViewControllerDelegate, SongMasterViewControllerDelegate, UIWebViewDelegate>
 {
     IBOutlet UIWebView *songWebView;
     IBOutlet UIBarButtonItem *extrasBarButtonItem;
@@ -43,7 +43,21 @@
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize song = _song;
 @synthesize operationQueue = _operationQueue;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;   // implementation of SplitViewBarButtonItemPresenter protocol
 
+
+- (void)handleSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    self.navigationItem.leftBarButtonItem = splitViewBarButtonItem;
+    _splitViewBarButtonItem = splitViewBarButtonItem;
+}
+
+- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (splitViewBarButtonItem != _splitViewBarButtonItem) {
+        [self handleSplitViewBarButtonItem:splitViewBarButtonItem];
+    }
+}
 
 #pragma mark - Managing the song
 
@@ -116,9 +130,6 @@
 
     songWebView.delegate = self;
     
-    // set ourselves as delegate for splitview if we are inside splitview
-    [[self splitViewController] setDelegate:self];
-    
     [self loadHtmlTemplate];
     
     
@@ -130,6 +141,8 @@
                                              selector:@selector(songParseErrback:)
                                                  name:kSongErrorNotif
                                                object:nil];
+    
+    [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
 }
 
 - (void)viewDidUnload
@@ -201,22 +214,6 @@
                      cancelButtonTitle:@"OK"
                      otherButtonTitles:nil];
     [alertView show];
-}
-
-#pragma mark - UISplitViewControllerDelegate
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Songs", @"Songs");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
 }
 
 #pragma mark - ExtrasTableViewControllerDelegate

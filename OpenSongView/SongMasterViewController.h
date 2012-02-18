@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "SongViewController.h"
 
-@class SongViewController;
+@class SongMasterViewController;
 
-@interface SongMasterViewController : UITableViewController 
+@protocol SongMasterViewControllerDelegate <NSObject>
+@optional
+- (void) songMasterViewControllerDelegate:(SongMasterViewController *)sender 
+                                choseSong:(NSURL *)song;
+@end
 
-@property (strong, nonatomic) SongViewController *detailViewController;
 
+@interface SongMasterViewController : UITableViewController <UISplitViewControllerDelegate>
+@property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
 - (IBAction)refreshList:(id)sender;
-
 @end

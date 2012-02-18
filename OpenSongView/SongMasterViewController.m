@@ -7,6 +7,7 @@
 //
 
 #import "SongMasterViewController.h"
+#import "SplitViewBarButtonItemPresenter.h"
 
 @interface SongMasterViewController () <UISearchBarDelegate>
 
@@ -36,28 +37,36 @@
     return _allTableData;
 }
 
-- (void)awakeFromNib
+- (SongViewController *)splitViewSongViewController
 {
-    self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    [super awakeFromNib];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    id svc = [self.splitViewController.viewControllers lastObject];
+    
+    if ([svc isKindOfClass:[UINavigationController class]]) {
+        svc = ((UINavigationController *) svc).topViewController;
+    }
+    
+    if (![svc isKindOfClass:[SongViewController class]]) {
+        svc = nil;
+    }
+    return svc;
 }
 
 #pragma mark - View lifecycle
+
+- (void)awakeFromNib 
+{
+    [super awakeFromNib];
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    
+    self.splitViewController.delegate = self; // always try to be the split view's delegate
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Do any additional setup after loading the view, typically from a nib.
-    self.detailViewController = (SongViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-
     [self reloadFiles];
 }
 
@@ -74,6 +83,46 @@
     return YES;
 }
 
+
+#pragma mark UISplitViewControllerDelegate
+
+// helper method for the delegate
+- (id <SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
+{
+    id detailVC = [self.splitViewController.viewControllers lastObject];
+    
+    if ([detailVC isKindOfClass:[UINavigationController class]]) {
+        detailVC = ((UINavigationController *) detailVC).topViewController;
+    }
+    
+    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
+        detailVC = nil;
+    }
+    return detailVC;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc
+   shouldHideViewController:(UIViewController *)vc
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return [self splitViewBarButtonItemPresenter] ? UIInterfaceOrientationIsPortrait(orientation) : NO;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = @"Songs";
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
+}
 
 #pragma mark -
 #pragma mark UITableViewDataSource
@@ -134,7 +183,12 @@
         fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
     }
     
-    [self.delegate songMasterViewControllerDelegate:self choseSong:fileUrl];
+    // setting the song url
+    if ([self splitViewSongViewController]) {
+        [[self splitViewSongViewController] parseSongFromUrl:fileUrl];
+    } else {
+        [self.delegate songMasterViewControllerDelegate:self choseSong:fileUrl];
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

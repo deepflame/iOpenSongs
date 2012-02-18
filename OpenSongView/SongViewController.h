@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Song.h"
+#import "SplitViewBarButtonItemPresenter.h"
 
 // public interface
-@interface SongViewController : UIViewController <NSXMLParserDelegate> 
+@interface SongViewController : UIViewController <NSXMLParserDelegate, SplitViewBarButtonItemPresenter>
 
 @property (strong, nonatomic) Song *song;
 
