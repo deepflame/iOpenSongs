@@ -8,9 +8,11 @@
 
 #import "SongMasterViewController.h"
 
-@interface SongMasterViewController ()
+@interface SongMasterViewController () <UISearchBarDelegate>
 
-@property (strong, nonatomic) NSMutableArray *documentURLs;
+@property (strong, nonatomic) NSMutableArray *allTableData;
+@property (strong, nonatomic) NSMutableArray *filteredTableData;
+@property (nonatomic) BOOL isFiltered;
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)reloadFiles;
@@ -19,9 +21,20 @@
 
 @implementation SongMasterViewController
 
-@synthesize documentURLs = _documentURLs;
-@synthesize detailViewController = _detailViewController;
+@synthesize allTableData = _allTableData;
+@synthesize filteredTableData = _filteredTableData;
+@synthesize isFiltered = _isFiltered;
 
+@synthesize delegate = _delegate;
+
+
+-(NSArray *)allTableData
+{
+    if(!_allTableData) {
+        _allTableData = [NSMutableArray array];
+    }
+    return _allTableData;
+}
 
 - (void)awakeFromNib
 {
@@ -43,10 +56,8 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view, typically from a nib.
-    
     self.detailViewController = (SongViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
-    self.documentURLs = [NSMutableArray array];
     [self reloadFiles];
 }
 
@@ -54,7 +65,7 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    self.documentURLs = nil;
+    self.allTableData = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -69,10 +80,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self.documentURLs count] == 0) {
-        return 1; //we will display a Demo file
+    int rowCount;
+    if(self.isFiltered) {
+        rowCount = self.filteredTableData.count;        
+    } else {
+        if ([self.allTableData count] == 0) {
+            rowCount = 1; //we will display a Demo file
+        } else {
+            rowCount = self.allTableData.count;            
+        }
+        
     }
-    return self.documentURLs.count;
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,10 +106,15 @@
 
     // display the DemoFile when there is no file transferred yet
     NSURL *fileUrl = nil;
-    if ([self.documentURLs count] == 0) {
-        fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+    
+    if (self.isFiltered) {
+        fileUrl = (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
     } else {
-        fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+        if ([self.allTableData count] == 0) {
+            fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+        } else {
+            fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
+        }        
     }
     cell.textLabel.text = fileUrl.lastPathComponent;
     
@@ -98,22 +122,50 @@
 }
 
 #pragma mark -
-#pragma mark UITableView delegate
+#pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // display the DemoFile when there is no file transferred yet
     NSURL *fileUrl = nil;
-    if ([self.documentURLs count] == 0) {
+    if ([self.allTableData count] == 0) {
         fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];  
     } else {
-        fileUrl = (NSURL *) [self.documentURLs objectAtIndex:indexPath.row];
+        fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
     }
     
-    [self.detailViewController parseSongFromUrl:fileUrl];
+    [self.delegate songMasterViewControllerDelegate:self choseSong:fileUrl];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark UISearchBarDelegate
+
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    if(text.length == 0)
+    {
+        self.isFiltered = NO;
+    }
+    else
+    {
+        self.isFiltered = YES;
+        self.filteredTableData = [[NSMutableArray alloc] init];
+        
+        for (NSURL *fileURL in self.allTableData)
+        {
+            NSRange nameRange = [fileURL.lastPathComponent rangeOfString:text options:NSCaseInsensitiveSearch];
+            NSRange descriptionRange = [fileURL.description rangeOfString:text options:NSCaseInsensitiveSearch];
+            if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound)
+            {
+                [self.filteredTableData addObject:fileURL];
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark File system support
@@ -125,7 +177,7 @@
 
 - (void)reloadFiles
 {
-	[self.documentURLs removeAllObjects];    // clear out the old docs and start over
+	[self.allTableData removeAllObjects];    // clear out the old docs and start over
 	
 	NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
 	
@@ -140,7 +192,7 @@
 		
         // proceed to add the document URL to our list (ignore the "Inbox" folder)
         if (!(isDirectory && [curFileName isEqualToString: @"Inbox"])) {
-            [self.documentURLs addObject:fileURL];
+            [self.allTableData addObject:fileURL];
         }
 	}
 	    
