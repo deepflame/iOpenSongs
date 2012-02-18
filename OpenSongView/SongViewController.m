@@ -9,12 +9,14 @@
 #import "SongViewController.h"
 #import "Song.h"
 #import "OpenSongParseOperation.h"
+
+#import "SongMasterViewController.h"
 #import "ExtrasTableViewController.h"
 
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () <ExtrasTableViewControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
+@interface SongViewController () <ExtrasTableViewControllerDelegate, SongMasterViewControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
 {
     IBOutlet UIWebView *songWebView;
     IBOutlet UIBarButtonItem *extrasBarButtonItem;
@@ -232,6 +234,14 @@
     [self.extrasPopoverController dismissPopoverAnimated:animated];
 }
 
+#pragma mark - SongMasterViewControllerDelegate
+
+- (void)songMasterViewControllerDelegate:(SongMasterViewController *)sender choseSong:(NSURL *)song
+{
+    [self parseSongFromUrl:song];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 # pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -257,17 +267,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Extras Popup"]) {
+        ExtrasTableViewController *etvCon;
+        
         if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
             UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
             [self.extrasPopoverController dismissPopoverAnimated:NO];
             self.extrasPopoverController = popoverSegue.popoverController; // might want to be popover's delegate and self.popoverController = nil on dismiss?
+
+            UINavigationController *navCon = segue.destinationViewController;
+            etvCon = (ExtrasTableViewController *) navCon.topViewController;
+        } else {
+            etvCon = (ExtrasTableViewController *) segue.destinationViewController;
         }
         
-        UINavigationController *navCon = segue.destinationViewController;
-        ExtrasTableViewController *etvCon = (ExtrasTableViewController *) navCon.topViewController;
-
         etvCon.nightModeEnabled = self.nightMode;
         etvCon.delegate = self;        
+    } else if ([segue.identifier isEqualToString:@"Show Song List"]) {
+        [segue.destinationViewController setDelegate:self];
     }
 }
 
