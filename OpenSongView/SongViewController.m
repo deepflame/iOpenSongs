@@ -115,6 +115,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     songWebView.delegate = self;
+    
+    // set ourselves as delegate for splitview if we are inside splitview
+    [[self splitViewController] setDelegate:self];
+    
     [self loadHtmlTemplate];
     
     
