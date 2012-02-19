@@ -201,6 +201,15 @@
     [self.tableView reloadData];
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    // need this to make cancel button work properly
+    // after view reappears with filtered data
+    // -> better workaround?
+    searchBar.text = @"";
+    self.isFiltered = NO;
+    [self.tableView reloadData];
+}
 
 #pragma mark -
 #pragma mark File system support
