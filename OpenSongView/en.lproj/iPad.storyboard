@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="zfM-uO-gv8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="zfM-uO-gv8">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
     </dependencies>
     <scenes>
+        <!--Song Master View Controller - Song List-->
         <scene sceneID="2Ns-Ls-eHG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zh-Fu-gjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KGf-T2-bS3">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="KGf-T2-bS3">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -75,6 +76,7 @@
             </objects>
             <point key="canvasLocation" x="285" y="-1799"/>
         </scene>
+        <!--Song View Controller - iOpenSongs-->
         <scene sceneID="ARQ-P1-L4D">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jl-Jt-EOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,6 +114,7 @@
             </objects>
             <point key="canvasLocation" x="623" y="-750"/>
         </scene>
+        <!--Extras Table View Controller - Options-->
         <scene sceneID="KCy-PD-evJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-aM-9aM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +141,7 @@
                                                         <action selector="nightMode:" destination="tx8-p9-wf2" eventType="valueChanged" id="0QR-0H-00o"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Night Mode" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="Zrb-ls-MxX">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Night Mode" lineBreakMode="tailTruncation" minimumFontSize="10" id="Zrb-ls-MxX">
                                                     <rect key="frame" x="11" y="11" width="114" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -161,7 +164,7 @@
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Help" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wbi-5P-Nq9">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Help" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="wbi-5P-Nq9">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -180,10 +183,10 @@
                                         <rect key="frame" x="0.0" y="169" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VaU-f2-iwj">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="VaU-f2-iwj">
                                                     <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -209,14 +212,14 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xc-E3-klv">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="6xc-E3-klv">
                                                     <rect key="frame" x="10" y="11" width="125" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="via Mail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FKN-3a-zUm">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="via Mail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="FKN-3a-zUm">
                                                     <rect key="frame" x="232" y="11" width="58" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -245,6 +248,7 @@
             </objects>
             <point key="canvasLocation" x="2333" y="-750"/>
         </scene>
+        <!--Html View Controller - HTML-->
         <scene sceneID="OQ8-qE-RCp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGy-Ys-Nhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,6 +275,7 @@
             </objects>
             <point key="canvasLocation" x="2843" y="-750"/>
         </scene>
+        <!--Main Navigation Controller-->
         <scene sceneID="BDo-Ky-lZx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsb-ip-O1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,6 +296,7 @@
             </objects>
             <point key="canvasLocation" x="-205" y="-1799"/>
         </scene>
+        <!--Split View Controller-->
         <scene sceneID="RA3-Go-LHR">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFH-d7-BjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,6 +312,7 @@
             </objects>
             <point key="canvasLocation" x="-1449" y="-1328"/>
         </scene>
+        <!--Detail Navigation-->
         <scene sceneID="68a-6x-kkc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVX-8Z-6vs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,6 +332,7 @@
             </objects>
             <point key="canvasLocation" x="-205" y="-750"/>
         </scene>
+        <!--Extras Navigation Controller-->
         <scene sceneID="EyR-RX-Ttl">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-KH-EPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
