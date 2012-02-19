@@ -189,8 +189,9 @@
         
         for (NSURL *fileURL in self.allTableData) {
             NSRange nameRange = [fileURL.lastPathComponent rangeOfString:text options:NSCaseInsensitiveSearch];
-            NSRange descriptionRange = [fileURL.description rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
+            //NSRange descriptionRange = [fileURL.description rangeOfString:text options:NSCaseInsensitiveSearch];
+            //if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
+            if(nameRange.location != NSNotFound) {
                 [self.filteredTableData addObject:fileURL];
             }
         }
