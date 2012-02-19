@@ -142,7 +142,9 @@
                                                  name:kSongErrorNotif
                                                object:nil];
     
-    [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+       [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
+    }
 }
 
 - (void)viewDidUnload
