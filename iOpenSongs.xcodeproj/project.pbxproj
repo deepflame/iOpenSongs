@@ -217,7 +217,7 @@
 		3EDDA3F514AEC3A300BB781C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Andreas Boehrnsen";
 			};
 			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */;
@@ -356,10 +356,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6369156E-3BDD-4DDE-B506-202F6A01F422";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -372,10 +373,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
