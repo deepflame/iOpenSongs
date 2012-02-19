@@ -29,6 +29,17 @@
 @synthesize delegate = _delegate;
 
 
+- (NSURL *) songAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSURL *fileUrl = nil;
+    if (self.isFiltered) {
+        fileUrl = (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
+    } else {
+        fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
+    }
+    return fileUrl;
+}
+
 -(NSArray *)allTableData
 {
     if(!_allTableData) {
@@ -129,18 +140,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int rowCount;
     if(self.isFiltered) {
-        rowCount = self.filteredTableData.count;        
-    } else {
-        if ([self.allTableData count] == 0) {
-            rowCount = 1; //we will display a Demo file
-        } else {
-            rowCount = self.allTableData.count;            
-        }
-        
+        return self.filteredTableData.count;        
     }
-    return rowCount;
+    return self.allTableData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,18 +156,7 @@
                                       reuseIdentifier:CellIdentifier];
     }
 
-    // display the DemoFile when there is no file transferred yet
-    NSURL *fileUrl = nil;
-    
-    if (self.isFiltered) {
-        fileUrl = (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
-    } else {
-        if ([self.allTableData count] == 0) {
-            fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
-        } else {
-            fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
-        }        
-    }
+    NSURL *fileUrl = [self songAtIndexPath:indexPath];
     cell.textLabel.text = fileUrl.lastPathComponent;
     
     return cell;
@@ -175,13 +167,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // display the DemoFile when there is no file transferred yet
-    NSURL *fileUrl = nil;
-    if ([self.allTableData count] == 0) {
-        fileUrl = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];  
-    } else {
-        fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
-    }
+    NSURL *fileUrl = [self songAtIndexPath:indexPath];
     
     // setting the song url
     if ([self splitViewSongViewController]) {
@@ -197,21 +183,16 @@
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
-    if(text.length == 0)
-    {
+    if(text.length == 0) {
         self.isFiltered = NO;
-    }
-    else
-    {
+    } else {
         self.isFiltered = YES;
         self.filteredTableData = [[NSMutableArray alloc] init];
         
-        for (NSURL *fileURL in self.allTableData)
-        {
+        for (NSURL *fileURL in self.allTableData) {
             NSRange nameRange = [fileURL.lastPathComponent rangeOfString:text options:NSCaseInsensitiveSearch];
             NSRange descriptionRange = [fileURL.description rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound)
-            {
+            if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
                 [self.filteredTableData addObject:fileURL];
             }
         }
@@ -249,7 +230,13 @@
             [self.allTableData addObject:fileURL];
         }
 	}
-	    
+    
+    // add a demo file if nothing is present
+    if ([self.allTableData count] == 0) {
+        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+        [self.allTableData addObject:fileURL];
+    }
+    
 	[self.tableView reloadData];
 }
 
