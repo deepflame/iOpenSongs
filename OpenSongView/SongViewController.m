@@ -250,8 +250,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
-    
-    [songWebView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout = 'none';"];
 }
 
 # pragma mark - IBActions
