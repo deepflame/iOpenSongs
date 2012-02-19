@@ -31,13 +31,10 @@
 
 - (NSURL *) songAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *fileUrl = nil;
     if (self.isFiltered) {
-        fileUrl = (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
-    } else {
-        fileUrl = (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
+        return (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
     }
-    return fileUrl;
+    return (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
 }
 
 -(NSArray *)allTableData
@@ -86,6 +83,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     self.allTableData = nil;
+    self.filteredTableData = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
