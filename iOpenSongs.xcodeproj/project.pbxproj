@@ -13,6 +13,7 @@
 		3E355B8E14F1EC3C00E49942 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EACA52F14F14D7700519ADC /* libGoogleAnalytics.a */; };
 		3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8F14F1EC7100E49942 /* CFNetwork.framework */; };
 		3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B8B14F1E2B700E49942 /* EasyTracker.m */; };
+		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E586F1714E3389600345743 /* MessageUI.framework */; };
 		3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* HtmlViewController.m */; };
@@ -46,6 +47,7 @@
 		3E355B8B14F1E2B700E49942 /* EasyTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyTracker.m; sourceTree = "<group>"; };
 		3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3E355B8F14F1EC7100E49942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon57.png; path = ../ProgramIcon57.png; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E586F1714E3389600345743 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				3E5E878914DE6166003B645A /* HTML */,
+				3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */,
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
@@ -286,6 +289,7 @@
 				3E586F1614E2A8D200345743 /* ios.css in Resources */,
 				3E13C2C614EF322D00F59505 /* iPhone.storyboard in Resources */,
 				3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */,
+				3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +400,7 @@
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6369156E-3BDD-4DDE-B506-202F6A01F422";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -417,7 +421,7 @@
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
