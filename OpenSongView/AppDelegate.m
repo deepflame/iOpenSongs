@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "EasyTracker.h"
+
 
 @implementation AppDelegate
 
@@ -15,6 +17,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [EasyTracker launchWithOptions:launchOptions
+                    withParameters:nil
+                         withError:nil];
+    
     return YES;
 }
 							

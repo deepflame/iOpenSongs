@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EasyTracker.h"
 
 @class ExtrasTableViewController;
 
@@ -20,7 +21,7 @@
 @end
 
 
-@interface ExtrasTableViewController : UITableViewController
+@interface ExtrasTableViewController : TrackedUITableViewController
 @property (nonatomic) BOOL nightModeEnabled;
 @property (nonatomic, weak) id <ExtrasTableViewControllerDelegate> delegate;
 @end

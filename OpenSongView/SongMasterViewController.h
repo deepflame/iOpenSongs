@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SongViewController.h"
+#import "EasyTracker.h"
 
 @class SongMasterViewController;
 
@@ -18,7 +19,7 @@
 @end
 
 
-@interface SongMasterViewController : UITableViewController <UISplitViewControllerDelegate>
+@interface SongMasterViewController : TrackedUITableViewController <UISplitViewControllerDelegate>
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
 - (IBAction)refreshList:(id)sender;
 @end

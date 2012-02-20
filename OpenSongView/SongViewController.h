@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EasyTracker.h"
+
 #import "Song.h"
 #import "SplitViewBarButtonItemPresenter.h"
 
 // public interface
-@interface SongViewController : UIViewController <NSXMLParserDelegate, SplitViewBarButtonItemPresenter>
+@interface SongViewController : TrackedUIViewController <NSXMLParserDelegate, SplitViewBarButtonItemPresenter>
 
 @property (strong, nonatomic) Song *song;
 

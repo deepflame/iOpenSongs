@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>accountId</key>
+	<string>UA-29313180-1</string>
+	<key>debugEnabled</key>
+	<false/>
+	<key>anonymizeIpEnabled</key>
+	<true/>
+	<key>dispatchPeriod</key>
+	<integer>30</integer>
+	<key>SongViewController</key>
+	<string>Song View</string>
+	<key>SongMasterViewController</key>
+	<string>Song Master View</string>
+	<key>ExtrasTableViewController</key>
+	<string>Extras View</string>
+	<key>HtmlViewController</key>
+	<string>Html View</string>
+</dict>
+</plist>
