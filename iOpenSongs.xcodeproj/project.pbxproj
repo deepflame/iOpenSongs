@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E13C2C614EF322D00F59505 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13C2C514EF322D00F59505 /* iPhone.storyboard */; };
 		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
 		3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
+		3E120C3514F9203900926A74 /* NSString+JavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaScript.m"; sourceTree = "<group>"; };
 		3E13C2C514EF322D00F59505 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		3E355B8714F1E29900E49942 /* EasyTracker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EasyTracker.plist; sourceTree = "<group>"; };
 		3E355B8A14F1E2B700E49942 /* EasyTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyTracker.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
 				3EDDA41714AEC3A400BB781C /* SongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* SongViewController.m */,
+				3E120C3414F9203900926A74 /* NSString+JavaScript.h */,
+				3E120C3514F9203900926A74 /* NSString+JavaScript.m */,
 				3E5E878314DD7680003B645A /* HtmlViewController.h */,
 				3E5E878414DD7680003B645A /* HtmlViewController.m */,
 				3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */,
@@ -309,6 +314,7 @@
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
+				3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

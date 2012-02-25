@@ -7,6 +7,7 @@
 //
 
 #import "SongViewController.h"
+#import "NSString+JavaScript.h"
 #import "Song.h"
 #import "OpenSongParseOperation.h"
 
@@ -28,8 +29,6 @@
 @property (nonatomic) BOOL nightMode;
 
 @property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
-
-- (NSString*)escapeJavaScript:(NSString*)unescaped;
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
@@ -76,23 +75,10 @@
 - (void)displaySong 
 {
     if (self.song) {
-        NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self escapeJavaScript:self.song.lyrics]];
+        NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
         [songWebView stringByEvaluatingJavaScriptFromString:jsString];
         self.navigationItem.title = self.song.title; 
     }
-}
-
-- (NSString*)escapeJavaScript:(NSString*)unescaped
-{
-    NSString* jsEscaped = unescaped;
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"</" withString:@"<\\/"];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\\n"];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\r" withString:@"\\n"];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-    jsEscaped = [jsEscaped stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
-    return jsEscaped;
 }
 
 - (void)loadHtmlTemplate 
