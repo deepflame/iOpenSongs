@@ -9,7 +9,6 @@
 #import "SongViewController.h"
 #import "NSString+JavaScript.h"
 #import "Song.h"
-#import "OpenSongParseOperation.h"
 
 #import "SongMasterViewController.h"
 #import "ExtrasTableViewController.h"
@@ -28,11 +27,8 @@
 
 @property (nonatomic) BOOL nightMode;
 
-@property (strong, nonatomic) NSOperationQueue *operationQueue;     // the queue that manages our NSOperation for parsing song data
-
 - (void)displaySong;
 - (void)loadHtmlTemplate;
-- (void)handleError:(NSError *)error;
 @end
 
 
@@ -41,7 +37,6 @@
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize song = _song;
-@synthesize operationQueue = _operationQueue;
 @synthesize splitViewBarButtonItem = _splitViewBarButtonItem;   // implementation of SplitViewBarButtonItemPresenter protocol
 
 
@@ -95,7 +90,7 @@
 
 - (void)setNightMode:(BOOL)state
 {
-    if (state == TRUE) {
+    if (state == YES) {
         [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
     } else {
         [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
@@ -118,16 +113,6 @@
     
     [self loadHtmlTemplate];
     
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(songParseCallback:)
-                                                 name:kSongSuccessNotif
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(songParseErrback:)
-                                                 name:kSongErrorNotif
-                                               object:nil];
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
        [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
     }
@@ -142,66 +127,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
-}
-
-#pragma mark -
-#pragma mark OpenSong File Parsing
-
-- (void)parseSongFromUrl:(NSURL *)songFileUrl
-{    
-    NSData *songData = [[NSData alloc] initWithContentsOfURL:songFileUrl];
-    [self parseSongData:songData];
-}
-
-- (void)parseSongData:(NSData *)songData
-{    
-    // Spawn an NSOperation to parse the earthquake data so that the UI is not blocked while the
-    // application parses the XML data.
-    //
-    // IMPORTANT! - Don't access or affect UIKit objects on secondary threads.
-    //
-    OpenSongParseOperation *parseOperation = [[OpenSongParseOperation alloc] initWithData:songData];
-    //operationQueue = [NSOperationQueue new];
-    //[self.operationQueue addOperation:parseOperation];
-    
-    //TODO: this should run on a different thread
-    [parseOperation start];
-}
-
-// Our NSNotification callback from the running NSOperation to add the earthquakes
-//
-- (void)songParseCallback:(NSNotification *)notif {
-    assert([NSThread isMainThread]);
-    
-    self.song = [[notif userInfo] valueForKey:kSongSuccessKey];
-}
-
-// Our NSNotification callback from the running NSOperation when a parsing error has occurred
-//
-- (void)songParseErrback:(NSNotification *)notif {
-    assert([NSThread isMainThread]);
-    
-    [self handleError:[[notif userInfo] valueForKey:kSongErrorKey]];
-}
-
-#pragma mark -
-
-// Handle errors in the download by showing an alert to the user. This is a very
-// simple way of handling the error, partly because this application does not have any offline
-// functionality for the user. Most real applications should handle the error in a less obtrusive
-// way and provide offline functionality to the user.
-//
-- (void)handleError:(NSError *)error {
-    NSString *errorMessage = [error localizedDescription];
-    UIAlertView *alertView =
-    [[UIAlertView alloc] initWithTitle:
-     NSLocalizedString(@"Error Title",
-                       @"Title for alert displayed when download or parse error occurs.")
-                               message:errorMessage
-                              delegate:nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
-    [alertView show];
 }
 
 #pragma mark - ExtrasTableViewControllerDelegate
@@ -225,9 +150,9 @@
 
 #pragma mark - SongMasterViewControllerDelegate
 
-- (void)songMasterViewControllerDelegate:(SongMasterViewController *)sender choseSong:(NSURL *)song
+- (void)songMasterViewControllerDelegate:(SongMasterViewController *)sender choseSong:(Song *)song
 {
-    [self parseSongFromUrl:song];
+    self.song = song;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

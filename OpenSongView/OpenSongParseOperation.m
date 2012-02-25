@@ -43,7 +43,8 @@ NSString *kSongErrorKey = @"SongErrorKey";
 }
 
 // the main function for this NSOperation, to start the parsing
-- (void)main {
+- (void)main 
+{
     self.currentSongObject = [[Song alloc] init];
     self.currentParsedCharacterData = [NSMutableString string];
     
@@ -77,9 +78,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 #pragma mark -
 #pragma mark NSXMLParser delegate methods
 
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
-    NSLog(@"Parsed Song");
-
+- (void)parserDidEndDocument:(NSXMLParser *)parser
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:kSongSuccessNotif
                                                         object:self
                                                       userInfo:[NSDictionary dictionaryWithObject:currentSongObject
@@ -89,8 +89,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict {
-
+    attributes:(NSDictionary *)attributeDict 
+{
     if ([elementName isEqualToString:kTitleElementName] ||
         [elementName isEqualToString:kAuthorElementName] ||
         [elementName isEqualToString:kLyricsElementName]) {
@@ -105,7 +105,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName {     
+ qualifiedName:(NSString *)qName 
+{
     if ([elementName isEqualToString:kTitleElementName]) {
         currentSongObject.title = [self.currentParsedCharacterData copy];
     } else if ([elementName isEqualToString:kAuthorElementName]) {
@@ -121,7 +122,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 // The parser is not guaranteed to deliver all of the parsed character data for an element in a single
 // invocation, so it is necessary to accumulate character data until the end of the element is reached.
 //
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
     if (accumulatingParsedCharacterData) {
         // If the current element is one whose content we care about, append 'string'
         // to the property that holds the content of the current element.
@@ -133,7 +135,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 // an error occurred while parsing the Song data,
 // post the error as an NSNotification to our app delegate.
 // 
-- (void)handleSongsError:(NSError *)parseError {
+- (void)handleSongsError:(NSError *)parseError
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:kSongErrorNotif
                                                         object:self
                                                       userInfo:[NSDictionary dictionaryWithObject:parseError
@@ -144,7 +147,8 @@ static NSString * const kLyricsElementName = @"lyrics";
 // pass the error to the main thread for handling.
 // (note: don't report an error if we aborted the parse due to a max limit of Songs)
 //
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
+{
     if ([parseError code] != NSXMLParserDelegateAbortedParseError) {
         [self performSelectorOnMainThread:@selector(handleSongsError:)
                                withObject:parseError

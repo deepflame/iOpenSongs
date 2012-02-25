@@ -19,7 +19,7 @@
 @end
 
 
-@interface SongMasterViewController : TrackedUITableViewController <UISplitViewControllerDelegate>
+@interface SongMasterViewController : TrackedUITableViewController <UISplitViewControllerDelegate, NSXMLParserDelegate>
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
 - (IBAction)refreshList:(id)sender;
 @end

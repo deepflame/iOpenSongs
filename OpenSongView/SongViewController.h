@@ -13,11 +13,8 @@
 #import "SplitViewBarButtonItemPresenter.h"
 
 // public interface
-@interface SongViewController : TrackedUIViewController <NSXMLParserDelegate, SplitViewBarButtonItemPresenter>
+@interface SongViewController : TrackedUIViewController <SplitViewBarButtonItemPresenter>
 
-@property (strong, nonatomic) Song *song;
-
-- (void)parseSongData:(NSData *)songData;
-- (void)parseSongFromUrl:(NSURL *)songFileUrl;
+@property (nonatomic, copy) Song *song;
 
 @end

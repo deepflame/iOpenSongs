@@ -9,6 +9,8 @@
 #import "SongMasterViewController.h"
 #import "SplitViewBarButtonItemPresenter.h"
 
+#import "OpenSongParseOperation.h"
+
 @interface SongMasterViewController () <UISearchBarDelegate>
 
 @property (strong, nonatomic) NSMutableArray *allTableData;
@@ -76,6 +78,15 @@
 
     // Do any additional setup after loading the view, typically from a nib.
     [self reloadFiles];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(songParseCallback:)
+                                                 name:kSongSuccessNotif
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(songParseErrback:)
+                                                 name:kSongErrorNotif
+                                               object:nil];
 }
 
 - (void)viewDidUnload
@@ -169,7 +180,7 @@
     
     // setting the song url
     if ([self splitViewSongViewController]) {
-        [[self splitViewSongViewController] parseSongFromUrl:fileUrl];
+        [self parseSongFromUrl:fileUrl];
     } else {
         [self.delegate songMasterViewControllerDelegate:self choseSong:fileUrl];
     }
@@ -253,6 +264,46 @@
 {
 #pragma unused(sender)
     [self reloadFiles];
+}
+
+
+
+#pragma mark -
+#pragma mark OpenSong File Parsing
+
+- (void)parseSongFromUrl:(NSURL *)songFileUrl
+{    
+    NSData *songData = [[NSData alloc] initWithContentsOfURL:songFileUrl];
+    OpenSongParseOperation *parseOperation = [[OpenSongParseOperation alloc] initWithData:songData];
+    
+    //TODO: this should run on a different thread
+    [parseOperation start];
+}
+
+- (void)songParseCallback:(NSNotification *)notif {
+    assert([NSThread isMainThread]);
+    [self splitViewSongViewController].song = [[notif userInfo] valueForKey:kSongSuccessKey];
+}
+
+- (void)songParseErrback:(NSNotification *)notif {
+    assert([NSThread isMainThread]);
+    
+    [self handleError:[[notif userInfo] valueForKey:kSongErrorKey]];
+}
+
+#pragma mark -
+
+- (void)handleError:(NSError *)error {
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView = 
+    [[UIAlertView alloc] initWithTitle:
+     NSLocalizedString(@"Error Title",
+                       @"Title for alert displayed when download or parse error occurs.")
+                               message:errorMessage
+                              delegate:nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+    [alertView show];
 }
 
 @end
