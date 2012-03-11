@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1170" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="aka" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="capo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="capo_print" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="ccli" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="copyright" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key_line" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presentation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="style_background" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_sig" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user3" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Song" positionX="808" positionY="1875" width="128" height="315"/>
+    </elements>
+</model>

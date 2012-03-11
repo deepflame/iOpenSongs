@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "SongViewController.h"
-#import "EasyTracker.h"
+#import "CoreDataTableViewController.h"
 
 @class SongMasterViewController;
 
 @protocol SongMasterViewControllerDelegate <NSObject>
 @optional
 - (void) songMasterViewControllerDelegate:(SongMasterViewController *)sender 
-                                choseSong:(NSURL *)song;
+                                choseSong:(Song *)song;
 @end
 
 
-@interface SongMasterViewController : TrackedUITableViewController <UISplitViewControllerDelegate, NSXMLParserDelegate>
+@interface SongMasterViewController : CoreDataTableViewController <UISplitViewControllerDelegate>
+
+@property (nonatomic, strong) UIManagedDocument *songDatabase;  // Model is a Core Data database of songs
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
+
 - (IBAction)refreshList:(id)sender;
 @end

@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
+		3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5014F9F03100926A74 /* CoreData.framework */; };
+		3E120C5314F9F04000926A74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5214F9F04000926A74 /* MobileCoreServices.framework */; };
+		3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5414F9F04B00926A74 /* Security.framework */; };
+		3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5614F9F05700926A74 /* SystemConfiguration.framework */; };
+		3E120C5914F9F06200926A74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5814F9F06200926A74 /* QuartzCore.framework */; };
+		3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5A14F9F07000926A74 /* libxml2.dylib */; };
+		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3E120C6B14FA287400926A74 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6A14FA287400926A74 /* Song.m */; };
+		3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */; };
 		3E13C2C614EF322D00F59505 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13C2C514EF322D00F59505 /* iPhone.storyboard */; };
 		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
 		3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */; };
@@ -35,15 +45,69 @@
 		3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* AppDelegate.m */; };
 		3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* SongViewController.m */; };
-		3EDDA43814AEE6EF00BB781C /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43714AEE6EF00BB781C /* Song.m */; };
 		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E120C4514F9EF2000926A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		3E120C4714F9EF2000926A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		3E120C4914F9EF2000926A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		3E120C4B14F9EF2000926A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		3E120C4D14F9EFC000926A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
+		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
 		3E120C3514F9203900926A74 /* NSString+JavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaScript.m"; sourceTree = "<group>"; };
+		3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		3E120C5014F9F03100926A74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3E120C5214F9F04000926A74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3E120C5414F9F04B00926A74 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3E120C5614F9F05700926A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E120C5814F9F06200926A74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E120C5A14F9F07000926A74 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOpenSongs.xcdatamodel; sourceTree = "<group>"; };
+		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
+		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
+		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
+		3E120C6914FA287400926A74 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		3E120C6A14FA287400926A74 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		3E13C2C514EF322D00F59505 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		3E355B8714F1E29900E49942 /* EasyTracker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EasyTracker.plist; sourceTree = "<group>"; };
 		3E355B8A14F1E2B700E49942 /* EasyTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyTracker.h; sourceTree = "<group>"; };
@@ -81,8 +145,6 @@
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3EDDA41714AEC3A400BB781C /* SongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
-		3EDDA43614AEE6EF00BB781C /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		3EDDA43714AEE6EF00BB781C /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
 		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
@@ -97,6 +159,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */,
+				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
+				3E120C5914F9F06200926A74 /* QuartzCore.framework in Frameworks */,
+				3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */,
+				3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */,
+				3E120C5314F9F04000926A74 /* MobileCoreServices.framework in Frameworks */,
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
 				3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +178,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E120C3C14F9EF2000926A74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E120C4614F9EF2000926A74 /* libRestKit.a */,
+				3E120C4814F9EF2000926A74 /* RestKitTests.octest */,
+				3E120C4A14F9EF2000926A74 /* RestKit.framework */,
+				3E120C4C14F9EF2000926A74 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E120C5C14F9F0CA00926A74 /* RestKit */ = {
+			isa = PBXGroup;
+			children = (
+				3E120C5D14F9F0D900926A74 /* Frameworks */,
+				3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */,
+			);
+			name = RestKit;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3E120C5D14F9F0D900926A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E120C5A14F9F07000926A74 /* libxml2.dylib */,
+				3E120C5814F9F06200926A74 /* QuartzCore.framework */,
+				3E120C5614F9F05700926A74 /* SystemConfiguration.framework */,
+				3E120C5414F9F04B00926A74 /* Security.framework */,
+				3E120C5214F9F04000926A74 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E120C5E14F9F16300926A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E120C6714FA276700926A74 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				3E120C6814FA27B900926A74 /* RKParser.h */,
+				3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */,
+				3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
 		3E5E878914DE6166003B645A /* HTML */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +256,7 @@
 		3EACA53114F14D7C00519ADC /* Google Analytics SDK */ = {
 			isa = PBXGroup;
 			children = (
+				3E120C5E14F9F16300926A74 /* Frameworks */,
 				3E355B8714F1E29900E49942 /* EasyTracker.plist */,
 				3E355B8A14F1E2B700E49942 /* EasyTracker.h */,
 				3E355B8B14F1E2B700E49942 /* EasyTracker.m */,
@@ -167,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				3E355B8F14F1EC7100E49942 /* CFNetwork.framework */,
-				3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */,
+				3E120C5014F9F03100926A74 /* CoreData.framework */,
 				3E586F1714E3389600345743 /* MessageUI.framework */,
 				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
 				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
@@ -180,11 +300,14 @@
 			isa = PBXGroup;
 			children = (
 				3EACA53114F14D7C00519ADC /* Google Analytics SDK */,
+				3E120C5C14F9F0CA00926A74 /* RestKit */,
 				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
 				3E13C2C514EF322D00F59505 /* iPhone.storyboard */,
 				3EFBED3814DF7ADD008EF01D /* Model */,
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
 				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
+				3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */,
+				3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */,
 				3ECD824614EF8AD400BB8DCE /* SplitViewBarButtonItemPresenter.h */,
 				3EDDA47814B098F700BB781C /* SongMasterViewController.h */,
 				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
@@ -221,8 +344,12 @@
 		3EFBED3814DF7ADD008EF01D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3EDDA43714AEE6EF00BB781C /* Song.m */,
-				3EDDA43614AEE6EF00BB781C /* Song.h */,
+				3E120C6714FA276700926A74 /* Parsers */,
+				3E120C6914FA287400926A74 /* Song.h */,
+				3E120C6A14FA287400926A74 /* Song.m */,
+				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
+				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
+				3E120C3114F91DD400926A74 /* Song+OpenSong.m */,
 				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
 				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
 			);
@@ -243,6 +370,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3E120C4E14F9EFC000926A74 /* PBXTargetDependency */,
 			);
 			name = iOpenSongs;
 			productName = OpenSongView;
@@ -268,12 +396,49 @@
 			mainGroup = 3EDDA3F314AEC3A300BB781C;
 			productRefGroup = 3EDDA3FF14AEC3A400BB781C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3E120C3C14F9EF2000926A74 /* Products */;
+					ProjectRef = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3EDDA3FD14AEC3A400BB781C /* iOpenSongs */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3E120C4614F9EF2000926A74 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 3E120C4514F9EF2000926A74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3E120C4814F9EF2000926A74 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 3E120C4714F9EF2000926A74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3E120C4A14F9EF2000926A74 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 3E120C4914F9EF2000926A74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3E120C4C14F9EF2000926A74 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 3E120C4B14F9EF2000926A74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3EDDA3FC14AEC3A400BB781C /* Resources */ = {
@@ -305,20 +470,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */,
 				3EDDA40F14AEC3A400BB781C /* main.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */,
+				3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */,
+				3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */,
-				3EDDA43814AEE6EF00BB781C /* Song.m in Sources */,
 				3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */,
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
+				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
 				3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */,
+				3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */,
+				3E120C6B14FA287400926A74 /* Song.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E120C4E14F9EFC000926A74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 3E120C4D14F9EFC000926A74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */ = {
@@ -454,6 +630,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */,
+			);
+			currentVersion = 3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */;
+			path = iOpenSongs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3EDDA3F514AEC3A300BB781C /* Project object */;
 }

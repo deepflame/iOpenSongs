@@ -10,42 +10,149 @@
 #import "SplitViewBarButtonItemPresenter.h"
 
 #import "OpenSongParseOperation.h"
+#import "Song+OpenSong.h"
 
 @interface SongMasterViewController () <UISearchBarDelegate>
-
-@property (strong, nonatomic) NSMutableArray *allTableData;
-@property (strong, nonatomic) NSMutableArray *filteredTableData;
-@property (nonatomic) BOOL isFiltered;
-
 - (NSString *)applicationDocumentsDirectory;
-- (void)reloadFiles;
+@property (nonatomic) BOOL isFiltered;
 @end
 
 
 @implementation SongMasterViewController
 
-@synthesize allTableData = _allTableData;
-@synthesize filteredTableData = _filteredTableData;
+@synthesize songDatabase = _songDatabase;
 @synthesize isFiltered = _isFiltered;
-
 @synthesize delegate = _delegate;
 
 
-- (NSURL *) songAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray *)openSongInfos
 {
-    if (self.isFiltered) {
-        return (NSURL *) [self.filteredTableData objectAtIndex:indexPath.row];
+    NSMutableArray *infos = [[NSArray array] mutableCopy];
+    
+    NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
+    NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
+    
+    for (NSString* curFileName in [documentsDirectoryContents objectEnumerator]) {
+        NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:curFileName];
+        NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+        
+        BOOL isDirectory;
+        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+        
+        // proceed to add the document URL to our list (ignore the "Inbox" folder)
+        if (!(isDirectory && [curFileName isEqualToString: @"Inbox"])) {
+            NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+            if (info) {
+                [infos addObject:info];
+            }
+        }
     }
-    return (NSURL *) [self.allTableData objectAtIndex:indexPath.row];
+    
+    // add a demo file if nothing is present
+    if ([infos count] == 0) {
+        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+        NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+        if (info) {
+            [infos addObject:info];
+        }
+    }
+    return infos;
 }
 
--(NSArray *)allTableData
+// 4. Stub this out (we didn't implement it at first)
+// 13. Create an NSFetchRequest to get all Photographers and hook it up to our table via an NSFetchedResultsController
+// (we inherited the code to integrate with NSFRC from CoreDataTableViewController)
+
+- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
-    if(!_allTableData) {
-        _allTableData = [NSMutableArray array];
-    }
-    return _allTableData;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    // no predicate because we want ALL the Photographers
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.songDatabase.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
 }
+
+// 5. Create a Q to fetch Flickr photo information to seed the database
+// 6. Take a timeout from this and go create the database model (Photomania.xcdatamodeld)
+// 7. Create custom subclasses for Photo and Photographer
+// 8. Create a category on Photo (Photo+Flickr) to add a "factory" method to create a Photo
+// (go to Photo+Flickr for next step)
+// 12. Use the Photo+Flickr category method to add Photos to the database (table will auto update due to NSFRC)
+
+- (void)importSongFilesIntoDocument:(UIManagedDocument *)document
+{
+    dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
+    dispatch_async(importQ, ^{
+        NSArray *songInfos = [self openSongInfos];
+        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+            for (NSDictionary *info in songInfos) {
+                NSLog(@"%@", info);
+                [Song songWithOpenSongInfo:info inManagedObjectContext:document.managedObjectContext];
+                // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
+            }
+            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+            // because if we quit the app before autosave happens, then it'll come up blank next time we run
+            // this is what it would look like (ADDED AFTER LECTURE) ...
+            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+            // note that we don't do anything in the completion handler this time
+        }];
+    });
+    dispatch_release(importQ);
+}
+
+// 3. Open or create the document here and call setupFetchedResultsController
+
+- (void)useDocument
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.songDatabase.fileURL path]]) {
+        // does not exist on disk, so create it
+        [self.songDatabase saveToURL:self.songDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            [self setupFetchedResultsController];
+            //[self importSongFilesIntoDocument:self.songDatabase];
+        }];
+    } else if (self.songDatabase.documentState == UIDocumentStateClosed) {
+        // exists on disk, but we need to open it
+        [self.songDatabase openWithCompletionHandler:^(BOOL success) {
+            [self setupFetchedResultsController];
+        }];
+    } else if (self.songDatabase.documentState == UIDocumentStateNormal) {
+        // already open and ready to use
+        [self setupFetchedResultsController];
+    }
+}
+
+// 2. Make the photoDatabase's setter start using it
+
+- (void)setSongDatabase:(UIManagedDocument *)songDatabase
+{
+    if (_songDatabase != songDatabase) {
+        _songDatabase = songDatabase;
+        [self useDocument];
+    }
+}
+
+// 0. Create full storyboard and drag in CDTVC.[mh], FlickrFetcher.[mh] and ImageViewController.[mh]
+// (0.5 would probably be "add a UIManagedDocument, photoDatabase, as this Controller's Model)
+// 1. Add code to viewWillAppear: to create a default document (for demo purposes)
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (!self.songDatabase) {  // for demo purposes, we'll create a default database if none is set
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        url = [url URLByAppendingPathComponent:@"Default Song Database"];
+        // url is now "<Documents Directory>/Default Photo Database"
+        UIManagedDocument *doc = [[UIManagedDocument alloc] initWithFileURL:url];
+        self.songDatabase = doc; // setter will create this for us on disk
+    }
+}
+
+// -------------
 
 - (SongViewController *)splitViewSongViewController
 {
@@ -63,38 +170,13 @@
 
 #pragma mark - View lifecycle
 
-- (void)awakeFromNib 
+- (void)viewDidLoad 
 {
-    [super awakeFromNib];
+    [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     
     self.splitViewController.delegate = self; // always try to be the split view's delegate
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Do any additional setup after loading the view, typically from a nib.
-    [self reloadFiles];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(songParseCallback:)
-                                                 name:kSongSuccessNotif
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(songParseErrback:)
-                                                 name:kSongErrorNotif
-                                               object:nil];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    self.allTableData = nil;
-    self.filteredTableData = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -147,14 +229,6 @@
 #pragma mark -
 #pragma mark UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if(self.isFiltered) {
-        return self.filteredTableData.count;        
-    }
-    return self.allTableData.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Song Cell";
@@ -165,8 +239,8 @@
                                       reuseIdentifier:CellIdentifier];
     }
 
-    NSURL *fileUrl = [self songAtIndexPath:indexPath];
-    cell.textLabel.text = fileUrl.lastPathComponent;
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = song.title;
     
     return cell;
 }
@@ -176,13 +250,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *fileUrl = [self songAtIndexPath:indexPath];
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // setting the song url
     if ([self splitViewSongViewController]) {
-        [self parseSongFromUrl:fileUrl];
+        [self splitViewSongViewController].song = song;
     } else {
-        [self.delegate songMasterViewControllerDelegate:self choseSong:fileUrl];
+        [self.delegate songMasterViewControllerDelegate:self choseSong:song];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -196,16 +270,6 @@
         self.isFiltered = NO;
     } else {
         self.isFiltered = YES;
-        self.filteredTableData = [[NSMutableArray alloc] init];
-        
-        for (NSURL *fileURL in self.allTableData) {
-            NSRange nameRange = [fileURL.lastPathComponent rangeOfString:text options:NSCaseInsensitiveSearch];
-            //NSRange descriptionRange = [fileURL.description rangeOfString:text options:NSCaseInsensitiveSearch];
-            //if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
-            if(nameRange.location != NSNotFound) {
-                [self.filteredTableData addObject:fileURL];
-            }
-        }
     }
     
     [self.tableView reloadData];
@@ -221,74 +285,21 @@
     [self.tableView reloadData];
 }
 
-#pragma mark -
-#pragma mark File system support
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    //TODO dismiss searchbar when first responder is dismissed
+}
 
 - (NSString *)applicationDocumentsDirectory
 {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-- (void)reloadFiles
-{
-	[self.allTableData removeAllObjects];    // clear out the old docs and start over
-	
-	NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
-	
-	NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
-    
-	for (NSString* curFileName in [documentsDirectoryContents objectEnumerator]) {
-		NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:curFileName];
-		NSURL *fileURL = [NSURL fileURLWithPath:filePath];
-		
-		BOOL isDirectory;
-        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
-		
-        // proceed to add the document URL to our list (ignore the "Inbox" folder)
-        if (!(isDirectory && [curFileName isEqualToString: @"Inbox"])) {
-            [self.allTableData addObject:fileURL];
-        }
-	}
-    
-    // add a demo file if nothing is present
-    if ([self.allTableData count] == 0) {
-        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
-        [self.allTableData addObject:fileURL];
-    }
-    
-	[self.tableView reloadData];
-}
-
 - (IBAction)refreshList:(id)sender 
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-    [self reloadFiles];
-}
-
-
-
-#pragma mark -
-#pragma mark OpenSong File Parsing
-
-- (void)parseSongFromUrl:(NSURL *)songFileUrl
-{    
-    NSData *songData = [[NSData alloc] initWithContentsOfURL:songFileUrl];
-    OpenSongParseOperation *parseOperation = [[OpenSongParseOperation alloc] initWithData:songData];
-    
-    //TODO: this should run on a different thread
-    [parseOperation start];
-}
-
-- (void)songParseCallback:(NSNotification *)notif {
-    assert([NSThread isMainThread]);
-    [self splitViewSongViewController].song = [[notif userInfo] valueForKey:kSongSuccessKey];
-}
-
-- (void)songParseErrback:(NSNotification *)notif {
-    assert([NSThread isMainThread]);
-    
-    [self handleError:[[notif userInfo] valueForKey:kSongErrorKey]];
+    [self importSongFilesIntoDocument:self.songDatabase];
 }
 
 #pragma mark -
