@@ -1,9 +1,9 @@
 //
 //  MasterViewController.h
-//  OpenSongMasterDetail
+//  iOpenSongs
 //
 //  Created by Andreas Böhrnsen on 1/1/12.
-//  Copyright (c) 2012 Open iT Norge AS. All rights reserved.
+//  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
