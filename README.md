@@ -12,6 +12,15 @@ This project aims to implement a native iPad application that can read and manag
 >   
 > [Download](http://opensong.org/d/downloads) the full application for free and give it a try!
 
+## Screenshots / More Infos
+
+Visit the [AppStore site](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8) for screenshots and more info on the current release.
+
+## License
+
+Currently all rights are reserved but it will be changed to GPL 2.0 soon.
+
 ---
 
-### iOpenSongs will be soon available on the AppStore…
+## Download
+iOpenSongs is available on the Appstore for **FREE** [-> **here** <-](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8)
