@@ -38,7 +38,7 @@
     for (NSString* key in info) {
         id value = [info objectForKey:key];
         
-        // get setter for attribute
+        // get setter selector for attribute
         NSString* attrSetter = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
         attrSetter = [NSString stringWithFormat:@"set%@:", attrSetter];
         SEL attr = NSSelectorFromString(attrSetter);
