@@ -7,15 +7,16 @@
 //
 
 #import "Song+OpenSong.h"
-//#import "RKXMLParserLibXML.h"
+#import "RKXMLParserLibXML.h"
 
 @implementation Song (OpenSong)
 
 + (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl
 {
-    //RKXMLParserLibXML *parser = [[RKXMLParserLibXML alloc] init];
     NSString *xmlString = [NSString stringWithContentsOfURL:fileUrl encoding:NSASCIIStringEncoding error:nil];
-    id result = nil;//[parser objectFromString:xmlString error:nil];
+
+    RKXMLParserLibXML *parser = [[RKXMLParserLibXML alloc] init];
+    id result = [parser objectFromString:xmlString error:nil];
     
     NSDictionary *info = nil;
     
@@ -30,8 +31,34 @@
 + (Song *) songWithOpenSongInfo:(NSDictionary *)info
          inManagedObjectContext:(NSManagedObjectContext *)context
 {
+
     Song *song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:context];
-    song.title = (NSString *)[info objectForKey:@"title"];
+
+
+    for (NSString* key in info) {
+        id value = [info objectForKey:key];
+        
+        // get setter for attribute
+        NSString* attrSetter = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
+        attrSetter = [NSString stringWithFormat:@"set%@:", attrSetter];
+        SEL attr = NSSelectorFromString(attrSetter);
+        
+        // prepare the value
+        NSString *stringVal = @"";
+        if ([value isKindOfClass:NSString.class]) {
+            stringVal = (NSString *)value;
+        }
+        
+        if ([song respondsToSelector:attr]) {
+            [song performSelector:attr withObject:stringVal];
+        } else {
+            NSLog(@"Song attr not found: %@", key);
+        }
+    }
+
+//song.capo = (NSString *)[info objectForKey:@"capo"];
+//@property (nonatomic, retain) NSNumber * capo_print;
+//@property (nonatomic, retain) NSData * style_background;
     return song;
 }
 
