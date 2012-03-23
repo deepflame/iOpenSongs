@@ -40,7 +40,7 @@
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
         
         // proceed to add the document URL to our list (ignore the "Inbox" folder)
-        if (!(isDirectory && [curFileName isEqualToString: @"Inbox"])) {
+        if (!(isDirectory && [curFileName isEqualToString:@"Inbox"])) {
             NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
             if (info) {
                 [infos addObject:info];
@@ -112,7 +112,7 @@
         // does not exist on disk, so create it
         [self.songDatabase saveToURL:self.songDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             [self setupFetchedResultsController];
-            //[self importSongFilesIntoDocument:self.songDatabase];
+            [self importSongFilesIntoDocument:self.songDatabase];
         }];
     } else if (self.songDatabase.documentState == UIDocumentStateClosed) {
         // exists on disk, but we need to open it
@@ -144,7 +144,7 @@
     [super viewWillAppear:animated];
     
     if (!self.songDatabase) {  // for demo purposes, we'll create a default database if none is set
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"Default Song Database"];
         // url is now "<Documents Directory>/Default Photo Database"
         UIManagedDocument *doc = [[UIManagedDocument alloc] initWithFileURL:url];
@@ -235,12 +235,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
     }
 
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = song.title;
+    cell.detailTextLabel.text = song.author;
     
     return cell;
 }
@@ -299,7 +300,8 @@
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-    [self importSongFilesIntoDocument:self.songDatabase];
+    [[NSFileManager defaultManager] removeItemAtURL:self.songDatabase.fileURL error:nil];
+    [self useDocument];
 }
 
 #pragma mark -
