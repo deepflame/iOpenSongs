@@ -37,6 +37,7 @@
 		3E5E8F1914C2BAD500D62BC3 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E8F1814C2BAD500D62BC3 /* opensong.css */; };
 		3E663A8C14B80BCF009F1340 /* DemoFile in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8B14B80BCF009F1340 /* DemoFile */; };
 		3E663A8F14B836CD009F1340 /* SongTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* SongTemplate.html */; };
+		3E7D1CF5151C4B58003B34F3 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C4614F9EF2000926A74 /* libRestKit.a */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */; };
@@ -160,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */,
-				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
 				3E120C5914F9F06200926A74 /* QuartzCore.framework in Frameworks */,
 				3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */,
 				3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */,
@@ -170,7 +170,9 @@
 				3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */,
 				3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */,
 				3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */,
+				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
 				3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */,
+				3E7D1CF5151C4B58003B34F3 /* libRestKit.a in Frameworks */,
 				3E355B8E14F1EC3C00E49942 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +575,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andreas Boehrnsen (43KPWYDDYQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -583,6 +586,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6369156E-3BDD-4DDE-B506-202F6A01F422";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -594,6 +598,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -604,6 +609,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
