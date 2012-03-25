@@ -10,10 +10,9 @@
 #import "EasyTracker.h"
 
 #import "Song.h"
-#import "SplitViewBarButtonItemPresenter.h"
 
 // public interface
-@interface SongViewController : TrackedUIViewController <SplitViewBarButtonItemPresenter>
+@interface SongViewController : TrackedUIViewController
 
 @property (nonatomic, copy) Song *song;
 

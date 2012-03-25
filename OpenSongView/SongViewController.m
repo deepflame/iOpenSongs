@@ -37,21 +37,7 @@
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize song = _song;
-@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;   // implementation of SplitViewBarButtonItemPresenter protocol
 
-
-- (void)handleSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
-{
-    self.navigationItem.leftBarButtonItem = splitViewBarButtonItem;
-    _splitViewBarButtonItem = splitViewBarButtonItem;
-}
-
-- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
-{
-    if (splitViewBarButtonItem != _splitViewBarButtonItem) {
-        [self handleSplitViewBarButtonItem:splitViewBarButtonItem];
-    }
-}
 
 #pragma mark - Managing the song
 
@@ -110,12 +96,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     songWebView.delegate = self;
-    
+
     [self loadHtmlTemplate];
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-       [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
-    }
 }
 
 - (void)viewDidUnload
@@ -203,8 +185,6 @@
         
         etvCon.nightModeEnabled = self.nightMode;
         etvCon.delegate = self;        
-    } else if ([segue.identifier isEqualToString:@"Show Song List"]) {
-        [segue.destinationViewController setDelegate:self];
     }
 }
 

@@ -19,7 +19,7 @@
 @end
 
 
-@interface SongMasterViewController : CoreDataTableViewController <UISplitViewControllerDelegate>
+@interface SongMasterViewController : CoreDataTableViewController
 
 @property (nonatomic, strong) UIManagedDocument *songDatabase;  // Model is a Core Data database of songs
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;

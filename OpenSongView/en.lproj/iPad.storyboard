@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="zfM-uO-gv8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="oUV-Z6-IpS">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
@@ -12,14 +11,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zh-Fu-gjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aCn-16-UXf" customClass="SongMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8I6-QZ-ctS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="660"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="744"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Songs" id="eZk-hF-qEy">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" placeholder="Search Songs" id="eZk-hF-qEy">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="aCn-16-UXf" id="xbw-ZE-cti"/>
@@ -82,7 +81,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="285" y="-1799"/>
+            <point key="canvasLocation" x="269" y="-1751"/>
         </scene>
         <!--Song View Controller - iOpenSongs-->
         <scene sceneID="ARQ-P1-L4D">
@@ -90,18 +89,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jl-Jt-EOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hse-Mc-r8g" customClass="SongViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8E-Zy-h7q">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" id="WHM-Zb-nV3">
-                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="iOpenSongs" id="mdL-Kq-vMc">
                         <barButtonItem key="leftBarButtonItem" title="Songs" id="83r-mf-Pgr"/>
@@ -128,10 +126,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-aM-9aM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Options" id="tx8-p9-wf2" customClass="ExtrasTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="J8V-v3-yqn">
-                        <rect key="frame" x="0.0" y="44" width="320" height="724"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <sections>
                             <tableViewSection headerTitle="Options" id="eCR-9G-Ccu">
                                 <cells>
@@ -254,7 +251,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2333" y="-750"/>
+            <point key="canvasLocation" x="2157" y="-358"/>
         </scene>
         <!--Html View Controller - HTML-->
         <scene sceneID="OQ8-qE-RCp">
@@ -262,17 +259,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGy-Ys-Nhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="X59-S6-FzC" customClass="HtmlViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZLs-x1-TsW">
-                        <rect key="frame" x="0.0" y="44" width="320" height="724"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="EFS-Sz-zwt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="808"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="HTML" id="Ox7-2L-Asl"/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
@@ -281,19 +277,20 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2843" y="-750"/>
+            <point key="canvasLocation" x="2667" y="-358"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="BDo-Ky-lZx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsb-ip-O1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="SKH-Iw-Dtd" userLabel="Main Navigation Controller" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main Navigation Controller" id="SKH-Iw-Dtd" userLabel="Main Navigation Controller" sceneMemberID="viewController">
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rfw-qk-Ycj">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JMb-kA-7fI">
-                        <rect key="frame" x="0.0" y="724" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="808" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
                     </toolbar>
@@ -302,29 +299,27 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-205" y="-1799"/>
+            <point key="canvasLocation" x="-337" y="-1751"/>
         </scene>
-        <!--Split View Controller-->
-        <scene sceneID="RA3-Go-LHR">
+        <!--Reveal Sidebar Controller-->
+        <scene sceneID="D6P-9D-xiy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dFH-d7-BjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <splitViewController id="zfM-uO-gv8" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <connections>
-                        <segue destination="SKH-Iw-Dtd" kind="relationship" relationship="masterViewController" id="LQT-6v-VTT"/>
-                        <segue destination="iJ5-mZ-1Ue" kind="relationship" relationship="detailViewController" id="z1K-Du-c8f"/>
-                    </connections>
-                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQr-Mc-4pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="oUV-Z6-IpS" customClass="RevealSidebarController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k81-W0-tCF">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="-1449" y="-1328"/>
+            <point key="canvasLocation" x="-1329" y="-1270"/>
         </scene>
-        <!--Detail Navigation-->
+        <!--Detail Navigation Controller-->
         <scene sceneID="68a-6x-kkc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVX-8Z-6vs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="iJ5-mZ-1Ue" userLabel="Detail Navigation" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Detail Navigation Controller" definesPresentationContext="YES" id="iJ5-mZ-1Ue" userLabel="Detail Navigation Controller" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VcW-aI-AlI">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.3333333432674408" green="0.039215687662363052" blue="0.32549020648002625" alpha="1" colorSpace="deviceRGB"/>
@@ -338,7 +333,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-205" y="-750"/>
+            <point key="canvasLocation" x="-349" y="-742"/>
         </scene>
         <!--Extras Navigation Controller-->
         <scene sceneID="EyR-RX-Ttl">
@@ -358,9 +353,51 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1795" y="-750"/>
+            <point key="canvasLocation" x="1619" y="-358"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="DDMenuController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DDMenuController.h"/>
+        </class>
+        <class className="ExtrasTableViewController" superclassName="TrackedUITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExtrasTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nightModeSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="HtmlViewController" superclassName="TrackedUIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HtmlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="RevealSidebarController" superclassName="DDMenuController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
+        </class>
+        <class className="SongMasterViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshList:"/>
+            </relationships>
+        </class>
+        <class className="SongViewController" superclassName="TrackedUIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="extrasBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="songWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="TrackedUITableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUITableViewController.h"/>
+        </class>
+        <class className="TrackedUIViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUIViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

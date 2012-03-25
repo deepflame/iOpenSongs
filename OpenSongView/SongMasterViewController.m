@@ -7,10 +7,11 @@
 //
 
 #import "SongMasterViewController.h"
-#import "SplitViewBarButtonItemPresenter.h"
 
 #import "OpenSongParseOperation.h"
 #import "Song+OpenSong.h"
+
+#import "RevealSidebarController.h"
 
 @interface SongMasterViewController () <UISearchBarDelegate>
 - (NSString *)applicationDocumentsDirectory;
@@ -154,9 +155,9 @@
 
 // -------------
 
-- (SongViewController *)splitViewSongViewController
+- (SongViewController *)songDetailViewController
 {
-    id svc = [self.splitViewController.viewControllers lastObject];
+    id svc = [self.revealSidebarController rootViewController];
     
     if ([svc isKindOfClass:[UINavigationController class]]) {
         svc = ((UINavigationController *) svc).topViewController;
@@ -175,55 +176,12 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    
-    self.splitViewController.delegate = self; // always try to be the split view's delegate
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return YES;
-}
-
-
-#pragma mark UISplitViewControllerDelegate
-
-// helper method for the delegate
-- (id <SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter
-{
-    id detailVC = [self.splitViewController.viewControllers lastObject];
-    
-    if ([detailVC isKindOfClass:[UINavigationController class]]) {
-        detailVC = ((UINavigationController *) detailVC).topViewController;
-    }
-    
-    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) {
-        detailVC = nil;
-    }
-    return detailVC;
-}
-
-- (BOOL)splitViewController:(UISplitViewController *)svc
-   shouldHideViewController:(UIViewController *)vc
-              inOrientation:(UIInterfaceOrientation)orientation
-{
-    return [self splitViewBarButtonItemPresenter] ? UIInterfaceOrientationIsPortrait(orientation) : NO;
-}
-
-- (void)splitViewController:(UISplitViewController *)svc
-     willHideViewController:(UIViewController *)aViewController
-          withBarButtonItem:(UIBarButtonItem *)barButtonItem
-       forPopoverController:(UIPopoverController *)pc
-{
-    barButtonItem.title = @"Songs";
-    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
-}
-
-- (void)splitViewController:(UISplitViewController *)svc
-     willShowViewController:(UIViewController *)aViewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
 }
 
 #pragma mark -
@@ -254,8 +212,8 @@
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // setting the song url
-    if ([self splitViewSongViewController]) {
-        [self splitViewSongViewController].song = song;
+    if ([self songDetailViewController]) {
+        [self songDetailViewController].song = song;
     } else {
         [self.delegate songMasterViewControllerDelegate:self choseSong:song];
     }
