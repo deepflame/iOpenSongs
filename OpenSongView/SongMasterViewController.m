@@ -15,14 +15,12 @@
 
 @interface SongMasterViewController () <UISearchBarDelegate>
 - (NSString *)applicationDocumentsDirectory;
-@property (nonatomic) BOOL isFiltered;
 @end
 
 
 @implementation SongMasterViewController
 
 @synthesize songDatabase = _songDatabase;
-@synthesize isFiltered = _isFiltered;
 @synthesize delegate = _delegate;
 
 
@@ -68,7 +66,7 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    // no predicate because we want ALL the Photographers
+    // no predicate because we want ALL the Songs
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.songDatabase.managedObjectContext
@@ -225,10 +223,20 @@
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
-    if(text.length == 0) {
-        self.isFiltered = NO;
+    // We use an NSPredicate combined with the fetchedResultsController to perform the search
+    if (text.length == 0) {
+        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"];
+        [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     } else {
-        self.isFiltered = YES;
+        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"title contains[cd] %@", text];
+        [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+    }
+    
+    NSError *error = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Handle error
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        exit(-1);  // Fail
     }
     
     [self.tableView reloadData];
@@ -240,7 +248,10 @@
     // after view reappears with filtered data
     // -> better workaround?
     searchBar.text = @"";
-    self.isFiltered = NO;
+    
+    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"];
+    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+    
     [self.tableView reloadData];
 }
 
