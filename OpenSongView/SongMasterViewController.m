@@ -221,14 +221,20 @@
 
 #pragma mark UISearchBarDelegate
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
+-(void)filterSongs:(UISearchBar*)searchBar
+{    
     // We use an NSPredicate combined with the fetchedResultsController to perform the search
-    if (text.length == 0) {
+    if (searchBar.text.length == 0) {
         NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"];
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     } else {
-        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"title contains[cd] %@", text];
+        NSPredicate *predicate = nil;
+        // 0 is title, 1 author
+        if (searchBar.selectedScopeButtonIndex == 0) {
+            predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@", searchBar.text];
+        } else {
+            predicate = [NSPredicate predicateWithFormat:@"author contains[cd] %@", searchBar.text];
+        }
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     }
     
@@ -242,17 +248,21 @@
     [self.tableView reloadData];
 }
 
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    [self filterSongs:searchBar];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    searchBar.text = @"";
+    [self filterSongs:searchBar];
+}
+
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    // need this to make cancel button work properly
-    // after view reappears with filtered data
-    // -> better workaround?
     searchBar.text = @"";
-    
-    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"];
-    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
-    
-    [self.tableView reloadData];
+    [self filterSongs:searchBar];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
