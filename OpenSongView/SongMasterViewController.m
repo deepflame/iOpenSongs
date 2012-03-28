@@ -88,7 +88,6 @@
         NSArray *songInfos = [self openSongInfos];
         [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
             for (NSDictionary *info in songInfos) {
-                NSLog(@"%@", info);
                 [Song songWithOpenSongInfo:info inManagedObjectContext:document.managedObjectContext];
                 // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
             }
@@ -101,6 +100,23 @@
         }];
     });
     dispatch_release(importQ);
+}
+
+-(void)deleteAllSongsFromDocument:(UIManagedDocument *)document
+{
+    NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
+    [allSongs setEntity:[NSEntityDescription entityForName:@"Song" inManagedObjectContext:document.managedObjectContext]];
+    [allSongs setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError *error = nil;
+    NSArray *songs = [document.managedObjectContext executeFetchRequest:allSongs error:&error];
+    //error handling goes here
+    for (NSManagedObject* song in songs) {
+        [document.managedObjectContext deleteObject:song];
+    }
+    NSError *saveError = nil;
+    [document.managedObjectContext save:&saveError];
+    //more error handling here
 }
 
 // 3. Open or create the document here and call setupFetchedResultsController
@@ -279,8 +295,9 @@
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-    [[NSFileManager defaultManager] removeItemAtURL:self.songDatabase.fileURL error:nil];
-    [self useDocument];
+
+    [self deleteAllSongsFromDocument:self.songDatabase];
+    [self importSongFilesIntoDocument:self.songDatabase];
 }
 
 #pragma mark -
