@@ -41,7 +41,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     // TODO: select based on title
-    if (indexPath.section == 2 && indexPath.row == 0 && [MFMailComposeViewController canSendMail]) {
+    if (indexPath.section == 1 && indexPath.row == 0 && [MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
         [mailViewController setSubject:@"[iOpenSongs] Feedback"];
