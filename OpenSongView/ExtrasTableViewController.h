@@ -22,6 +22,5 @@
 
 
 @interface ExtrasTableViewController : TrackedUITableViewController
-@property (nonatomic) BOOL nightModeEnabled;
 @property (nonatomic, weak) id <ExtrasTableViewControllerDelegate> delegate;
 @end

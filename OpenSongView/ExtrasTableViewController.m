@@ -11,30 +11,24 @@
 #import <MessageUI/MessageUI.h>
 
 @interface ExtrasTableViewController () <MFMailComposeViewControllerDelegate>
-{
-    IBOutlet UISwitch *nightModeSwitch;
-}
 
 @end
 
 
 @implementation ExtrasTableViewController
 
-@synthesize nightModeEnabled = _nightModeEnabled;
 @synthesize delegate = _delegate;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidUnload
 {
-    nightModeSwitch = nil;
     [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    nightModeSwitch.on = self.nightModeEnabled;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -80,13 +74,5 @@
         htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
     }
 }
-
-#pragma mark - IBActions
-
-- (IBAction)nightMode:(UISwitch *)sender {
-    self.nightModeEnabled = sender.on;
-    [self.delegate extrasTableViewControllerDelegate:self changedNightMode:self.nightModeEnabled];
-}
-
 
 @end

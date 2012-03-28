@@ -25,8 +25,6 @@
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 
-@property (nonatomic) BOOL nightMode;
-
 - (void)displaySong;
 - (void)loadHtmlTemplate;
 @end
@@ -74,6 +72,8 @@
     [songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
+// ---
+
 - (void)setNightMode:(BOOL)state
 {
     if (state == YES) {
@@ -86,6 +86,93 @@
 - (BOOL)nightMode
 {
     return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
+}
+
+-(void)setHeaderVisible:(BOOL)headerVisible
+{
+    if (headerVisible) {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').show();"];
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').hide();"];
+    }
+}
+
+-(BOOL)headerVisible
+{
+    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').is(':visible');"] isEqualToString:@"true"];
+}
+
+-(void)setChordsVisible:(BOOL)chordsVisible
+{
+    if (chordsVisible) {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').show();"];
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').hide();"];
+    }
+}
+
+-(BOOL)chordsVisible
+{
+    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').is(':visible');"] isEqualToString:@"true"];
+}
+
+-(void)setLyricsVisible:(BOOL)lyricsVisible
+{
+    if (lyricsVisible) {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').show();"];
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').hide();"];
+    }
+}
+
+-(BOOL)lyricsVisible
+{
+    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').is(':visible');"] isEqualToString:@"true"];
+}
+
+-(void)setHeaderSize:(int)headerSize
+{
+    NSString *js = [NSString stringWithFormat:@"$('body .opensong h2').css('font-size', '%dpx');", headerSize];
+    [songWebView stringByEvaluatingJavaScriptFromString:js];
+}
+
+-(int)headerSize
+{
+    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').css('font-size');"];
+    if (fontSize.length) {
+        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
+    }
+    return -1;
+}
+
+-(void)setChordsSize:(int)chordsSize
+{
+    NSString *js = [NSString stringWithFormat:@"$('body .opensong .chords').css('font-size', '%dpx');", chordsSize];
+    [songWebView stringByEvaluatingJavaScriptFromString:js];
+}
+
+-(int)chordsSize
+{
+    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').css('font-size');"];
+    if (fontSize.length) {
+        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
+    }
+    return -1;
+}
+
+-(void)setLyricsSize:(int)lyricsSize
+{
+    NSString *js = [NSString stringWithFormat:@"$('body .opensong .lyrics').css('font-size', '%dpx');", lyricsSize];
+    [songWebView stringByEvaluatingJavaScriptFromString:js];
+}
+
+-(int)lyricsSize
+{
+    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').css('font-size');"];
+    if (fontSize.length) {
+        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
+    }
+    return -1;
 }
 
 #pragma mark - UIView (view lifecycle)
@@ -183,7 +270,6 @@
             etvCon = (ExtrasTableViewController *) segue.destinationViewController;
         }
         
-        etvCon.nightModeEnabled = self.nightMode;
         etvCon.delegate = self;        
     }
 }

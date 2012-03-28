@@ -19,8 +19,8 @@
 -(void)viewDidLoad
 {
     self.rootViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail Navigation Controller"];
-    self.leftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Main Navigation Controller"];
-    
+    self.leftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Sidebar"];
+        
     self.rootViewController.revealSidebarController = self;
     self.leftViewController.revealSidebarController = self;    
     
@@ -43,6 +43,10 @@ static const char* revealSidebarControllerKey = "RevealSidebarViewController";
 
 - (RevealSidebarController*)revealSidebarController {
     id result = [self revealSidebarController_core];
+
+    if (!result && self.tabBarController) 
+        result = [self.tabBarController revealSidebarController];
+    
     if (!result && self.navigationController) 
         result = [self.navigationController revealSidebarController];
     

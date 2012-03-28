@@ -15,5 +15,14 @@
 @interface SongViewController : TrackedUIViewController
 
 @property (nonatomic, copy) Song *song;
+@property (nonatomic) BOOL nightMode;
+
+@property (nonatomic) BOOL headerVisible;
+@property (nonatomic) BOOL chordsVisible;
+@property (nonatomic) BOOL lyricsVisible;
+
+@property (nonatomic) int headerSize;
+@property (nonatomic) int chordsSize;
+@property (nonatomic) int lyricsSize;
 
 @end
