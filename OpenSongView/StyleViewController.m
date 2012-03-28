@@ -70,7 +70,7 @@
 
 - (SongViewController *)songViewController
 {
-    id svc = [self.revealSidebarController rootViewController];
+    id svc = [self.slidingViewController topViewController];
     
     if ([svc isKindOfClass:[UINavigationController class]]) {
         svc = ((UINavigationController *) svc).topViewController;

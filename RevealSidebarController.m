@@ -7,7 +7,6 @@
 //
 
 #import "RevealSidebarController.h"
-#import <objc/runtime.h>
 
 @interface RevealSidebarController ()
 
@@ -15,46 +14,35 @@
 
 @implementation RevealSidebarController
 
-//-(void)viewWillAppear:(BOOL)animated
 -(void)viewDidLoad
 {
-    self.rootViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail Navigation Controller"];
-    self.leftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Sidebar"];
-        
-    self.rootViewController.revealSidebarController = self;
-    self.leftViewController.revealSidebarController = self;    
-    
     [super viewDidLoad];
+
+    self.topViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail Navigation Controller"];
+    self.underLeftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Sidebar"];
+
+    self.anchorRightRevealAmount = 320.0;
+    self.underLeftWidthLayout = ECFixedRevealWidth;
 }
 
-@end
-
-
-
-@implementation UIViewController (UIViewRevealSidebarItem) 
-
-@dynamic revealSidebarController;
-
-static const char* revealSidebarControllerKey = "RevealSidebarViewController";
-
-- (RevealSidebarController*)revealSidebarController_core {
-    return objc_getAssociatedObject(self, revealSidebarControllerKey);
-}
-
-- (RevealSidebarController*)revealSidebarController {
-    id result = [self revealSidebarController_core];
-
-    if (!result && self.tabBarController) 
-        result = [self.tabBarController revealSidebarController];
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    if (!result && self.navigationController) 
-        result = [self.navigationController revealSidebarController];
+    UIView *topView = self.topViewController.view;
+    topView.layer.shadowOffset = CGSizeZero;
+    topView.layer.shadowOpacity = 0.75f;
+    topView.layer.shadowRadius = 10.0f;
+    topView.layer.shadowColor = [UIColor blackColor].CGColor;
+    topView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
+    topView.clipsToBounds = NO;
     
-    return result;
+    [self.topViewController.view addGestureRecognizer:self.panGesture];
 }
-
-- (void)setRevealSidebarController:(RevealSidebarController*)revealSidebarController {
-    objc_setAssociatedObject(self, revealSidebarControllerKey, revealSidebarController, OBJC_ASSOCIATION_RETAIN);
+    
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation 
+{
+    return [self.topViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 
 @end

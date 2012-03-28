@@ -11,6 +11,7 @@
 #import "Song.h"
 
 #import "SongMasterViewController.h"
+#import "RevealSidebarController.h"
 #import "ExtrasTableViewController.h"
 
 #pragma mark SongViewController () 
@@ -250,6 +251,9 @@
     } else {
         [self performSegueWithIdentifier:@"Show Extras Popup" sender:self];
     }
+}
+- (IBAction)revealSideMenu:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 #pragma mark - Segues

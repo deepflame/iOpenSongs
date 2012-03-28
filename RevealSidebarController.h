@@ -7,16 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DDMenuController.h"
+#import "ECSlidingViewController.h"
 
-@interface RevealSidebarController : DDMenuController
-
-@end
-
-// category on UIViewController to provide access to the RevealSidebarViewController in the 
-// contained viewcontrollers, a la UINavigationController.
-@interface UIViewController (UIViewRevealSidebarItem) 
-
-@property(nonatomic ,retain) RevealSidebarController *revealSidebarController; 
+@interface RevealSidebarController : ECSlidingViewController
 
 @end

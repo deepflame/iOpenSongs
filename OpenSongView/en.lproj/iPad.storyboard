@@ -270,7 +270,11 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="iOpenSongs" id="mdL-Kq-vMc">
-                        <barButtonItem key="leftBarButtonItem" title="Songs" id="83r-mf-Pgr"/>
+                        <barButtonItem key="leftBarButtonItem" image="nav_menu_icon.png" id="83r-mf-Pgr">
+                            <connections>
+                                <action selector="revealSideMenu:" destination="hse-Mc-r8g" id="muC-uF-vjg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="?" id="gBf-ZS-KCG">
                             <connections>
                                 <action selector="showExtrasPopup:" destination="hse-Mc-r8g" id="8iI-Yq-Kra"/>
@@ -534,13 +538,14 @@
     <resources>
         <image name="glyphicons_017_music.png" width="21" height="25"/>
         <image name="glyphicons_023_cogwheels.png" width="26" height="26"/>
+        <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
     <classes>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
         </class>
-        <class className="DDMenuController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DDMenuController.h"/>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
         </class>
         <class className="ExtrasTableViewController" superclassName="TrackedUITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExtrasTableViewController.h"/>
@@ -551,7 +556,7 @@
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
-        <class className="RevealSidebarController" superclassName="DDMenuController">
+        <class className="RevealSidebarController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
         </class>
         <class className="SongMasterViewController" superclassName="CoreDataTableViewController">
