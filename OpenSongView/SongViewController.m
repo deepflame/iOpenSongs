@@ -23,7 +23,6 @@
     IBOutlet UIBarButtonItem *extrasBarButtonItem;
 }
 
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 @property (strong, nonatomic) NSMutableDictionary *songStyle;
 
@@ -36,7 +35,6 @@
 
 @implementation SongViewController
 
-@synthesize masterPopoverController = _masterPopoverController;
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize songStyle =_songStyle;
 @synthesize song = _song;
@@ -52,8 +50,6 @@
         // Update the view.
         [self displaySong];
     }
-    
-    [self.masterPopoverController dismissPopoverAnimated:YES];
 }
 
 - (void)displaySong 
@@ -61,7 +57,7 @@
     if (self.song) {
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
         [songWebView stringByEvaluatingJavaScriptFromString:jsString];
-        self.navigationItem.title = self.song.title; 
+        self.navigationItem.title = self.song.title;
         
         // reset style
         [self setSongStyle:self.songStyle];
@@ -242,7 +238,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     songWebView.delegate = self;
-
+    
     [self loadHtmlTemplate];
 }
 
@@ -281,7 +277,8 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
- navigationType:(UIWebViewNavigationType)navigationType {
+ navigationType:(UIWebViewNavigationType)navigationType 
+{
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         [[UIApplication sharedApplication] openURL:[request URL]];
         return NO;
@@ -289,7 +286,7 @@
     return YES;
 }
 
-# pragma mark - IBActions
+#pragma mark - IBActions
 
 - (IBAction)showExtrasPopup:(UIBarButtonItem *)sender 
 {
@@ -299,7 +296,8 @@
         [self performSegueWithIdentifier:@"Show Extras Popup" sender:self];
     }
 }
-- (IBAction)revealSideMenu:(id)sender {
+- (IBAction)revealSideMenu:(id)sender 
+{
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
