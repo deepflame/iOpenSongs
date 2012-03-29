@@ -20,9 +20,11 @@
 @property (nonatomic) BOOL headerVisible;
 @property (nonatomic) BOOL chordsVisible;
 @property (nonatomic) BOOL lyricsVisible;
+@property (nonatomic) BOOL commentsVisible;
 
 @property (nonatomic) int headerSize;
 @property (nonatomic) int chordsSize;
 @property (nonatomic) int lyricsSize;
+@property (nonatomic) int commentsSize;
 
 @end

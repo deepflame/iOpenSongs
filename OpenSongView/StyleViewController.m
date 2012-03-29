@@ -17,9 +17,11 @@
     IBOutlet UISwitch *headerVisibleSwitch;
     IBOutlet UISwitch *chordsVisibleSwitch;
     IBOutlet UISwitch *lyricsVisibleSwitch;
+    IBOutlet UISwitch *commentsVisibleSwitch;
     __weak IBOutlet UISlider *headerSizeSlider;
     __weak IBOutlet UISlider *chordsSizeSlider;
     __weak IBOutlet UISlider *lyricsSizeSlider;
+    __weak IBOutlet UISlider *commentsSizeSlider;
 }
 
 @end
@@ -45,19 +47,23 @@
     headerVisibleSwitch.enabled = songAvailable;
     chordsVisibleSwitch.enabled = songAvailable;
     lyricsVisibleSwitch.enabled = songAvailable;
+    commentsVisibleSwitch.enabled = songAvailable;
     
     headerSizeSlider.enabled = songAvailable;
     chordsSizeSlider.enabled = songAvailable;
-    lyricsSizeSlider.enabled = songAvailable;  
+    lyricsSizeSlider.enabled = songAvailable;
+    commentsSizeSlider.enabled = songAvailable;
     
     if (songAvailable) {
         headerVisibleSwitch.on = [[self songViewController] headerVisible];
         chordsVisibleSwitch.on = [[self songViewController] chordsVisible];
         lyricsVisibleSwitch.on = [[self songViewController] lyricsVisible];
+        commentsVisibleSwitch.on = [[self songViewController] commentsVisible];
         
         headerSizeSlider.value = [[self songViewController] headerSize];
         chordsSizeSlider.value = [[self songViewController] chordsSize];
         lyricsSizeSlider.value = [[self songViewController] lyricsSize];
+        commentsSizeSlider.value = [[self songViewController] commentsSize];
     }
 }
 
@@ -102,6 +108,10 @@
 {
     [[self songViewController] setLyricsVisible:sender.on];
 }
+- (IBAction)commentsVisible:(UISwitch *)sender 
+{
+    [[self songViewController]setCommentsVisible:sender.on];
+}
 
 - (IBAction)headerSize:(UISlider *)sender 
 {
@@ -115,6 +125,10 @@
 {
     [[self songViewController] setLyricsSize:sender.value];    
 }
+- (IBAction)commentsSize:(UISlider *)sender 
+{
+    [[self songViewController] setCommentsSize:sender.value];
+}
 
 - (void)viewDidUnload {
     headerVisibleSwitch = nil;
@@ -123,6 +137,8 @@
     headerSizeSlider = nil;
     chordsSizeSlider = nil;
     lyricsSizeSlider = nil;
+    commentsSizeSlider = nil;
+    commentsVisibleSwitch = nil;
     [super viewDidUnload];
 }
 @end

@@ -153,6 +153,16 @@
     return [self styleVisibleForKey:@"lyricsVisible"];
 }
 
+-(void)setCommentsVisible:(BOOL)commentsVisible
+{
+    [self setStyleVisible:commentsVisible forKey:@"commentsVisible" withCSSSelector:@"body .opensong .comments"];
+}
+
+-(BOOL)commentsVisible
+{
+    return [self styleVisibleForKey:@"commentsVisible"];
+}
+
 // -- Song Style: Size
 
 
@@ -213,6 +223,16 @@
     return [self styleSizeForKey:@"lyricsSize" withCSSSelector:@"body .opensong .lyrics" defaultsTo:16];
 }
 
+- (void)setCommentsSize:(int)commentsSize
+{
+    [self setStyleSize:commentsSize forKey:@"commentsSize" withCSSSelector:@"body .opensong .comments"];
+}
+
+- (int)commentsSize
+{
+    return [self styleSizeForKey:@"commentsSize" withCSSSelector:@"body .opensong .comments" defaultsTo:10];
+}
+
 - (void) setSongStyle:(NSMutableDictionary *)songStyle
 {
     if (songStyle) {
@@ -224,10 +244,12 @@
     self.headerVisible = self.headerVisible;
     self.chordsVisible = self.chordsVisible;
     self.lyricsVisible = self.lyricsVisible;
+    self.commentsVisible = self.commentsVisible;
     
     self.headerSize = self.headerSize;
     self.chordsSize = self.chordsSize;
     self.lyricsSize = self.lyricsSize;
+    self.commentsSize = self.commentsSize;
 }
 
 #pragma mark - UIView (view lifecycle)

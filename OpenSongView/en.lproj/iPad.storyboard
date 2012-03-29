@@ -128,10 +128,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="" id="TVO-Cb-NtF">
+                            <tableViewSection headerTitle="Song Style" id="TVO-Cb-NtF">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GsR-nS-D87">
-                                        <rect key="frame" x="0.0" y="76" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -164,7 +164,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lxv-FH-mQk">
-                                        <rect key="frame" x="0.0" y="121" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="145" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -197,7 +197,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cX3-Ne-IaM">
-                                        <rect key="frame" x="0.0" y="165" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="189" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -229,6 +229,39 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gAn-iA-rs6">
+                                        <rect key="frame" x="0.0" y="233" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="wKx-yh-vKZ">
+                                                    <rect key="frame" x="214" y="8" width="79" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="commentsVisible:" destination="aGl-9b-cjr" eventType="valueChanged" id="RML-2h-i65"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comment" lineBreakMode="tailTruncation" minimumFontSize="10" id="Sqy-f9-bLG">
+                                                    <rect key="frame" x="11" y="11" width="114" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="8" maxValue="32" id="2w3-Kw-dzd">
+                                                    <rect key="frame" x="90" y="11" width="118" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="commentsSize:" destination="aGl-9b-cjr" eventType="valueChanged" id="crn-2d-w4X"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -241,6 +274,8 @@
                     <connections>
                         <outlet property="chordsSizeSlider" destination="dIg-TY-d7W" id="Wz7-i5-aIX"/>
                         <outlet property="chordsVisibleSwitch" destination="MBb-yQ-xAk" id="TCE-it-QXc"/>
+                        <outlet property="commentsSizeSlider" destination="2w3-Kw-dzd" id="udh-Lg-iEX"/>
+                        <outlet property="commentsVisibleSwitch" destination="wKx-yh-vKZ" id="jnL-8v-a7p"/>
                         <outlet property="headerSizeSlider" destination="nUr-1b-GgB" id="1vw-aD-L5u"/>
                         <outlet property="headerVisibleSwitch" destination="Iy5-Rp-pSQ" id="8mW-D1-euR"/>
                         <outlet property="lyricsSizeSlider" destination="gPh-k3-Z8y" id="FGz-pY-na8"/>
@@ -577,6 +612,8 @@
             <relationships>
                 <relationship kind="outlet" name="chordsSizeSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="chordsVisibleSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="commentsSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="commentsVisibleSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="headerSizeSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="headerVisibleSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="lyricsSizeSlider" candidateClass="UISlider"/>
