@@ -105,6 +105,11 @@
 
 -(void)setStyleVisible:(BOOL)isVisible forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
 {
+    BOOL valueChanged = NO;
+    if (isVisible != [self styleVisibleForKey:key]) {
+        valueChanged = YES;
+    }
+    
     if (isVisible) {
         [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').show();", cssSel]];
     } else {
@@ -112,10 +117,12 @@
     }
     [self.songStyle setObject:[NSNumber numberWithBool:isVisible] forKey:key];
     
-    // save user defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
-    [defaults synchronize];
+    // save user defaults if changed
+    if (valueChanged) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+        [defaults synchronize];
+    }
 }
 
 -(BOOL)styleVisibleForKey:(NSString *)key
@@ -169,17 +176,23 @@
 
 // -- Song Style: Size
 
-
 -(void)setStyleSize:(int)size forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
 {
+    BOOL valueChanged = NO;
+    if (size != [self styleSizeForKey:key defaultsTo:size]) {
+        valueChanged = YES;
+    }
+    
     NSString *js = [NSString stringWithFormat:@"$('%@').css('font-size', '%dpx');", cssSel, size];
     [songWebView stringByEvaluatingJavaScriptFromString:js];
     [self.songStyle setObject:[NSNumber numberWithInt:size] forKey:key];
     
-    // save user defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
-    [defaults synchronize];
+    // save user defaults if changed
+    if (valueChanged) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+        [defaults synchronize];
+    }
 }
 
 -(int)styleSizeForKey:(NSString *)key defaultsTo:(int)defaultSize
