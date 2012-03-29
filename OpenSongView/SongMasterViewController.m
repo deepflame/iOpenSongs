@@ -26,7 +26,8 @@
 
 - (NSArray *)openSongInfos
 {
-    NSMutableArray *infos = [[NSArray array] mutableCopy];
+    NSMutableArray *infos =[NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
     
     NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
     NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
@@ -39,12 +40,23 @@
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
         
         // proceed to add the document URL to our list (ignore the "Inbox" folder)
-        if (!(isDirectory && [curFileName isEqualToString:@"Inbox"])) {
+        if (!(isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"])) {
             NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
             if (info) {
                 [infos addObject:info];
+            } else {
+                [errors addObject:curFileName];
             }
         }
+    }
+    
+    // process errors
+    if (errors.count) {
+        NSString *fileList = [errors componentsJoinedByString:@"\n"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self handleError:[NSString stringWithFormat:@"%@\n\nMake sure the files are in the OpenSong format.", fileList] 
+                    withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
+        });
     }
     
     // add a demo file if nothing is present
@@ -302,16 +314,17 @@
 
 #pragma mark -
 
-- (void)handleError:(NSError *)error {
-    NSString *errorMessage = [error localizedDescription];
-    UIAlertView *alertView = 
-    [[UIAlertView alloc] initWithTitle:
-     NSLocalizedString(@"Error Title",
-                       @"Title for alert displayed when download or parse error occurs.")
-                               message:errorMessage
-                              delegate:nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
+- (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
+    if (!errorTitle) {
+        errorTitle = NSLocalizedString(@"Error Title",
+                                        @"Title for alert displayed when download or parse error occurs.");
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorTitle
+                                                        message:errorMessage
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
     [alertView show];
 }
 
