@@ -25,16 +25,20 @@
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
+@property (strong, nonatomic) NSMutableDictionary *songStyle;
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
 @end
 
+#define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
+#define USER_DEFAULTS_KEY_SONG_STYLE @"SongViewController.songStyle"
 
 @implementation SongViewController
 
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize extrasPopoverController = _extrasPopoverController;
+@synthesize songStyle =_songStyle;
 @synthesize song = _song;
 
 
@@ -58,6 +62,9 @@
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
         [songWebView stringByEvaluatingJavaScriptFromString:jsString];
         self.navigationItem.title = self.song.title; 
+        
+        // reset style
+        [self setSongStyle:self.songStyle];
     }
 }
 
@@ -82,6 +89,11 @@
     } else {
         [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
     }
+    
+    // save user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithBool:self.nightMode] forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
+    [defaults synchronize];
 }
 
 - (BOOL)nightMode
@@ -89,91 +101,137 @@
     return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
 }
 
+// -- Song Style: Visibiliy
+
+-(void)setStyleVisible:(BOOL)isVisible forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
+{
+    if (isVisible) {
+        [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').show();", cssSel]];
+    } else {
+        [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').hide();", cssSel]];
+    }
+    [self.songStyle setObject:[NSNumber numberWithBool:isVisible] forKey:key];
+    
+    // save user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+    [defaults synchronize];
+}
+
+-(BOOL)styleVisibleForKey:(NSString *)key
+{
+    NSNumber *isVisibleNum = [self.songStyle objectForKey:key];
+    if (isVisibleNum) {
+        return isVisibleNum.boolValue;
+    }
+    return YES; // visible by default
+}
+
 -(void)setHeaderVisible:(BOOL)headerVisible
 {
-    if (headerVisible) {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').show();"];
-    } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').hide();"];
-    }
+    [self setStyleVisible:headerVisible forKey:@"headerVisible" withCSSSelector:@"body .opensong h2"];
 }
 
 -(BOOL)headerVisible
 {
-    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').is(':visible');"] isEqualToString:@"true"];
+    return [self styleVisibleForKey:@"headerVisible"];
 }
 
 -(void)setChordsVisible:(BOOL)chordsVisible
 {
-    if (chordsVisible) {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').show();"];
-    } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').hide();"];
-    }
+    [self setStyleVisible:chordsVisible forKey:@"chordsVisible" withCSSSelector:@"body .opensong .chords"];
 }
 
 -(BOOL)chordsVisible
 {
-    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').is(':visible');"] isEqualToString:@"true"];
+    return [self styleVisibleForKey:@"chordsVisible"];
 }
 
 -(void)setLyricsVisible:(BOOL)lyricsVisible
 {
-    if (lyricsVisible) {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').show();"];
-    } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').hide();"];
-    }
+    [self setStyleVisible:lyricsVisible forKey:@"lyricsVisible" withCSSSelector:@"body .opensong .lyrics"];
 }
 
 -(BOOL)lyricsVisible
 {
-    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').is(':visible');"] isEqualToString:@"true"];
+    return [self styleVisibleForKey:@"lyricsVisible"];
+}
+
+// -- Song Style: Size
+
+
+-(void)setStyleSize:(int)size forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
+{
+    NSString *js = [NSString stringWithFormat:@"$('%@').css('font-size', '%dpx');", cssSel, size];
+    [songWebView stringByEvaluatingJavaScriptFromString:js];
+    [self.songStyle setObject:[NSNumber numberWithInt:size] forKey:key];
+    
+    // save user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+    [defaults synchronize];
+}
+
+-(int)styleSizeForKey:(NSString *)key withCSSSelector:(NSString *)cssSel defaultsTo:(int)defaultSize
+{
+    NSNumber *fontSizeNum = [self.songStyle objectForKey:key];
+    if (fontSizeNum) {
+        return fontSizeNum.intValue;
+    }
+    
+    NSString *fontSizeStr = [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').css('font-size');", cssSel]];
+    if (fontSizeStr.length) {
+        return [fontSizeStr substringToIndex:(fontSizeStr.length - 2)].intValue;
+    }
+    
+    return defaultSize;
 }
 
 -(void)setHeaderSize:(int)headerSize
 {
-    NSString *js = [NSString stringWithFormat:@"$('body .opensong h2').css('font-size', '%dpx');", headerSize];
-    [songWebView stringByEvaluatingJavaScriptFromString:js];
+    [self setStyleSize:headerSize forKey:@"headerSize" withCSSSelector:@"body .opensong h2"];
 }
 
 -(int)headerSize
 {
-    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong h2').css('font-size');"];
-    if (fontSize.length) {
-        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
+    return [self styleSizeForKey:@"headerSize" withCSSSelector:@"body .opensong h2" defaultsTo:24];
+}
+
+- (void)setChordsSize:(int)chordsSize
+{
+    [self setStyleSize:chordsSize forKey:@"chordsSize" withCSSSelector:@"body .opensong .chords"];
+}
+
+- (int)chordsSize
+{
+    return [self styleSizeForKey:@"chordsSize" withCSSSelector:@"body .opensong .chords" defaultsTo:16];
+}
+
+- (void)setLyricsSize:(int)lyricsSize
+{
+    [self setStyleSize:lyricsSize forKey:@"lyricsSize" withCSSSelector:@"body .opensong .lyrics"];
+}
+
+- (int)lyricsSize
+{
+    return [self styleSizeForKey:@"lyricsSize" withCSSSelector:@"body .opensong .lyrics" defaultsTo:16];
+}
+
+- (void) setSongStyle:(NSMutableDictionary *)songStyle
+{
+    if (songStyle) {
+        _songStyle = songStyle;
+    } else {
+        _songStyle = [[NSMutableDictionary alloc] init];
     }
-    return -1;
-}
-
--(void)setChordsSize:(int)chordsSize
-{
-    NSString *js = [NSString stringWithFormat:@"$('body .opensong .chords').css('font-size', '%dpx');", chordsSize];
-    [songWebView stringByEvaluatingJavaScriptFromString:js];
-}
-
--(int)chordsSize
-{
-    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .chords').css('font-size');"];
-    if (fontSize.length) {
-        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
-    }
-    return -1;
-}
-
--(void)setLyricsSize:(int)lyricsSize
-{
-    NSString *js = [NSString stringWithFormat:@"$('body .opensong .lyrics').css('font-size', '%dpx');", lyricsSize];
-    [songWebView stringByEvaluatingJavaScriptFromString:js];
-}
-
--(int)lyricsSize
-{
-    NSString *fontSize = [songWebView stringByEvaluatingJavaScriptFromString:@"$('body .opensong .lyrics').css('font-size');"];
-    if (fontSize.length) {
-        return [fontSize substringToIndex:(fontSize.length - 2)].intValue;
-    }
-    return -1;
+        
+    self.headerVisible = self.headerVisible;
+    self.chordsVisible = self.chordsVisible;
+    self.lyricsVisible = self.lyricsVisible;
+    
+    self.headerSize = self.headerSize;
+    self.chordsSize = self.chordsSize;
+    self.lyricsSize = self.lyricsSize;
 }
 
 #pragma mark - UIView (view lifecycle)
@@ -201,18 +259,6 @@
 
 #pragma mark - ExtrasTableViewControllerDelegate
 
-#define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
-
-- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender changedNightMode:(BOOL)state
-{
-    self.nightMode = state;
-    
-    // set user defaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithBool:state] forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
-    [defaults synchronize];
-}
-
 - (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
 {
     [self.extrasPopoverController dismissPopoverAnimated:animated];
@@ -226,11 +272,12 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-# pragma mark - UIWebViewDelegate
+#pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
+    self.songStyle = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_SONG_STYLE];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
