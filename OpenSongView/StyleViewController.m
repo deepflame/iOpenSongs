@@ -28,6 +28,19 @@
 
 @implementation StyleViewController
 
+- (void) initSongStyleValues
+{
+    headerVisibleSwitch.on = [[self songViewController] headerVisible];
+    chordsVisibleSwitch.on = [[self songViewController] chordsVisible];
+    lyricsVisibleSwitch.on = [[self songViewController] lyricsVisible];
+    commentsVisibleSwitch.on = [[self songViewController] commentsVisible];
+    
+    headerSizeSlider.value = [[self songViewController] headerSize];
+    chordsSizeSlider.value = [[self songViewController] chordsSize];
+    lyricsSizeSlider.value = [[self songViewController] lyricsSize];
+    commentsSizeSlider.value = [[self songViewController] commentsSize];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,34 +50,12 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     nightModeSwitch.on = [[self songViewController] nightMode];
 
-    BOOL songAvailable = ([[self songViewController] song] != nil);
-    
-    headerVisibleSwitch.enabled = songAvailable;
-    chordsVisibleSwitch.enabled = songAvailable;
-    lyricsVisibleSwitch.enabled = songAvailable;
-    commentsVisibleSwitch.enabled = songAvailable;
-    
-    headerSizeSlider.enabled = songAvailable;
-    chordsSizeSlider.enabled = songAvailable;
-    lyricsSizeSlider.enabled = songAvailable;
-    commentsSizeSlider.enabled = songAvailable;
-    
-    if (songAvailable) {
-        headerVisibleSwitch.on = [[self songViewController] headerVisible];
-        chordsVisibleSwitch.on = [[self songViewController] chordsVisible];
-        lyricsVisibleSwitch.on = [[self songViewController] lyricsVisible];
-        commentsVisibleSwitch.on = [[self songViewController] commentsVisible];
-        
-        headerSizeSlider.value = [[self songViewController] headerSize];
-        chordsSizeSlider.value = [[self songViewController] chordsSize];
-        lyricsSizeSlider.value = [[self songViewController] lyricsSize];
-        commentsSizeSlider.value = [[self songViewController] commentsSize];
-    }
+    [self initSongStyleValues];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -88,6 +79,17 @@
     return svc;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    // TODO: select based on title
+    if (indexPath.section == 1 && indexPath.row == ([self.tableView numberOfRowsInSection:1] - 1)) {
+        [[self songViewController] resetSongStyle];
+        [self initSongStyleValues];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - IBActions
 

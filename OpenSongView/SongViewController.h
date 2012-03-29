@@ -27,4 +27,6 @@
 @property (nonatomic) int lyricsSize;
 @property (nonatomic) int commentsSize;
 
+- (void)resetSongStyle;
+
 @end

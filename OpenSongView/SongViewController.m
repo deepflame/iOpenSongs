@@ -39,6 +39,10 @@
 @synthesize songStyle =_songStyle;
 @synthesize song = _song;
 
+- (void) resetSongStyle
+{
+    [self setSongStyle:nil];
+}
 
 #pragma mark - Managing the song
 
@@ -178,16 +182,11 @@
     [defaults synchronize];
 }
 
--(int)styleSizeForKey:(NSString *)key withCSSSelector:(NSString *)cssSel defaultsTo:(int)defaultSize
+-(int)styleSizeForKey:(NSString *)key defaultsTo:(int)defaultSize
 {
     NSNumber *fontSizeNum = [self.songStyle objectForKey:key];
     if (fontSizeNum) {
         return fontSizeNum.intValue;
-    }
-    
-    NSString *fontSizeStr = [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').css('font-size');", cssSel]];
-    if (fontSizeStr.length) {
-        return [fontSizeStr substringToIndex:(fontSizeStr.length - 2)].intValue;
     }
     
     return defaultSize;
@@ -200,7 +199,7 @@
 
 -(int)headerSize
 {
-    return [self styleSizeForKey:@"headerSize" withCSSSelector:@"body .opensong h2" defaultsTo:24];
+    return [self styleSizeForKey:@"headerSize" defaultsTo:24];
 }
 
 - (void)setChordsSize:(int)chordsSize
@@ -210,7 +209,7 @@
 
 - (int)chordsSize
 {
-    return [self styleSizeForKey:@"chordsSize" withCSSSelector:@"body .opensong .chords" defaultsTo:16];
+    return [self styleSizeForKey:@"chordsSize" defaultsTo:16];
 }
 
 - (void)setLyricsSize:(int)lyricsSize
@@ -220,7 +219,7 @@
 
 - (int)lyricsSize
 {
-    return [self styleSizeForKey:@"lyricsSize" withCSSSelector:@"body .opensong .lyrics" defaultsTo:16];
+    return [self styleSizeForKey:@"lyricsSize" defaultsTo:16];
 }
 
 - (void)setCommentsSize:(int)commentsSize
@@ -230,7 +229,7 @@
 
 - (int)commentsSize
 {
-    return [self styleSizeForKey:@"commentsSize" withCSSSelector:@"body .opensong .comments" defaultsTo:10];
+    return [self styleSizeForKey:@"commentsSize" defaultsTo:10];
 }
 
 - (void) setSongStyle:(NSMutableDictionary *)songStyle
