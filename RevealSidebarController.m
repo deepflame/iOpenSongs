@@ -31,8 +31,8 @@
     
     UIView *topView = self.topViewController.view;
     topView.layer.shadowOffset = CGSizeZero;
-    topView.layer.shadowOpacity = 0.75f;
-    topView.layer.shadowRadius = 10.0f;
+    topView.layer.shadowOpacity = 0.8f;
+    topView.layer.shadowRadius = 4.0f;
     topView.layer.shadowColor = [UIColor blackColor].CGColor;
     topView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
     topView.clipsToBounds = NO;
