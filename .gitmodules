@@ -1,6 +1,9 @@
-[submodule "RestKit"]
-	path = RestKit
-	url = git://github.com/RestKit/RestKit.git
-[submodule "opensong.js"]
-	path = opensong.js
+[submodule "Vendor/opensong.js"]
+	path = Vendor/opensong.js
 	url = git@github.com:aboehrnsen/opensong.js.git
+[submodule "Vendor/ECSlidingViewController"]
+	path = Vendor/ECSlidingViewController
+	url = https://github.com/edgecase/ECSlidingViewController.git
+[submodule "Vendor/RestKit"]
+	path = Vendor/RestKit
+	url = https://github.com/RestKit/RestKit.git
