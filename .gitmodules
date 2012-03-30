@@ -1,3 +1,6 @@
 [submodule "RestKit"]
 	path = RestKit
 	url = git://github.com/RestKit/RestKit.git
+[submodule "opensong.js"]
+	path = opensong.js
+	url = git@github.com:aboehrnsen/opensong.js.git
