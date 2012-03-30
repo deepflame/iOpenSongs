@@ -34,6 +34,7 @@
 {
     [super viewWillAppear:animated];
     
+    // draw shadow
     UIView *topView = self.topViewController.view;
     topView.layer.shadowOffset = CGSizeZero;
     topView.layer.shadowOpacity = 0.8f;

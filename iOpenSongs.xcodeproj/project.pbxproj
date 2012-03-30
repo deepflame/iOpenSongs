@@ -136,9 +136,9 @@
 		3E355B8B14F1E2B700E49942 /* EasyTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyTracker.m; sourceTree = "<group>"; };
 		3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3E355B8F14F1EC7100E49942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon57.png; path = ../ProgramIcon57.png; sourceTree = "<group>"; };
-		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealSidebarController.h; path = ../RevealSidebarController.h; sourceTree = "<group>"; };
-		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealSidebarController.m; path = ../RevealSidebarController.m; sourceTree = "<group>"; };
+		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
+		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
+		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealSidebarController.m; sourceTree = "<group>"; };
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E586F1714E3389600345743 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -172,7 +172,7 @@
 		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
 		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
 		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
-		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../ProgramIcon72.png; sourceTree = "<group>"; };
+		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
 		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
 		3EE891911521B4A6001DA59A /* glyphicons_169_albums@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_169_albums@2x.png"; path = "glyphicons/glyphicons_169_albums@2x.png"; sourceTree = SOURCE_ROOT; };
