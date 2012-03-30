@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Songs" id="eZk-hF-qEy">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Songs" showsScopeBar="YES" id="eZk-hF-qEy">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
                                 <string>Artist</string>
@@ -31,7 +31,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Song Cell" textLabel="KGf-T2-bS3" detailTextLabel="ZbF-Dz-9xs" style="IBUITableViewCellStyleSubtitle" id="OHB-ji-BbY">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -153,7 +153,7 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="8" maxValue="32" id="nUr-1b-GgB">
                                                     <rect key="frame" x="90" y="11" width="118" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="headerSize:" destination="aGl-9b-cjr" eventType="valueChanged" id="g9f-It-LQ4"/>
                                                     </connections>
@@ -186,7 +186,7 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="8" maxValue="32" id="dIg-TY-d7W">
                                                     <rect key="frame" x="90" y="11" width="118" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="chordsSize:" destination="aGl-9b-cjr" eventType="valueChanged" id="k6S-DY-W72"/>
                                                     </connections>
@@ -219,7 +219,7 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="8" maxValue="32" id="gPh-k3-Z8y">
                                                     <rect key="frame" x="90" y="11" width="118" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="lyricsSize:" destination="aGl-9b-cjr" eventType="valueChanged" id="BwI-Kl-eCH"/>
                                                     </connections>
@@ -252,7 +252,7 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="8" maxValue="32" id="2w3-Kw-dzd">
                                                     <rect key="frame" x="90" y="11" width="118" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="commentsSize:" destination="aGl-9b-cjr" eventType="valueChanged" id="crn-2d-w4X"/>
                                                     </connections>
@@ -336,7 +336,7 @@
                                 <action selector="revealSideMenu:" destination="hse-Mc-r8g" id="muC-uF-vjg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="?" id="gBf-ZS-KCG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="gBf-ZS-KCG">
                             <connections>
                                 <action selector="showExtrasPopup:" destination="hse-Mc-r8g" id="8iI-Yq-Kra"/>
                             </connections>
@@ -520,7 +520,7 @@
         <scene sceneID="68a-6x-kkc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVX-8Z-6vs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController storyboardIdentifier="Detail Navigation Controller" definesPresentationContext="YES" id="iJ5-mZ-1Ue" userLabel="Detail Navigation Controller" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TopView" definesPresentationContext="YES" id="iJ5-mZ-1Ue" userLabel="Detail Navigation Controller" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VcW-aI-AlI">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.3333333432674408" green="0.039215687662363052" blue="0.32549020648002625" alpha="1" colorSpace="deviceRGB"/>
@@ -601,59 +601,6 @@
         <image name="glyphicons_023_cogwheels.png" width="26" height="26"/>
         <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="ExtrasTableViewController" superclassName="TrackedUITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExtrasTableViewController.h"/>
-        </class>
-        <class className="HtmlViewController" superclassName="TrackedUIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HtmlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="RevealSidebarController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
-        </class>
-        <class className="SongMasterViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshList:"/>
-            </relationships>
-        </class>
-        <class className="SongViewController" superclassName="TrackedUIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="extrasBarButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="songWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="StyleViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StyleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chordsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="chordsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="commentsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="commentsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="headerSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="headerVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="lyricsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="lyricsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="nightModeSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="TrackedUITableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUITableViewController.h"/>
-        </class>
-        <class className="TrackedUIViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUIViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

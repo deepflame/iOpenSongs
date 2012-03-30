@@ -18,11 +18,16 @@
 {
     [super viewDidLoad];
 
-    self.topViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail Navigation Controller"];
+    self.topViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TopView"];
     self.underLeftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"Sidebar"];
 
-    self.anchorRightRevealAmount = 320.0;
-    self.underLeftWidthLayout = ECFixedRevealWidth;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.anchorRightRevealAmount = 305.0;
+        self.underLeftWidthLayout = ECFixedRevealWidth;
+    } else {
+        self.anchorRightRevealAmount = 320.0;
+        self.underLeftWidthLayout = ECFixedRevealWidth;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
