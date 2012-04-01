@@ -66,7 +66,7 @@
                             </tableViewSection>
                             <tableViewSection id="CqN-p9-OBJ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="2M7-bO-N2n" detailTextLabel="Z7F-ic-Ouu" style="IBUITableViewCellStyleValue1" id="rEd-qv-QAK">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Send Feedback Cell" textLabel="2M7-bO-N2n" detailTextLabel="Z7F-ic-Ouu" style="IBUITableViewCellStyleValue1" id="rEd-qv-QAK">
                                         <rect key="frame" x="0.0" y="156" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
