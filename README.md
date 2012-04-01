@@ -16,6 +16,16 @@ This project aims to implement a native iPad application that can read and manag
 
 Visit the [AppStore site](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8) for screenshots and more info on the current release.
 
+## Requirements
+
+Everything that is needed to compile the project is included, except the icon set.
+The icons used can be purchased here: http://glyphicons.com/
+
+You can also change the icons in your own project if you cannot build because of the missing icons.
+
+I will ask the author of the icons if it is ok to distribute them with the source files.
+Until then please buy them, they are really good.
+
 ## License
 
 Currently all rights are reserved but it will be changed to GPL 2.0 soon.
