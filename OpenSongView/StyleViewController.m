@@ -83,8 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    // TODO: select based on title
-    if (indexPath.section == 1 && indexPath.row == ([self.tableView numberOfRowsInSection:1] - 1)) {
+    if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Reset Style Cell"]) {
         [[self songViewController] resetSongStyle];
         [self initSongStyleValues];
     }
