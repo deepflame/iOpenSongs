@@ -10,6 +10,13 @@ body#help h1
     margin-bottom: 0.2em;
 }
 
+body#help h2
+{
+    font-size: 0.9em;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+}
+
 #intro h1
 {
   font-size: 1.4em;
