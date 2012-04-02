@@ -452,7 +452,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Support" id="Rcr-Pc-302"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2157" y="-358"/>
@@ -475,7 +475,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="HTML" id="Ox7-2L-Asl"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
                     <connections>
                         <outlet property="webView" destination="EFS-Sz-zwt" id="AVV-jn-xCO"/>
                     </connections>
@@ -546,7 +546,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-KH-EPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="CA6-Pj-qMW" userLabel="Extras Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eLl-o2-dap">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

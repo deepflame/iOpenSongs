@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Support" id="arm-WF-8Gd">
+                            <tableViewSection id="arm-WF-8Gd">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7em-eV-k3o" style="IBUITableViewCellStyleDefault" id="Kk2-eJ-zEw">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="XXu-qf-g5s" style="IBUITableViewCellStyleDefault" id="LFP-Jz-oDu">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -67,7 +67,7 @@
                             <tableViewSection id="CqN-p9-OBJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Send Feedback Cell" textLabel="2M7-bO-N2n" detailTextLabel="Z7F-ic-Ouu" style="IBUITableViewCellStyleValue1" id="rEd-qv-QAK">
-                                        <rect key="frame" x="0.0" y="156" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="120" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -100,7 +100,7 @@
                             <outlet property="delegate" destination="lwq-zh-b9m" id="yR9-X2-vaT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Extras" id="0DJ-FX-2Ro"/>
+                    <navigationItem key="navigationItem" title="Support" id="0DJ-FX-2Ro"/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
@@ -593,59 +593,6 @@
         <image name="glyphicons_023_cogwheels.png" width="26" height="26"/>
         <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="ExtrasTableViewController" superclassName="TrackedUITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExtrasTableViewController.h"/>
-        </class>
-        <class className="HtmlViewController" superclassName="TrackedUIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HtmlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="RevealSidebarController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
-        </class>
-        <class className="SongMasterViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshList:"/>
-            </relationships>
-        </class>
-        <class className="SongViewController" superclassName="TrackedUIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="extrasBarButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="songWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="StyleViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StyleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chordsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="chordsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="commentsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="commentsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="headerSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="headerVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="lyricsSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="lyricsVisibleSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="nightModeSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="TrackedUITableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUITableViewController.h"/>
-        </class>
-        <class className="TrackedUIViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUIViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
