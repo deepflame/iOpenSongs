@@ -12,6 +12,8 @@
 	<array>
 		<string>ProgramIcon72.png</string>
 		<string>ProgramIcon57.png</string>
+		<string>ProgramIcon114.png</string>
+		<string>ProgramIcon144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,6 +23,8 @@
 			<array>
 				<string>ProgramIcon72.png</string>
 				<string>ProgramIcon57.png</string>
+				<string>ProgramIcon114.png</string>
+				<string>ProgramIcon144.png</string>
 			</array>
 		</dict>
 	</dict>
