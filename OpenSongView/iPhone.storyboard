@@ -550,7 +550,7 @@
                                 <action selector="revealSideMenu:" destination="WEb-Q0-BWv" id="iSW-lt-VQB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Kv4-yV-BZU">
+                        <barButtonItem key="rightBarButtonItem" title="Support" id="Kv4-yV-BZU">
                             <connections>
                                 <action selector="showExtrasPopup:" destination="WEb-Q0-BWv" id="ocC-Qp-FwF"/>
                                 <segue destination="lwq-zh-b9m" kind="push" identifier="Show Extras Popup" id="3fZ-J2-lns"/>
