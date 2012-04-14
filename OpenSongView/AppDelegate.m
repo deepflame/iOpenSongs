@@ -17,6 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [TestFlight takeOff:@"0ed79e6c030b4c401ba59ea0a6bd9f7f_Nzc2OTIyMDEyLTA0LTA5IDAzOjA4OjEwLjA4OTA4Nw"];
     
     [EasyTracker launchWithOptions:launchOptions
                     withParameters:nil

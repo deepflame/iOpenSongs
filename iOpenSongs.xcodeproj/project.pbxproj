@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0AFE581533197D00B45224 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0AFE561533197D00B45224 /* libTestFlight.a */; };
+		3E0AFE5B15331A0000B45224 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0AFE5A15331A0000B45224 /* libz.dylib */; };
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5014F9F03100926A74 /* CoreData.framework */; };
@@ -94,6 +96,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
+		3E0AFE561533197D00B45224 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = ../Vendor/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
+		3E0AFE571533197D00B45224 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = ../Vendor/TestFlightSDK/TestFlight.h; sourceTree = "<group>"; };
+		3E0AFE5A15331A0000B45224 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0AFE5B15331A0000B45224 /* libz.dylib in Frameworks */,
 				3E35843B151E08C500137FC4 /* QuartzCore.framework in Frameworks */,
 				3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */,
 				3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */,
@@ -190,12 +197,31 @@
 				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
 				3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */,
 				3E355B8E14F1EC3C00E49942 /* libGoogleAnalytics.a in Frameworks */,
+				3E0AFE581533197D00B45224 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0AFE591533199000B45224 /* TestFlight SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3E0AFE5C15331A0800B45224 /* Frameworks */,
+				3E0AFE561533197D00B45224 /* libTestFlight.a */,
+				3E0AFE571533197D00B45224 /* TestFlight.h */,
+			);
+			name = "TestFlight SDK";
+			sourceTree = "<group>";
+		};
+		3E0AFE5C15331A0800B45224 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E0AFE5A15331A0000B45224 /* libz.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3E120C5C14F9F0CA00926A74 /* RestKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,8 +264,9 @@
 		3E35842F151D2FB900137FC4 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3ECF7F2415233FFF0061457B /* ECSlidingViewController */,
+				3E0AFE591533199000B45224 /* TestFlight SDK */,
 				3EACA53114F14D7C00519ADC /* Google Analytics SDK */,
+				3ECF7F2415233FFF0061457B /* ECSlidingViewController */,
 				3E120C5C14F9F0CA00926A74 /* RestKit */,
 				3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */,
 				3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */,
@@ -349,6 +376,7 @@
 		3EDDA40814AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXGroup;
 			children = (
+				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
 				3EE891AF1521BB50001DA59A /* Categories */,
 				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
 				3E13C2C514EF322D00F59505 /* iPhone.storyboard */,
@@ -662,6 +690,7 @@
 		3EDDA41D14AEC3A400BB781C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iOpenSongs.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andreas Boehrnsen (43KPWYDDYQ)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -677,6 +706,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6369156E-3BDD-4DDE-B506-202F6A01F422";
@@ -690,6 +720,7 @@
 		3EDDA41E14AEC3A400BB781C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iOpenSongs.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -705,6 +736,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
