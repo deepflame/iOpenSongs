@@ -24,6 +24,13 @@
         // ERROR
     } else {
         info = [((NSDictionary *)result) objectForKey:@"song"];
+        
+        // set file name as title if title empty
+        if (![[info objectForKey:@"title"] isKindOfClass:NSString.class]) {
+            NSString *fileName = [fileUrl lastPathComponent];
+            [info setValue:fileName forKey:@"title"];
+        }
+        
     }
     return info;
 }
