@@ -257,11 +257,13 @@
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     } else {
         NSPredicate *predicate = nil;
-        // 0 is title, 1 author
+        // 0 is title, 1 author, 2 lyrics
         if (searchBar.selectedScopeButtonIndex == 0) {
             predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@", searchBar.text];
-        } else {
+        } else if (searchBar.selectedScopeButtonIndex == 1) {
             predicate = [NSPredicate predicateWithFormat:@"author contains[cd] %@", searchBar.text];
+        } else {
+            predicate = [NSPredicate predicateWithFormat:@"lyrics contains[cd] %@", searchBar.text];
         }
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     }

@@ -3,7 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Extras Table View Controller - Options-->
@@ -167,6 +167,7 @@
                             <scopeButtonTitles>
                                 <string>Title</string>
                                 <string>Artist</string>
+                                <string>Lyrics</string>
                             </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="Tij-bj-9ef" id="hAu-bq-QMS"/>
