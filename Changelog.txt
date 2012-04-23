@@ -1,0 +1,3 @@
+- color chords (color picker would be nice in the future)
+- added "follow us on twitter" button
+- added version number to "About" button in support section
