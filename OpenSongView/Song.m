@@ -2,7 +2,7 @@
 //  Song.m
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 2/26/12.
+//  Created by Andreas Böhrnsen on 5/10/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
@@ -11,23 +11,24 @@
 
 @implementation Song
 
-@dynamic title;
-@dynamic author;
-@dynamic copyright;
-@dynamic presentation;
-@dynamic ccli;
-@dynamic lyrics;
-@dynamic capo;
-@dynamic key;
 @dynamic aka;
-@dynamic theme;
+@dynamic author;
+@dynamic capo;
 @dynamic capo_print;
+@dynamic ccli;
+@dynamic copyright;
+@dynamic hymn_number;
+@dynamic key;
 @dynamic key_line;
+@dynamic lyrics;
+@dynamic presentation;
+@dynamic style_background;
+@dynamic tempo;
+@dynamic theme;
+@dynamic time_sig;
+@dynamic title;
 @dynamic user1;
 @dynamic user2;
 @dynamic user3;
-@dynamic tempo;
-@dynamic time_sig;
-@dynamic style_background;
 
 @end

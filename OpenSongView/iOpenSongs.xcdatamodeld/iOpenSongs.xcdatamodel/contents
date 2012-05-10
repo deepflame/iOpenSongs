@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Set" representedClassName="Set" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
     <entity name="Song" representedClassName="Song" syncable="YES">
         <attribute name="aka" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,8 +29,14 @@
         <attribute name="user1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user3" optional="YES" attributeType="String" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="title"/>
+            </compoundIndex>
+        </compoundIndexes>
     </entity>
     <elements>
         <element name="Song" positionX="808" positionY="3177" width="128" height="315"/>
+        <element name="Set" positionX="1015" positionY="3177" width="128" height="75"/>
     </elements>
 </model>
