@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SongViewController.h"
-#import "CoreDataTableViewController.h"
+#import "UIManagedDocumentTableViewController.h"
 
 @class SongMasterViewController;
 
@@ -19,9 +19,8 @@
 @end
 
 
-@interface SongMasterViewController : CoreDataTableViewController
+@interface SongMasterViewController : UIManagedDocumentTableViewController
 
-@property (nonatomic, strong) UIManagedDocument *songDatabase;  // Model is a Core Data database of songs
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
 
 - (IBAction)refreshList:(id)sender;

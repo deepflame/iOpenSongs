@@ -18,7 +18,6 @@
 
 @implementation SongMasterViewController
 
-@synthesize songDatabase = _songDatabase;
 @synthesize delegate = _delegate;
 
 
@@ -68,24 +67,7 @@
     return infos;
 }
 
-// 4. Create an NSFetchRequest to get all Songs and hook it up to our table via an NSFetchedResultsController
-// (inherited the code to integrate with NSFRC from CoreDataTableViewController)
-
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    // no predicate because we want ALL the Songs
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.songDatabase.managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
-}
-
-// 5. Create a Q to fetch OpenSong file information to seed the database
-
-- (void)importSongFilesIntoDocument:(UIManagedDocument *)document
+- (void)importDataIntoDocument:(UIManagedDocument *)document
 {
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
@@ -119,55 +101,20 @@
     //more error handling here
 }
 
-// 3. Open or create the document here and call setupFetchedResultsController
-
-- (void)useDocument
+// @override
+- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.songDatabase.fileURL path]]) {
-        // does not exist on disk, so create it
-        [self.songDatabase saveToURL:self.songDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-            [self importSongFilesIntoDocument:self.songDatabase];
-        }];
-    } else if (self.songDatabase.documentState == UIDocumentStateClosed) {
-        // exists on disk, but we need to open it
-        [self.songDatabase openWithCompletionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
-        }];
-    } else if (self.songDatabase.documentState == UIDocumentStateNormal) {
-        // already open and ready to use
-        [self setupFetchedResultsController];
-    }
-}
-
-// 2. Make the database's setter start using it
-
-- (void)setSongDatabase:(UIManagedDocument *)songDatabase
-{
-    if (_songDatabase != songDatabase) {
-        _songDatabase = songDatabase;
-        [self useDocument];
-    }
-}
-
-// 1. Add code to viewWillAppear: to create a default document (for demo purposes)
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    // no predicate because we want ALL the Songs
     
-    if (!self.songDatabase) {  
-        // for demo purposes, we'll create a default database if none is set
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Default Song Database"];
-        // configure auto migration
-        NSDictionary *storeOptions = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-        // create managed document
-        UIManagedDocument *doc = [[UIManagedDocument alloc] initWithFileURL:url];
-        doc.persistentStoreOptions = storeOptions;
-        self.songDatabase = doc; // setter will create this for us on disk
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.database.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    // import if no data found
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        [self importDataIntoDocument:self.database];
     }
 }
 
@@ -309,8 +256,8 @@
 {
 #pragma unused(sender)
 
-    [self deleteAllSongsFromDocument:self.songDatabase];
-    [self importSongFilesIntoDocument:self.songDatabase];
+    [self deleteAllSongsFromDocument:self.database];
+    [self importDataIntoDocument:self.database];
 }
 
 #pragma mark -
