@@ -54,7 +54,6 @@
 		3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* AppDelegate.m */; };
 		3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* SongViewController.m */; };
-		3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
 		3EE891961521B52D001DA59A /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
@@ -168,8 +167,6 @@
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3EDDA41714AEC3A400BB781C /* SongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
-		3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSongParseOperation.h; sourceTree = "<group>"; };
-		3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSongParseOperation.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
 		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
@@ -480,8 +477,6 @@
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
 				3E120C3114F91DD400926A74 /* Song+OpenSong.m */,
-				3EDDA43914AF108C00BB781C /* OpenSongParseOperation.h */,
-				3EDDA43A14AF108C00BB781C /* OpenSongParseOperation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -638,7 +633,6 @@
 				3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */,
 				3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */,
-				3EDDA43B14AF108C00BB781C /* OpenSongParseOperation.m in Sources */,
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,

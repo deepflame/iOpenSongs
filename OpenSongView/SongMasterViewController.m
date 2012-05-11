@@ -7,8 +7,6 @@
 //
 
 #import "SongMasterViewController.h"
-
-#import "OpenSongParseOperation.h"
 #import "Song+OpenSong.h"
 
 #import "RevealSidebarController.h"
