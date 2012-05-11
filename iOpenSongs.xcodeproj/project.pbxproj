@@ -17,9 +17,10 @@
 		3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5614F9F05700926A74 /* SystemConfiguration.framework */; };
 		3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5A14F9F07000926A74 /* libxml2.dylib */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
-		3E120C6B14FA287400926A74 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6A14FA287400926A74 /* Song.m */; };
 		3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */; };
 		3E13C2C614EF322D00F59505 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13C2C514EF322D00F59505 /* iPhone.storyboard */; };
+		3E29FC0E155CE2C3004D33D4 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29FC0D155CE2C3004D33D4 /* Set.m */; };
+		3E29FC11155CE2C3004D33D4 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29FC10155CE2C3004D33D4 /* Song.m */; };
 		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
 		3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */; };
 		3E355B8E14F1EC3C00E49942 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EACA52F14F14D7700519ADC /* libGoogleAnalytics.a */; };
@@ -118,11 +119,13 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
-		3E120C6914FA287400926A74 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		3E120C6A14FA287400926A74 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		3E13C2C514EF322D00F59505 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		3E29FC0C155CE2C3004D33D4 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
+		3E29FC0D155CE2C3004D33D4 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
+		3E29FC0F155CE2C3004D33D4 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		3E29FC10155CE2C3004D33D4 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E355B8714F1E29900E49942 /* EasyTracker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EasyTracker.plist; sourceTree = "<group>"; };
 		3E355B8A14F1E2B700E49942 /* EasyTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyTracker.h; sourceTree = "<group>"; };
 		3E355B8B14F1E2B700E49942 /* EasyTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyTracker.m; sourceTree = "<group>"; };
@@ -472,11 +475,13 @@
 			isa = PBXGroup;
 			children = (
 				3E120C6714FA276700926A74 /* Parsers */,
-				3E120C6914FA287400926A74 /* Song.h */,
-				3E120C6A14FA287400926A74 /* Song.m */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
+				3E29FC0F155CE2C3004D33D4 /* Song.h */,
+				3E29FC10155CE2C3004D33D4 /* Song.m */,
 				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
 				3E120C3114F91DD400926A74 /* Song+OpenSong.m */,
+				3E29FC0C155CE2C3004D33D4 /* Set.h */,
+				3E29FC0D155CE2C3004D33D4 /* Set.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -637,8 +642,9 @@
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
-				3E120C6B14FA287400926A74 /* Song.m in Sources */,
 				3EE891B21521BBA9001DA59A /* StyleViewController.m in Sources */,
+				3E29FC0E155CE2C3004D33D4 /* Set.m in Sources */,
+				3E29FC11155CE2C3004D33D4 /* Song.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
