@@ -68,9 +68,8 @@
     return infos;
 }
 
-// 4. Stub this out (we didn't implement it at first)
-// 13. Create an NSFetchRequest to get all Photographers and hook it up to our table via an NSFetchedResultsController
-// (we inherited the code to integrate with NSFRC from CoreDataTableViewController)
+// 4. Create an NSFetchRequest to get all Songs and hook it up to our table via an NSFetchedResultsController
+// (inherited the code to integrate with NSFRC from CoreDataTableViewController)
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
@@ -84,12 +83,7 @@
                                                                                    cacheName:nil];
 }
 
-// 5. Create a Q to fetch Flickr photo information to seed the database
-// 6. Take a timeout from this and go create the database model (Photomania.xcdatamodeld)
-// 7. Create custom subclasses for Photo and Photographer
-// 8. Create a category on Photo (Photo+Flickr) to add a "factory" method to create a Photo
-// (go to Photo+Flickr for next step)
-// 12. Use the Photo+Flickr category method to add Photos to the database (table will auto update due to NSFRC)
+// 5. Create a Q to fetch OpenSong file information to seed the database
 
 - (void)importSongFilesIntoDocument:(UIManagedDocument *)document
 {
@@ -101,12 +95,8 @@
                 [Song songWithOpenSongInfo:info inManagedObjectContext:document.managedObjectContext];
                 // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
             }
-            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
-            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
-            // because if we quit the app before autosave happens, then it'll come up blank next time we run
-            // this is what it would look like (ADDED AFTER LECTURE) ...
+            // save document explicitly
             [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
-            // note that we don't do anything in the completion handler this time
         }];
     });
     dispatch_release(importQ);
@@ -150,7 +140,7 @@
     }
 }
 
-// 2. Make the photoDatabase's setter start using it
+// 2. Make the database's setter start using it
 
 - (void)setSongDatabase:(UIManagedDocument *)songDatabase
 {
@@ -160,8 +150,6 @@
     }
 }
 
-// 0. Create full storyboard and drag in CDTVC.[mh], FlickrFetcher.[mh] and ImageViewController.[mh]
-// (0.5 would probably be "add a UIManagedDocument, photoDatabase, as this Controller's Model)
 // 1. Add code to viewWillAppear: to create a default document (for demo purposes)
 
 - (void)viewWillAppear:(BOOL)animated
