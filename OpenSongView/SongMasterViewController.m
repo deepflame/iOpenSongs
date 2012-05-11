@@ -168,11 +168,17 @@
 {
     [super viewWillAppear:animated];
     
-    if (!self.songDatabase) {  // for demo purposes, we'll create a default database if none is set
+    if (!self.songDatabase) {  
+        // for demo purposes, we'll create a default database if none is set
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"Default Song Database"];
-        // url is now "<Documents Directory>/Default Photo Database"
+        // configure auto migration
+        NSDictionary *storeOptions = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+        // create managed document
         UIManagedDocument *doc = [[UIManagedDocument alloc] initWithFileURL:url];
+        doc.persistentStoreOptions = storeOptions;
         self.songDatabase = doc; // setter will create this for us on disk
     }
 }
