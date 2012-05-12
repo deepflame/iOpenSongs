@@ -17,15 +17,6 @@
 
 @implementation SetTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,14 +28,10 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    // Return YES for supported orientations
+    return YES;
 }
 
 #pragma mark - 
@@ -61,10 +48,6 @@
                                                                         managedObjectContext:self.database.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
-    // import if no data found
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        //[self importDataIntoDocument:self.database];
-    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -104,8 +87,10 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                           reuseIdentifier:CellIdentifier];
         }
-        
-        Set *songSet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+        NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 1];
+
+        Set *songSet = [self.fetchedResultsController objectAtIndexPath:modPath];
         cell.textLabel.text = songSet.name;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", songSet.songs.count];
         
@@ -134,20 +119,16 @@
     }
 }
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 1];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        // delete object from database
+        [self.database.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:modPath]];
+    }
 }
-*/
-
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -161,17 +142,64 @@
 
 }
 
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath
+{		
+    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
+    {
+        // change sections
+        NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
+        NSIndexPath *newModPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
+        
+        switch(type)
+        {
+            case NSFetchedResultsChangeInsert:
+                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newModPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeDelete:
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeUpdate:
+                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+                
+            case NSFetchedResultsChangeMove:
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newModPath] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+        }
+    }
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (textField.text.length == 0) {
+        return NO;
+    }
+    
     [textField resignFirstResponder];
     return YES;
 }
 
 - (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
-{
-    NSLog(@"New Set: %@", sender.text);
+{    
+    Set *songSet = [NSEntityDescription insertNewObjectForEntityForName:@"Set"
+                                                 inManagedObjectContext:self.database.managedObjectContext];
+    songSet.name = sender.text;
+
+    // save document explicitly
+    //[self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+
+    // clear the text field
     sender.text = @"";
 }
 
