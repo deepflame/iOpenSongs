@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIManagedDocumentTableViewController.h"
 
-@interface SetTableViewController : UITableViewController
+@interface SetTableViewController : UIManagedDocumentTableViewController
 
 @end

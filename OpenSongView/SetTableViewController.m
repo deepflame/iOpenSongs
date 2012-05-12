@@ -7,8 +7,11 @@
 //
 
 #import "SetTableViewController.h"
+#import "Set.h"
 
-@interface SetTableViewController ()
+@interface SetTableViewController () <UITextFieldDelegate>
+{
+}
 
 @end
 
@@ -37,8 +40,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -46,21 +47,40 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
+#pragma mark - 
+
+// @override
+// TODO implement as delegate method
+- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Set"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    // no predicate because we want ALL the Sets
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.database.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    // import if no data found
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        //[self importDataIntoDocument:self.database];
+    }
+}
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // 0: add set, 1: set list
-    return 2;
+    return [[self.fetchedResultsController sections] count] + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+{    
     // 0: add set, 1: set list
     if (section == 0) {
         return 1;
     }
-    return 4;
+    return [[[self.fetchedResultsController sections] objectAtIndex:section - 1] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,16 +105,22 @@
                                           reuseIdentifier:CellIdentifier];
         }
         
-        //Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        //cell.textLabel.text = song.title;
-        //cell.detailTextLabel.text = song.author;
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"Sample Set %d", indexPath.row];
-        cell.detailTextLabel.text = @"0 Songs";
+        Set *songSet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        cell.textLabel.text = songSet.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", songSet.songs.count];
         
         return cell;
     }
     
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    // 0: add set, 1: set list
+    if (section == 0) {
+        return nil;
+    }
+	return [[[self.fetchedResultsController sections] objectAtIndex:section - 1] name];
 }
 
 // Override to support conditional editing of the table view.
@@ -128,17 +154,13 @@
 {
 }
 
-#pragma mark - Table view delegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
+}
+
 }
 
 @end
