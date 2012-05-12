@@ -161,6 +161,18 @@
 
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
+{
+    NSLog(@"New Set: %@", sender.text);
+    sender.text = @"";
 }
 
 @end

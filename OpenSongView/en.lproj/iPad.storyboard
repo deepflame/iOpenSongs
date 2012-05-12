@@ -99,18 +99,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="New Set Cell" id="4ji-cx-gOp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="New Set Cell" id="4ji-cx-gOp">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Set" minimumFontSize="17" id="Crc-jc-BP4">
-                                            <rect key="frame" x="10" y="6" width="267" height="31"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Set" minimumFontSize="17" clearButtonMode="whileEditing" id="Crc-jc-BP4">
+                                            <rect key="frame" x="10" y="6" width="301" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <action selector="addSetTextFieldDidEndEditing:" destination="PRx-PW-mGL" eventType="editingDidEnd" id="zOe-Wj-91g"/>
+                                                <action selector="addSetTextFieldValueChanged:" destination="PRx-PW-mGL" eventType="valueChanged" id="d7S-NX-PCC"/>
+                                                <outlet property="delegate" destination="PRx-PW-mGL" id="8u6-bZ-GGA"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -737,6 +742,68 @@
         <image name="glyphicons_329_e-mail.png" width="24" height="24"/>
         <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="ExtrasTableViewController" superclassName="TrackedUITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExtrasTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="versionCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="HtmlViewController" superclassName="TrackedUIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HtmlViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="RevealSidebarController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
+        </class>
+        <class className="SetTableViewController" superclassName="UIManagedDocumentTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetTableViewController.h"/>
+        </class>
+        <class className="SongMasterViewController" superclassName="UIManagedDocumentTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshList:"/>
+            </relationships>
+        </class>
+        <class className="SongViewController" superclassName="TrackedUIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SongViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="extrasBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="songWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="StyleViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StyleViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chordsSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="chordsVisibleSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="commentsSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="commentsVisibleSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="headerSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="headerVisibleSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="lyricsSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="lyricsVisibleSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="nightModeSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="TrackedUITableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUITableViewController.h"/>
+        </class>
+        <class className="TrackedUIViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackedUIViewController.h"/>
+        </class>
+        <class className="UIManagedDocumentTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIManagedDocumentTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
