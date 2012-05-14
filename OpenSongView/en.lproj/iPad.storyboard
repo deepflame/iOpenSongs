@@ -6,7 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Song Master View Controller - Song List-->
+        <!--Song Master View Controller - Songs-->
         <scene sceneID="2Ns-Ls-eHG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zh-Fu-gjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,7 +65,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Song List" id="b4l-cV-f2m">
+                    <navigationItem key="navigationItem" title="Songs" id="b4l-cV-f2m">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Be9-Q2-l2b">
                             <connections>
                                 <action selector="refreshList:" destination="aCn-16-UXf" id="IAy-qm-Cht"/>
@@ -89,7 +89,7 @@
             </objects>
             <point key="canvasLocation" x="736" y="-3864"/>
         </scene>
-        <!--Set Table View Controller - Set List-->
+        <!--Set Table View Controller - Sets-->
         <scene sceneID="1MO-Yf-IM0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNR-yY-Dwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,29 +98,25 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="739"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="l5f-b7-hP3">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Set" minimumFontSize="17" clearButtonMode="whileEditing" id="Crc-jc-BP4">
+                                    <rect key="frame" x="10" y="6" width="301" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="addSetTextFieldDidEndEditing:" destination="PRx-PW-mGL" eventType="editingDidEnd" id="zOe-Wj-91g"/>
+                                        <action selector="addSetTextFieldValueChanged:" destination="PRx-PW-mGL" eventType="valueChanged" id="d7S-NX-PCC"/>
+                                        <outlet property="delegate" destination="PRx-PW-mGL" id="8u6-bZ-GGA"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="New Set Cell" id="4ji-cx-gOp">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Set" minimumFontSize="17" clearButtonMode="whileEditing" id="Crc-jc-BP4">
-                                            <rect key="frame" x="10" y="6" width="301" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                            <connections>
-                                                <action selector="addSetTextFieldDidEndEditing:" destination="PRx-PW-mGL" eventType="editingDidEnd" id="zOe-Wj-91g"/>
-                                                <action selector="addSetTextFieldValueChanged:" destination="PRx-PW-mGL" eventType="valueChanged" id="d7S-NX-PCC"/>
-                                                <outlet property="delegate" destination="PRx-PW-mGL" id="8u6-bZ-GGA"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Set Cell" textLabel="KGQ-3k-gzI" detailTextLabel="fEm-hp-yga" style="IBUITableViewCellStyleSubtitle" id="wfz-OB-thz">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -152,7 +148,7 @@
                             <outlet property="delegate" destination="PRx-PW-mGL" id="baS-6k-K7B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Set List" id="MgC-e8-DYo"/>
+                    <navigationItem key="navigationItem" title="Sets" id="MgC-e8-DYo"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="731" y="-2802"/>

@@ -50,27 +50,12 @@
                                                                                    cacheName:nil];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count] + 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{    
-    // 0: add set, 1: set list
-    if (section == 0) {
-        return 1;
-    }
-    return [[[self.fetchedResultsController sections] objectAtIndex:section - 1] numberOfObjects];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 0: add set, 1: set list
-    if (indexPath.section == 0) {
-        static NSString *CellIdentifier = @"New Set Cell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         if (cell == nil) {
@@ -88,45 +73,22 @@
                                           reuseIdentifier:CellIdentifier];
         }
 
-        NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 1];
-
-        Set *songSet = [self.fetchedResultsController objectAtIndexPath:modPath];
-        cell.textLabel.text = songSet.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", songSet.songs.count];
+        Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        cell.textLabel.text = set.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", set.items.count];
         
         return cell;
     }
-    
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    // 0: add set, 1: set list
-    if (section == 0) {
-        return nil;
-    }
-	return [[[self.fetchedResultsController sections] objectAtIndex:section - 1] name];
-}
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // 0: add set, 1: set list
-    if (indexPath.section == 0) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
+#pragma mark - UITableViewDataSource
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 1];
-    
+{    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
-        [self.database.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:modPath]];
+        [self.database.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
     }
 }
 
@@ -139,43 +101,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-}
-
-#pragma mark - NSFetchedResultsControllerDelegate
-
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-	   atIndexPath:(NSIndexPath *)indexPath
-	 forChangeType:(NSFetchedResultsChangeType)type
-	  newIndexPath:(NSIndexPath *)newIndexPath
-{		
-    if (!self.suspendAutomaticTrackingOfChangesInManagedObjectContext)
-    {
-        // change sections
-        NSIndexPath *modPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
-        NSIndexPath *newModPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
-        
-        switch(type)
-        {
-            case NSFetchedResultsChangeInsert:
-                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newModPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-                
-            case NSFetchedResultsChangeDelete:
-                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-                
-            case NSFetchedResultsChangeUpdate:
-                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-                
-            case NSFetchedResultsChangeMove:
-                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:modPath] withRowAnimation:UITableViewRowAnimationFade];
-                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newModPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-        }
-    }
 }
 
 #pragma mark - UITextFieldDelegate
