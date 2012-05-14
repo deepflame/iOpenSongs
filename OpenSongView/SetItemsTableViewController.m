@@ -91,12 +91,20 @@
 }
 */
 
-/*
-// Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    NSMutableArray *setItems = [[self.fetchedResultsController fetchedObjects] mutableCopy];
+        
+    NSManagedObject *movedSetItem = [[self fetchedResultsController] objectAtIndexPath:fromIndexPath];
+    [setItems removeObject:movedSetItem];
+    [setItems insertObject:movedSetItem atIndex:[toIndexPath row]];
+    
+    // update positions
+    int i = 0;
+    for (SetItem *si in setItems) {
+        si.position = [NSNumber numberWithInt:i++];
+    }
 }
-*/
 
 #pragma mark - Table view delegate
 
@@ -125,6 +133,7 @@
     SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
                                                  inManagedObjectContext:self.set.managedObjectContext];
     newSongItem.song = newSong;
+    newSongItem.position = [NSNumber numberWithInt:self.fetchedResultsController.fetchedObjects.count];
     
     [self.set addItemsObject:newSongItem ];
 }
