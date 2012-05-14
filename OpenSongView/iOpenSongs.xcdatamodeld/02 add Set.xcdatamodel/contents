@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="2.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Set" syncable="YES">
+    <entity name="Set" representedClassName="Set" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Song" inverseName="sets" inverseEntity="Song" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SetItem" inverseName="set" inverseEntity="SetItem" syncable="YES"/>
+    </entity>
+    <entity name="SetItem" representedClassName="SetItem" syncable="YES">
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="set" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="items" inverseEntity="Set" syncable="YES"/>
+    </entity>
+    <entity name="SetItemSong" representedClassName="SetItemSong" parentEntity="SetItem" syncable="YES">
+        <relationship name="song" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Song" syncable="YES"/>
     </entity>
     <entity name="Song" representedClassName="Song" syncable="YES">
         <attribute name="aka" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +31,6 @@
         <attribute name="user1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user3" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="songs" inverseEntity="Set" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="title"/>
@@ -33,6 +39,8 @@
     </entity>
     <elements>
         <element name="Set" positionX="981" positionY="3177" width="128" height="75"/>
-        <element name="Song" positionX="808" positionY="3177" width="128" height="345"/>
+        <element name="SetItem" positionX="979" positionY="3315" width="128" height="75"/>
+        <element name="SetItemSong" positionX="981" positionY="3423" width="128" height="60"/>
+        <element name="Song" positionX="808" positionY="3177" width="128" height="330"/>
     </elements>
 </model>

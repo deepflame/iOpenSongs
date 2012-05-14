@@ -1,18 +1,17 @@
 //
-//  Set.m
+//  SetItemSong.m
 //  iOpenSongs
 //
 //  Created by Andreas Böhrnsen on 5/14/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "Set.h"
-#import "SetItem.h"
+#import "SetItemSong.h"
+#import "Song.h"
 
 
-@implementation Set
+@implementation SetItemSong
 
-@dynamic name;
-@dynamic items;
+@dynamic song;
 
 @end
