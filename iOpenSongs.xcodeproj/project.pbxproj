@@ -54,6 +54,7 @@
 		3EC697E3155DC5FD00022C0E /* UIManagedDocumentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E2155DC5FD00022C0E /* UIManagedDocumentTableViewController.m */; };
 		3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */; };
 		3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* SetTableViewController.m */; };
+		3ECC4B01155E711C0003FFC7 /* SetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */; };
@@ -177,6 +178,8 @@
 		3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIManagedDocument+Use.m"; sourceTree = "<group>"; };
 		3EC697E7155E06C400022C0E /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
 		3EC697E8155E06C400022C0E /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
+		3ECC4AFF155E711B0003FFC7 /* SetItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemsTableViewController.h; sourceTree = "<group>"; };
+		3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemsTableViewController.m; sourceTree = "<group>"; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -423,6 +426,8 @@
 				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
 				3EC697E7155E06C400022C0E /* SetTableViewController.h */,
 				3EC697E8155E06C400022C0E /* SetTableViewController.m */,
+				3ECC4AFF155E711B0003FFC7 /* SetItemsTableViewController.h */,
+				3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */,
 				3EDDA41714AEC3A400BB781C /* SongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* SongViewController.m */,
 				3EE891B01521BBA9001DA59A /* StyleViewController.h */,
@@ -680,6 +685,7 @@
 				3EC697E3155DC5FD00022C0E /* UIManagedDocumentTableViewController.m in Sources */,
 				3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */,
 				3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */,
+				3ECC4B01155E711C0003FFC7 /* SetItemsTableViewController.m in Sources */,
 				3E78BD771560F48B00FF8CC7 /* SetItemSong.m in Sources */,
 				3E78BD7A1560F48C00FF8CC7 /* SetItem.m in Sources */,
 				3E78BD7D1560F48D00FF8CC7 /* Set.m in Sources */,

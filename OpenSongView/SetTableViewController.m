@@ -92,15 +92,18 @@
     }
 }
 
+/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
+*/
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:@"Select Set" sender:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -115,15 +118,29 @@
     return YES;
 }
 
+# pragma mark - 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Select Set"]) {
+        // check if destination accepts a songSet
+        if ([segue.destinationViewController respondsToSelector:@selector(setSet:)]) {
+            [segue.destinationViewController performSelector:@selector(setSet:) withObject:sender];
+        }
+    }
+}
+
 - (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
-{    
-    Set *songSet = [NSEntityDescription insertNewObjectForEntityForName:@"Set"
-                                                 inManagedObjectContext:self.database.managedObjectContext];
-    songSet.name = sender.text;
-
-    // save document explicitly
-    //[self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
-
+{
+    if (sender.text.length > 0) {
+        Set *songSet = [NSEntityDescription insertNewObjectForEntityForName:@"Set"
+                                                     inManagedObjectContext:self.database.managedObjectContext];
+        songSet.name = sender.text;
+        
+        // save document explicitly
+        [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+    }
+    
     // clear the text field
     sender.text = @"";
 }

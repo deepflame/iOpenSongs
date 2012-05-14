@@ -142,6 +142,36 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Edit Set Cell" id="kUj-dm-qfj">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Il0-Rc-3qa">
+                                            <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <items>
+                                                <barButtonItem style="plain" id="iIy-3P-Eip">
+                                                    <textField key="customView" opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Name" minimumFontSize="17" id="dek-wX-kYV">
+                                                        <rect key="frame" x="12" y="7" width="201" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </barButtonItem>
+                                                <barButtonItem tag="2" title="Clone" id="f3B-Fh-hX5">
+                                                    <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                                                </barButtonItem>
+                                                <barButtonItem style="plain" systemItem="flexibleSpace" id="MvL-Hh-y1G"/>
+                                            </items>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </toolbar>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="PRx-PW-mGL" id="4ZH-9d-CUV"/>
@@ -149,9 +179,70 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sets" id="MgC-e8-DYo"/>
+                    <connections>
+                        <segue destination="n8z-zg-KC0" kind="push" identifier="Select Set" id="ttG-tr-9NU"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="731" y="-2802"/>
+        </scene>
+        <!--Set Items Table View Controller - Items in Set-->
+        <scene sceneID="5SQ-Mt-mdv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKt-0N-yhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="n8z-zg-KC0" customClass="SetItemsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YDF-I6-E0c">
+                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FPy-us-5zX">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Add Demo Song" id="fQq-kd-Hes">
+                                    <connections>
+                                        <action selector="addDemoSong:" destination="n8z-zg-KC0" id="g16-nc-UBr"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                            <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SetSong Cell" textLabel="m0k-Wb-rU4" detailTextLabel="bCp-LR-QGG" style="IBUITableViewCellStyleSubtitle" id="P0t-L4-cs2">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m0k-Wb-rU4">
+                                            <rect key="frame" x="10" y="2" width="87" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bCp-LR-QGG">
+                                            <rect key="frame" x="10" y="24" width="32" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n8z-zg-KC0" id="nJG-ui-vhq"/>
+                            <outlet property="delegate" destination="n8z-zg-KC0" id="LV1-FS-676"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Items in Set" id="caG-yt-K2Y"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1257" y="-2802"/>
         </scene>
         <!--Style View Controller - Settings-->
         <scene sceneID="aiI-SK-jgO">
@@ -759,6 +850,9 @@
         </class>
         <class className="RevealSidebarController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RevealSidebarController.h"/>
+        </class>
+        <class className="SetItemsTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetItemsTableViewController.h"/>
         </class>
         <class className="SetTableViewController" superclassName="UIManagedDocumentTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SetTableViewController.h"/>
