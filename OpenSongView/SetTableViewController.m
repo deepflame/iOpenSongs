@@ -7,6 +7,8 @@
 //
 
 #import "SetTableViewController.h"
+
+#import "DataManager.h"
 #import "Set.h"
 
 @interface SetTableViewController () <UITextFieldDelegate>
@@ -28,6 +30,15 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
+        [self setupFetchedResultsController];
+    }];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -36,8 +47,7 @@
 
 #pragma mark - 
 
-// @override
-// TODO implement as delegate method
+
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Set"];
@@ -45,7 +55,7 @@
     // no predicate because we want ALL the Sets
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.database.managedObjectContext
+                                                                        managedObjectContext:[DataManager sharedInstance].managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
 }
@@ -88,7 +98,7 @@
 {    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
-        [self.database.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
     }
 }
 
@@ -134,11 +144,8 @@
 {
     if (sender.text.length > 0) {
         Set *songSet = [NSEntityDescription insertNewObjectForEntityForName:@"Set"
-                                                     inManagedObjectContext:self.database.managedObjectContext];
+                                                     inManagedObjectContext:[DataManager sharedInstance].managedObjectContext];
         songSet.name = sender.text;
-        
-        // save document explicitly
-        [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
     }
     
     // clear the text field

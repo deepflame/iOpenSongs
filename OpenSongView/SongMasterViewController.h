@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SongViewController.h"
-#import "UIManagedDocumentTableViewController.h"
+#import "CoreDataTableViewController.h"
 
 @class SongMasterViewController;
 
@@ -19,7 +19,7 @@
 @end
 
 
-@interface SongMasterViewController : UIManagedDocumentTableViewController
+@interface SongMasterViewController : CoreDataTableViewController
 
 @property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
 

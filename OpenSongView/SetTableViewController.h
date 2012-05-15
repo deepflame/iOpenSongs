@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIManagedDocumentTableViewController.h"
+#import "CoreDataTableViewController.h"
 
-@interface SetTableViewController : UIManagedDocumentTableViewController
+@interface SetTableViewController : CoreDataTableViewController
 
 @end

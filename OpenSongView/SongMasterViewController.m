@@ -7,7 +7,9 @@
 //
 
 #import "SongMasterViewController.h"
+
 #import "Song+OpenSong.h"
+#import "DataManager.h"
 
 #import "RevealSidebarController.h"
 
@@ -67,18 +69,16 @@
     return infos;
 }
 
-- (void)importDataIntoDocument:(UIManagedDocument *)document
+- (void)importDataIntoContext:(NSManagedObjectContext *)managedObjectContext
 {
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
         NSArray *songInfos = [self openSongInfos];
-        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
             for (NSDictionary *info in songInfos) {
-                [Song songWithOpenSongInfo:info inManagedObjectContext:document.managedObjectContext];
+                [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
                 // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
             }
-            // save document explicitly
-            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
         }];
     });
     dispatch_release(importQ);
@@ -109,12 +109,12 @@
     // no predicate because we want ALL the Songs
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.database.managedObjectContext
+                                                                        managedObjectContext:[DataManager sharedInstance].managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     // import if no data found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importDataIntoDocument:self.database];
+        [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
     }
 }
 
@@ -148,6 +148,15 @@
             objc_msgSend(self.searchDisplayController.searchBar, @selector(setCombinesLandscapeBars:), NO );
         }
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
+        [self setupFetchedResultsController];
+    }];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -256,8 +265,8 @@
 {
 #pragma unused(sender)
 
-    [self deleteAllSongsFromDocument:self.database];
-    [self importDataIntoDocument:self.database];
+    [self deleteAllSongsFromContext:[DataManager sharedInstance].managedObjectContext];
+    [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
 }
 
 #pragma mark -
