@@ -38,10 +38,14 @@
 + (Song *) songWithOpenSongInfo:(NSDictionary *)info
          inManagedObjectContext:(NSManagedObjectContext *)context
 {
-
     Song *song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:context];
+    [song updateWithOpenSongInfo:info];
 
+    return song;
+}
 
+- (void) updateWithOpenSongInfo:(NSDictionary *)info
+{
     for (NSString* key in info) {
         id value = [info objectForKey:key];
         
@@ -56,17 +60,17 @@
             stringVal = (NSString *)value;
         }
         
-        if ([song respondsToSelector:attr]) {
-            [song performSelector:attr withObject:stringVal];
+        if ([self respondsToSelector:attr]) {
+            [self performSelector:attr withObject:stringVal];
         } else {
             NSLog(@"Song attr not found: %@", key);
         }
     }
-
-//song.capo = (NSString *)[info objectForKey:@"capo"];
-//@property (nonatomic, retain) NSNumber * capo_print;
-//@property (nonatomic, retain) NSData * style_background;
-    return song;
+    
+    //song.capo = (NSString *)[info objectForKey:@"capo"];
+    //@property (nonatomic, retain) NSNumber * capo_print;
+    //@property (nonatomic, retain) NSData * style_background;
 }
+
 
 @end

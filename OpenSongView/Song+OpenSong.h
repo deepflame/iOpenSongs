@@ -15,4 +15,6 @@
 + (Song *) songWithOpenSongInfo:(NSDictionary *)info
             inManagedObjectContext:(NSManagedObjectContext *)context;
 
+- (void) updateWithOpenSongInfo:(NSDictionary *)info;
+
 @end

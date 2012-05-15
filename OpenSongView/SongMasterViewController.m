@@ -76,20 +76,23 @@
         NSArray *songInfos = [self openSongInfos];
         [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
             for (NSDictionary *info in songInfos) {
-                [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-                // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
+                // check if song already exists based on title
+                Song *songFound = nil;
+                for (Song *song in self.fetchedResultsController.fetchedObjects) {
+                    if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
+                        songFound = song;
+                    }
+                }
+                
+                if (songFound) {
+                    [songFound updateWithOpenSongInfo:info];
+                } else {
+                    [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
+                }
             }
         }];
     });
     dispatch_release(importQ);
-}
-
--(void)deleteAllSongsFromContext:(NSManagedObjectContext *)managedObjectContext
-{
-    NSArray *songs = self.fetchedResultsController.fetchedObjects;
-    for (NSManagedObject* song in songs) {
-        [managedObjectContext deleteObject:song];
-    }
 }
 
 // @override
@@ -103,10 +106,6 @@
                                                                         managedObjectContext:[DataManager sharedInstance].managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
-    // import if no data found
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
-    }
 }
 
 // -------------
@@ -150,6 +149,11 @@
     
     [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
         [self setupFetchedResultsController];
+        
+        // import if no data found
+        if (self.fetchedResultsController.fetchedObjects.count == 0) {
+            [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
+        }
     }];
 }
 
@@ -190,7 +194,6 @@
     }
 }
 
-#pragma mark -
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -269,8 +272,6 @@
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-
-    [self deleteAllSongsFromContext:[DataManager sharedInstance].managedObjectContext];
     [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
 }
 
