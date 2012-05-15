@@ -2,11 +2,12 @@
 //  Song.m
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 5/11/12.
+//  Created by Andreas Böhrnsen on 5/15/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
 #import "Song.h"
+#import "SetItemSong.h"
 
 
 @implementation Song
@@ -30,5 +31,6 @@
 @dynamic user1;
 @dynamic user2;
 @dynamic user3;
+@dynamic setItems;
 
 @end

@@ -2,13 +2,14 @@
 //  Song.h
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 5/11/12.
+//  Created by Andreas Böhrnsen on 5/15/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class SetItemSong;
 
 @interface Song : NSManagedObject
 
@@ -31,5 +32,14 @@
 @property (nonatomic, retain) NSString * user1;
 @property (nonatomic, retain) NSString * user2;
 @property (nonatomic, retain) NSString * user3;
+@property (nonatomic, retain) NSSet *setItems;
+@end
+
+@interface Song (CoreDataGeneratedAccessors)
+
+- (void)addSetItemsObject:(SetItemSong *)value;
+- (void)removeSetItemsObject:(SetItemSong *)value;
+- (void)addSetItems:(NSSet *)values;
+- (void)removeSetItems:(NSSet *)values;
 
 @end
