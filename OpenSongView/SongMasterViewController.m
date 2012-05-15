@@ -84,21 +84,12 @@
     dispatch_release(importQ);
 }
 
--(void)deleteAllSongsFromDocument:(UIManagedDocument *)document
+-(void)deleteAllSongsFromContext:(NSManagedObjectContext *)managedObjectContext
 {
-    NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
-    [allSongs setEntity:[NSEntityDescription entityForName:@"Song" inManagedObjectContext:document.managedObjectContext]];
-    [allSongs setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    
-    NSError *error = nil;
-    NSArray *songs = [document.managedObjectContext executeFetchRequest:allSongs error:&error];
-    //error handling goes here
+    NSArray *songs = self.fetchedResultsController.fetchedObjects;
     for (NSManagedObject* song in songs) {
-        [document.managedObjectContext deleteObject:song];
+        [managedObjectContext deleteObject:song];
     }
-    NSError *saveError = nil;
-    [document.managedObjectContext save:&saveError];
-    //more error handling here
 }
 
 // @override
