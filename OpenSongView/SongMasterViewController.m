@@ -133,6 +133,9 @@
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     // fix scope bar on iPad (with unofficial API... bug in SDK)
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if ([self.searchDisplayController.searchBar respondsToSelector:@selector(setCombinesLandscapeBars:)]) {
@@ -157,7 +160,7 @@
 }
 
 #pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark UITableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -174,6 +177,17 @@
     cell.detailTextLabel.text = song.author;
     
     return cell;
+}
+
+#pragma mark - UITableViewDataSource
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // delete object from database
+        [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    }
 }
 
 #pragma mark -
