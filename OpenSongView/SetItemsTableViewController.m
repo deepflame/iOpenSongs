@@ -127,7 +127,7 @@
     SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
                                                  inManagedObjectContext:self.set.managedObjectContext];
     newSongItem.song = newSong;
-    newSongItem.position = [NSNumber numberWithInt:self.fetchedResultsController.fetchedObjects.count];
+    newSongItem.position = [NSNumber numberWithInt:((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1];
     
     [self.set addItemsObject:newSongItem ];
 }
