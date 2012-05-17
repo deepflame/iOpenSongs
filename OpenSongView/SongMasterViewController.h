@@ -10,18 +10,9 @@
 #import "SongViewController.h"
 #import "CoreDataTableViewController.h"
 
-@class SongMasterViewController;
-
-@protocol SongMasterViewControllerDelegate <NSObject>
-@optional
-- (void) songMasterViewControllerDelegate:(SongMasterViewController *)sender 
-                                choseSong:(Song *)song;
-@end
-
 
 @interface SongMasterViewController : CoreDataTableViewController
 
-@property (nonatomic, weak) id <SongMasterViewControllerDelegate> delegate;
-
 - (IBAction)refreshList:(id)sender;
+
 @end

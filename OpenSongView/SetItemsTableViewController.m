@@ -11,6 +11,10 @@
 #import "SetItemSong.h"
 #import "Song.h"
 
+#import "SongViewController.h"
+#import "RevealSidebarController.h"
+
+
 @interface SetItemsTableViewController ()
 
 @end
@@ -40,6 +44,20 @@
                                                                         managedObjectContext:self.set.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+}
+
+- (SongViewController *)songDetailViewController
+{
+    id svc = [self.slidingViewController topViewController];
+    
+    if ([svc isKindOfClass:[UINavigationController class]]) {
+        svc = ((UINavigationController *) svc).topViewController;
+    }
+    
+    if (![svc isKindOfClass:[SongViewController class]]) {
+        svc = nil;
+    }
+    return svc;
 }
 
 - (void)viewDidLoad
@@ -100,18 +118,19 @@
     }
 }
 
-#pragma mark - Table view delegate
+#pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    // TODO: support other types as well
+    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [self songDetailViewController].song = setItem.song;
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark --
 
 - (IBAction)addDemoSong:(UIBarButtonItem *)sender 
 {

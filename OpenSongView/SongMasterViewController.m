@@ -21,9 +21,6 @@
 
 @implementation SongMasterViewController
 
-@synthesize delegate = _delegate;
-
-
 - (NSArray *)openSongInfos
 {
     NSMutableArray *infos =[NSMutableArray arrayWithCapacity:0];
@@ -201,12 +198,7 @@
 {
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    // setting the song url
-    if ([self songDetailViewController]) {
-        [self songDetailViewController].song = song;
-    } else {
-        [self.delegate songMasterViewControllerDelegate:self choseSong:song];
-    }
+    [self songDetailViewController].song = song;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

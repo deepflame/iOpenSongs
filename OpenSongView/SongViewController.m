@@ -17,7 +17,7 @@
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () <ExtrasTableViewControllerDelegate, SongMasterViewControllerDelegate, UIWebViewDelegate>
+@interface SongViewController () <ExtrasTableViewControllerDelegate, UIWebViewDelegate>
 {
     IBOutlet UIWebView *songWebView;
     IBOutlet UIBarButtonItem *extrasBarButtonItem;
@@ -292,14 +292,6 @@
 - (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
 {
     [self.extrasPopoverController dismissPopoverAnimated:animated];
-}
-
-#pragma mark - SongMasterViewControllerDelegate
-
-- (void)songMasterViewControllerDelegate:(SongMasterViewController *)sender choseSong:(Song *)song
-{
-    self.song = song;
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UIWebViewDelegate
