@@ -28,6 +28,7 @@
         <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time_sig" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleFirstLetter" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="user1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user3" optional="YES" attributeType="String" syncable="YES"/>

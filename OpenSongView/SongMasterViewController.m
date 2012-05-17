@@ -8,8 +8,9 @@
 
 #import "SongMasterViewController.h"
 
-#import "Song+OpenSong.h"
 #import "DataManager.h"
+#import "Song+OpenSong.h"
+#import "Song+FirstLetter.h"
 
 #import "RevealSidebarController.h"
 
@@ -104,7 +105,7 @@
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[DataManager sharedInstance].managedObjectContext
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:@"titleFirstLetter"
                                                                                    cacheName:nil];
 }
 
