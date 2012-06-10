@@ -12,10 +12,11 @@
 #import "Song.h"
 
 #import "SongViewController.h"
+#import "SetItemSongsTableViewController.h"
 #import "RevealSidebarController.h"
 
 
-@interface SetItemsTableViewController ()
+@interface SetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
 
 @end
 
@@ -59,6 +60,8 @@
     }
     return svc;
 }
+
+#pragma mark View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -136,25 +139,30 @@
     }
 }
 
-#pragma mark --
+#pragma mark SetItemSongsTableViewControllerDelegate
 
-- (IBAction)addDemoSong:(UIBarButtonItem *)sender 
+-(void)setItemSongsTableViewController:(SetItemSongsTableViewController *)sender choseSong:(Song *)song
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" 
-                                                                                     ascending:YES 
-                                                                                      selector:@selector(localizedCaseInsensitiveCompare:)]];
-    NSArray *songs = [self.set.managedObjectContext executeFetchRequest:request error:nil];
-    
-    int randomIndex = rand() % songs.count;
-    Song* newSong = [songs objectAtIndex:randomIndex];
-    
     SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
-                                                 inManagedObjectContext:self.set.managedObjectContext];
-    newSongItem.song = newSong;
+                                                             inManagedObjectContext:self.set.managedObjectContext];
+    newSongItem.song = song;
     newSongItem.position = [NSNumber numberWithInt:((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1];
     
     [self.set addItemsObject:newSongItem ];
+}
+
+-(void)setItemSongsTableViewController:(SetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
+{
+    [self.navigationController popViewControllerAnimated:animated];
+}
+
+#pragma mark --
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Add Song Items"]) {
+        [segue.destinationViewController  setDelegate:self];
+    }
 }
 
 @end
