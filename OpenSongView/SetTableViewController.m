@@ -60,35 +60,21 @@
                                                                                    cacheName:nil];
 }
 
-{
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                          reuseIdentifier:CellIdentifier];
-        }
-        
-        return cell;  
-    } else {
-        static NSString *CellIdentifier = @"Set Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                          reuseIdentifier:CellIdentifier];
-        }
-
-        Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        cell.textLabel.text = set.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", set.items.count];
-        
-        return cell;
+    static NSString *CellIdentifier = @"Set Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier];
     }
+    
+    Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = set.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", set.items.count];
+    
+    return cell;
 }
 
 #pragma mark - UITableViewDataSource
