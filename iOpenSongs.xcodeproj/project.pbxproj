@@ -52,6 +52,8 @@
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
 		3E7F1B6315847150008C222F /* SongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* SongTableViewController.m */; };
 		3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */; };
+		3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
+		3E7F1BA6158499A9008C222F /* glyphicons_381_github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */; };
@@ -178,6 +180,8 @@
 		3E7F1B6215847150008C222F /* SongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewController.m; sourceTree = "<group>"; };
 		3E7F1B64158476BC008C222F /* SetItemSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemSongsTableViewController.h; sourceTree = "<group>"; };
 		3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSongsTableViewController.m; sourceTree = "<group>"; };
+		3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_381_github.png; path = Vendor/glyphicons/glyphicons_381_github.png; sourceTree = SOURCE_ROOT; };
+		3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_381_github@2x.png"; path = "Vendor/glyphicons/glyphicons_381_github@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3EACA52E14F14D7700519ADC /* GANTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 			children = (
 				3EF00CB0153E5F9C000A0C73 /* glyphicons_329_e-mail.png */,
 				3EF00CB1153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png */,
+				3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */,
+				3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */,
 				3EF00CAC153E5F3E000A0C73 /* glyphicons_322_twitter.png */,
 				3EF00CAD153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png */,
 				3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */,
@@ -676,6 +682,8 @@
 				3EF00CB3153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png in Resources */,
 				3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */,
 				3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */,
+				3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */,
+				3E7F1BA6158499A9008C222F /* glyphicons_381_github@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

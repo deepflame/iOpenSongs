@@ -58,6 +58,9 @@
             [mailViewController setToRecipients:[NSArray arrayWithObject:@"iOpenSongs@boehrnsen.de"]];
             [self presentModalViewController:mailViewController animated:YES];
         }
+    } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Fork Me Github Cell"]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/aboehrnsen/iOpenSongs"]];
+        
     } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Follow Us Twitter Cell"]) {
         // thanks to ChrisMaddern for providing this code
         // https://github.com/chrismaddern/Follow-Me-On-Twitter-iOS-Button
@@ -79,10 +82,9 @@
         
         for (NSString *candidate in urls) {
             NSURL *url = [NSURL URLWithString:[candidate stringByReplacingOccurrencesOfString:@"{handle}" withString:@"iOpenSongs"]];
-            if ([application canOpenURL:url]) 
-            {
+            if ([application canOpenURL:url]) {
                 [application openURL:url];
-                return;
+                break;
             }
         }
     }

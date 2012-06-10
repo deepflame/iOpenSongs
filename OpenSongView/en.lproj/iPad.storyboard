@@ -548,30 +548,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Tad-Kj-XRc">
+                            <tableViewSection headerTitle="Developer" id="Tad-Kj-XRc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Send Feedback Cell" textLabel="6xc-E3-klv" detailTextLabel="FKN-3a-zUm" imageView="aCn-3I-Bzs" style="IBUITableViewCellStyleValue1" id="TG5-nI-J0D">
-                                        <rect key="frame" x="0.0" y="120" width="320" height="45"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Fork Me Github Cell" textLabel="iVP-xD-kfJ" detailTextLabel="X8J-K0-nBl" imageView="zll-SK-2a2" style="IBUITableViewCellStyleValue1" id="OQP-fB-OCV">
+                                        <rect key="frame" x="0.0" y="144" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="6xc-E3-klv">
-                                                    <rect key="frame" x="43" y="11" width="125" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Fork Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="iVP-xD-kfJ">
+                                                    <rect key="frame" x="43" y="11" width="66" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="via Mail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="FKN-3a-zUm">
-                                                    <rect key="frame" x="232" y="11" width="58" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="on GitHub" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="X8J-K0-nBl">
+                                                    <rect key="frame" x="213" y="11" width="77" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="glyphicons_329_e-mail.png" id="aCn-3I-Bzs">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="glyphicons_381_github.png" id="zll-SK-2a2">
                                                     <rect key="frame" x="9" y="9" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -580,28 +580,62 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Follow Us Twitter Cell" textLabel="iVP-xD-kfJ" detailTextLabel="X8J-K0-nBl" imageView="zll-SK-2a2" style="IBUITableViewCellStyleValue1" id="OQP-fB-OCV">
-                                        <rect key="frame" x="0.0" y="165" width="320" height="45"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Social" id="hCs-Nx-Ndv">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Send Feedback Cell" textLabel="dEZ-Lz-nSB" detailTextLabel="mT6-49-Iit" imageView="Dob-wF-q00" style="IBUITableViewCellStyleValue1" id="6Ju-qE-c9k">
+                                        <rect key="frame" x="0.0" y="234" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="dEZ-Lz-nSB">
+                                                    <rect key="frame" x="43" y="11" width="125" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="via Mail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="mT6-49-Iit">
+                                                    <rect key="frame" x="232" y="11" width="58" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="glyphicons_329_e-mail.png" id="Dob-wF-q00">
+                                                    <rect key="frame" x="9" y="9" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Follow Us Twitter Cell" textLabel="2fZ-RW-jwE" detailTextLabel="GU1-GI-Rfj" imageView="sjW-BU-Z4s" style="IBUITableViewCellStyleValue1" id="7a0-f0-maU">
+                                        <rect key="frame" x="0.0" y="279" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Follow Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="iVP-xD-kfJ">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Follow Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="2fZ-RW-jwE">
                                                     <rect key="frame" x="43" y="11" width="81" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="on Twitter" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="X8J-K0-nBl">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="on Twitter" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="GU1-GI-Rfj">
                                                     <rect key="frame" x="215" y="11" width="75" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="glyphicons_322_twitter.png" id="zll-SK-2a2">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="glyphicons_322_twitter.png" id="sjW-BU-Z4s">
                                                     <rect key="frame" x="9" y="9" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -619,7 +653,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Support" id="Rcr-Pc-302"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="480"/>
                     <connections>
                         <outlet property="versionCell" destination="dMj-D7-HBF" id="fGa-SW-feu"/>
                     </connections>
@@ -645,7 +679,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="HTML" id="Ox7-2L-Asl"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="480"/>
                     <connections>
                         <outlet property="webView" destination="EFS-Sz-zwt" id="AVV-jn-xCO"/>
                     </connections>
@@ -716,7 +750,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-KH-EPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="CA6-Pj-qMW" userLabel="Extras Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="250"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eLl-o2-dap">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -880,6 +913,7 @@
         <image name="glyphicons_158_playlist.png" width="29" height="24"/>
         <image name="glyphicons_322_twitter.png" width="24" height="24"/>
         <image name="glyphicons_329_e-mail.png" width="24" height="24"/>
+        <image name="glyphicons_381_github.png" width="24" height="24"/>
         <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
     <classes>
