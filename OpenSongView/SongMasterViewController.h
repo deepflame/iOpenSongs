@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SongViewController.h"
-#import "CoreDataTableViewController.h"
+#import "SongTableViewController.h"
 
-
-@interface SongMasterViewController : CoreDataTableViewController
+@interface SongMasterViewController : SongTableViewController
 
 - (IBAction)refreshList:(id)sender;
 
