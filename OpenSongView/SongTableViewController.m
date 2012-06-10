@@ -15,9 +15,11 @@
 #import "Song+FirstLetter.h"
 
 @interface SongTableViewController () <UISearchBarDelegate>
+@property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end
 
 @implementation SongTableViewController
+@synthesize searchBarColorInactive = _searchBarColorInactive;
 
 - (NSString *)applicationDocumentsDirectory
 {
@@ -209,13 +211,26 @@
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
+    // reset table
     searchBar.text = @"";
     [self filterSongs:searchBar];
+
+    // reset searchbar
+    searchBar.tintColor = self.searchBarColorInactive;
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.searchBarColorInactive = searchBar.tintColor;
+    if (self.navigationController) {
+        searchBar.tintColor = self.navigationController.navigationBar.tintColor;
+    }
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    //TODO dismiss searchbar when first responder is dismissed
+    
 }
 
 #pragma mark -

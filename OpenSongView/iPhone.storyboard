@@ -234,10 +234,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Songs" id="tRq-Mk-mJb">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="blackOpaque" placeholder="Search Songs" id="tRq-Mk-mJb">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -745,14 +745,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="pEH-O4-gLs"/>
                                 <barButtonItem title="Add Song" id="qLz-ET-OMU">
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <action selector="addDemoSong:" destination="GyG-GV-tlS" id="LrW-N4-WaE"/>
                                         <segue destination="aHQ-ht-koE" kind="push" identifier="Add Song Items" id="4TU-7J-xmr"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
-                            <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SetSong Cell" textLabel="yy5-4F-6eZ" detailTextLabel="Gnk-A0-ve1" style="IBUITableViewCellStyleSubtitle" id="ETE-1G-FwM">
@@ -826,7 +828,7 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Songs" id="0PT-3S-WDL">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -938,7 +940,7 @@
         <class className="SetTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SetTableViewController.h"/>
         </class>
-        <class className="SongMasterViewController" superclassName="CoreDataTableViewController">
+        <class className="SongMasterViewController" superclassName="SongTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="refreshList:"/>
