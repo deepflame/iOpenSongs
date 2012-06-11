@@ -15,6 +15,7 @@
 #import "SetItemSongsTableViewController.h"
 #import "RevealSidebarController.h"
 
+#import "DataManager.h"
 
 @interface SetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
@@ -89,6 +90,11 @@
     // select previous item
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
     [self selectItemAtIndexPath:self.currentSelection];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [DataManager.sharedInstance save];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
