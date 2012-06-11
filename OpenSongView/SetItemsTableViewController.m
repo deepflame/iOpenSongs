@@ -17,12 +17,13 @@
 
 
 @interface SetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
-
+@property (nonatomic, strong) NSIndexPath *currentSelection;
 @end
 
 @implementation SetItemsTableViewController
 
 @synthesize set = _set;
+@synthesize currentSelection = _currentSelection;
 
 - (void)setSet:(Set *)set
 {
@@ -45,6 +46,13 @@
                                                                         managedObjectContext:self.set.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
+}
+
+- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO: support other types as well
+    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self songDetailViewController].song = setItem.song;
 }
 
 - (SongViewController *)songDetailViewController
@@ -74,10 +82,21 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // select previous item
+    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
+    [self selectItemAtIndexPath:self.currentSelection];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
+
+#pragma mark UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -103,6 +122,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
         [self.set.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        // delete curent selection if it was deleted
+        if ([self.currentSelection isEqual:indexPath]) {
+            self.currentSelection = nil;
+        }
     }
 }
 
@@ -125,12 +148,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: support other types as well
-    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    [self songDetailViewController].song = setItem.song;
+    [self selectItemAtIndexPath:indexPath];
 
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    // save current selection
+    self.currentSelection = indexPath;
     
     // close sliding view controller if on Phone in portrait mode
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 

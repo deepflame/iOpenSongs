@@ -14,10 +14,18 @@
 #import "RevealSidebarController.h"
 
 @interface SongMasterViewController ()
+@property (nonatomic, strong) NSIndexPath *currentSelection;
 @end
 
 
 @implementation SongMasterViewController
+@synthesize currentSelection = _currentSelection;
+
+- (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
+{
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self songDetailViewController].song = song;
+}
 
 - (SongViewController *)songDetailViewController
 {
@@ -43,6 +51,15 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // select previous song
+    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
+    [self selectSongAtIndexPath:self.currentSelection];
+}
+
 #pragma mark - UITableViewDataSource
 
 // Override to support editing the table view.
@@ -51,6 +68,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
         [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        // delete curent selection if it was deleted
+        if ([self.currentSelection isEqual:indexPath]) {
+            self.currentSelection = nil;
+        }
     }
 }
 
@@ -58,12 +79,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self selectSongAtIndexPath:indexPath];
     
-    [self songDetailViewController].song = song;
+    // save current selection
+    self.currentSelection = indexPath;
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
     // close sliding view controller if on Phone in portrait mode
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
         UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
