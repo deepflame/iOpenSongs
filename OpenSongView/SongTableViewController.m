@@ -220,7 +220,11 @@
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    self.searchBarColorInactive = searchBar.tintColor;
+    // save the inactive color first time only
+    if (!self.searchBarColorInactive) {
+        self.searchBarColorInactive = searchBar.tintColor;        
+    }
+    // make the searchbar tint color the same as the navifation controller
     if (self.navigationController) {
         searchBar.tintColor = self.navigationController.navigationBar.tintColor;
     }
@@ -228,7 +232,10 @@
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    
+    // reset the tint color if user is not searching anymore
+    if (![self searchDisplayController].active) {
+        searchBar.tintColor = self.searchBarColorInactive;
+    }
 }
 
 #pragma mark -
