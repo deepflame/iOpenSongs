@@ -183,9 +183,9 @@
 		3E7F881C160CCCEE004EB8E6 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
-		3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = ../Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EACA52E14F14D7700519ADC /* GANTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = ../Vendor/GoogleAnalyticsSDK/Library/GANTracker.h; sourceTree = "<group>"; };
-		3EACA52F14F14D7700519ADC /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = ../Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		3EC697E4155DD40200022C0E /* UIManagedDocument+Use.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIManagedDocument+Use.h"; sourceTree = "<group>"; };
 		3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIManagedDocument+Use.m"; sourceTree = "<group>"; };
 		3EC697E7155E06C400022C0E /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 				3E355B8A14F1E2B700E49942 /* EasyTracker.h */,
 				3E355B8B14F1E2B700E49942 /* EasyTracker.m */,
 				3EACA52E14F14D7700519ADC /* GANTracker.h */,
-				3EACA52F14F14D7700519ADC /* libGoogleAnalytics.a */,
+				3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */,
 			);
 			name = "Google Analytics SDK";
 			sourceTree = "<group>";
@@ -435,7 +435,6 @@
 		3EDDA3F314AEC3A300BB781C = {
 			isa = PBXGroup;
 			children = (
-				3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */,
 				3EDDA40814AEC3A400BB781C /* iOpenSongs */,
 				3E35842F151D2FB900137FC4 /* Vendor */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
@@ -454,13 +453,13 @@
 		3EDDA40114AEC3A400BB781C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E120C5814F9F06200926A74 /* QuartzCore.framework */,
-				3E355B8F14F1EC7100E49942 /* CFNetwork.framework */,
-				3E120C5014F9F03100926A74 /* CoreData.framework */,
-				3E586F1714E3389600345743 /* MessageUI.framework */,
-				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
 				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
+				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
+				3E120C5014F9F03100926A74 /* CoreData.framework */,
 				3EDDA40614AEC3A400BB781C /* CoreGraphics.framework */,
+				3E120C5814F9F06200926A74 /* QuartzCore.framework */,
+				3E586F1714E3389600345743 /* MessageUI.framework */,
+				3E355B8F14F1EC7100E49942 /* CFNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
