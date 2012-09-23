@@ -42,10 +42,6 @@
 		3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
 		3E6C47151525EE4400164540 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
 		3E6C47191525EF0200164540 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6C47181525EEC300164540 /* UIImage+ImageWithUIView.m */; };
-		3E78BD771560F48B00FF8CC7 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78BD761560F48A00FF8CC7 /* SetItemSong.m */; };
-		3E78BD7A1560F48C00FF8CC7 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78BD791560F48C00FF8CC7 /* SetItem.m */; };
-		3E78BD7D1560F48D00FF8CC7 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78BD7C1560F48D00FF8CC7 /* Set.m */; };
-		3E7992651564DFC700F085CB /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7992641564DFC700F085CB /* Song.m */; };
 		3E7992681564E19E00F085CB /* Song+FirstLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7992671564E19E00F085CB /* Song+FirstLetter.m */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
@@ -53,6 +49,10 @@
 		3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */; };
 		3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
 		3E7F1BA6158499A9008C222F /* glyphicons_381_github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */; };
+		3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
+		3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
+		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3E7F881D160CCCEE004EB8E6 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F881C160CCCEE004EB8E6 /* Song.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3E9B9148160EB0D600711DA9 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */; };
@@ -164,14 +164,6 @@
 		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
 		3E6C47171525EEC300164540 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageWithUIView.h"; path = "Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/UIImage+ImageWithUIView.h"; sourceTree = SOURCE_ROOT; };
 		3E6C47181525EEC300164540 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageWithUIView.m"; path = "Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/UIImage+ImageWithUIView.m"; sourceTree = SOURCE_ROOT; };
-		3E78BD751560F48A00FF8CC7 /* SetItemSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemSong.h; sourceTree = "<group>"; };
-		3E78BD761560F48A00FF8CC7 /* SetItemSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSong.m; sourceTree = "<group>"; };
-		3E78BD781560F48B00FF8CC7 /* SetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItem.h; sourceTree = "<group>"; };
-		3E78BD791560F48C00FF8CC7 /* SetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItem.m; sourceTree = "<group>"; };
-		3E78BD7B1560F48D00FF8CC7 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
-		3E78BD7C1560F48D00FF8CC7 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
-		3E7992631564DFC700F085CB /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		3E7992641564DFC700F085CB /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E7992661564E19E00F085CB /* Song+FirstLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+FirstLetter.h"; sourceTree = "<group>"; };
 		3E7992671564E19E00F085CB /* Song+FirstLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+FirstLetter.m"; sourceTree = "<group>"; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
@@ -182,6 +174,14 @@
 		3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSongsTableViewController.m; sourceTree = "<group>"; };
 		3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_381_github.png; path = Vendor/glyphicons/glyphicons_381_github.png; sourceTree = SOURCE_ROOT; };
 		3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_381_github@2x.png"; path = "Vendor/glyphicons/glyphicons_381_github@2x.png"; sourceTree = SOURCE_ROOT; };
+		3E7F8812160CCCED004EB8E6 /* SetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItem.h; sourceTree = "<group>"; };
+		3E7F8813160CCCED004EB8E6 /* SetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItem.m; sourceTree = "<group>"; };
+		3E7F8815160CCCEE004EB8E6 /* SetItemSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemSong.h; sourceTree = "<group>"; };
+		3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSong.m; sourceTree = "<group>"; };
+		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
+		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
+		3E7F881B160CCCEE004EB8E6 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		3E7F881C160CCCEE004EB8E6 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
@@ -549,14 +549,14 @@
 			children = (
 				3E120C6714FA276700926A74 /* Parsers */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
-				3E78BD7B1560F48D00FF8CC7 /* Set.h */,
-				3E78BD7C1560F48D00FF8CC7 /* Set.m */,
-				3E78BD781560F48B00FF8CC7 /* SetItem.h */,
-				3E78BD791560F48C00FF8CC7 /* SetItem.m */,
-				3E78BD751560F48A00FF8CC7 /* SetItemSong.h */,
-				3E78BD761560F48A00FF8CC7 /* SetItemSong.m */,
-				3E7992631564DFC700F085CB /* Song.h */,
-				3E7992641564DFC700F085CB /* Song.m */,
+				3E7F881B160CCCEE004EB8E6 /* Song.h */,
+				3E7F881C160CCCEE004EB8E6 /* Song.m */,
+				3E7F8818160CCCEE004EB8E6 /* Set.h */,
+				3E7F8819160CCCEE004EB8E6 /* Set.m */,
+				3E7F8815160CCCEE004EB8E6 /* SetItemSong.h */,
+				3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */,
+				3E7F8812160CCCED004EB8E6 /* SetItem.h */,
+				3E7F8813160CCCED004EB8E6 /* SetItem.m */,
 				3E7992661564E19E00F085CB /* Song+FirstLetter.h */,
 				3E7992671564E19E00F085CB /* Song+FirstLetter.m */,
 				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
@@ -731,15 +731,15 @@
 				3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */,
 				3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */,
 				3ECC4B01155E711C0003FFC7 /* SetItemsTableViewController.m in Sources */,
-				3E78BD771560F48B00FF8CC7 /* SetItemSong.m in Sources */,
-				3E78BD7A1560F48C00FF8CC7 /* SetItem.m in Sources */,
-				3E78BD7D1560F48D00FF8CC7 /* Set.m in Sources */,
 				3EC752F11561DB9F00724311 /* DataManager.m in Sources */,
-				3E7992651564DFC700F085CB /* Song.m in Sources */,
 				3E7992681564E19E00F085CB /* Song+FirstLetter.m in Sources */,
 				3ECE4BCA156BD84E00DD9AE0 /* SetTableViewCell.m in Sources */,
 				3E7F1B6315847150008C222F /* SongTableViewController.m in Sources */,
 				3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */,
+				3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */,
+				3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */,
+				3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */,
+				3E7F881D160CCCEE004EB8E6 /* Song.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

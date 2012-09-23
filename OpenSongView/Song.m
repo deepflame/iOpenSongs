@@ -2,7 +2,7 @@
 //  Song.m
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 5/17/12.
+//  Created by Andreas Böhrnsen on 9/22/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
@@ -28,10 +28,10 @@
 @dynamic theme;
 @dynamic time_sig;
 @dynamic title;
+@dynamic titleFirstLetter;
 @dynamic user1;
 @dynamic user2;
 @dynamic user3;
-@dynamic titleFirstLetter;
 @dynamic setItems;
 
 @end

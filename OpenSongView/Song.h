@@ -2,7 +2,7 @@
 //  Song.h
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 5/17/12.
+//  Created by Andreas Böhrnsen on 9/22/12.
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
@@ -29,10 +29,10 @@
 @property (nonatomic, retain) NSString * theme;
 @property (nonatomic, retain) NSString * time_sig;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * titleFirstLetter;
 @property (nonatomic, retain) NSString * user1;
 @property (nonatomic, retain) NSString * user2;
 @property (nonatomic, retain) NSString * user3;
-@property (nonatomic, retain) NSString * titleFirstLetter;
 @property (nonatomic, retain) NSSet *setItems;
 @end
 
