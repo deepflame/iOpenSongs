@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="n0X-WK-gVo">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -237,7 +236,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
                                 <string>Artist</string>
@@ -678,7 +677,7 @@
                                     <rect key="frame" x="10" y="6" width="301" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <action selector="addSetTextFieldDidEndEditing:" destination="RwK-pS-Q76" eventType="editingDidEnd" id="fcB-bG-Pf4"/>
                                         <action selector="addSetTextFieldValueChanged:" destination="RwK-pS-Q76" eventType="valueChanged" id="3bg-Iy-GPt"/>
