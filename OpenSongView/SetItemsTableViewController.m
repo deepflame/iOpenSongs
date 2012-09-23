@@ -94,7 +94,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [DataManager.sharedInstance save];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
