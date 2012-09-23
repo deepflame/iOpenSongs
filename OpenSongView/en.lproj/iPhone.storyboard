@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="n0X-WK-gVo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="n0X-WK-gVo">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <development version="4500" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Extras Table View Controller - Options-->
         <scene sceneID="CWI-La-0Cp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e60-r4-Nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Options" id="lwq-zh-b9m" customClass="ExtrasTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="C51-X2-xpd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -179,20 +178,20 @@
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e60-r4-Nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927" y="902"/>
         </scene>
         <!--Html View Controller - HTML-->
         <scene sceneID="U5B-a6-oun">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dIH-af-8sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dnx-XQ-uyh" customClass="HtmlViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FkM-lt-CrI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="TfY-3K-JuB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -206,31 +205,31 @@
                         <outlet property="webView" destination="TfY-3K-JuB" id="o9x-Pd-Ihj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIH-af-8sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1443" y="902"/>
         </scene>
         <!--Reveal Sidebar Controller-->
         <scene sceneID="F7X-Zc-cca">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QV9-Ju-QLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="n0X-WK-gVo" customClass="RevealSidebarController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1B1-rl-Jkd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QV9-Ju-QLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-725" y="-74"/>
         </scene>
         <!--Song Master View Controller - Songs-->
         <scene sceneID="3eo-5P-Gly">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ITw-zJ-bAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Tij-bj-9ef" customClass="SongMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sp4-Ql-GQi">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -296,6 +295,7 @@
                         <outlet property="searchDisplayController" destination="h67-Tt-Fh8" id="KNS-C1-3Ci"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITw-zJ-bAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="h67-Tt-Fh8">
                     <connections>
                         <outlet property="delegate" destination="Tij-bj-9ef" id="cmC-vs-8mq"/>
@@ -311,10 +311,9 @@
         <!--Style View Controller - Settings-->
         <scene sceneID="htn-AC-SSc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zvw-EJ-xHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="l1A-Mr-km6" customClass="StyleViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vJH-sd-Phj">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -534,17 +533,16 @@
                         <outlet property="nightModeSwitch" destination="KlT-Cw-qMr" id="XO4-q1-D8S"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvw-EJ-xHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="912" y="-233"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="rg8-X0-1Ba">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FR9-Tv-5Ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="Main Navigation Controller" id="Pfb-Ag-Ho1" userLabel="Main Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs" image="glyphicons_017_music.png" id="eKy-vL-BP8"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GhC-Pi-nhp">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
@@ -558,18 +556,17 @@
                         <segue destination="Tij-bj-9ef" kind="relationship" relationship="rootViewController" id="Qwq-qo-p9w"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FR9-Tv-5Ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="381" y="-1536"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="acA-Vq-E9u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nY4-wT-8CV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="Sidebar" id="BHb-nN-bYt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="the-M0-saO">
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
@@ -579,13 +576,13 @@
                         <segue destination="rPi-CM-MKB" kind="relationship" relationship="viewControllers" id="3K7-Bv-ATc"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nY4-wT-8CV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-157" y="-865"/>
         </scene>
         <!--Navigation Controller - Settings-->
         <scene sceneID="Ful-hh-Oxn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dfF-n4-lmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="rPi-CM-MKB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="glyphicons_023_cogwheels.png" id="guQ-V8-Rfd"/>
                     <toolbarItems/>
@@ -600,20 +597,20 @@
                         <segue destination="l1A-Mr-km6" kind="relationship" relationship="rootViewController" id="Ire-qx-GW3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfF-n4-lmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386" y="-233"/>
         </scene>
         <!--Song View Controller - iOpenSongs-->
         <scene sceneID="UmJ-j2-Mst">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="16T-m2-aus" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WEb-Q0-BWv" customClass="SongViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8v-ia-VQx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" id="bGl-ym-yXp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
@@ -640,13 +637,13 @@
                         <outlet property="songWebView" destination="bGl-ym-yXp" id="bx1-8g-pe8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16T-m2-aus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="391" y="534"/>
         </scene>
         <!--Detail Navigation Controller-->
         <scene sceneID="9tP-M9-Gyl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WBA-7Y-tLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="TopView" definesPresentationContext="YES" id="1nF-g9-Jlj" userLabel="Detail Navigation Controller" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1OD-uE-Mvt">
@@ -661,16 +658,16 @@
                         <segue destination="WEb-Q0-BWv" kind="relationship" relationship="rootViewController" id="rx0-EF-3k2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBA-7Y-tLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-149" y="534"/>
         </scene>
         <!--Set Table View Controller - Sets-->
         <scene sceneID="n6L-yc-rSC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HPJ-wH-iep" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="RwK-pS-Q76" customClass="SetTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g03-N1-8Xa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Z6L-ny-TbL">
@@ -729,16 +726,16 @@
                         <segue destination="GyG-GV-tlS" kind="push" identifier="Select Set" id="wWG-Jg-BxX"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPJ-wH-iep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="917" y="-870"/>
         </scene>
         <!--Set Items Table View Controller - Items in Set-->
         <scene sceneID="tri-qE-uJs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K0W-8h-JLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="GyG-GV-tlS" customClass="SetItemsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4i2-9z-xFM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lc0-tl-a9R">
@@ -791,13 +788,13 @@
                     <navigationItem key="navigationItem" title="Items in Set" id="AnV-Jq-xCa"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0W-8h-JLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1443" y="-870"/>
         </scene>
         <!--Navigation Controller - Sets-->
         <scene sceneID="oWr-pX-ap9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0aQ-jI-ZBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Ql0-IE-83r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sets" image="glyphicons_158_playlist.png" id="A0x-cU-bid"/>
                     <toolbarItems/>
@@ -812,16 +809,16 @@
                         <segue destination="RwK-pS-Q76" kind="relationship" relationship="rootViewController" id="cF3-uM-F9f"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aQ-jI-ZBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="391" y="-870"/>
         </scene>
         <!--Set Item Songs Table View Controller - Songs in Set-->
         <scene sceneID="z7j-Hn-Xl8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QgE-iT-1DQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aHQ-ht-koE" customClass="SetItemSongsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vA3-jX-6sD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -887,6 +884,7 @@
                         <outlet property="searchDisplayController" destination="owo-Et-HCw" id="aeY-jm-OHZ"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QgE-iT-1DQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="owo-Et-HCw">
                     <connections>
                         <outlet property="delegate" destination="aHQ-ht-koE" id="Tvr-hX-Ioy"/>
@@ -980,9 +978,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7ll-y4-dSK"/>
+        <segue reference="lFN-eU-KGv"/>
     </inferredMetricsTieBreakers>
 </document>
