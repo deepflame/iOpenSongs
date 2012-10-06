@@ -56,6 +56,7 @@
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3E9B9148160EB0D600711DA9 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
+		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
 		3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */; };
 		3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* SetTableViewController.m */; };
 		3EC752F11561DB9F00724311 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC752F01561DB9F00724311 /* DataManager.m */; };
@@ -185,6 +186,7 @@
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = ../Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3EACA52E14F14D7700519ADC /* GANTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = ../Vendor/GoogleAnalyticsSDK/Library/GANTracker.h; sourceTree = "<group>"; };
 		3EC697E4155DD40200022C0E /* UIManagedDocument+Use.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIManagedDocument+Use.h"; sourceTree = "<group>"; };
 		3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIManagedDocument+Use.m"; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
 				3E9A92391529648400AA6B57 /* ProgramIcon114.png */,
 				3E9A923B152964F600AA6B57 /* ProgramIcon144.png */,
+				3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */,
 				3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
@@ -684,6 +687,7 @@
 				3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */,
 				3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */,
 				3E7F1BA6158499A9008C222F /* glyphicons_381_github@2x.png in Resources */,
+				3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
