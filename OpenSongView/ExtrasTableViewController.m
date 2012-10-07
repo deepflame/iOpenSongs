@@ -59,7 +59,7 @@
             [self presentModalViewController:mailViewController animated:YES];
         }
     } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Fork Me Github Cell"]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/aboehrnsen/iOpenSongs"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
         
     } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Follow Us Twitter Cell"]) {
         // thanks to ChrisMaddern for providing this code
