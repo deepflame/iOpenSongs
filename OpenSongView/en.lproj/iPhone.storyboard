@@ -176,6 +176,9 @@
                     <navigationItem key="navigationItem" title="Support" id="0DJ-FX-2Ro"/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="versionCell" destination="WEI-Bf-27h" id="c2Q-R0-2qG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e60-r4-Nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
