@@ -252,7 +252,12 @@
     } else {
         _songStyle = [[NSMutableDictionary alloc] init];
     }
-        
+    
+    // FIXME: return if not changed
+    if ([songStyle isEqual:self.songStyle]) {
+        return;
+    }
+    
     self.headerVisible = self.headerVisible;
     self.chordsVisible = self.chordsVisible;
     self.lyricsVisible = self.lyricsVisible;
@@ -262,6 +267,11 @@
     self.chordsSize = self.chordsSize;
     self.lyricsSize = self.lyricsSize;
     self.commentsSize = self.commentsSize;
+    
+    // save user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+    [defaults synchronize];
 }
 
 #pragma mark - UIView (view lifecycle)
