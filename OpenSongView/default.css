@@ -3,9 +3,27 @@ body#song
     font-family:Verdana,sans-serif;
 }
 
+body#help
+{
+    margin: 0;
+    font-size: 0.9em;
+}
+
+body#help section
+{
+    padding-left: 10px;
+    border-bottom: dashed 1px #AAA;
+}
+
+body#help p
+{
+    padding: 0;
+    margin: 6px 0;
+}
+
 body#help h1
 {
-    font-size: 1.05em;
+    font-size: 1.1em;
     margin-top: 0.8em;
     margin-bottom: 0.2em;
 }
@@ -14,6 +32,13 @@ body#help h2
 {
     font-size: 0.9em;
     margin-top: 0.8em;
+    margin-bottom: 0.2em;
+}
+
+body#help h3
+{
+    font-size: 0.85em;
+    margin-top: 0.75em;
     margin-bottom: 0.2em;
 }
 
