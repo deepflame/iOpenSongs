@@ -1,3 +1,11 @@
-- color chords (color picker would be nice in the future)
+
+Version 1.6
+
+- all new Set functionality (finally!)
+- iOS 6 and iPhone 5 compatibility
+- shaded chords
 - added "follow us on twitter" button
+- added "fork me on Github" button
 - added version number to "About" button in support section
+- search for songs supports Chinese etc. keyboards
+
