@@ -76,10 +76,10 @@
 		3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
 		3EE891B21521BBA9001DA59A /* StyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* StyleViewController.m */; };
 		3EE891B51521C329001DA59A /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
-		3EF00CAE153E5F3E000A0C73 /* glyphicons_322_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_322_twitter.png */; };
-		3EF00CAF153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png */; };
-		3EF00CB2153E5F9C000A0C73 /* glyphicons_329_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_329_e-mail.png */; };
-		3EF00CB3153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png */; };
+		3EF00CAE153E5F3E000A0C73 /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
+		3EF00CAF153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
+		3EF00CB2153E5F9C000A0C73 /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
+		3EF00CB3153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,10 +217,10 @@
 		3EE891B01521BBA9001DA59A /* StyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleViewController.h; sourceTree = "<group>"; };
 		3EE891B11521BBA9001DA59A /* StyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleViewController.m; sourceTree = "<group>"; };
 		3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_023_cogwheels.png; path = Vendor/glyphicons/glyphicons_023_cogwheels.png; sourceTree = SOURCE_ROOT; };
-		3EF00CAC153E5F3E000A0C73 /* glyphicons_322_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_322_twitter.png; path = Vendor/glyphicons/glyphicons_322_twitter.png; sourceTree = SOURCE_ROOT; };
-		3EF00CAD153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_322_twitter@2x.png"; path = "Vendor/glyphicons/glyphicons_322_twitter@2x.png"; sourceTree = SOURCE_ROOT; };
-		3EF00CB0153E5F9C000A0C73 /* glyphicons_329_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_329_e-mail.png"; path = "Vendor/glyphicons/glyphicons_329_e-mail.png"; sourceTree = SOURCE_ROOT; };
-		3EF00CB1153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_329_e-mail@2x.png"; path = "Vendor/glyphicons/glyphicons_329_e-mail@2x.png"; sourceTree = SOURCE_ROOT; };
+		3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_392_twitter.png; path = Vendor/glyphicons/glyphicons_392_twitter.png; sourceTree = SOURCE_ROOT; };
+		3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_392_twitter@2x.png"; path = "Vendor/glyphicons/glyphicons_392_twitter@2x.png"; sourceTree = SOURCE_ROOT; };
+		3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail.png"; sourceTree = SOURCE_ROOT; };
+		3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail@2x.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EF53A271525DD3D0073FB57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Vendor/opensong.js/README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -395,12 +395,12 @@
 		3ECF7F1A1522B4D10061457B /* Glyphicons */ = {
 			isa = PBXGroup;
 			children = (
-				3EF00CB0153E5F9C000A0C73 /* glyphicons_329_e-mail.png */,
-				3EF00CB1153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png */,
+				3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */,
+				3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */,
 				3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */,
 				3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */,
-				3EF00CAC153E5F3E000A0C73 /* glyphicons_322_twitter.png */,
-				3EF00CAD153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png */,
+				3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */,
+				3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */,
 				3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */,
 				3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */,
 				3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */,
@@ -468,7 +468,6 @@
 				3E663A9014B88ECF009F1340 /* Song Rendering */,
 				3EDDA40914AEC3A400BB781C /* Supporting Files */,
 			);
-			name = iOpenSongs;
 			path = iOpenSongs;
 			sourceTree = "<group>";
 		};
@@ -666,10 +665,10 @@
 				3EE891991521B53E001DA59A /* glyphicons_017_music@2x.png in Resources */,
 				3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */,
 				3EE891B51521C329001DA59A /* glyphicons_023_cogwheels.png in Resources */,
-				3EF00CAE153E5F3E000A0C73 /* glyphicons_322_twitter.png in Resources */,
-				3EF00CAF153E5F3E000A0C73 /* glyphicons_322_twitter@2x.png in Resources */,
-				3EF00CB2153E5F9C000A0C73 /* glyphicons_329_e-mail.png in Resources */,
-				3EF00CB3153E5F9C000A0C73 /* glyphicons_329_e-mail@2x.png in Resources */,
+				3EF00CAE153E5F3E000A0C73 /* glyphicons_392_twitter.png in Resources */,
+				3EF00CAF153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png in Resources */,
+				3EF00CB2153E5F9C000A0C73 /* glyphicons_399_e-mail.png in Resources */,
+				3EF00CB3153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png in Resources */,
 				3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */,
 				3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */,
 				3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */,
