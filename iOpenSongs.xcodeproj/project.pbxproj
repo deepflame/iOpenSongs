@@ -318,7 +318,7 @@
 				3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */,
 			);
 			name = Vendor;
-			path = OpenSongView;
+			path = iOpenSongs;
 			sourceTree = "<group>";
 		};
 		3E5E878914DE6166003B645A /* HTML */ = {
@@ -469,7 +469,7 @@
 				3EDDA40914AEC3A400BB781C /* Supporting Files */,
 			);
 			name = iOpenSongs;
-			path = OpenSongView;
+			path = iOpenSongs;
 			sourceTree = "<group>";
 		};
 		3EDDA40914AEC3A400BB781C /* Supporting Files */ = {
@@ -572,7 +572,7 @@
 			dependencies = (
 			);
 			name = iOpenSongs;
-			productName = OpenSongView;
+			productName = iOpenSongs;
 			productReference = 3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -820,16 +820,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/iOpenSongs\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				INFOPLIST_FILE = "iOpenSongs/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/iOpenSongs\"",
 					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
 					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK\"",
 					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK/Library\"",
@@ -852,16 +852,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/iOpenSongs\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OpenSongView/iOpenSongs-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
-				INFOPLIST_FILE = "OpenSongView/iOpenSongs-Info.plist";
+				INFOPLIST_FILE = "iOpenSongs/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/OpenSongView\"",
+					"\"$(SRCROOT)/iOpenSongs\"",
 					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
 					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK\"",
 					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK/Library\"",
