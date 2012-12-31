@@ -255,7 +255,7 @@
     
     // FIXME: return if not changed
     if ([songStyle isEqual:self.songStyle]) {
-        return;
+        //return;
     }
     
     self.headerVisible = self.headerVisible;
