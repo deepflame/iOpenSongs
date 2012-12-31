@@ -58,19 +58,21 @@
 
 - (BOOL)save
 {
-	if (![self.managedObjectContext hasChanges])
+	if (![self.managedObjectContext hasChanges]) {
 		return YES;
+    }
     
 	NSError *error = nil;
     
     //[document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
     
-	if (![self.managedObjectContext save:&error]) {
+	if ([self.managedObjectContext save:&error]) {
+        return YES;
+    } else {
 		NSLog(@"Error while saving: %@\n%@", [error localizedDescription], [error userInfo]);
-		return NO;
 	}
     
-	return YES;
+    return NO;
 }
 
 - (NSManagedObjectContext*)managedObjectContext {
