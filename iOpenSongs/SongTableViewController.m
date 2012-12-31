@@ -127,12 +127,8 @@
             objc_msgSend(self.searchDisplayController.searchBar, @selector(setCombinesLandscapeBars:), NO );
         }
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
+    // load data into the table
     [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
         [self setupFetchedResultsController];
         
