@@ -53,8 +53,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
     // select previous song
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
     [self selectSongAtIndexPath:self.currentSelection];
@@ -64,7 +62,7 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
         [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
