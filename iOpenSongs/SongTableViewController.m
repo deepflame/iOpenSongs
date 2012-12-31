@@ -26,9 +26,8 @@
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-- (NSArray *)openSongInfos
+- (NSArray *)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext
 {
-    NSMutableArray *infos =[NSMutableArray arrayWithCapacity:0];
     NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
     
     NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
@@ -41,59 +40,67 @@
         BOOL isDirectory;
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
         
-        // proceed to add the document URL to our list (ignore the "Inbox" folder)
-        if (!(isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"])) {
-            NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-            if (info) {
-                [infos addObject:info];
-            } else {
-                [errors addObject:curFileName];
-            }
+        // ignore directories and certain files
+        if (isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"]) {
+            continue;
         }
+
+        NSLog(@"File: %@", curFileName);
+        
+        NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+        // record error if no info
+        if (!info) {
+            NSLog(@"Error: %@", curFileName);
+            [errors addObject:curFileName];
+            continue;
+        }
+                
+        // import info
+        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+            // check if song already exists based on title
+            Song *songFound = nil;
+            for (Song *song in self.fetchedResultsController.fetchedObjects) {
+                if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
+                    songFound = song;
+                    break;
+                }
+            }
+            
+            if (songFound) {
+                [songFound updateWithOpenSongInfo:info];
+            } else {
+                [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
+            }
+        }];          
+        
     }
     
-    // process errors
-    if (errors.count) {
-        NSString *fileList = [errors componentsJoinedByString:@"\n"];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self handleError:[NSString stringWithFormat:@"%@\n\nMake sure the files are in the OpenSong format.", fileList] 
-                    withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
-        });
-    }
-    
-    // add a demo file if nothing is present
-    if ([infos count] == 0) {
+    // add demo song if no songs imported
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
         NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
         NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
         if (info) {
-            [infos addObject:info];
+            [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
         }
     }
-    return infos;
+    
+    return errors;
 }
 
 - (void)importDataIntoContext:(NSManagedObjectContext *)managedObjectContext
 {
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
-        NSArray *songInfos = [self openSongInfos];
-        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
-            for (NSDictionary *info in songInfos) {
-                // check if song already exists based on title
-                Song *songFound = nil;
-                for (Song *song in self.fetchedResultsController.fetchedObjects) {
-                    if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
-                        songFound = song;
-                    }
-                }
-                
-                if (songFound) {
-                    [songFound updateWithOpenSongInfo:info];
-                } else {
-                    [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-                }
-            }
-        }];
+        NSArray *errors = [self importApplicationDocumentsIntoContext:managedObjectContext];
+        
+        // process errors
+        if (errors.count) {
+            NSString *fileList = [errors componentsJoinedByString:@"\n"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleError:[NSString stringWithFormat:@"%@\n\nMake sure the files are in the OpenSong format.", fileList]
+                        withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
+            });
+        }
     });
     // may have to remove it due to ARC
     dispatch_release(importQ);
