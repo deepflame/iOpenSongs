@@ -13,25 +13,27 @@
 
 + (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl
 {
-    NSString *xmlString = [NSString stringWithContentsOfURL:fileUrl encoding:NSUTF8StringEncoding error:nil];
-
-    RKXMLParserLibXML *parser = [[RKXMLParserLibXML alloc] init];
-    id result = [parser objectFromString:xmlString error:nil];
-    
-    NSDictionary *info = nil;
-    
-    if (!result) {
-        // ERROR
-    } else {
-        info = [((NSDictionary *)result) objectForKey:@"song"];
-        
-        // set file name as title if title empty
-        if (![[info objectForKey:@"title"] isKindOfClass:NSString.class]) {
-            NSString *fileName = [fileUrl lastPathComponent];
-            [info setValue:fileName forKey:@"title"];
-        }
-        
+    NSString *textContent = [NSString stringWithContentsOfURL:fileUrl encoding:NSUTF8StringEncoding error:nil];
+    if (!textContent) {
+        // ERROR, not a text file
+        return nil;
     }
+    
+    RKXMLParserLibXML *parser = [[RKXMLParserLibXML alloc] init];
+    id result = [parser objectFromString:textContent error:nil];
+    if (!result) {
+        // ERROR, not an xml file
+        return nil;
+    }
+    
+    NSDictionary *info = [((NSDictionary *)result) objectForKey:@"song"];
+        
+    // set file name as title if title empty
+    if (![[info objectForKey:@"title"] isKindOfClass:NSString.class]) {
+        NSString *fileName = [fileUrl lastPathComponent];
+        [info setValue:fileName forKey:@"title"];
+    }
+
     return info;
 }
 
