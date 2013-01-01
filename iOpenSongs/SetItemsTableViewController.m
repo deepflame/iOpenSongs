@@ -134,6 +134,9 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    // do not update tableview automatically since we did it manually in the UI (otherwise 'ghosting' effect)
+    self.suspendAutomaticTrackingOfChangesInManagedObjectContext = YES;
+    
     NSMutableArray *setItems = [[self.fetchedResultsController fetchedObjects] mutableCopy];
         
     NSManagedObject *movedSetItem = [[self fetchedResultsController] objectAtIndexPath:fromIndexPath];
@@ -145,6 +148,8 @@
     for (SetItem *si in setItems) {
         si.position = [NSNumber numberWithInt:i++];
     }
+
+    self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
 }
 
 #pragma mark UITableViewDelegate
