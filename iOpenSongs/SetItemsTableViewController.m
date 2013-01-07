@@ -88,10 +88,8 @@
     // select previous item
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
     [self selectItemAtIndexPath:self.currentSelection];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
+    
+    [super viewWillAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

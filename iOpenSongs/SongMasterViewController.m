@@ -56,6 +56,8 @@
     // select previous song
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
     [self selectSongAtIndexPath:self.currentSelection];
+    
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - UITableViewDataSource

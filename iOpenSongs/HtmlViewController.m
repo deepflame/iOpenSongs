@@ -63,6 +63,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     self.webView.delegate = self; // setup the delegate as the web view is shown
 }
 
