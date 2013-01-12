@@ -10,10 +10,6 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5014F9F03100926A74 /* CoreData.framework */; };
-		3E120C5314F9F04000926A74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5214F9F04000926A74 /* MobileCoreServices.framework */; };
-		3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5414F9F04B00926A74 /* Security.framework */; };
-		3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5614F9F05700926A74 /* SystemConfiguration.framework */; };
-		3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5A14F9F07000926A74 /* libxml2.dylib */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
 		3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */; };
 		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
@@ -39,6 +35,8 @@
 		3E7992681564E19E00F085CB /* Song+FirstLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7992671564E19E00F085CB /* Song+FirstLetter.m */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
+		3E7CB99316A13D5C00692C31 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7CB99216A13D5B00692C31 /* libxml2.dylib */; };
+		3E7CB99C16A13ED000692C31 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7CB99B16A13ED000692C31 /* SystemConfiguration.framework */; };
 		3E7F1B6315847150008C222F /* SongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* SongTableViewController.m */; };
 		3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */; };
 		3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
@@ -77,37 +75,6 @@
 		ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3E73C6681525E0E800AA1B9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D1614564E810060A5C5;
-			remoteInfo = RestKit;
-		};
-		3E73C66A1525E0E800AA1B9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D2614564E820060A5C5;
-			remoteInfo = RestKitTests;
-		};
-		3E73C66C1525E0E800AA1B9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E62145651060060A5C5;
-			remoteInfo = RestKitFramework;
-		};
-		3E73C66E1525E0E800AA1B9C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E78145651060060A5C5;
-			remoteInfo = RestKitFrameworkTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
@@ -115,13 +82,8 @@
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
 		3E120C3514F9203900926A74 /* NSString+JavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaScript.m"; sourceTree = "<group>"; };
-		3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Vendor/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		3E120C5014F9F03100926A74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3E120C5214F9F04000926A74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3E120C5414F9F04B00926A74 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3E120C5614F9F05700926A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E120C5814F9F06200926A74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3E120C5A14F9F07000926A74 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3E120C6314FA1C3900926A74 /* 01 add Song.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "01 add Song.xcdatamodel"; sourceTree = "<group>"; };
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
@@ -155,6 +117,8 @@
 		3E7992671564E19E00F085CB /* Song+FirstLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+FirstLetter.m"; sourceTree = "<group>"; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
 		3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_158_playlist@2x.png"; path = "Vendor/glyphicons/glyphicons_158_playlist@2x.png"; sourceTree = SOURCE_ROOT; };
+		3E7CB99216A13D5B00692C31 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3E7CB99B16A13ED000692C31 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E7F1B6115847150008C222F /* SongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableViewController.h; sourceTree = "<group>"; };
 		3E7F1B6215847150008C222F /* SongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewController.m; sourceTree = "<group>"; };
 		3E7F1B64158476BC008C222F /* SetItemSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemSongsTableViewController.h; sourceTree = "<group>"; };
@@ -216,17 +180,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */,
 				3E35843B151E08C500137FC4 /* QuartzCore.framework in Frameworks */,
 				3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */,
-				3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */,
-				3E120C5314F9F04000926A74 /* MobileCoreServices.framework in Frameworks */,
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
 				3EDDA40714AEC3A400BB781C /* CoreGraphics.framework in Frameworks */,
 				3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */,
 				3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */,
-				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
+				3E7CB99C16A13ED000692C31 /* SystemConfiguration.framework in Frameworks */,
+				3E7CB99316A13D5C00692C31 /* libxml2.dylib in Frameworks */,
 				ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,27 +196,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E120C5C14F9F0CA00926A74 /* RestKit */ = {
-			isa = PBXGroup;
-			children = (
-				3E120C5D14F9F0D900926A74 /* Frameworks */,
-				3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */,
-			);
-			name = RestKit;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		3E120C5D14F9F0D900926A74 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E120C5A14F9F07000926A74 /* libxml2.dylib */,
-				3E120C5614F9F05700926A74 /* SystemConfiguration.framework */,
-				3E120C5414F9F04B00926A74 /* Security.framework */,
-				3E120C5214F9F04000926A74 /* MobileCoreServices.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3E120C6714FA276700926A74 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				3EACA53114F14D7C00519ADC /* Google Analytics SDK */,
-				3E120C5C14F9F0CA00926A74 /* RestKit */,
 				3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */,
 				3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */,
 			);
@@ -295,17 +235,6 @@
 				3E663A8E14B836CD009F1340 /* SongTemplate.html */,
 			);
 			name = "Song Rendering";
-			sourceTree = "<group>";
-		};
-		3E73C6621525E0E800AA1B9C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3E73C6691525E0E800AA1B9C /* libRestKit.a */,
-				3E73C66B1525E0E800AA1B9C /* RestKitTests.octest */,
-				3E73C66D1525E0E800AA1B9C /* RestKit.framework */,
-				3E73C66F1525E0E800AA1B9C /* RestKitFrameworkTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3E7F1B6B158487EF008C222F /* Controller */ = {
@@ -393,6 +322,8 @@
 				3E120C5814F9F06200926A74 /* QuartzCore.framework */,
 				3E586F1714E3389600345743 /* MessageUI.framework */,
 				3E355B8F14F1EC7100E49942 /* CFNetwork.framework */,
+				3E7CB99B16A13ED000692C31 /* SystemConfiguration.framework */,
+				3E7CB99216A13D5B00692C31 /* libxml2.dylib */,
 				2DAA4B6E5367422FAD72E0EA /* libPods.a */,
 			);
 			name = Frameworks;
@@ -539,49 +470,12 @@
 			mainGroup = 3EDDA3F314AEC3A300BB781C;
 			productRefGroup = 3EDDA3FF14AEC3A400BB781C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3E73C6621525E0E800AA1B9C /* Products */;
-					ProjectRef = 3E120C3B14F9EF2000926A74 /* RestKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				3EDDA3FD14AEC3A400BB781C /* iOpenSongs */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3E73C6691525E0E800AA1B9C /* libRestKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKit.a;
-			remoteRef = 3E73C6681525E0E800AA1B9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E73C66B1525E0E800AA1B9C /* RestKitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitTests.octest;
-			remoteRef = 3E73C66A1525E0E800AA1B9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E73C66D1525E0E800AA1B9C /* RestKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RestKit.framework;
-			remoteRef = 3E73C66C1525E0E800AA1B9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E73C66F1525E0E800AA1B9C /* RestKitFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitFrameworkTests.octest;
-			remoteRef = 3E73C66E1525E0E800AA1B9C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3EDDA3FC14AEC3A400BB781C /* Resources */ = {
