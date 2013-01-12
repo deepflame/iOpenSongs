@@ -18,7 +18,16 @@ Visit the [AppStore site](http://itunes.apple.com/us/app/iopensongs/id501589566?
 
 ## Requirements
 
-Everything that is needed to compile the project is included, except the icon set.
+The Cocoa dependencies are handled using CocoaPods. You will need Ruby to install it as a Ruby Gem.
+
+To install them run
+
+    gem install cocoapods
+    pod install
+
+:warning: Remember to open the resulting iOpenSongs.xcworkspace file instead of iOpenSongs.xcodeproj
+
+Everything else is included, except the icon set.
 The icons used can be purchased here: http://glyphicons.com/
 
 You can also change the icons in your own project if you cannot build because of the missing icons.
