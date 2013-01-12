@@ -18,7 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     [TestFlight takeOff:@"0ed79e6c030b4c401ba59ea0a6bd9f7f_Nzc2OTIyMDEyLTA0LTA5IDAzOjA4OjEwLjA4OTA4Nw"];
+   
+    [Crittercism enableWithAppID:@"50f0136259e1bd183a000009"];
     
     [EasyTracker launchWithOptions:launchOptions
                     withParameters:nil
