@@ -1,9 +1,3 @@
 [submodule "Vendor/opensong.js"]
 	path = Vendor/opensong.js
 	url = https://github.com/deepflame/opensong.js.git
-[submodule "Vendor/ECSlidingViewController"]
-	path = Vendor/ECSlidingViewController
-	url = https://github.com/edgecase/ECSlidingViewController.git
-[submodule "Vendor/RestKit"]
-	path = Vendor/RestKit
-	url = https://github.com/RestKit/RestKit.git

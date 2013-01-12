@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E0AFE581533197D00B45224 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0AFE561533197D00B45224 /* libTestFlight.a */; };
-		3E0AFE5B15331A0000B45224 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0AFE5A15331A0000B45224 /* libz.dylib */; };
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5014F9F03100926A74 /* CoreData.framework */; };
@@ -19,7 +17,6 @@
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
 		3E120C7214FB064900926A74 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */; };
 		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
-		3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */; };
 		3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8F14F1EC7100E49942 /* CFNetwork.framework */; };
 		3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B8B14F1E2B700E49942 /* EasyTracker.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
@@ -35,12 +32,10 @@
 		3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */; };
 		3E663A8C14B80BCF009F1340 /* DemoFile in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8B14B80BCF009F1340 /* DemoFile */; };
 		3E663A8F14B836CD009F1340 /* SongTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* SongTemplate.html */; };
-		3E6C47091525ED4A00164540 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6C47071525ED1D00164540 /* ECSlidingViewController.m */; };
 		3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
 		3E6C470F1525EE2200164540 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
 		3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
 		3E6C47151525EE4400164540 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
-		3E6C47191525EF0200164540 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6C47181525EEC300164540 /* UIImage+ImageWithUIView.m */; };
 		3E7992681564E19E00F085CB /* Song+FirstLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7992671564E19E00F085CB /* Song+FirstLetter.m */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
@@ -54,7 +49,6 @@
 		3E7F881D160CCCEE004EB8E6 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F881C160CCCEE004EB8E6 /* Song.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
-		3E9B9148160EB0D600711DA9 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
 		3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */; };
@@ -80,6 +74,7 @@
 		3EF00CAF153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
 		3EF00CB2153E5F9C000A0C73 /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
 		3EF00CB3153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */; };
+		ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,10 +109,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
-		3E0AFE561533197D00B45224 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = ../Vendor/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
-		3E0AFE571533197D00B45224 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = ../Vendor/TestFlightSDK/TestFlight.h; sourceTree = "<group>"; };
-		3E0AFE5A15331A0000B45224 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
@@ -138,7 +131,6 @@
 		3E355B8714F1E29900E49942 /* EasyTracker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EasyTracker.plist; sourceTree = "<group>"; };
 		3E355B8A14F1E2B700E49942 /* EasyTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EasyTracker.h; path = ../Vendor/GoogleAnalyticsSDK/EasyTracker/EasyTracker.h; sourceTree = "<group>"; };
 		3E355B8B14F1E2B700E49942 /* EasyTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EasyTracker.m; path = ../Vendor/GoogleAnalyticsSDK/EasyTracker/EasyTracker.m; sourceTree = "<group>"; };
-		3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3E355B8F14F1EC7100E49942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
@@ -156,13 +148,9 @@
 		3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasTableViewController.m; sourceTree = "<group>"; };
 		3E663A8B14B80BCF009F1340 /* DemoFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DemoFile; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* SongTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SongTemplate.html; sourceTree = "<group>"; };
-		3E6C47061525ECF600164540 /* ECSlidingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ECSlidingViewController.h; path = Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/ECSlidingViewController.h; sourceTree = SOURCE_ROOT; };
-		3E6C47071525ED1D00164540 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECSlidingViewController.m; path = Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/ECSlidingViewController.m; sourceTree = SOURCE_ROOT; };
 		3E6C470E1525EE2200164540 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = opensong.css; path = Vendor/opensong.js/stylesheets/opensong.css; sourceTree = SOURCE_ROOT; };
 		3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.7.1.min.js"; path = "Vendor/opensong.js/javascript/jquery-1.7.1.min.js"; sourceTree = SOURCE_ROOT; };
 		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
-		3E6C47171525EEC300164540 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageWithUIView.h"; path = "Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/UIImage+ImageWithUIView.h"; sourceTree = SOURCE_ROOT; };
-		3E6C47181525EEC300164540 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageWithUIView.m"; path = "Vendor/ECSlidingViewController/ECSlidingViewController/Vendor/ECSlidingViewController/UIImage+ImageWithUIView.m"; sourceTree = SOURCE_ROOT; };
 		3E7992661564E19E00F085CB /* Song+FirstLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+FirstLetter.h"; sourceTree = "<group>"; };
 		3E7992671564E19E00F085CB /* Song+FirstLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+FirstLetter.m"; sourceTree = "<group>"; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
@@ -183,10 +171,8 @@
 		3E7F881C160CCCEE004EB8E6 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
-		3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = ../Vendor/GoogleAnalyticsSDK/Library/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3EACA52E14F14D7700519ADC /* GANTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = ../Vendor/GoogleAnalyticsSDK/Library/GANTracker.h; sourceTree = "<group>"; };
 		3EC697E4155DD40200022C0E /* UIManagedDocument+Use.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIManagedDocument+Use.h"; sourceTree = "<group>"; };
 		3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIManagedDocument+Use.m"; sourceTree = "<group>"; };
 		3EC697E7155E06C400022C0E /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -222,6 +208,7 @@
 		3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail.png"; sourceTree = SOURCE_ROOT; };
 		3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail@2x.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EF53A271525DD3D0073FB57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Vendor/opensong.js/README.md; sourceTree = SOURCE_ROOT; };
+		83DDE2BF561849B48BA5F099 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,11 +216,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0AFE5B15331A0000B45224 /* libz.dylib in Frameworks */,
+				3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */,
 				3E35843B151E08C500137FC4 /* QuartzCore.framework in Frameworks */,
 				3E120C5114F9F03100926A74 /* CoreData.framework in Frameworks */,
 				3E120C5714F9F05700926A74 /* SystemConfiguration.framework in Frameworks */,
-				3E120C5514F9F04B00926A74 /* Security.framework in Frameworks */,
 				3E120C5314F9F04000926A74 /* MobileCoreServices.framework in Frameworks */,
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
@@ -241,33 +227,13 @@
 				3E586F1914E33B7000345743 /* MessageUI.framework in Frameworks */,
 				3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */,
 				3E120C5B14F9F07000926A74 /* libxml2.dylib in Frameworks */,
-				3E355B8D14F1EC1500E49942 /* libsqlite3.dylib in Frameworks */,
-				3E9B9148160EB0D600711DA9 /* libGoogleAnalytics.a in Frameworks */,
-				3E0AFE581533197D00B45224 /* libTestFlight.a in Frameworks */,
+				ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E0AFE591533199000B45224 /* TestFlight SDK */ = {
-			isa = PBXGroup;
-			children = (
-				3E0AFE5C15331A0800B45224 /* Frameworks */,
-				3E0AFE561533197D00B45224 /* libTestFlight.a */,
-				3E0AFE571533197D00B45224 /* TestFlight.h */,
-			);
-			name = "TestFlight SDK";
-			sourceTree = "<group>";
-		};
-		3E0AFE5C15331A0800B45224 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E0AFE5A15331A0000B45224 /* libz.dylib */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3E120C5C14F9F0CA00926A74 /* RestKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,14 +255,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E120C5E14F9F16300926A74 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E355B8C14F1EC1500E49942 /* libsqlite3.dylib */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3E120C6714FA276700926A74 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,9 +268,7 @@
 		3E35842F151D2FB900137FC4 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3E0AFE591533199000B45224 /* TestFlight SDK */,
 				3EACA53114F14D7C00519ADC /* Google Analytics SDK */,
-				3ECF7F2415233FFF0061457B /* ECSlidingViewController */,
 				3E120C5C14F9F0CA00926A74 /* RestKit */,
 				3E120C7014FA3E2E00926A74 /* CoreDataTableViewController.h */,
 				3E120C7114FA3E2F00926A74 /* CoreDataTableViewController.m */,
@@ -382,12 +338,9 @@
 		3EACA53114F14D7C00519ADC /* Google Analytics SDK */ = {
 			isa = PBXGroup;
 			children = (
-				3E120C5E14F9F16300926A74 /* Frameworks */,
 				3E355B8714F1E29900E49942 /* EasyTracker.plist */,
 				3E355B8A14F1E2B700E49942 /* EasyTracker.h */,
 				3E355B8B14F1E2B700E49942 /* EasyTracker.m */,
-				3EACA52E14F14D7700519ADC /* GANTracker.h */,
-				3E9B9147160EB0D600711DA9 /* libGoogleAnalytics.a */,
 			);
 			name = "Google Analytics SDK";
 			sourceTree = "<group>";
@@ -411,17 +364,6 @@
 			name = Glyphicons;
 			sourceTree = "<group>";
 		};
-		3ECF7F2415233FFF0061457B /* ECSlidingViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3E6C47061525ECF600164540 /* ECSlidingViewController.h */,
-				3E6C47071525ED1D00164540 /* ECSlidingViewController.m */,
-				3E6C47171525EEC300164540 /* UIImage+ImageWithUIView.h */,
-				3E6C47181525EEC300164540 /* UIImage+ImageWithUIView.m */,
-			);
-			path = ECSlidingViewController;
-			sourceTree = "<group>";
-		};
 		3EDDA3F314AEC3A300BB781C = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +371,7 @@
 				3E35842F151D2FB900137FC4 /* Vendor */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
+				83DDE2BF561849B48BA5F099 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -450,6 +393,7 @@
 				3E120C5814F9F06200926A74 /* QuartzCore.framework */,
 				3E586F1714E3389600345743 /* MessageUI.framework */,
 				3E355B8F14F1EC7100E49942 /* CFNetwork.framework */,
+				2DAA4B6E5367422FAD72E0EA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -565,6 +509,7 @@
 				3EDDA3FB14AEC3A400BB781C /* Frameworks */,
 				3EDA1BF71630711B009F5536 /* ShellScript */,
 				3EDDA3FC14AEC3A400BB781C /* Resources */,
+				BA2F0F4A94D9463A9899752C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -581,7 +526,7 @@
 		3EDDA3F514AEC3A300BB781C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Andreas Boehrnsen";
 			};
 			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */;
@@ -693,6 +638,20 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
+		BA2F0F4A94D9463A9899752C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -704,8 +663,6 @@
 				3EDDA40F14AEC3A400BB781C /* main.m in Sources */,
 				3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */,
 				3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */,
-				3E6C47191525EF0200164540 /* UIImage+ImageWithUIView.m in Sources */,
-				3E6C47091525ED4A00164540 /* ECSlidingViewController.m in Sources */,
 				3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */,
 				3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */,
@@ -812,6 +769,7 @@
 		};
 		3EDDA41D14AEC3A400BB781C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = iOpenSongs.entitlements;
 				CODE_SIGN_IDENTITY = "";
@@ -820,10 +778,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/iOpenSongs\"",
+					"\"$(SRCROOT)/Vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "iOpenSongs/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -855,7 +817,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
 				INFOPLIST_FILE = "iOpenSongs/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
