@@ -9,7 +9,7 @@
 #import "SongTableViewController.h"
 
 #import "Song.h"
-#import "Song+OpenSong.h"
+#import "Song+Import.h"
 #import "Song+FirstLetter.h"
 
 @interface SongTableViewController () <UISearchBarDelegate>
@@ -19,73 +19,15 @@
 @implementation SongTableViewController
 @synthesize searchBarColorInactive = _searchBarColorInactive;
 
-- (NSString *)applicationDocumentsDirectory
-{
-	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
-- (NSArray *)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext
-{
-    NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
-    
-    NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
-    NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
-    
-    NSArray *songsBeforeImport = [Song MR_findAllInContext:managedObjectContext];
-    
-    for (NSString* curFileName in [documentsDirectoryContents objectEnumerator]) {
-        NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:curFileName];
-        NSURL *fileURL = [NSURL fileURLWithPath:filePath];
-        
-        BOOL isDirectory;
-        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
-        
-        // ignore directories and certain files
-        if (isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"]) {
-            continue;
-        }
-
-        NSLog(@"File: %@", curFileName);
-        
-        NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-        // record error if no info
-        if (!info) {
-            NSLog(@"Error: %@", curFileName);
-            [errors addObject:curFileName];
-            continue;
-        }
-                
-        // import info
-        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
-            // check if song already exists based on title
-            Song *songFound = nil;
-            for (Song *song in songsBeforeImport) {
-                if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
-                    songFound = song;
-                    break;
-                }
-            }
-            
-            if (songFound) {
-                [songFound updateWithOpenSongInfo:info];
-            } else {
-                [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-            }
-        }];          
-        
-    }
-    
-    [managedObjectContext saveToPersistentStoreAndWait];
-    
-    return errors;
-}
+#pragma mark -
+#pragma mark Public Methods
 
 - (void)importSongs
 {
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
         NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
-        NSArray *errors = [self importApplicationDocumentsIntoContext:context];
+        NSArray *errors = [Song importApplicationDocumentsIntoContext:context];
         
         // process errors
         if (errors.count) {
@@ -101,16 +43,23 @@
     dispatch_release(importQ);
 }
 
--(void)importDemoSong
-{
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
-    NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-    if (info) {
-        [Song songWithOpenSongInfo:info inManagedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma mark Private Methods
+
+- (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
+    if (!errorTitle) {
+        errorTitle = NSLocalizedString(@"Error Title",
+                                       @"Title for alert displayed when download or parse error occurs.");
     }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorTitle
+                                                        message:errorMessage
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
-#pragma mark - View lifecycle
+#pragma mark - UIViewController
 
 - (void)viewDidLoad 
 {
@@ -135,7 +84,7 @@
 
     // add demo song if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importDemoSong];
+        [Song importDemoSong];
     }
 }
 
@@ -234,22 +183,6 @@
     if (![self searchDisplayController].active) {
         searchBar.tintColor = self.searchBarColorInactive;
     }
-}
-
-#pragma mark -
-
-- (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
-    if (!errorTitle) {
-        errorTitle = NSLocalizedString(@"Error Title",
-                                       @"Title for alert displayed when download or parse error occurs.");
-    }
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorTitle
-                                                        message:errorMessage
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];
 }
 
 @end
