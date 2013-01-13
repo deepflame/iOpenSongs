@@ -8,7 +8,6 @@
 
 #import "SetTableViewController.h"
 
-#import "DataManager.h"
 #import "Set.h"
 
 @interface SetTableViewController () <UITextFieldDelegate>
@@ -29,9 +28,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
-        [self setupFetchedResultsController];
-    }];
+    // load data
+    self.fetchedResultsController = [Set MR_fetchAllSortedBy:@"name"
+                                                   ascending:YES
+                                               withPredicate:nil
+                                                     groupBy:nil
+                                                    delegate:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -41,19 +43,6 @@
 }
 
 #pragma mark - 
-
-
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Set"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    // no predicate because we want ALL the Sets
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:[DataManager sharedInstance].managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -79,7 +68,8 @@
 {    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
-        [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [set MR_deleteEntity];
     }
 }
 
@@ -124,9 +114,8 @@
 - (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
 {
     if (sender.text.length > 0) {
-        Set *songSet = [NSEntityDescription insertNewObjectForEntityForName:@"Set"
-                                                     inManagedObjectContext:[DataManager sharedInstance].managedObjectContext];
-        songSet.name = sender.text;
+        Set *newSet = [Set MR_createEntity];
+        newSet.name = sender.text;
     }
     
     // clear the text field

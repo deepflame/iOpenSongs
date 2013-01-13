@@ -11,6 +11,6 @@
 
 @interface SongTableViewController : CoreDataTableViewController
 
-- (void)importDataIntoContext:(NSManagedObjectContext *)managedObjectContext;
+- (void)importData;
 
 @end

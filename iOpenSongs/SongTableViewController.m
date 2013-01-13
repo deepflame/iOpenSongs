@@ -8,8 +8,6 @@
 
 #import "SongTableViewController.h"
 
-#import "DataManager.h"
-
 #import "Song.h"
 #import "Song+OpenSong.h"
 #import "Song+FirstLetter.h"
@@ -32,6 +30,8 @@
     
     NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
     NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
+    
+    NSArray *songsBeforeImport = [Song MR_findAllInContext:managedObjectContext];
     
     for (NSString* curFileName in [documentsDirectoryContents objectEnumerator]) {
         NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:curFileName];
@@ -59,7 +59,7 @@
         [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
             // check if song already exists based on title
             Song *songFound = nil;
-            for (Song *song in self.fetchedResultsController.fetchedObjects) {
+            for (Song *song in songsBeforeImport) {
                 if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
                     songFound = song;
                     break;
@@ -87,11 +87,11 @@
     return errors;
 }
 
-- (void)importDataIntoContext:(NSManagedObjectContext *)managedObjectContext
+- (void)importData
 {
-    dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
-    dispatch_async(importQ, ^{
-        NSArray *errors = [self importApplicationDocumentsIntoContext:managedObjectContext];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        NSArray *errors = [self importApplicationDocumentsIntoContext:localContext];
         
         // process errors
         if (errors.count) {
@@ -101,22 +101,12 @@
                         withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
             });
         }
-    });
-    // may have to remove it due to ARC
-    dispatch_release(importQ);
-}
-
-// @override
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Song"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    // no predicate because we want ALL the Songs
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:[DataManager sharedInstance].managedObjectContext
-                                                                          sectionNameKeyPath:@"titleFirstLetter"
-                                                                                   cacheName:nil];
+        
+    } completion:^(BOOL success, NSError *error) {
+        if (success) {
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - View lifecycle
@@ -135,15 +125,17 @@
         }
     }
     
-    // load data into the table
-    [[DataManager sharedInstance] useDatabaseWithCompletionHandler:^(BOOL success) {
-        [self setupFetchedResultsController];
-        
-        // import if no data found
-        if (self.fetchedResultsController.fetchedObjects.count == 0) {
-            [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
-        }
-    }];
+    // load data
+    self.fetchedResultsController = [Song MR_fetchAllSortedBy:@"title"
+                                                    ascending:YES
+                                                withPredicate:nil
+                                                      groupBy:@"titleFirstLetter"
+                                                     delegate:self];
+
+    // import if no data found
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        [self importData];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 #import "EasyTracker.h"
-#import "DataManager.h"
 
 @implementation AppDelegate
 
@@ -19,6 +18,8 @@
 {
     // Override point for customization after application launch.
     
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kMagicalRecordDefaultStoreFileName];
+
     [TestFlight takeOff:@"0ed79e6c030b4c401ba59ea0a6bd9f7f_Nzc2OTIyMDEyLTA0LTA5IDAzOjA4OjEwLjA4OTA4Nw"];
    
     [Crittercism enableWithAppID:@"50f0136259e1bd183a000009"];
@@ -36,9 +37,6 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
-    
-    // save database
-    [[DataManager sharedInstance] save];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -71,8 +69,7 @@
      See also applicationDidEnterBackground:.
      */
 
-    // save database
-    [[DataManager sharedInstance] save];
+    [MagicalRecord cleanUp];
 }
 
 @end

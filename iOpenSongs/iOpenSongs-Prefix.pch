@@ -12,6 +12,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+    #import "CoreData+MagicalRecord.h"
+
     #import "TestFlight.h"
     #import "Crittercism.h"
 #endif

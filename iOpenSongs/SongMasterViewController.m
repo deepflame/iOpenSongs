@@ -9,8 +9,6 @@
 #import "SongMasterViewController.h"
 #import "SongViewController.h"
 
-#import "DataManager.h"
-
 #import "RevealSidebarController.h"
 
 @interface SongMasterViewController ()
@@ -67,7 +65,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
-        [[DataManager sharedInstance].managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        [song MR_deleteEntity];
         // delete curent selection if it was deleted
         if ([self.currentSelection isEqual:indexPath]) {
             self.currentSelection = nil;
@@ -95,7 +94,7 @@
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-    [self importDataIntoContext:[DataManager sharedInstance].managedObjectContext];
+    [self importData];
 }
 
 @end

@@ -15,8 +15,6 @@
 #import "SetItemSongsTableViewController.h"
 #import "RevealSidebarController.h"
 
-#import "DataManager.h"
-
 @interface SetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @end

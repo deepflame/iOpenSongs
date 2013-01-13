@@ -8,8 +8,6 @@
 
 #import "SetItemSongsTableViewController.h"
 
-#import "DataManager.h"
-
 @interface SetItemSongsTableViewController ()
 @end
 
