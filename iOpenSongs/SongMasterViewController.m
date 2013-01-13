@@ -94,7 +94,7 @@
 // Called when the user taps the Refresh button.
 {
 #pragma unused(sender)
-    [self importData];
+    [self importSongs];
 }
 
 @end

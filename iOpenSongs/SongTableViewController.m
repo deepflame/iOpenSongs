@@ -75,23 +75,17 @@
         
     }
     
-    // add demo song if no songs imported
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
-        NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-        if (info) {
-            [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-        }
-    }
+    [managedObjectContext saveToPersistentStoreAndWait];
     
     return errors;
 }
 
-- (void)importData
+- (void)importSongs
 {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        
-        NSArray *errors = [self importApplicationDocumentsIntoContext:localContext];
+    dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
+    dispatch_async(importQ, ^{
+        NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
+        NSArray *errors = [self importApplicationDocumentsIntoContext:context];
         
         // process errors
         if (errors.count) {
@@ -101,12 +95,19 @@
                         withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
             });
         }
-        
-    } completion:^(BOOL success, NSError *error) {
-        if (success) {
-            [self.tableView reloadData];
-        }
-    }];
+    });
+    
+    // may have to remove it due to ARC
+    dispatch_release(importQ);
+}
+
+-(void)importDemoSong
+{
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+    NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+    if (info) {
+        [Song songWithOpenSongInfo:info inManagedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+    }
 }
 
 #pragma mark - View lifecycle
@@ -132,9 +133,9 @@
                                                       groupBy:@"titleFirstLetter"
                                                      delegate:self];
 
-    // import if no data found
+    // add demo song if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importData];
+        [self importDemoSong];
     }
 }
 
