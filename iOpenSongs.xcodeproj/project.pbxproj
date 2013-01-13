@@ -666,7 +666,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/iOpenSongs\"",
-					"\"$(SRCROOT)/Vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
@@ -679,9 +678,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/iOpenSongs\"",
-					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
-					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK\"",
-					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK/Library\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6369156E-3BDD-4DDE-B506-202F6A01F422";
@@ -694,6 +690,7 @@
 		};
 		3EDDA41E14AEC3A400BB781C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = iOpenSongs.entitlements;
 				CODE_SIGN_IDENTITY = "";
@@ -714,9 +711,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/iOpenSongs\"",
-					"\"$(SRCROOT)/Vendor/TestFlightSDK\"",
-					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK\"",
-					"\"$(SRCROOT)/Vendor/GoogleAnalyticsSDK/Library\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
