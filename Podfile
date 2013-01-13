@@ -1,5 +1,6 @@
 platform :ios, '5.1'
 
+pod 'MagicalRecord'
 pod 'ECSlidingViewController'
 
 pod 'TestFlightSDK'
