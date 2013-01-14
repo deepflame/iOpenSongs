@@ -10,8 +10,9 @@
 
 @interface Song (Import)
 
-+ (NSArray *)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext;
++ (void)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext
+                                        error:(NSError **)error;
 
-+ (void)importDemoSong;
++ (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end

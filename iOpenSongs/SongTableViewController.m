@@ -27,18 +27,17 @@
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
         NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
-        NSArray *errors = [Song importApplicationDocumentsIntoContext:context];
+        NSError *error = nil;
         
-        // process errors
-        if (errors.count) {
-            NSString *fileList = [errors componentsJoinedByString:@"\n"];
+        [Song importApplicationDocumentsIntoContext:context error:&error];
+        
+        if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self handleError:[NSString stringWithFormat:@"%@\n\nMake sure the files are in the OpenSong format.", fileList]
-                        withTitle:[NSString stringWithFormat:@"Issue importing %d file(s):", errors.count]];
+                [self handleError:[NSString stringWithFormat:@"%@\n\n%@", error.localizedDescription, error.localizedRecoverySuggestion]
+                        withTitle:error.localizedFailureReason];
             });
         }
     });
-    
     // may have to remove it due to ARC
     dispatch_release(importQ);
 }
@@ -84,7 +83,7 @@
 
     // add demo song if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [Song importDemoSong];
+        [Song importDemoSongIntoContext:[NSManagedObjectContext contextForCurrentThread]];
     }
 }
 

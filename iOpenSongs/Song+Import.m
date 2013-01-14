@@ -20,7 +20,7 @@
 
 #pragma mark Public Methods
 
-+ (NSArray *)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext
++ (void)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error
 {
     NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
     
@@ -71,18 +71,30 @@
         
     }
     
-    [managedObjectContext saveToPersistentStoreAndWait];
+    // process import issues
+    if (errors.count > 0) {
+        NSString *failureReason = [NSString stringWithFormat:@"Issue importing %d file(s):", errors.count];
+        NSString *failureDescription = [errors componentsJoinedByString:@"\n"];
+        NSString *recoverySuggestion = @"Make sure the files are in the OpenSong format.";
+
+        NSMutableDictionary *errorInfo = [NSMutableDictionary dictionary];
+        [errorInfo setValue:failureReason forKey:NSLocalizedFailureReasonErrorKey];
+        [errorInfo setValue:failureDescription forKey:NSLocalizedDescriptionKey];
+        [errorInfo setValue:recoverySuggestion forKey:NSLocalizedRecoverySuggestionErrorKey];
+        
+        *error = [NSError errorWithDomain:@"import" code:100 userInfo:errorInfo];
+    }
     
-    return errors;
+    [managedObjectContext save:nil];
 }
 
-+ (void)importDemoSong
++ (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext
 {
     NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
     NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-    if (info) {
-        [Song songWithOpenSongInfo:info inManagedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread]];
-    }
+    [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
+    
+    [managedObjectContext save:nil];
 }
 
 

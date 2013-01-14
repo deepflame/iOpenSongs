@@ -40,9 +40,12 @@
 + (Song *) songWithOpenSongInfo:(NSDictionary *)info
          inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    Song *song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:context];
+    if (!info) {
+        return nil;
+    }
+    
+    Song *song = [Song createInContext:context];
     [song updateWithOpenSongInfo:info];
-
     return song;
 }
 

@@ -46,6 +46,7 @@
 		3E7F881D160CCCEE004EB8E6 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F881C160CCCEE004EB8E6 /* Song.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
+		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
 		3EC697E6155DD40200022C0E /* UIManagedDocument+Use.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E5155DD40200022C0E /* UIManagedDocument+Use.m */; };
@@ -132,6 +133,8 @@
 		3E7F881C160CCCEE004EB8E6 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
+		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
+		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3EC697E4155DD40200022C0E /* UIManagedDocument+Use.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIManagedDocument+Use.h"; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				3E7F8813160CCCED004EB8E6 /* SetItem.m */,
 				3E7992661564E19E00F085CB /* Song+FirstLetter.h */,
 				3E7992671564E19E00F085CB /* Song+FirstLetter.m */,
+				3EA890DB16A32B3600218AE7 /* Song+Import.h */,
+				3EA890DC16A32B3600218AE7 /* Song+Import.m */,
 				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
 				3E120C3114F91DD400926A74 /* Song+OpenSong.m */,
 			);
@@ -572,6 +577,7 @@
 				3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */,
 				3E7F881D160CCCEE004EB8E6 /* Song.m in Sources */,
 				3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */,
+				3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
