@@ -44,7 +44,7 @@
         return nil;
     }
     
-    Song *song = [Song createInContext:context];
+    Song *song = [NSEntityDescription insertNewObjectForEntityForName:@"Song" inManagedObjectContext:context];
     [song updateWithOpenSongInfo:info];
     return song;
 }
