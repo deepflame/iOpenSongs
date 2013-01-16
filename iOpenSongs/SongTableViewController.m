@@ -12,6 +12,8 @@
 #import "Song+Import.h"
 #import "Song+FirstLetter.h"
 
+#import "MBProgressHUD.h"
+
 @interface SongTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end
@@ -24,6 +26,10 @@
 
 - (void)importSongs
 {
+    // show HUD
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.labelText = @"Loading";
+ 
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
         NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
@@ -31,12 +37,17 @@
         
         [Song importApplicationDocumentsIntoContext:context error:&error];
         
-        if (error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // dismiss HUD
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+            // TODO: show image on success or error in HUD
+
+            if (error) {
                 [self handleError:[NSString stringWithFormat:@"%@\n\n%@", error.localizedDescription, error.localizedRecoverySuggestion]
                         withTitle:error.localizedFailureReason];
-            });
-        }
+            }
+        });
+        
     });
     // may have to remove it due to ARC
     dispatch_release(importQ);
