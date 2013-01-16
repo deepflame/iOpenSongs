@@ -1,9 +1,13 @@
 platform :ios, '5.1'
 
-pod 'MagicalRecord'
+# UI
 pod 'ECSlidingViewController'
 pod 'MBProgressHUD'
 
+# Core
+pod 'MagicalRecord'
+
+# Test
 pod 'TestFlightSDK'
 pod 'CrittercismSDK'
 
