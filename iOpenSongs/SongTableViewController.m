@@ -27,7 +27,8 @@
 - (void)importSongs
 {
     // show HUD
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewForHud animated:YES];
     hud.labelText = @"Loading";
  
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
