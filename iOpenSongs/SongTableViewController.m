@@ -35,6 +35,9 @@
         NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
         NSError *error = nil;
         
+        // delete sample song
+        [[Song MR_findFirstByAttribute:@"author" withValue:@"iOpenSongs" inContext:context] MR_deleteEntity];
+        // import songs from application sharing
         [Song importApplicationDocumentsIntoContext:context error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
