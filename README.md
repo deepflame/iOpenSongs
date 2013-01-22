@@ -16,9 +16,9 @@ This project aims to implement a native iPad application that can read and manag
 
 Visit the [AppStore site](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8) for screenshots and more info on the current release.
 
-## Requirements
+## Getting Started
 
-The Cocoa dependencies are handled using CocoaPods. You will need Ruby to install it as a Ruby Gem.
+Cocoa dependencies are handled using CocoaPods. You will need Ruby to install it as a Ruby Gem.
 
 To install them run
 
