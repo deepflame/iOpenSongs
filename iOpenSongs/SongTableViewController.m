@@ -14,6 +14,8 @@
 
 #import "MBProgressHUD.h"
 
+#import <objc/message.h>
+
 @interface SongTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end

@@ -66,7 +66,7 @@
         }
         
         if ([self respondsToSelector:attr]) {
-            [self performSelector:attr withObject:stringVal];
+            SuppressPerformSelectorLeakWarning([self performSelector:attr withObject:stringVal]);
         } else {
             NSLog(@"Song attr not found: %@", key);
         }

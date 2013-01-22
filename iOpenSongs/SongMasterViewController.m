@@ -52,7 +52,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // select previous song
-    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:nil];
+    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:UITableViewScrollPositionNone];
     [self selectSongAtIndexPath:self.currentSelection];
     
     [super viewWillAppear:animated];

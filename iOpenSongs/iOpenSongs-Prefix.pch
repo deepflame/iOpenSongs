@@ -12,9 +12,20 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+    // External Libraries
     #define MR_SHORTHAND
     #import "CoreData+MagicalRecord.h"
 
     #import "TestFlight.h"
     #import "Crittercism.h"
+
+    // Macros
+    #define SuppressPerformSelectorLeakWarning(Stuff) \
+        do { \
+            _Pragma("clang diagnostic push") \
+            _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+            Stuff; \
+            _Pragma("clang diagnostic pop") \
+        } while (0)
+
 #endif
