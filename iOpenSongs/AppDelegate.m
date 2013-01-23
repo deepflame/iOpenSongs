@@ -14,11 +14,15 @@
 
 @synthesize window = _window;
 
+// db file name
+NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kMagicalRecordDefaultStoreFileName];
+    [self moveDatabaseToMRStoreName:kCoreDataStoreFileName];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kCoreDataStoreFileName];
 
     [TestFlight takeOff:@"0ed79e6c030b4c401ba59ea0a6bd9f7f_Nzc2OTIyMDEyLTA0LTA5IDAzOjA4OjEwLjA4OTA4Nw"];
    
@@ -70,6 +74,32 @@
      */
 
     [MagicalRecord cleanUp];
+}
+
+/** migrates/moves the database to the new MR location */
+- (void) moveDatabaseToMRStoreName:(NSString *)storeName
+{
+    NSFileManager *fileMan = [NSFileManager defaultManager];
+    
+    NSURL *oldDirUrl = [[fileMan URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
+    oldDirUrl = [oldDirUrl URLByAppendingPathComponent:@"Default Song Database"];
+    NSURL *oldUrl = [oldDirUrl URLByAppendingPathComponent:@"StoreContent"];
+    oldUrl = [oldUrl URLByAppendingPathComponent:@"persistentStore"];
+    
+    NSURL *newUrl = [NSPersistentStore MR_urlForStoreName:storeName];
+    
+    // return if old db file does not exist
+    if (![fileMan isReadableFileAtPath:[oldUrl path]]) {
+        return;
+    }
+    
+    NSError *error;
+    // create directory of target path
+    [fileMan createDirectoryAtURL:[newUrl URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];
+    // copy file
+    [fileMan copyItemAtURL:oldUrl toURL:newUrl error:&error];
+    // delete old db dir
+    [fileMan removeItemAtURL:oldDirUrl error:&error];
 }
 
 @end
