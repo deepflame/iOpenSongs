@@ -49,6 +49,9 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
+    
+    // save all changes to the data
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -73,6 +76,9 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
      See also applicationDidEnterBackground:.
      */
 
+    // save all changes to the data
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
+    
     [MagicalRecord cleanUp];
 }
 
