@@ -35,7 +35,7 @@
  
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext contextForCurrentThread];
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
         NSError *error = nil;
         
         // delete sample song
@@ -100,7 +100,7 @@
 
     // add demo song if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [Song importDemoSongIntoContext:[NSManagedObjectContext contextForCurrentThread]];
+        [Song importDemoSongIntoContext:[NSManagedObjectContext MR_contextForCurrentThread]];
     }
 }
 

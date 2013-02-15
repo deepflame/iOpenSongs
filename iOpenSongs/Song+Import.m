@@ -51,7 +51,7 @@
         
         // import info
         [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
-            NSArray *songsBeforeImport = [Song findAll];
+            NSArray *songsBeforeImport = [Song MR_findAll];
             
             // check if song already exists based on title
             Song *songFound = nil;
