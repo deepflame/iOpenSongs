@@ -97,7 +97,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
         *error = [NSError errorWithDomain:@"import" code:100 userInfo:errorInfo];
     }
     
-    [managedObjectContext save:nil];
+    [managedObjectContext MR_saveToPersistentStoreAndWait];
 }
 
 + (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext
@@ -106,7 +106,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
     NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
     [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
     
-    [managedObjectContext save:nil];
+    [managedObjectContext MR_saveToPersistentStoreAndWait];
 }
 
 
