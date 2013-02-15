@@ -37,14 +37,11 @@
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SetItem"];
-    request.predicate = [NSPredicate predicateWithFormat:@"set == %@", self.set];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"position" ascending:YES]];
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.set.managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
+    self.fetchedResultsController = [SetItem MR_fetchAllSortedBy:@"position"
+                                                   ascending:YES
+                                               withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]
+                                                     groupBy:nil
+                                                    delegate:self];
 }
 
 - (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -88,6 +85,14 @@
     [self selectItemAtIndexPath:self.currentSelection];
     
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    // save all changes to the data
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
