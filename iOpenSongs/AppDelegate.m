@@ -34,7 +34,7 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -93,6 +93,7 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
         return;
     }
     
+    // TODO: move this part into a category of NSFileManager
     NSError *error;
     // create directory of target path
     [fileMan createDirectoryAtURL:[newUrl URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];

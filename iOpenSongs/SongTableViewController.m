@@ -43,11 +43,12 @@
     dispatch_async(importQ, ^{
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
         NSError *error = nil;
-        
+                
         // delete sample song
         [[Song MR_findFirstByAttribute:@"author" withValue:@"iOpenSongs" inContext:context] MR_deleteEntity];
         // import songs from application sharing
         [Song importApplicationDocumentsIntoContext:context error:&error];
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // dismiss HUD
@@ -61,7 +62,7 @@
         });
         
     });
-    // may have to remove it due to ARC
+    // TODO: may have to remove it due to ARC
     dispatch_release(importQ);
 }
 
@@ -97,7 +98,7 @@
         }
     }
     
-    // load data
+    // fetch data
     self.fetchedResultsController = [Song MR_fetchAllSortedBy:@"title"
                                                     ascending:YES
                                                 withPredicate:nil
@@ -112,7 +113,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return YES;
 }
 
