@@ -9,6 +9,11 @@
 #import "Song+Import.h"
 #import "Song+OpenSong.h"
 
+NSString *const SongImportWillImport  = @"SongImportWillImport";
+NSString *const SongImportAttributeName  = @"SongImportAttributeName";
+NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
+
+
 @implementation Song (Import)
 
 #pragma mark Private Methods
@@ -27,7 +32,14 @@
     NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
     NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
     
-    for (NSString* curFileName in [documentsDirectoryContents objectEnumerator]) {
+    [documentsDirectoryContents enumerateObjectsUsingBlock:^(NSString *curFileName, NSUInteger idx, BOOL *stop) {
+        // send a progress notification
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSNumber *progress = @((float)idx / (float)documentsDirectoryContents.count);
+            NSDictionary *notificationInfo = @{SongImportAttributeName: curFileName, SongImportAttributeProgress: progress};
+            [[NSNotificationCenter defaultCenter] postNotificationName:SongImportWillImport object:curFileName userInfo:notificationInfo];
+        });
+        
         NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:curFileName];
         NSURL *fileURL = [NSURL fileURLWithPath:filePath];
         
@@ -36,7 +48,7 @@
         
         // ignore directories and certain files
         if (isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"]) {
-            continue;
+            return;
         }
         
         NSLog(@"File: %@", curFileName);
@@ -46,7 +58,7 @@
         if (!info) {
             NSLog(@"Error: %@", curFileName);
             [errors addObject:curFileName];
-            continue;
+            return;
         }
         
         // import info
@@ -69,7 +81,7 @@
             }
         }];
         
-    }
+    }];
     
     // process import issues
     if (errors.count > 0) {

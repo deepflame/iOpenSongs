@@ -31,8 +31,14 @@
     // show HUD
     UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewForHud animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
     hud.labelText = @"Loading";
  
+    // listen to import progress event
+    [[NSNotificationCenter defaultCenter] addObserverForName:SongImportWillImport object:nil queue:nil usingBlock:^(NSNotification *notification) {
+        hud.progress = [(NSNumber *) [notification.userInfo valueForKey:SongImportAttributeProgress] floatValue];
+    }];
+    
     dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
     dispatch_async(importQ, ^{
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
