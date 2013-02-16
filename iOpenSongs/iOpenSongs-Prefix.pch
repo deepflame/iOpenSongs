@@ -18,6 +18,7 @@
 
     #import "TestFlight.h"
     #import "Crittercism.h"
+    #import <Crashlytics/Crashlytics.h>
 
     // Macros
     #define SuppressPerformSelectorLeakWarning(Stuff) \
