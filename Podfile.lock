@@ -1,14 +1,12 @@
 
 PODS:
-- CrittercismSDK (3.4.8)
 - ECSlidingViewController (0.9.0)
 - GoogleAnalytics-iOS-SDK (1.5.1)
 - MBProgressHUD (0.5)
 - MagicalRecord (2.1)
-- TestFlightSDK (1.2)
+- TestFlightSDK (1.2.3.beta1)
 
 DEPENDENCIES:
-- CrittercismSDK
 - ECSlidingViewController
 - GoogleAnalytics-iOS-SDK (~> 1.5.1)
 - MBProgressHUD
@@ -16,11 +14,10 @@ DEPENDENCIES:
 - TestFlightSDK
 
 SPEC CHECKSUMS:
-  CrittercismSDK: b1bc7bd00979398e15c7ab5d6291c047aa182035
-  ECSlidingViewController: 87676976e3bf717e058f032eb161890d5e6350ca
-  GoogleAnalytics-iOS-SDK: 6ab69448894a4ef324ae18db4fd0447ffddea7fd
+  ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
+  GoogleAnalytics-iOS-SDK: 102246354864241714a5f863c1b4315ecf49378f
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
-  TestFlightSDK: 29e194fb148e4861f92e4c1195b9697e1f3ad19a
+  TestFlightSDK: f638b08651a37af099e40c47241fc58fd3cb1a66
 
 COCOAPODS: 0.16.1
