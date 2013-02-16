@@ -1,3 +1,4 @@
 Vendor/glyphicons/*.png
 /Pods/
 /iOpenSongs.xcworkspace/
+/iOpenSongs/Defines.h

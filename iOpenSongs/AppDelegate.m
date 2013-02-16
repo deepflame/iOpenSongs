@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "Defines.h" // can be removed if not found
+#import <Crashlytics/Crashlytics.h>
 #import "EasyTracker.h"
 
 @implementation AppDelegate
@@ -24,7 +26,13 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
     [self moveDatabaseToMRStoreName:kCoreDataStoreFileName];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kCoreDataStoreFileName];
 
-    [TestFlight takeOff:@"0ed79e6c030b4c401ba59ea0a6bd9f7f_Nzc2OTIyMDEyLTA0LTA5IDAzOjA4OjEwLjA4OTA4Nw"];
+#ifdef IOPENSONGS_TESTFLIGHT_KEY
+    [TestFlight takeOff:IOPENSONGS_TESTFLIGHT_KEY];
+#endif
+    
+#ifdef IOPENSONGS_CRASHLYTICS_KEY
+	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
+#endif
     
     [EasyTracker launchWithOptions:launchOptions
                     withParameters:nil
