@@ -11,9 +11,8 @@
 
 #import "Defines.h"
 #import "UserVoice.h"
-#import <MessageUI/MessageUI.h>
 
-@interface ExtrasTableViewController () <MFMailComposeViewControllerDelegate>
+@interface ExtrasTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *versionCell;
 @end
@@ -53,17 +52,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Send Feedback Cell"]) {
+    if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Feedback and Support Cell"]) {
 #if defined IOPENSONGS_USERVOICE_CONFIG
         [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
 #else
-        if ([MFMailComposeViewController canSendMail]) {
-            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-            mailViewController.mailComposeDelegate = self;
-            [mailViewController setSubject:@"[iOpenSongs] Feedback"];
-            [mailViewController setToRecipients:[NSArray arrayWithObject:@"iOpenSongs@boehrnsen.de"]];
-            [self presentModalViewController:mailViewController animated:YES];
-        }
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
     } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Fork Me Github Cell"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
@@ -97,24 +90,12 @@
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-#pragma mark - MFMailComposeViewControllerDelegate
-                                                 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
-    [self dismissModalViewControllerAnimated:YES];
-    [self.delegate extrasTableViewControllerDelegate:self dismissMyPopoverAnimated:FALSE];
-}
                                                  
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {    
-    if ([segue.identifier isEqualToString:@"Show Help"]) {
-        HtmlViewController *htmlVC = (HtmlViewController *) segue.destinationViewController;
-
-        htmlVC.title = @"Help";
-        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"help" withExtension:@"html"];
-    } else if ([segue.identifier isEqualToString:@"Show About"]) {
+    if ([segue.identifier isEqualToString:@"Show About"]) {
         HtmlViewController *htmlVC = (HtmlViewController *) segue.destinationViewController;
         
         htmlVC.title = @"About";
