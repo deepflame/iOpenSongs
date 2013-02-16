@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "Defines.h" // can be removed if not found
+#import "GAI.h"
 #import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
@@ -25,6 +26,10 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
     [self moveDatabaseToMRStoreName:kCoreDataStoreFileName];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kCoreDataStoreFileName];
 
+#ifdef IOPENSONGS_GOOGLEANALYTICS_KEY    
+    [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
+#endif
+    
 #ifdef IOPENSONGS_TESTFLIGHT_KEY
     [TestFlight takeOff:IOPENSONGS_TESTFLIGHT_KEY];
 #endif

@@ -1,21 +1,21 @@
 
 PODS:
 - ECSlidingViewController (0.9.0)
-- GoogleAnalytics-iOS-SDK (1.5.1)
+- GoogleAnalytics-iOS-SDK (2.0beta4)
 - MBProgressHUD (0.5)
 - MagicalRecord (2.1)
 - TestFlightSDK (1.2.3.beta1)
 
 DEPENDENCIES:
 - ECSlidingViewController
-- GoogleAnalytics-iOS-SDK (~> 1.5.1)
+- GoogleAnalytics-iOS-SDK
 - MBProgressHUD
 - MagicalRecord
 - TestFlightSDK
 
 SPEC CHECKSUMS:
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
-  GoogleAnalytics-iOS-SDK: 102246354864241714a5f863c1b4315ecf49378f
+  GoogleAnalytics-iOS-SDK: faed6c1fafabd3363fe7fe39779381274ac771b9
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
   TestFlightSDK: f638b08651a37af099e40c47241fc58fd3cb1a66
