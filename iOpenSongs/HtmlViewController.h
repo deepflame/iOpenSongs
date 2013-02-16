@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EasyTracker.h"
 
-@interface HtmlViewController : TrackedUIViewController <UIWebViewDelegate>
+@interface HtmlViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) NSURL *resourceURL;
 

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EasyTracker.h"
 
 #import "Song.h"
 
 // public interface
-@interface SongViewController : TrackedUIViewController
+@interface SongViewController : UIViewController
 
 @property (nonatomic, copy) Song *song;
 @property (nonatomic) BOOL nightMode;

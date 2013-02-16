@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EasyTracker.h"
 
 @class ExtrasTableViewController;
 
@@ -21,6 +20,6 @@
 @end
 
 
-@interface ExtrasTableViewController : TrackedUITableViewController
+@interface ExtrasTableViewController : UITableViewController
 @property (nonatomic, weak) id <ExtrasTableViewControllerDelegate> delegate;
 @end

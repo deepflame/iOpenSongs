@@ -10,7 +10,6 @@
 
 #import "Defines.h" // can be removed if not found
 #import <Crashlytics/Crashlytics.h>
-#import "EasyTracker.h"
 
 @implementation AppDelegate
 
@@ -33,10 +32,6 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
 #ifdef IOPENSONGS_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
 #endif
-    
-    [EasyTracker launchWithOptions:launchOptions
-                    withParameters:nil
-                         withError:nil];
     
     return YES;
 }

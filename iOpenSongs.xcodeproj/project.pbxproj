@@ -10,9 +10,7 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
-		3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B8714F1E29900E49942 /* EasyTracker.plist */; };
 		3E355B9014F1EC7100E49942 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355B8F14F1EC7100E49942 /* CFNetwork.framework */; };
-		3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B8B14F1E2B700E49942 /* EasyTracker.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
 		3E35843B151E08C500137FC4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E120C5814F9F06200926A74 /* QuartzCore.framework */; };
 		3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* RevealSidebarController.m */; };
@@ -88,9 +86,6 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
-		3E355B8714F1E29900E49942 /* EasyTracker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EasyTracker.plist; sourceTree = "<group>"; };
-		3E355B8A14F1E2B700E49942 /* EasyTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EasyTracker.h; path = ../Vendor/GoogleAnalyticsSDK/EasyTracker/EasyTracker.h; sourceTree = "<group>"; };
-		3E355B8B14F1E2B700E49942 /* EasyTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EasyTracker.m; path = ../Vendor/GoogleAnalyticsSDK/EasyTracker/EasyTracker.m; sourceTree = "<group>"; };
 		3E355B8F14F1EC7100E49942 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
@@ -207,15 +202,6 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
-		3E35842F151D2FB900137FC4 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				3EACA53114F14D7C00519ADC /* Google Analytics SDK */,
-			);
-			name = Vendor;
-			path = iOpenSongs;
-			sourceTree = "<group>";
-		};
 		3E5E878914DE6166003B645A /* HTML */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,16 +251,6 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		3EACA53114F14D7C00519ADC /* Google Analytics SDK */ = {
-			isa = PBXGroup;
-			children = (
-				3E355B8714F1E29900E49942 /* EasyTracker.plist */,
-				3E355B8A14F1E2B700E49942 /* EasyTracker.h */,
-				3E355B8B14F1E2B700E49942 /* EasyTracker.m */,
-			);
-			name = "Google Analytics SDK";
-			sourceTree = "<group>";
-		};
 		3ECF7F1A1522B4D10061457B /* Glyphicons */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				3EDDA40814AEC3A400BB781C /* iOpenSongs */,
-				3E35842F151D2FB900137FC4 /* Vendor */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
 				83DDE2BF561849B48BA5F099 /* Pods.xcconfig */,
@@ -486,7 +461,6 @@
 			files = (
 				3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */,
 				3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */,
-				3E355B8814F1E29900E49942 /* EasyTracker.plist in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */,
 				3E6C47151525EE4400164540 /* opensong.js in Resources */,
@@ -573,7 +547,6 @@
 				3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */,
 				3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */,
-				3E355B9114F1EC9900E49942 /* EasyTracker.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */,
 				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
