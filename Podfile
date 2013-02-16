@@ -9,5 +9,6 @@ pod 'MagicalRecord'
 
 # Test
 pod 'TestFlightSDK'
+pod 'uservoice-iphone-sdk'
 
 pod 'GoogleAnalytics-iOS-SDK'

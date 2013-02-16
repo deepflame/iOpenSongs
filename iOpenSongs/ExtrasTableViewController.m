@@ -8,6 +8,9 @@
 
 #import "ExtrasTableViewController.h"
 #import "HtmlViewController.h"
+
+#import "Defines.h"
+#import "UserVoice.h"
 #import <MessageUI/MessageUI.h>
 
 @interface ExtrasTableViewController () <MFMailComposeViewControllerDelegate>
@@ -51,6 +54,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Send Feedback Cell"]) {
+#if defined IOPENSONGS_USERVOICE_CONFIG
+        [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
+#else
         if ([MFMailComposeViewController canSendMail]) {
             MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
             mailViewController.mailComposeDelegate = self;
@@ -58,6 +64,7 @@
             [mailViewController setToRecipients:[NSArray arrayWithObject:@"iOpenSongs@boehrnsen.de"]];
             [self presentModalViewController:mailViewController animated:YES];
         }
+#endif
     } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Fork Me Github Cell"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
         

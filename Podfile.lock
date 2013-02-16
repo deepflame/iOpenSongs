@@ -5,6 +5,7 @@ PODS:
 - MBProgressHUD (0.5)
 - MagicalRecord (2.1)
 - TestFlightSDK (1.2.3.beta1)
+- uservoice-iphone-sdk (2.0.6)
 
 DEPENDENCIES:
 - ECSlidingViewController
@@ -12,6 +13,7 @@ DEPENDENCIES:
 - MBProgressHUD
 - MagicalRecord
 - TestFlightSDK
+- uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
@@ -19,5 +21,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
   TestFlightSDK: f638b08651a37af099e40c47241fc58fd3cb1a66
+  uservoice-iphone-sdk: 052c4959b420f4fff478519f278aae517fe7784a
 
 COCOAPODS: 0.16.1
