@@ -23,6 +23,9 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
 {
     // Override point for customization after application launch.
     
+    // do not let the device sleep
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
     [self moveDatabaseToMRStoreName:kCoreDataStoreFileName];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kCoreDataStoreFileName];
 
