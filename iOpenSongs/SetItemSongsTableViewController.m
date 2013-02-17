@@ -31,7 +31,7 @@
 - (IBAction)doneEditing:(UIBarButtonItem *)sender 
 {
     [[self delegate] setItemSongsTableViewController:self 
-                                     finishedEditing:true];
+                                     finishedEditing:YES];
 }
 
 

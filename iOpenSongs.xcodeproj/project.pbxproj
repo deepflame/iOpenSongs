@@ -224,6 +224,7 @@
 				3E663A8B14B80BCF009F1340 /* DemoFile */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
+				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -331,7 +332,6 @@
 		3EDDA40814AEC3A400BB781C /* iOpenSongs */ = {
 			isa = PBXGroup;
 			children = (
-				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
 				3EE891AF1521BB50001DA59A /* Categories */,
 				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
 				3EAB665D160EC1D500149DA9 /* iPhone.storyboard */,
