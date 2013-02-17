@@ -11,6 +11,7 @@
 
 #import "Defines.h"
 #import "UserVoice.h"
+#import "IOpenSongsUVStyleSheet.h"
 
 @interface ExtrasTableViewController ()
 
@@ -54,6 +55,7 @@
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Feedback and Support Cell"]) {
 #if defined IOPENSONGS_USERVOICE_CONFIG
+        [UVStyleSheet setStyleSheet:[[IOpenSongsUVStyleSheet alloc] init]];
         [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
 #else
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
