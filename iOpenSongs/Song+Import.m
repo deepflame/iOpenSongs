@@ -81,6 +81,10 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
             }
         }];
         
+        // save every 100 songs
+        if (idx % 100 == 0) {
+            [managedObjectContext MR_saveToPersistentStoreAndWait];
+        }
     }];
     
     // process import issues
