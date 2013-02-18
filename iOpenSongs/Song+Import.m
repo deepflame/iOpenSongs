@@ -102,7 +102,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
 
 + (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext
 {
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"DemoFile" withExtension:@""];
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"Sample Song" withExtension:@""];
     NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
     [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
     
