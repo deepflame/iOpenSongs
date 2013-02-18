@@ -14,13 +14,15 @@
 #import "MBProgressHUD.h"
 #import "RevealSidebarController.h"
 
-@interface SongMasterViewController ()
+@interface SongMasterViewController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
+@property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
 
 
 @implementation SongMasterViewController
 @synthesize currentSelection = _currentSelection;
+@synthesize importActionSheet = _importActionSheet;
 
 #pragma mark -
 #pragma mark Private Methods
@@ -105,8 +107,11 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // UI
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.importActionSheet = [[UIActionSheet alloc ]initWithTitle:@"Import from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"iTunes", nil];
 
     // add demo song if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
@@ -155,10 +160,23 @@
     }
 }
 
-- (IBAction)refreshList:(id)sender 
-// Called when the user taps the Refresh button.
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [self importSongs];
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"iTunes"]) {
+        [self importSongs];
+    }
+}
+
+#pragma mark Actions
+
+- (IBAction)addSongs:(id)sender {
+    if ([self.importActionSheet isVisible]) {
+        [self.importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
+    } else {
+        [self.importActionSheet showFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES];        
+    }
 }
 
 @end
