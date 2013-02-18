@@ -11,6 +11,4 @@
 
 @interface SongTableViewController : CoreDataTableViewController
 
-- (void)importSongs;
-
 @end
