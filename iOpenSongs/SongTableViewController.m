@@ -9,7 +9,6 @@
 #import "SongTableViewController.h"
 
 #import "Song.h"
-#import "Song+FirstLetter.h"
 
 #import <objc/message.h>
 
@@ -37,11 +36,11 @@
     }
     
     // fetch data
-    self.fetchedResultsController = [Song MR_fetchAllSortedBy:@"title"
-                                                    ascending:YES
-                                                withPredicate:nil
-                                                      groupBy:@"titleFirstLetter"
-                                                     delegate:self];
+    self.fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
+                                                 withPredicate:nil
+                                                      sortedBy:@"titleNormalized"
+                                                     ascending:YES
+                                                      delegate:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
