@@ -19,6 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.storyboard = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
+    } else {
+        self.storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];        
+    }
+    
     // Override point for customization after application launch.
     
     // do not let the device sleep
@@ -27,6 +35,12 @@
     [self startCustomerServices];
     
     [self setupCoreData];
+    
+    
+    // display ui
+    
+    self.window.rootViewController = [self.storyboard instantiateInitialViewController];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
