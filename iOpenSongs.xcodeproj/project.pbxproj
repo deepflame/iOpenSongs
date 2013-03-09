@@ -81,25 +81,25 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
-		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon57.png; path = ../Resources/Images/ProgramIcon57.png; sourceTree = "<group>"; };
+		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
 		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealSidebarController.m; sourceTree = "<group>"; };
-		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav_menu_icon@2x.png"; path = "../Resources/Images/nav_menu_icon@2x.png"; sourceTree = "<group>"; };
+		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* 02.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 02.xcdatamodel; sourceTree = "<group>"; };
-		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = ios.css; path = ../Resources/Html/ios.css; sourceTree = "<group>"; };
+		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
 		3E5E878414DD7680003B645A /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
-		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = default.css; path = ../Resources/Html/default.css; sourceTree = "<group>"; };
-		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = about.html; path = ../Resources/Html/about.html; sourceTree = "<group>"; };
+		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasTableViewController.h; sourceTree = "<group>"; };
 		3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasTableViewController.m; sourceTree = "<group>"; };
 		3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_244_conversation.png; path = Vendor/glyphicons/glyphicons_244_conversation.png; sourceTree = SOURCE_ROOT; };
 		3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_244_conversation@2x.png"; path = "Vendor/glyphicons/glyphicons_244_conversation@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E637B0A16D0CB2A00514793 /* IOpenSongsUVStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOpenSongsUVStyleSheet.h; sourceTree = "<group>"; };
 		3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOpenSongsUVStyleSheet.m; sourceTree = "<group>"; };
-		3E663A8E14B836CD009F1340 /* SongTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = SongTemplate.html; path = ../Resources/Html/SongTemplate.html; sourceTree = "<group>"; };
+		3E663A8E14B836CD009F1340 /* SongTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SongTemplate.html; sourceTree = "<group>"; };
 		3E6C470E1525EE2200164540 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = opensong.css; path = Vendor/opensong.js/stylesheets/opensong.css; sourceTree = SOURCE_ROOT; };
 		3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.7.1.min.js"; path = "Vendor/opensong.js/javascript/jquery-1.7.1.min.js"; sourceTree = SOURCE_ROOT; };
 		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
@@ -118,15 +118,15 @@
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
-		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon114.png; path = ../Resources/Images/ProgramIcon114.png; sourceTree = "<group>"; };
-		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon144.png; path = ../Resources/Images/ProgramIcon144.png; sourceTree = "<group>"; };
+		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
+		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Amazing grace"; path = "Resources/Songs/Amazing grace"; sourceTree = SOURCE_ROOT; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Sample Song"; path = "Resources/Songs/Sample Song"; sourceTree = SOURCE_ROOT; };
 		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
-		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Resources/Images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+PrimitiveAccessors.h"; sourceTree = "<group>"; };
 		3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+AccessorOverrides.m"; sourceTree = "<group>"; };
 		3EC697E7155E06C400022C0E /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOpenSongs-Info.plist"; path = "../Resources/iOpenSongs-Info.plist"; sourceTree = "<group>"; };
+		3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs-Info.plist"; sourceTree = "<group>"; };
 		3EDDA40C14AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EDDA40E14AEC3A400BB781C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOpenSongs-Prefix.pch"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3EDDA41714AEC3A400BB781C /* SongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
-		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProgramIcon72.png; path = ../Resources/Images/ProgramIcon72.png; sourceTree = "<group>"; };
+		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
 		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
 		3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -196,13 +196,12 @@
 		3E5E878914DE6166003B645A /* Html */ = {
 			isa = PBXGroup;
 			children = (
-				3EF53A231525DD240073FB57 /* opensong.js */,
 				3E5E878714DE556C003B645A /* default.css */,
 				3E663A8E14B836CD009F1340 /* SongTemplate.html */,
 				3E586F1514E2A8D200345743 /* ios.css */,
 				3E5E878A14DE61CB003B645A /* about.html */,
 			);
-			name = Html;
+			path = Html;
 			sourceTree = "<group>";
 		};
 		3E637B0416D07BAD00514793 /* Resources */ = {
@@ -211,18 +210,15 @@
 				3E637B0516D07BE700514793 /* Images */,
 				3E5E878914DE6166003B645A /* Html */,
 				3EA0BB9C16D1219C00D7D97D /* Songs */,
-				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
 			);
-			name = Resources;
-			path = iOpenSongs;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3E637B0516D07BE700514793 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3ECF7F1A1522B4D10061457B /* Glyphicons */,
 				3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */,
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
 				3E9A92391529648400AA6B57 /* ProgramIcon114.png */,
@@ -230,7 +226,7 @@
 				3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */,
 				3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		3E7F1B6B158487EF008C222F /* Controller */ = {
@@ -304,7 +300,7 @@
 			name = Songs;
 			sourceTree = "<group>";
 		};
-		3ECF7F1A1522B4D10061457B /* Glyphicons */ = {
+		3ECF7F1A1522B4D10061457B /* glyphicons */ = {
 			isa = PBXGroup;
 			children = (
 				3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */,
@@ -322,7 +318,7 @@
 				3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */,
 				3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */,
 			);
-			name = Glyphicons;
+			path = glyphicons;
 			sourceTree = "<group>";
 		};
 		3EDDA3F314AEC3A300BB781C = {
@@ -332,6 +328,7 @@
 				3EDDA40914AEC3A400BB781C /* Other Sources */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3E637B0416D07BAD00514793 /* Resources */,
+				3EE0DB2D16EBA976005C89C6 /* Vendor */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
 				83DDE2BF561849B48BA5F099 /* Pods.xcconfig */,
 			);
@@ -367,8 +364,7 @@
 				3EDDA41114AEC3A400BB781C /* AppDelegate.h */,
 				3EDDA41214AEC3A400BB781C /* AppDelegate.m */,
 			);
-			name = Classes;
-			path = iOpenSongs;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		3EDDA40914AEC3A400BB781C /* Other Sources */ = {
@@ -376,13 +372,22 @@
 			children = (
 				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
 				3EAB665D160EC1D500149DA9 /* iPhone.storyboard */,
+				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 				3E865AF116CF6AEA000E9D98 /* Defines.h */,
 				3EDDA40E14AEC3A400BB781C /* main.m */,
 			);
-			name = "Other Sources";
-			path = iOpenSongs;
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3EE0DB2D16EBA976005C89C6 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3EF53A231525DD240073FB57 /* opensong.js */,
+				3ECF7F1A1522B4D10061457B /* glyphicons */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		3EE891AF1521BB50001DA59A /* Categories */ = {
@@ -401,7 +406,7 @@
 				3EF53A271525DD3D0073FB57 /* README.md */,
 				3EF53A281525DD3D0073FB57 /* stylesheets */,
 			);
-			name = opensong.js;
+			path = opensong.js;
 			sourceTree = "<group>";
 		};
 		3EF53A241525DD3D0073FB57 /* javascript */ = {
@@ -705,7 +710,7 @@
 					"\"$(SRCROOT)/Vendor/Crashlytics\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"${PODS_HEADERS_SEARCH_PATHS}/**",
 					"$(SDKROOT)/usr/include/libxml2/**",

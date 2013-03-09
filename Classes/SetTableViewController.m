@@ -25,8 +25,9 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(cancel:)];
+    
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
 
     // load data
     self.fetchedResultsController = [Set MR_fetchAllSortedBy:@"name"

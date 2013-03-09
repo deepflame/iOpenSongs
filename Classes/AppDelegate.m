@@ -15,8 +15,7 @@
 
 @synthesize window = _window;
 
-// db file name
-NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
+#pragma mark UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,21 +23,10 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
     
     // do not let the device sleep
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+        
+    [self startCustomerServices];
     
-    [self moveDatabaseToMRStoreName:kCoreDataStoreFileName];
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kCoreDataStoreFileName];
-
-#ifdef IOPENSONGS_GOOGLEANALYTICS_KEY    
-    [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
-#endif
-    
-#ifdef IOPENSONGS_TESTFLIGHT_KEY
-    [TestFlight takeOff:IOPENSONGS_TESTFLIGHT_KEY];
-#endif
-    
-#ifdef IOPENSONGS_CRASHLYTICS_KEY
-	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
-#endif
+    [self setupCoreData];
     
     return YES;
 }
@@ -88,6 +76,32 @@ NSString * const kCoreDataStoreFileName = @"CoreDataStore.sqlite";
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
     
     [MagicalRecord cleanUp];
+}
+
+# pragma mark Private Methods
+
+- (void) startCustomerServices
+{
+#ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
+    [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
+#endif
+    
+#ifdef IOPENSONGS_TESTFLIGHT_KEY
+    [TestFlight takeOff:IOPENSONGS_TESTFLIGHT_KEY];
+#endif
+    
+#ifdef IOPENSONGS_CRASHLYTICS_KEY
+	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
+#endif
+}
+
+- (void) setupCoreData
+{
+    NSString *coreDataStoreFileName = [MagicalRecord defaultStoreName];
+    
+    [self moveDatabaseToMRStoreName:coreDataStoreFileName];
+    
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:coreDataStoreFileName];
 }
 
 /** migrates/moves the database to the new MR location */

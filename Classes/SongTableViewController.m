@@ -72,20 +72,21 @@
 
 -(void)filterSongs:(UISearchBar*)searchBar
 {    
-    // We use an NSPredicate combined with the fetchedResultsController to perform the search
     if (searchBar.text.length == 0) {
-        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"];
+        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     } else {
-        NSPredicate *predicate = nil;
+        NSString *filterBy = @"";
         // 0 is title, 1 author, 2 lyrics
         if (searchBar.selectedScopeButtonIndex == 0) {
-            predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@", searchBar.text];
+            filterBy = @"title";
         } else if (searchBar.selectedScopeButtonIndex == 1) {
-            predicate = [NSPredicate predicateWithFormat:@"author contains[cd] %@", searchBar.text];
+            filterBy = @"author";
         } else {
-            predicate = [NSPredicate predicateWithFormat:@"lyrics contains[cd] %@", searchBar.text];
+            filterBy = @"lyrics";
         }
+
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ contains[cd] %@", filterBy, searchBar.text];
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     }
     
@@ -129,6 +130,11 @@
     if (self.navigationController) {
         searchBar.tintColor = self.navigationController.navigationBar.tintColor;
     }
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    return true;
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar

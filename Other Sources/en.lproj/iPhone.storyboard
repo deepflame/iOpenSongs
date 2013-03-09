@@ -881,9 +881,6 @@
         </class>
         <class className="SongMasterViewController" superclassName="SongTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SongMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshList:"/>
-            </relationships>
         </class>
         <class className="SongTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SongTableViewController.h"/>

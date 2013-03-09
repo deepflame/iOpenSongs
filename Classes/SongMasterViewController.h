@@ -11,6 +11,4 @@
 
 @interface SongMasterViewController : SongTableViewController
 
-- (IBAction)refreshList:(id)sender;
-
 @end
