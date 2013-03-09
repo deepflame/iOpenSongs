@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="2.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Set" representedClassName="Set" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SetItem" inverseName="set" inverseEntity="SetItem" syncable="YES"/>
+    </entity>
+    <entity name="SetItem" representedClassName="SetItem" isAbstract="YES" syncable="YES">
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="set" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="items" inverseEntity="Set" syncable="YES"/>
+    </entity>
+    <entity name="SetItemSong" representedClassName="SetItemSong" parentEntity="SetItem" syncable="YES">
+        <relationship name="song" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="setItems" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="aka" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="capo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="capo_print" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="ccli" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="copyright" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hymn_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key_line" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="presentation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="style_background" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_sig" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleFirstLetter" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user3" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="setItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SetItemSong" inverseName="song" inverseEntity="SetItemSong" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="title"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <elements>
+        <element name="Set" positionX="981" positionY="3177" width="128" height="75"/>
+        <element name="SetItem" positionX="979" positionY="3315" width="128" height="73"/>
+        <element name="SetItemSong" positionX="981" positionY="3423" width="128" height="60"/>
+        <element name="Song" positionX="790" positionY="3168" width="128" height="358"/>
+    </elements>
+</model>

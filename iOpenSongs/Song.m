@@ -2,8 +2,8 @@
 //  Song.m
 //  iOpenSongs
 //
-//  Created by Andreas Böhrnsen on 9/22/12.
-//  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
+//  Created by Andreas Böhrnsen on 3/9/13.
+//  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
 #import "Song.h"
@@ -23,15 +23,12 @@
 @dynamic key_line;
 @dynamic lyrics;
 @dynamic presentation;
-@dynamic style_background;
 @dynamic tempo;
 @dynamic theme;
 @dynamic time_sig;
 @dynamic title;
-@dynamic titleFirstLetter;
-@dynamic user1;
-@dynamic user2;
-@dynamic user3;
+@dynamic titleNormalized;
+@dynamic titleSectionIndex;
 @dynamic setItems;
 
 @end
