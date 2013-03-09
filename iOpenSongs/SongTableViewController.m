@@ -91,9 +91,9 @@
     
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
-        // Handle error
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        exit(-1);  // Fail
+        // TODO Handle error
+        CLS_LOG(@"Unresolved error %@, %@", error, [error userInfo]);
+        //exit(-1);  // Fail
     }
 }
 
