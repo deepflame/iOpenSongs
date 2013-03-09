@@ -7,6 +7,7 @@
 //
 
 #import "Song.h"
+#import "RKXMLParserLibXML.h"
 
 @interface Song (OpenSong)
 

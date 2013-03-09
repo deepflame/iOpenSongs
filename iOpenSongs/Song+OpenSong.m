@@ -7,7 +7,6 @@
 //
 
 #import "Song+OpenSong.h"
-#import "RKXMLParserLibXML.h"
 
 @implementation Song (OpenSong)
 

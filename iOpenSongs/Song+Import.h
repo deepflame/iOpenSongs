@@ -7,6 +7,7 @@
 //
 
 #import "Song.h"
+#import "Song+OpenSong.h"
 
 // Notification that gets sent before an item gets imported
 extern NSString *const SongImportWillImport;

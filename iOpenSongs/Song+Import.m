@@ -7,12 +7,10 @@
 //
 
 #import "Song+Import.h"
-#import "Song+OpenSong.h"
 
 NSString *const SongImportWillImport  = @"SongImportWillImport";
 NSString *const SongImportAttributeName  = @"SongImportAttributeName";
 NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
-
 
 @implementation Song (Import)
 
