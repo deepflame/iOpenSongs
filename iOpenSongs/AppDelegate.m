@@ -10,7 +10,6 @@
 
 #import "Defines.h" // can be removed if not found
 #import "GAI.h"
-#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 

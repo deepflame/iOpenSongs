@@ -17,6 +17,7 @@
     #import "CoreData+MagicalRecord.h"
 
     #import "TestFlight.h"
+    #import <Crashlytics/Crashlytics.h>
 
     // Macros
     #define SuppressPerformSelectorLeakWarning(Stuff) \

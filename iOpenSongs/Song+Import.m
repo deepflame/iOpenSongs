@@ -51,12 +51,12 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
             return;
         }
         
-        NSLog(@"File: %@", curFileName);
+        CLS_LOG(@"File: %@", curFileName);
         
         NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
         // record error if no info
         if (!info) {
-            NSLog(@"Error: %@", curFileName);
+            CLS_LOG(@"Error: %@", curFileName);
             [errors addObject:curFileName];
             return;
         }
