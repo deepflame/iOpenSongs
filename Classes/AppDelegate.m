@@ -15,6 +15,10 @@
 
 @synthesize window = _window;
 
++ (AppDelegate *)sharedAppDelegate {
+	return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 #pragma mark UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

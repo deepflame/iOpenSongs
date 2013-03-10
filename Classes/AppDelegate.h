@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) UIStoryboard *storyboard;
 
++ (AppDelegate *)sharedAppDelegate;
+
 @end
