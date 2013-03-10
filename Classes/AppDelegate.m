@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "StartupViewController.h"
 
 #import "Defines.h" // can be removed if not found
 #import "GAI.h"
@@ -34,16 +35,13 @@
     // Override point for customization after application launch.
     
     // do not let the device sleep
-    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-        
+    [application setIdleTimerDisabled:YES];
+    
     [self startCustomerServices];
     
-    [self setupCoreData];
+    // setup CoreData and display ui
+    self.window.rootViewController = [[StartupViewController alloc] init];
     
-    
-    // display ui
-    
-    self.window.rootViewController = [self.storyboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -111,42 +109,6 @@
 #ifdef IOPENSONGS_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
 #endif
-}
-
-- (void) setupCoreData
-{
-    NSString *coreDataStoreFileName = [MagicalRecord defaultStoreName];
-    
-    [self moveDatabaseToMRStoreName:coreDataStoreFileName];
-    
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:coreDataStoreFileName];
-}
-
-/** migrates/moves the database to the new MR location */
-- (void) moveDatabaseToMRStoreName:(NSString *)storeName
-{
-    NSFileManager *fileMan = [NSFileManager defaultManager];
-    
-    NSURL *oldDirUrl = [[fileMan URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
-    oldDirUrl = [oldDirUrl URLByAppendingPathComponent:@"Default Song Database"];
-    NSURL *oldUrl = [oldDirUrl URLByAppendingPathComponent:@"StoreContent"];
-    oldUrl = [oldUrl URLByAppendingPathComponent:@"persistentStore"];
-    
-    NSURL *newUrl = [NSPersistentStore MR_urlForStoreName:storeName];
-    
-    // return if old db file does not exist
-    if (![fileMan isReadableFileAtPath:[oldUrl path]]) {
-        return;
-    }
-    
-    // TODO: move this part into a category of NSFileManager
-    NSError *error;
-    // create directory of target path
-    [fileMan createDirectoryAtURL:[newUrl URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];
-    // copy file
-    [fileMan copyItemAtURL:oldUrl toURL:newUrl error:&error];
-    // delete old db dir
-    [fileMan removeItemAtURL:oldDirUrl error:&error];
 }
 
 @end

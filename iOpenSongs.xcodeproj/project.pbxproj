@@ -58,6 +58,7 @@
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
 		3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */; };
+		3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */; };
 		3EE891961521B52D001DA59A /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
 		3EE891991521B53E001DA59A /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
 		3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
@@ -151,6 +152,8 @@
 		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
 		3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		3EE0DB3216EC19F0005C89C6 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
 		3EE808DF16D3CE84003B9AB7 /* 03.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 03.xcdatamodel; sourceTree = "<group>"; };
 		3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_023_cogwheels@2x.png"; path = "Vendor/glyphicons/glyphicons_023_cogwheels@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_017_music@2x.png"; path = "Vendor/glyphicons/glyphicons_017_music@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -235,6 +238,8 @@
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
+				3EE0DB3216EC19F0005C89C6 /* StartupViewController.h */,
+				3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */,
 				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
 				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 				3E358449151E100E00137FC4 /* RevealSidebarController.h */,
@@ -613,6 +618,7 @@
 				3E637B0C16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m in Sources */,
 				3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */,
 				3E3872AF16EB1676003A0DCC /* Song.m in Sources */,
+				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
