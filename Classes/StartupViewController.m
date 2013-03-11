@@ -21,19 +21,11 @@
 
 @implementation StartupViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self setupCoreData];
     
     if (!self.isMigratingInBackground) {
@@ -71,17 +63,17 @@
     hud.mode = MBProgressHUDModeAnnularDeterminate;
     hud.labelText = @"Updating Database";
     hud.detailsLabelText = @"please wait...";
-        
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-
+        
         [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
             hud.progress = (float)idx / (float)songsNeedUpdate.count;
             
             // also sets other title properties
             song.title = song.title;
-
+            
             // save every 100 songs
             if (idx % 100 == 0) {
                 [context MR_saveToPersistentStoreAndWait];
@@ -95,7 +87,7 @@
         });
         
     });
-
+    
 }
 
 - (void) setupCoreData
@@ -228,7 +220,7 @@
     NSURL *newUrl = [NSPersistentStore MR_urlForStoreName:storeName];
     
     // return if old db file does not exist
-    if (![fileMan isReadableFileAtPath:[oldUrl path]]) {
+    if (![fileMan fileExistsAtPath:[oldUrl path]]) {
         return;
     }
     
