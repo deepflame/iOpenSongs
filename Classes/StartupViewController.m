@@ -52,15 +52,6 @@
     window.rootViewController = [storyboard instantiateInitialViewController];
 }
 
-- (MBProgressHUD *) initializeHUD
-{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Updating Database";
-    hud.detailsLabelText = @"Please Wait";
-    return hud;
-}
-
 - (void) initializeSongTitleSectionIndex
 {
     NSArray *songsNeedUpdate = [Song MR_findByAttribute:@"titleSectionIndex" withValue:nil];
@@ -71,26 +62,27 @@
         return;
     }
     
-    MBProgressHUD *hud = [self initializeHUD];
-    
-    dispatch_queue_t migrationQ = dispatch_queue_create("CoreData Migration", NULL);
-    dispatch_async(migrationQ, ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Updating Database";
+    hud.detailsLabelText = @"please wait...";
         
-        [context performBlock:^{ // perform in the NSMOC's safe thread (main thread)
-            [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
-                hud.progress = (float)idx / (float)songsNeedUpdate.count;
-            
-                // also sets other title properties
-                song.title = song.title;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
 
-                // save every 100 songs
-                if (idx % 100 == 0) {
-                    [context MR_saveToPersistentStoreAndWait];
-                }
-            }];
-            [context MR_saveToPersistentStoreAndWait];
+        [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
+            hud.progress = (float)idx / (float)songsNeedUpdate.count;
+            
+            // also sets other title properties
+            song.title = song.title;
+
+            // save every 100 songs
+            if (idx % 100 == 0) {
+                [context MR_saveToPersistentStoreAndWait];
+            }
         }];
+        [context MR_saveToPersistentStoreAndWait];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hide:YES];
@@ -98,8 +90,7 @@
         });
         
     });
-    // TODO: may have to remove it due to ARC
-    dispatch_release(migrationQ);
+
 }
 
 - (void) setupCoreData
