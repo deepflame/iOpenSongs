@@ -78,7 +78,7 @@
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
 		3E120C3514F9203900926A74 /* NSString+JavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaScript.m"; sourceTree = "<group>"; };
-		3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOpenSongs.xcdatamodel; sourceTree = "<group>"; };
+		3E120C6314FA1C3900926A74 /* iOpenSongs 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 1.xcdatamodel"; sourceTree = "<group>"; };
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
@@ -810,7 +810,7 @@
 			children = (
 				3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */,
 				3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */,
-				3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */,
+				3E120C6314FA1C3900926A74 /* iOpenSongs 1.xcdatamodel */,
 			);
 			currentVersion = 3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */;
 			path = iOpenSongs.xcdatamodeld;
