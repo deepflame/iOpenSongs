@@ -26,9 +26,9 @@
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time_sig" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="titleNormalized" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="titleSectionIndex" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="titleNormalized" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="titleSectionIndex" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="setItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SetItemSong" inverseName="song" inverseEntity="SetItemSong" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
