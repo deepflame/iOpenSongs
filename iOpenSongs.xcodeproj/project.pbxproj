@@ -78,7 +78,7 @@
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
 		3E120C3514F9203900926A74 /* NSString+JavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaScript.m"; sourceTree = "<group>"; };
-		3E120C6314FA1C3900926A74 /* 01.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 01.xcdatamodel; sourceTree = "<group>"; };
+		3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOpenSongs.xcdatamodel; sourceTree = "<group>"; };
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		3E41E03F155D2F8D0023E599 /* 02.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 02.xcdatamodel; sourceTree = "<group>"; };
+		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
 		3E5E878414DD7680003B645A /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		3EE0DB3216EC19F0005C89C6 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
 		3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
-		3EE808DF16D3CE84003B9AB7 /* 03.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 03.xcdatamodel; sourceTree = "<group>"; };
+		3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 3.xcdatamodel"; sourceTree = "<group>"; };
 		3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_023_cogwheels@2x.png"; path = "Vendor/glyphicons/glyphicons_023_cogwheels@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_017_music@2x.png"; path = "Vendor/glyphicons/glyphicons_017_music@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_017_music.png; path = Vendor/glyphicons/glyphicons_017_music.png; sourceTree = SOURCE_ROOT; };
@@ -808,11 +808,11 @@
 		3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3EE808DF16D3CE84003B9AB7 /* 03.xcdatamodel */,
-				3E41E03F155D2F8D0023E599 /* 02.xcdatamodel */,
-				3E120C6314FA1C3900926A74 /* 01.xcdatamodel */,
+				3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */,
+				3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */,
+				3E120C6314FA1C3900926A74 /* iOpenSongs.xcdatamodel */,
 			);
-			currentVersion = 3EE808DF16D3CE84003B9AB7 /* 03.xcdatamodel */;
+			currentVersion = 3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */;
 			path = iOpenSongs.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
