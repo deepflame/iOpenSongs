@@ -48,48 +48,6 @@
     window.rootViewController = [storyboard instantiateInitialViewController];
 }
 
-- (void) initializeSongTitleSectionIndex
-{
-    NSArray *songsNeedUpdate = [Song MR_findByAttribute:@"titleSectionIndex" withValue:nil];
-    
-    // return if no update needed
-    if (songsNeedUpdate.count == 0) {
-        return;
-    }
-    
-    self.isMigratingInBackground = YES;
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Updating Database";
-    hud.detailsLabelText = @"please wait...";
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-        
-        [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
-            hud.progress = (float)idx / (float)songsNeedUpdate.count;
-            
-            // also sets other title properties
-            song.title = song.title;
-            
-            // save every 100 songs
-            if (idx % 100 == 0) {
-                [context MR_saveToPersistentStoreAndWait];
-            }
-        }];
-        [context MR_saveToPersistentStoreAndWait];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [hud hide:YES];
-            [self showMainUI];
-        });
-        
-    });
-    
-}
-
 - (void) setupCoreData
 {
     NSString *coreDataStoreFileName = [MagicalRecord defaultStoreName];
@@ -232,6 +190,48 @@
     [fileMan copyItemAtURL:oldUrl toURL:newUrl error:&error];
     // delete old db dir
     [fileMan removeItemAtURL:oldDirUrl error:&error];
+}
+
+- (void) initializeSongTitleSectionIndex
+{
+    NSArray *songsNeedUpdate = [Song MR_findByAttribute:@"titleSectionIndex" withValue:nil];
+    
+    // return if no update needed
+    if (songsNeedUpdate.count == 0) {
+        return;
+    }
+    
+    self.isMigratingInBackground = YES;
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Updating Database";
+    hud.detailsLabelText = @"please wait...";
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+        
+        [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
+            hud.progress = (float)idx / (float)songsNeedUpdate.count;
+            
+            // also sets other title properties
+            song.title = song.title;
+            
+            // save every 100 songs
+            if (idx % 100 == 0) {
+                [context MR_saveToPersistentStoreAndWait];
+            }
+        }];
+        [context MR_saveToPersistentStoreAndWait];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+            [self showMainUI];
+        });
+        
+    });
+    
 }
 
 @end
