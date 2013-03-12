@@ -19,6 +19,7 @@
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
 		3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */; };
+		3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */; };
 		3E637B0216CFDEF400514793 /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
 		3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
 		3E637B0C16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */; };
@@ -96,6 +97,8 @@
 		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasTableViewController.h; sourceTree = "<group>"; };
 		3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasTableViewController.m; sourceTree = "<group>"; };
+		3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SectionIndex.h"; sourceTree = "<group>"; };
+		3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SectionIndex.m"; sourceTree = "<group>"; };
 		3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_244_conversation.png; path = Vendor/glyphicons/glyphicons_244_conversation.png; sourceTree = SOURCE_ROOT; };
 		3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_244_conversation@2x.png"; path = "Vendor/glyphicons/glyphicons_244_conversation@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E637B0A16D0CB2A00514793 /* IOpenSongsUVStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOpenSongsUVStyleSheet.h; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 			children = (
 				3E120C3414F9203900926A74 /* NSString+JavaScript.h */,
 				3E120C3514F9203900926A74 /* NSString+JavaScript.m */,
+				3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */,
+				3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */,
 				3E3872AF16EB1676003A0DCC /* Song.m in Sources */,
 				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
+				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
