@@ -66,14 +66,8 @@
         
         if ([self respondsToSelector:attr]) {
             SuppressPerformSelectorLeakWarning([self performSelector:attr withObject:stringVal]);
-        } else {
-            CLS_LOG(@"Song attr not found: %@", key);
         }
     }
-    
-    //song.capo = (NSString *)[info objectForKey:@"capo"];
-    //@property (nonatomic, retain) NSNumber * capo_print;
-    //@property (nonatomic, retain) NSData * style_background;
 }
 
 
