@@ -71,25 +71,34 @@
 #pragma mark UISearchBarDelegate
 
 -(void)filterSongs:(UISearchBar*)searchBar
-{    
+{
+    NSPredicate *predicate;
+    
     if (searchBar.text.length == 0) {
-        NSPredicate *predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
-        [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+
+        predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
+        
     } else {
-        NSString *filterBy = @"";
-        // 0 is title, 1 author, 2 lyrics
-        if (searchBar.selectedScopeButtonIndex == 0) {
-            filterBy = @"title";
-        } else if (searchBar.selectedScopeButtonIndex == 1) {
-            filterBy = @"author";
-        } else {
-            filterBy = @"lyrics";
+        
+        NSString *filterBy;
+        switch (searchBar.selectedScopeButtonIndex) {
+            case 0:
+                filterBy = @"title";
+                break;
+
+            case 1:
+                filterBy = @"author";
+                break;
+
+            default:
+                filterBy = @"lyrics";
+                break;
         }
 
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ contains[cd] %@", filterBy, searchBar.text];
-        [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+        predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
     }
-    
+    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         // TODO Handle error
