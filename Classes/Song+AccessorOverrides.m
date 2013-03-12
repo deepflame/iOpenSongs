@@ -9,6 +9,8 @@
 #import "Song+AccessorOverrides.h"
 #import "Song+PrimitiveAccessors.h"
 
+#import "NSString+SectionIndex.h"
+
 @implementation Song (AccessorOverrides)
 
 - (void)setTitle:(NSString *)title
@@ -23,13 +25,7 @@
     [self setPrimitiveTitleNormalized:titleNormalized];
     [self didChangeValueForKey:@"titleNormalized"];
     
-    // support UTF-16:
-    //NSString *stringToReturn = [aString substringWithRange:[aString rangeOfComposedCharacterSequenceAtIndex:0]];
-    
-    // OR no UTF-16 support:
-    //NSString *stringToReturn = [aString substringToIndex:1];
-
-    NSString *titleSectionIndex = [titleNormalized substringWithRange:[titleNormalized rangeOfComposedCharacterSequenceAtIndex:0]];
+    NSString *titleSectionIndex = [titleNormalized sectionIndex];
     
     [self willChangeValueForKey:@"titleSectionIndex"];
     [self setPrimitiveTitleSectionIndex:titleSectionIndex];
