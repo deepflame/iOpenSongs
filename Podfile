@@ -8,7 +8,7 @@ pod 'MBProgressHUD'
 pod 'MagicalRecord'
 
 # Test
-pod 'TestFlightSDK'
+pod 'TestFlightSDK', '~> 1.1.0'
 pod 'uservoice-iphone-sdk'
 
 pod 'GoogleAnalytics-iOS-SDK'

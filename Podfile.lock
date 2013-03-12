@@ -4,7 +4,7 @@ PODS:
 - GoogleAnalytics-iOS-SDK (2.0beta4)
 - MBProgressHUD (0.5)
 - MagicalRecord (2.1)
-- TestFlightSDK (1.2.3.beta1)
+- TestFlightSDK (1.1)
 - uservoice-iphone-sdk (2.0.6)
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ DEPENDENCIES:
 - GoogleAnalytics-iOS-SDK
 - MBProgressHUD
 - MagicalRecord
-- TestFlightSDK
+- TestFlightSDK (~> 1.1.0)
 - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
@@ -20,7 +20,7 @@ SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: faed6c1fafabd3363fe7fe39779381274ac771b9
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
-  TestFlightSDK: f638b08651a37af099e40c47241fc58fd3cb1a66
+  TestFlightSDK: 2a2cdb82967c7f05655683c61854c92d36e9104d
   uservoice-iphone-sdk: 052c4959b420f4fff478519f278aae517fe7784a
 
-COCOAPODS: 0.16.1
+COCOAPODS: 0.16.4
