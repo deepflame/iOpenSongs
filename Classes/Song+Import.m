@@ -48,9 +48,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
         if (isDirectory || [curFileName isEqualToString:@"Inbox"] || [curFileName isEqualToString:@".DS_Store"]) {
             return;
         }
-        
-        CLS_LOG(@"File: %@", curFileName);
-        
+                
         NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
         // record error if no info
         if (!info) {
