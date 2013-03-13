@@ -36,11 +36,11 @@
     }
     
     // fetch data
-    self.fetchedResultsController = [Song MR_fetchAllSortedBy:@"titleNormalized"
-                                                    ascending:YES
-                                                withPredicate:nil
-                                                      groupBy:@"titleSectionIndex"
-                                                     delegate:self];
+    self.fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
+                                                 withPredicate:nil
+                                                      sortedBy:@"titleSectionIndex,titleNormalized"
+                                                     ascending:YES
+                                                      delegate:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
