@@ -65,6 +65,7 @@
 		3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
 		3EE891B21521BBA9001DA59A /* StyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* StyleViewController.m */; };
 		3EE891B51521C329001DA59A /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
+		3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */; };
 		3EF00CAE153E5F3E000A0C73 /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
 		3EF00CAF153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
 		3EF00CB2153E5F9C000A0C73 /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
@@ -164,6 +165,8 @@
 		3EE891B01521BBA9001DA59A /* StyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleViewController.h; sourceTree = "<group>"; };
 		3EE891B11521BBA9001DA59A /* StyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleViewController.m; sourceTree = "<group>"; };
 		3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_023_cogwheels.png; path = Vendor/glyphicons/glyphicons_023_cogwheels.png; sourceTree = SOURCE_ROOT; };
+		3EEC566D16F1D5AA007DE9DE /* UIApplication+Directories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Directories.h"; sourceTree = "<group>"; };
+		3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Directories.m"; sourceTree = "<group>"; };
 		3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_392_twitter.png; path = Vendor/glyphicons/glyphicons_392_twitter.png; sourceTree = SOURCE_ROOT; };
 		3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_392_twitter@2x.png"; path = "Vendor/glyphicons/glyphicons_392_twitter@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail.png"; sourceTree = SOURCE_ROOT; };
@@ -405,6 +408,8 @@
 				3E120C3514F9203900926A74 /* NSString+JavaScript.m */,
 				3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */,
 				3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */,
+				3EEC566D16F1D5AA007DE9DE /* UIApplication+Directories.h */,
+				3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				3E3872AF16EB1676003A0DCC /* Song.m in Sources */,
 				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
+				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
