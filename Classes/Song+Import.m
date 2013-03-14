@@ -7,6 +7,7 @@
 //
 
 #import "Song+Import.h"
+#import "UIApplication+Directories.h"
 
 NSString *const SongImportWillImport  = @"SongImportWillImport";
 NSString *const SongImportAttributeName  = @"SongImportAttributeName";
@@ -14,20 +15,13 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
 
 @implementation Song (Import)
 
-#pragma mark Private Methods
-
-+ (NSString *)applicationDocumentsDirectory
-{
-	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
 #pragma mark Public Methods
 
 + (void)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error
 {
     NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
     
-    NSString *documentsDirectoryPath = [self applicationDocumentsDirectory];
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectory];
     NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
     
     [documentsDirectoryContents enumerateObjectsUsingBlock:^(NSString *curFileName, NSUInteger idx, BOOL *stop) {
