@@ -40,7 +40,7 @@
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
-		3EA0BB9F16D121C800D7D97D /* Amazing grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing grace */; };
+		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
 		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
@@ -125,8 +125,8 @@
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		3EA0BB9D16D121C800D7D97D /* Amazing grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Amazing grace"; path = "Resources/Songs/Amazing grace"; sourceTree = SOURCE_ROOT; };
-		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Sample Song"; path = "Resources/Songs/Sample Song"; sourceTree = SOURCE_ROOT; };
+		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
+		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
 		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
@@ -302,10 +302,10 @@
 		3EA0BB9C16D1219C00D7D97D /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				3EA0BB9D16D121C800D7D97D /* Amazing grace */,
+				3EA0BB9D16D121C800D7D97D /* Amazing Grace */,
 				3EA0BB9E16D121C800D7D97D /* Sample Song */,
 			);
-			name = Songs;
+			path = Songs;
 			sourceTree = "<group>";
 		};
 		3ECF7F1A1522B4D10061457B /* glyphicons */ = {
@@ -545,7 +545,7 @@
 				3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */,
 				3E637B0216CFDEF400514793 /* glyphicons_244_conversation.png in Resources */,
 				3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */,
-				3EA0BB9F16D121C800D7D97D /* Amazing grace in Resources */,
+				3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */,
 				3EA0BBA016D121C800D7D97D /* Sample Song in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
