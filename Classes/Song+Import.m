@@ -100,13 +100,4 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
     [managedObjectContext MR_saveToPersistentStoreAndWait];
 }
 
-+ (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext
-{
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"Sample Song" withExtension:@""];
-    NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
-    [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-    
-    [managedObjectContext MR_saveToPersistentStoreAndWait];
-}
-
 @end

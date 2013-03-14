@@ -12,6 +12,7 @@
 #import "Song.h"
 
 #import "AppDelegate.h"
+#import "UIApplication+Directories.h"
 
 @interface StartupViewController ()
 
@@ -26,6 +27,8 @@
 {
     [super viewDidLoad];
 
+    [self copySampleSongsToDocumentsDirectory];
+    
     [self setupCoreData];
     
     if (!self.isMigratingInBackground) {
@@ -46,6 +49,24 @@
     UIWindow *window = [[UIApplication sharedApplication] windows][0];
     UIStoryboard *storyboard = [[AppDelegate sharedAppDelegate] storyboard];
     window.rootViewController = [storyboard instantiateInitialViewController];
+}
+
+- (void) copySampleSongsToDocumentsDirectory
+{
+    NSString *sampleSong = @"Amazing Grace"; // TODO make more generic or use constant
+    
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectory];
+    NSMutableArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL].mutableCopy;
+
+    [documentsDirectoryContents removeObject:@".DS_Store"];
+    
+    if (documentsDirectoryContents.count == 0) {
+        NSString *songSrcPath = [[NSBundle mainBundle] pathForResource:sampleSong ofType:@"" inDirectory:nil];
+        NSString *songDstPath = [documentsDirectoryPath stringByAppendingPathComponent:sampleSong];
+        
+        NSFileManager *fileMan = [NSFileManager defaultManager];
+        [fileMan copyItemAtPath:songSrcPath toPath:songDstPath error:nil];
+    }
 }
 
 - (void) setupCoreData

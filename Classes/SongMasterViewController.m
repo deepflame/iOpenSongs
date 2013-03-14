@@ -45,11 +45,8 @@
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
         NSError *error = nil;
         
-        // delete sample song
-        [[Song MR_findFirstByAttribute:@"author" withValue:@"iOpenSongs" inContext:context] MR_deleteEntity];
         // import songs from application sharing
         [Song importApplicationDocumentsIntoContext:context error:&error];
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // dismiss HUD
@@ -113,9 +110,10 @@
 
     self.importActionSheet = [[UIActionSheet alloc ]initWithTitle:@"Import from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"iTunes", nil];
 
-    // add demo song if no songs found
+    // import songs from application sharing if no songs found (should have song there now)
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [Song importDemoSongIntoContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+        [Song importApplicationDocumentsIntoContext:context error:nil];
     }
 }
 
