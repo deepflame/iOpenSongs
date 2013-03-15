@@ -58,7 +58,7 @@
     NSString *documentsDirectoryPath = [UIApplication documentsDirectory];
     NSMutableArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL].mutableCopy;
 
-    [documentsDirectoryContents removeObject:@".DS_Store"];
+    [documentsDirectoryContents removeObject:@".DS_Store"]; // fix for simulator
     
     if (documentsDirectoryContents.count == 0) {
         NSString *songSrcPath = [[NSBundle mainBundle] pathForResource:sampleSong ofType:@"" inDirectory:nil];
