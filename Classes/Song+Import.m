@@ -52,17 +52,11 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
         }
         
         // import info
-        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
-            NSArray *songsBeforeImport = [Song MR_findAll];
-            
+        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)            
             // check if song already exists based on title
-            Song *songFound = nil;
-            for (Song *song in songsBeforeImport) {
-                if ([song.title isEqualToString:[info valueForKey:@"title"]]) {
-                    songFound = song;
-                    break;
-                }
-            }
+            Song *songFound = [Song MR_findFirstByAttribute:@"title"
+                                                  withValue:[info valueForKey:@"title"]
+                                                  inContext:managedObjectContext];
             
             if (songFound) {
                 [songFound updateWithOpenSongInfo:info];
