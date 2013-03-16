@@ -20,6 +20,4 @@ extern NSString *const SongImportAttributeProgress; // in float value 0..1
 + (void)importApplicationDocumentsIntoContext:(NSManagedObjectContext *)managedObjectContext
                                         error:(NSError **)error;
 
-+ (void)importDemoSongIntoContext:(NSManagedObjectContext *)managedObjectContext;
-
 @end
