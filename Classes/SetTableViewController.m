@@ -24,10 +24,8 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
-    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(cancel:)];
-    
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
+     
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
 
     // load data
     self.fetchedResultsController = [Set MR_fetchAllSortedBy:@"name"
