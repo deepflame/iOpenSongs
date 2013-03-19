@@ -73,7 +73,7 @@
     NSString *rootPath = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:rootPath];
     
-    NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"SongTemplate" withExtension:@"html"];
+    NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
     NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl 
                                                  encoding:NSUTF8StringEncoding
                                                     error:NULL];

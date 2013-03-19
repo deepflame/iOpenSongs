@@ -23,7 +23,7 @@
 		3E637B0216CFDEF400514793 /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
 		3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
 		3E637B0C16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */; };
-		3E663A8F14B836CD009F1340 /* SongTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* SongTemplate.html */; };
+		3E663A8F14B836CD009F1340 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
 		3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
 		3E6C470F1525EE2200164540 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
 		3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
@@ -104,7 +104,7 @@
 		3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_244_conversation@2x.png"; path = "Vendor/glyphicons/glyphicons_244_conversation@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E637B0A16D0CB2A00514793 /* IOpenSongsUVStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOpenSongsUVStyleSheet.h; sourceTree = "<group>"; };
 		3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOpenSongsUVStyleSheet.m; sourceTree = "<group>"; };
-		3E663A8E14B836CD009F1340 /* SongTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SongTemplate.html; sourceTree = "<group>"; };
+		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3E6C470E1525EE2200164540 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = opensong.css; path = Vendor/opensong.js/stylesheets/opensong.css; sourceTree = SOURCE_ROOT; };
 		3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.7.1.min.js"; path = "Vendor/opensong.js/javascript/jquery-1.7.1.min.js"; sourceTree = SOURCE_ROOT; };
 		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				3E5E878714DE556C003B645A /* default.css */,
-				3E663A8E14B836CD009F1340 /* SongTemplate.html */,
+				3E663A8E14B836CD009F1340 /* index.html */,
 				3E586F1514E2A8D200345743 /* ios.css */,
 				3E5E878A14DE61CB003B645A /* about.html */,
 			);
@@ -528,7 +528,7 @@
 				3E6C470F1525EE2200164540 /* opensong.css in Resources */,
 				3E5E878814DE556C003B645A /* default.css in Resources */,
 				3E586F1614E2A8D200345743 /* ios.css in Resources */,
-				3E663A8F14B836CD009F1340 /* SongTemplate.html in Resources */,
+				3E663A8F14B836CD009F1340 /* index.html in Resources */,
 				3E5E878B14DE61CB003B645A /* about.html in Resources */,
 				3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */,
 				3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */,
