@@ -23,10 +23,6 @@
         return @"#";
     }
     
-    else if ([firstLetter isEqualToString:@"'"]) {
-        return @"#";
-    }
-    
     return [firstLetter utfNormalizedFormD];
 }
 
