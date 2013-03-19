@@ -83,7 +83,7 @@
             [MagicalRecord setupCoreDataStackWithStoreNamed:coreDataStoreFileName];
             return;
         }
-    }    
+    }
     
     // we have a datastore and will check if we have to migrate it
     
@@ -91,7 +91,7 @@
     [self migrateDataStore:storeURL error:&error];
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:coreDataStoreFileName];
-    
+        
     [self initializeSongTitleSectionIndex];
 }
 
@@ -230,7 +230,7 @@
     hud.detailsLabelText = @"please wait...";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        
+    
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
         
         [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {

@@ -57,7 +57,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
             Song *songFound = [Song MR_findFirstByAttribute:@"title"
                                                   withValue:[info valueForKey:@"title"]
                                                   inContext:managedObjectContext];
-            
+
             if (songFound) {
                 [songFound updateWithOpenSongInfo:info];
             } else {
