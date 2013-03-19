@@ -109,12 +109,6 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.importActionSheet = [[UIActionSheet alloc ]initWithTitle:@"Import from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"iTunes", nil];
-
-    // import songs from application sharing if no songs found (should have song there now)
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-        [Song importApplicationDocumentsIntoContext:context error:nil];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,6 +118,21 @@
     [self selectSongAtIndexPath:self.currentSelection];
     
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // import songs from application sharing if no songs found
+    static dispatch_once_t songImportOnceToken;
+    dispatch_once(&songImportOnceToken, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.fetchedResultsController.fetchedObjects.count == 0) {
+                [self importSongs];
+            }
+        });
+    });
 }
 
 #pragma mark - UITableViewDataSource
