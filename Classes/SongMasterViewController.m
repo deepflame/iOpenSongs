@@ -122,14 +122,9 @@
     [super viewDidAppear:animated];
     
     // import songs from application sharing if no songs found
-    static dispatch_once_t songImportOnceToken;
-    dispatch_once(&songImportOnceToken, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.fetchedResultsController.fetchedObjects.count == 0) {
-                [self importSongs];
-            }
-        });
-    });
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        [self importSongs];
+    }
 }
 
 #pragma mark - UITableViewDataSource
