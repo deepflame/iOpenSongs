@@ -236,8 +236,10 @@
         [songsNeedUpdate enumerateObjectsUsingBlock:^(Song *song, NSUInteger idx, BOOL *stop) {
             hud.progress = (float)idx / (float)songsNeedUpdate.count;
             
+            Song *songInContext = [song MR_inContext:context];
+            
             // also sets other title properties
-            song.title = song.title;
+            songInContext.title = songInContext.title;
             
             // save every 100 songs
             if (idx % 100 == 0) {
