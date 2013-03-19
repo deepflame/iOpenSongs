@@ -568,6 +568,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = ./Vendor/Crashlytics/run.sh;
 			shellScript = "";
 		};
 		3EDA1BF71630711B009F5536 /* ShellScript */ = {
