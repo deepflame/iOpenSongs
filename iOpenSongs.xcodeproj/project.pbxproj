@@ -773,7 +773,7 @@
 					"\"$(SRCROOT)/Vendor/Crashlytics\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOpenSongs/iOpenSongs-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"${PODS_HEADERS_SEARCH_PATHS}/**",
 					"$(SDKROOT)/usr/include/libxml2/**",
