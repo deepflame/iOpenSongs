@@ -39,16 +39,15 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:SongImportWillImport object:nil queue:nil usingBlock:^(NSNotification *notification) {
         hud.progress = [(NSNumber *) [notification.userInfo valueForKey:SongImportAttributeProgress] floatValue];
     }];
-    
-    dispatch_queue_t importQ = dispatch_queue_create("Song import", NULL);
-    dispatch_async(importQ, ^{
+        
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
         NSError *error = nil;
         
         // import songs from application sharing
         [Song importApplicationDocumentsIntoContext:context error:&error];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
             // dismiss HUD
             [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
             // TODO: show image on success or error in HUD
@@ -60,8 +59,6 @@
         });
         
     });
-    // TODO: may have to remove it due to ARC
-    dispatch_release(importQ);
 }
 
 - (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
