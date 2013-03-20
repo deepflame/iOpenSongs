@@ -8,6 +8,8 @@
 
 #import "OSFileTableViewController.h"
 
+#import "Song+Import.h"
+
 #import <DropboxSDK/DropboxSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
@@ -112,11 +114,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
+    NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
     
     if (itemMetaData.isDirectory) {
-        NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
         OSFileTableViewController *fileTableViewController = [[OSFileTableViewController alloc] initWithPathString:newPath];
         [self.navigationController pushViewController:fileTableViewController animated:YES];
+    } else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        
+        NSString *localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:itemMetaData.filename];
+        [self.restClient loadFile:newPath intoPath:localPath];
     }
 }
 
@@ -154,8 +162,14 @@
 }
 
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
-    NSLog(@"File loaded into path: %@", localPath);
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        [Song updateOrCreateSongWithOpenSongFileFromURL:[NSURL fileURLWithPath:localPath] inManagedObjectContext:localContext];
+    } completion:^(BOOL success, NSError *error){
+        [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
+    }];
 }
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
