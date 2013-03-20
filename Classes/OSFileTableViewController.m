@@ -15,6 +15,7 @@
 @property (nonatomic, strong, readonly) DBRestClient *restClient;
 @property (nonatomic, strong, readonly) NSString *initialPath;
 @property (nonatomic, strong) DBMetadata *metaData;
+@property (nonatomic, strong) NSArray *sortedContents;
 @end
 
 @implementation OSFileTableViewController
@@ -22,6 +23,7 @@
 @synthesize restClient = _restClient;
 @synthesize initialPath = _initialPath;
 @synthesize metaData = _metaData;
+@synthesize sortedContents = _sortedContents;
 
 - (DBRestClient *)restClient {
     if (!_restClient) {
@@ -75,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.metaData.contents.count;
+    return self.sortedContents.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,7 +89,7 @@
     }
     
     // Configure the cell...
-    DBMetadata *itemMetaData = self.metaData.contents[indexPath.row];
+    DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
     cell.textLabel.text = itemMetaData.filename;
     if (itemMetaData.isDirectory) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -103,7 +105,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DBMetadata *itemMetaData = self.metaData.contents[indexPath.row];
+    DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
     
     if (itemMetaData.isDirectory) {
         NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
@@ -119,6 +121,22 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
     self.metaData = metadata;
+    self.sortedContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
+        DBMetadata *md1 = obj1;
+        DBMetadata *md2 = obj2;
+        
+        if (md1.isDirectory == md2.isDirectory) {
+            return [md1.filename localizedCompare:md2.filename];
+        }
+        
+        if (md1.isDirectory) {
+            return (NSComparisonResult)NSOrderedAscending;
+        } else {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
     [self.tableView reloadData];
 }
 
