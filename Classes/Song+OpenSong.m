@@ -10,6 +10,29 @@
 
 @implementation Song (OpenSong)
 
+
++ (Song *) updateOrCreateSongWithOpenSongFileFromURL:(NSURL *)fileURL
+                              inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSDictionary *info = [self openSongInfoWithOpenSongFileUrl:fileURL];
+    return [self updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:context];
+}
+
++ (Song *) updateOrCreateSongWithOpenSongInfo:(NSDictionary *)info
+                       inManagedObjectContext:(NSManagedObjectContext *)context
+{    
+    // check if song already exists based on title
+    Song *song = [Song MR_findFirstByAttribute:@"title"
+                                     withValue:[info valueForKey:@"title"]
+                                     inContext:context];
+    if (song) {
+        [song updateWithOpenSongInfo:info];
+    } else {
+        song = [Song songWithOpenSongInfo:info inManagedObjectContext:context];
+    }
+    return song;
+}
+
 + (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl
 {
     NSString *textContent = [NSString stringWithContentsOfURL:fileUrl encoding:NSUTF8StringEncoding error:nil];

@@ -51,19 +51,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
             return;
         }
         
-        // import info
-        [managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)            
-            // check if song already exists based on title
-            Song *songFound = [Song MR_findFirstByAttribute:@"title"
-                                                  withValue:[info valueForKey:@"title"]
-                                                  inContext:managedObjectContext];
-
-            if (songFound) {
-                [songFound updateWithOpenSongInfo:info];
-            } else {
-                [Song songWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
-            }
-        }];
+        [Song updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:managedObjectContext];
         
         // save every 100 songs
         if (idx % 100 == 0) {
