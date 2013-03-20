@@ -55,6 +55,8 @@
     [super viewDidLoad];
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     [self.restClient loadMetadata:self.initialPath];
 }
 
@@ -114,6 +116,7 @@
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
     self.metaData = metadata;
     [self.tableView reloadData];
@@ -121,12 +124,14 @@
 
 - (void)restClient:(DBRestClient *)client loadMetadataFailedWithError:(NSError *)error {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     NSLog(@"Error loading metadata: %@", error);
 }
 
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
     NSLog(@"File loaded into path: %@", localPath);
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
