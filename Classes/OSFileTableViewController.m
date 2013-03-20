@@ -56,6 +56,12 @@
 {
     [super viewDidLoad];
 
+    NSString *title = self.initialPath.lastPathComponent;
+    if ([title isEqualToString:@"/"]) {
+        title = @"Dropbox";
+    }
+    self.title = title;
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
