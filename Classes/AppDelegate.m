@@ -12,6 +12,8 @@
 #import "Defines.h" // can be removed if not found
 #import "GAI.h"
 
+#import <DropboxSDK/DropboxSDK.h>
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -45,6 +47,18 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -98,6 +112,17 @@
 
 - (void) startCustomerServices
 {
+
+#ifndef IOPENSONGS_DROPBOX_APP_KEY
+#define IOPENSONGS_DROPBOX_APP_KEY @""
+#define IOPENSONGS_DROPBOX_APP_SECRET @""
+#endif
+
+    DBSession* dbSession = [[DBSession alloc] initWithAppKey:IOPENSONGS_DROPBOX_APP_KEY
+                                                   appSecret:IOPENSONGS_DROPBOX_APP_SECRET
+                                                        root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
+    [DBSession setSharedSession:dbSession];
+    
 #ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
     [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
 #endif

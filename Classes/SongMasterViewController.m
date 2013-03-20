@@ -13,6 +13,9 @@
 
 #import "MBProgressHUD.h"
 #import "RevealSidebarController.h"
+#import "OSFileTableViewController.h"
+
+#import <DropboxSDK/DropboxSDK.h>
 
 @interface SongMasterViewController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
@@ -105,7 +108,11 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.importActionSheet = [[UIActionSheet alloc ]initWithTitle:@"Import from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"iTunes", nil];
+    self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:@"Import from"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Cancel"
+                                            destructiveButtonTitle:nil
+                                                 otherButtonTitles:@"iTunes", @"Dropbox", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -163,8 +170,18 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"iTunes"]) {
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if ([buttonTitle isEqualToString:@"iTunes"]) {
         [self importSongs];
+    } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            //show the Dropbox file chooser
+            OSFileTableViewController *fileTableViewController = [[OSFileTableViewController alloc] initWithPathString:@"/"];
+            [self.navigationController pushViewController:fileTableViewController animated:YES];
+        } else {
+            [[DBSession sharedSession] linkFromController:self];
+        }
     }
 }
 

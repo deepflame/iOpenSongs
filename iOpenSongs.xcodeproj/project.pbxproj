@@ -37,6 +37,7 @@
 		3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
 		3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
 		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3E92911516F9E160002F6ABB /* OSFileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSFileTableViewController.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
@@ -123,6 +124,8 @@
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		3E92911216F9E160002F6ABB /* OSFileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSFileTableViewController.h; sourceTree = "<group>"; };
+		3E92911316F9E160002F6ABB /* OSFileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSFileTableViewController.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -241,6 +244,7 @@
 		3E7F1B6B158487EF008C222F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3E92911716F9E1F0002F6ABB /* Files */,
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
@@ -256,6 +260,15 @@
 				3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3E92911716F9E1F0002F6ABB /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E92911216F9E160002F6ABB /* OSFileTableViewController.h */,
+				3E92911316F9E160002F6ABB /* OSFileTableViewController.m */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 		3EA0BB9516D0CFCF00D7D97D /* Views */ = {
@@ -632,6 +645,7 @@
 				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
+				3E92911516F9E160002F6ABB /* OSFileTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
