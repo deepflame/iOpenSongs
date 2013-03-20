@@ -6,6 +6,7 @@ pod 'MBProgressHUD'
 
 # Core
 pod 'MagicalRecord'
+pod 'Dropbox-iOS-SDK'
 
 # Test
 pod 'TestFlightSDK'

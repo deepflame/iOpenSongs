@@ -1,5 +1,6 @@
 
 PODS:
+- Dropbox-iOS-SDK (1.3.3)
 - ECSlidingViewController (0.9.0)
 - GoogleAnalytics-iOS-SDK (2.0beta4)
 - MBProgressHUD (0.6)
@@ -8,6 +9,7 @@ PODS:
 - uservoice-iphone-sdk (2.0.7)
 
 DEPENDENCIES:
+- Dropbox-iOS-SDK
 - ECSlidingViewController
 - GoogleAnalytics-iOS-SDK
 - MBProgressHUD
@@ -16,6 +18,7 @@ DEPENDENCIES:
 - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
+  Dropbox-iOS-SDK: 5ba15512b50769e175f1b612eba2b8d9c5d54b85
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
   GoogleAnalytics-iOS-SDK: 11332eedcffb0c88b2dd9bff0ac1444e3a85e890
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
