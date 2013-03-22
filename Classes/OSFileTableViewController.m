@@ -148,16 +148,15 @@
         DBMetadata *md1 = obj1;
         DBMetadata *md2 = obj2;
         
-        if (md1.isDirectory == md2.isDirectory) {
-            return [md1.filename localizedCompare:md2.filename];
+        if (md1.isDirectory != md2.isDirectory) {
+            if (md1.isDirectory) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else {
+                return (NSComparisonResult)NSOrderedDescending;
+            }
         }
         
-        if (md1.isDirectory) {
-            return (NSComparisonResult)NSOrderedAscending;
-        } else {
-            return (NSComparisonResult)NSOrderedDescending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
+        return [md1.filename localizedCompare:md2.filename];
     }];
     
     [self.tableView reloadData];
