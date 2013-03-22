@@ -18,6 +18,7 @@
 @property (nonatomic, strong, readonly) NSString *initialPath;
 @property (nonatomic, strong) DBMetadata *metaData;
 @property (nonatomic, strong) NSArray *sortedContents;
+@property (nonatomic, strong) NSMutableArray *selectedContents;
 @end
 
 @implementation OSFileTableViewController
@@ -26,6 +27,7 @@
 @synthesize initialPath = _initialPath;
 @synthesize metaData = _metaData;
 @synthesize sortedContents = _sortedContents;
+@synthesize selectedContents = _selectedContents;
 
 - (DBRestClient *)restClient {
     if (!_restClient) {
@@ -64,6 +66,7 @@
     }
     self.title = title;
     
+    self.selectedContents = [NSMutableArray array];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
@@ -120,11 +123,17 @@
         OSFileTableViewController *fileTableViewController = [[OSFileTableViewController alloc] initWithPathString:newPath];
         [self.navigationController pushViewController:fileTableViewController animated:YES];
     } else {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         
-        NSString *localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:itemMetaData.filename];
-        [self.restClient loadFile:newPath intoPath:localPath];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        BOOL cellSelected = cell.accessoryType == UITableViewCellAccessoryNone;
+        if (cellSelected) {
+            cell.accessoryType =  UITableViewCellAccessoryCheckmark;
+            id obj = self.sortedContents[indexPath.row];
+            [self.selectedContents addObject:obj];
+        } else {
+            cell.accessoryType =  UITableViewCellAccessoryNone;
+            [self.selectedContents removeObject:self.sortedContents[indexPath.row]];
+        }
     }
 }
 
