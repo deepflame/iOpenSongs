@@ -112,6 +112,7 @@
     DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
     cell.textLabel.text = itemMetaData.filename;
     if (itemMetaData.isDirectory) {
+        cell.detailTextLabel.text = @"";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.detailTextLabel.text = itemMetaData.humanReadableSize;
