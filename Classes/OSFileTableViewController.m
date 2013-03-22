@@ -19,6 +19,8 @@
 @property (nonatomic, strong) DBMetadata *metaData;
 @property (nonatomic, strong) NSArray *sortedContents;
 @property (nonatomic, strong) NSMutableArray *selectedContents;
+
+@property (nonatomic, strong) UIBarButtonItem *importBarButtonItem;
 @end
 
 @implementation OSFileTableViewController
@@ -67,6 +69,13 @@
     self.title = title;
     
     self.selectedContents = [NSMutableArray array];
+    self.importBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                         target:self
+                                                                             action:@selector(importAllSelectedItems:)];
+    self.importBarButtonItem.enabled = NO;
+    self.navigationItem.rightBarButtonItems = @[self.importBarButtonItem];
+    
+    // access Dropbox
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
@@ -134,6 +143,8 @@
             cell.accessoryType =  UITableViewCellAccessoryNone;
             [self.selectedContents removeObject:self.sortedContents[indexPath.row]];
         }
+        
+        self.importBarButtonItem.enabled = (self.selectedContents.count > 0) ? YES : NO;
     }
 }
 
@@ -182,6 +193,16 @@
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
     NSLog(@"There was an error loading the file - %@", error);
+}
+
+#pragma mark - Actions
+
+- (IBAction)importAllSelectedItems:(id)sender
+{
+    for (DBMetadata *metadata in self.selectedContents) {
+        NSLog(@"%@", metadata.filename);
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
