@@ -16,7 +16,6 @@
 @interface OSFileTableViewController () <DBRestClientDelegate>
 @property (nonatomic, strong, readonly) DBRestClient *restClient;
 @property (nonatomic, strong, readonly) NSString *initialPath;
-@property (nonatomic, strong) DBMetadata *metaData;
 @property (nonatomic, strong) NSArray *sortedContents;
 @property (nonatomic, strong) NSMutableArray *selectedContents;
 
@@ -27,7 +26,6 @@
 
 @synthesize restClient = _restClient;
 @synthesize initialPath = _initialPath;
-@synthesize metaData = _metaData;
 @synthesize sortedContents = _sortedContents;
 @synthesize selectedContents = _selectedContents;
 
@@ -157,7 +155,6 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
-    self.metaData = metadata;
     self.sortedContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
         DBMetadata *md1 = obj1;
         DBMetadata *md2 = obj2;
