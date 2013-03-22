@@ -147,6 +147,8 @@
         
         self.importBarButtonItem.enabled = (self.selectedContents.count > 0) ? YES : NO;
     }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - DBRestClientDelegate
