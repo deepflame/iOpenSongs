@@ -35,7 +35,7 @@
 
 - (id)init
 {
-    return [super initWithPathString:@"/"];
+    return [super initWithPath:@"/"];
 }
 
 - (void)viewDidLoad

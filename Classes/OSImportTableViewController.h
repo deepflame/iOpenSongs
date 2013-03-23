@@ -10,7 +10,7 @@
 
 @interface OSImportTableViewController : UITableViewController
 
-- (id)initWithPathString:(NSString *)path;
+- (id)initWithPath:(NSString *)path;
 
 @property (nonatomic, strong) NSArray *contents;
 @property (nonatomic, strong) NSMutableArray *selectedContents;

@@ -26,7 +26,7 @@
 
 #pragma mark -
 
-- (id)initWithPathString:(NSString *)path
+- (id)initWithPath:(NSString *)path
 {
     self = [super init];
     if (self) {
@@ -80,7 +80,7 @@
     NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
     
     if (itemMetaData.isDirectory) {
-        OSImportTableViewController *fileTableViewController = [[self.class alloc] initWithPathString:newPath];
+        OSImportTableViewController *fileTableViewController = [[self.class alloc] initWithPath:newPath];
         [self.navigationController pushViewController:fileTableViewController animated:YES];
     } else {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

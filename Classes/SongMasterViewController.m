@@ -177,7 +177,7 @@
     } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
         if ([[DBSession sharedSession] isLinked]) {
             //show the Dropbox file chooser
-            OSDropboxImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] initWithPathString:@"/"];
+            OSDropboxImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
             [self.navigationController pushViewController:importTableViewController animated:YES];
         } else {
             [[DBSession sharedSession] linkFromController:self];
