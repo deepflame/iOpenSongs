@@ -10,6 +10,7 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
 		3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* RevealSidebarController.m */; };
 		3E35844D151E120F00137FC4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
@@ -85,6 +86,8 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
+		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
+		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
 		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealSidebarController.m; sourceTree = "<group>"; };
@@ -266,7 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				3E92911216F9E160002F6ABB /* OSFileTableViewController.h */,
-				3E92911316F9E160002F6ABB /* OSFileTableViewController.m */,
+				3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */,
+				3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -646,6 +650,7 @@
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
 				3E92911516F9E160002F6ABB /* OSFileTableViewController.m in Sources */,
+				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

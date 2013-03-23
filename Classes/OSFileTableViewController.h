@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OSFileTableViewController : UITableViewController
+#import "OSImportTableViewController.h"
 
-- (id)initWithPathString:(NSString *)path;
+@interface OSFileTableViewController : OSImportTableViewController
 
 @end

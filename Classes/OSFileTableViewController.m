@@ -15,19 +15,13 @@
 
 @interface OSFileTableViewController () <DBRestClientDelegate>
 @property (nonatomic, strong, readonly) DBRestClient *restClient;
-@property (nonatomic, strong, readonly) NSString *initialPath;
-@property (nonatomic, strong) NSArray *sortedContents;
-@property (nonatomic, strong) NSMutableArray *selectedContents;
-
-@property (nonatomic, strong) UIBarButtonItem *importBarButtonItem;
 @end
 
 @implementation OSFileTableViewController
 
 @synthesize restClient = _restClient;
-@synthesize initialPath = _initialPath;
-@synthesize sortedContents = _sortedContents;
-@synthesize selectedContents = _selectedContents;
+
+#pragma mark -
 
 - (DBRestClient *)restClient {
     if (!_restClient) {
@@ -37,23 +31,11 @@
     return _restClient;
 }
 
-- (id)initWithPathString:(NSString *)path
-{
-    self = [super init];
-    if (self) {
-        // Custom initialization
-        _initialPath = path;
-    }
-    return self;
-}
+#pragma mark - 
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return [super initWithPathString:@"/"];
 }
 
 - (void)viewDidLoad
@@ -65,13 +47,6 @@
         title = @"Dropbox";
     }
     self.title = title;
-    
-    self.selectedContents = [NSMutableArray array];
-    self.importBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                         target:self
-                                                                             action:@selector(importAllSelectedItems:)];
-    self.importBarButtonItem.enabled = NO;
-    self.navigationItem.rightBarButtonItems = @[self.importBarButtonItem];
     
     // access Dropbox
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -86,76 +61,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.sortedContents.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
-    DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
-    cell.textLabel.text = itemMetaData.filename;
-    if (itemMetaData.isDirectory) {
-        cell.detailTextLabel.text = @"";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    } else {
-        cell.detailTextLabel.text = itemMetaData.humanReadableSize;
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-        
-    return cell;
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DBMetadata *itemMetaData = self.sortedContents[indexPath.row];
-    NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
-    
-    if (itemMetaData.isDirectory) {
-        OSFileTableViewController *fileTableViewController = [[OSFileTableViewController alloc] initWithPathString:newPath];
-        [self.navigationController pushViewController:fileTableViewController animated:YES];
-    } else {
-        
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        BOOL cellSelected = cell.accessoryType == UITableViewCellAccessoryNone;
-        if (cellSelected) {
-            cell.accessoryType =  UITableViewCellAccessoryCheckmark;
-            id obj = self.sortedContents[indexPath.row];
-            [self.selectedContents addObject:obj];
-        } else {
-            cell.accessoryType =  UITableViewCellAccessoryNone;
-            [self.selectedContents removeObject:self.sortedContents[indexPath.row]];
-        }
-        
-        self.importBarButtonItem.enabled = (self.selectedContents.count > 0) ? YES : NO;
-    }
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 #pragma mark - DBRestClientDelegate
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
-    self.sortedContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
+    self.contents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
         DBMetadata *md1 = obj1;
         DBMetadata *md2 = obj2;
         
