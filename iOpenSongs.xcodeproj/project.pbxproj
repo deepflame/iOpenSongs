@@ -250,7 +250,7 @@
 		3E7F1B6B158487EF008C222F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3E92911716F9E1F0002F6ABB /* Files */,
+				3E92911716F9E1F0002F6ABB /* Import */,
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
@@ -268,7 +268,7 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		3E92911716F9E1F0002F6ABB /* Files */ = {
+		3E92911716F9E1F0002F6ABB /* Import */ = {
 			isa = PBXGroup;
 			children = (
 				3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */,
@@ -278,7 +278,7 @@
 				3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */,
 				3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */,
 			);
-			name = Files;
+			name = Import;
 			sourceTree = "<group>";
 		};
 		3EA0BB9516D0CFCF00D7D97D /* Views */ = {
