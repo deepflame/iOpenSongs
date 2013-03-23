@@ -518,6 +518,7 @@
 		3EDDA3F514AEC3A300BB781C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Andreas Boehrnsen";
 			};
