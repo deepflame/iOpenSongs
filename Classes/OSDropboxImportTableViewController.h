@@ -10,6 +10,6 @@
 
 #import "OSImportTableViewController.h"
 
-@interface OSFileTableViewController : OSImportTableViewController
+@interface OSDropboxImportTableViewController : OSImportTableViewController
 
 @end

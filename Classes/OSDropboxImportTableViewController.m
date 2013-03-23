@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSFileTableViewController.h"
+#import "OSDropboxImportTableViewController.h"
 
 #import "Song+Import.h"
 
 #import <DropboxSDK/DropboxSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface OSFileTableViewController () <DBRestClientDelegate>
+@interface OSDropboxImportTableViewController () <DBRestClientDelegate>
 @property (nonatomic, strong, readonly) DBRestClient *restClient;
 @end
 
-@implementation OSFileTableViewController
+@implementation OSDropboxImportTableViewController
 
 @synthesize restClient = _restClient;
 
