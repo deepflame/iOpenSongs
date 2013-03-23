@@ -13,7 +13,7 @@
 
 #import "MBProgressHUD.h"
 #import "RevealSidebarController.h"
-#import "OSFileTableViewController.h"
+#import "OSDropboxImportTableViewController.h"
 
 #import <DropboxSDK/DropboxSDK.h>
 
@@ -177,8 +177,8 @@
     } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
         if ([[DBSession sharedSession] isLinked]) {
             //show the Dropbox file chooser
-            OSFileTableViewController *fileTableViewController = [[OSFileTableViewController alloc] initWithPathString:@"/"];
-            [self.navigationController pushViewController:fileTableViewController animated:YES];
+            OSDropboxImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] initWithPathString:@"/"];
+            [self.navigationController pushViewController:importTableViewController animated:YES];
         } else {
             [[DBSession sharedSession] linkFromController:self];
         }
