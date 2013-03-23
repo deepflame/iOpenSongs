@@ -21,7 +21,7 @@ NSString *const SongImportAttributeProgress  = @"SongImportAttributeProgress";
 {
     NSMutableArray *errors = [NSMutableArray arrayWithCapacity:0];
     
-    NSString *documentsDirectoryPath = [UIApplication documentsDirectory];
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectoryPath];
     NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
     
     [documentsDirectoryContents enumerateObjectsUsingBlock:^(NSString *curFileName, NSUInteger idx, BOOL *stop) {
