@@ -9,6 +9,7 @@
 #import "OSDropboxImportTableViewController.h"
 
 #import "Song+Import.h"
+#import "OSFileDescriptor+Dropbox.h"
 
 #import <DropboxSDK/DropboxSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -67,7 +68,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
-    self.contents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
+    NSArray * dbContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
         DBMetadata *md1 = obj1;
         DBMetadata *md2 = obj2;
         
@@ -81,6 +82,13 @@
         
         return [md1.filename localizedCompare:md2.filename];
     }];
+    
+    NSMutableArray *fdContents = [NSMutableArray array];
+    for (DBMetadata *metadata in dbContents) {
+        OSFileDescriptor *fd = [[OSFileDescriptor alloc] initWithDropboxMetadata:metadata];
+        [fdContents addObject:fd];
+    }
+    self.contents = fdContents;
     
     [self.tableView reloadData];
 }

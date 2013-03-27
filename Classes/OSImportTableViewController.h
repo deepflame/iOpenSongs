@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OSFileDescriptor.h"
 
 @interface OSImportTableViewController : UITableViewController
 

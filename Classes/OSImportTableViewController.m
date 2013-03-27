@@ -8,12 +8,8 @@
 
 #import "OSImportTableViewController.h"
 
-// TODO: remove dependency to Dropbox SDK
-#import <DropboxSDK/DBMetadata.h>
-
 @interface OSImportTableViewController () <UIActionSheetDelegate>
 // UI
-@property (nonatomic, strong) UIBarButtonItem *importBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *actionBarButtonItem;
 @property (nonatomic, strong) UIActionSheet *actionSheet;
 @end
@@ -76,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DBMetadata *itemMetaData = self.contents[indexPath.row];
+    OSFileDescriptor *itemMetaData = self.contents[indexPath.row];
     NSString *newPath = [self.initialPath stringByAppendingPathComponent:itemMetaData.filename];
     
     if (itemMetaData.isDirectory) {
@@ -111,13 +107,13 @@
     }
     
     // Configure the cell...
-    DBMetadata *itemMetaData = self.contents[indexPath.row];
-    cell.textLabel.text = itemMetaData.filename;
-    if (itemMetaData.isDirectory) {
+    OSFileDescriptor *fd = self.contents[indexPath.row];
+    cell.textLabel.text = fd.filename;
+    if (fd.isDirectory) {
         cell.detailTextLabel.text = @"";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
-        cell.detailTextLabel.text = itemMetaData.humanReadableSize;
+        cell.detailTextLabel.text = fd.humanReadableSize;
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
@@ -158,8 +154,8 @@
 
 - (IBAction)importAllSelectedItems:(id)sender
 {
-    for (DBMetadata *metadata in self.selectedContents) {
-        NSLog(@"%@", metadata.filename);
+    for (OSFileDescriptor *fd in self.selectedContents) {
+        NSLog(@"%@", fd.filename);
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
