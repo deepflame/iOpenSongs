@@ -49,21 +49,17 @@
     self.selectedContents = [NSMutableArray array];
 
     // UI
-    self.importBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                             target:self
-                                                                             action:@selector(importAllSelectedItems:)];
-    self.importBarButtonItem.enabled = NO;
     self.actionBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                              target:self
                                                                              action:@selector(showActionSheet:)];
     
-    self.navigationItem.rightBarButtonItems = @[self.importBarButtonItem, self.actionBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[self.actionBarButtonItem];
     
     
     self.actionSheet = [[UIActionSheet alloc ] initWithTitle:nil
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
-                                      destructiveButtonTitle:nil
+                                      destructiveButtonTitle:@"Import"
                                            otherButtonTitles:@"Select All", @"Deselect All", nil];
 }
 
@@ -89,8 +85,6 @@
             cell.accessoryType =  UITableViewCellAccessoryNone;
             [self.selectedContents removeObject:self.contents[indexPath.row]];
         }
-        
-        self.importBarButtonItem.enabled = (self.selectedContents.count > 0) ? YES : NO;
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -134,7 +128,9 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([actionSheet.title isEqualToString:@"Select All"]) {
+    if (buttonIndex == 0) {
+        [self importAllSelectedItems:nil];
+    } else if ([actionSheet.title isEqualToString:@"Select All"]) {
         
     } else if ([actionSheet.title isEqualToString:@"Deselect All"]) {
         
