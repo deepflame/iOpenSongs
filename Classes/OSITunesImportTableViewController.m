@@ -25,6 +25,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    NSString *title = self.initialPath.lastPathComponent;
+    if ([self.initialPath isEqualToString:[UIApplication documentsDirectoryPath]]) {
+        title = @"iTunes";
+    }
+    self.title = title;
+    
+    
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectoryPath];
+    NSArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL];
+    
+    NSMutableArray *fdContents = [NSMutableArray array];
+    for (NSString *dirItem in documentsDirectoryContents) {
+        OSFileDescriptor *fd = [[OSFileDescriptor alloc] initWithPath:dirItem];
+        [fdContents addObject:fd];
+    }
+    self.contents = fdContents;
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
