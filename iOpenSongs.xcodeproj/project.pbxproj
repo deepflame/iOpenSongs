@@ -42,6 +42,8 @@
 		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
+		3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
+		3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */; };
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
@@ -134,6 +136,10 @@
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
+		3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSFileDescriptor.h; sourceTree = "<group>"; };
+		3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSFileDescriptor.m; sourceTree = "<group>"; };
+		3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSFileDescriptor+Dropbox.h"; sourceTree = "<group>"; };
+		3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OSFileDescriptor+Dropbox.m"; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
@@ -485,6 +491,10 @@
 				3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */,
 				3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */,
 				3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */,
+				3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */,
+				3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */,
+				3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */,
+				3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -659,6 +669,8 @@
 				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
 				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
 				3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */,
+				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
+				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
