@@ -13,8 +13,11 @@
 
 #import "MBProgressHUD.h"
 #import "RevealSidebarController.h"
+
+#import "OSITunesImportTableViewController.h"
 #import "OSDropboxImportTableViewController.h"
 
+// TODO: remove dependency
 #import <DropboxSDK/DropboxSDK.h>
 
 @interface SongMasterViewController () <UIActionSheetDelegate>
@@ -173,7 +176,8 @@
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     
     if ([buttonTitle isEqualToString:@"iTunes"]) {
-        [self importSongs];
+        OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
+        [self.navigationController pushViewController:importTableViewController animated:YES];
     } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
         if ([[DBSession sharedSession] isLinked]) {
             //show the Dropbox file chooser
