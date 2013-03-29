@@ -7,6 +7,7 @@
 //
 
 #import "OSFileDescriptor.h"
+#import <FormatterKit/TTTUnitOfInformationFormatter.h>
 
 @implementation OSFileDescriptor
 
@@ -19,13 +20,22 @@
 - (OSFileDescriptor *)initWithPath:(NSString *)path
 {
     OSFileDescriptor *me = [self init];
+    
+    // filename and path
     me.filename = [path lastPathComponent];
     me.path = path;
     
-    NSFileManager *fman = [NSFileManager defaultManager];
-    
+    // isDirectory
     BOOL isDirectory;
+    NSFileManager *fman = [NSFileManager defaultManager];
     [fman fileExistsAtPath:path isDirectory:&isDirectory];
+    me.isDirectory = isDirectory;
+    
+    // humanReadableSize
+    NSDictionary *fileAttributes = [fman attributesOfItemAtPath:path error:nil];
+    NSNumber *fileSize = [NSNumber numberWithUnsignedLongLong:fileAttributes.fileSize];
+    TTTUnitOfInformationFormatter *formatter = [[TTTUnitOfInformationFormatter alloc] init];
+    me.humanReadableSize = [formatter stringFromNumber:fileSize ofUnit:TTTByte];
     
     return me;
 }
