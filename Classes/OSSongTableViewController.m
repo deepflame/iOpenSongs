@@ -12,11 +12,10 @@
 
 #import <objc/message.h>
 
-@interface OSSongTableViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
-@property (nonatomic, strong) UIColor *searchBarColorInactive;
-
+@interface OSSongTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
+@property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end
 
 @implementation OSSongTableViewController
@@ -40,8 +39,6 @@
     
     self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
     self.searchDisplayController.searchResultsDataSource = self;
-    self.searchDisplayController.delegate = self;
-    
     self.searchDisplayController.searchResultsDelegate = self;
 
     // fix scope bar on iPad (with unofficial API... bug in SDK)
@@ -68,8 +65,7 @@
     return YES;
 }
 
-#pragma mark -
-#pragma mark UITableView
+#pragma mark - UITableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -137,7 +133,6 @@
     }
 }
 
-#pragma mark - UISearchDisplayDelegate
 #pragma mark - Private Methods
 
 -(void)filterSongs:(UISearchBar*)searchBar
