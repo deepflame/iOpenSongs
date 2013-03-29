@@ -9,6 +9,7 @@
 #import "OSImportTableViewController.h"
 
 @interface OSImportTableViewController () <UIActionSheetDelegate>
+@property (nonatomic, strong) NSMutableSet *selectedIndexPaths;
 // UI
 @property (nonatomic, strong) UIBarButtonItem *actionBarButtonItem;
 @property (nonatomic, strong) UIActionSheet *actionSheet;
@@ -46,7 +47,7 @@
     [super viewDidLoad];
     
     // initialization
-    self.selectedContents = [NSMutableArray array];
+    self.selectedIndexPaths = [NSMutableSet set];
 
     // UI
     self.actionBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
@@ -79,11 +80,10 @@
         BOOL cellSelected = cell.accessoryType == UITableViewCellAccessoryNone;
         if (cellSelected) {
             cell.accessoryType =  UITableViewCellAccessoryCheckmark;
-            id obj = self.contents[indexPath.row];
-            [self.selectedContents addObject:obj];
+            [self.selectedIndexPaths addObject:indexPath];
         } else {
             cell.accessoryType =  UITableViewCellAccessoryNone;
-            [self.selectedContents removeObject:self.contents[indexPath.row]];
+            [self.selectedIndexPaths removeObject:indexPath];
         }
     }
     
