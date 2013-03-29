@@ -31,55 +31,6 @@
 @synthesize importActionSheet = _importActionSheet;
 
 #pragma mark -
-#pragma mark Private Methods
-
-- (void)importSongs
-{
-    // show HUD
-    UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewForHud animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Importing";
-    
-    // listen to import progress event
-    [[NSNotificationCenter defaultCenter] addObserverForName:SongImportWillImport object:nil queue:nil usingBlock:^(NSNotification *notification) {
-        hud.progress = [(NSNumber *) [notification.userInfo valueForKey:SongImportAttributeProgress] floatValue];
-    }];
-        
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-        NSError *error = nil;
-        
-        // import songs from application sharing
-        [Song importApplicationDocumentsIntoContext:context error:&error];
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            // dismiss HUD
-            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-            // TODO: show image on success or error in HUD
-            
-            if (error) {
-                [self handleError:[NSString stringWithFormat:@"%@\n\n%@", error.localizedDescription, error.localizedRecoverySuggestion]
-                        withTitle:error.localizedFailureReason];
-            }
-        });
-        
-    });
-}
-
-- (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
-    if (!errorTitle) {
-        errorTitle = NSLocalizedString(@"Error Title",
-                                       @"Title for alert displayed when download or parse error occurs.");
-    }
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorTitle
-                                                        message:errorMessage
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];
-}
 
 - (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -133,7 +84,7 @@
     
     // import songs from application sharing if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importSongs];
+        // FIXME
     }
 }
 
