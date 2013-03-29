@@ -8,6 +8,8 @@
 
 #import "OSRevealSidebarController.h"
 
+#import "OSSongMasterViewController.h"
+
 @interface OSRevealSidebarController ()
 
 @end
@@ -19,7 +21,7 @@
     [super viewDidLoad];
 
     // build tabbar
-    UIViewController *songsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"songs"];
+    UIViewController *songsViewController = [[OSSongMasterViewController alloc] init];
     UIViewController *setsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sets"];
     UIViewController *settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settings"];
     

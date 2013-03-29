@@ -12,20 +12,33 @@
 
 #import <objc/message.h>
 
-@interface OSSongTableViewController () <UISearchBarDelegate>
+@interface OSSongTableViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic, strong) UIColor *searchBarColorInactive;
+
+@property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
 @end
 
 @implementation OSSongTableViewController
 @synthesize searchBarColorInactive = _searchBarColorInactive;
+@synthesize searchBar = _searchBar;
+@synthesize searchDisplayController;
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad 
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.searchBar.placeholder = @"Search Songs";
+    self.searchBar.scopeButtonTitles = @[@"Title", @"Author", @"Lyrics"];
+    self.searchBar.delegate = self;
+    
+    self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+    self.searchDisplayController.searchResultsDataSource = self;
+    self.searchDisplayController.delegate = self;
     
     // fix scope bar on iPad (with unofficial API... bug in SDK)
     // could be fixed on iPhone as well but the results would only have one row
@@ -34,6 +47,9 @@
             objc_msgSend(self.searchDisplayController.searchBar, @selector(setCombinesLandscapeBars:), NO );
         }
     }
+    
+    // add searchbar to tableview
+    self.tableView.tableHeaderView = self.searchBar;
     
     // fetch data
     self.fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
@@ -68,7 +84,7 @@
     return cell;
 }
 
-#pragma mark UISearchBarDelegate
+#pragma mark - UISearchBarDelegate
 
 -(void)filterSongs:(UISearchBar*)searchBar
 {
@@ -153,5 +169,7 @@
         searchBar.tintColor = self.searchBarColorInactive;
     }
 }
+
+#pragma mark - UISearchDisplayDelegate
 
 @end

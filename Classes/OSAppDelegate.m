@@ -145,7 +145,12 @@
                                         blue:0.32549020649999999f
                                        alpha:1.0f];
     
+    // navigation bar
     [[UINavigationBar appearance] setTintColor:osColor];
+
+    // search bar
+    [[UISearchBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UISearchBar appearance] setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 }
 
 @end
