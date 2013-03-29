@@ -147,7 +147,30 @@
         [self importAllSelectedItems];
         return;
     }
+
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    // select or deselect all
+    SEL selector;
+    if ([buttonTitle isEqualToString:@"Select All"]) {
+        selector = @selector(addObject:);
+    } else if ([buttonTitle isEqualToString:@"Deselect All"]) {
+        selector = @selector(removeObject:);
     }
+    
+    for (NSInteger s = 0; s < [self.tableView numberOfSections]; s++) {
+        for (NSInteger r = 0; r < [self.tableView numberOfRowsInSection:s]; r++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:r inSection:s];
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                        
+            // select if it is not a directory
+            if (![cell.detailTextLabel.text isEqualToString:@""]) {
+                [self.selectedIndexPaths performSelector:selector withObject:indexPath];
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Actions
