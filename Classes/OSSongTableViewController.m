@@ -90,43 +90,6 @@
 
 #pragma mark - UISearchBarDelegate
 
--(void)filterSongs:(UISearchBar*)searchBar
-{
-    NSPredicate *predicate;
-    
-    if (searchBar.text.length == 0) {
-
-        predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
-        
-    } else {
-        
-        NSString *filterBy;
-        switch (searchBar.selectedScopeButtonIndex) {
-            case 0:
-                filterBy = @"title";
-                break;
-
-            case 1:
-                filterBy = @"author";
-                break;
-
-            default:
-                filterBy = @"lyrics";
-                break;
-        }
-
-        predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
-    }
-    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
-
-    NSError *error = nil;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        // TODO Handle error
-        CLS_LOG(@"Unresolved error %@, %@", error, [error userInfo]);
-        //exit(-1);  // Fail
-    }
-}
-
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
     [self filterSongs:searchBar];
@@ -175,5 +138,38 @@
 }
 
 #pragma mark - UISearchDisplayDelegate
+#pragma mark - Private Methods
+
+-(void)filterSongs:(UISearchBar*)searchBar
+{
+    NSPredicate *predicate;
+    
+    if (searchBar.text.length == 0) {
+        
+        predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
+        
+    } else {
+        
+        NSString *filterBy;
+        switch (searchBar.selectedScopeButtonIndex) {
+            case 0:
+                filterBy = @"title";
+                break;
+                
+            case 1:
+                filterBy = @"author";
+                break;
+                
+            default:
+                filterBy = @"lyrics";
+                break;
+        }
+        
+        predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
+    }
+    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+    
+    [[self fetchedResultsController] performFetch:nil];
+}
 
 @end
