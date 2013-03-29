@@ -50,9 +50,7 @@
     self.title = title;
     
     // access Dropbox
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
     [self.restClient loadMetadata:self.initialPath];
 }
 
@@ -65,7 +63,7 @@
 #pragma mark - DBRestClientDelegate
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.hud hide:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
     NSArray * dbContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
@@ -94,14 +92,13 @@
 }
 
 - (void)restClient:(DBRestClient *)client loadMetadataFailedWithError:(NSError *)error {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.hud hide:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     NSLog(@"Error loading metadata: %@", error);
 }
 
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
