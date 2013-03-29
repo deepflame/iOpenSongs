@@ -42,6 +42,7 @@
         [fdContents addObject:fd];
     }
     self.contents = fdContents;
+    [self.hud hide:NO];
     
     [self.tableView reloadData];
 }
