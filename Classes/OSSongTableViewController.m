@@ -40,6 +40,8 @@
     self.searchDisplayController.searchResultsDataSource = self;
     self.searchDisplayController.delegate = self;
     
+    self.searchDisplayController.searchResultsDelegate = self;
+
     // fix scope bar on iPad (with unofficial API... bug in SDK)
     // could be fixed on iPhone as well but the results would only have one row
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
