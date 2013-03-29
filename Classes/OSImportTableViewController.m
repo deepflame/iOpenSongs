@@ -19,6 +19,7 @@
 
 @synthesize contents = _contents;
 @synthesize initialPath = _initialPath;
+@synthesize hud = _hud;
 
 - (NSSet *)selectedContents
 {
@@ -58,7 +59,9 @@
     // initialization
     self.selectedIndexPaths = [NSMutableSet set];
 
-    // UI
+    // UI    
+    UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
+    self.hud = [MBProgressHUD showHUDAddedTo:viewForHud animated:YES];
     self.actionBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                              target:self
                                                                              action:@selector(showActionSheet:)];
