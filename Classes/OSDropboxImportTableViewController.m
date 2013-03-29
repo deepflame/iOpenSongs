@@ -103,11 +103,10 @@
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        [Song updateOrCreateSongWithOpenSongFileFromURL:[NSURL fileURLWithPath:localPath] inManagedObjectContext:localContext];
-    } completion:^(BOOL success, NSError *error){
-        [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
-    }];
+    // save song, delete temp file
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+    [Song updateOrCreateSongWithOpenSongFileFromURL:[NSURL fileURLWithPath:localPath] inManagedObjectContext:context];
+    [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
     
     // update progress
     self.hud.progress = (float)(self.selectedContents.count - self.filesToImport.count) / (float)self.selectedContents.count;
@@ -125,8 +124,16 @@
 
 - (void)loadNextFileToImportOrReturn
 {
-    // hide hud and return if no files to import
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+    
+    // save every 50 files
+    if (self.filesToImport.count % 50 == 0) {
+        [context MR_saveToPersistentStoreAndWait];
+    }
+    
+    // save, hide hud and return if no files to import
     if (self.filesToImport.count == 0) {
+        [context MR_saveToPersistentStoreAndWait];
         [self.hud hide:YES];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
