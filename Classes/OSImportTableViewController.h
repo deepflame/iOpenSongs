@@ -16,9 +16,11 @@
 
 - (id)initWithPath:(NSString *)path;
 - (void)importAllSelectedItems;
+- (void)handleImportErrors;
 
 @property (nonatomic, strong) NSArray *contents;
 @property (nonatomic, strong, readonly) NSSet *selectedContents;
+@property (nonatomic, strong) NSMutableArray *importErrors;
 @property (nonatomic, strong, readonly) NSString *initialPath;
 
 @property (nonatomic, strong) MBProgressHUD *hud;

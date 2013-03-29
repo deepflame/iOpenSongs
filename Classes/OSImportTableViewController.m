@@ -19,6 +19,7 @@
 
 @synthesize contents = _contents;
 @synthesize initialPath = _initialPath;
+@synthesize importErrors = _importErrors;
 @synthesize hud = _hud;
 
 - (NSSet *)selectedContents
@@ -58,6 +59,7 @@
     
     // initialization
     self.selectedIndexPaths = [NSMutableSet set];
+    self.importErrors = [NSMutableArray array];
 
     // UI    
     UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
@@ -195,6 +197,17 @@
         NSLog(@"%@", fd.filename);
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)handleImportErrors
+{
+    // return if no errors
+    if (self.importErrors.count == 0) {
+        return; // <- !!
+    }
+    
+    // process import issues
+        
 }
 
 @end
