@@ -9,8 +9,8 @@
 #import "OSExtrasTableViewController.h"
 #import "OSHtmlViewController.h"
 
-#import "Defines.h"
-#import "UserVoice.h"
+#import <UserVoice.h>
+#import "OSDefines.h"
 #import "OSUserVoiceStyleSheet.h"
 
 @interface OSExtrasTableViewController ()

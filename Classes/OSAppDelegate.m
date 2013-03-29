@@ -9,7 +9,7 @@
 #import "OSAppDelegate.h"
 #import "OSStartupViewController.h"
 
-#import "Defines.h" // can be removed if not found
+#import "OSDefines.h" // can be removed if not found
 #import "GAI.h"
 
 #import <DropboxSDK/DropboxSDK.h>

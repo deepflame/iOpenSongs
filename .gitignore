@@ -1,6 +1,6 @@
 Vendor/glyphicons/*.png
 /Pods/
 /iOpenSongs.xcworkspace/
-/Other Sources/Defines.h
+/Other Sources/OSDefines.h
 /iOpenSongs.xcodeproj/xcuserdata/
 /iOpenSongs.xcodeproj/project.xcworkspace/

@@ -131,7 +131,7 @@
 		3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSong.m; sourceTree = "<group>"; };
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
-		3E865AF116CF6AEA000E9D98 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
-				3E865AF116CF6AEA000E9D98 /* Defines.h */,
+				3E865AF116CF6AEA000E9D98 /* OSDefines.h */,
 				3EDDA40E14AEC3A400BB781C /* main.m */,
 			);
 			path = "Other Sources";
