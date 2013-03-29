@@ -641,29 +641,6 @@
             </objects>
             <point key="canvasLocation" x="2679" y="-358"/>
         </scene>
-        <!--Main Navigation Controller-->
-        <scene sceneID="BDo-Ky-lZx">
-            <objects>
-                <navigationController storyboardIdentifier="Main Navigation Controller" id="SKH-Iw-Dtd" userLabel="Main Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Songs" image="glyphicons_017_music.png" id="l8A-Qt-eT6"/>
-                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rfw-qk-Ycj">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.33333334329999997" green="0.039215687659999998" blue="0.32549020649999999" alpha="1" colorSpace="deviceRGB"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JMb-kA-7fI">
-                        <rect key="frame" x="0.0" y="808" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="aCn-16-UXf" kind="relationship" relationship="rootViewController" id="TVt-ka-Xvv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsb-ip-O1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="205" y="-3864"/>
-        </scene>
         <!--Reveal Sidebar Controller-->
         <scene sceneID="D6P-9D-xiy">
             <objects>
@@ -717,72 +694,12 @@
             </objects>
             <point key="canvasLocation" x="1619" y="-358"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="IMh-2D-tqJ">
-            <objects>
-                <tabBarController storyboardIdentifier="Sidebar" id="eD5-Dy-uYT" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="luo-vm-UAJ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="SKH-Iw-Dtd" kind="relationship" relationship="viewControllers" id="41U-ws-hVz"/>
-                        <segue destination="Aco-UP-LJk" kind="relationship" relationship="viewControllers" id="aPM-Oy-Yq4"/>
-                        <segue destination="Lhp-aE-ilg" kind="relationship" relationship="viewControllers" id="8pE-rW-ngx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g3c-rP-wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-337" y="-2802"/>
-        </scene>
-        <!--Navigation Controller - Settings-->
-        <scene sceneID="rfE-58-3DY">
-            <objects>
-                <navigationController id="Lhp-aE-ilg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="glyphicons_023_cogwheels.png" id="fjC-PA-Anr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZLb-aS-Gmj">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aGl-9b-cjr" kind="relationship" relationship="rootViewController" id="xJf-PV-gfA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GsK-RZ-MK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="210" y="-1737"/>
-        </scene>
-        <!--Navigation Controller - Sets-->
-        <scene sceneID="NJq-pR-ZaW">
-            <objects>
-                <navigationController id="Aco-UP-LJk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sets" image="glyphicons_158_playlist.png" id="eVa-ix-JQ7"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="a8G-8X-y6e">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.33333334329999997" green="0.03529411927" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PRx-PW-mGL" kind="relationship" relationship="rootViewController" id="5An-cF-kC4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GCI-jW-yLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="205" y="-2802"/>
-        </scene>
         <!--Set Item Songs Table View Controller - Songs in Set-->
         <scene sceneID="4rH-Iz-VGK">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="MIh-db-2Zi" customClass="OSSetItemSongsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIw-BP-7jB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="744"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -847,9 +764,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="glyphicons_017_music.png" width="21" height="25"/>
-        <image name="glyphicons_023_cogwheels.png" width="26" height="26"/>
-        <image name="glyphicons_158_playlist.png" width="29" height="24"/>
         <image name="glyphicons_244_conversation.png" width="25" height="18"/>
         <image name="glyphicons_381_github.png" width="24" height="24"/>
         <image name="glyphicons_392_twitter.png" width="24" height="24"/>
