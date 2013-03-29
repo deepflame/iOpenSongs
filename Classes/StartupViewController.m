@@ -55,7 +55,7 @@
 {
     NSString *sampleSong = @"Amazing Grace"; // TODO make more generic or use constant
     
-    NSString *documentsDirectoryPath = [UIApplication documentsDirectory];
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectoryPath];
     NSMutableArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL].mutableCopy;
 
     [documentsDirectoryContents removeObject:@".DS_Store"]; // fix for simulator

@@ -10,10 +10,12 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
 		3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* RevealSidebarController.m */; };
 		3E35844D151E120F00137FC4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
 		3E3872AF16EB1676003A0DCC /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
+		3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* HtmlViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
@@ -37,8 +39,11 @@
 		3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
 		3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
 		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
+		3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
+		3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */; };
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
@@ -84,12 +89,16 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
+		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
+		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
 		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealSidebarController.m; sourceTree = "<group>"; };
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		3E3FFF8716FE046000E6381A /* OSITunesImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSITunesImportTableViewController.h; sourceTree = "<group>"; };
+		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
@@ -123,8 +132,14 @@
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
+		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
+		3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSFileDescriptor.h; sourceTree = "<group>"; };
+		3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSFileDescriptor.m; sourceTree = "<group>"; };
+		3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSFileDescriptor+Dropbox.h"; sourceTree = "<group>"; };
+		3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OSFileDescriptor+Dropbox.m"; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
@@ -241,6 +256,7 @@
 		3E7F1B6B158487EF008C222F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3E92911716F9E1F0002F6ABB /* Import */,
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
@@ -256,6 +272,19 @@
 				3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3E92911716F9E1F0002F6ABB /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */,
+				3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */,
+				3E3FFF8716FE046000E6381A /* OSITunesImportTableViewController.h */,
+				3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */,
+				3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */,
+				3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */,
+			);
+			name = Import;
 			sourceTree = "<group>";
 		};
 		3EA0BB9516D0CFCF00D7D97D /* Views */ = {
@@ -462,6 +491,10 @@
 				3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */,
 				3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */,
 				3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */,
+				3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */,
+				3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */,
+				3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */,
+				3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -495,6 +528,7 @@
 		3EDDA3F514AEC3A300BB781C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Andreas Boehrnsen";
 			};
@@ -632,6 +666,11 @@
 				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
+				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
+				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
+				3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */,
+				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
+				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
