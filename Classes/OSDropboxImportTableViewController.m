@@ -16,11 +16,13 @@
 
 @interface OSDropboxImportTableViewController () <DBRestClientDelegate>
 @property (nonatomic, strong, readonly) DBRestClient *restClient;
+@property (nonatomic, strong) NSMutableArray *filesToImport;
 @end
 
 @implementation OSDropboxImportTableViewController
 
 @synthesize restClient = _restClient;
+@synthesize filesToImport = _filesToImport;
 
 #pragma mark -
 
@@ -106,20 +108,40 @@
     } completion:^(BOOL success, NSError *error){
         [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
     }];
+    
+    [self loadNextFileToImportOrReturn];
 }
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
     NSLog(@"There was an error loading the file - %@", error);
 }
 
-#pragma mark - Actions
+#pragma mark -
 
-- (IBAction)importAllSelectedItems:(id)sender
+- (void)loadNextFileToImportOrReturn
 {
-    for (DBMetadata *metadata in self.selectedContents) {
-        NSLog(@"%@", metadata.filename);
+    // hide hud and return if no files to import
+    if (self.filesToImport.count == 0) {
+        [self.hud hide:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    OSFileDescriptor *fd = self.filesToImport.lastObject;
+    [self.filesToImport removeLastObject];
+    
+    NSString *dbPath = [self.initialPath stringByAppendingPathComponent:fd.filename];
+    NSString *localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:fd.filename];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [self.restClient loadFile:dbPath intoPath:localPath];
+}
+
+- (void)importAllSelectedItems
+{    
+    [self.hud show:YES];
+    
+    self.filesToImport = [[self.selectedContents allObjects] mutableCopy];
+    [self loadNextFileToImportOrReturn];    
 }
 
 @end
