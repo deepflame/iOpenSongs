@@ -109,6 +109,9 @@
         [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
     }];
     
+    // update progress
+    self.hud.progress = (float)(self.selectedContents.count - self.filesToImport.count) / (float)self.selectedContents.count;
+    
     [self loadNextFileToImportOrReturn];
 }
 
@@ -138,6 +141,9 @@
 
 - (void)importAllSelectedItems
 {    
+    // show HUD
+    self.hud.mode = MBProgressHUDModeAnnularDeterminate;
+    self.hud.labelText = @"Importing";
     [self.hud show:YES];
     
     self.filesToImport = [[self.selectedContents allObjects] mutableCopy];
