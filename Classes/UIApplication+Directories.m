@@ -10,7 +10,7 @@
 
 @implementation UIApplication (Directories)
 
-+ (NSString *)documentsDirectory
++ (NSString *)documentsDirectoryPath
 {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }

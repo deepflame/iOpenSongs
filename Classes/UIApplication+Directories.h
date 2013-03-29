@@ -10,6 +10,6 @@
 
 @interface UIApplication (Directories)
 
-+ (NSString *)documentsDirectory;
++ (NSString *)documentsDirectoryPath;
 
 @end

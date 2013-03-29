@@ -1,26 +1,44 @@
-
 PODS:
-- ECSlidingViewController (0.9.0)
-- GoogleAnalytics-iOS-SDK (2.0beta4)
-- MBProgressHUD (0.6)
-- MagicalRecord (2.1)
-- TestFlightSDK (1.2.4.beta)
-- uservoice-iphone-sdk (2.0.7)
+  - Dropbox-iOS-SDK (1.3.3)
+  - ECSlidingViewController (0.9.0)
+  - FormatterKit (1.1.1):
+    - FormatterKit/AddressFormatter (= 1.1.1)
+    - FormatterKit/ArrayFormatter (= 1.1.1)
+    - FormatterKit/LocationFormatter (= 1.1.1)
+    - FormatterKit/OrdinalNumberFormatter (= 1.1.1)
+    - FormatterKit/TimeIntervalFormatter (= 1.1.1)
+    - FormatterKit/UnitOfInformationFormatter (= 1.1.1)
+    - FormatterKit/URLRequestFormatter (= 1.1.1)
+  - FormatterKit/AddressFormatter (1.1.1)
+  - FormatterKit/ArrayFormatter (1.1.1)
+  - FormatterKit/LocationFormatter (1.1.1)
+  - FormatterKit/OrdinalNumberFormatter (1.1.1)
+  - FormatterKit/TimeIntervalFormatter (1.1.1)
+  - FormatterKit/UnitOfInformationFormatter (1.1.1)
+  - FormatterKit/URLRequestFormatter (1.1.1)
+  - MagicalRecord (2.1)
+  - MBProgressHUD (0.6)
+  - TestFlightSDK (1.2.4)
+  - uservoice-iphone-sdk (2.0.7)
 
 DEPENDENCIES:
-- ECSlidingViewController
-- GoogleAnalytics-iOS-SDK
-- MBProgressHUD
-- MagicalRecord
-- TestFlightSDK
-- uservoice-iphone-sdk
+  - Dropbox-iOS-SDK
+  - ECSlidingViewController
+  - FormatterKit (~> 1.1.1)
+  - GoogleAnalytics-iOS-SDK
+  - MagicalRecord
+  - MBProgressHUD
+  - TestFlightSDK (~> 1.2.4)
+  - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
+  Dropbox-iOS-SDK: 5ba15512b50769e175f1b612eba2b8d9c5d54b85
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
-  GoogleAnalytics-iOS-SDK: 11332eedcffb0c88b2dd9bff0ac1444e3a85e890
-  MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
+  FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
+  GoogleAnalytics-iOS-SDK: 5b5063f5bdc99bc093a652f590f572b4550c1862
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
-  TestFlightSDK: aeec97fd81096753d53b942f030a443520a087f4
+  MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
+  TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
   uservoice-iphone-sdk: d26dd42b15148ea68303d2985e9b8fa3c7a430cb
 
-COCOAPODS: 0.16.4
+COCOAPODS: 0.17.0.rc7

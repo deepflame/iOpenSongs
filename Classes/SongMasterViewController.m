@@ -14,6 +14,12 @@
 #import "MBProgressHUD.h"
 #import "RevealSidebarController.h"
 
+#import "OSITunesImportTableViewController.h"
+#import "OSDropboxImportTableViewController.h"
+
+// TODO: remove dependency
+#import <DropboxSDK/DropboxSDK.h>
+
 @interface SongMasterViewController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
@@ -25,55 +31,6 @@
 @synthesize importActionSheet = _importActionSheet;
 
 #pragma mark -
-#pragma mark Private Methods
-
-- (void)importSongs
-{
-    // show HUD
-    UIView *viewForHud = self.navigationController ? self.navigationController.view : self.view;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewForHud animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Importing";
-    
-    // listen to import progress event
-    [[NSNotificationCenter defaultCenter] addObserverForName:SongImportWillImport object:nil queue:nil usingBlock:^(NSNotification *notification) {
-        hud.progress = [(NSNumber *) [notification.userInfo valueForKey:SongImportAttributeProgress] floatValue];
-    }];
-        
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-        NSError *error = nil;
-        
-        // import songs from application sharing
-        [Song importApplicationDocumentsIntoContext:context error:&error];
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            // dismiss HUD
-            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-            // TODO: show image on success or error in HUD
-            
-            if (error) {
-                [self handleError:[NSString stringWithFormat:@"%@\n\n%@", error.localizedDescription, error.localizedRecoverySuggestion]
-                        withTitle:error.localizedFailureReason];
-            }
-        });
-        
-    });
-}
-
-- (void)handleError:(NSString *)errorMessage withTitle:(NSString *)errorTitle {
-    if (!errorTitle) {
-        errorTitle = NSLocalizedString(@"Error Title",
-                                       @"Title for alert displayed when download or parse error occurs.");
-    }
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorTitle
-                                                        message:errorMessage
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];
-}
 
 - (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -105,7 +62,11 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.importActionSheet = [[UIActionSheet alloc ]initWithTitle:@"Import from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"iTunes", nil];
+    self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:@"Import from"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Cancel"
+                                            destructiveButtonTitle:nil
+                                                 otherButtonTitles:@"iTunes", @"Dropbox", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -123,7 +84,7 @@
     
     // import songs from application sharing if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self importSongs];
+        // FIXME
     }
 }
 
@@ -163,8 +124,19 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"iTunes"]) {
-        [self importSongs];
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if ([buttonTitle isEqualToString:@"iTunes"]) {
+        OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
+        [self.navigationController pushViewController:importTableViewController animated:YES];
+    } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            //show the Dropbox file chooser
+            OSDropboxImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
+            [self.navigationController pushViewController:importTableViewController animated:YES];
+        } else {
+            [[DBSession sharedSession] linkFromController:self];
+        }
     }
 }
 
