@@ -41,7 +41,9 @@
     
     [self startCustomerServices];
     
-    // setup CoreData and display ui
+    [self applyStyleSheet];
+    
+    // setup CoreData and display UI
     self.window.rootViewController = [[OSStartupViewController alloc] init];
     
     [self.window makeKeyAndVisible];
@@ -134,6 +136,16 @@
 #ifdef IOPENSONGS_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
 #endif
+}
+
+- (void)applyStyleSheet
+{
+    UIColor *osColor = [UIColor colorWithRed:0.33333334329999997f
+                                       green:0.039215687659999998f
+                                        blue:0.32549020649999999f
+                                       alpha:1.0f];
+    
+    [[UINavigationBar appearance] setTintColor:osColor];
 }
 
 @end
