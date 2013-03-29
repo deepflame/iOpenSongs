@@ -12,19 +12,19 @@
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
 		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
-		3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* RevealSidebarController.m */; };
+		3E35844B151E100E00137FC4 /* OSRevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */; };
 		3E35844D151E120F00137FC4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
 		3E3872AF16EB1676003A0DCC /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
 		3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
-		3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* HtmlViewController.m */; };
+		3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSHtmlViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
-		3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */; };
+		3E5E879014DE63B5003B645A /* OSExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */; };
 		3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */; };
 		3E637B0216CFDEF400514793 /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
 		3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
-		3E637B0C16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */; };
+		3E637B0C16D0CB2A00514793 /* OSUserVoiceStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */; };
 		3E663A8F14B836CD009F1340 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
 		3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
 		3E6C470F1525EE2200164540 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
@@ -32,8 +32,8 @@
 		3E6C47151525EE4400164540 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
-		3E7F1B6315847150008C222F /* SongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* SongTableViewController.m */; };
-		3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */; };
+		3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
+		3E7F1B66158476BC008C222F /* OSSetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */; };
 		3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
 		3E7F1BA6158499A9008C222F /* glyphicons_381_github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */; };
 		3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
@@ -51,8 +51,8 @@
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
 		3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
-		3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* SetTableViewController.m */; };
-		3ECC4B01155E711C0003FFC7 /* SetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */; };
+		3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
+		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
@@ -60,15 +60,15 @@
 		3EDDA40F14AEC3A400BB781C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
 		3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* AppDelegate.m */; };
 		3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
-		3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* SongViewController.m */; };
+		3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* OSSongViewController.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
-		3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* SongMasterViewController.m */; };
+		3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */; };
 		3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */; };
-		3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */; };
+		3EE0DB3416EC19F1005C89C6 /* OSStartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */; };
 		3EE891961521B52D001DA59A /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
 		3EE891991521B53E001DA59A /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
 		3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
-		3EE891B21521BBA9001DA59A /* StyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* StyleViewController.m */; };
+		3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
 		3EE891B51521C329001DA59A /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
 		3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */; };
 		3EF00CAE153E5F3E000A0C73 /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
@@ -92,8 +92,8 @@
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
-		3E358449151E100E00137FC4 /* RevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealSidebarController.h; sourceTree = "<group>"; };
-		3E35844A151E100E00137FC4 /* RevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealSidebarController.m; sourceTree = "<group>"; };
+		3E358449151E100E00137FC4 /* OSRevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSRevealSidebarController.h; sourceTree = "<group>"; };
+		3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSRevealSidebarController.m; sourceTree = "<group>"; };
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
@@ -101,28 +101,28 @@
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
-		3E5E878314DD7680003B645A /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
-		3E5E878414DD7680003B645A /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
+		3E5E878314DD7680003B645A /* OSHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSHtmlViewController.h; sourceTree = "<group>"; };
+		3E5E878414DD7680003B645A /* OSHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSHtmlViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
 		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
-		3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasTableViewController.h; sourceTree = "<group>"; };
-		3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasTableViewController.m; sourceTree = "<group>"; };
+		3E5E878E14DE63B5003B645A /* OSExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSExtrasTableViewController.h; sourceTree = "<group>"; };
+		3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSExtrasTableViewController.m; sourceTree = "<group>"; };
 		3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SectionIndex.h"; sourceTree = "<group>"; };
 		3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SectionIndex.m"; sourceTree = "<group>"; };
 		3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_244_conversation.png; path = Vendor/glyphicons/glyphicons_244_conversation.png; sourceTree = SOURCE_ROOT; };
 		3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_244_conversation@2x.png"; path = "Vendor/glyphicons/glyphicons_244_conversation@2x.png"; sourceTree = SOURCE_ROOT; };
-		3E637B0A16D0CB2A00514793 /* IOpenSongsUVStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOpenSongsUVStyleSheet.h; sourceTree = "<group>"; };
-		3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOpenSongsUVStyleSheet.m; sourceTree = "<group>"; };
+		3E637B0A16D0CB2A00514793 /* OSUserVoiceStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSUserVoiceStyleSheet.h; sourceTree = "<group>"; };
+		3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSUserVoiceStyleSheet.m; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3E6C470E1525EE2200164540 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = opensong.css; path = Vendor/opensong.js/stylesheets/opensong.css; sourceTree = SOURCE_ROOT; };
 		3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.7.1.min.js"; path = "Vendor/opensong.js/javascript/jquery-1.7.1.min.js"; sourceTree = SOURCE_ROOT; };
 		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
 		3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_158_playlist@2x.png"; path = "Vendor/glyphicons/glyphicons_158_playlist@2x.png"; sourceTree = SOURCE_ROOT; };
-		3E7F1B6115847150008C222F /* SongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableViewController.h; sourceTree = "<group>"; };
-		3E7F1B6215847150008C222F /* SongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewController.m; sourceTree = "<group>"; };
-		3E7F1B64158476BC008C222F /* SetItemSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemSongsTableViewController.h; sourceTree = "<group>"; };
-		3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSongsTableViewController.m; sourceTree = "<group>"; };
+		3E7F1B6115847150008C222F /* OSSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewController.h; sourceTree = "<group>"; };
+		3E7F1B6215847150008C222F /* OSSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongTableViewController.m; sourceTree = "<group>"; };
+		3E7F1B64158476BC008C222F /* OSSetItemSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetItemSongsTableViewController.h; sourceTree = "<group>"; };
+		3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetItemSongsTableViewController.m; sourceTree = "<group>"; };
 		3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_381_github.png; path = Vendor/glyphicons/glyphicons_381_github.png; sourceTree = SOURCE_ROOT; };
 		3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_381_github@2x.png"; path = "Vendor/glyphicons/glyphicons_381_github@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E7F8812160CCCED004EB8E6 /* SetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItem.h; sourceTree = "<group>"; };
@@ -149,10 +149,10 @@
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+PrimitiveAccessors.h"; sourceTree = "<group>"; };
 		3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+AccessorOverrides.m"; sourceTree = "<group>"; };
-		3EC697E7155E06C400022C0E /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
-		3EC697E8155E06C400022C0E /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
-		3ECC4AFF155E711B0003FFC7 /* SetItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemsTableViewController.h; sourceTree = "<group>"; };
-		3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemsTableViewController.m; sourceTree = "<group>"; };
+		3EC697E7155E06C400022C0E /* OSSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetTableViewController.h; sourceTree = "<group>"; };
+		3EC697E8155E06C400022C0E /* OSSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetTableViewController.m; sourceTree = "<group>"; };
+		3ECC4AFF155E711B0003FFC7 /* OSSetItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetItemsTableViewController.h; sourceTree = "<group>"; };
+		3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetItemsTableViewController.m; sourceTree = "<group>"; };
 		3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -164,21 +164,21 @@
 		3EDDA41114AEC3A400BB781C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EDDA41214AEC3A400BB781C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
-		3EDDA41714AEC3A400BB781C /* SongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
-		3EDDA41814AEC3A400BB781C /* SongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
+		3EDDA41714AEC3A400BB781C /* OSSongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongViewController.h; sourceTree = "<group>"; };
+		3EDDA41814AEC3A400BB781C /* OSSongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSongViewController.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
-		3EDDA47814B098F700BB781C /* SongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMasterViewController.h; sourceTree = "<group>"; };
-		3EDDA47914B098F700BB781C /* SongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMasterViewController.m; sourceTree = "<group>"; };
+		3EDDA47814B098F700BB781C /* OSSongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongMasterViewController.h; sourceTree = "<group>"; };
+		3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongMasterViewController.m; sourceTree = "<group>"; };
 		3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		3EE0DB3216EC19F0005C89C6 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
-		3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStartupViewController.h; sourceTree = "<group>"; };
+		3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSStartupViewController.m; sourceTree = "<group>"; };
 		3EE808DF16D3CE84003B9AB7 /* iOpenSongs 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 3.xcdatamodel"; sourceTree = "<group>"; };
 		3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_023_cogwheels@2x.png"; path = "Vendor/glyphicons/glyphicons_023_cogwheels@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_017_music@2x.png"; path = "Vendor/glyphicons/glyphicons_017_music@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_017_music.png; path = Vendor/glyphicons/glyphicons_017_music.png; sourceTree = SOURCE_ROOT; };
-		3EE891B01521BBA9001DA59A /* StyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleViewController.h; sourceTree = "<group>"; };
-		3EE891B11521BBA9001DA59A /* StyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleViewController.m; sourceTree = "<group>"; };
+		3EE891B01521BBA9001DA59A /* OSStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStyleViewController.h; sourceTree = "<group>"; };
+		3EE891B11521BBA9001DA59A /* OSStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSStyleViewController.m; sourceTree = "<group>"; };
 		3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_023_cogwheels.png; path = Vendor/glyphicons/glyphicons_023_cogwheels.png; sourceTree = SOURCE_ROOT; };
 		3EEC566D16F1D5AA007DE9DE /* UIApplication+Directories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Directories.h"; sourceTree = "<group>"; };
 		3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Directories.m"; sourceTree = "<group>"; };
@@ -260,16 +260,16 @@
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
-				3EE0DB3216EC19F0005C89C6 /* StartupViewController.h */,
-				3EE0DB3316EC19F0005C89C6 /* StartupViewController.m */,
+				3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */,
+				3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */,
 				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
 				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
-				3E358449151E100E00137FC4 /* RevealSidebarController.h */,
-				3E35844A151E100E00137FC4 /* RevealSidebarController.m */,
-				3E5E878314DD7680003B645A /* HtmlViewController.h */,
-				3E5E878414DD7680003B645A /* HtmlViewController.m */,
-				3E5E878E14DE63B5003B645A /* ExtrasTableViewController.h */,
-				3E5E878F14DE63B5003B645A /* ExtrasTableViewController.m */,
+				3E358449151E100E00137FC4 /* OSRevealSidebarController.h */,
+				3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */,
+				3E5E878314DD7680003B645A /* OSHtmlViewController.h */,
+				3E5E878414DD7680003B645A /* OSHtmlViewController.m */,
+				3E5E878E14DE63B5003B645A /* OSExtrasTableViewController.h */,
+				3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 		3EA0BB9516D0CFCF00D7D97D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3E637B0A16D0CB2A00514793 /* IOpenSongsUVStyleSheet.h */,
-				3E637B0B16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m */,
+				3E637B0A16D0CB2A00514793 /* OSUserVoiceStyleSheet.h */,
+				3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -299,12 +299,12 @@
 		3EA0BB9916D11B4600D7D97D /* Song */ = {
 			isa = PBXGroup;
 			children = (
-				3E7F1B6115847150008C222F /* SongTableViewController.h */,
-				3E7F1B6215847150008C222F /* SongTableViewController.m */,
-				3EDDA47814B098F700BB781C /* SongMasterViewController.h */,
-				3EDDA47914B098F700BB781C /* SongMasterViewController.m */,
-				3EDDA41714AEC3A400BB781C /* SongViewController.h */,
-				3EDDA41814AEC3A400BB781C /* SongViewController.m */,
+				3E7F1B6115847150008C222F /* OSSongTableViewController.h */,
+				3E7F1B6215847150008C222F /* OSSongTableViewController.m */,
+				3EDDA47814B098F700BB781C /* OSSongMasterViewController.h */,
+				3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */,
+				3EDDA41714AEC3A400BB781C /* OSSongViewController.h */,
+				3EDDA41814AEC3A400BB781C /* OSSongViewController.m */,
 			);
 			name = Song;
 			sourceTree = "<group>";
@@ -312,12 +312,12 @@
 		3EA0BB9A16D11B5000D7D97D /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				3EC697E7155E06C400022C0E /* SetTableViewController.h */,
-				3EC697E8155E06C400022C0E /* SetTableViewController.m */,
-				3ECC4AFF155E711B0003FFC7 /* SetItemsTableViewController.h */,
-				3ECC4B00155E711B0003FFC7 /* SetItemsTableViewController.m */,
-				3E7F1B64158476BC008C222F /* SetItemSongsTableViewController.h */,
-				3E7F1B65158476BC008C222F /* SetItemSongsTableViewController.m */,
+				3EC697E7155E06C400022C0E /* OSSetTableViewController.h */,
+				3EC697E8155E06C400022C0E /* OSSetTableViewController.m */,
+				3ECC4AFF155E711B0003FFC7 /* OSSetItemsTableViewController.h */,
+				3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */,
+				3E7F1B64158476BC008C222F /* OSSetItemSongsTableViewController.h */,
+				3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -325,8 +325,8 @@
 		3EA0BB9B16D11B7E00D7D97D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3EE891B01521BBA9001DA59A /* StyleViewController.h */,
-				3EE891B11521BBA9001DA59A /* StyleViewController.m */,
+				3EE891B01521BBA9001DA59A /* OSStyleViewController.h */,
+				3EE891B11521BBA9001DA59A /* OSStyleViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -643,27 +643,27 @@
 				3EDDA40F14AEC3A400BB781C /* main.m in Sources */,
 				3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */,
 				3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */,
-				3E35844B151E100E00137FC4 /* RevealSidebarController.m in Sources */,
+				3E35844B151E100E00137FC4 /* OSRevealSidebarController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* AppDelegate.m in Sources */,
-				3EDDA41914AEC3A400BB781C /* SongViewController.m in Sources */,
-				3EDDA47A14B098F700BB781C /* SongMasterViewController.m in Sources */,
-				3E5E878514DD7680003B645A /* HtmlViewController.m in Sources */,
-				3E5E879014DE63B5003B645A /* ExtrasTableViewController.m in Sources */,
+				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
+				3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */,
+				3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */,
+				3E5E879014DE63B5003B645A /* OSExtrasTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
-				3EE891B21521BBA9001DA59A /* StyleViewController.m in Sources */,
-				3EC697E9155E06C500022C0E /* SetTableViewController.m in Sources */,
-				3ECC4B01155E711C0003FFC7 /* SetItemsTableViewController.m in Sources */,
-				3E7F1B6315847150008C222F /* SongTableViewController.m in Sources */,
-				3E7F1B66158476BC008C222F /* SetItemSongsTableViewController.m in Sources */,
+				3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */,
+				3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */,
+				3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */,
+				3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */,
+				3E7F1B66158476BC008C222F /* OSSetItemSongsTableViewController.m in Sources */,
 				3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */,
 				3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */,
 				3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */,
 				3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */,
 				3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */,
-				3E637B0C16D0CB2A00514793 /* IOpenSongsUVStyleSheet.m in Sources */,
+				3E637B0C16D0CB2A00514793 /* OSUserVoiceStyleSheet.m in Sources */,
 				3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */,
 				3E3872AF16EB1676003A0DCC /* Song.m in Sources */,
-				3EE0DB3416EC19F1005C89C6 /* StartupViewController.m in Sources */,
+				3EE0DB3416EC19F1005C89C6 /* OSStartupViewController.m in Sources */,
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
 				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
