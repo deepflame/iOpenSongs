@@ -38,7 +38,8 @@
     
     NSMutableArray *fdContents = [NSMutableArray array];
     for (NSString *dirItem in documentsDirectoryContents) {
-        OSFileDescriptor *fd = [[OSFileDescriptor alloc] initWithPath:dirItem];
+        NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:dirItem];
+        OSFileDescriptor *fd = [[OSFileDescriptor alloc] initWithPath:filePath];
         [fdContents addObject:fd];
     }
     self.contents = fdContents;
