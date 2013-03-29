@@ -117,6 +117,8 @@
 
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
     NSLog(@"There was an error loading the file - %@", error);
+    
+    [self loadNextFileToImportOrReturn];
 }
 
 #pragma mark -
