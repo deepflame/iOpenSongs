@@ -14,6 +14,13 @@
 @implementation OSSetItemSongsTableViewController
 @synthesize delegate = _delegate;
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // FIXME: remove searchbar for now
+    self.tableView.tableHeaderView = nil;
+}
 
 #pragma mark UITableViewDelegate
 
