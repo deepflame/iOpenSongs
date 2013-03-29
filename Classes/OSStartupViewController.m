@@ -11,7 +11,7 @@
 
 #import "Song.h"
 
-#import "AppDelegate.h"
+#import "OSAppDelegate.h"
 #import "UIApplication+Directories.h"
 
 @interface OSStartupViewController ()
@@ -47,7 +47,7 @@
 - (void) showMainUI
 {
     UIWindow *window = [[UIApplication sharedApplication] windows][0];
-    UIStoryboard *storyboard = [[AppDelegate sharedAppDelegate] storyboard];
+    UIStoryboard *storyboard = [[OSAppDelegate sharedAppDelegate] storyboard];
     window.rootViewController = [storyboard instantiateInitialViewController];
 }
 

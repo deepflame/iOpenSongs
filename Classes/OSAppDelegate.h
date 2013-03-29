@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface OSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UIStoryboard *storyboard;
 
-+ (AppDelegate *)sharedAppDelegate;
++ (OSAppDelegate *)sharedAppDelegate;
 
 @end

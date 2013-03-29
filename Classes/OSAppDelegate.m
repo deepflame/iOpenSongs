@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "OSAppDelegate.h"
 #import "OSStartupViewController.h"
 
 #import "Defines.h" // can be removed if not found
@@ -14,12 +14,12 @@
 
 #import <DropboxSDK/DropboxSDK.h>
 
-@implementation AppDelegate
+@implementation OSAppDelegate
 
 @synthesize window = _window;
 
-+ (AppDelegate *)sharedAppDelegate {
-	return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (OSAppDelegate *)sharedAppDelegate {
+	return (OSAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 #pragma mark UIApplicationDelegate
