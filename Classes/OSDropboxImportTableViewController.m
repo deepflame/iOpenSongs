@@ -136,8 +136,10 @@
         [context MR_saveToPersistentStoreAndWait];
         [self.hud hide:YES];
         [self.navigationController popToRootViewControllerAnimated:YES];
+        return; // <- !!
     }
     
+    // import next file
     OSFileDescriptor *fd = self.filesToImport.lastObject;
     [self.filesToImport removeLastObject];
     
