@@ -1,6 +1,21 @@
 PODS:
   - Dropbox-iOS-SDK (1.3.3)
   - ECSlidingViewController (0.9.0)
+  - FormatterKit (1.1.1):
+    - FormatterKit/AddressFormatter (= 1.1.1)
+    - FormatterKit/ArrayFormatter (= 1.1.1)
+    - FormatterKit/LocationFormatter (= 1.1.1)
+    - FormatterKit/OrdinalNumberFormatter (= 1.1.1)
+    - FormatterKit/TimeIntervalFormatter (= 1.1.1)
+    - FormatterKit/UnitOfInformationFormatter (= 1.1.1)
+    - FormatterKit/URLRequestFormatter (= 1.1.1)
+  - FormatterKit/AddressFormatter (1.1.1)
+  - FormatterKit/ArrayFormatter (1.1.1)
+  - FormatterKit/LocationFormatter (1.1.1)
+  - FormatterKit/OrdinalNumberFormatter (1.1.1)
+  - FormatterKit/TimeIntervalFormatter (1.1.1)
+  - FormatterKit/UnitOfInformationFormatter (1.1.1)
+  - FormatterKit/URLRequestFormatter (1.1.1)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
   - TestFlightSDK (1.2.4)
@@ -9,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - Dropbox-iOS-SDK
   - ECSlidingViewController
+  - FormatterKit (~> 1.1.1)
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
