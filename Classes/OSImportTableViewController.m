@@ -142,12 +142,11 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // import
     if (buttonIndex == 0) {
-        [self importAllSelectedItems:nil];
-    } else if ([actionSheet.title isEqualToString:@"Select All"]) {
-        
-    } else if ([actionSheet.title isEqualToString:@"Deselect All"]) {
-        
+        [self importAllSelectedItems];
+        return;
+    }
     }
 }
 
@@ -162,7 +161,9 @@
     }
 }
 
-- (IBAction)importAllSelectedItems:(id)sender
+#pragma mark -
+
+- (void)importAllSelectedItems
 {
     for (OSFileDescriptor *fd in self.selectedContents) {
         NSLog(@"%@", fd.filename);
