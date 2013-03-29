@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SongTableViewController.h"
+#import "OSSongTableViewController.h"
 
-@interface SongMasterViewController : SongTableViewController
+@interface OSSongMasterViewController : OSSongTableViewController
 
 @end

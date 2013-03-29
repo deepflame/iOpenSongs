@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "RevealSidebarController.h"
+#import "OSRevealSidebarController.h"
 
-@interface RevealSidebarController ()
+@interface OSRevealSidebarController ()
 
 @end
 
-@implementation RevealSidebarController
+@implementation OSRevealSidebarController
 
 -(void)viewDidLoad
 {

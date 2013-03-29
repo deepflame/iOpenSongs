@@ -11,7 +11,7 @@
 #import "Song.h"
 
 // public interface
-@interface SongViewController : UIViewController
+@interface OSSongViewController : UIViewController
 
 @property (nonatomic, copy) Song *song;
 @property (nonatomic) BOOL nightMode;

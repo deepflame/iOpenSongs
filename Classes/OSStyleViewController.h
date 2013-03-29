@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StyleViewController : UITableViewController
+@interface OSStyleViewController : UITableViewController
 @end

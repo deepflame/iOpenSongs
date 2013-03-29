@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HtmlViewController : UIViewController <UIWebViewDelegate>
+@interface OSHtmlViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) NSURL *resourceURL;
 

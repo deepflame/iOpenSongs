@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 
-@interface RevealSidebarController : ECSlidingViewController
+@interface OSRevealSidebarController : ECSlidingViewController
 
 @end

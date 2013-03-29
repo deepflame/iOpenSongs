@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface SetTableViewController : CoreDataTableViewController
+@interface OSSetTableViewController : CoreDataTableViewController
 
 @end

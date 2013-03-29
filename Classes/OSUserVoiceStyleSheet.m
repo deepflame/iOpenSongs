@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "IOpenSongsUVStyleSheet.h"
+#import "OSUserVoiceStyleSheet.h"
 
-@implementation IOpenSongsUVStyleSheet
+@implementation OSUserVoiceStyleSheet
 
 - (UIColor *)navigationBarTintColor
 {

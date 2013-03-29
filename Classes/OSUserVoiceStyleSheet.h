@@ -8,6 +8,6 @@
 
 #import "UVStyleSheet.h"
 
-@interface IOpenSongsUVStyleSheet : UVStyleSheet
+@interface OSUserVoiceStyleSheet : UVStyleSheet
 
 @end

@@ -7,20 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SongTableViewController.h"
+#import "OSSongTableViewController.h"
 
 #import "Song.h"
 
-@class SetItemSongsTableViewController;
+@class OSSetItemSongsTableViewController;
 
 @protocol SetItemSongsTableViewControllerDelegate <NSObject>
 @optional
-- (void) setItemSongsTableViewController:(SetItemSongsTableViewController *)sender 
+- (void) setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender 
                                choseSong:(Song *)song;
-- (void) setItemSongsTableViewController:(SetItemSongsTableViewController *)sender 
+- (void) setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender 
                          finishedEditing:(BOOL)animated;
 @end
 
-@interface SetItemSongsTableViewController : SongTableViewController
+@interface OSSetItemSongsTableViewController : OSSongTableViewController
 @property (nonatomic, weak) id<SetItemSongsTableViewControllerDelegate> delegate;
 @end

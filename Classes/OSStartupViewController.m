@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "StartupViewController.h"
+#import "OSStartupViewController.h"
 #import "MBProgressHUD.h"
 
 #import "Song.h"
@@ -14,13 +14,13 @@
 #import "AppDelegate.h"
 #import "UIApplication+Directories.h"
 
-@interface StartupViewController ()
+@interface OSStartupViewController ()
 
 @property (nonatomic, assign) BOOL isMigratingInBackground;
 
 @end
 
-@implementation StartupViewController
+@implementation OSStartupViewController
 
 
 - (void)viewDidLoad

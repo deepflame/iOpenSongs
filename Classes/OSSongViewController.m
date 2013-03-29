@@ -6,18 +6,18 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SongViewController.h"
+#import "OSSongViewController.h"
 #import "NSString+JavaScript.h"
 #import "Song.h"
 
-#import "SongMasterViewController.h"
-#import "RevealSidebarController.h"
-#import "ExtrasTableViewController.h"
+#import "OSSongMasterViewController.h"
+#import "OSRevealSidebarController.h"
+#import "OSExtrasTableViewController.h"
 
 #pragma mark SongViewController () 
 
 // private interface
-@interface SongViewController () <ExtrasTableViewControllerDelegate, UIWebViewDelegate>
+@interface OSSongViewController () <OSExtrasTableViewControllerDelegate, UIWebViewDelegate>
 {
     IBOutlet UIWebView *songWebView;
     IBOutlet UIBarButtonItem *extrasBarButtonItem;
@@ -33,7 +33,7 @@
 #define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
 #define USER_DEFAULTS_KEY_SONG_STYLE @"SongViewController.songStyle"
 
-@implementation SongViewController
+@implementation OSSongViewController
 
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize songStyle =_songStyle;
@@ -299,7 +299,7 @@
 
 #pragma mark - ExtrasTableViewControllerDelegate
 
-- (void)extrasTableViewControllerDelegate:(ExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
+- (void)extrasTableViewControllerDelegate:(OSExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
 {
     [self.extrasPopoverController dismissPopoverAnimated:animated];
 }
@@ -342,7 +342,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Extras Popup"]) {
-        ExtrasTableViewController *etvCon;
+        OSExtrasTableViewController *etvCon;
         
         if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
             UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
@@ -350,9 +350,9 @@
             self.extrasPopoverController = popoverSegue.popoverController; // might want to be popover's delegate and self.popoverController = nil on dismiss?
 
             UINavigationController *navCon = segue.destinationViewController;
-            etvCon = (ExtrasTableViewController *) navCon.topViewController;
+            etvCon = (OSExtrasTableViewController *) navCon.topViewController;
         } else {
-            etvCon = (ExtrasTableViewController *) segue.destinationViewController;
+            etvCon = (OSExtrasTableViewController *) segue.destinationViewController;
         }
         
         etvCon.delegate = self;        

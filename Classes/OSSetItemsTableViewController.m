@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SetItemsTableViewController.h"
+#import "OSSetItemsTableViewController.h"
 
 #import "SetItemSong.h"
 #import "Song.h"
 
-#import "SongViewController.h"
-#import "SetItemSongsTableViewController.h"
-#import "RevealSidebarController.h"
+#import "OSSongViewController.h"
+#import "OSSetItemSongsTableViewController.h"
+#import "OSRevealSidebarController.h"
 
-@interface SetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
+@interface OSSetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @end
 
-@implementation SetItemsTableViewController
+@implementation OSSetItemsTableViewController
 
 @synthesize set = _set;
 @synthesize currentSelection = _currentSelection;
@@ -51,7 +51,7 @@
     [self songDetailViewController].song = setItem.song;
 }
 
-- (SongViewController *)songDetailViewController
+- (OSSongViewController *)songDetailViewController
 {
     id svc = [self.slidingViewController topViewController];
     
@@ -59,7 +59,7 @@
         svc = ((UINavigationController *) svc).topViewController;
     }
     
-    if (![svc isKindOfClass:[SongViewController class]]) {
+    if (![svc isKindOfClass:[OSSongViewController class]]) {
         svc = nil;
     }
     return svc;
@@ -171,7 +171,7 @@
 
 #pragma mark SetItemSongsTableViewControllerDelegate
 
--(void)setItemSongsTableViewController:(SetItemSongsTableViewController *)sender choseSong:(Song *)song
+-(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender choseSong:(Song *)song
 {
     SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
                                                              inManagedObjectContext:self.set.managedObjectContext];
@@ -181,7 +181,7 @@
     [self.set addItemsObject:newSongItem ];
 }
 
--(void)setItemSongsTableViewController:(SetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
+-(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
     [self.navigationController popViewControllerAnimated:animated];
 }

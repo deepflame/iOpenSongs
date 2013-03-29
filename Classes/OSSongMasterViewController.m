@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SongMasterViewController.h"
-#import "SongViewController.h"
+#import "OSSongMasterViewController.h"
+#import "OSSongViewController.h"
 
 #import "Song+Import.h"
 
 #import "MBProgressHUD.h"
-#import "RevealSidebarController.h"
+#import "OSRevealSidebarController.h"
 
 #import "OSITunesImportTableViewController.h"
 #import "OSDropboxImportTableViewController.h"
@@ -20,13 +20,13 @@
 // TODO: remove dependency
 #import <DropboxSDK/DropboxSDK.h>
 
-@interface SongMasterViewController () <UIActionSheetDelegate>
+@interface OSSongMasterViewController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
 
 
-@implementation SongMasterViewController
+@implementation OSSongMasterViewController
 @synthesize currentSelection = _currentSelection;
 @synthesize importActionSheet = _importActionSheet;
 
@@ -38,7 +38,7 @@
     [self songDetailViewController].song = song;
 }
 
-- (SongViewController *)songDetailViewController
+- (OSSongViewController *)songDetailViewController
 {
     id svc = [self.slidingViewController topViewController];
     
@@ -46,7 +46,7 @@
         svc = ((UINavigationController *) svc).topViewController;
     }
     
-    if (![svc isKindOfClass:[SongViewController class]]) {
+    if (![svc isKindOfClass:[OSSongViewController class]]) {
         svc = nil;
     }
     return svc;

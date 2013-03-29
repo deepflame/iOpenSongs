@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartupViewController : UIViewController
+@interface OSStartupViewController : UIViewController
 
 @end

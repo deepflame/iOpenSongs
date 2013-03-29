@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SetTableViewController.h"
+#import "OSSetTableViewController.h"
 
 #import "Set.h"
 
-@interface SetTableViewController () <UITextFieldDelegate>
+@interface OSSetTableViewController () <UITextFieldDelegate>
 {
 }
 
 @end
 
-@implementation SetTableViewController
+@implementation OSSetTableViewController
 
 - (void)viewDidLoad
 {

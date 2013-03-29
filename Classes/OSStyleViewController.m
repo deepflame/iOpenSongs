@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "StyleViewController.h"
-#import "RevealSidebarController.h"
-#import "SongViewController.h"
+#import "OSStyleViewController.h"
+#import "OSRevealSidebarController.h"
+#import "OSSongViewController.h"
 
 
-@interface StyleViewController ()
+@interface OSStyleViewController ()
 {
     IBOutlet UISwitch *nightModeSwitch;
     IBOutlet UISwitch *headerVisibleSwitch;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation StyleViewController
+@implementation OSStyleViewController
 
 - (void) initSongStyleValues
 {
@@ -65,7 +65,7 @@
 
 // ---
 
-- (SongViewController *)songViewController
+- (OSSongViewController *)songViewController
 {
     id svc = [self.slidingViewController topViewController];
     
@@ -73,7 +73,7 @@
         svc = ((UINavigationController *) svc).topViewController;
     }
     
-    if (![svc isKindOfClass:[SongViewController class]]) {
+    if (![svc isKindOfClass:[OSSongViewController class]]) {
         svc = nil;
     }
     return svc;

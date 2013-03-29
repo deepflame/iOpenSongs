@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface SongTableViewController : CoreDataTableViewController
+@interface OSSongTableViewController : CoreDataTableViewController
 
 @end

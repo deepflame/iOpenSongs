@@ -11,7 +11,7 @@
 
 #import "Set.h"
 
-@interface SetItemsTableViewController : CoreDataTableViewController
+@interface OSSetItemsTableViewController : CoreDataTableViewController
 
 @property (nonatomic, copy) Set *set;
 

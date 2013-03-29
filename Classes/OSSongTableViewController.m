@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SongTableViewController.h"
+#import "OSSongTableViewController.h"
 
 #import "Song.h"
 
 #import <objc/message.h>
 
-@interface SongTableViewController () <UISearchBarDelegate>
+@interface OSSongTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end
 
-@implementation SongTableViewController
+@implementation OSSongTableViewController
 @synthesize searchBarColorInactive = _searchBarColorInactive;
 
 #pragma mark - UIViewController

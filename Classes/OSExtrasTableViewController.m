@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "ExtrasTableViewController.h"
-#import "HtmlViewController.h"
+#import "OSExtrasTableViewController.h"
+#import "OSHtmlViewController.h"
 
 #import "Defines.h"
 #import "UserVoice.h"
-#import "IOpenSongsUVStyleSheet.h"
+#import "OSUserVoiceStyleSheet.h"
 
-@interface ExtrasTableViewController ()
+@interface OSExtrasTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *versionCell;
 @end
 
 
-@implementation ExtrasTableViewController
+@implementation OSExtrasTableViewController
 @synthesize versionCell = _versionCell;
 
 @synthesize delegate = _delegate;
@@ -55,7 +55,7 @@
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Feedback and Support Cell"]) {
 #if defined IOPENSONGS_USERVOICE_CONFIG
-        [UVStyleSheet setStyleSheet:[[IOpenSongsUVStyleSheet alloc] init]];
+        [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
         [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
 #else
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
@@ -98,7 +98,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {    
     if ([segue.identifier isEqualToString:@"Show About"]) {
-        HtmlViewController *htmlVC = (HtmlViewController *) segue.destinationViewController;
+        OSHtmlViewController *htmlVC = (OSHtmlViewController *) segue.destinationViewController;
         
         htmlVC.title = @"About";
         htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];

@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "SetItemSongsTableViewController.h"
+#import "OSSetItemSongsTableViewController.h"
 
-@interface SetItemSongsTableViewController ()
+@interface OSSetItemSongsTableViewController ()
 @end
 
-@implementation SetItemSongsTableViewController
+@implementation OSSetItemSongsTableViewController
 @synthesize delegate = _delegate;
 
 

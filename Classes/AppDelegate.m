@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "StartupViewController.h"
+#import "OSStartupViewController.h"
 
 #import "Defines.h" // can be removed if not found
 #import "GAI.h"
@@ -42,7 +42,7 @@
     [self startCustomerServices];
     
     // setup CoreData and display ui
-    self.window.rootViewController = [[StartupViewController alloc] init];
+    self.window.rootViewController = [[OSStartupViewController alloc] init];
     
     [self.window makeKeyAndVisible];
     

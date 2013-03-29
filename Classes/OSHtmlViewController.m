@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "HtmlViewController.h"
+#import "OSHtmlViewController.h"
 
-@interface HtmlViewController ()
+@interface OSHtmlViewController ()
 {
 }
 
@@ -19,7 +19,7 @@
 @end
 
 
-@implementation HtmlViewController
+@implementation OSHtmlViewController
 
 @synthesize resourceURL = _url;
 @synthesize webView = _webView;
