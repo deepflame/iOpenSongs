@@ -54,4 +54,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+
+- (void)importAllSelectedItems
+{
+    // show HUD
+    self.hud.mode = MBProgressHUDModeAnnularDeterminate;
+    self.hud.labelText = @"Importing";
+    [self.hud show:YES];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+        
+        [[self.selectedContents allObjects] enumerateObjectsUsingBlock:^(OSFileDescriptor *fd, NSUInteger idx, BOOL *stop) {
+            NSURL *fileURL = [NSURL fileURLWithPath:fd.path];
+            
+            // parse file
+            NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+            
+            if (!info) {
+                CLS_LOG(@"Error: %@", fd.filename);
+                return; // <- !!
+            }
+            
+            [Song updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:context];
+            
+            // save every 100 songs
+            if (idx % 100 == 0) {
+                [context MR_saveToPersistentStoreAndWait];
+            }
+            
+            // update progress
+            self.hud.progress = (float)(idx + 1) / (float)self.selectedContents.count;
+        }];
+        [context MR_saveToPersistentStoreAndWait];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            // dismiss HUD
+            [self.hud hide:YES];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        });
+        
+    });
+}
+
 @end
