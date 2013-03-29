@@ -18,8 +18,17 @@
 @implementation OSImportTableViewController
 
 @synthesize contents = _contents;
-@synthesize selectedContents = _selectedContents;
 @synthesize initialPath = _initialPath;
+
+- (NSSet *)selectedContents
+{
+    NSMutableSet *set = [NSMutableSet set];
+    for (NSIndexPath *indexPath in self.selectedIndexPaths) {
+        OSFileDescriptor *fd = self.contents[indexPath.row];
+        [set addObject:fd];
+    }
+    return set;
+}
 
 #pragma mark -
 
