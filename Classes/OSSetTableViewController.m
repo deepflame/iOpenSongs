@@ -9,6 +9,7 @@
 #import "OSSetTableViewController.h"
 
 #import "Set.h"
+#import "OSSetItemsTableViewController.h"
 
 @interface OSSetTableViewController () <UITextFieldDelegate>
 {
@@ -83,7 +84,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"Select Set" sender:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
+    setItemsTVC.set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [self.navigationController pushViewController:setItemsTVC animated:YES];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -98,17 +102,7 @@
     return YES;
 }
 
-# pragma mark - 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Select Set"]) {
-        // check if destination accepts a songSet
-        if ([segue.destinationViewController respondsToSelector:@selector(setSet:)]) {
-            [segue.destinationViewController performSelector:@selector(setSet:) withObject:sender];
-        }
-    }
-}
+# pragma mark - Actions
 
 - (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
 {

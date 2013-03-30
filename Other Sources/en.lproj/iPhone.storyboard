@@ -530,144 +530,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Sets" id="2NF-5J-uyz"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <segue destination="GyG-GV-tlS" kind="push" identifier="Select Set" id="wWG-Jg-BxX"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPJ-wH-iep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="917" y="-870"/>
-        </scene>
-        <!--Set Items Table View Controller - Items in Set-->
-        <scene sceneID="tri-qE-uJs">
-            <objects>
-                <tableViewController id="GyG-GV-tlS" customClass="OSSetItemsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4i2-9z-xFM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lc0-tl-a9R">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="pEH-O4-gLs"/>
-                                <barButtonItem title="Add Song" id="qLz-ET-OMU">
-                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <connections>
-                                        <action selector="addDemoSong:" destination="GyG-GV-tlS" id="LrW-N4-WaE"/>
-                                        <segue destination="aHQ-ht-koE" kind="push" identifier="Add Song Items" id="4TU-7J-xmr"/>
-                                    </connections>
-                                </barButtonItem>
-                            </items>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </toolbar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SetSong Cell" textLabel="yy5-4F-6eZ" detailTextLabel="Gnk-A0-ve1" style="IBUITableViewCellStyleSubtitle" id="ETE-1G-FwM">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yy5-4F-6eZ">
-                                            <rect key="frame" x="10" y="2" width="87" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gnk-A0-ve1">
-                                            <rect key="frame" x="10" y="24" width="32" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GyG-GV-tlS" id="L9a-Dw-pJg"/>
-                            <outlet property="delegate" destination="GyG-GV-tlS" id="Nmn-Pj-ZhA"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Items in Set" id="AnV-Jq-xCa"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K0W-8h-JLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1443" y="-870"/>
-        </scene>
-        <!--Set Item Songs Table View Controller - Songs in Set-->
-        <scene sceneID="z7j-Hn-Xl8">
-            <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="aHQ-ht-koE" customClass="OSSetItemSongsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vA3-jX-6sD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Song Cell" textLabel="W3z-Po-b4C" detailTextLabel="bOW-bd-RqG" style="IBUITableViewCellStyleSubtitle" id="bXW-o3-6fi">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Song Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W3z-Po-b4C">
-                                            <rect key="frame" x="10" y="2" width="87" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOW-bd-RqG">
-                                            <rect key="frame" x="10" y="24" width="32" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="aHQ-ht-koE" id="a7n-yp-s51"/>
-                            <outlet property="delegate" destination="aHQ-ht-koE" id="93n-e9-JaD"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Songs in Set" id="ete-Hb-Pt6">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="DEd-eg-pcA">
-                            <connections>
-                                <action selector="doneEditing:" destination="aHQ-ht-koE" id="L4u-E4-Ln5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="owo-Et-HCw" id="aeY-jm-OHZ"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QgE-iT-1DQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="owo-Et-HCw">
-                    <connections>
-                        <outlet property="delegate" destination="aHQ-ht-koE" id="Tvr-hX-Ioy"/>
-                        <outlet property="searchContentsController" destination="aHQ-ht-koE" id="fHR-Lz-jUa"/>
-                        <outlet property="searchResultsDataSource" destination="aHQ-ht-koE" id="4wC-E0-IbQ"/>
-                        <outlet property="searchResultsDelegate" destination="aHQ-ht-koE" id="Hf2-kg-pFd"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1946" y="-870"/>
         </scene>
     </scenes>
     <resources>
@@ -698,17 +564,8 @@
         <class className="OSRevealSidebarController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSRevealSidebarController.h"/>
         </class>
-        <class className="OSSetItemSongsTableViewController" superclassName="OSSongTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSetItemSongsTableViewController.h"/>
-        </class>
-        <class className="OSSetItemsTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSetItemsTableViewController.h"/>
-        </class>
         <class className="OSSetTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSetTableViewController.h"/>
-        </class>
-        <class className="OSSongTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSongTableViewController.h"/>
         </class>
         <class className="OSSongViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSongViewController.h"/>

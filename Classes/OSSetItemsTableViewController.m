@@ -74,8 +74,8 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -186,13 +186,14 @@
     [self.navigationController popViewControllerAnimated:animated];
 }
 
-#pragma mark --
+#pragma mark - Actions
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(IBAction)addSongs:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Add Song Items"]) {
-        [segue.destinationViewController  setDelegate:self];
-    }
+    OSSetItemSongsTableViewController *setItemSongsTVC = [[OSSetItemSongsTableViewController alloc] init];
+    setItemSongsTVC.delegate = self;
+    
+    [self.navigationController pushViewController:setItemSongsTVC animated:YES];
 }
 
 @end

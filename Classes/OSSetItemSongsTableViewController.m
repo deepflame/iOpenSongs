@@ -20,6 +20,9 @@
     
     // FIXME: remove searchbar for now
     self.tableView.tableHeaderView = nil;
+    
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing:)];
+    self.navigationItem.rightBarButtonItems = @[doneBarButtonItem];
 }
 
 #pragma mark UITableViewDelegate
