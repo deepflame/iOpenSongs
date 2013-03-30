@@ -136,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e60-r4-Nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="902"/>
+            <point key="canvasLocation" x="1183" y="522"/>
         </scene>
         <!--Html View Controller - HTML-->
         <scene sceneID="U5B-a6-oun">
@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIH-af-8sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="902"/>
+            <point key="canvasLocation" x="1699" y="522"/>
         </scene>
         <!--Reveal Sidebar Controller-->
         <scene sceneID="F7X-Zc-cca">
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QV9-Ju-QLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-725" y="-74"/>
+            <point key="canvasLocation" x="-469" y="-454"/>
         </scene>
         <!--Style View Controller - Settings-->
         <scene sceneID="htn-AC-SSc">
@@ -407,7 +407,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvw-EJ-xHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-211"/>
+            <point key="canvasLocation" x="1173" y="-591"/>
         </scene>
         <!--Song View Controller - iOpenSongs-->
         <scene sceneID="UmJ-j2-Mst">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16T-m2-aus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="391" y="534"/>
+            <point key="canvasLocation" x="647" y="154"/>
         </scene>
         <!--Detail Navigation Controller-->
         <scene sceneID="9tP-M9-Gyl">
@@ -468,72 +468,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBA-7Y-tLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="534"/>
-        </scene>
-        <!--Set Table View Controller - Sets-->
-        <scene sceneID="n6L-yc-rSC">
-            <objects>
-                <tableViewController storyboardIdentifier="sets" id="RwK-pS-Q76" customClass="OSSetTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g03-N1-8Xa">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Z6L-ny-TbL">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Set" minimumFontSize="17" clearButtonMode="whileEditing" id="wpu-7a-vWe">
-                                    <rect key="frame" x="10" y="6" width="301" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    <connections>
-                                        <action selector="addSetTextFieldDidEndEditing:" destination="RwK-pS-Q76" eventType="editingDidEnd" id="fcB-bG-Pf4"/>
-                                        <action selector="addSetTextFieldValueChanged:" destination="RwK-pS-Q76" eventType="valueChanged" id="3bg-Iy-GPt"/>
-                                        <outlet property="delegate" destination="RwK-pS-Q76" id="rKe-Yl-kZC"/>
-                                    </connections>
-                                </textField>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        </view>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Set Cell" textLabel="BKD-Gh-gvd" detailTextLabel="E0K-Bn-sXW" style="IBUITableViewCellStyleSubtitle" id="xsB-2p-GAo">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Set Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BKD-Gh-gvd">
-                                            <rect key="frame" x="10" y="2" width="83" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="0 Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0K-Bn-sXW">
-                                            <rect key="frame" x="10" y="24" width="52" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RwK-pS-Q76" id="CXH-M4-1fp"/>
-                            <outlet property="delegate" destination="RwK-pS-Q76" id="L7Z-OB-EUX"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Sets" id="2NF-5J-uyz"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HPJ-wH-iep" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="917" y="-870"/>
+            <point key="canvasLocation" x="107" y="154"/>
         </scene>
     </scenes>
     <resources>
@@ -543,9 +478,6 @@
         <image name="nav_menu_icon.png" width="16" height="16"/>
     </resources>
     <classes>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
         <class className="ECSlidingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
         </class>
@@ -563,9 +495,6 @@
         </class>
         <class className="OSRevealSidebarController" superclassName="ECSlidingViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSRevealSidebarController.h"/>
-        </class>
-        <class className="OSSetTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSetTableViewController.h"/>
         </class>
         <class className="OSSongViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSSongViewController.h"/>

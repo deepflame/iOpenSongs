@@ -9,6 +9,7 @@
 #import "OSRevealSidebarController.h"
 
 #import "OSSongMasterViewController.h"
+#import "OSSetTableViewController.h"
 
 @interface OSRevealSidebarController ()
 
@@ -22,7 +23,7 @@
 
     // build tabbar
     UIViewController *songsViewController = [[OSSongMasterViewController alloc] init];
-    UIViewController *setsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sets"];
+    UIViewController *setsViewController = [[OSSetTableViewController alloc] init];
     UIViewController *settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settings"];
     
     UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:@"Songs" image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];

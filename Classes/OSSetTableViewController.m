@@ -12,12 +12,12 @@
 #import "OSSetItemsTableViewController.h"
 
 @interface OSSetTableViewController () <UITextFieldDelegate>
-{
-}
-
+@property (nonatomic, strong) UIAlertView *setNameAlertView;
 @end
 
 @implementation OSSetTableViewController
+
+@synthesize setNameAlertView = _setNameAlertView;
 
 - (void)viewDidLoad
 {
@@ -25,8 +25,15 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-     
+    
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSet:)];
+    self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
+    self.navigationItem.title = @"Sets";
+
+    self.setNameAlertView = [[UIAlertView alloc] initWithTitle:@"Sets" message:@"Name your Set" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    self.setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[self.setNameAlertView textFieldAtIndex:0] setDelegate:self];
 
     // load data
     self.fetchedResultsController = [Set MR_fetchAllSortedBy:@"name"
@@ -98,21 +105,23 @@
         return NO;
     }
     
+    Set *newSet = [Set MR_createEntity];
+    newSet.name = textField.text;
+    
+    // clear the text field
+    textField.text = @"";
     [textField resignFirstResponder];
+
+    [self.setNameAlertView dismissWithClickedButtonIndex:0 animated:YES];
+    
     return YES;
 }
 
 # pragma mark - Actions
 
-- (IBAction)addSetTextFieldDidEndEditing:(UITextField *)sender 
+- (IBAction)addSet:(id)sender
 {
-    if (sender.text.length > 0) {
-        Set *newSet = [Set MR_createEntity];
-        newSet.name = sender.text;
-    }
-    
-    // clear the text field
-    sender.text = @"";
+    [self.setNameAlertView show];
 }
 
 @end
