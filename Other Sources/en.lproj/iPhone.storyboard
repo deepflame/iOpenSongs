@@ -8,7 +8,7 @@
         <!--Extras Table View Controller - Options-->
         <scene sceneID="CWI-La-0Cp">
             <objects>
-                <tableViewController title="Options" id="lwq-zh-b9m" customClass="OSExtrasTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="support" title="Options" id="lwq-zh-b9m" customClass="OSExtrasTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="C51-X2-xpd">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                             </tableViewSection>
                             <tableViewSection id="QSV-g3-Jou">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="j2c-Vl-1Ex" detailTextLabel="7pB-mQ-Bvc" style="IBUITableViewCellStyleValue1" id="CWR-Zy-XuN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="About" textLabel="j2c-Vl-1Ex" detailTextLabel="7pB-mQ-Bvc" style="IBUITableViewCellStyleValue1" id="CWR-Zy-XuN">
                                         <rect key="frame" x="0.0" y="186" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -118,9 +118,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="Dnx-XQ-uyh" kind="push" identifier="Show About" id="2E8-7S-HP4"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -136,34 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e60-r4-Nz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="522"/>
-        </scene>
-        <!--Html View Controller - HTML-->
-        <scene sceneID="U5B-a6-oun">
-            <objects>
-                <viewController id="Dnx-XQ-uyh" customClass="OSHtmlViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FkM-lt-CrI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="TfY-3K-JuB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="HTML" id="aAw-MJ-Slt"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="320" height="300"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="webView" destination="TfY-3K-JuB" id="o9x-Pd-Ihj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dIH-af-8sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1699" y="522"/>
+            <point key="canvasLocation" x="411" y="-454"/>
         </scene>
         <!--Reveal Sidebar Controller-->
         <scene sceneID="F7X-Zc-cca">
@@ -407,7 +377,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvw-EJ-xHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173" y="-591"/>
+            <point key="canvasLocation" x="-35" y="-454"/>
         </scene>
         <!--Song View Controller - iOpenSongs-->
         <scene sceneID="UmJ-j2-Mst">
@@ -447,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16T-m2-aus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647" y="154"/>
+            <point key="canvasLocation" x="683" y="522"/>
         </scene>
         <!--Detail Navigation Controller-->
         <scene sceneID="9tP-M9-Gyl">
@@ -468,7 +438,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBA-7Y-tLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="107" y="154"/>
+            <point key="canvasLocation" x="187" y="522"/>
         </scene>
     </scenes>
     <resources>
@@ -485,12 +455,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSExtrasTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="versionCell" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="OSHtmlViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OSHtmlViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="OSRevealSidebarController" superclassName="ECSlidingViewController">

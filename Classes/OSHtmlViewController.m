@@ -8,13 +8,10 @@
 
 #import "OSHtmlViewController.h"
 
-@interface OSHtmlViewController ()
-{
-}
+@interface OSHtmlViewController () <UIWebViewDelegate>
+- (void) loadHtmlResource;
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-
-- (void) loadHtmlResource;
 
 @end
 
@@ -44,12 +41,17 @@
     }
 }
 
-#pragma mark - View lifecycle
-
+#pragma mark - UIView
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.contentSizeForViewInPopover = CGSizeMake(320, 788);
+    
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 788)];
+    [self.view addSubview:self.webView];
+    
     [self loadHtmlResource];
 }
 
@@ -77,13 +79,10 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // we support rotation in this view controller
     return YES;
 }
 
-
-#pragma mark -
-#pragma mark UIWebViewDelegate
+#pragma mark - UIWebViewDelegate
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {

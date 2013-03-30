@@ -53,17 +53,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Feedback and Support Cell"]) {
+    NSString *cellReuseIdentifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
+    
+    if ([cellReuseIdentifier isEqualToString:@"Feedback and Support Cell"]) {
 #if defined IOPENSONGS_USERVOICE_CONFIG
         [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
         [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
 #else
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
-    } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Fork Me Github Cell"]) {
+    } else if ([cellReuseIdentifier isEqualToString:@"Fork Me Github Cell"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
         
-    } else if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Follow Us Twitter Cell"]) {
+    } else if ([cellReuseIdentifier isEqualToString:@"Follow Us Twitter Cell"]) {
         // thanks to ChrisMaddern for providing this code
         // https://github.com/chrismaddern/Follow-Me-On-Twitter-iOS-Button
         NSArray *urls = [NSArray arrayWithObjects:
@@ -89,20 +91,14 @@
                 break;
             }
         }
+    } else if ([cellReuseIdentifier isEqualToString:@"About"]) {
+        OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
+        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
+        htmlVC.title = @"About";
+        
+        [self.navigationController pushViewController:htmlVC animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-                                                 
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{    
-    if ([segue.identifier isEqualToString:@"Show About"]) {
-        OSHtmlViewController *htmlVC = (OSHtmlViewController *) segue.destinationViewController;
-        
-        htmlVC.title = @"About";
-        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
-    }
 }
 
 @end
