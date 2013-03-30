@@ -14,6 +14,13 @@
 @implementation OSSetItemSongsTableViewController
 @synthesize delegate = _delegate;
 
+#pragma mark - UIViewController
+
+- (NSString *)title
+{
+    return @"Add Songs";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,7 +32,7 @@
     self.navigationItem.rightBarButtonItems = @[doneBarButtonItem];
 }
 
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -36,7 +43,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark IBAction
+#pragma mark - Actions
 
 - (IBAction)doneEditing:(UIBarButtonItem *)sender 
 {
