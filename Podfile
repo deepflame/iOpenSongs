@@ -7,7 +7,7 @@ pod 'MBProgressHUD'
 # Core
 pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
-pod 'FormatterKit', '~> 1.1.1'
+pod 'FormatterKit'
 pod 'BlocksKit'
 
 # Test

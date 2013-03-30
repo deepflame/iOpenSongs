@@ -29,7 +29,7 @@ DEPENDENCIES:
   - BlocksKit (~> 1.8.1)
   - Dropbox-iOS-SDK
   - ECSlidingViewController
-  - FormatterKit (~> 1.1.1)
+  - FormatterKit
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
