@@ -13,16 +13,15 @@
 #import "OSDefines.h"
 #import "OSUserVoiceStyleSheet.h"
 
-@interface OSSupportTableViewController ()
+#define INDEXPATH_USER_VOICE [NSIndexPath indexPathForRow:0 inSection:0]
+#define INDEXPATH_GITHUB     [NSIndexPath indexPathForRow:0 inSection:1]
+#define INDEXPATH_TWITTER    [NSIndexPath indexPathForRow:1 inSection:1]
+#define INDEXPATH_ABOUT      [NSIndexPath indexPathForRow:0 inSection:2]
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *versionCell;
+@interface OSSupportTableViewController ()
 @end
 
-
 @implementation OSSupportTableViewController
-@synthesize versionCell = _versionCell;
-
-@synthesize delegate = _delegate;
 
 - (NSString*) version
 {
@@ -31,17 +30,19 @@
     return [NSString stringWithFormat:@"%@ (%@)", version, build];
 }
 
-#pragma mark - View lifecycle
+#pragma mark - UIViewController
+
+- (NSString *)title
+{
+    return @"Support";
+}
 
 - (void)viewDidLoad
 {
-    self.versionCell.detailTextLabel.text = [self version];
-}
-
-- (void)viewDidUnload
-{
-    [self setVersionCell:nil];
-    [super viewDidUnload];
+    [super viewDidLoad];
+    self.contentSizeForViewInPopover = CGSizeMake(320, 320);
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -51,21 +52,65 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellReuseIdentifier = [[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if ([cellReuseIdentifier isEqualToString:@"Feedback and Support Cell"]) {
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:CellIdentifier];
+    }
+    
+    if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
+        cell.textLabel.text = @"Feedback and Support";
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons_244_conversation"];
+    } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
+        cell.textLabel.text = @"Fork Me";
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons_381_github"];
+    } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
+        cell.textLabel.text = @"Follow Us";
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons_392_twitter"];
+    } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
+        cell.textLabel.text = @"About";
+        cell.detailTextLabel.text = self.version;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return 1;
+        case 1:
+            return 2;
+        case 2:
+            return 1;
+    }
+    return NSNotFound;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
 #if defined IOPENSONGS_USERVOICE_CONFIG
         [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
         [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
 #else
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
-    } else if ([cellReuseIdentifier isEqualToString:@"Fork Me Github Cell"]) {
+    } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
         
-    } else if ([cellReuseIdentifier isEqualToString:@"Follow Us Twitter Cell"]) {
+    } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
         // thanks to ChrisMaddern for providing this code
         // https://github.com/chrismaddern/Follow-Me-On-Twitter-iOS-Button
         NSArray *urls = [NSArray arrayWithObjects:
@@ -91,7 +136,7 @@
                 break;
             }
         }
-    } else if ([cellReuseIdentifier isEqualToString:@"About"]) {
+    } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
         OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
         htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
         htmlVC.title = @"About";

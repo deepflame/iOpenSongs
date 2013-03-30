@@ -16,7 +16,7 @@
 
 #pragma mark SongViewController () 
 
-@interface OSSongViewController () <OSSupportTableViewControllerDelegate, UIWebViewDelegate>
+@interface OSSongViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *songStyle;
 // UI
@@ -62,13 +62,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
-}
-
-#pragma mark - OSSupportTableViewControllerDelegate
-
-- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
-{
-    [self.extrasPopoverController dismissPopoverAnimated:animated];
 }
 
 #pragma mark - UIWebViewDelegate
@@ -353,7 +346,7 @@
 - (OSSupportTableViewController *)extrasTableViewController
 {
     if (!_extrasTableViewController) {
-        _extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
+        _extrasTableViewController = [[OSSupportTableViewController alloc] init];
     }
     return _extrasTableViewController;
 }

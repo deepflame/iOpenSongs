@@ -8,16 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@class OSSupportTableViewController;
-
-@protocol OSSupportTableViewControllerDelegate <NSObject>
-
-@optional
-- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender
-                 dismissMyPopoverAnimated:(BOOL)animated;
-@end
-
-
 @interface OSSupportTableViewController : UITableViewController
-@property (nonatomic, weak) id <OSSupportTableViewControllerDelegate> delegate;
 @end
