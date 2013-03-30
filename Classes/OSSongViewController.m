@@ -16,7 +16,6 @@
 
 #pragma mark SongViewController () 
 
-// private interface
 @interface OSSongViewController () <OSSupportTableViewControllerDelegate, UIWebViewDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *songStyle;
@@ -24,9 +23,6 @@
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 @property (nonatomic, strong) OSSupportTableViewController *extrasTableViewController;
 @property (nonatomic, strong) UIWebView *songWebView;
-
-- (void)displaySong;
-- (void)loadHtmlTemplate;
 @end
 
 #define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
@@ -34,31 +30,103 @@
 
 @implementation OSSongViewController
 
-@synthesize extrasPopoverController = _extrasPopoverController;
-@synthesize songStyle =_songStyle;
 @synthesize song = _song;
+@synthesize songStyle =_songStyle;
 
 @synthesize songWebView;
+@synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize extrasTableViewController = _extrasTableViewController;
+
+
+#pragma mark - UIView
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
+        self.extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
+    }
+    
+    UIBarButtonItem *revealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(revealSideMenu:)];
+    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
+    self.navigationItem.leftBarButtonItems = @[revealBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
+    
+    CGSize viewSize = self.view.bounds.size;
+    self.songWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
+    self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.songWebView.delegate = self;
+    
+    [self.view addSubview:self.songWebView];
+    
+    [self loadHtmlTemplate];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+#pragma mark - OSSupportTableViewControllerDelegate
+
+- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
+{
+    [self.extrasPopoverController dismissPopoverAnimated:animated];
+}
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
+    self.songStyle = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_SONG_STYLE];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType
+{
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark - Actions
+
+- (IBAction)showSupportInfo:(id)sender
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (self.extrasPopoverController.popoverVisible) {
+            [self.extrasPopoverController dismissPopoverAnimated:YES];
+        } else {
+            [self.extrasPopoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItems[0]
+                                                 permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                                 animated:YES];
+        }
+    } else {
+        [self.navigationController pushViewController:self.extrasTableViewController animated:YES];
+    }
+}
+
+- (IBAction)revealSideMenu:(id)sender
+{
+    [self.slidingViewController anchorTopViewTo:ECRight];
+}
+
+#pragma mark - Public Methods
 
 - (void) resetSongStyle
 {
     [self setSongStyle:nil];
 }
 
-#pragma mark - Managing the song
+#pragma mark - Private Methods
 
-- (void)setSong:(Song *)song
-{
-    if (_song != song) {
-        _song = song;
-        
-        // Update the view.
-        [self displaySong];
-    }
-}
-
-- (void)displaySong 
+- (void)displaySong
 {
     if (self.song) {
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
@@ -70,19 +138,29 @@
     }
 }
 
-- (void)loadHtmlTemplate 
+- (void)loadHtmlTemplate
 {
     NSString *rootPath = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:rootPath];
     
     NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl 
+    NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl
                                                  encoding:NSUTF8StringEncoding
                                                     error:NULL];
     [songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
-// ---
+#pragma mark - Public Accessor Overrides
+
+- (void)setSong:(Song *)song
+{
+    if (_song != song) {
+        _song = song;
+        
+        // Update the view.
+        [self displaySong];
+    }
+}
 
 - (void)setNightMode:(BOOL)state
 {
@@ -274,85 +352,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
     [defaults synchronize];
-}
-
-#pragma mark - UIView
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
-        self.extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
-    }
-    
-    UIBarButtonItem *revealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(revealSideMenu:)];
-    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
-    self.navigationItem.leftBarButtonItems = @[revealBarButtonItem];
-    self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
-    
-    CGSize viewSize = self.view.bounds.size;
-    self.songWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
-    self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.songWebView.delegate = self;
-    
-    [self.view addSubview:self.songWebView];
-    
-    [self loadHtmlTemplate];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
-#pragma mark - ExtrasTableViewControllerDelegate
-
-- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
-{
-    [self.extrasPopoverController dismissPopoverAnimated:animated];
-}
-
-#pragma mark - UIWebViewDelegate
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
-    self.songStyle = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_SONG_STYLE];
-}
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request 
- navigationType:(UIWebViewNavigationType)navigationType 
-{
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        [[UIApplication sharedApplication] openURL:[request URL]];
-        return NO;
-    }
-    return YES;
-}
-
-#pragma mark - Actions
-
-- (IBAction)showSupportInfo:(id)sender
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if (self.extrasPopoverController.popoverVisible) {
-            [self.extrasPopoverController dismissPopoverAnimated:YES];
-        } else {
-            [self.extrasPopoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItems[0]
-                                                 permittedArrowDirections:UIPopoverArrowDirectionAny
-                                                                 animated:YES];
-        }
-    } else {
-        [self.navigationController pushViewController:self.extrasTableViewController animated:YES];
-    }
-}
-
-- (IBAction)revealSideMenu:(id)sender 
-{
-    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 @end
