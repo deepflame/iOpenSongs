@@ -3,7 +3,6 @@ platform :ios, '5.1'
 # UI
 pod 'ECSlidingViewController'
 pod 'MBProgressHUD'
-pod 'AKTabBarController'
 
 # Core
 pod 'MagicalRecord'

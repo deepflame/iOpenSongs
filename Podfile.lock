@@ -1,5 +1,4 @@
 PODS:
-  - AKTabBarController (1.0.1)
   - Dropbox-iOS-SDK (1.3.3)
   - ECSlidingViewController (0.9.0)
   - FormatterKit (1.1.1):
@@ -24,7 +23,6 @@ PODS:
   - uservoice-iphone-sdk (2.0.7)
 
 DEPENDENCIES:
-  - AKTabBarController
   - Dropbox-iOS-SDK
   - ECSlidingViewController
   - FormatterKit (~> 1.1.1)
@@ -35,7 +33,6 @@ DEPENDENCIES:
   - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
-  AKTabBarController: d3876684504512be83b90b5eabefce3853af043f
   Dropbox-iOS-SDK: 5ba15512b50769e175f1b612eba2b8d9c5d54b85
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
   FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
