@@ -49,7 +49,8 @@
     
     self.contentSizeForViewInPopover = CGSizeMake(320, 788);
     
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 788)];
+    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.webView];
     
     [self loadHtmlResource];
