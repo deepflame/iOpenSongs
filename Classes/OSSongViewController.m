@@ -12,17 +12,17 @@
 
 #import "OSSongMasterViewController.h"
 #import "OSRevealSidebarController.h"
-#import "OSExtrasTableViewController.h"
+#import "OSSupportTableViewController.h"
 
 #pragma mark SongViewController () 
 
 // private interface
-@interface OSSongViewController () <OSExtrasTableViewControllerDelegate, UIWebViewDelegate>
+@interface OSSongViewController () <OSSupportTableViewControllerDelegate, UIWebViewDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *songStyle;
 // UI
 @property (strong, nonatomic) UIPopoverController *extrasPopoverController;
-@property (nonatomic, strong) OSExtrasTableViewController *extrasTableViewController;
+@property (nonatomic, strong) OSSupportTableViewController *extrasTableViewController;
 @property (nonatomic, strong) UIWebView *songWebView;
 
 - (void)displaySong;
@@ -310,7 +310,7 @@
 
 #pragma mark - ExtrasTableViewControllerDelegate
 
-- (void)extrasTableViewControllerDelegate:(OSExtrasTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
+- (void)extrasTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
 {
     [self.extrasPopoverController dismissPopoverAnimated:animated];
 }

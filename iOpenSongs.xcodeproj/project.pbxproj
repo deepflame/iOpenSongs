@@ -20,7 +20,7 @@
 		3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSHtmlViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
-		3E5E879014DE63B5003B645A /* OSExtrasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */; };
+		3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
 		3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */; };
 		3E637B0216CFDEF400514793 /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
 		3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
@@ -105,8 +105,8 @@
 		3E5E878414DD7680003B645A /* OSHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSHtmlViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
 		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
-		3E5E878E14DE63B5003B645A /* OSExtrasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSExtrasTableViewController.h; sourceTree = "<group>"; };
-		3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSExtrasTableViewController.m; sourceTree = "<group>"; };
+		3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSupportTableViewController.h; sourceTree = "<group>"; };
+		3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSupportTableViewController.m; sourceTree = "<group>"; };
 		3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SectionIndex.h"; sourceTree = "<group>"; };
 		3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SectionIndex.m"; sourceTree = "<group>"; };
 		3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_244_conversation.png; path = Vendor/glyphicons/glyphicons_244_conversation.png; sourceTree = SOURCE_ROOT; };
@@ -268,8 +268,8 @@
 				3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */,
 				3E5E878314DD7680003B645A /* OSHtmlViewController.h */,
 				3E5E878414DD7680003B645A /* OSHtmlViewController.m */,
-				3E5E878E14DE63B5003B645A /* OSExtrasTableViewController.h */,
-				3E5E878F14DE63B5003B645A /* OSExtrasTableViewController.m */,
+				3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */,
+				3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -648,7 +648,7 @@
 				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
 				3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */,
-				3E5E879014DE63B5003B645A /* OSExtrasTableViewController.m in Sources */,
+				3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
 				3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */,
 				3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */,

@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSExtrasTableViewController.h"
+#import "OSSupportTableViewController.h"
 #import "OSHtmlViewController.h"
 
 #import <UserVoice.h>
 #import "OSDefines.h"
 #import "OSUserVoiceStyleSheet.h"
 
-@interface OSExtrasTableViewController ()
+@interface OSSupportTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *versionCell;
 @end
 
 
-@implementation OSExtrasTableViewController
+@implementation OSSupportTableViewController
 @synthesize versionCell = _versionCell;
 
 @synthesize delegate = _delegate;
