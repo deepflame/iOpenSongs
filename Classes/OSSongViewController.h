@@ -13,7 +13,10 @@
 // public interface
 @interface OSSongViewController : UIViewController
 
+- (void)resetSongStyle;
+
 @property (nonatomic, copy) Song *song;
+
 @property (nonatomic) BOOL nightMode;
 
 @property (nonatomic) BOOL headerVisible;
@@ -25,7 +28,5 @@
 @property (nonatomic) int chordsSize;
 @property (nonatomic) int lyricsSize;
 @property (nonatomic) int commentsSize;
-
-- (void)resetSongStyle;
 
 @end

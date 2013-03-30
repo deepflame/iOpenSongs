@@ -23,13 +23,6 @@
 
 @implementation OSSupportTableViewController
 
-- (NSString*) version
-{
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    return [NSString stringWithFormat:@"%@ (%@)", version, build];
-}
-
 #pragma mark - UIViewController
 
 - (NSString *)title
@@ -144,6 +137,15 @@
         [self.navigationController pushViewController:htmlVC animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Private Methods
+
+- (NSString*) version
+{
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"%@ (%@)", version, build];
 }
 
 @end

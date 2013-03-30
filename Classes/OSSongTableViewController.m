@@ -25,13 +25,16 @@
 
 #pragma mark - UIViewController
 
+- (NSString *)title
+{
+    return @"Songs";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    self.navigationItem.title = @"Songs";
-    
+        
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     self.searchBar.placeholder = @"Search Songs";
     self.searchBar.scopeButtonTitles = @[@"Title", @"Author", @"Lyrics"];
@@ -65,7 +68,7 @@
     return YES;
 }
 
-#pragma mark - UITableView
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

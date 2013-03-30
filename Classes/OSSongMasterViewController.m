@@ -104,7 +104,7 @@
     }
 }
 
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -120,7 +120,7 @@
     }
 }
 
-#pragma mark UIActionSheetDelegate
+#pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -140,7 +140,7 @@
     }
 }
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (IBAction)addSongs:(id)sender {
     if ([self.importActionSheet isVisible]) {
