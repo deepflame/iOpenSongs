@@ -10,6 +10,7 @@
 
 #import "OSSongMasterViewController.h"
 #import "OSSetTableViewController.h"
+#import "OSSongViewController.h"
 
 @interface OSRevealSidebarController ()
 
@@ -42,8 +43,11 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = viewControllers;
 
+    // top view controller
+    UIViewController *songViewController = [[OSSongViewController alloc] init];
+    
     // setup sidebar controller
-    self.topViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TopView"];
+    self.topViewController = [[UINavigationController alloc] initWithRootViewController:songViewController];
     self.underLeftViewController = tabBarController;
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {

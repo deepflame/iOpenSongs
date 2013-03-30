@@ -18,13 +18,12 @@
 
 // private interface
 @interface OSSongViewController () <OSExtrasTableViewControllerDelegate, UIWebViewDelegate>
-{
-    IBOutlet UIWebView *songWebView;
-    IBOutlet UIBarButtonItem *extrasBarButtonItem;
-}
 
-@property (strong, nonatomic) UIPopoverController *extrasPopoverController;
 @property (strong, nonatomic) NSMutableDictionary *songStyle;
+// UI
+@property (strong, nonatomic) UIPopoverController *extrasPopoverController;
+@property (nonatomic, strong) OSExtrasTableViewController *extrasTableViewController;
+@property (nonatomic, strong) UIWebView *songWebView;
 
 - (void)displaySong;
 - (void)loadHtmlTemplate;
@@ -38,6 +37,9 @@
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize songStyle =_songStyle;
 @synthesize song = _song;
+
+@synthesize songWebView;
+@synthesize extrasTableViewController = _extrasTableViewController;
 
 - (void) resetSongStyle
 {
@@ -274,22 +276,31 @@
     [defaults synchronize];
 }
 
-#pragma mark - UIView (view lifecycle)
+#pragma mark - UIView
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-
-    songWebView.delegate = self;
+    
+    self.extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
+        self.extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
+    }
+    
+    UIBarButtonItem *revealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(revealSideMenu:)];
+    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
+    self.navigationItem.leftBarButtonItems = @[revealBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
+    
+    CGSize viewSize = self.view.bounds.size;
+    self.songWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
+    self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.songWebView.delegate = self;
+    
+    [self.view addSubview:self.songWebView];
     
     [self loadHtmlTemplate];
-}
-
-- (void)viewDidUnload
-{
-    extrasBarButtonItem = nil;
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -322,41 +333,26 @@
     return YES;
 }
 
-#pragma mark - IBActions
+#pragma mark - Actions
 
-- (IBAction)showExtrasPopup:(UIBarButtonItem *)sender 
+- (IBAction)showSupportInfo:(id)sender
 {
-    if (self.extrasPopoverController.popoverVisible) {
-        [self.extrasPopoverController dismissPopoverAnimated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (self.extrasPopoverController.popoverVisible) {
+            [self.extrasPopoverController dismissPopoverAnimated:YES];
+        } else {
+            [self.extrasPopoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItems[0]
+                                                 permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                                 animated:YES];
+        }
     } else {
-        [self performSegueWithIdentifier:@"Show Extras Popup" sender:self];
+        [self.navigationController pushViewController:self.extrasTableViewController animated:YES];
     }
 }
+
 - (IBAction)revealSideMenu:(id)sender 
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
-}
-
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Show Extras Popup"]) {
-        OSExtrasTableViewController *etvCon;
-        
-        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
-            UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
-            [self.extrasPopoverController dismissPopoverAnimated:NO];
-            self.extrasPopoverController = popoverSegue.popoverController; // might want to be popover's delegate and self.popoverController = nil on dismiss?
-
-            UINavigationController *navCon = segue.destinationViewController;
-            etvCon = (OSExtrasTableViewController *) navCon.topViewController;
-        } else {
-            etvCon = (OSExtrasTableViewController *) segue.destinationViewController;
-        }
-        
-        etvCon.delegate = self;        
-    }
 }
 
 @end
