@@ -13,10 +13,12 @@
     #import <Foundation/Foundation.h>
 
     // External Libraries
-    //#define MR_SHORTHAND // disabled to clarify when MR is used 
-    #import "CoreData+MagicalRecord.h"
+    #import <BlocksKit.h>
 
-    #import "TestFlight.h"
+    //#define MR_SHORTHAND // disabled to clarify when MR is used
+    #import <CoreData+MagicalRecord.h>
+
+    #import <TestFlight.h>
     #import <Crashlytics/Crashlytics.h>
 
     // Macros
