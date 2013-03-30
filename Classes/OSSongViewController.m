@@ -310,7 +310,7 @@
 
 #pragma mark - ExtrasTableViewControllerDelegate
 
-- (void)extrasTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
+- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender dismissMyPopoverAnimated:(BOOL)animated
 {
     [self.extrasPopoverController dismissPopoverAnimated:animated];
 }

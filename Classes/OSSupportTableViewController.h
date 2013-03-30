@@ -13,9 +13,7 @@
 @protocol OSSupportTableViewControllerDelegate <NSObject>
 
 @optional
-- (void)extrasTableViewControllerDelegate:(OSSupportTableViewController *)sender
-                         changedNightMode:(BOOL)state;
-- (void)extrasTableViewControllerDelegate:(OSSupportTableViewController *)sender
+- (void)supportTableViewControllerDelegate:(OSSupportTableViewController *)sender
                  dismissMyPopoverAnimated:(BOOL)animated;
 @end
 
