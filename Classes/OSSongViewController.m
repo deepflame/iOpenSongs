@@ -33,7 +33,7 @@
 @synthesize song = _song;
 @synthesize songStyle =_songStyle;
 
-@synthesize songWebView;
+@synthesize songWebView = _songWebView;
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize extrasTableViewController = _extrasTableViewController;
 
@@ -124,7 +124,7 @@
 {
     if (self.song) {
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
-        [songWebView stringByEvaluatingJavaScriptFromString:jsString];
+        [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
         self.navigationItem.title = self.song.title;
         
         // reset style
@@ -141,7 +141,7 @@
     NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl
                                                  encoding:NSUTF8StringEncoding
                                                     error:NULL];
-    [songWebView loadHTMLString:htmlDoc baseURL:baseURL];
+    [self.songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
 #pragma mark - Public Accessor Overrides
@@ -159,9 +159,9 @@
 - (void)setNightMode:(BOOL)state
 {
     if (state == YES) {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
+        [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('nightmode');"];        
     } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];        
+        [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('nightmode');"];
     }
     
     // save user defaults
@@ -172,7 +172,7 @@
 
 - (BOOL)nightMode
 {
-    return [[songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
+    return [[self.songWebView stringByEvaluatingJavaScriptFromString:@"$('body').hasClass('nightmode');"] isEqualToString:@"true"];
 }
 
 // -- Song Style: Visibiliy
@@ -185,9 +185,9 @@
     }
     
     if (isVisible) {
-        [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').show();", cssSel]];
+        [self.songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').show();", cssSel]];
     } else {
-        [songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').hide();", cssSel]];
+        [self.songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').hide();", cssSel]];
     }
     [self.songStyle setObject:[NSNumber numberWithBool:isVisible] forKey:key];
     
@@ -258,7 +258,7 @@
     }
     
     NSString *js = [NSString stringWithFormat:@"$('%@').css('font-size', '%dpx');", cssSel, size];
-    [songWebView stringByEvaluatingJavaScriptFromString:js];
+    [self.songWebView stringByEvaluatingJavaScriptFromString:js];
     [self.songStyle setObject:[NSNumber numberWithInt:size] forKey:key];
     
     // save user defaults if changed
