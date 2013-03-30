@@ -8,6 +8,7 @@ pod 'MBProgressHUD'
 pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit', '~> 1.1.1'
+pod 'BlocksKit'
 
 # Test
 pod 'TestFlightSDK'

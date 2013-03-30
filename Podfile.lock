@@ -1,4 +1,6 @@
 PODS:
+  - BlocksKit (1.8.1):
+    - libffi
   - Dropbox-iOS-SDK (1.3.3)
   - ECSlidingViewController (0.9.0)
   - FormatterKit (1.1.1):
@@ -17,12 +19,14 @@ PODS:
   - FormatterKit/UnitOfInformationFormatter (1.1.1)
   - FormatterKit/URLRequestFormatter (1.1.1)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - libffi (3.0.11)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
   - TestFlightSDK (1.2.4)
   - uservoice-iphone-sdk (2.0.7)
 
 DEPENDENCIES:
+  - BlocksKit (~> 1.8.1)
   - Dropbox-iOS-SDK
   - ECSlidingViewController
   - FormatterKit (~> 1.1.1)
@@ -33,10 +37,12 @@ DEPENDENCIES:
   - uservoice-iphone-sdk
 
 SPEC CHECKSUMS:
+  BlocksKit: 18102744fd7c44b54f1e54ce6ffe9258bcb5df81
   Dropbox-iOS-SDK: 5ba15512b50769e175f1b612eba2b8d9c5d54b85
   ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
   FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
   GoogleAnalytics-iOS-SDK: 5b5063f5bdc99bc093a652f590f572b4550c1862
+  libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
