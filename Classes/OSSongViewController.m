@@ -18,9 +18,9 @@
 
 @interface OSSongViewController () <OSSupportTableViewControllerDelegate, UIWebViewDelegate>
 
-@property (strong, nonatomic) NSMutableDictionary *songStyle;
+@property (nonatomic, strong) NSMutableDictionary *songStyle;
 // UI
-@property (strong, nonatomic) UIPopoverController *extrasPopoverController;
+@property (nonatomic, strong) UIPopoverController *extrasPopoverController;
 @property (nonatomic, strong) OSSupportTableViewController *extrasTableViewController;
 @property (nonatomic, strong) UIWebView *songWebView;
 @end
@@ -43,12 +43,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
-        self.extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
-    }
     
     UIBarButtonItem *revealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(revealSideMenu:)];
     UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
@@ -352,6 +346,25 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:self.songStyle forKey:USER_DEFAULTS_KEY_SONG_STYLE];
     [defaults synchronize];
+}
+
+#pragma mark - Private Accessor Overrides
+
+- (OSSupportTableViewController *)extrasTableViewController
+{
+    if (!_extrasTableViewController) {
+        _extrasTableViewController = [self.slidingViewController.storyboard instantiateViewControllerWithIdentifier:@"support"];
+    }
+    return _extrasTableViewController;
+}
+
+- (UIPopoverController *)extrasPopoverController
+{
+    if (!_extrasPopoverController) {
+        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
+        _extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
+    }
+    return _extrasPopoverController;
 }
 
 @end
