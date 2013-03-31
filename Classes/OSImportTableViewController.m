@@ -170,7 +170,7 @@
                         
             // select if it is not a directory
             if (![cell.detailTextLabel.text isEqualToString:@""]) {
-                [self.selectedIndexPaths performSelector:selector withObject:indexPath];
+                SuppressPerformSelectorLeakWarning([self.selectedIndexPaths performSelector:selector withObject:indexPath]);
             }
         }
     }

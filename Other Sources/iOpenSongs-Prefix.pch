@@ -22,11 +22,11 @@
     #import <Crashlytics/Crashlytics.h>
 
     // Macros
-    #define SuppressPerformSelectorLeakWarning(Stuff) \
+    #define SuppressPerformSelectorLeakWarning(Code) \
         do { \
             _Pragma("clang diagnostic push") \
             _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-            Stuff; \
+            Code; \
             _Pragma("clang diagnostic pop") \
         } while (0)
 

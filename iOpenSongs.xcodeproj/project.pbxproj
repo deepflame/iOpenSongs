@@ -794,7 +794,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/iOpenSongs\"",
 					"\"$(SRCROOT)/Vendor/Crashlytics\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -807,7 +806,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/iOpenSongs\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				PROVISIONING_PROFILE = "";
@@ -828,7 +826,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/iOpenSongs\"",
 					"\"$(SRCROOT)/Vendor/Crashlytics\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -841,7 +838,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/iOpenSongs\"",
 				);
 				PRODUCT_NAME = iOpenSongs;
 				PROVISIONING_PROFILE = "";
