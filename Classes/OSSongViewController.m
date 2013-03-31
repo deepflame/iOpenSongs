@@ -95,6 +95,7 @@
 {
     if (! _songView) {
         _songView = [[OSSongView alloc] initWithFrame:self.view.bounds];
+        _songView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _songView.song = self.song;
     }
     return _songView;
