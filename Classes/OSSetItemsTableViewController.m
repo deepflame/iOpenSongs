@@ -24,47 +24,6 @@
 @synthesize set = _set;
 @synthesize currentSelection = _currentSelection;
 
-- (void)setSet:(Set *)set
-{
-    if (_set == set) {
-        return;
-    }
-    _set = set;
-    self.title = set.name;
-    
-    [self setupFetchedResultsController];
-}
-
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-{
-    self.fetchedResultsController = [SetItem MR_fetchAllSortedBy:@"position"
-                                                   ascending:YES
-                                               withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]
-                                                     groupBy:nil
-                                                    delegate:self];
-}
-
-- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // TODO: support other types as well
-    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].songView.song = setItem.song;
-}
-
-- (OSSongViewController *)songDetailViewController
-{
-    id svc = [self.slidingViewController topViewController];
-    
-    if ([svc isKindOfClass:[UINavigationController class]]) {
-        svc = ((UINavigationController *) svc).topViewController;
-    }
-    
-    if (![svc isKindOfClass:[OSSongViewController class]]) {
-        svc = nil;
-    }
-    return svc;
-}
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
@@ -196,6 +155,51 @@
     setItemSongsTVC.delegate = self;
     
     [self.navigationController pushViewController:setItemSongsTVC animated:YES];
+}
+
+#pragma mark - Private Methods
+
+- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
+{
+    self.fetchedResultsController = [SetItem MR_fetchAllSortedBy:@"position"
+                                                       ascending:YES
+                                                   withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]
+                                                         groupBy:nil
+                                                        delegate:self];
+}
+
+- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO: support other types as well
+    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self songDetailViewController].songView.song = setItem.song;
+}
+
+- (OSSongViewController *)songDetailViewController
+{
+    id svc = [self.slidingViewController topViewController];
+    
+    if ([svc isKindOfClass:[UINavigationController class]]) {
+        svc = ((UINavigationController *) svc).topViewController;
+    }
+    
+    if (![svc isKindOfClass:[OSSongViewController class]]) {
+        svc = nil;
+    }
+    return svc;
+}
+
+#pragma mark - Public Accossor Overrides
+
+- (void)setSet:(Set *)set
+{
+    if (_set == set) {
+        return;
+    }
+    _set = set;
+    self.title = set.name;
+    
+    [self setupFetchedResultsController];
 }
 
 @end
