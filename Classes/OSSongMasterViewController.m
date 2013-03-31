@@ -125,19 +125,19 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    OSImportTableViewController *importTableViewController;
     
     if ([buttonTitle isEqualToString:@"iTunes"]) {
-        OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
-        [self.navigationController pushViewController:importTableViewController animated:YES];
+        importTableViewController = [[OSITunesImportTableViewController alloc] init];
     } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
-        if ([[DBSession sharedSession] isLinked]) {
-            //show the Dropbox file chooser
-            OSDropboxImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
-            [self.navigationController pushViewController:importTableViewController animated:YES];
-        } else {
+        if (! [[DBSession sharedSession] isLinked]) {
             [[DBSession sharedSession] linkFromController:self];
+            return; // <- !!
         }
+        importTableViewController = [[OSDropboxImportTableViewController alloc] init];
     }
+    
+    [self.navigationController pushViewController:importTableViewController animated:YES];
 }
 
 #pragma mark - Actions
