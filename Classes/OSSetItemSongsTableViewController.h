@@ -11,16 +11,11 @@
 
 #import "Song.h"
 
-@class OSSetItemSongsTableViewController;
-
 @protocol SetItemSongsTableViewControllerDelegate <NSObject>
 @optional
-- (void) setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender 
-                               choseSong:(Song *)song;
-- (void) setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender 
-                         finishedEditing:(BOOL)animated;
+- (void) setItemSongsTableViewController:(id)sender finishedEditing:(BOOL)animated;
 @end
 
 @interface OSSetItemSongsTableViewController : OSSongTableViewController
-@property (nonatomic, weak) id<SetItemSongsTableViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<OSSongTableViewControllerDelegate, SetItemSongsTableViewControllerDelegate> delegate;
 @end

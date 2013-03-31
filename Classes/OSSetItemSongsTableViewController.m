@@ -12,7 +12,6 @@
 @end
 
 @implementation OSSetItemSongsTableViewController
-@synthesize delegate = _delegate;
 
 #pragma mark - UIViewController
 
@@ -38,17 +37,16 @@
 {
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    [[self delegate] setItemSongsTableViewController:self choseSong:song];
+    [self.delegate songTableViewController:self didSelectSong:song];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Actions
 
-- (IBAction)doneEditing:(UIBarButtonItem *)sender 
+- (void)doneEditing:(UIBarButtonItem *)sender
 {
-    [[self delegate] setItemSongsTableViewController:self 
-                                     finishedEditing:YES];
+    [self.delegate setItemSongsTableViewController:self finishedEditing:YES];
 }
 
 

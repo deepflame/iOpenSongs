@@ -15,7 +15,7 @@
 #import "OSSetItemSongsTableViewController.h"
 #import "OSRevealSidebarController.h"
 
-@interface OSSetItemsTableViewController () <SetItemSongsTableViewControllerDelegate>
+@interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, SetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @end
 
@@ -131,9 +131,9 @@
     }
 }
 
-#pragma mark - SetItemSongsTableViewControllerDelegate
+#pragma mark - OSSongTableViewControllerDelegate
 
--(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender choseSong:(Song *)song
+- (void)songTableViewController:(id)sender didSelectSong:(Song *)song
 {
     SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
                                                              inManagedObjectContext:self.set.managedObjectContext];
@@ -142,6 +142,8 @@
     
     [self.set addItemsObject:newSongItem ];
 }
+
+#pragma mark - SetItemSongsTableViewControllerDelegate
 
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
