@@ -55,6 +55,13 @@
     self.title = song.title;
 }
 
+#pragma mark - OSSupportViewControllerDelegate
+
+- (void)dismissSupportPopoverAnimated:(BOOL)animated
+{
+    [self.extrasPopoverController dismissPopoverAnimated:animated];
+}
+
 #pragma mark - Actions
 
 - (IBAction)showSupportInfo:(id)sender
@@ -75,13 +82,6 @@
 - (IBAction)revealSideMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
-}
-
-#pragma mark - OSSupportViewControllerDelegate
-
-- (void)dismissSupportPopoverAnimated:(BOOL)animated
-{
-    [self.extrasPopoverController dismissPopoverAnimated:animated];
 }
 
 #pragma mark - Private Accessor Overrides

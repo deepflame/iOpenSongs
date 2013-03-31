@@ -28,9 +28,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        // Initialization code        
         self.songWebView = [[UIWebView alloc] initWithFrame:self.bounds];
-        self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.songWebView.delegate = self;
         
         [self addSubview:self.songWebView];
