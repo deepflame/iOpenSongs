@@ -12,8 +12,6 @@
 #import "OSRevealSidebarController.h"
 #import "OSSupportTableViewController.h"
 
-#pragma mark SongViewController () 
-
 @interface OSSongViewController () <UIWebViewDelegate, OSSongViewDelegate ,OSSupportViewControllerDelegate>
 @property (nonatomic, strong) Song *song;
 // UI
@@ -37,7 +35,7 @@
     return self;
 }
 
-#pragma mark - UIView
+#pragma mark - UIViewController
 
 - (void)loadView
 {

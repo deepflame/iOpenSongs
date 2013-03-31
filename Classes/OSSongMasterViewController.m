@@ -30,28 +30,6 @@
 @synthesize currentSelection = _currentSelection;
 @synthesize importActionSheet = _importActionSheet;
 
-#pragma mark -
-
-- (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
-{
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].songView.song = song;
-}
-
-- (OSSongViewController *)songDetailViewController
-{
-    id svc = [self.slidingViewController topViewController];
-    
-    if ([svc isKindOfClass:[UINavigationController class]]) {
-        svc = ((UINavigationController *) svc).topViewController;
-    }
-    
-    if (![svc isKindOfClass:[OSSongViewController class]]) {
-        svc = nil;
-    }
-    return svc;
-}
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad 
@@ -85,6 +63,7 @@
     // import songs from application sharing if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         // FIXME
+        //[self importSongs];
     }
 }
 
@@ -142,12 +121,34 @@
 
 #pragma mark - Actions
 
-- (IBAction)addSongs:(id)sender {
+- (void)addSongs:(id)sender {
     if ([self.importActionSheet isVisible]) {
         [self.importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
     } else {
         [self.importActionSheet showFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES];        
     }
+}
+
+#pragma mark - Private Methods
+
+- (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
+{
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self songDetailViewController].songView.song = song;
+}
+
+- (OSSongViewController *)songDetailViewController
+{
+    id svc = [self.slidingViewController topViewController];
+    
+    if ([svc isKindOfClass:[UINavigationController class]]) {
+        svc = ((UINavigationController *) svc).topViewController;
+    }
+    
+    if (![svc isKindOfClass:[OSSongViewController class]]) {
+        svc = nil;
+    }
+    return svc;
 }
 
 @end
