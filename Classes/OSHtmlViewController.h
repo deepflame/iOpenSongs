@@ -10,6 +10,4 @@
 
 @interface OSHtmlViewController : UIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) NSURL *resourceURL;
-
 @end

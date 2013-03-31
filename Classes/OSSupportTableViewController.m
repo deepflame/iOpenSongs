@@ -159,8 +159,6 @@
 - (void)showAbout
 {
     OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
-    htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
-    htmlVC.title = @"About";
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [self.navigationController pushViewController:htmlVC animated:YES];
