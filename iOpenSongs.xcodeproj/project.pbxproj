@@ -220,6 +220,17 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
+		3E3EE7B917081C93006A9B34 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3E5E878314DD7680003B645A /* OSHtmlViewController.h */,
+				3E5E878414DD7680003B645A /* OSHtmlViewController.m */,
+				3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */,
+				3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		3E5E878914DE6166003B645A /* Html */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,16 +274,13 @@
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
+				3E3EE7B917081C93006A9B34 /* Support */,
 				3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */,
 				3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */,
-				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
-				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 				3E358449151E100E00137FC4 /* OSRevealSidebarController.h */,
 				3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */,
-				3E5E878314DD7680003B645A /* OSHtmlViewController.h */,
-				3E5E878414DD7680003B645A /* OSHtmlViewController.m */,
-				3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */,
-				3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */,
+				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
+				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
