@@ -8,8 +8,6 @@
 
 #import "OSSongTableViewController.h"
 
-#import "Song.h"
-
 #import <objc/message.h>
 
 @interface OSSongTableViewController () <UISearchBarDelegate>
@@ -19,6 +17,7 @@
 @end
 
 @implementation OSSongTableViewController
+@synthesize delegate = _delegate;
 @synthesize searchBarColorInactive = _searchBarColorInactive;
 @synthesize searchBar = _searchBar;
 @synthesize searchDisplayController;

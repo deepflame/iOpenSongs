@@ -22,6 +22,7 @@
 @implementation OSSetItemsTableViewController
 
 @synthesize set = _set;
+@synthesize delegate = _delegate;
 @synthesize currentSelection = _currentSelection;
 
 #pragma mark - UIViewController
@@ -170,23 +171,8 @@
 
 - (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: support other types as well
-    SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].songView.song = setItem.song;
-}
-
-- (OSSongViewController *)songDetailViewController
-{
-    id svc = [self.slidingViewController topViewController];
-    
-    if ([svc isKindOfClass:[UINavigationController class]]) {
-        svc = ((UINavigationController *) svc).topViewController;
-    }
-    
-    if (![svc isKindOfClass:[OSSongViewController class]]) {
-        svc = nil;
-    }
-    return svc;
+    SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate setItemsTableViewController:self didSelectSetItem:setItem];
 }
 
 #pragma mark - Public Accossor Overrides

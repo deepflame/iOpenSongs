@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 
-@interface OSRevealSidebarController : ECSlidingViewController
+#import "OSSongMasterViewController.h"
+#import "OSSetItemsTableViewController.h"
+
+@interface OSRevealSidebarController : ECSlidingViewController <OSSongTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>
 
 @end

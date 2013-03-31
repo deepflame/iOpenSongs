@@ -8,22 +8,29 @@
 
 #import "OSRevealSidebarController.h"
 
-#import "OSSongMasterViewController.h"
-#import "OSSetTableViewController.h"
 #import "OSSongViewController.h"
+#import "OSSongMasterViewController.h"
+
+#import "SetItemSong.h"
+#import "OSSetTableViewController.h"
 
 @interface OSRevealSidebarController ()
-
+@property (nonatomic, strong) OSSongViewController *songViewController;
 @end
 
 @implementation OSRevealSidebarController
+
+@synthesize songViewController = _songViewController;
+
+#pragma mark - UIViewController
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
 
     // build tabbar
-    UIViewController *songsViewController = [[OSSongMasterViewController alloc] init];
+    OSSongMasterViewController *songsViewController = [[OSSongMasterViewController alloc] init];
+    songsViewController.delegate = self;
     UIViewController *setsViewController = [[OSSetTableViewController alloc] init];
     UIViewController *settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settings"];
     
@@ -42,9 +49,10 @@
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = viewControllers;
-
+    
     // top view controller
-    UIViewController *songViewController = [[OSSongViewController alloc] init];
+    self.songViewController = [[OSSongViewController alloc] init];
+    UIViewController *songViewController = self.songViewController;
     
     // setup sidebar controller
     self.topViewController = [[UINavigationController alloc] initWithRootViewController:songViewController];
@@ -78,6 +86,25 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation 
 {
     return [self.topViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
+
+#pragma mark - OSSongTableViewControllerDelegate
+
+- (void)songTableViewController:(id)sender didSelectSong:(Song *)song
+{
+    self.songViewController.songView.song = song;    
+}
+
+#pragma mark - OSSetItemsTableViewControllerDelegate
+
+- (void)setItemsTableViewController:(id)sender didSelectSetItem:(SetItem *)setItem
+{
+    if ([setItem isMemberOfClass:[SetItemSong class]]) {
+        SetItemSong *setItemSong = (SetItemSong *)setItem;
+        self.songViewController.songView.song = setItemSong.song;
+    } else {
+        // TODO support for other types
+    }
 }
 
 @end

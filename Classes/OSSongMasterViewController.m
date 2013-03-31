@@ -52,7 +52,8 @@
 {
     // select previous song
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:UITableViewScrollPositionNone];
-    [self selectSongAtIndexPath:self.currentSelection];
+    Song *song = [self.fetchedResultsController objectAtIndexPath:self.currentSelection];
+    [self.delegate songTableViewController:self didSelectSong:song];
     
     [super viewWillAppear:animated];
 }
@@ -88,7 +89,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self selectSongAtIndexPath:indexPath];
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate songTableViewController:self didSelectSong:song];
     
     // save current selection
     self.currentSelection = indexPath;
@@ -128,28 +130,6 @@
     } else {
         [self.importActionSheet showFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES];        
     }
-}
-
-#pragma mark - Private Methods
-
-- (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
-{
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].songView.song = song;
-}
-
-- (OSSongViewController *)songDetailViewController
-{
-    id svc = [self.slidingViewController topViewController];
-    
-    if ([svc isKindOfClass:[UINavigationController class]]) {
-        svc = ((UINavigationController *) svc).topViewController;
-    }
-    
-    if (![svc isKindOfClass:[OSSongViewController class]]) {
-        svc = nil;
-    }
-    return svc;
 }
 
 @end

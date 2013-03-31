@@ -11,6 +11,8 @@
 #import "Set.h"
 #import "OSSetItemsTableViewController.h"
 
+#import "OSRevealSidebarController.h"
+
 @interface OSSetTableViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
 @end
@@ -99,6 +101,7 @@
 {
     OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
     setItemsTVC.set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    setItemsTVC.delegate = (OSRevealSidebarController *)self.slidingViewController;
     
     [self.navigationController pushViewController:setItemsTVC animated:YES];
 }
