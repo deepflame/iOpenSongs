@@ -99,68 +99,87 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
-#if defined IOPENSONGS_USERVOICE_CONFIG
-        [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
-        [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
-#else
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
-#endif
+        [self showUserVoice];
     } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];
-        
+        [self showGithub];
     } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
-        // thanks to ChrisMaddern for providing this code
-        // https://github.com/chrismaddern/Follow-Me-On-Twitter-iOS-Button
-        NSArray *urls = [NSArray arrayWithObjects:
-                         @"twitter://user?screen_name={handle}", // Twitter
-                         @"tweetbot:///user_profile/{handle}", // TweetBot
-                         @"echofon:///user_timeline?{handle}", // Echofon              
-                         @"twit:///user?screen_name={handle}", // Twittelator Pro
-                         @"x-seesmic://twitter_profile?twitter_screen_name={handle}", // Seesmic
-                         @"x-birdfeed://user?screen_name={handle}", // Birdfeed
-                         @"tweetings:///user?screen_name={handle}", // Tweetings
-                         @"simplytweet:?link=http://twitter.com/{handle}", // SimplyTweet
-                         @"icebird://user?screen_name={handle}", // IceBird
-                         @"fluttr://user/{handle}", // Fluttr
-                         @"http://twitter.com/{handle}",
-                         nil];
-        
-        UIApplication *application = [UIApplication sharedApplication];
-        
-        for (NSString *candidate in urls) {
-            NSURL *url = [NSURL URLWithString:[candidate stringByReplacingOccurrencesOfString:@"{handle}" withString:@"iOpenSongs"]];
-            if ([application canOpenURL:url]) {
-                [application openURL:url];
-                break;
-            }
-        }
+        [self showTwitter];
     } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
-        OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
-        htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
-        htmlVC.title = @"About";
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            [self.navigationController pushViewController:htmlVC animated:YES];
-        } else {
-            // modal view
-            UINavigationController *aboutNC = [[UINavigationController alloc] initWithRootViewController:htmlVC];
-            aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
-            aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            
-            // add tap gesture to dismiss the modal view
-            UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapBehind:)];
-            [recognizer setNumberOfTapsRequired:1];
-            recognizer.cancelsTouchesInView = NO; //So the user can still interact with controls in the modal view
-            [self.view.window addGestureRecognizer:recognizer];
-            
-            [self.delegate dismissSupportPopoverAnimated:YES];
-            [self presentModalViewController:aboutNC animated:YES];
-        }
+        [self showAbout];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Private Methods
+
+- (void)showUserVoice
+{
+#if defined IOPENSONGS_USERVOICE_CONFIG
+    [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
+    [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
+#else
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
+#endif
+}
+
+- (void)showGithub
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/deepflame/iOpenSongs"]];    
+}
+
+- (void)showTwitter
+{
+    // thanks to ChrisMaddern for providing this code
+    // https://github.com/chrismaddern/Follow-Me-On-Twitter-iOS-Button
+    NSArray *urls = [NSArray arrayWithObjects:
+                     @"twitter://user?screen_name={handle}", // Twitter
+                     @"tweetbot:///user_profile/{handle}", // TweetBot
+                     @"echofon:///user_timeline?{handle}", // Echofon
+                     @"twit:///user?screen_name={handle}", // Twittelator Pro
+                     @"x-seesmic://twitter_profile?twitter_screen_name={handle}", // Seesmic
+                     @"x-birdfeed://user?screen_name={handle}", // Birdfeed
+                     @"tweetings:///user?screen_name={handle}", // Tweetings
+                     @"simplytweet:?link=http://twitter.com/{handle}", // SimplyTweet
+                     @"icebird://user?screen_name={handle}", // IceBird
+                     @"fluttr://user/{handle}", // Fluttr
+                     @"http://twitter.com/{handle}",
+                     nil];
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    
+    for (NSString *candidate in urls) {
+        NSURL *url = [NSURL URLWithString:[candidate stringByReplacingOccurrencesOfString:@"{handle}" withString:@"iOpenSongs"]];
+        if ([application canOpenURL:url]) {
+            [application openURL:url];
+            break;
+        }
+    }
+}
+
+- (void)showAbout
+{
+    OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
+    htmlVC.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
+    htmlVC.title = @"About";
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self.navigationController pushViewController:htmlVC animated:YES];
+    } else {
+        // modal view
+        UINavigationController *aboutNC = [[UINavigationController alloc] initWithRootViewController:htmlVC];
+        aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
+        aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        // add tap gesture to dismiss the modal view
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapBehind:)];
+        [recognizer setNumberOfTapsRequired:1];
+        recognizer.cancelsTouchesInView = NO; //So the user can still interact with controls in the modal view
+        [self.view.window addGestureRecognizer:recognizer];
+        
+        [self.delegate dismissSupportPopoverAnimated:YES];
+        [self presentModalViewController:aboutNC animated:YES];
+    }
+}
 
 // thanks to Danilo Campos and junglecat
 // http://stackoverflow.com/questions/2623417/iphone-sdk-dismissing-modal-viewcontrollers-on-ipad-by-clicking-outside-of-it

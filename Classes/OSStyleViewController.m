@@ -13,11 +13,11 @@
 
 @interface OSStyleViewController ()
 {
-    IBOutlet UISwitch *nightModeSwitch;
-    IBOutlet UISwitch *headerVisibleSwitch;
-    IBOutlet UISwitch *chordsVisibleSwitch;
-    IBOutlet UISwitch *lyricsVisibleSwitch;
-    IBOutlet UISwitch *commentsVisibleSwitch;
+    __weak IBOutlet UISwitch *nightModeSwitch;
+    __weak IBOutlet UISwitch *headerVisibleSwitch;
+    __weak IBOutlet UISwitch *chordsVisibleSwitch;
+    __weak IBOutlet UISwitch *lyricsVisibleSwitch;
+    __weak IBOutlet UISwitch *commentsVisibleSwitch;
     __weak IBOutlet UISlider *headerSizeSlider;
     __weak IBOutlet UISlider *chordsSizeSlider;
     __weak IBOutlet UISlider *lyricsSizeSlider;
