@@ -82,11 +82,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
     // select previous item
     [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:UITableViewScrollPositionNone];
     [self selectItemAtIndexPath:self.currentSelection];
-  
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
