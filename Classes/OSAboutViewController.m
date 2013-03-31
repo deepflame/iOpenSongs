@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSHtmlViewController.h"
+#import "OSAboutViewController.h"
 #import "OSHtmlView.h"
 
-@interface OSHtmlViewController ()
+@interface OSAboutViewController ()
 @end
 
-@implementation OSHtmlViewController
+@implementation OSAboutViewController
 
 #pragma mark - UIViewController
 

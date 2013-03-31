@@ -7,7 +7,7 @@
 //
 
 #import "OSSupportTableViewController.h"
-#import "OSHtmlViewController.h"
+#import "OSAboutViewController.h"
 
 #import <UserVoice.h>
 #import "OSDefines.h"
@@ -158,13 +158,13 @@
 
 - (void)showAbout
 {
-    OSHtmlViewController *htmlVC = [[OSHtmlViewController alloc] init];
+    OSAboutViewController *aboutVC = [[OSAboutViewController alloc] init];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self.navigationController pushViewController:htmlVC animated:YES];
+        [self.navigationController pushViewController:aboutVC animated:YES];
     } else {
         // modal view
-        UINavigationController *aboutNC = [[UINavigationController alloc] initWithRootViewController:htmlVC];
+        UINavigationController *aboutNC = [[UINavigationController alloc] initWithRootViewController:aboutVC];
         aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
         aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
