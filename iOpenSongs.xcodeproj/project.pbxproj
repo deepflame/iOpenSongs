@@ -15,6 +15,7 @@
 		3E35844B151E100E00137FC4 /* OSRevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */; };
 		3E35844D151E120F00137FC4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
 		3E3872AF16EB1676003A0DCC /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
+		3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7B717080B26006A9B34 /* OSSongView.m */; };
 		3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSHtmlViewController.m */; };
@@ -97,6 +98,8 @@
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		3E3EE7B617080B26006A9B34 /* OSSongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongView.h; sourceTree = "<group>"; };
+		3E3EE7B717080B26006A9B34 /* OSSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongView.m; sourceTree = "<group>"; };
 		3E3FFF8716FE046000E6381A /* OSITunesImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSITunesImportTableViewController.h; sourceTree = "<group>"; };
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 			children = (
 				3E637B0A16D0CB2A00514793 /* OSUserVoiceStyleSheet.h */,
 				3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */,
+				3E3EE7B617080B26006A9B34 /* OSSongView.h */,
+				3E3EE7B717080B26006A9B34 /* OSSongView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */,
 				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
 				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
+				3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,7 +35,7 @@
 - (void)selectSongAtIndexPath:(NSIndexPath *)indexPath
 {
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].song = song;
+    [self songDetailViewController].songView.song = song;
 }
 
 - (OSSongViewController *)songDetailViewController

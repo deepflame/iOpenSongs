@@ -48,7 +48,7 @@
 {
     // TODO: support other types as well
     SetItemSong *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self songDetailViewController].song = setItem.song;
+    [self songDetailViewController].songView.song = setItem.song;
 }
 
 - (OSSongViewController *)songDetailViewController

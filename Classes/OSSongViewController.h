@@ -9,24 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "Song.h"
+#import "OSSongView.h"
 
 // public interface
 @interface OSSongViewController : UIViewController
 
-- (void)resetSongStyle;
-
-@property (nonatomic, copy) Song *song;
-
-@property (nonatomic) BOOL nightMode;
-
-@property (nonatomic) BOOL headerVisible;
-@property (nonatomic) BOOL chordsVisible;
-@property (nonatomic) BOOL lyricsVisible;
-@property (nonatomic) BOOL commentsVisible;
-
-@property (nonatomic) int headerSize;
-@property (nonatomic) int chordsSize;
-@property (nonatomic) int lyricsSize;
-@property (nonatomic) int commentsSize;
+@property (nonatomic, strong, readonly) OSSongView *songView;
 
 @end

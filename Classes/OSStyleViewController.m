@@ -30,15 +30,15 @@
 
 - (void) initSongStyleValues
 {
-    headerVisibleSwitch.on = [[self songViewController] headerVisible];
-    chordsVisibleSwitch.on = [[self songViewController] chordsVisible];
-    lyricsVisibleSwitch.on = [[self songViewController] lyricsVisible];
-    commentsVisibleSwitch.on = [[self songViewController] commentsVisible];
+    headerVisibleSwitch.on = [[self songView] headerVisible];
+    chordsVisibleSwitch.on = [[self songView] chordsVisible];
+    lyricsVisibleSwitch.on = [[self songView] lyricsVisible];
+    commentsVisibleSwitch.on = [[self songView] commentsVisible];
     
-    headerSizeSlider.value = [[self songViewController] headerSize];
-    chordsSizeSlider.value = [[self songViewController] chordsSize];
-    lyricsSizeSlider.value = [[self songViewController] lyricsSize];
-    commentsSizeSlider.value = [[self songViewController] commentsSize];
+    headerSizeSlider.value = [[self songView] headerSize];
+    chordsSizeSlider.value = [[self songView] chordsSize];
+    lyricsSizeSlider.value = [[self songView] lyricsSize];
+    commentsSizeSlider.value = [[self songView] commentsSize];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -53,7 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    nightModeSwitch.on = [[self songViewController] nightMode];
+    nightModeSwitch.on = [[self songView] nightMode];
 
     [self initSongStyleValues];
 }
@@ -63,7 +63,7 @@
 	return YES;
 }
 
-// ---
+# pragma mark - Private Methods
 
 - (OSSongViewController *)songViewController
 {
@@ -79,12 +79,17 @@
     return svc;
 }
 
+- (OSSongView *)songView
+{
+    return [self songViewController].songView;
+}
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Reset Style Cell"]) {
-        [[self songViewController] resetSongStyle];
+        [[self songView] resetSongStyle];
         [self initSongStyleValues];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -94,41 +99,41 @@
 
 - (IBAction)nightMode:(UISwitch *)sender 
 {
-    [[self songViewController] setNightMode:sender.on];
+    [[self songView] setNightMode:sender.on];
 }
 
 - (IBAction)headerVisible:(UISwitch *)sender 
 {
-    [[self songViewController] setHeaderVisible:sender.on];
+    [[self songView] setHeaderVisible:sender.on];
 }
 - (IBAction)chordsVisible:(UISwitch *)sender 
 {
-    [[self songViewController] setChordsVisible:sender.on];
+    [[self songView] setChordsVisible:sender.on];
 }
 - (IBAction)lyricsVisible:(UISwitch *)sender 
 {
-    [[self songViewController] setLyricsVisible:sender.on];
+    [[self songView] setLyricsVisible:sender.on];
 }
 - (IBAction)commentsVisible:(UISwitch *)sender 
 {
-    [[self songViewController]setCommentsVisible:sender.on];
+    [[self songView]setCommentsVisible:sender.on];
 }
 
 - (IBAction)headerSize:(UISlider *)sender 
 {
-    [[self songViewController] setHeaderSize:sender.value];
+    [[self songView] setHeaderSize:sender.value];
 }
 - (IBAction)chordsSize:(UISlider *)sender 
 {
-    [[self songViewController] setChordsSize:sender.value];
+    [[self songView] setChordsSize:sender.value];
 }
 - (IBAction)lyricsSize:(UISlider *)sender 
 {
-    [[self songViewController] setLyricsSize:sender.value];    
+    [[self songView] setLyricsSize:sender.value];    
 }
 - (IBAction)commentsSize:(UISlider *)sender 
 {
-    [[self songViewController] setCommentsSize:sender.value];
+    [[self songView] setCommentsSize:sender.value];
 }
 
 - (void)viewDidUnload {
