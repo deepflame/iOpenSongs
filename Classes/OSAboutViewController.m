@@ -21,14 +21,11 @@
     return @"About";
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
-    
-    OSHtmlView *htmlView = [[OSHtmlView alloc] initWithFrame:self.view.bounds];
+    OSHtmlView *htmlView = [[OSHtmlView alloc] init];
     htmlView.resourceURL = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"];
-    htmlView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:htmlView];
+    self.view = htmlView;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

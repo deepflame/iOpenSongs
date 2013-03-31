@@ -24,12 +24,28 @@
 @implementation OSSongViewController
 
 @synthesize song = _song;
-@synthesize songView = _songView;
 @synthesize extrasPopoverController = _extrasPopoverController;
 @synthesize extrasTableViewController = _extrasTableViewController;
 
 
+- (id)initWithSong:(Song *)song
+{
+    self = [super init];
+    if (self) {
+        _song = song;
+    }
+    return self;
+}
+
 #pragma mark - UIView
+
+- (void)loadView
+{
+    OSSongView *songView = [[OSSongView alloc] init];
+    songView.delegate = self;
+    songView.song = self.song;
+    self.view = songView;
+}
 
 - (void)viewDidLoad
 {
@@ -39,8 +55,6 @@
     UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
     self.navigationItem.leftBarButtonItems = @[revealBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
-    
-    [self.view addSubview:self.songView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -108,13 +122,7 @@
 
 - (OSSongView *)songView
 {
-    if (! _songView) {
-        _songView = [[OSSongView alloc] initWithFrame:self.view.bounds];
-        _songView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        _songView.delegate = self;
-        _songView.song = self.song;
-    }
-    return _songView;
+    return (OSSongView *)self.view;
 }
 
 @end
