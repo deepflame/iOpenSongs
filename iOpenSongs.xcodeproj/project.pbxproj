@@ -19,7 +19,7 @@
 		3E3EE7BC17082B5F006A9B34 /* OSHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7BB17082B5F006A9B34 /* OSHtmlView.m */; };
 		3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
-		3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSHtmlViewController.m */; };
+		3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
 		3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
@@ -107,8 +107,8 @@
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
-		3E5E878314DD7680003B645A /* OSHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSHtmlViewController.h; sourceTree = "<group>"; };
-		3E5E878414DD7680003B645A /* OSHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSHtmlViewController.m; sourceTree = "<group>"; };
+		3E5E878314DD7680003B645A /* OSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSAboutViewController.h; sourceTree = "<group>"; };
+		3E5E878414DD7680003B645A /* OSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSAboutViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
 		3E5E878A14DE61CB003B645A /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSupportTableViewController.h; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 		3E3EE7B917081C93006A9B34 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				3E5E878314DD7680003B645A /* OSHtmlViewController.h */,
-				3E5E878414DD7680003B645A /* OSHtmlViewController.m */,
+				3E5E878314DD7680003B645A /* OSAboutViewController.h */,
+				3E5E878414DD7680003B645A /* OSAboutViewController.m */,
 				3E5E878E14DE63B5003B645A /* OSSupportTableViewController.h */,
 				3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */,
 			);
@@ -665,7 +665,7 @@
 				3EDDA41314AEC3A400BB781C /* OSAppDelegate.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
 				3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */,
-				3E5E878514DD7680003B645A /* OSHtmlViewController.m in Sources */,
+				3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
 				3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */,
