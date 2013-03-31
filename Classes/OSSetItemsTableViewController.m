@@ -65,7 +65,7 @@
     return svc;
 }
 
-#pragma mark View Lifecycle
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
@@ -102,7 +102,7 @@
     return YES;
 }
 
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -155,7 +155,7 @@
     self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
 }
 
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -171,7 +171,7 @@
     }
 }
 
-#pragma mark SetItemSongsTableViewControllerDelegate
+#pragma mark - SetItemSongsTableViewControllerDelegate
 
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender choseSong:(Song *)song
 {

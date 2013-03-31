@@ -37,8 +37,9 @@
     [super viewDidLoad];
 
     // UI
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
+    self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
 
     self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:@"Import from"
                                                           delegate:self
