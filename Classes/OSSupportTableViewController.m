@@ -117,6 +117,9 @@
 #if defined IOPENSONGS_USERVOICE_CONFIG
     [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
     [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.delegate dismissSupportPopoverAnimated:YES];
+    }
 #else
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
