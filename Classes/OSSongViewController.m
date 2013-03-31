@@ -14,7 +14,7 @@
 
 #pragma mark SongViewController () 
 
-@interface OSSongViewController () <UIWebViewDelegate>
+@interface OSSongViewController () <UIWebViewDelegate, OSSupportViewControllerDelegate>
 @property (nonatomic, strong) Song *song;
 // UI
 @property (nonatomic, strong) UIPopoverController *extrasPopoverController;
@@ -70,12 +70,20 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
+#pragma mark - OSSupportViewControllerDelegate
+
+- (void)dismissSupportPopoverAnimated:(BOOL)animated
+{
+    [self.extrasPopoverController dismissPopoverAnimated:animated];
+}
+
 #pragma mark - Private Accessor Overrides
 
 - (OSSupportTableViewController *)extrasTableViewController
 {
     if (!_extrasTableViewController) {
         _extrasTableViewController = [[OSSupportTableViewController alloc] init];
+        _extrasTableViewController.delegate = self;
     }
     return _extrasTableViewController;
 }

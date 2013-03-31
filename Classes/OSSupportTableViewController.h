@@ -8,5 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OSSupportViewControllerDelegate <NSObject>
+- (void)dismissSupportPopoverAnimated:(BOOL)animated;
+@end
+
 @interface OSSupportTableViewController : UITableViewController
+@property (nonatomic, weak) NSObject<OSSupportViewControllerDelegate> *delegate;
 @end
