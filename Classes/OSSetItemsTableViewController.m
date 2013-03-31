@@ -75,7 +75,9 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, addButtonItem];
+    self.navigationItem.leftBarButtonItems = @[addButtonItem];
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
