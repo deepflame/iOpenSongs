@@ -41,16 +41,14 @@
     }
 }
 
-#pragma mark - UIView
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.contentSizeForViewInPopover = CGSizeMake(320, 788);
-    
+        
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.webView];
     
     [self loadHtmlResource];
