@@ -14,7 +14,7 @@
 
 #pragma mark SongViewController () 
 
-@interface OSSongViewController () <UIWebViewDelegate, OSSupportViewControllerDelegate>
+@interface OSSongViewController () <UIWebViewDelegate, OSSongViewDelegate ,OSSupportViewControllerDelegate>
 @property (nonatomic, strong) Song *song;
 // UI
 @property (nonatomic, strong) UIPopoverController *extrasPopoverController;
@@ -46,6 +46,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+#pragma mark - OSSongViewDelegate
+
+- (void)songViewDidChangeSong:(Song *)song
+{
+    self.title = song.title;
 }
 
 #pragma mark - Actions
@@ -104,6 +111,7 @@
     if (! _songView) {
         _songView = [[OSSongView alloc] initWithFrame:self.view.bounds];
         _songView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _songView.delegate = self;
         _songView.song = self.song;
     }
     return _songView;

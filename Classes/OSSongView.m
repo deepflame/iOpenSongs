@@ -75,9 +75,6 @@
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
         [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
         
-        // FIXME
-        //self.navigationItem.title = self.song.title;
-        
         // reset style
         //[self setSongStyle:self.songStyle];
     }
@@ -102,7 +99,7 @@
     if (_song != song) {
         _song = song;
         
-        // Update the view.
+        [self.delegate songViewDidChangeSong:_song];
         [self displaySong];
     }
 }
