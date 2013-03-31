@@ -19,6 +19,13 @@
 
 @synthesize setNameAlertView = _setNameAlertView;
 
+#pragma mark - UIViewController
+
+- (NSString *)title
+{
+    return @"Sets";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,7 +36,6 @@
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSet:)];
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
-    self.navigationItem.title = @"Sets";
 
     self.setNameAlertView = [[UIAlertView alloc] initWithTitle:@"Sets" message:@"Name your Set" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     self.setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
