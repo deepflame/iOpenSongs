@@ -76,7 +76,7 @@
         [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
         
         // reset style
-        //[self setSongStyle:self.songStyle];
+        [self setSongStyle:self.songStyle];
     }
 }
 
@@ -268,9 +268,7 @@
 }
 
 - (void) setSongStyle:(NSMutableDictionary *)songStyle
-{
-    return;
-    
+{    
     if (songStyle) {
         _songStyle = songStyle;
     } else {
