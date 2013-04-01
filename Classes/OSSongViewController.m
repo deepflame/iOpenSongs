@@ -69,9 +69,9 @@
 
 #pragma mark - OSSupportViewControllerDelegate
 
-- (void)dismissSupportPopoverAnimated:(BOOL)animated
+- (void)supportViewController:(OSSupportTableViewController *)sender willPresentModalViewController:(UIViewController *)controller
 {
-    [self.extrasPopoverController dismissPopoverAnimated:animated];
+    [self.extrasPopoverController dismissPopoverAnimated:YES];
 }
 
 #pragma mark - Actions

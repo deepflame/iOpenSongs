@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class OSSupportTableViewController;
+
 @protocol OSSupportViewControllerDelegate <NSObject>
-- (void)dismissSupportPopoverAnimated:(BOOL)animated;
+- (void)supportViewController:(OSSupportTableViewController *)sender willPresentModalViewController:(UIViewController *)controller;
 @end

@@ -118,7 +118,7 @@
     [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
     [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.delegate dismissSupportPopoverAnimated:YES];
+        [self.delegate supportViewController:self willPresentModalViewController:nil];
     }
 #else
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
@@ -177,8 +177,8 @@
         aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
         aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
-        [self.delegate dismissSupportPopoverAnimated:YES];
         [self presentModalViewController:aboutNC animated:YES];
+        [self.delegate supportViewController:self willPresentModalViewController:aboutNC];
     }
 }
 
