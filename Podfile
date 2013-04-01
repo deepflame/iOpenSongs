@@ -3,6 +3,7 @@ platform :ios, '5.1'
 # UI
 pod 'ECSlidingViewController'
 pod 'MBProgressHUD'
+pod 'TDBadgedCell'
 
 # Core
 pod 'MagicalRecord'
