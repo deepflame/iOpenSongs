@@ -23,8 +23,6 @@
 
 @implementation OSSupportTableViewController
 
-@synthesize delegate = _delegate;
-
 #pragma mark - UIViewController
 
 - (NSString *)title

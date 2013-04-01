@@ -95,7 +95,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - IBActions
+#pragma mark - Actions
 
 - (IBAction)nightMode:(UISwitch *)sender 
 {

@@ -14,9 +14,6 @@
 
 @implementation OSHtmlView
 
-@synthesize resourceURL = _url;
-@synthesize webView = _webView;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -85,7 +82,7 @@
 
 - (void) setResourceURL:(NSURL *)url
 {
-    _url = url;
+    _resourceURL = url;
     [self loadHtmlResource];
 }
 

@@ -25,10 +25,7 @@
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
 
-
 @implementation OSSongMasterViewController
-@synthesize currentSelection = _currentSelection;
-@synthesize importActionSheet = _importActionSheet;
 
 #pragma mark - UIViewController
 

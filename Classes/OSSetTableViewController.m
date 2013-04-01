@@ -19,8 +19,6 @@
 
 @implementation OSSetTableViewController
 
-@synthesize setNameAlertView = _setNameAlertView;
-
 #pragma mark - UIViewController
 
 - (NSString *)title
@@ -57,7 +55,7 @@
     return YES;
 }
 
-#pragma mark - 
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -75,8 +73,6 @@
     
     return cell;
 }
-
-#pragma mark - UITableViewDataSource
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +124,7 @@
 
 # pragma mark - Actions
 
-- (IBAction)addSet:(id)sender
+- (void)addSet:(id)sender
 {
     [self.setNameAlertView show];
 }

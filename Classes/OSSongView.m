@@ -71,7 +71,6 @@
 - (void)displaySong
 {
     if (self.song) {
-        NSString *songLyrics = self.song.lyrics;
         NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
         [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
         

@@ -20,8 +20,6 @@
 
 @implementation OSRevealSidebarController
 
-@synthesize songViewController = _songViewController;
-
 #pragma mark - UIViewController
 
 -(void)viewDidLoad

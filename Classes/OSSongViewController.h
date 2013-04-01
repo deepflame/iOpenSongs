@@ -11,7 +11,6 @@
 #import "Song.h"
 #import "OSSongView.h"
 
-// public interface
 @interface OSSongViewController : UIViewController
 
 @property (nonatomic, strong, readonly) OSSongView *songView;

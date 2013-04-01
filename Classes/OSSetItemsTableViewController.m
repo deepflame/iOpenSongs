@@ -21,10 +21,6 @@
 
 @implementation OSSetItemsTableViewController
 
-@synthesize set = _set;
-@synthesize delegate = _delegate;
-@synthesize currentSelection = _currentSelection;
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad

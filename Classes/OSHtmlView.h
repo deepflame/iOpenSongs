@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OSHtmlView : UIView
-
 @property (strong, nonatomic) NSURL *resourceURL;
-
 @end

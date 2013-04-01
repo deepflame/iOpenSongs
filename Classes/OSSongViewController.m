@@ -21,11 +21,6 @@
 
 @implementation OSSongViewController
 
-@synthesize song = _song;
-@synthesize extrasPopoverController = _extrasPopoverController;
-@synthesize extrasTableViewController = _extrasTableViewController;
-
-
 - (id)initWithSong:(Song *)song
 {
     self = [super init];
@@ -76,7 +71,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)showSupportInfo:(id)sender
+- (void)showSupportInfo:(id)sender
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if (self.extrasPopoverController.popoverVisible) {
@@ -91,12 +86,12 @@
     }
 }
 
-- (IBAction)revealSideMenu:(id)sender
+- (void)revealSideMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-#pragma mark - Private Accessor Overrides
+#pragma mark - Private Accessors
 
 - (OSSupportTableViewController *)extrasTableViewController
 {
@@ -116,7 +111,7 @@
     return _extrasPopoverController;
 }
 
-#pragma mark - Public Accessor Overrides
+#pragma mark - Public Accessors
 
 - (OSSongView *)songView
 {

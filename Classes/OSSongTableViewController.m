@@ -17,9 +17,6 @@
 @end
 
 @implementation OSSongTableViewController
-@synthesize delegate = _delegate;
-@synthesize searchBarColorInactive = _searchBarColorInactive;
-@synthesize searchBar = _searchBar;
 @synthesize searchDisplayController;
 
 #pragma mark - UIViewController
