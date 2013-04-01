@@ -3,7 +3,7 @@ platform :ios, '5.1'
 # UI
 pod 'ECSlidingViewController'
 pod 'MBProgressHUD'
-pod 'TDBadgedCell'
+pod 'TDBadgedCell', :podspec => 'https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec'
 
 # Core
 pod 'MagicalRecord'

@@ -34,9 +34,13 @@ DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
-  - TDBadgedCell
+  - TDBadgedCell (from `https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec`)
   - TestFlightSDK (~> 1.2.4)
   - uservoice-iphone-sdk
+
+EXTERNAL SOURCES:
+  TDBadgedCell:
+    :podspec: https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
   BlocksKit: 18102744fd7c44b54f1e54ce6ffe9258bcb5df81
@@ -47,7 +51,7 @@ SPEC CHECKSUMS:
   libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
-  TDBadgedCell: 5759d8dfcc7fa6256e19d326f025624563b32d0f
+  TDBadgedCell: b5d312e898f28a774b4ec4586c02c76a98948280
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
   uservoice-iphone-sdk: d26dd42b15148ea68303d2985e9b8fa3c7a430cb
 
