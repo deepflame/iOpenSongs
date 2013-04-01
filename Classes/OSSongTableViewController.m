@@ -8,6 +8,7 @@
 
 #import "OSSongTableViewController.h"
 
+#import <TDBadgedCell.h>
 #import <objc/message.h>
 
 @interface OSSongTableViewController () <UISearchBarDelegate>
@@ -69,16 +70,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Song Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TDBadgedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+        cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
     }
     
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = song.title;
     cell.detailTextLabel.text = song.author;
+    cell.badgeString = [self.dataSource songTableViewController:self badgeStringForSong:song];
     
     return cell;
 }

@@ -15,7 +15,7 @@
 #import "OSSetItemSongsTableViewController.h"
 #import "OSRevealSidebarController.h"
 
-@interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSetItemSongsTableViewControllerDelegate>
+@interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @end
 
@@ -139,7 +139,20 @@
     [self.set addItemsObject:newSongItem ];
 }
 
-#pragma mark - SetItemSongsTableViewControllerDelegate
+#pragma mark - OSSongTableViewControllerDataSource
+
+- (NSString *)songTableViewController:(OSSongTableViewController *)sender badgeStringForSong:(Song *)song
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"set == %@ AND song == %@", self.set, song];
+    NSUInteger songCount = [SetItemSong MR_countOfEntitiesWithPredicate:predicate];
+    
+    if (songCount) {
+        return [NSString stringWithFormat:@"%d", songCount];
+    }
+    return nil;
+}
+
+#pragma mark - OSSetItemSongsTableViewControllerDelegate
 
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
@@ -152,6 +165,7 @@
 {
     OSSetItemSongsTableViewController *setItemSongsTVC = [[OSSetItemSongsTableViewController alloc] init];
     setItemSongsTVC.delegate = self;
+    setItemSongsTVC.dataSource = self;
     
     [self.navigationController pushViewController:setItemSongsTVC animated:YES];
 }

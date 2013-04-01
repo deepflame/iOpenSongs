@@ -106,6 +106,7 @@
 		3E3FFF8716FE046000E6381A /* OSITunesImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSITunesImportTableViewController.h; sourceTree = "<group>"; };
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
+		3E4EF9301709A5DE0063E772 /* OSSongTableViewControllerDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewControllerDataSource.h; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
 		3E5E878314DD7680003B645A /* OSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSAboutViewController.h; sourceTree = "<group>"; };
 		3E5E878414DD7680003B645A /* OSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSAboutViewController.m; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 				3E7F1B6115847150008C222F /* OSSongTableViewController.h */,
 				3E7F1B6215847150008C222F /* OSSongTableViewController.m */,
 				3EE5F8E6170975EB006F2DDC /* OSSongTableViewControllerDelegate.h */,
+				3E4EF9301709A5DE0063E772 /* OSSongTableViewControllerDataSource.h */,
 				3EDDA47814B098F700BB781C /* OSSongMasterViewController.h */,
 				3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */,
 				3EDDA41714AEC3A400BB781C /* OSSongViewController.h */,

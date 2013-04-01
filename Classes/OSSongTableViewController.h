@@ -10,7 +10,9 @@
 #import "CoreDataTableViewController.h"
 
 #import "OSSongTableViewControllerDelegate.h"
+#import "OSSongTableViewControllerDataSource.h"
 
 @interface OSSongTableViewController : CoreDataTableViewController
 @property (nonatomic, weak) id<OSSongTableViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<OSSongTableViewControllerDataSource> dataSource;
 @end

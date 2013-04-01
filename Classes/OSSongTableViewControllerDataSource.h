@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol OSSongTableViewControllerDataSource <NSObject>
+@class Song;
+@class OSSongTableViewController;
 
+@protocol OSSongTableViewControllerDataSource <NSObject>
+- (NSString *)songTableViewController:(OSSongTableViewController *)sender badgeStringForSong:(Song *)song;
 @end
