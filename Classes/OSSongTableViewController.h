@@ -9,12 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-#import "Song.h"
-
-
-@protocol OSSongTableViewControllerDelegate <NSObject>
-- (void)songTableViewController:(id)sender didSelectSong:(Song *)song;
-@end
+#import "OSSongTableViewControllerDelegate.h"
 
 @interface OSSongTableViewController : CoreDataTableViewController
 @property (nonatomic, weak) id<OSSongTableViewControllerDelegate> delegate;

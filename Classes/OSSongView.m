@@ -99,7 +99,7 @@
     if (_song != song) {
         _song = song;
         
-        [self.delegate songViewDidChangeSong:_song];
+        [self.delegate songView:self didChangeSong:_song];
         [self displaySong];
     }
 }

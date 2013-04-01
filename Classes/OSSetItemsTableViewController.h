@@ -9,13 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
+#import "OSSetItemsTableViewControllerDelegate.h"
 #import "Set.h"
-#import "SetItem.h"
-
-
-@protocol OSSetItemsTableViewControllerDelegate <NSObject>
-- (void)setItemsTableViewController:(id)sender didSelectSetItem:(SetItem *)setItem;
-@end
 
 @interface OSSetItemsTableViewController : CoreDataTableViewController
 @property (nonatomic, copy) Set *set;

@@ -9,13 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "OSSongTableViewController.h"
 
-#import "Song.h"
-
-@protocol SetItemSongsTableViewControllerDelegate <NSObject>
-@optional
-- (void) setItemSongsTableViewController:(id)sender finishedEditing:(BOOL)animated;
-@end
+#import "OSSetItemSongsTableViewControllerDelegate.h"
 
 @interface OSSetItemSongsTableViewController : OSSongTableViewController
-@property (nonatomic, weak) id<OSSongTableViewControllerDelegate, SetItemSongsTableViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<OSSongTableViewControllerDelegate, OSSetItemSongsTableViewControllerDelegate> delegate;
 @end

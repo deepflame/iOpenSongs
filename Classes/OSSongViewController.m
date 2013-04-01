@@ -62,7 +62,7 @@
 
 #pragma mark - OSSongViewDelegate
 
-- (void)songViewDidChangeSong:(Song *)song
+- (void)songView:(OSSongView *)sender didChangeSong:(Song *)song
 {
     self.title = song.title;
 }

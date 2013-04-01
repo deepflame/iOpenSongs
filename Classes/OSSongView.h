@@ -8,17 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "OSSongViewDelegate.h"
 #import "Song.h"
-
-@protocol OSSongViewDelegate <NSObject>
-- (void)songViewDidChangeSong:(Song *)song;
-@end
 
 @interface OSSongView : UIView
 
 - (void)resetSongStyle;
 
-@property (nonatomic, weak) NSObject<OSSongViewDelegate> *delegate;
+@property (nonatomic, weak) id<OSSongViewDelegate> delegate;
 
 @property (nonatomic, copy) Song *song;
 
