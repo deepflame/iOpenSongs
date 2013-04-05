@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/deepflame/iOpenSongs.png?branch=master)](https://travis-ci.org/deepflame/iOpenSongs)
+
 # iOpenSongs
 
 Welcome to the iOpenSong project.
