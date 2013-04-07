@@ -81,6 +81,8 @@
     cell.textLabel.text = song.title;
     cell.detailTextLabel.text = song.author;
     cell.badgeString = [self.dataSource songTableViewController:self badgeStringForSong:song];
+    cell.badge.radius = 6;
+    cell.badge.fontSize = 15;
     
     return cell;
 }
