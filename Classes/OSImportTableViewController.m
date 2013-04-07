@@ -44,15 +44,6 @@
     return self;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -180,7 +171,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)showActionSheet:(id)sender
+- (void)showActionSheet:(id)sender
 {
     if (! [self.actionSheet isVisible]) {
         [self.actionSheet showFromBarButtonItem:sender animated:YES];
