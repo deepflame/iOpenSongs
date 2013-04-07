@@ -131,10 +131,10 @@
 
 - (void)songTableViewController:(OSSongTableViewController *)sender didSelectSong:(Song *)song
 {
-    SetItemSong *newSongItem = [NSEntityDescription insertNewObjectForEntityForName:@"SetItemSong"
-                                                             inManagedObjectContext:self.set.managedObjectContext];
+    SetItemSong *newSongItem = [SetItemSong MR_createEntity];
+
     newSongItem.song = song;
-    newSongItem.position = [NSNumber numberWithInt:((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1];
+    newSongItem.position = @(((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1);
     
     [self.set addItemsObject:newSongItem ];
 }

@@ -83,12 +83,10 @@
         return [md1.filename localizedCompare:md2.filename];
     }];
     
-    NSMutableArray *fdContents = [NSMutableArray array];
-    for (DBMetadata *metadata in dbContents) {
-        OSFileDescriptor *fd = [[OSFileDescriptor alloc] initWithDropboxMetadata:metadata];
-        [fdContents addObject:fd];
-    }
-    self.contents = fdContents;
+    // map to internal format
+    self.contents = [dbContents map:^id(DBMetadata *md) {
+        return [[OSFileDescriptor alloc] initWithDropboxMetadata:md];
+    }];
     
     [self.tableView reloadData];
 }
