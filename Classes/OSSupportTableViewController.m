@@ -175,8 +175,8 @@
         aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
         aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
-        [self presentModalViewController:aboutNC animated:YES];
         [self.delegate supportViewController:self willPresentModalViewController:aboutNC];
+        [self presentViewController:aboutNC animated:YES completion:nil];
     }
 }
 
