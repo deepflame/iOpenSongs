@@ -90,6 +90,7 @@
             // dismiss HUD
             [self.hud hide:YES];
             
+            [self handleImportErrors];
             [self.navigationController popToRootViewControllerAnimated:YES];
         });
         

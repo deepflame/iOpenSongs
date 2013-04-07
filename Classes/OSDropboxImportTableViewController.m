@@ -123,6 +123,8 @@
 - (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
     NSLog(@"There was an error loading the file - %@", error);
     
+    [self.importErrors addObject:error];
+    
     [self loadNextFileToImportOrReturn];
 }
 
@@ -141,6 +143,8 @@
     if (self.filesToImport.count == 0) {
         [context MR_saveToPersistentStoreAndWait];
         [self.hud hide:YES];
+        
+        [self handleImportErrors];
         [self.navigationController popToRootViewControllerAnimated:YES];
         return; // <- !!
     }

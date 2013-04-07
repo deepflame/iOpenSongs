@@ -19,8 +19,9 @@
     NSError *internalError = nil;
     NSDictionary *info = [self openSongInfoWithOpenSongFileUrl:fileURL error:&internalError];
     
-    if (info == nil && *error != nil) {
-        *error = [NSError errorWithDomain:nil code:NSFileReadCorruptFileError userInfo:nil];
+    if (info == nil && &error != nil) {
+        NSDictionary *userInfo = @{NSFilePathErrorKey: fileURL.path, NSURLErrorKey: fileURL};
+        *error = [NSError errorWithDomain:@"import" code:NSFileReadCorruptFileError userInfo:userInfo];
     }
     
     return [self updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:context];

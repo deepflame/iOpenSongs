@@ -206,8 +206,24 @@
         return; // <- !!
     }
     
+    NSArray *filePaths = [self.importErrors map:^id(NSError *error) {
+        return [[error.userInfo valueForKey:NSFilePathErrorKey] lastPathComponent];
+    }];
+    
     // process import issues
-        
+    NSString *failureReason = [NSString stringWithFormat:@"Issue importing %d file(s):", self.importErrors.count];
+    NSString *failureDescription = [filePaths componentsJoinedByString:@"\n"];
+    NSString *recoverySuggestion = @"Make sure the files are in the OpenSong format.";
+    
+    NSMutableDictionary *errorInfo = [NSMutableDictionary dictionary];
+    [errorInfo setValue:failureReason forKey:NSLocalizedFailureReasonErrorKey];
+    [errorInfo setValue:recoverySuggestion forKey:NSLocalizedRecoverySuggestionErrorKey];
+    
+    [UIAlertView showAlertViewWithTitle:failureReason
+                                message:[NSString stringWithFormat:@"%@\n\n%@", failureDescription, recoverySuggestion]
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil
+                                handler:nil];
 }
 
 @end
