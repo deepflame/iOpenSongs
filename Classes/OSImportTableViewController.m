@@ -111,6 +111,7 @@
     if (fd.isDirectory) {
         cell.detailTextLabel.text = @"";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.imageView.image = [UIImage imageNamed:@"Folder-icon"];
     } else {
         cell.detailTextLabel.text = fd.humanReadableSize;
         
@@ -118,7 +119,13 @@
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
-        }        
+        }
+        
+        if ([[fd.filename pathExtension] isEqualToString:@""]) {
+            cell.imageView.image = [UIImage imageNamed:@"Document-song-icon"];
+        } else {
+            cell.imageView.image = [UIImage imageNamed:@"Document-empty-icon"];
+        }
     }
     
     return cell;

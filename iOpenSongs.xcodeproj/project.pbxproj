@@ -77,6 +77,12 @@
 		3EF00CAF153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
 		3EF00CB2153E5F9C000A0C73 /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
 		3EF00CB3153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */; };
+		3EF638871711ECB60091891D /* Document-empty-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6387F1711ECB60091891D /* Document-empty-icon.png */; };
+		3EF638881711ECB60091891D /* Document-empty-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638801711ECB60091891D /* Document-empty-icon@2x.png */; };
+		3EF638891711ECB60091891D /* Document-song-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638811711ECB60091891D /* Document-song-icon.png */; };
+		3EF6388A1711ECB60091891D /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
+		3EF638911711F1320091891D /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
+		3EF638921711F1320091891D /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
 		ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +206,12 @@
 		3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail@2x.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Song+AccessorOverrides.h"; sourceTree = "<group>"; };
 		3EF53A271525DD3D0073FB57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Vendor/opensong.js/README.md; sourceTree = SOURCE_ROOT; };
+		3EF6387F1711ECB60091891D /* Document-empty-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-empty-icon.png"; sourceTree = "<group>"; };
+		3EF638801711ECB60091891D /* Document-empty-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-empty-icon@2x.png"; sourceTree = "<group>"; };
+		3EF638811711ECB60091891D /* Document-song-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-song-icon.png"; sourceTree = "<group>"; };
+		3EF638821711ECB60091891D /* Document-song-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-song-icon@2x.png"; sourceTree = "<group>"; };
+		3EF6388F1711F1320091891D /* Folder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder-icon.png"; sourceTree = "<group>"; };
+		3EF638901711F1320091891D /* Folder-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder-icon@2x.png"; sourceTree = "<group>"; };
 		83DDE2BF561849B48BA5F099 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -267,6 +279,12 @@
 		3E637B0516D07BE700514793 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3EF6388F1711F1320091891D /* Folder-icon.png */,
+				3EF638901711F1320091891D /* Folder-icon@2x.png */,
+				3EF6387F1711ECB60091891D /* Document-empty-icon.png */,
+				3EF638801711ECB60091891D /* Document-empty-icon@2x.png */,
+				3EF638811711ECB60091891D /* Document-song-icon.png */,
+				3EF638821711ECB60091891D /* Document-song-icon@2x.png */,
 				3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */,
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
 				3E9A92391529648400AA6B57 /* ProgramIcon114.png */,
@@ -616,6 +634,12 @@
 				3E637B0316CFDEF400514793 /* glyphicons_244_conversation@2x.png in Resources */,
 				3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */,
 				3EA0BBA016D121C800D7D97D /* Sample Song in Resources */,
+				3EF638871711ECB60091891D /* Document-empty-icon.png in Resources */,
+				3EF638881711ECB60091891D /* Document-empty-icon@2x.png in Resources */,
+				3EF638891711ECB60091891D /* Document-song-icon.png in Resources */,
+				3EF6388A1711ECB60091891D /* Document-song-icon@2x.png in Resources */,
+				3EF638911711F1320091891D /* Folder-icon.png in Resources */,
+				3EF638921711F1320091891D /* Folder-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
