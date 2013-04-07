@@ -10,13 +10,23 @@
 
 @implementation Song (OpenSong)
 
+#pragma mark - Public Methods
 
 + (Song *) updateOrCreateSongWithOpenSongFileFromURL:(NSURL *)fileURL
                               inManagedObjectContext:(NSManagedObjectContext *)context
+                                               error:(NSError **)error
 {
-    NSDictionary *info = [self openSongInfoWithOpenSongFileUrl:fileURL];
+    NSError *internalError = nil;
+    NSDictionary *info = [self openSongInfoWithOpenSongFileUrl:fileURL error:&internalError];
+    
+    if (info == nil && *error != nil) {
+        *error = [NSError errorWithDomain:nil code:NSFileReadCorruptFileError userInfo:nil];
+    }
+    
     return [self updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:context];
 }
+
+#pragma mark - Private Methods
 
 + (Song *) updateOrCreateSongWithOpenSongInfo:(NSDictionary *)info
                        inManagedObjectContext:(NSManagedObjectContext *)context
@@ -33,16 +43,16 @@
     return song;
 }
 
-+ (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl
++ (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl error:(NSError **)error
 {
-    NSString *textContent = [NSString stringWithContentsOfURL:fileUrl encoding:NSUTF8StringEncoding error:nil];
+    NSString *textContent = [NSString stringWithContentsOfURL:fileUrl encoding:NSUTF8StringEncoding error:error];
     if (!textContent) {
         // ERROR, not a text file
         return nil;
     }
     
     RKXMLParserLibXML *parser = [[RKXMLParserLibXML alloc] init];
-    id result = [parser objectFromString:textContent error:nil];
+    id result = [parser objectFromString:textContent error:error];
     if (!result) {
         // ERROR, not an xml file
         return nil;

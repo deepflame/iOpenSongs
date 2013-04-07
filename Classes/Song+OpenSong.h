@@ -14,7 +14,6 @@
 + (NSDictionary *) openSongInfoWithOpenSongFileUrl:(NSURL *)fileUrl;
 
 + (Song *) updateOrCreateSongWithOpenSongFileFromURL:(NSURL *)fileURL
-                              inManagedObjectContext:(NSManagedObjectContext *)context;
 
 + (Song *) songWithOpenSongInfo:(NSDictionary *)info
             inManagedObjectContext:(NSManagedObjectContext *)context;
@@ -23,5 +22,7 @@
                        inManagedObjectContext:(NSManagedObjectContext *)context;
 
 - (void) updateWithOpenSongInfo:(NSDictionary *)info;
+                              inManagedObjectContext:(NSManagedObjectContext *)context
+                                               error:(NSError **)error;
 
 @end
