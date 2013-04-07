@@ -169,7 +169,7 @@
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
                         
             // select if it is not a directory
-            if (![cell.detailTextLabel.text isEqualToString:@""]) {
+            if (cell.accessoryType != UITableViewCellAccessoryDisclosureIndicator) {
                 SuppressPerformSelectorLeakWarning([self.selectedIndexPaths performSelector:selector withObject:indexPath]);
             }
         }
