@@ -68,16 +68,13 @@
         
         [[self.selectedContents allObjects] enumerateObjectsUsingBlock:^(OSFileDescriptor *fd, NSUInteger idx, BOOL *stop) {
             NSURL *fileURL = [NSURL fileURLWithPath:fd.path];
+            NSError *error = nil;
             
-            // parse file
-            NSDictionary *info = [Song openSongInfoWithOpenSongFileUrl:fileURL];
+            [Song updateOrCreateSongWithOpenSongFileFromURL:fileURL inManagedObjectContext:context error:&error];
             
-            if (!info) {
-                CLS_LOG(@"Error: %@", fd.filename);
-                return; // <- !!
+            if (error) {
+                [self.importErrors addObject:error];
             }
-            
-            [Song updateOrCreateSongWithOpenSongInfo:info inManagedObjectContext:context];
             
             // save every 100 songs
             if (idx % 100 == 0) {

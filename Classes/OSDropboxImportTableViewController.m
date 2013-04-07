@@ -103,10 +103,16 @@
 - (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
+    NSError *error = nil;
+    
     // save song, delete temp file
     NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
-    [Song updateOrCreateSongWithOpenSongFileFromURL:[NSURL fileURLWithPath:localPath] inManagedObjectContext:context];
+    [Song updateOrCreateSongWithOpenSongFileFromURL:[NSURL fileURLWithPath:localPath] inManagedObjectContext:context error:&error];
     [[NSFileManager defaultManager] removeItemAtPath:localPath error:nil];
+    
+    if (error) {
+        [self.importErrors addObject:error];
+    }
     
     // update progress
     self.hud.progress = (float)(self.selectedContents.count - self.filesToImport.count) / (float)self.selectedContents.count;
