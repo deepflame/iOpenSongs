@@ -42,6 +42,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.delegate songTableViewController:self didDeleteSong:song];
+    }
+}
+
+#pragma mark - UITableViewDataSource
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSString *badge = [self.dataSource songTableViewController:self badgeStringForSong:song];
+    return badge != nil;
+}
+
 #pragma mark - Actions
 
 - (void)doneEditing:(UIBarButtonItem *)sender

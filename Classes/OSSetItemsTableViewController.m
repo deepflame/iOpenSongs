@@ -139,6 +139,13 @@
     [self.set addItemsObject:newSongItem ];
 }
 
+- (void)songTableViewController:(OSSongTableViewController *)sender didDeleteSong:(Song *)song
+{
+    // delete last Song if multiple
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"set == %@ AND song == %@", self.set, song];
+    [[SetItemSong MR_findFirstWithPredicate:predicate sortedBy:@"position" ascending:NO] MR_deleteEntity];
+}
+
 #pragma mark - OSSongTableViewControllerDataSource
 
 - (NSString *)songTableViewController:(OSSongTableViewController *)sender badgeStringForSong:(Song *)song
