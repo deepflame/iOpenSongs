@@ -4,6 +4,7 @@ platform :ios, '5.1'
 pod 'ECSlidingViewController'
 pod 'MBProgressHUD'
 pod 'TDBadgedCell', :podspec => 'https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec'
+pod 'SYPaginator'
 
 # Core
 pod 'MagicalRecord'

@@ -22,6 +22,7 @@ PODS:
   - libffi (3.0.11)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
+  - SYPaginator (1.0.0)
   - TDBadgedCell (2.2)
   - TestFlightSDK (1.2.4)
   - uservoice-iphone-sdk (2.0.7)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - MagicalRecord
   - MBProgressHUD
   - TDBadgedCell (from `https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec`)
+  - SYPaginator
   - TestFlightSDK (~> 1.2.4)
   - uservoice-iphone-sdk
 
@@ -52,6 +54,7 @@ SPEC CHECKSUMS:
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   TDBadgedCell: b5d312e898f28a774b4ec4586c02c76a98948280
+  SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
   uservoice-iphone-sdk: d26dd42b15148ea68303d2985e9b8fa3c7a430cb
 
