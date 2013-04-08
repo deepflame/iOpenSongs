@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface OSSetTableViewController : CoreDataTableViewController
+#import "OSSetTableViewControllerDelegate.h"
 
+@interface OSSetTableViewController : CoreDataTableViewController
+@property id<OSSetTableViewControllerDelegate> delegate;
 @end

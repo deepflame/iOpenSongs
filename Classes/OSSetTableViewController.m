@@ -95,10 +95,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
-    setItemsTVC.set = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    setItemsTVC.set = set;
     setItemsTVC.delegate = (OSRevealSidebarController *)self.slidingViewController;
     
+    [self.delegate setTableViewController:self didSelectSet:set];
     [self.navigationController pushViewController:setItemsTVC animated:YES];
 }
 
