@@ -10,6 +10,7 @@
 #import <FRLayeredNavigation.h>
 
 #import "OSSongMasterViewController.h"
+#import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
 @interface OSRevealSidebarController : FRLayeredNavigationController <OSSongTableViewControllerDelegate, OSSetTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>

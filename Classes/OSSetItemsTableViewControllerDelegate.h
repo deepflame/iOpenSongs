@@ -10,7 +10,8 @@
 
 @class OSSetItemsTableViewController;
 @class SetItem;
+@class Set;
 
 @protocol OSSetItemsTableViewControllerDelegate <NSObject>
-- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem;
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set;
 @end

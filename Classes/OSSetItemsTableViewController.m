@@ -191,7 +191,7 @@
 - (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self.delegate setItemsTableViewController:self didSelectSetItem:setItem];
+    [self.delegate setItemsTableViewController:self didSelectSetItem:setItem fromSet:self.set];
 }
 
 #pragma mark - Public Accossor Overrides

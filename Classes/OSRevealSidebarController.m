@@ -89,7 +89,7 @@
 
 #pragma mark - OSSetItemsTableViewControllerDelegate
 
-- (void)setItemsTableViewController:(id)sender didSelectSetItem:(SetItem *)setItem
+- (void)setItemsTableViewController:(id)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
 {    
     OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
     songVC.songView.song = [(SetItemSong *)setItem song];
