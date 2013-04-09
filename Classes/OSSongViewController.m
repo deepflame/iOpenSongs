@@ -9,7 +9,7 @@
 #import "OSSongViewController.h"
 
 #import "OSSongMasterViewController.h"
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 #import "OSSupportTableViewController.h"
 
 @interface OSSongViewController () <UIWebViewDelegate, OSSongViewDelegate ,OSSupportViewControllerDelegate>

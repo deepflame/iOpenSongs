@@ -12,7 +12,7 @@
 #import "Song+Import.h"
 
 #import "MBProgressHUD.h"
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 
 #import "OSITunesImportTableViewController.h"
 #import "OSDropboxImportTableViewController.h"

@@ -7,7 +7,7 @@
 //
 
 #import "OSStyleViewController.h"
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 #import "OSSongViewController.h"
 
 

@@ -13,7 +13,7 @@
 
 #import "OSSongViewController.h"
 #import "OSSetItemSongsTableViewController.h"
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 
 @interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;

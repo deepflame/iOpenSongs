@@ -12,7 +12,7 @@
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
 		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
 		3E355B9714F1FB8A00E49942 /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
-		3E35844B151E100E00137FC4 /* OSRevealSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */; };
+		3E35844B151E100E00137FC4 /* OSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSMainViewController.m */; };
 		3E35844D151E120F00137FC4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
 		3E3872AF16EB1676003A0DCC /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
 		3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7B717080B26006A9B34 /* OSSongView.m */; };
@@ -102,8 +102,8 @@
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon57.png; sourceTree = "<group>"; };
-		3E358449151E100E00137FC4 /* OSRevealSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSRevealSidebarController.h; sourceTree = "<group>"; };
-		3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSRevealSidebarController.m; sourceTree = "<group>"; };
+		3E358449151E100E00137FC4 /* OSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMainViewController.h; sourceTree = "<group>"; };
+		3E35844A151E100E00137FC4 /* OSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSMainViewController.m; sourceTree = "<group>"; };
 		3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		3E3872AE16EB1676003A0DCC /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 				3E3EE7B917081C93006A9B34 /* Support */,
 				3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */,
 				3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */,
-				3E358449151E100E00137FC4 /* OSRevealSidebarController.h */,
-				3E35844A151E100E00137FC4 /* OSRevealSidebarController.m */,
+				3E358449151E100E00137FC4 /* OSMainViewController.h */,
+				3E35844A151E100E00137FC4 /* OSMainViewController.m */,
 				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
 				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 			);
@@ -709,7 +709,7 @@
 				3EDDA40F14AEC3A400BB781C /* main.m in Sources */,
 				3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */,
 				3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */,
-				3E35844B151E100E00137FC4 /* OSRevealSidebarController.m in Sources */,
+				3E35844B151E100E00137FC4 /* OSMainViewController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* OSAppDelegate.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
 				3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */,

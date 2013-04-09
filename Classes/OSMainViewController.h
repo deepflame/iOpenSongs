@@ -13,6 +13,6 @@
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
-@interface OSRevealSidebarController : FRLayeredNavigationController <OSSongTableViewControllerDelegate, OSSetTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>
+@interface OSMainViewController : FRLayeredNavigationController <OSSongTableViewControllerDelegate, OSSetTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>
 
 @end

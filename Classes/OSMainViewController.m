@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 
 #import "OSSongViewController.h"
 #import "OSSongMasterViewController.h"
@@ -17,11 +17,11 @@
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
-@interface OSRevealSidebarController ()
+@interface OSMainViewController ()
 @property (nonatomic, strong) UIViewController *currentDetailViewController;
 @end
 
-@implementation OSRevealSidebarController
+@implementation OSMainViewController
 
 - (id)init
 {
