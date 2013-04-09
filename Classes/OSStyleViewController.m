@@ -67,7 +67,7 @@
 
 - (OSSongViewController *)songViewController
 {
-    id svc = [self.slidingViewController topViewController];
+    id svc = [self.layeredNavigationController topViewController];
     
     if ([svc isKindOfClass:[UINavigationController class]]) {
         svc = ((UINavigationController *) svc).topViewController;

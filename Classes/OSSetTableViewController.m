@@ -99,7 +99,7 @@
     
     OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
     setItemsTVC.set = set;
-    setItemsTVC.delegate = (OSRevealSidebarController *)self.slidingViewController;
+    setItemsTVC.delegate = (OSRevealSidebarController *)self.layeredNavigationController;
     
     [self.delegate setTableViewController:self didSelectSet:set];
     [self.navigationController pushViewController:setItemsTVC animated:YES];
