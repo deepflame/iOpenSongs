@@ -56,6 +56,7 @@
 		3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
 		3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
 		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
+		3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
 		3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
 		3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
@@ -171,6 +172,8 @@
 		3EC697E8155E06C400022C0E /* OSSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetTableViewController.m; sourceTree = "<group>"; };
 		3ECC4AFF155E711B0003FFC7 /* OSSetItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetItemsTableViewController.h; sourceTree = "<group>"; };
 		3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetItemsTableViewController.m; sourceTree = "<group>"; };
+		3ECDA7EA1714B7BB0035E2B2 /* OSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDetailViewController.h; sourceTree = "<group>"; };
+		3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDetailViewController.m; sourceTree = "<group>"; };
 		3ED177F517134C3800B303CA /* OSSongPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongPageView.h; sourceTree = "<group>"; };
 		3ED177F617134C3800B303CA /* OSSongPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongPageView.m; sourceTree = "<group>"; };
 		3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */,
 				3E358449151E100E00137FC4 /* OSMainViewController.h */,
 				3E35844A151E100E00137FC4 /* OSMainViewController.m */,
+				3ECDA7EA1714B7BB0035E2B2 /* OSDetailViewController.h */,
+				3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */,
 				3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */,
 				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 			);
@@ -741,6 +746,7 @@
 				3E3EE7BC17082B5F006A9B34 /* OSHtmlView.m in Sources */,
 				3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */,
 				3E65A1D317136348009B2732 /* OSSetViewController.m in Sources */,
+				3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

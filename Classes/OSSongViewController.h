@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "OSDetailViewController.h"
 
 #import "Song.h"
 #import "OSSongView.h"
 
-@interface OSSongViewController : UIViewController
+@interface OSSongViewController : OSDetailViewController
 
 @property (nonatomic, strong, readonly) OSSongView *songView;
 
