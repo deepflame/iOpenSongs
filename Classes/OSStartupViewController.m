@@ -11,7 +11,6 @@
 
 #import "Song.h"
 
-#import "OSAppDelegate.h"
 #import "OSMainViewController.h"
 #import "UIApplication+Directories.h"
 
