@@ -19,6 +19,7 @@
 
 @interface OSMainViewController ()
 @property (nonatomic, strong) UIViewController *currentDetailViewController;
+@property (nonatomic, strong) UIViewController *rootViewController;
 @end
 
 @implementation OSMainViewController
@@ -62,6 +63,7 @@
         
         // top view controller
         self.currentDetailViewController = [[OSSongViewController alloc] init];
+        self.rootViewController = tabBarController;
     }
     return self;
 }
@@ -104,6 +106,9 @@
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController
 {
+    CGPoint currentTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
+    self.rootViewController.layeredNavigationItem.nextItemDistance = currentTopViewPosition.x;
+    
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self popToRootViewControllerAnimated:NO];
     [self pushViewController:uiVC inFrontOf:self.topViewController maximumWidth:YES animated:NO configuration:^(FRLayeredNavigationItem *item) {
