@@ -2,7 +2,6 @@ PODS:
   - BlocksKit (1.8.1):
     - libffi
   - Dropbox-iOS-SDK (1.3.4)
-  - ECSlidingViewController (0.9.0)
   - FormatterKit (1.1.1):
     - FormatterKit/AddressFormatter
     - FormatterKit/ArrayFormatter
@@ -18,6 +17,7 @@ PODS:
   - FormatterKit/TimeIntervalFormatter (1.1.1)
   - FormatterKit/UnitOfInformationFormatter (1.1.1)
   - FormatterKit/URLRequestFormatter (1.1.1)
+  - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - libffi (3.0.11)
   - MagicalRecord (2.1)
@@ -30,8 +30,8 @@ PODS:
 DEPENDENCIES:
   - BlocksKit
   - Dropbox-iOS-SDK
-  - ECSlidingViewController
   - FormatterKit
+  - FRLayeredNavigationController
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
@@ -47,9 +47,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BlocksKit: 18102744fd7c44b54f1e54ce6ffe9258bcb5df81
   Dropbox-iOS-SDK: 0531d0061c45b662f1748a1cbe59e2f358bdcaba
-  ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
   FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
   GoogleAnalytics-iOS-SDK: 5b5063f5bdc99bc093a652f590f572b4550c1862
+  FRLayeredNavigationController: f81afa80e6348276eac43f6555b0fa467861d36e
   libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52

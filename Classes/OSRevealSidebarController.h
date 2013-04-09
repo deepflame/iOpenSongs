@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECSlidingViewController.h"
+#import <FRLayeredNavigation.h>
 
 #import "OSSongMasterViewController.h"
 #import "OSSetItemsTableViewController.h"
 
-@interface OSRevealSidebarController : ECSlidingViewController <OSSongTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>
+@interface OSRevealSidebarController : FRLayeredNavigationController <OSSongTableViewControllerDelegate, OSSetTableViewControllerDelegate, OSSetItemsTableViewControllerDelegate>
 
 @end
