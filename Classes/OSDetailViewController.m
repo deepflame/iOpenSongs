@@ -24,9 +24,9 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *revealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(revealSideMenu:)];
+    UIBarButtonItem *sidebarBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
     UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
-    self.navigationItem.leftBarButtonItems = @[revealBarButtonItem];
+    self.navigationItem.leftBarButtonItems = @[sidebarBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
 }
 
@@ -59,9 +59,13 @@
     }
 }
 
-- (void)revealSideMenu:(id)sender
+- (void)toggleSideMenu:(id)sender
 {
-    [self.layeredNavigationController expandViewControllersAnimated:YES];
+    if (self.layeredNavigationItem.currentViewPosition.x == 0) {
+        [self.layeredNavigationController expandViewControllersAnimated:YES];
+    } else {
+        [self.layeredNavigationController compressViewControllers:YES];
+    }
 }
 
 #pragma mark - Private Accessors
