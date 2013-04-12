@@ -31,7 +31,7 @@ DEPENDENCIES:
   - BlocksKit
   - Dropbox-iOS-SDK
   - FormatterKit
-  - FRLayeredNavigationController
+  - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
@@ -41,13 +41,15 @@ DEPENDENCIES:
   - uservoice-iphone-sdk
 
 EXTERNAL SOURCES:
+  FRLayeredNavigationController:
+    :git: https://github.com/deepflame/FRLayeredNavigationController
 
 SPEC CHECKSUMS:
   BlocksKit: 18102744fd7c44b54f1e54ce6ffe9258bcb5df81
   Dropbox-iOS-SDK: 0531d0061c45b662f1748a1cbe59e2f358bdcaba
   FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
   GoogleAnalytics-iOS-SDK: 5b5063f5bdc99bc093a652f590f572b4550c1862
-  FRLayeredNavigationController: f81afa80e6348276eac43f6555b0fa467861d36e
+  FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52

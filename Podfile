@@ -1,7 +1,7 @@
 platform :ios, '5.1'
 
 # UI
-pod 'FRLayeredNavigationController'
+pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
 pod 'MBProgressHUD'
 pod 'TDBadgedCell'
 pod 'SYPaginator'
