@@ -106,8 +106,7 @@
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController
 {
-    CGPoint currentTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
-    self.rootViewController.layeredNavigationItem.nextItemDistance = currentTopViewPosition.x;
+    CGPoint prevTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
     
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self popToRootViewControllerAnimated:NO];
@@ -115,6 +114,11 @@
         item.hasChrome = NO;
         item.hasBorder = NO;
     }];
+    
+    // make sure the new controller is open when the previous was
+    if (prevTopViewPosition.x > 0) {
+        [self.layeredNavigationController expandViewControllersAnimated:NO];
+    }
 }
 
 @end
