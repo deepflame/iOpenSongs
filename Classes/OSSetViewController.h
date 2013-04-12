@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <SYPaginator.h>
+#import "OSDetailViewController.h"
 
 #import "Set.h"
 
-@interface OSSetViewController : SYPaginatorViewController
+@interface OSSetViewController : OSDetailViewController
 
 @property (nonatomic, strong) Set *set;
 

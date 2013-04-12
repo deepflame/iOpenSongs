@@ -12,7 +12,7 @@
 #import "OSSongPageView.h"
 #import "SetItemSong.h"
 
-@interface OSSetViewController ()
+@interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate>
 
 @end
 
