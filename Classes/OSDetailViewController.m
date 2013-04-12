@@ -8,6 +8,7 @@
 
 #import "OSDetailViewController.h"
 
+#import <FRLayeredNavigation.h>
 #import "OSSupportTableViewController.h"
 
 @interface OSDetailViewController () <OSSupportViewControllerDelegate>
@@ -60,7 +61,7 @@
 
 - (void)revealSideMenu:(id)sender
 {
-    //[self.slidingViewController anchorTopViewTo:ECRight];
+    [self.layeredNavigationController expandViewControllersAnimated:YES];
 }
 
 #pragma mark - Private Accessors
