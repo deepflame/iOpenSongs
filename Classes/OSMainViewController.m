@@ -70,6 +70,13 @@
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation 
 {
     return [self.topViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
