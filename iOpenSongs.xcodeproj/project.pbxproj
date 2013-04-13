@@ -92,6 +92,7 @@
 /* Begin PBXFileReference section */
 		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = iOpenSongs.entitlements; path = Resources/iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
+		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
@@ -374,6 +375,7 @@
 			children = (
 				3EC697E7155E06C400022C0E /* OSSetTableViewController.h */,
 				3EC697E8155E06C400022C0E /* OSSetTableViewController.m */,
+				3E65A1D417137206009B2732 /* OSSetTableViewControllerDelegate.h */,
 				3ECC4AFF155E711B0003FFC7 /* OSSetItemsTableViewController.h */,
 				3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */,
 				3EE5F8E8170978BE006F2DDC /* OSSetItemsTableViewControllerDelegate.h */,
@@ -382,7 +384,7 @@
 				3EE5F8E7170977DD006F2DDC /* OSSetItemSongsTableViewControllerDelegate.h */,
 				3E65A1D117136348009B2732 /* OSSetViewController.h */,
 				3E65A1D217136348009B2732 /* OSSetViewController.m */,
-				3E65A1D417137206009B2732 /* OSSetTableViewControllerDelegate.h */,
+				3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */,
 			);
 			name = Set;
 			sourceTree = "<group>";
