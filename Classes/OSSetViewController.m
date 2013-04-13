@@ -27,6 +27,10 @@
     paginator.dataSource = self;
     paginator.delegate = self;
     paginator.pageGapWidth = 1.0f;
+    paginator.paginationDirection = SYPageViewPaginationDirectionVertical;
+    
+    paginator.scrollView.alwaysBounceHorizontal = (paginator.paginationDirection == SYPageViewPaginationDirectionVertical);
+    paginator.scrollView.alwaysBounceVertical = (paginator.paginationDirection == SYPageViewPaginationDirectionHorizontal);
     
     self.view = paginator;
 }
