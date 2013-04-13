@@ -16,7 +16,7 @@
 #import "OSMainViewController.h"
 
 @interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate>
-@property (nonatomic, strong) NSIndexPath *currentSelection;
+
 @end
 
 @implementation OSSetItemsTableViewController
@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // preserve selection between presentations
+    self.clearsSelectionOnViewWillAppear = NO;
  
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
     self.navigationItem.leftBarButtonItems = @[addButtonItem];
@@ -41,8 +41,7 @@
     [super viewWillAppear:animated];
 
     // select previous item
-    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:UITableViewScrollPositionNone];
-    [self selectItemAtIndexPath:self.currentSelection];
+    [self selectSetItemAtIndexPath:[self.tableView indexPathForSelectedRow]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -84,10 +83,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
         [self.set.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        // delete curent selection if it was deleted
-        if ([self.currentSelection isEqual:indexPath]) {
-            self.currentSelection = nil;
-        }
     }
 }
 
@@ -115,10 +110,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self selectItemAtIndexPath:indexPath];
-
-    // save current selection
-    self.currentSelection = indexPath;
+    [self selectSetItemAtIndexPath:indexPath];
     
     // close sliding view controller if on Phone in portrait mode
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
@@ -196,7 +188,7 @@
                                                         delegate:self];
 }
 
-- (void)selectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)selectSetItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.delegate setItemsTableViewController:self didSelectSetItem:setItem fromSet:self.set];
