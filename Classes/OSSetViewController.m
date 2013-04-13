@@ -26,7 +26,7 @@
     paginator.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     paginator.dataSource = self;
     paginator.delegate = self;
-    paginator.pageGapWidth = 0.0f;
+    paginator.pageGapWidth = 1.0f;
     
     self.view = paginator;
 }
