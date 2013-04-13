@@ -13,23 +13,47 @@
 #import "SetItemSong.h"
 
 @interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate>
-
+@property (nonatomic, readonly) SYPaginatorView *paginatorView;
 @end
 
 @implementation OSSetViewController
+
+#pragma mark - UIViewController
+
+- (void)loadView
+{
+    SYPaginatorView *paginator = [[SYPaginatorView alloc] initWithFrame:CGRectZero];
+    paginator.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    paginator.dataSource = self;
+    paginator.delegate = self;
+    paginator.pageGapWidth = 0.0f;
+    
+    self.view = paginator;
+}
 
 #pragma mark - SYPaginatorViewDelegate
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView didScrollToPageAtIndex:(NSInteger)pageIndex
 {
+    // FIXME: setitem positions not consistent...
+    NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]];
+    SetItem *setItem = setItems[pageIndex];
     
+    // set the title
+    if ([setItem isMemberOfClass:[SetItemSong class]]) {
+        SetItemSong *songItem = (SetItemSong *)setItem;
+        self.title = songItem.song.title;
+    }
 }
 
--(void)paginatorView:(SYPaginatorView *)paginatorView willDisplayView:(UIView *)view atIndex:(NSInteger)pageIndex
+- (void)paginatorView:(SYPaginatorView *)paginatorView willDisplayView:(UIView *)view atIndex:(NSInteger)pageIndex
 {
-    NSLog(@"will display view at index: %i", pageIndex + 1);
+    // FIXME: setitem positions not consistent...
+    NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]];
+    SetItem *setItem = setItems[pageIndex];
+    
+    [self.delegate setViewController:self didChangeToSetItem:setItem atIndex:pageIndex];
 }
-
 
 #pragma mark - SYPaginatorViewDataSource
 
@@ -40,7 +64,9 @@
 
 - (SYPageView *)paginatorView:(SYPaginatorView *)paginatorView viewForPageAtIndex:(NSInteger)pageIndex
 {
-    SetItem *setItem = [[self.set.items allObjects] objectAtIndex:pageIndex - 1];
+    // FIXME: setitem positions not consistent...
+    NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]];
+    SetItem *setItem = setItems[pageIndex];
     
     if ([setItem isMemberOfClass:[SetItemSong class]]) {
         static NSString *songIdentifier = @"songPageView";
@@ -60,6 +86,26 @@
     return nil;
 }
 
+#pragma mark - Public Methods
 
+- (void)selectPageAtIndex:(NSUInteger)index animated:(BOOL)animated
+{
+    [self.paginatorView setCurrentPageIndex:index animated:animated];
+}
+
+#pragma mark - Public Accessors
+
+- (void)setSet:(Set *)set
+{
+    if (_set != set) {
+        _set = set;
+        [self.paginatorView reloadData];
+    }
+}
+
+- (SYPaginatorView *)paginatorView
+{
+    return (SYPaginatorView *)self.view;
+}
 
 @end
