@@ -86,6 +86,9 @@
 
 - (void)songTableViewController:(id)sender didSelectSong:(Song *)song
 {
+    if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
+        self.currentDetailViewController = [[OSSongViewController alloc] init];
+    }
     OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
     songVC.songView.song = song;
 }
@@ -98,10 +101,20 @@
 
 #pragma mark - OSSetItemsTableViewControllerDelegate
 
-- (void)setItemsTableViewController:(id)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
-{    
-    OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
-    songVC.songView.song = [(SetItemSong *)setItem song];
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
+{
+    if (! [self.currentDetailViewController isMemberOfClass:[OSSetViewController class]]) {
+        self.currentDetailViewController = [[OSSetViewController alloc] init];
+    }
+    OSSetViewController *setVC = (OSSetViewController *)[self currentDetailViewController];
+    setVC.delegate = sender;
+    setVC.set = set;
+    
+    // FIXME: setitem positions not consistent...
+    NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", set]];
+    NSUInteger index = [setItems indexOfObject:setItem];
+        
+    [setVC selectPageAtIndex:index animated:YES];
 }
 
 #pragma mark - Private Methods

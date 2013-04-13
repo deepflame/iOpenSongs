@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
+#import "OSSetViewControllerDelegate.h"
 #import "OSSetItemsTableViewControllerDelegate.h"
 #import "Set.h"
 
-@interface OSSetItemsTableViewController : CoreDataTableViewController
+@interface OSSetItemsTableViewController : CoreDataTableViewController <OSSetViewControllerDelegate>
 @property (nonatomic, copy) Set *set;
 @property (nonatomic, weak) id<OSSetItemsTableViewControllerDelegate> delegate;
 @end

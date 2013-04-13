@@ -127,6 +127,14 @@
     }
 }
 
+#pragma mark - OSSetViewControllerDelegate
+
+- (void)setViewController:(OSSetViewController *)sender didChangeToSetItem:(SetItem *)setItem atIndex:(NSUInteger)index
+{
+    NSIndexPath *indexPath =[NSIndexPath indexPathForRow:index inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+}
+
 #pragma mark - OSSongTableViewControllerDelegate
 
 - (void)songTableViewController:(OSSongTableViewController *)sender didSelectSong:(Song *)song
