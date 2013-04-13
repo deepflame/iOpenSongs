@@ -107,7 +107,7 @@
     NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", set]];
     NSUInteger index = [setItems indexOfObject:setItem];
         
-    [setVC selectPageAtIndex:index animated:YES];
+    [setVC selectPageAtIndex:index animated:NO];
 }
 
 #pragma mark - Private Methods
