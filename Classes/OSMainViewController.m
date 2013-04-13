@@ -119,6 +119,7 @@
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController
 {
+    // order matters (needs to be on top)
     CGPoint prevTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
     
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
