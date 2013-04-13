@@ -98,8 +98,18 @@
 - (void)setSet:(Set *)set
 {
     if (_set != set) {
+        // remove observer from old instance
+        if (_set) {
+            [_set removeAllBlockObservers];
+        }
+        
         _set = set;
-        [self.paginatorView reloadData];
+        
+        SYPaginatorView *pv = self.paginatorView;
+        [_set addObserverForKeyPath:@"items" task:^(NSObject *receiver) {
+            [pv reloadData];
+        }];
+        [pv reloadData];
     }
 }
 
