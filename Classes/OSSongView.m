@@ -31,6 +31,7 @@
         // Initialization code        
         self.songWebView = [[UIWebView alloc] initWithFrame:self.bounds];
         self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.songWebView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
         self.songWebView.delegate = self;
         
         [self addSubview:self.songWebView];
