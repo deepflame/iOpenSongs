@@ -97,6 +97,7 @@
 
 - (void)setTableViewController:(OSSetTableViewController *)sender didSelectSet:(Set *)set
 {
+   
 }
 
 #pragma mark - OSSetItemsTableViewControllerDelegate

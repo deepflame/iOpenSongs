@@ -168,7 +168,7 @@
 
 #pragma mark - Actions
 
--(IBAction)addSongs:(id)sender
+-(void)addSongs:(id)sender
 {
     OSSetItemSongsTableViewController *setItemSongsTVC = [[OSSetItemSongsTableViewController alloc] init];
     setItemSongsTVC.delegate = self;

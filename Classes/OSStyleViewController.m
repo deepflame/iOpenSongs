@@ -147,4 +147,5 @@
     commentsVisibleSwitch = nil;
     [super viewDidUnload];
 }
+
 @end
