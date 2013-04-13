@@ -43,7 +43,6 @@
         OSSongMasterViewController *songsViewController = [[OSSongMasterViewController alloc] init];
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
-        setsViewController.delegate = self;
         UIViewController *settingsViewController = [[[OSAppDelegate sharedAppDelegate] storyboard] instantiateViewControllerWithIdentifier:@"settings"];
         
         UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:@"Songs" image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
@@ -93,13 +92,6 @@
     songVC.songView.song = song;
 }
 
-#pragma mark - OSSetTableViewControllerDelegate
-
-- (void)setTableViewController:(OSSetTableViewController *)sender didSelectSet:(Set *)set
-{
-   
-}
-
 #pragma mark - OSSetItemsTableViewControllerDelegate
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
@@ -136,7 +128,7 @@
         item.hasBorder = NO;
     }];
     
-    // make sure the new controller is open when the previous was
+    // make sure the new controller is open if the previous was
     if (prevTopViewPosition.x > 0) {
         [self.layeredNavigationController expandViewControllersAnimated:NO];
     }
