@@ -110,6 +110,16 @@
     [setVC selectPageAtIndex:index animated:NO];
 }
 
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    CGFloat touchX = [touch locationInView:self.currentDetailViewController.view].x;
+    
+    // only when inside DetailView
+    return  touchX > 0;
+}
+
 #pragma mark - Private Methods
 
 - (UIViewController *)currentDetailViewController
