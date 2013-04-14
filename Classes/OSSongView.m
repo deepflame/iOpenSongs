@@ -94,7 +94,7 @@
     NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
     NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl
                                                  encoding:NSUTF8StringEncoding
-                                                    error:NULL];
+                                                    error:nil];
     [self.songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
