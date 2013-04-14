@@ -20,11 +20,12 @@ Visit the [AppStore site](http://itunes.apple.com/us/app/iopensongs/id501589566?
 
 ## Getting Started
 
-Cocoa dependencies are handled using CocoaPods. You will need Ruby to install it as a Ruby Gem.
+Cocoa dependencies are handled using CocoaPods. This is available as a Ruby Gem. 
 
-To install them run
+To install all required Gems and Pods run:
 
-    gem install cocoapods
+    gem install bundler
+    bundle install
     pod install
 
 :warning: Remember to open the resulting iOpenSongs.xcworkspace file instead of iOpenSongs.xcodeproj
@@ -46,11 +47,13 @@ So install their Python server and connect with Chrome to
     
 ## License
 
-© 2013 Andreas Böhrnsen.
+© 2013 Andreas Böhrnsen. All rights reserved.
 
-All rights reserved.
+
+There are strong thoughts to make this license friendlier like using GPL or BSD.  
+Let me know if you have any suggestions.
 
 ---
 
 ## Download
-iOpenSongs is available on the Appstore for **FREE** [-> **here** <-](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8)
+iOpenSongs is available on the [Appstore](http://itunes.apple.com/us/app/iopensongs/id501589566?mt=8) for **FREE**
