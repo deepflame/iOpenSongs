@@ -11,7 +11,7 @@
 #import "Set.h"
 #import "OSSetItemsTableViewController.h"
 
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 
 @interface OSSetTableViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
@@ -95,10 +95,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
-    setItemsTVC.set = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    setItemsTVC.delegate = (OSRevealSidebarController *)self.slidingViewController;
+    Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
+    setItemsTVC.set = set;
+    setItemsTVC.delegate = (OSMainViewController *)self.layeredNavigationController;
+    
+    [self.delegate setTableViewController:self didSelectSet:set];
     [self.navigationController pushViewController:setItemsTVC animated:YES];
 }
 

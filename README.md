@@ -37,9 +37,18 @@ You can also change the icons in your own project if you cannot build because of
 I will ask the author of the icons if it is ok to distribute them with the source files.
 Until then please buy them, they are really good.
 
+## Debugging
+
+The project has added support for Square's [PonyDebugger](https://github.com/square/PonyDebugger).
+So install their Python server and connect with Chrome to
+
+    http://localhost:9000
+    
 ## License
 
-Currently all rights are reserved but it will be changed to GPL 2.0 soon.
+© 2013 Andreas Böhrnsen.
+
+All rights reserved.
 
 ---
 

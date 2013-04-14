@@ -12,7 +12,9 @@
 #import "OSDefines.h" // can be removed if not found
 #import "GAI.h"
 
+#import <TargetConditionals.h>
 #import <DropboxSDK/DropboxSDK.h>
+#import <PonyDebugger.h>
 
 @implementation OSAppDelegate
 
@@ -94,6 +96,21 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+
+#if TARGET_IPHONE_SIMULATOR
+    // PonyDebugger
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    [debugger enableCoreDataDebugging];
+    [debugger addManagedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread] withName:@"MOC"];
+
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+
+    [debugger enableViewHierarchyDebugging];
+    
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+#endif
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

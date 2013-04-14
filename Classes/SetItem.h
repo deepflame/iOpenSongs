@@ -13,7 +13,7 @@
 
 @interface SetItem : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * position;
+@property (nonatomic, retain) NSNumber *position;
 @property (nonatomic, retain) Set *set;
 
 @end

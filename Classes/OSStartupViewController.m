@@ -11,7 +11,7 @@
 
 #import "Song.h"
 
-#import "OSAppDelegate.h"
+#import "OSMainViewController.h"
 #import "UIApplication+Directories.h"
 
 @interface OSStartupViewController ()
@@ -47,8 +47,7 @@
 - (void) showMainUI
 {
     UIWindow *window = [[UIApplication sharedApplication] windows][0];
-    UIStoryboard *storyboard = [[OSAppDelegate sharedAppDelegate] storyboard];
-    window.rootViewController = [storyboard instantiateInitialViewController];
+    window.rootViewController = [[OSMainViewController alloc] init];
 }
 
 - (void) copySampleSongsToDocumentsDirectory

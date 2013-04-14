@@ -7,7 +7,7 @@
 //
 
 #import "OSStyleViewController.h"
-#import "OSRevealSidebarController.h"
+#import "OSMainViewController.h"
 #import "OSSongViewController.h"
 
 
@@ -67,7 +67,7 @@
 
 - (OSSongViewController *)songViewController
 {
-    id svc = [self.slidingViewController topViewController];
+    id svc = [self.layeredNavigationController topViewController];
     
     if ([svc isKindOfClass:[UINavigationController class]]) {
         svc = ((UINavigationController *) svc).topViewController;
@@ -147,4 +147,5 @@
     commentsVisibleSwitch = nil;
     [super viewDidUnload];
 }
+
 @end

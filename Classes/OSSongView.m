@@ -31,6 +31,7 @@
         // Initialization code        
         self.songWebView = [[UIWebView alloc] initWithFrame:self.bounds];
         self.songWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.songWebView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
         self.songWebView.delegate = self;
         
         [self addSubview:self.songWebView];
@@ -46,11 +47,14 @@
 {
     self.nightMode = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_NIGHT_MODE] boolValue];
     self.songStyle = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_KEY_SONG_STYLE];
-    [self displaySong]; // if song present
+    if (self.song) {
+        [self displaySong];
+    } else {
+        [self displayIntro];
+    }
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
- navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         [[UIApplication sharedApplication] openURL:[request URL]];
@@ -70,13 +74,16 @@
 
 - (void)displaySong
 {
-    if (self.song) {
-        NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
-        [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
-        
-        // reset style
-        [self setSongStyle:self.songStyle];
-    }
+    NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
+    [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
+    
+    // reset style
+    [self setSongStyle:self.songStyle];
+}
+
+- (void)displayIntro
+{
+    [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('#intro').show();"];
 }
 
 - (void)loadHtmlTemplate
@@ -87,7 +94,7 @@
     NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
     NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl
                                                  encoding:NSUTF8StringEncoding
-                                                    error:NULL];
+                                                    error:nil];
     [self.songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 

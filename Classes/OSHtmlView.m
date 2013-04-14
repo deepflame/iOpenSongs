@@ -20,6 +20,7 @@
     if (self) {
         // Initialization code
         self.webView = [[UIWebView alloc] initWithFrame:self.bounds];
+        self.webView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
         self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.webView.delegate = self;
         

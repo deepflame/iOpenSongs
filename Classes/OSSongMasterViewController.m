@@ -11,8 +11,8 @@
 
 #import "Song+Import.h"
 
-#import "MBProgressHUD.h"
-#import "OSRevealSidebarController.h"
+#import <MBProgressHUD.h>
+#import <FRLayeredNavigation.h>
 
 #import "OSITunesImportTableViewController.h"
 #import "OSDropboxImportTableViewController.h"
@@ -95,7 +95,7 @@
     // close sliding view controller if on Phone in portrait mode
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
         UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-        [self.slidingViewController resetTopView];
+        [self.layeredNavigationController compressViewControllers:YES];
     }
 }
 

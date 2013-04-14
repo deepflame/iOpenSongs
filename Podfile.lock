@@ -2,7 +2,6 @@ PODS:
   - BlocksKit (1.8.1):
     - libffi
   - Dropbox-iOS-SDK (1.3.4)
-  - ECSlidingViewController (0.9.0)
   - FormatterKit (1.1.1):
     - FormatterKit/AddressFormatter
     - FormatterKit/ArrayFormatter
@@ -18,41 +17,51 @@ PODS:
   - FormatterKit/TimeIntervalFormatter (1.1.1)
   - FormatterKit/UnitOfInformationFormatter (1.1.1)
   - FormatterKit/URLRequestFormatter (1.1.1)
+  - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - libffi (3.0.11)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
-  - TDBadgedCell (2.2)
+  - PonyDebugger (0.2.1beta1):
+    - SocketRocket
+  - SocketRocket (0.2.0)
+  - SYPaginator (1.0.0)
+  - TDBadgedCell (2.3)
   - TestFlightSDK (1.2.4)
   - uservoice-iphone-sdk (2.0.7)
 
 DEPENDENCIES:
   - BlocksKit
   - Dropbox-iOS-SDK
-  - ECSlidingViewController
   - FormatterKit
+  - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
-  - TDBadgedCell (from `https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec`)
+  - PonyDebugger
+  - SYPaginator
+  - TDBadgedCell
   - TestFlightSDK (~> 1.2.4)
   - uservoice-iphone-sdk
 
 EXTERNAL SOURCES:
-  TDBadgedCell:
-    :podspec: https://raw.github.com/deepflame/TDBadgedCell/podspec_arc/TDBadgedCell.podspec
+  FRLayeredNavigationController:
+    :git: https://github.com/deepflame/FRLayeredNavigationController
 
 SPEC CHECKSUMS:
   BlocksKit: 18102744fd7c44b54f1e54ce6ffe9258bcb5df81
   Dropbox-iOS-SDK: 0531d0061c45b662f1748a1cbe59e2f358bdcaba
-  ECSlidingViewController: 46cb6a6cc72e359a19d2f232728be08685450d90
   FormatterKit: b644b98d4495bdf11fc70f8f80867df5864eaf70
   GoogleAnalytics-iOS-SDK: 5b5063f5bdc99bc093a652f590f572b4550c1862
+  FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
-  TDBadgedCell: b5d312e898f28a774b4ec4586c02c76a98948280
+  PonyDebugger: 6ca8e78566f917a24fc7e45f742de4b2d847afcf
+  SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
+  SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
+  TDBadgedCell: df179417606489b07be717d8a13cc56f268760de
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
   uservoice-iphone-sdk: d26dd42b15148ea68303d2985e9b8fa3c7a430cb
 
-COCOAPODS: 0.17.2
+COCOAPODS: 0.18.1

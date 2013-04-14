@@ -68,7 +68,8 @@
     [self.hud hide:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
-    NSArray * dbContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
+    // sort directories first
+    NSArray *dbContents = [metadata.contents sortedArrayUsingComparator:^(id obj1, id obj2) {
         DBMetadata *md1 = obj1;
         DBMetadata *md2 = obj2;
         
