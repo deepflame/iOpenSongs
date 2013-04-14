@@ -11,6 +11,8 @@ pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit'
 pod 'BlocksKit'
+# Development
+pod 'PonyDebugger'
 
 # Test
 pod 'TestFlightSDK', '~> 1.2.4'

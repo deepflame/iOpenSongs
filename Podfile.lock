@@ -22,6 +22,9 @@ PODS:
   - libffi (3.0.11)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
+  - PonyDebugger (0.2.1beta1):
+    - SocketRocket
+  - SocketRocket (0.2.0)
   - SYPaginator (1.0.0)
   - TDBadgedCell (2.3)
   - TestFlightSDK (1.2.4)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
   - MagicalRecord
   - MBProgressHUD
+  - PonyDebugger
   - SYPaginator
   - TDBadgedCell
   - TestFlightSDK (~> 1.2.4)
@@ -53,6 +57,8 @@ SPEC CHECKSUMS:
   libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
+  PonyDebugger: 6ca8e78566f917a24fc7e45f742de4b2d847afcf
+  SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
   TDBadgedCell: df179417606489b07be717d8a13cc56f268760de
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
