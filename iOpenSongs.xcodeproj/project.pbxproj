@@ -67,7 +67,7 @@
 		3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* OSSongViewController.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
-		3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */; };
+		3EDDA47A14B098F700BB781C /* OSSongSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */; };
 		3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */; };
 		3EE0DB3416EC19F1005C89C6 /* OSStartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */; };
 		3EE891961521B52D001DA59A /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
@@ -192,8 +192,8 @@
 		3EDDA41714AEC3A400BB781C /* OSSongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* OSSongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSongViewController.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
-		3EDDA47814B098F700BB781C /* OSSongMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongMasterViewController.h; sourceTree = "<group>"; };
-		3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongMasterViewController.m; sourceTree = "<group>"; };
+		3EDDA47814B098F700BB781C /* OSSongSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongSelectTableViewController.h; sourceTree = "<group>"; };
+		3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongSelectTableViewController.m; sourceTree = "<group>"; };
 		3EE0CE8416A2870200883F64 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStartupViewController.h; sourceTree = "<group>"; };
@@ -363,8 +363,8 @@
 				3E7F1B6215847150008C222F /* OSSongTableViewController.m */,
 				3EE5F8E6170975EB006F2DDC /* OSSongTableViewControllerDelegate.h */,
 				3E4EF9301709A5DE0063E772 /* OSSongTableViewControllerDataSource.h */,
-				3EDDA47814B098F700BB781C /* OSSongMasterViewController.h */,
-				3EDDA47914B098F700BB781C /* OSSongMasterViewController.m */,
+				3EDDA47814B098F700BB781C /* OSSongSelectTableViewController.h */,
+				3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */,
 				3EDDA41714AEC3A400BB781C /* OSSongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* OSSongViewController.m */,
 			);
@@ -721,7 +721,7 @@
 				3E35844B151E100E00137FC4 /* OSMainViewController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* OSAppDelegate.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
-				3EDDA47A14B098F700BB781C /* OSSongMasterViewController.m in Sources */,
+				3EDDA47A14B098F700BB781C /* OSSongSelectTableViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,

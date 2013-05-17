@@ -9,7 +9,7 @@
 #import "OSMainViewController.h"
 
 #import "OSSongViewController.h"
-#import "OSSongMasterViewController.h"
+#import "OSSongSelectTableViewController.h"
 
 #import "OSAppDelegate.h"
 #import "SetItemSong.h"
@@ -42,7 +42,7 @@
     }];
     if (self) {
         // build tabbar
-        OSSongMasterViewController *songsViewController = [[OSSongMasterViewController alloc] init];
+        OSSongSelectTableViewController *songsViewController = [[OSSongSelectTableViewController alloc] init];
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
         UIViewController *settingsViewController = [[[OSAppDelegate sharedAppDelegate] storyboard] instantiateViewControllerWithIdentifier:@"settings"];

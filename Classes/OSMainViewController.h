@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FRLayeredNavigation.h>
 
-#import "OSSongMasterViewController.h"
+#import "OSSongSelectTableViewController.h"
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 

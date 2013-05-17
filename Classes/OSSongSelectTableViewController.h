@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "OSSongTableViewController.h"
 
-@interface OSSongMasterViewController : OSSongTableViewController
+@interface OSSongSelectTableViewController : OSSongTableViewController
 
 @end

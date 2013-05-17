@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSSongMasterViewController.h"
+#import "OSSongSelectTableViewController.h"
 #import "OSSongViewController.h"
 
 #import "Song+Import.h"
@@ -20,12 +20,12 @@
 // TODO: remove dependency
 #import <DropboxSDK/DropboxSDK.h>
 
-@interface OSSongMasterViewController () <UIActionSheetDelegate>
+@interface OSSongSelectTableViewController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
 
-@implementation OSSongMasterViewController
+@implementation OSSongSelectTableViewController
 
 #pragma mark - UIViewController
 
