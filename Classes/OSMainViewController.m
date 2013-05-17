@@ -17,6 +17,8 @@
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
+#import "FRLayeredNavigationController+ExposePrivate.h"
+
 @interface OSMainViewController ()
 @property (nonatomic, strong) UIViewController *currentDetailViewController;
 @property (nonatomic, strong) UIViewController *rootViewController;
@@ -111,6 +113,33 @@
 }
 
 #pragma mark - UIGestureRecognizerDelegate
+
+// Refining super implementation
+- (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    switch (gestureRecognizer.state) {
+        
+        case UIGestureRecognizerStateChanged: {
+            
+            CGFloat viewLocationX = self.currentDetailViewController.layeredNavigationItem.currentViewPosition.x;
+            CGFloat translationX = [gestureRecognizer translationInView:self.currentDetailViewController.view].x;
+            
+            // do not move the detailview out to the left of the screen
+            if (viewLocationX <= 0 && translationX < 0) {
+                return;
+            }
+            
+            break;
+        }
+    
+        default: {
+            
+        }
+    
+    }
+
+    [super handleGesture:gestureRecognizer];
+}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
