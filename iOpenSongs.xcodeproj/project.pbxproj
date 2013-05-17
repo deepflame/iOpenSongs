@@ -93,6 +93,7 @@
 		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = iOpenSongs.entitlements; path = Resources/iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
 		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
+		3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRLayeredNavigationController+ExposePrivate.h"; sourceTree = "<group>"; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
@@ -506,6 +507,7 @@
 				3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */,
 				3EEC566D16F1D5AA007DE9DE /* UIApplication+Directories.h */,
 				3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */,
+				3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
