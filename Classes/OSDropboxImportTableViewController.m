@@ -34,12 +34,14 @@
     return _restClient;
 }
 
-#pragma mark - 
+#pragma mark - NSObject
 
 - (id)init
 {
     return [super initWithPath:@"/"];
 }
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
@@ -59,12 +61,6 @@
     // access Dropbox
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self.restClient loadMetadata:self.initialPath];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - DBRestClientDelegate
@@ -132,7 +128,7 @@
     [self loadNextFileToImportOrReturn];
 }
 
-- (void)restClient:(DBRestClient*)client loadFileFailedWithError:(NSError*)error {
+- (void)restClient:(DBRestClient *)client loadFileFailedWithError:(NSError *)error {
     NSLog(@"There was an error loading the file - %@", error);
     
     [self.importErrors addObject:error];
