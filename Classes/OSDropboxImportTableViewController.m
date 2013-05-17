@@ -50,6 +50,11 @@
         title = @"Dropbox";
     }
     self.title = title;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     // access Dropbox
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
@@ -97,9 +102,17 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     NSLog(@"Error loading metadata: %@", error);
+    
+    [UIAlertView showAlertViewWithTitle:@"Error contacting Dropbox"
+                                message:@"Make sure that you are connected to the Internet."
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil
+                                handler:nil];
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)restClient:(DBRestClient*)client loadedFile:(NSString*)localPath {
+- (void)restClient:(DBRestClient *)client loadedFile:(NSString *)localPath {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     NSError *error = nil;
