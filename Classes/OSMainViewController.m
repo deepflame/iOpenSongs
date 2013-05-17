@@ -17,6 +17,7 @@
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
+#import <FRLayeredNavigationController/FRLayerController.h>
 #import "FRLayeredNavigationController+ExposePrivate.h"
 
 @interface OSMainViewController ()
@@ -153,7 +154,10 @@
 
 - (UIViewController *)currentDetailViewController
 {
-    return [(UINavigationController *)self.topViewController topViewController];
+    FRLayerController *detailLayerController = self.layeredViewControllers[1]; // the detailVC is always at 1
+    UIViewController *detailVC = detailLayerController.contentViewController;
+    
+    return [(UINavigationController *)detailVC topViewController];
 }
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController

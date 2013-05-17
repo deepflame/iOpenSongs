@@ -12,4 +12,6 @@
 
 - (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer;
 
+@property (nonatomic, readwrite, strong) NSMutableArray *layeredViewControllers;
+
 @end
