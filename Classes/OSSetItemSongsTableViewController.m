@@ -35,15 +35,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    [self.delegate songTableViewController:self didSelectSong:song];
+    if ([self.delegate respondsToSelector:@selector(songTableViewController:didSelectSong:)]) {
+        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.delegate songTableViewController:self didSelectSong:song];
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete && [self.delegate respondsToSelector:@selector(songTableViewController:didDeleteSong:)]) {
         Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.delegate songTableViewController:self didDeleteSong:song];
     }

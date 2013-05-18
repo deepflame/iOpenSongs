@@ -136,7 +136,7 @@
     newSongItem.song = song;
     newSongItem.position = @(((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1);
     
-    [self.set addItemsObject:newSongItem ];
+    [self.set addItemsObject:newSongItem];
 }
 
 - (void)songTableViewController:(OSSongTableViewController *)sender didDeleteSong:(Song *)song
@@ -181,7 +181,9 @@
     setItemSongsTVC.delegate = self;
     setItemSongsTVC.dataSource = self;
     
+    if ([self.delegate respondsToSelector:@selector(setItemsTableViewController:willAddSetItemsOfClass:toSet:)]) {
         [self.delegate setItemsTableViewController:self willAddSetItemsOfClass:[SetItemSong class] toSet:self.set];
+    }
     
     [self.navigationController pushViewController:setItemSongsTVC animated:YES];
 }
