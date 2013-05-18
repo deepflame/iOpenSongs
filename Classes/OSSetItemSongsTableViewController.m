@@ -49,6 +49,14 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(songTableViewController:accessoryButtonTappedForSong:)]) {
+        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.delegate songTableViewController:self accessoryButtonTappedForSong:song];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

@@ -146,6 +146,13 @@
     [[SetItemSong MR_findFirstWithPredicate:predicate sortedBy:@"position" ascending:NO] MR_deleteEntity];
 }
 
+- (void)songTableViewController:(OSSongTableViewController *)sender accessoryButtonTappedForSong:(Song *)song
+{
+    if ([self.delegate respondsToSelector:@selector(setItemsTableViewController:accessoryButtonTappedForSetItemContent:)]) {
+        [self.delegate setItemsTableViewController:self accessoryButtonTappedForSetItemContent:song];
+    }
+}
+
 #pragma mark - OSSongTableViewControllerDataSource
 
 - (NSString *)songTableViewController:(OSSongTableViewController *)sender badgeStringForSong:(Song *)song

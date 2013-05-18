@@ -122,6 +122,17 @@
     }
 }
 
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender accessoryButtonTappedForSetItemContent:(id)item
+{
+    if ([item isMemberOfClass:[Song class]]) {
+        if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
+            self.currentDetailViewController = [[OSSongViewController alloc] init];
+        }
+        OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
+        songVC.songView.song = item;
+    }
+}
+
 #pragma mark - UIGestureRecognizerDelegate
 
 // Refining super implementation
