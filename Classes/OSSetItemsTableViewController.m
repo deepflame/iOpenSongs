@@ -174,6 +174,8 @@
     setItemSongsTVC.delegate = self;
     setItemSongsTVC.dataSource = self;
     
+        [self.delegate setItemsTableViewController:self willAddSetItemsOfClass:[SetItemSong class] toSet:self.set];
+    
     [self.navigationController pushViewController:setItemSongsTVC animated:YES];
 }
 

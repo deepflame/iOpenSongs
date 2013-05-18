@@ -113,6 +113,15 @@
     [setVC selectPageAtIndex:index animated:NO];
 }
 
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set
+{
+    if (itemClass == [SetItemSong class]) {
+        if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
+            self.currentDetailViewController = [[OSSongViewController alloc] init];
+        }
+    }
+}
+
 #pragma mark - UIGestureRecognizerDelegate
 
 // Refining super implementation
