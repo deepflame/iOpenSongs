@@ -27,7 +27,10 @@
     // FIXME: remove searchbar for now
     self.tableView.tableHeaderView = nil;
     
-    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneEditing:)];
+    // UIBarButtonItems
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
+        [self.itemsDelegate setItemSongsTableViewController:self finishedEditing:YES];
+    }];
     self.navigationItem.rightBarButtonItems = @[doneBarButtonItem];
 }
 
@@ -66,13 +69,5 @@
     NSString *badge = [self.dataSource songTableViewController:self badgeStringForSong:song];
     return badge != nil;
 }
-
-#pragma mark - Actions
-
-- (void)doneEditing:(UIBarButtonItem *)sender
-{
-    [self.delegate setItemSongsTableViewController:self finishedEditing:YES];
-}
-
 
 @end
