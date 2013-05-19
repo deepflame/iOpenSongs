@@ -86,8 +86,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self.delegate songTableViewController:self didSelectSong:song];
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     
     // save current selection
     self.currentSelection = indexPath;

@@ -65,6 +65,14 @@
     return YES;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.delegate songTableViewController:self didSelectSong:song];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
