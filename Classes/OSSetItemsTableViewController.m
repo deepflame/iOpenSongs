@@ -190,6 +190,7 @@
     OSSetItemSongsTableViewController *setItemSongsTVC = [[OSSetItemSongsTableViewController alloc] init];
     setItemSongsTVC.delegate = self;
     setItemSongsTVC.dataSource = self;
+    setItemSongsTVC.itemsDelegate = self;
     
     if ([self.delegate respondsToSelector:@selector(setItemsTableViewController:willAddSetItemsOfClass:toSet:)]) {
         [self.delegate setItemsTableViewController:self willAddSetItemsOfClass:[SetItemSong class] toSet:self.set];

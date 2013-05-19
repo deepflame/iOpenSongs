@@ -12,5 +12,5 @@
 #import "OSSetItemSongsTableViewControllerDelegate.h"
 
 @interface OSSetItemSongsTableViewController : OSSongTableViewController
-@property (nonatomic, weak) id<OSSongTableViewControllerDelegate, OSSetItemSongsTableViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<OSSetItemSongsTableViewControllerDelegate> itemsDelegate;
 @end
