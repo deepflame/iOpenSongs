@@ -15,6 +15,5 @@
 @protocol OSSongTableViewControllerDelegate <NSObject>
 - (void)songTableViewController:(OSSongTableViewController *)sender didSelectSong:(Song *)song;
 @optional
-- (void)songTableViewController:(OSSongTableViewController *)sender didDeleteSong:(Song *)song;
 - (void)songTableViewController:(OSSongTableViewController *)sender accessoryButtonTappedForSong:(Song *)song;
 @end

@@ -139,13 +139,6 @@
     [self.set addItemsObject:newSongItem];
 }
 
-- (void)songTableViewController:(OSSongTableViewController *)sender didDeleteSong:(Song *)song
-{
-    // delete last Song if multiple
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"set == %@ AND song == %@", self.set, song];
-    [[SetItemSong MR_findFirstWithPredicate:predicate sortedBy:@"position" ascending:NO] MR_deleteEntity];
-}
-
 - (void)songTableViewController:(OSSongTableViewController *)sender accessoryButtonTappedForSong:(Song *)song
 {
     if ([self.delegate respondsToSelector:@selector(setItemsTableViewController:accessoryButtonTappedForSetItemContent:)]) {
@@ -167,6 +160,23 @@
 }
 
 #pragma mark - OSSetItemSongsTableViewControllerDelegate
+
+-(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender didInsertSong:(Song *)song
+{
+    SetItemSong *newSongItem = [SetItemSong MR_createEntity];
+    
+    newSongItem.song = song;
+    newSongItem.position = @(((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1);
+    
+    [self.set addItemsObject:newSongItem];
+}
+
+-(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender didDeleteSong:(Song *)song
+{
+    // delete last Song if multiple
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"set == %@ AND song == %@", self.set, song];
+    [[SetItemSong MR_findFirstWithPredicate:predicate sortedBy:@"position" ascending:NO] MR_deleteEntity];
+}
 
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {

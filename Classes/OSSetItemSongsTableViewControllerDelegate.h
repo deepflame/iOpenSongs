@@ -12,5 +12,7 @@
 
 @protocol OSSetItemSongsTableViewControllerDelegate <NSObject>
 @optional
-- (void) setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated;
+- (void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender didInsertSong:(Song *)song;
+- (void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender didDeleteSong:(Song *)song;
+- (void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated;
 @end
