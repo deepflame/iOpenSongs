@@ -36,14 +36,7 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.delegate respondsToSelector:@selector(songTableViewController:didSelectSong:)]) {
-        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.delegate songTableViewController:self didSelectSong:song];
-    }
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
