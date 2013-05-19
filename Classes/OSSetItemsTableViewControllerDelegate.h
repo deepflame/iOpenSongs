@@ -16,5 +16,4 @@
 @optional
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set;
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set;
-- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender accessoryButtonTappedForSetItemContent:(id)item;
 @end

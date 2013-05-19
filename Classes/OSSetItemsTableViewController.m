@@ -15,6 +15,8 @@
 #import "OSSetItemSongsTableViewController.h"
 #import "OSMainViewController.h"
 
+#import <objc/message.h>
+
 @interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate>
 
 @end
@@ -131,18 +133,8 @@
 
 - (void)songTableViewController:(OSSongTableViewController *)sender didSelectSong:(Song *)song
 {
-    SetItemSong *newSongItem = [SetItemSong MR_createEntity];
-
-    newSongItem.song = song;
-    newSongItem.position = @(((SetItem *)self.fetchedResultsController.fetchedObjects.lastObject).position.intValue + 1);
-    
-    [self.set addItemsObject:newSongItem];
-}
-
-- (void)songTableViewController:(OSSongTableViewController *)sender accessoryButtonTappedForSong:(Song *)song
-{
-    if ([self.delegate respondsToSelector:@selector(setItemsTableViewController:accessoryButtonTappedForSetItemContent:)]) {
-        [self.delegate setItemsTableViewController:self accessoryButtonTappedForSetItemContent:song];
+    if ([self.delegate respondsToSelector:@selector(songTableViewController:didSelectSong:)]) {
+        objc_msgSend(self.delegate, @selector(songTableViewController:didSelectSong:), self, song);
     }
 }
 

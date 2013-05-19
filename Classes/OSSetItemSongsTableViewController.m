@@ -27,6 +27,9 @@
     // FIXME: remove searchbar for now
     self.tableView.tableHeaderView = nil;
     
+    self.tableView.editing = YES;
+    self.tableView.allowsSelectionDuringEditing = YES;
+    
     // UIBarButtonItems
     UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
         [self.itemsDelegate setItemSongsTableViewController:self finishedEditing:YES];
@@ -36,22 +39,31 @@
 
 #pragma mark - UITableViewDelegate
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    return UITableViewCellEditingStyleInsert;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete && [self.delegate respondsToSelector:@selector(songTableViewController:didDeleteSong:)]) {
-        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.delegate songTableViewController:self didDeleteSong:song];
+    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleInsert:
+            if ([self.itemsDelegate respondsToSelector:@selector(setItemSongsTableViewController:didInsertSong:)]) {
+                [self.itemsDelegate setItemSongsTableViewController:self didInsertSong:song];
+            }
+            break;
+            
+        case UITableViewCellEditingStyleDelete:
+            if ([self.itemsDelegate respondsToSelector:@selector(setItemSongsTableViewController:didDeleteSong:)]) {
+                [self.itemsDelegate setItemSongsTableViewController:self didDeleteSong:song];
+            }            
+            break;
+            
+        default:
+            break;
     }
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    if ([self.delegate respondsToSelector:@selector(songTableViewController:accessoryButtonTappedForSong:)]) {
-        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.delegate songTableViewController:self accessoryButtonTappedForSong:song];
-    }
+    
 }
 
 #pragma mark - UITableViewDataSource

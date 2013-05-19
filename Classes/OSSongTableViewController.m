@@ -83,11 +83,6 @@
     if (cell == nil) {
         cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
-        
-        // show detailDisclosureButton if delegate method implemented
-        if ([self respondsToSelector:@selector(tableView:accessoryButtonTappedForRowWithIndexPath:)]) {
-            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        }
     }
     
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
