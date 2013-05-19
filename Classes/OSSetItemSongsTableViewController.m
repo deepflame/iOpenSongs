@@ -65,9 +65,16 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSString *badge = [self.dataSource songTableViewController:self badgeStringForSong:song];
-    return badge != nil;
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    // delete only possible if song in set
+    if (cell.editingStyle == UITableViewCellEditingStyleDelete) {
+        Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSString *badge = [self.dataSource songTableViewController:self badgeStringForSong:song];
+        return badge != nil;
+    }
+    
+    return YES;
 }
 
 @end
