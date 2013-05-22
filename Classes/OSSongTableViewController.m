@@ -83,6 +83,7 @@
     if (cell == nil) {
         cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
+        cell.hideBadgeDuringEditing = NO;
     }
     
     Song *song = [self.fetchedResultsController objectAtIndexPath:indexPath];

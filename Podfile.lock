@@ -40,13 +40,15 @@ DEPENDENCIES:
   - MBProgressHUD
   - PonyDebugger
   - SYPaginator
-  - TDBadgedCell
+  - TDBadgedCell (from `TDBadgedCell.podspec`)
   - TestFlightSDK (~> 1.2.4)
   - uservoice-iphone-sdk
 
 EXTERNAL SOURCES:
   FRLayeredNavigationController:
     :git: https://github.com/deepflame/FRLayeredNavigationController
+  TDBadgedCell:
+    :podspec: TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
   BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
@@ -60,7 +62,7 @@ SPEC CHECKSUMS:
   PonyDebugger: 72c2277c30f247390116ae328fe24082e0ed558e
   SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
-  TDBadgedCell: df179417606489b07be717d8a13cc56f268760de
+  TDBadgedCell: dbf1dd2b99c11db97ee66deb889aa5152d8a4198
   TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
   uservoice-iphone-sdk: 806238f9e392c04d72865d942459fc31bf8da940
 
