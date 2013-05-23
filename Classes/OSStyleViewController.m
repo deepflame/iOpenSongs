@@ -7,9 +7,8 @@
 //
 
 #import "OSStyleViewController.h"
-#import "OSMainViewController.h"
-#import "OSSongViewController.h"
 
+#import "OSSongStyle.h"
 
 @interface OSStyleViewController ()
 {
@@ -30,30 +29,24 @@
 
 - (void) initSongStyleValues
 {
-    headerVisibleSwitch.on = [[self songView] headerVisible];
-    chordsVisibleSwitch.on = [[self songView] chordsVisible];
-    lyricsVisibleSwitch.on = [[self songView] lyricsVisible];
-    commentsVisibleSwitch.on = [[self songView] commentsVisible];
+    OSSongStyle *style = [OSSongStyle defaultStyle];
     
-    headerSizeSlider.value = [[self songView] headerSize];
-    chordsSizeSlider.value = [[self songView] chordsSize];
-    lyricsSizeSlider.value = [[self songView] lyricsSize];
-    commentsSizeSlider.value = [[self songView] commentsSize];
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    nightModeSwitch.on = style.nightMode;
+    
+    headerVisibleSwitch.on = style.headerVisible;
+    chordsVisibleSwitch.on = style.chordsVisible;
+    lyricsVisibleSwitch.on = style.lyricsVisible;
+    commentsVisibleSwitch.on = style.commentsVisible;
+    
+    headerSizeSlider.value = style.headerSize;
+    chordsSizeSlider.value = style.chordsSize;
+    lyricsSizeSlider.value = style.lyricsSize;
+    commentsSizeSlider.value = style.commentsSize;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    nightModeSwitch.on = [[self songView] nightMode];
 
     [self initSongStyleValues];
 }
@@ -63,33 +56,12 @@
 	return YES;
 }
 
-# pragma mark - Private Methods
-
-- (OSSongViewController *)songViewController
-{
-    id svc = [self.layeredNavigationController topViewController];
-    
-    if ([svc isKindOfClass:[UINavigationController class]]) {
-        svc = ((UINavigationController *) svc).topViewController;
-    }
-    
-    if (![svc isKindOfClass:[OSSongViewController class]]) {
-        svc = nil;
-    }
-    return svc;
-}
-
-- (OSSongView *)songView
-{
-    return [self songViewController].songView;
-}
-
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     if ([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:@"Reset Style Cell"]) {
-        [[self songView] resetSongStyle];
+        [[OSSongStyle defaultStyle] resetStyle];
         [self initSongStyleValues];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -99,41 +71,41 @@
 
 - (IBAction)nightMode:(UISwitch *)sender 
 {
-    [[self songView] setNightMode:sender.on];
+    [OSSongStyle defaultStyle].nightMode = sender.on;
 }
 
 - (IBAction)headerVisible:(UISwitch *)sender 
 {
-    [[self songView] setHeaderVisible:sender.on];
+    [OSSongStyle defaultStyle].headerVisible = sender.on;
 }
 - (IBAction)chordsVisible:(UISwitch *)sender 
 {
-    [[self songView] setChordsVisible:sender.on];
+    [OSSongStyle defaultStyle].chordsVisible = sender.on;
 }
 - (IBAction)lyricsVisible:(UISwitch *)sender 
 {
-    [[self songView] setLyricsVisible:sender.on];
+    [OSSongStyle defaultStyle].lyricsVisible = sender.on;
 }
 - (IBAction)commentsVisible:(UISwitch *)sender 
 {
-    [[self songView]setCommentsVisible:sender.on];
+    [OSSongStyle defaultStyle].commentsVisible = sender.on;
 }
 
 - (IBAction)headerSize:(UISlider *)sender 
 {
-    [[self songView] setHeaderSize:sender.value];
+    [OSSongStyle defaultStyle].headerSize = sender.value;
 }
 - (IBAction)chordsSize:(UISlider *)sender 
 {
-    [[self songView] setChordsSize:sender.value];
+    [OSSongStyle defaultStyle].chordsSize = sender.value;
 }
 - (IBAction)lyricsSize:(UISlider *)sender 
 {
-    [[self songView] setLyricsSize:sender.value];    
+    [OSSongStyle defaultStyle].lyricsSize = sender.value;
 }
 - (IBAction)commentsSize:(UISlider *)sender 
 {
-    [[self songView] setCommentsSize:sender.value];
+    [OSSongStyle defaultStyle].commentsSize = sender.value;
 }
 
 - (void)viewDidUnload {
