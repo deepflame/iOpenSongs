@@ -83,7 +83,12 @@
 
 - (void)displayIntro
 {
-    [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('#intro').show();"];
+    if (! [self introPartialString]) {
+        return; // no partial found
+    }
+    
+    NSString* jsString = [NSString stringWithFormat:@"$('#intro').append(\"%@\");", [[self introPartialString] escapeJavaScript]];
+    [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
 }
 
 - (void)loadHtmlTemplate
@@ -98,7 +103,18 @@
     [self.songWebView loadHTMLString:htmlDoc baseURL:baseURL];
 }
 
-#pragma mark - Public Accessor Overrides
+- (NSString *)introPartialString
+{
+    NSString *partialFileBase = [NSString stringWithFormat:@"_%@", self.introPartialName];
+    
+    NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:partialFileBase withExtension:@"html"];
+    NSString *htmlPartial = [NSString stringWithContentsOfURL:templateUrl
+                                                     encoding:NSUTF8StringEncoding
+                                                        error:nil];
+    return htmlPartial;
+}
+
+#pragma mark - Public Accessors
 
 - (void)setSong:(Song *)song
 {

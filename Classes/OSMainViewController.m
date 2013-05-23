@@ -63,8 +63,12 @@
         
         tabBarController.viewControllers = viewControllers;
         
+        // song view controller
+        OSSongViewController *songVC = [[OSSongViewController alloc] init];
+        songVC.songView.introPartialName = @"welcome";
+        
         // top view controller
-        self.currentDetailViewController = [[OSSongViewController alloc] init];
+        self.currentDetailViewController = songVC;
         self.rootViewController = tabBarController;
     }
     return self;
@@ -117,7 +121,9 @@
 {
     if (itemClass == [SetItemSong class]) {
         if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
-            self.currentDetailViewController = [[OSSongViewController alloc] init];
+            OSSongViewController *songVC = [[OSSongViewController alloc] init];
+            songVC.songView.introPartialName = @"set-add-songs";
+            self.currentDetailViewController = songVC;
         }
     }
 }

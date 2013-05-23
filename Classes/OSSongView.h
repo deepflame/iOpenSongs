@@ -18,6 +18,7 @@
 @property (nonatomic, weak) id<OSSongViewDelegate> delegate;
 
 @property (nonatomic, copy) Song *song;
+@property (nonatomic, strong) NSString *introPartialName;
 
 @property (nonatomic) BOOL nightMode;
 
