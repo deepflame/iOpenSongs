@@ -8,18 +8,15 @@
 
 #import "OSSongView.h"
 
-#import "NSString+JavaScript.h"
 #import "OSSongStyle.h"
 
+#import "NSString+JavaScript.h"
 
 @interface OSSongView () <UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *songWebView;
 @end
 
 @implementation OSSongView
-
-@synthesize song = _song;
-@synthesize songWebView = _songWebView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -56,13 +53,6 @@
         return NO;
     }
     return YES;
-}
-
-#pragma mark - Public Methods
-
-- (void) resetSongStyle
-{
-    [self setSongStyle:nil];
 }
 
 #pragma mark - Private Methods
