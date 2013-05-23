@@ -9,6 +9,7 @@
 #import "OSSongView.h"
 
 #import "NSString+JavaScript.h"
+#import "OSSongStyle.h"
 
 
 @interface OSSongView () <UIWebViewDelegate>
@@ -72,6 +73,7 @@
     [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
     
     // reset style
+    [self setSongStyle:[OSSongStyle defaultStyle]];
 }
 
 - (void)displayIntro
@@ -128,7 +130,7 @@
     }
 }
 
--(void)setStyleVisible:(BOOL)isVisible forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
+-(void)setStyleVisible:(BOOL)isVisible withCSSSelector:(NSString *)cssSel
 {
     if (isVisible) {
         [self.songWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"$('%@').show();", cssSel]];
@@ -137,15 +139,43 @@
     }
 }
 
--(void)setStyleSize:(int)size forKey:(NSString *)key withCSSSelector:(NSString *)cssSel
+-(void)setStyleSize:(int)size withCSSSelector:(NSString *)cssSel
 {
     NSString *js = [NSString stringWithFormat:@"$('%@').css('font-size', '%dpx');", cssSel, size];
     [self.songWebView stringByEvaluatingJavaScriptFromString:js];
 }
 
+- (void) setSongStyle:(OSSongStyle *)songStyle
 {
+    [songStyle addObserverForKeyPath:@"nightMode" task:^(OSSongStyle *style){
+        [self setNightMode:style.nightMode];
+    }];
     
+    [songStyle addObserverForKeyPath:@"headerVisible" task:^(OSSongStyle *style){
+        [self setStyleVisible:style.headerVisible withCSSSelector:@"body .opensong h2"];
+    }];
+    [songStyle addObserverForKeyPath:@"chordsVisible" task:^(OSSongStyle *style){
+        [self setStyleVisible:style.chordsVisible withCSSSelector:@"body .opensong .chords"];
+    }];
+    [songStyle addObserverForKeyPath:@"lyricsVisible" task:^(OSSongStyle *style){
+        [self setStyleVisible:style.lyricsVisible withCSSSelector:@"body .opensong .lyrics"];
+    }];
+    [songStyle addObserverForKeyPath:@"commentsVisible" task:^(OSSongStyle *style){
+        [self setStyleVisible:style.commentsVisible withCSSSelector:@"body .opensong .comments"];
+    }];
     
+    [songStyle addObserverForKeyPath:@"headerSize" task:^(OSSongStyle *style){
+        [self setStyleSize:style.headerSize withCSSSelector:@"body .opensong h2"];
+    }];
+    [songStyle addObserverForKeyPath:@"chordsSize" task:^(OSSongStyle *style){
+        [self setStyleSize:style.chordsSize withCSSSelector:@"body .opensong .chords"];
+    }];
+    [songStyle addObserverForKeyPath:@"lyricsSize" task:^(OSSongStyle *style){
+        [self setStyleSize:style.lyricsSize withCSSSelector:@"body .opensong .lyrics"];
+    }];
+    [songStyle addObserverForKeyPath:@"commentsSize" task:^(OSSongStyle *style){
+        [self setStyleSize:style.commentsSize withCSSSelector:@"body .opensong .comments"];
+    }];
 }
 
 @end
