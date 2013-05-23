@@ -13,23 +13,9 @@
 
 @interface OSSongView : UIView
 
-- (void)resetSongStyle;
-
 @property (nonatomic, weak) id<OSSongViewDelegate> delegate;
 
 @property (nonatomic, copy) Song *song;
 @property (nonatomic, strong) NSString *introPartialName;
-
-@property (nonatomic) BOOL nightMode;
-
-@property (nonatomic) BOOL headerVisible;
-@property (nonatomic) BOOL chordsVisible;
-@property (nonatomic) BOOL lyricsVisible;
-@property (nonatomic) BOOL commentsVisible;
-
-@property (nonatomic) int headerSize;
-@property (nonatomic) int chordsSize;
-@property (nonatomic) int lyricsSize;
-@property (nonatomic) int commentsSize;
 
 @end
