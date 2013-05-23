@@ -99,18 +99,6 @@
     return htmlPartial;
 }
 
-#pragma mark - Public Accessors
-
-- (void)setSong:(Song *)song
-{
-    if (_song != song) {
-        _song = song;
-        
-        [self.delegate songView:self didChangeSong:_song];
-        [self displaySong];
-    }
-}
-
 - (void)setNightMode:(BOOL)state
 {
     if (state == YES) {
@@ -166,6 +154,18 @@
     [songStyle addObserverForKeyPath:@"commentsSize" task:^(OSSongStyle *style){
         [self setStyleSize:style.commentsSize withCSSSelector:@"body .opensong .comments"];
     }];
+}
+
+#pragma mark - Public Accessors
+
+- (void)setSong:(Song *)song
+{
+    if (_song != song) {
+        _song = song;
+        
+        [self.delegate songView:self didChangeSong:_song];
+        [self displaySong];
+    }
 }
 
 @end
