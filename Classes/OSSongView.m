@@ -202,7 +202,7 @@
 - (OSSongStyle *)songStyle
 {
     if (! _songStyle) {
-        _songStyle = [[OSSongStyle alloc] init];
+        _songStyle = [[OSSongStyle defaultStyle] copy];
     }
     return _songStyle;
 }
