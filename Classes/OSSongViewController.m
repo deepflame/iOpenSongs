@@ -39,6 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // observe default song style (from settings)
     [[OSSongStyle defaultStyle] addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
                                             identifier:NSStringFromClass([self class])
                                                options:NSKeyValueObservingOptionNew
