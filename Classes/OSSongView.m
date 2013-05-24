@@ -8,8 +8,6 @@
 
 #import "OSSongView.h"
 
-#import "OSSongStyle.h"
-
 #import "NSString+JavaScript.h"
 
 @interface OSSongView () <UIWebViewDelegate>
@@ -17,6 +15,8 @@
 @end
 
 @implementation OSSongView
+
+@synthesize songStyle = _songStyle;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -62,8 +62,7 @@
     NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
     [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
     
-    // reset style
-    [self setSongStyle:[OSSongStyle defaultStyle]];
+    [self applySongStyle];
 }
 
 - (void)displayIntro
@@ -123,8 +122,12 @@
     [self.songWebView stringByEvaluatingJavaScriptFromString:js];
 }
 
-- (void) setSongStyle:(OSSongStyle *)songStyle
+- (void) applySongStyle
 {
+    OSSongStyle *songStyle = self.songStyle;
+    
+    [songStyle removeAllBlockObservers];
+    
     [songStyle addObserverForKeyPath:@"nightMode" task:^(OSSongStyle *style){
         [self setNightMode:style.nightMode];
     }];
@@ -166,6 +169,14 @@
         [self.delegate songView:self didChangeSong:_song];
         [self displaySong];
     }
+}
+
+- (OSSongStyle *)songStyle
+{
+    if (! _songStyle) {
+        _songStyle = [[OSSongStyle alloc] init];
+    }
+    return _songStyle;
 }
 
 @end

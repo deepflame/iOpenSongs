@@ -10,12 +10,15 @@
 
 #import "OSSongViewDelegate.h"
 #import "Song.h"
+#import "OSSongStyle.h"
 
 @interface OSSongView : UIView
 
 @property (nonatomic, weak) id<OSSongViewDelegate> delegate;
 
 @property (nonatomic, copy) Song *song;
+@property (nonatomic, readonly) OSSongStyle *songStyle;
+
 @property (nonatomic, strong) NSString *introPartialName;
 
 @end
