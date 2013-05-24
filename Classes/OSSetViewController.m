@@ -14,6 +14,7 @@
 
 @interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate>
 @property (nonatomic, readonly) SYPaginatorView *paginatorView;
+@property (nonatomic, strong) UIView *currentView;
 @end
 
 @implementation OSSetViewController
@@ -53,6 +54,24 @@
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView willDisplayView:(UIView *)view atIndex:(NSInteger)pageIndex
 {
+    // attach observers for modifying the song style
+    if ([view isKindOfClass:[OSSongPageView class]]) {
+        [self.currentView removeObserversWithIdentifier:NSStringFromClass([self class])];
+        OSSongPageView *songPageView = (OSSongPageView *)view;
+        
+        NSArray *properties = @[@"nightMode",
+                                @"headerVisible", @"chordsVisible", @"lyricsVisible", @"commentsVisible",
+                                @"headerSize", @"chordsSize", @"lyricsSize", @"commentsSize"];
+        
+        [[OSSongStyle defaultStyle] addObserverForKeyPaths:properties
+                                                identifier:NSStringFromClass([self class])
+                                                   options:NSKeyValueObservingOptionInitial
+                                                      task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {
+            [songPageView.songView.songStyle setValue:[style valueForKey:keyPath] forKey:keyPath];
+        }];
+    }
+    self.currentView = view;
+    
     // FIXME: setitem positions not consistent...
     NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]];
     SetItem *setItem = setItems[pageIndex];
