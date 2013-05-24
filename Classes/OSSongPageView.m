@@ -11,9 +11,7 @@
 @implementation OSSongPageView
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-	if ((self = [super initWithReuseIdentifier:reuseIdentifier])) {
-		self.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-        
+	if ((self = [super initWithReuseIdentifier:reuseIdentifier])) {        
 		_songView = [[OSSongView alloc] initWithFrame:self.bounds];
 		_songView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[self addSubview:_songView];
