@@ -35,6 +35,25 @@
     self.view = songView;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSArray *properties = @[@"nightMode",
+                            @"headerVisible", @"chordsVisible", @"lyricsVisible", @"commentsVisible",
+                            @"headerSize", @"chordsSize", @"lyricsSize", @"commentsSize"];
+    
+    [[OSSongStyle defaultStyle] addObserverForKeyPaths:properties
+                                            identifier:NSStringFromClass([self class])
+                                               options:NSKeyValueObservingOptionNew
+                                                  task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {
+        [self.songView.songStyle setValue:[style valueForKey:keyPath] forKey:keyPath];
+    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[OSSongStyle defaultStyle] removeObserversWithIdentifier:NSStringFromClass([self class])];
+}
+
 #pragma mark - OSSongViewDelegate
 
 - (void)songView:(OSSongView *)sender didChangeSong:(Song *)song
