@@ -37,4 +37,22 @@
     self.commentsSize = 10;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    OSSongStyle *another = [[OSSongStyle allocWithZone:zone] init];
+    another.nightMode = self.nightMode;
+    
+    another.headerVisible = self.headerVisible;
+    another.chordsVisible = self.chordsVisible;
+    another.lyricsVisible = self.lyricsVisible;
+    another.commentsVisible = self.commentsVisible;
+    
+    another.headerSize = self.headerSize;
+    another.chordsSize = self.chordsSize;
+    another.lyricsSize = self.lyricsSize;
+    another.commentsSize = self.commentsSize;
+    
+    return another;
+}
+
 @end

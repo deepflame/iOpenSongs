@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OSSongStyle : NSObject
+@interface OSSongStyle : NSObject <NSCopying>
 
 + (OSSongStyle *)defaultStyle;
 
