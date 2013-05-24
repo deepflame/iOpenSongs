@@ -10,6 +10,8 @@
 
 #import "OSSupportTableViewController.h"
 
+#import "NSObject+RuntimeAdditions.h"
+
 @interface OSSongViewController () <UIWebViewDelegate, OSSongViewDelegate>
 @property (nonatomic, strong) Song *song;
 @end
@@ -37,11 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSArray *properties = @[@"nightMode",
-                            @"headerVisible", @"chordsVisible", @"lyricsVisible", @"commentsVisible",
-                            @"headerSize", @"chordsSize", @"lyricsSize", @"commentsSize"];
-    
-    [[OSSongStyle defaultStyle] addObserverForKeyPaths:properties
+    [[OSSongStyle defaultStyle] addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
                                             identifier:NSStringFromClass([self class])
                                                options:NSKeyValueObservingOptionNew
                                                   task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {

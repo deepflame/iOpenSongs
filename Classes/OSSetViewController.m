@@ -12,6 +12,8 @@
 #import "OSSongPageView.h"
 #import "SetItemSong.h"
 
+#import "NSObject+RuntimeAdditions.h"
+
 @interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate>
 @property (nonatomic, readonly) SYPaginatorView *paginatorView;
 @property (nonatomic, strong) UIView *currentView;
@@ -59,11 +61,7 @@
         [self.currentView removeObserversWithIdentifier:NSStringFromClass([self class])];
         OSSongPageView *songPageView = (OSSongPageView *)view;
         
-        NSArray *properties = @[@"nightMode",
-                                @"headerVisible", @"chordsVisible", @"lyricsVisible", @"commentsVisible",
-                                @"headerSize", @"chordsSize", @"lyricsSize", @"commentsSize"];
-        
-        [[OSSongStyle defaultStyle] addObserverForKeyPaths:properties
+        [[OSSongStyle defaultStyle] addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
                                                 identifier:NSStringFromClass([self class])
                                                    options:NSKeyValueObservingOptionInitial
                                                       task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {
