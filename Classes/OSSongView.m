@@ -128,34 +128,35 @@
     
     [songStyle removeAllBlockObservers];
     
+    // night mode
     [songStyle addObserverForKeyPath:@"nightMode" task:^(OSSongStyle *style){
         [self setNightMode:style.nightMode];
     }];
-    
+    // visibility
     [songStyle addObserverForKeyPath:@"headerVisible" task:^(OSSongStyle *style){
-        [self setStyleVisible:style.headerVisible withCSSSelector:@"body .opensong h2"];
+        [self setStyleVisible:style.headerVisible withCSSSelector:@".opensong h2"];
     }];
     [songStyle addObserverForKeyPath:@"chordsVisible" task:^(OSSongStyle *style){
-        [self setStyleVisible:style.chordsVisible withCSSSelector:@"body .opensong .chords"];
+        [self setStyleVisible:style.chordsVisible withCSSSelector:@".opensong .chords"];
     }];
     [songStyle addObserverForKeyPath:@"lyricsVisible" task:^(OSSongStyle *style){
-        [self setStyleVisible:style.lyricsVisible withCSSSelector:@"body .opensong .lyrics"];
+        [self setStyleVisible:style.lyricsVisible withCSSSelector:@".opensong .lyrics"];
     }];
     [songStyle addObserverForKeyPath:@"commentsVisible" task:^(OSSongStyle *style){
-        [self setStyleVisible:style.commentsVisible withCSSSelector:@"body .opensong .comments"];
+        [self setStyleVisible:style.commentsVisible withCSSSelector:@".opensong .comments"];
     }];
-    
+    // size
     [songStyle addObserverForKeyPath:@"headerSize" task:^(OSSongStyle *style){
-        [self setStyleSize:style.headerSize withCSSSelector:@"body .opensong h2"];
+        [self setStyleSize:style.headerSize withCSSSelector:@".opensong h2"];
     }];
     [songStyle addObserverForKeyPath:@"chordsSize" task:^(OSSongStyle *style){
-        [self setStyleSize:style.chordsSize withCSSSelector:@"body .opensong .chords"];
+        [self setStyleSize:style.chordsSize withCSSSelector:@".opensong .chords"];
     }];
     [songStyle addObserverForKeyPath:@"lyricsSize" task:^(OSSongStyle *style){
-        [self setStyleSize:style.lyricsSize withCSSSelector:@"body .opensong .lyrics"];
+        [self setStyleSize:style.lyricsSize withCSSSelector:@".opensong .lyrics"];
     }];
     [songStyle addObserverForKeyPath:@"commentsSize" task:^(OSSongStyle *style){
-        [self setStyleSize:style.commentsSize withCSSSelector:@"body .opensong .comments"];
+        [self setStyleSize:style.commentsSize withCSSSelector:@".opensong .comments"];
     }];
 }
 
