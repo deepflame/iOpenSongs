@@ -38,6 +38,23 @@
     self.view = paginator;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    SYPaginatorView *paginatorView = self.paginatorView;
+    [self.set addObserverForKeyPath:@"items" task:^(NSObject *receiver) {
+        [paginatorView reloadData];
+    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.set removeAllBlockObservers];
+}
+
 #pragma mark - SYPaginatorViewDelegate
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView didScrollToPageAtIndex:(NSInteger)pageIndex
@@ -116,18 +133,8 @@
 - (void)setSet:(Set *)set
 {
     if (_set != set) {
-        // remove observer from old instance
-        if (_set) {
-            [_set removeAllBlockObservers];
-        }
-        
         _set = set;
-        
-        SYPaginatorView *pv = self.paginatorView;
-        [_set addObserverForKeyPath:@"items" task:^(NSObject *receiver) {
-            [pv reloadData];
-        }];
-        [pv reloadData];
+        [self.paginatorView reloadData];
     }
 }
 
