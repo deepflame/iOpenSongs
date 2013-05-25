@@ -8,6 +8,11 @@
 
 #import "OSSongStyle.h"
 
+#import "NSObject+RuntimeAdditions.h"
+
+#define USER_DEFAULTS_KEY_NIGHT_MODE @"SongViewController.nightMode"
+#define USER_DEFAULTS_KEY_SONG_STYLE @"SongViewController.songStyle"
+
 @implementation OSSongStyle
 
 + (OSSongStyle *)defaultStyle
@@ -17,7 +22,7 @@
     dispatch_once(&onceTokenSongStyle, ^{
         sharedInstance = [[OSSongStyle alloc] init];
         
-        [sharedInstance resetStyle];
+        [sharedInstance loadFromUserDefaults];
     });
     return sharedInstance;
 }
@@ -35,6 +40,31 @@
     self.chordsSize = 16;
     self.lyricsSize = 16;
     self.commentsSize = 10;
+}
+
+- (void)loadFromUserDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *styleDict = [defaults objectForKey:USER_DEFAULTS_KEY_SONG_STYLE];
+    
+    if (styleDict) {
+        [self setValuesForKeysWithDictionary:styleDict];
+        self.nightMode = [defaults boolForKey:USER_DEFAULTS_KEY_NIGHT_MODE];
+    } else {
+        [self resetStyle];
+    }
+}
+
+- (void)saveAsUserDefaults
+{
+    NSMutableDictionary *styleDict = [[self dictionaryWithValuesForKeys:[self propertyNames]] mutableCopy];
+    [styleDict removeObjectForKey:@"nightMode"]; // night mode was not part of the song style before
+    
+    // save user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:styleDict forKey:USER_DEFAULTS_KEY_SONG_STYLE];
+    [defaults setBool:self.nightMode forKey:USER_DEFAULTS_KEY_NIGHT_MODE];
+    [defaults synchronize];
 }
 
 - (id)copyWithZone:(NSZone *)zone

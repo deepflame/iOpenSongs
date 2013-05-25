@@ -14,6 +14,8 @@
 
 - (void)resetStyle;
 
+- (void)saveAsUserDefaults;
+
 @property (nonatomic) BOOL nightMode;
 
 @property (nonatomic) BOOL headerVisible;
