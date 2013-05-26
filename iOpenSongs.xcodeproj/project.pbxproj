@@ -49,6 +49,10 @@
 		3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
 		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
 		3E80287D1751D9160022BF3B /* OSTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E80287C1751D9160022BF3B /* OSTestController.m */; };
+		3E8028861751F3510022BF3B /* ProgramIcon57-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028821751F3510022BF3B /* ProgramIcon57-Beta.png */; };
+		3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */; };
+		3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */; };
+		3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */; };
 		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
@@ -113,10 +117,6 @@
 		3EB908F61751870E002125FE /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3EB908F71751870E002125FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
 		3EB908F81751870E002125FE /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
-		3EB908F91751870E002125FE /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
-		3EB908FA1751870E002125FE /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
-		3EB908FB1751870E002125FE /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
-		3EB908FC1751870E002125FE /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
 		3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
 		3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
@@ -333,6 +333,10 @@
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		3E80287B1751D9160022BF3B /* OSTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSTestController.h; sourceTree = "<group>"; };
 		3E80287C1751D9160022BF3B /* OSTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSTestController.m; sourceTree = "<group>"; };
+		3E8028821751F3510022BF3B /* ProgramIcon57-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon57-Beta.png"; sourceTree = "<group>"; };
+		3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon72-Beta.png"; sourceTree = "<group>"; };
+		3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon114-Beta.png"; sourceTree = "<group>"; };
+		3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon144-Beta.png"; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
@@ -513,9 +517,13 @@
 				3EF638811711ECB60091891D /* Document-song-icon.png */,
 				3EF638821711ECB60091891D /* Document-song-icon@2x.png */,
 				3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */,
+				3E8028821751F3510022BF3B /* ProgramIcon57-Beta.png */,
 				3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */,
+				3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */,
 				3E9A92391529648400AA6B57 /* ProgramIcon114.png */,
+				3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */,
 				3E9A923B152964F600AA6B57 /* ProgramIcon144.png */,
+				3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */,
 				3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */,
 				3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */,
 			);
@@ -908,10 +916,6 @@
 				3EB908F61751870E002125FE /* ios.css in Resources */,
 				3EB908F71751870E002125FE /* index.html in Resources */,
 				3EB908F81751870E002125FE /* about.html in Resources */,
-				3EB908F91751870E002125FE /* ProgramIcon57.png in Resources */,
-				3EB908FA1751870E002125FE /* ProgramIcon72.png in Resources */,
-				3EB908FB1751870E002125FE /* ProgramIcon114.png in Resources */,
-				3EB908FC1751870E002125FE /* ProgramIcon144.png in Resources */,
 				3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */,
 				3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */,
 				3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */,
@@ -938,6 +942,10 @@
 				3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */,
 				3EB909151751870E002125FE /* _welcome.html in Resources */,
 				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
+				3E8028861751F3510022BF3B /* ProgramIcon57-Beta.png in Resources */,
+				3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */,
+				3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */,
+				3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>iOpenSongs</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>ProgramIcon72.png</string>
-		<string>ProgramIcon57.png</string>
-		<string>ProgramIcon114.png</string>
-		<string>ProgramIcon144.png</string>
+		<string>ProgramIcon72-Beta.png</string>
+		<string>ProgramIcon57-Beta.png</string>
+		<string>ProgramIcon114-Beta.png</string>
+		<string>ProgramIcon144-Beta.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -21,11 +21,13 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>ProgramIcon72.png</string>
-				<string>ProgramIcon57.png</string>
-				<string>ProgramIcon114.png</string>
-				<string>ProgramIcon144.png</string>
+				<string>ProgramIcon72-Beta.png</string>
+				<string>ProgramIcon57-Beta.png</string>
+				<string>ProgramIcon114-Beta.png</string>
+				<string>ProgramIcon144-Beta.png</string>
 			</array>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
@@ -54,6 +56,8 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
