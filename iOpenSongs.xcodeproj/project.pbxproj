@@ -39,6 +39,8 @@
 		3E6C47151525EE4400164540 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
+		3E7B9A2A1751D32200C74EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
+		3E7B9A2B1751D32300C74EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 		3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
 		3E7F1B66158476BC008C222F /* OSSetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */; };
 		3E7F1BA5158499A9008C222F /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
@@ -46,6 +48,7 @@
 		3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
 		3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
 		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3E80287D1751D9160022BF3B /* OSTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E80287C1751D9160022BF3B /* OSTestController.m */; };
 		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
@@ -57,12 +60,96 @@
 		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
+		3EB908BF1751870E002125FE /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3EB908C01751870E002125FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
+		3EB908C11751870E002125FE /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
+		3EB908C21751870E002125FE /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
+		3EB908C31751870E002125FE /* OSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSMainViewController.m */; };
+		3EB908C41751870E002125FE /* OSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* OSAppDelegate.m */; };
+		3EB908C51751870E002125FE /* OSSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* OSSongViewController.m */; };
+		3EB908C61751870E002125FE /* OSSongSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */; };
+		3EB908C71751870E002125FE /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
+		3EB908C81751870E002125FE /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
+		3EB908C91751870E002125FE /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
+		3EB908CA1751870E002125FE /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
+		3EB908CB1751870E002125FE /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
+		3EB908CC1751870E002125FE /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
+		3EB908CD1751870E002125FE /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
+		3EB908CE1751870E002125FE /* OSSetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */; };
+		3EB908CF1751870E002125FE /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
+		3EB908D01751870E002125FE /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
+		3EB908D11751870E002125FE /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3EB908D21751870E002125FE /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */; };
+		3EB908D31751870E002125FE /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
+		3EB908D41751870E002125FE /* OSUserVoiceStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */; };
+		3EB908D51751870E002125FE /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
+		3EB908D61751870E002125FE /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
+		3EB908D71751870E002125FE /* OSStartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */; };
+		3EB908D81751870E002125FE /* NSString+SectionIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */; };
+		3EB908D91751870E002125FE /* UIApplication+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */; };
+		3EB908DA1751870E002125FE /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
+		3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
+		3EB908DC1751870E002125FE /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
+		3EB908DD1751870E002125FE /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
+		3EB908DE1751870E002125FE /* OSFileDescriptor+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */; };
+		3EB908DF1751870E002125FE /* OSSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7B717080B26006A9B34 /* OSSongView.m */; };
+		3EB908E01751870E002125FE /* OSHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7BB17082B5F006A9B34 /* OSHtmlView.m */; };
+		3EB908E11751870E002125FE /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
+		3EB908E21751870E002125FE /* OSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65A1D217136348009B2732 /* OSSetViewController.m */; };
+		3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
+		3EB908E41751870E002125FE /* OSSongStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B5174D981300F1CDEA /* OSSongStyle.m */; };
+		3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */; };
+		3EB908E71751870E002125FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
+		3EB908E81751870E002125FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
+		3EB908E91751870E002125FE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
+		3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
+		3EB908EF1751870E002125FE /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
+		3EB908F01751870E002125FE /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
+		3EB908F11751870E002125FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
+		3EB908F21751870E002125FE /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
+		3EB908F31751870E002125FE /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
+		3EB908F41751870E002125FE /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
+		3EB908F51751870E002125FE /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
+		3EB908F61751870E002125FE /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
+		3EB908F71751870E002125FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
+		3EB908F81751870E002125FE /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
+		3EB908F91751870E002125FE /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
+		3EB908FA1751870E002125FE /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
+		3EB908FB1751870E002125FE /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
+		3EB908FC1751870E002125FE /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
+		3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
+		3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
+		3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
+		3EB909001751870E002125FE /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
+		3EB909011751870E002125FE /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
+		3EB909021751870E002125FE /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
+		3EB909031751870E002125FE /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
+		3EB909041751870E002125FE /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
+		3EB909051751870E002125FE /* glyphicons_399_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */; };
+		3EB909061751870E002125FE /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
+		3EB909071751870E002125FE /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
+		3EB909081751870E002125FE /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
+		3EB909091751870E002125FE /* glyphicons_381_github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */; };
+		3EB9090A1751870E002125FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
+		3EB9090B1751870E002125FE /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
+		3EB9090C1751870E002125FE /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
+		3EB9090D1751870E002125FE /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
+		3EB9090E1751870E002125FE /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
+		3EB9090F1751870E002125FE /* Document-empty-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6387F1711ECB60091891D /* Document-empty-icon.png */; };
+		3EB909101751870E002125FE /* Document-empty-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638801711ECB60091891D /* Document-empty-icon@2x.png */; };
+		3EB909111751870E002125FE /* Document-song-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638811711ECB60091891D /* Document-song-icon.png */; };
+		3EB909121751870E002125FE /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
+		3EB909131751870E002125FE /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
+		3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
+		3EB909151751870E002125FE /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545833174BA2C700B4FFF9 /* _welcome.html */; };
+		3EB909161751870E002125FE /* _set-add-songs.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545835174BBEA200B4FFF9 /* _set-add-songs.html */; };
 		3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
 		3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
 		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
 		3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
 		3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
+		3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED468D317510C2800AFEA85 /* libPods-Integration.a */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
@@ -90,11 +177,93 @@
 		3EF6388A1711ECB60091891D /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
 		3EF638911711F1320091891D /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
 		3EF638921711F1320091891D /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
-		ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
+		3EFC153517510A1D00BFA2BB /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3EFC153617510A1D00BFA2BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
+		3EFC153717510A1D00BFA2BB /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
+		3EFC153817510A1D00BFA2BB /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
+		3EFC153917510A1D00BFA2BB /* OSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSMainViewController.m */; };
+		3EFC153A17510A1D00BFA2BB /* OSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* OSAppDelegate.m */; };
+		3EFC153B17510A1D00BFA2BB /* OSSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* OSSongViewController.m */; };
+		3EFC153C17510A1D00BFA2BB /* OSSongSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */; };
+		3EFC153D17510A1D00BFA2BB /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
+		3EFC153E17510A1D00BFA2BB /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
+		3EFC153F17510A1D00BFA2BB /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
+		3EFC154017510A1D00BFA2BB /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
+		3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
+		3EFC154217510A1D00BFA2BB /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
+		3EFC154317510A1D00BFA2BB /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
+		3EFC154417510A1D00BFA2BB /* OSSetItemSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B65158476BC008C222F /* OSSetItemSongsTableViewController.m */; };
+		3EFC154517510A1D00BFA2BB /* SetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8813160CCCED004EB8E6 /* SetItem.m */; };
+		3EFC154617510A1D00BFA2BB /* SetItemSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */; };
+		3EFC154717510A1D00BFA2BB /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
+		3EFC154817510A1D00BFA2BB /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */; };
+		3EFC154917510A1D00BFA2BB /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
+		3EFC154A17510A1D00BFA2BB /* OSUserVoiceStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E637B0B16D0CB2A00514793 /* OSUserVoiceStyleSheet.m */; };
+		3EFC154B17510A1D00BFA2BB /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
+		3EFC154C17510A1D00BFA2BB /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3872AE16EB1676003A0DCC /* Song.m */; };
+		3EFC154D17510A1D00BFA2BB /* OSStartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */; };
+		3EFC154E17510A1D00BFA2BB /* NSString+SectionIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E61E7E016EED0230012D34A /* NSString+SectionIndex.m */; };
+		3EFC154F17510A1D00BFA2BB /* UIApplication+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */; };
+		3EFC155017510A1D00BFA2BB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
+		3EFC155117510A1D00BFA2BB /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
+		3EFC155217510A1D00BFA2BB /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
+		3EFC155317510A1D00BFA2BB /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
+		3EFC155417510A1D00BFA2BB /* OSFileDescriptor+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */; };
+		3EFC155517510A1D00BFA2BB /* OSSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7B717080B26006A9B34 /* OSSongView.m */; };
+		3EFC155617510A1D00BFA2BB /* OSHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7BB17082B5F006A9B34 /* OSHtmlView.m */; };
+		3EFC155717510A1D00BFA2BB /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
+		3EFC155817510A1D00BFA2BB /* OSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65A1D217136348009B2732 /* OSSetViewController.m */; };
+		3EFC155917510A1D00BFA2BB /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
+		3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B5174D981300F1CDEA /* OSSongStyle.m */; };
+		3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */; };
+		3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
+		3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
+		3EFC155F17510A1D00BFA2BB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
+		3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
+		3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
+		3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
+		3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
+		3EFC156817510A1D00BFA2BB /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
+		3EFC156917510A1D00BFA2BB /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
+		3EFC156A17510A1D00BFA2BB /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
+		3EFC156B17510A1D00BFA2BB /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
+		3EFC156C17510A1D00BFA2BB /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
+		3EFC156D17510A1D00BFA2BB /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
+		3EFC156E17510A1D00BFA2BB /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
+		3EFC156F17510A1D00BFA2BB /* ProgramIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B9614F1FB8A00E49942 /* ProgramIcon57.png */; };
+		3EFC157017510A1D00BFA2BB /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
+		3EFC157117510A1D00BFA2BB /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
+		3EFC157217510A1D00BFA2BB /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
+		3EFC157317510A1D00BFA2BB /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E35844C151E120F00137FC4 /* nav_menu_icon@2x.png */; };
+		3EFC157417510A1D00BFA2BB /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
+		3EFC157517510A1D00BFA2BB /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
+		3EFC157617510A1D00BFA2BB /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
+		3EFC157717510A1D00BFA2BB /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
+		3EFC157817510A1D00BFA2BB /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
+		3EFC157917510A1D00BFA2BB /* glyphicons_392_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAD153E5F3E000A0C73 /* glyphicons_392_twitter@2x.png */; };
+		3EFC157A17510A1D00BFA2BB /* glyphicons_399_e-mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */; };
+		3EFC157B17510A1D00BFA2BB /* glyphicons_399_e-mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */; };
+		3EFC157C17510A1D00BFA2BB /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
+		3EFC157D17510A1D00BFA2BB /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
+		3EFC157E17510A1D00BFA2BB /* glyphicons_381_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA3158499A9008C222F /* glyphicons_381_github.png */; };
+		3EFC157F17510A1D00BFA2BB /* glyphicons_381_github@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F1BA4158499A9008C222F /* glyphicons_381_github@2x.png */; };
+		3EFC158017510A1D00BFA2BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
+		3EFC158117510A1D00BFA2BB /* glyphicons_244_conversation.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */; };
+		3EFC158217510A1D00BFA2BB /* glyphicons_244_conversation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */; };
+		3EFC158317510A1D00BFA2BB /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
+		3EFC158417510A1D00BFA2BB /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
+		3EFC158517510A1D00BFA2BB /* Document-empty-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6387F1711ECB60091891D /* Document-empty-icon.png */; };
+		3EFC158617510A1D00BFA2BB /* Document-empty-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638801711ECB60091891D /* Document-empty-icon@2x.png */; };
+		3EFC158717510A1D00BFA2BB /* Document-song-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638811711ECB60091891D /* Document-song-icon.png */; };
+		3EFC158817510A1D00BFA2BB /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
+		3EFC158917510A1D00BFA2BB /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
+		3EFC158A17510A1D00BFA2BB /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
+		3EFC158B17510A1D00BFA2BB /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545833174BA2C700B4FFF9 /* _welcome.html */; };
+		3EFC158C17510A1D00BFA2BB /* _set-add-songs.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545835174BBEA200B4FFF9 /* _set-add-songs.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = iOpenSongs.entitlements; path = Resources/iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
 		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRLayeredNavigationController+ExposePrivate.h"; sourceTree = "<group>"; };
@@ -162,6 +331,8 @@
 		3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSong.m; sourceTree = "<group>"; };
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
+		3E80287B1751D9160022BF3B /* OSTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSTestController.h; sourceTree = "<group>"; };
+		3E80287C1751D9160022BF3B /* OSTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSTestController.m; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
@@ -178,6 +349,8 @@
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3EB9091B1751870E002125FE /* iOpenSongs Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOpenSongs Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB9091C1751870F002125FE /* iOpenSongs.beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs.beta-Info.plist"; sourceTree = "<group>"; };
 		3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+PrimitiveAccessors.h"; sourceTree = "<group>"; };
 		3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+AccessorOverrides.m"; sourceTree = "<group>"; };
 		3EC697E7155E06C400022C0E /* OSSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetTableViewController.h; sourceTree = "<group>"; };
@@ -189,6 +362,7 @@
 		3ED177F517134C3800B303CA /* OSSongPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongPageView.h; sourceTree = "<group>"; };
 		3ED177F617134C3800B303CA /* OSSongPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongPageView.m; sourceTree = "<group>"; };
 		3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
+		3ED468D317510C2800AFEA85 /* libPods-Integration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-Integration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EDDA40414AEC3A400BB781C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -234,10 +408,25 @@
 		3EF638821711ECB60091891D /* Document-song-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-song-icon@2x.png"; sourceTree = "<group>"; };
 		3EF6388F1711F1320091891D /* Folder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder-icon.png"; sourceTree = "<group>"; };
 		3EF638901711F1320091891D /* Folder-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder-icon@2x.png"; sourceTree = "<group>"; };
+		3EFC159117510A1E00BFA2BB /* iOpenSongs Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOpenSongs Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EFC159217510A1E00BFA2BB /* iOpenSongs.integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs.integration-Info.plist"; sourceTree = "<group>"; };
+		6CC12721D98D44BA93A177E6 /* Pods-Integration.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Integration.xcconfig"; path = "Pods/Pods-Integration.xcconfig"; sourceTree = SOURCE_ROOT; };
 		83DDE2BF561849B48BA5F099 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3EB908E61751870E002125FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB908E71751870E002125FE /* Foundation.framework in Frameworks */,
+				3EB908E81751870E002125FE /* UIKit.framework in Frameworks */,
+				3EB908E91751870E002125FE /* Crashlytics.framework in Frameworks */,
+				3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */,
+				3E7B9A2B1751D32300C74EBB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EDDA3FB14AEC3A400BB781C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,7 +435,19 @@
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */,
 				3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */,
-				ADFC964FED4F40AAB0DA560A /* libPods.a in Frameworks */,
+				3E7B9A2A1751D32200C74EBB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EFC155C17510A1D00BFA2BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */,
+				3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */,
+				3EFC155F17510A1D00BFA2BB /* Crashlytics.framework in Frameworks */,
+				3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */,
+				3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +496,8 @@
 				3E5E878914DE6166003B645A /* Html */,
 				3EA0BB9C16D1219C00D7D97D /* Songs */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
+				3EB9091C1751870F002125FE /* iOpenSongs.beta-Info.plist */,
+				3EFC159217510A1E00BFA2BB /* iOpenSongs.integration-Info.plist */,
 				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
 			);
 			path = Resources;
@@ -337,6 +540,15 @@
 				3EE0CE8516A2870200883F64 /* CoreDataTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3E80287A1751D7B60022BF3B /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				3E80287B1751D9160022BF3B /* OSTestController.h */,
+				3E80287C1751D9160022BF3B /* OSTestController.m */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 		3E92911716F9E1F0002F6ABB /* Import */ = {
@@ -446,11 +658,13 @@
 			children = (
 				3EDDA40814AEC3A400BB781C /* Classes */,
 				3EDDA40914AEC3A400BB781C /* Other Sources */,
+				3E80287A1751D7B60022BF3B /* Testing */,
 				3EDDA40114AEC3A400BB781C /* Frameworks */,
 				3E637B0416D07BAD00514793 /* Resources */,
 				3EE0DB2D16EBA976005C89C6 /* Vendor */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
 				83DDE2BF561849B48BA5F099 /* Pods.xcconfig */,
+				6CC12721D98D44BA93A177E6 /* Pods-Integration.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -458,6 +672,8 @@
 			isa = PBXGroup;
 			children = (
 				3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */,
+				3EFC159117510A1E00BFA2BB /* iOpenSongs Test.app */,
+				3EB9091B1751870E002125FE /* iOpenSongs Beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -470,6 +686,7 @@
 				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
 				3EA0BB9716D119B500D7D97D /* libxml2.dylib */,
 				2DAA4B6E5367422FAD72E0EA /* libPods.a */,
+				3ED468D317510C2800AFEA85 /* libPods-Integration.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -587,9 +804,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EDDA3FD14AEC3A400BB781C /* iOpenSongs */ = {
+		3EB908BD1751870E002125FE /* Beta */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "iOpenSongs" */;
+			buildConfigurationList = 3EB909181751870E002125FE /* Build configuration list for PBXNativeTarget "Beta" */;
+			buildPhases = (
+				3EB908BE1751870E002125FE /* Sources */,
+				3EB908E61751870E002125FE /* Frameworks */,
+				3EB908EC1751870E002125FE /* ShellScript */,
+				3EB908ED1751870E002125FE /* ShellScript */,
+				3EB908EE1751870E002125FE /* Resources */,
+				3EB909171751870E002125FE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Beta;
+			productName = iOpenSongs;
+			productReference = 3EB9091B1751870E002125FE /* iOpenSongs Beta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EDDA3FD14AEC3A400BB781C /* Release */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "Release" */;
 			buildPhases = (
 				3EDDA3FA14AEC3A400BB781C /* Sources */,
 				3EDDA3FB14AEC3A400BB781C /* Frameworks */,
@@ -602,9 +839,29 @@
 			);
 			dependencies = (
 			);
-			name = iOpenSongs;
+			name = Release;
 			productName = iOpenSongs;
 			productReference = 3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EFC153317510A1D00BFA2BB /* Integration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EFC158E17510A1D00BFA2BB /* Build configuration list for PBXNativeTarget "Integration" */;
+			buildPhases = (
+				3EFC153417510A1D00BFA2BB /* Sources */,
+				3EFC155C17510A1D00BFA2BB /* Frameworks */,
+				3EFC156217510A1D00BFA2BB /* ShellScript */,
+				3EFC156317510A1D00BFA2BB /* ShellScript */,
+				3EFC156417510A1D00BFA2BB /* Resources */,
+				3EFC158D17510A1D00BFA2BB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Integration;
+			productName = iOpenSongs;
+			productReference = 3EFC159117510A1E00BFA2BB /* iOpenSongs Test.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -629,12 +886,61 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EDDA3FD14AEC3A400BB781C /* iOpenSongs */,
+				3EDDA3FD14AEC3A400BB781C /* Release */,
+				3EB908BD1751870E002125FE /* Beta */,
+				3EFC153317510A1D00BFA2BB /* Integration */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3EB908EE1751870E002125FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB908EF1751870E002125FE /* iPad.storyboard in Resources */,
+				3EB908F01751870E002125FE /* iPhone.storyboard in Resources */,
+				3EB908F11751870E002125FE /* InfoPlist.strings in Resources */,
+				3EB908F21751870E002125FE /* jquery-1.7.1.min.js in Resources */,
+				3EB908F31751870E002125FE /* opensong.js in Resources */,
+				3EB908F41751870E002125FE /* opensong.css in Resources */,
+				3EB908F51751870E002125FE /* default.css in Resources */,
+				3EB908F61751870E002125FE /* ios.css in Resources */,
+				3EB908F71751870E002125FE /* index.html in Resources */,
+				3EB908F81751870E002125FE /* about.html in Resources */,
+				3EB908F91751870E002125FE /* ProgramIcon57.png in Resources */,
+				3EB908FA1751870E002125FE /* ProgramIcon72.png in Resources */,
+				3EB908FB1751870E002125FE /* ProgramIcon114.png in Resources */,
+				3EB908FC1751870E002125FE /* ProgramIcon144.png in Resources */,
+				3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */,
+				3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */,
+				3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */,
+				3EB909001751870E002125FE /* glyphicons_017_music.png in Resources */,
+				3EB909011751870E002125FE /* glyphicons_023_cogwheels.png in Resources */,
+				3EB909021751870E002125FE /* glyphicons_392_twitter.png in Resources */,
+				3EB909031751870E002125FE /* glyphicons_392_twitter@2x.png in Resources */,
+				3EB909041751870E002125FE /* glyphicons_399_e-mail.png in Resources */,
+				3EB909051751870E002125FE /* glyphicons_399_e-mail@2x.png in Resources */,
+				3EB909061751870E002125FE /* glyphicons_158_playlist.png in Resources */,
+				3EB909071751870E002125FE /* glyphicons_158_playlist@2x.png in Resources */,
+				3EB909081751870E002125FE /* glyphicons_381_github.png in Resources */,
+				3EB909091751870E002125FE /* glyphicons_381_github@2x.png in Resources */,
+				3EB9090A1751870E002125FE /* Default-568h@2x.png in Resources */,
+				3EB9090B1751870E002125FE /* glyphicons_244_conversation.png in Resources */,
+				3EB9090C1751870E002125FE /* glyphicons_244_conversation@2x.png in Resources */,
+				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
+				3EB9090E1751870E002125FE /* Sample Song in Resources */,
+				3EB9090F1751870E002125FE /* Document-empty-icon.png in Resources */,
+				3EB909101751870E002125FE /* Document-empty-icon@2x.png in Resources */,
+				3EB909111751870E002125FE /* Document-song-icon.png in Resources */,
+				3EB909121751870E002125FE /* Document-song-icon@2x.png in Resources */,
+				3EB909131751870E002125FE /* Folder-icon.png in Resources */,
+				3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */,
+				3EB909151751870E002125FE /* _welcome.html in Resources */,
+				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EDDA3FC14AEC3A400BB781C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,9 +988,96 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3EFC156417510A1D00BFA2BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */,
+				3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */,
+				3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */,
+				3EFC156817510A1D00BFA2BB /* jquery-1.7.1.min.js in Resources */,
+				3EFC156917510A1D00BFA2BB /* opensong.js in Resources */,
+				3EFC156A17510A1D00BFA2BB /* opensong.css in Resources */,
+				3EFC156B17510A1D00BFA2BB /* default.css in Resources */,
+				3EFC156C17510A1D00BFA2BB /* ios.css in Resources */,
+				3EFC156D17510A1D00BFA2BB /* index.html in Resources */,
+				3EFC156E17510A1D00BFA2BB /* about.html in Resources */,
+				3EFC156F17510A1D00BFA2BB /* ProgramIcon57.png in Resources */,
+				3EFC157017510A1D00BFA2BB /* ProgramIcon72.png in Resources */,
+				3EFC157117510A1D00BFA2BB /* ProgramIcon114.png in Resources */,
+				3EFC157217510A1D00BFA2BB /* ProgramIcon144.png in Resources */,
+				3EFC157317510A1D00BFA2BB /* nav_menu_icon@2x.png in Resources */,
+				3EFC157417510A1D00BFA2BB /* glyphicons_023_cogwheels@2x.png in Resources */,
+				3EFC157517510A1D00BFA2BB /* glyphicons_017_music@2x.png in Resources */,
+				3EFC157617510A1D00BFA2BB /* glyphicons_017_music.png in Resources */,
+				3EFC157717510A1D00BFA2BB /* glyphicons_023_cogwheels.png in Resources */,
+				3EFC157817510A1D00BFA2BB /* glyphicons_392_twitter.png in Resources */,
+				3EFC157917510A1D00BFA2BB /* glyphicons_392_twitter@2x.png in Resources */,
+				3EFC157A17510A1D00BFA2BB /* glyphicons_399_e-mail.png in Resources */,
+				3EFC157B17510A1D00BFA2BB /* glyphicons_399_e-mail@2x.png in Resources */,
+				3EFC157C17510A1D00BFA2BB /* glyphicons_158_playlist.png in Resources */,
+				3EFC157D17510A1D00BFA2BB /* glyphicons_158_playlist@2x.png in Resources */,
+				3EFC157E17510A1D00BFA2BB /* glyphicons_381_github.png in Resources */,
+				3EFC157F17510A1D00BFA2BB /* glyphicons_381_github@2x.png in Resources */,
+				3EFC158017510A1D00BFA2BB /* Default-568h@2x.png in Resources */,
+				3EFC158117510A1D00BFA2BB /* glyphicons_244_conversation.png in Resources */,
+				3EFC158217510A1D00BFA2BB /* glyphicons_244_conversation@2x.png in Resources */,
+				3EFC158317510A1D00BFA2BB /* Amazing Grace in Resources */,
+				3EFC158417510A1D00BFA2BB /* Sample Song in Resources */,
+				3EFC158517510A1D00BFA2BB /* Document-empty-icon.png in Resources */,
+				3EFC158617510A1D00BFA2BB /* Document-empty-icon@2x.png in Resources */,
+				3EFC158717510A1D00BFA2BB /* Document-song-icon.png in Resources */,
+				3EFC158817510A1D00BFA2BB /* Document-song-icon@2x.png in Resources */,
+				3EFC158917510A1D00BFA2BB /* Folder-icon.png in Resources */,
+				3EFC158A17510A1D00BFA2BB /* Folder-icon@2x.png in Resources */,
+				3EFC158B17510A1D00BFA2BB /* _welcome.html in Resources */,
+				3EFC158C17510A1D00BFA2BB /* _set-add-songs.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3EB908EC1751870E002125FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		3EB908ED1751870E002125FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = ./Vendor/Crashlytics/run.sh;
+			shellScript = "";
+		};
+		3EB909171751870E002125FE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		3ED2C91B16CD21D10067C3DA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -711,6 +1104,46 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
+		3EFC156217510A1D00BFA2BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		3EFC156317510A1D00BFA2BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = ./Vendor/Crashlytics/run.sh;
+			shellScript = "";
+		};
+		3EFC158D17510A1D00BFA2BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		BA2F0F4A94D9463A9899752C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,6 +1161,52 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3EB908BE1751870E002125FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EB908BF1751870E002125FE /* iOpenSongs.xcdatamodeld in Sources */,
+				3EB908C01751870E002125FE /* main.m in Sources */,
+				3EB908C11751870E002125FE /* NSString+JavaScript.m in Sources */,
+				3EB908C21751870E002125FE /* RKXMLParserLibXML.m in Sources */,
+				3EB908C31751870E002125FE /* OSMainViewController.m in Sources */,
+				3EB908C41751870E002125FE /* OSAppDelegate.m in Sources */,
+				3EB908C51751870E002125FE /* OSSongViewController.m in Sources */,
+				3EB908C61751870E002125FE /* OSSongSelectTableViewController.m in Sources */,
+				3EB908C71751870E002125FE /* OSAboutViewController.m in Sources */,
+				3EB908C81751870E002125FE /* OSSupportTableViewController.m in Sources */,
+				3EB908C91751870E002125FE /* Song+OpenSong.m in Sources */,
+				3EB908CA1751870E002125FE /* OSStyleViewController.m in Sources */,
+				3EB908CB1751870E002125FE /* OSSetTableViewController.m in Sources */,
+				3EB908CC1751870E002125FE /* OSSetItemsTableViewController.m in Sources */,
+				3EB908CD1751870E002125FE /* OSSongTableViewController.m in Sources */,
+				3EB908CE1751870E002125FE /* OSSetItemSongsTableViewController.m in Sources */,
+				3EB908CF1751870E002125FE /* SetItem.m in Sources */,
+				3EB908D01751870E002125FE /* SetItemSong.m in Sources */,
+				3EB908D11751870E002125FE /* Set.m in Sources */,
+				3EB908D21751870E002125FE /* CoreDataTableViewController.m in Sources */,
+				3EB908D31751870E002125FE /* Song+Import.m in Sources */,
+				3EB908D41751870E002125FE /* OSUserVoiceStyleSheet.m in Sources */,
+				3EB908D51751870E002125FE /* Song+AccessorOverrides.m in Sources */,
+				3EB908D61751870E002125FE /* Song.m in Sources */,
+				3EB908D71751870E002125FE /* OSStartupViewController.m in Sources */,
+				3EB908D81751870E002125FE /* NSString+SectionIndex.m in Sources */,
+				3EB908D91751870E002125FE /* UIApplication+Directories.m in Sources */,
+				3EB908DA1751870E002125FE /* OSDropboxImportTableViewController.m in Sources */,
+				3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */,
+				3EB908DC1751870E002125FE /* OSITunesImportTableViewController.m in Sources */,
+				3EB908DD1751870E002125FE /* OSFileDescriptor.m in Sources */,
+				3EB908DE1751870E002125FE /* OSFileDescriptor+Dropbox.m in Sources */,
+				3EB908DF1751870E002125FE /* OSSongView.m in Sources */,
+				3EB908E01751870E002125FE /* OSHtmlView.m in Sources */,
+				3EB908E11751870E002125FE /* OSSongPageView.m in Sources */,
+				3EB908E21751870E002125FE /* OSSetViewController.m in Sources */,
+				3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */,
+				3EB908E41751870E002125FE /* OSSongStyle.m in Sources */,
+				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3EDDA3FA14AEC3A400BB781C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,6 +1253,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3EFC153417510A1D00BFA2BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EFC153517510A1D00BFA2BB /* iOpenSongs.xcdatamodeld in Sources */,
+				3EFC153617510A1D00BFA2BB /* main.m in Sources */,
+				3EFC153717510A1D00BFA2BB /* NSString+JavaScript.m in Sources */,
+				3EFC153817510A1D00BFA2BB /* RKXMLParserLibXML.m in Sources */,
+				3EFC153917510A1D00BFA2BB /* OSMainViewController.m in Sources */,
+				3EFC153A17510A1D00BFA2BB /* OSAppDelegate.m in Sources */,
+				3EFC153B17510A1D00BFA2BB /* OSSongViewController.m in Sources */,
+				3EFC153C17510A1D00BFA2BB /* OSSongSelectTableViewController.m in Sources */,
+				3EFC153D17510A1D00BFA2BB /* OSAboutViewController.m in Sources */,
+				3EFC153E17510A1D00BFA2BB /* OSSupportTableViewController.m in Sources */,
+				3EFC153F17510A1D00BFA2BB /* Song+OpenSong.m in Sources */,
+				3EFC154017510A1D00BFA2BB /* OSStyleViewController.m in Sources */,
+				3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */,
+				3EFC154217510A1D00BFA2BB /* OSSetItemsTableViewController.m in Sources */,
+				3EFC154317510A1D00BFA2BB /* OSSongTableViewController.m in Sources */,
+				3EFC154417510A1D00BFA2BB /* OSSetItemSongsTableViewController.m in Sources */,
+				3EFC154517510A1D00BFA2BB /* SetItem.m in Sources */,
+				3EFC154617510A1D00BFA2BB /* SetItemSong.m in Sources */,
+				3EFC154717510A1D00BFA2BB /* Set.m in Sources */,
+				3EFC154817510A1D00BFA2BB /* CoreDataTableViewController.m in Sources */,
+				3EFC154917510A1D00BFA2BB /* Song+Import.m in Sources */,
+				3EFC154A17510A1D00BFA2BB /* OSUserVoiceStyleSheet.m in Sources */,
+				3EFC154B17510A1D00BFA2BB /* Song+AccessorOverrides.m in Sources */,
+				3EFC154C17510A1D00BFA2BB /* Song.m in Sources */,
+				3EFC154D17510A1D00BFA2BB /* OSStartupViewController.m in Sources */,
+				3EFC154E17510A1D00BFA2BB /* NSString+SectionIndex.m in Sources */,
+				3EFC154F17510A1D00BFA2BB /* UIApplication+Directories.m in Sources */,
+				3EFC155017510A1D00BFA2BB /* OSDropboxImportTableViewController.m in Sources */,
+				3EFC155117510A1D00BFA2BB /* OSImportTableViewController.m in Sources */,
+				3EFC155217510A1D00BFA2BB /* OSITunesImportTableViewController.m in Sources */,
+				3EFC155317510A1D00BFA2BB /* OSFileDescriptor.m in Sources */,
+				3EFC155417510A1D00BFA2BB /* OSFileDescriptor+Dropbox.m in Sources */,
+				3EFC155517510A1D00BFA2BB /* OSSongView.m in Sources */,
+				3EFC155617510A1D00BFA2BB /* OSHtmlView.m in Sources */,
+				3EFC155717510A1D00BFA2BB /* OSSongPageView.m in Sources */,
+				3EFC155817510A1D00BFA2BB /* OSSetViewController.m in Sources */,
+				3EFC155917510A1D00BFA2BB /* OSDetailViewController.m in Sources */,
+				3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */,
+				3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */,
+				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -804,6 +1330,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3EB909191751870E002125FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Vendor/Crashlytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.beta-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "iOpenSongs Beta";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3EB9091A1751870E002125FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Vendor/Crashlytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.beta-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "iOpenSongs Beta";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		3EDDA41A14AEC3A400BB781C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -822,6 +1408,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"RUN_KIF_TESTS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -850,6 +1437,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RUN_KIF_TESTS=1";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -882,7 +1470,7 @@
 					"${PODS_HEADERS_SEARCH_PATHS}/**",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
-				INFOPLIST_FILE = "Resources/iOpenSongs-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = iOpenSongs;
@@ -912,7 +1500,7 @@
 					"${PODS_HEADERS_SEARCH_PATHS}/**",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
-				INFOPLIST_FILE = "Resources/iOpenSongs-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = iOpenSongs;
@@ -925,9 +1513,78 @@
 			};
 			name = Release;
 		};
+		3EFC158F17510A1D00BFA2BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Vendor/Crashlytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.integration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "iOpenSongs Test";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3EFC159017510A1D00BFA2BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Vendor/Crashlytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(SDKROOT)/usr/include/libxml2/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.integration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "iOpenSongs Test";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3EB909181751870E002125FE /* Build configuration list for PBXNativeTarget "Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EB909191751870E002125FE /* Debug */,
+				3EB9091A1751870E002125FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -937,11 +1594,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "iOpenSongs" */ = {
+		3EDDA41C14AEC3A400BB781C /* Build configuration list for PBXNativeTarget "Release" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EDDA41D14AEC3A400BB781C /* Debug */,
 				3EDDA41E14AEC3A400BB781C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EFC158E17510A1D00BFA2BB /* Build configuration list for PBXNativeTarget "Integration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EFC158F17510A1D00BFA2BB /* Debug */,
+				3EFC159017510A1D00BFA2BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
