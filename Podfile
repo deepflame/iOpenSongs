@@ -22,3 +22,8 @@ pod 'GoogleAnalytics-iOS-SDK'
 # Development
 pod 'PonyDebugger'
 
+# Testing
+target :Integration do # (targets are case sensitive)
+    pod 'KIF', :head
+end
+
