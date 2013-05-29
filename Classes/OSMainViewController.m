@@ -103,7 +103,7 @@
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
 {
-    if (! setItem) {
+    if (! setItem || set.items.count == 0) {
         return;
     }
     
