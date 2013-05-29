@@ -103,6 +103,10 @@
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
 {
+    if (! setItem) {
+        return;
+    }
+    
     if (! [self.currentDetailViewController isMemberOfClass:[OSSetViewController class]]) {
         self.currentDetailViewController = [[OSSetViewController alloc] init];
     }
