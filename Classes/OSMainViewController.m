@@ -103,8 +103,9 @@
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
 {
+    // sanity check for SetViewController
     if (! setItem || set.items.count == 0) {
-        return;
+        return; // <- !!
     }
     
     if (! [self.currentDetailViewController isMemberOfClass:[OSSetViewController class]]) {
