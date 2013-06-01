@@ -62,8 +62,9 @@
     
     // import songs from application sharing if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        // FIXME
-        //[self importSongs];
+        OSITunesImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
+        [importTableViewController selectAllItems];
+        [importTableViewController importAllSelectedItems];
     }
 }
 
