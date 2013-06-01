@@ -116,6 +116,7 @@
         }
         importTableViewController = [[OSDropboxImportTableViewController alloc] init];
     }
+    importTableViewController.delegate = self;
     
     [self.navigationController pushViewController:importTableViewController animated:YES];
 }
