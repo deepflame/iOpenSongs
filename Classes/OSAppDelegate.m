@@ -16,6 +16,10 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import <PonyDebugger.h>
 
+#if RUN_KIF_TESTS
+#import "OSTestController.h"
+#endif
+
 @implementation OSAppDelegate
 
 @synthesize window = _window;
@@ -49,6 +53,13 @@
     self.window.rootViewController = [[OSStartupViewController alloc] init];
     
     [self.window makeKeyAndVisible];
+    
+#if RUN_KIF_TESTS
+    [[OSTestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete. When running on CI, this lets you check the return value for pass/fail.
+        exit([[OSTestController sharedInstance] failureCount]);
+    }];
+#endif
     
     return YES;
 }
