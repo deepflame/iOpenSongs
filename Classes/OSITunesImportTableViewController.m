@@ -90,8 +90,7 @@
             // dismiss HUD
             [self.hud hide:YES];
             
-            [self handleImportErrors];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.delegate importTableViewController:self finishedImportWithErrors:self.importErrors];
         });
         
     });

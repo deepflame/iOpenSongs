@@ -105,7 +105,8 @@
                       otherButtonTitles:nil
                                 handler:nil];
 
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    // TODO: integrate error from above
+    [self.delegate importTableViewController:self finishedImportWithErrors:self.importErrors];
 }
 
 - (void)restClient:(DBRestClient *)client loadedFile:(NSString *)localPath {
@@ -152,8 +153,7 @@
         [context MR_saveToPersistentStoreAndWait];
         [self.hud hide:YES];
         
-        [self handleImportErrors];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.delegate importTableViewController:self finishedImportWithErrors:self.importErrors];
         return; // <- !!
     }
     

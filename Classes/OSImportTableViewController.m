@@ -194,7 +194,7 @@
     for (OSFileDescriptor *fd in self.selectedContents) {
         NSLog(@"%@", fd.filename);
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.delegate importTableViewController:self finishedImportWithErrors:self.importErrors];
 }
 
 - (void)handleImportErrors

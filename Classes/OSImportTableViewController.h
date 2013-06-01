@@ -12,11 +12,15 @@
 #import "Song+Import.h"
 #import "OSFileDescriptor.h"
 
+#import "OSImportTableViewControllerDelegate.h"
+
 @interface OSImportTableViewController : UITableViewController
 
 - (id)initWithPath:(NSString *)path;
 - (void)importAllSelectedItems;
 - (void)handleImportErrors;
+
+@property (nonatomic, weak) id<OSImportTableViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *contents;
 @property (nonatomic, strong, readonly) NSSet *selectedContents;
