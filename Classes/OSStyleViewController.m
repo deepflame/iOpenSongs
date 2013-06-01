@@ -51,6 +51,14 @@
     [self initSongStyleValues];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // persist song style
+    [[OSSongStyle defaultStyle] saveAsUserDefaults];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
