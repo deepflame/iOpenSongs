@@ -14,13 +14,14 @@
 #import <MBProgressHUD.h>
 #import <FRLayeredNavigation.h>
 
+#import "OSImportTableViewControllerDelegate.h"
 #import "OSITunesImportTableViewController.h"
 #import "OSDropboxImportTableViewController.h"
 
 // TODO: remove dependency
 #import <DropboxSDK/DropboxSDK.h>
 
-@interface OSSongSelectTableViewController () <UIActionSheetDelegate>
+@interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
@@ -116,6 +117,14 @@
     }
     
     [self.navigationController pushViewController:importTableViewController animated:YES];
+}
+
+#pragma mark - OSImportTableViewControllerDelegate
+
+- (void)importTableViewController:(OSImportTableViewController *)sender finishedImportWithErrors:(NSArray *)errors
+{
+    [sender handleImportErrors]; // TODO: do error handling somewhere else
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - Actions
