@@ -182,7 +182,7 @@
 
 - (void)deselectAllItems
 {
-    [self performSelectorOnSelectedIndexPaths:@selector(removeObject::)];
+    [self performSelectorOnSelectedIndexPaths:@selector(removeObject:)];
     [self.tableView reloadData];
 }
 
