@@ -17,6 +17,8 @@
 @interface OSImportTableViewController : UITableViewController
 
 - (id)initWithPath:(NSString *)path;
+- (void)selectAllItems;
+- (void)deselectAllItems;
 - (void)importAllSelectedItems;
 - (void)handleImportErrors;
 

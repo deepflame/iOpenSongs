@@ -154,26 +154,11 @@
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
     
     // select or deselect all
-    SEL selector;
     if ([buttonTitle isEqualToString:@"Select All"]) {
-        selector = @selector(addObject:);
+        [self selectAllItems];
     } else if ([buttonTitle isEqualToString:@"Deselect All"]) {
-        selector = @selector(removeObject:);
+        [self deselectAllItems];
     }
-    
-    for (NSInteger s = 0; s < [self.tableView numberOfSections]; s++) {
-        for (NSInteger r = 0; r < [self.tableView numberOfRowsInSection:s]; r++) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:r inSection:s];
-            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                        
-            // select if it is not a directory
-            if (cell.accessoryType != UITableViewCellAccessoryDisclosureIndicator) {
-                SuppressPerformSelectorLeakWarning([self.selectedIndexPaths performSelector:selector withObject:indexPath]);
-            }
-        }
-    }
-    
-    [self.tableView reloadData];
 }
 
 #pragma mark - Actions
@@ -187,7 +172,19 @@
     }
 }
 
-#pragma mark -
+#pragma mark - Public Methods
+
+- (void)selectAllItems
+{
+    [self performSelectorOnSelectedIndexPaths:@selector(addObject:)];
+    [self.tableView reloadData];
+}
+
+- (void)deselectAllItems
+{
+    [self performSelectorOnSelectedIndexPaths:@selector(removeObject::)];
+    [self.tableView reloadData];
+}
 
 - (void)importAllSelectedItems
 {
@@ -222,6 +219,23 @@
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil
                                 handler:nil];
+}
+
+#pragma mark - Private Methods
+
+- (void)performSelectorOnSelectedIndexPaths:(SEL)aSelector
+{
+    for (NSInteger s = 0; s < [self.tableView numberOfSections]; s++) {
+        for (NSInteger r = 0; r < [self.tableView numberOfRowsInSection:s]; r++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:r inSection:s];
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            // select if it is not a directory
+            if (cell.accessoryType != UITableViewCellAccessoryDisclosureIndicator) {
+                SuppressPerformSelectorLeakWarning([self.selectedIndexPaths performSelector:aSelector withObject:indexPath]);
+            }
+        }
+    }
 }
 
 @end
