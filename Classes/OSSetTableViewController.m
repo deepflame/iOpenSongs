@@ -33,13 +33,14 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSet:)];
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+        self.setNameAlertView.title = @"New Set";
+        [self.setNameAlertView show];
+    }];
+
+    // barButtonItems
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
-
-    self.setNameAlertView = [[UIAlertView alloc] initWithTitle:@"Sets" message:@"Name your Set" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    self.setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[self.setNameAlertView textFieldAtIndex:0] setDelegate:self];
 
     // load data
     self.fetchedResultsController = [Set MR_fetchAllSortedBy:@"name"
@@ -123,13 +124,16 @@
     [self.setNameAlertView dismissWithClickedButtonIndex:0 animated:YES];
     
     return YES;
-}
 
-# pragma mark - Actions
+#pragma mark - Public Accessors
 
-- (void)addSet:(id)sender
+- (UIAlertView *)setNameAlertView
 {
-    [self.setNameAlertView show];
+    if (! _setNameAlertView) {
+        _setNameAlertView = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        _setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    }
+    return _setNameAlertView;
 }
 
 @end
