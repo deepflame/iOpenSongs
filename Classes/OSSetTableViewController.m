@@ -13,7 +13,7 @@
 
 #import "OSMainViewController.h"
 
-@interface OSSetTableViewController () <UITextFieldDelegate>
+@interface OSSetTableViewController () <UIAlertViewDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
 @property (nonatomic, strong) UITextField *setNameAlertViewTextField;
 @property (nonatomic, strong) Set *currentSetForEditing;
@@ -120,17 +120,30 @@
         self.setNameAlertView.title = @"Rename Set";
         [self.setNameAlertView show];
     }
-    
-    Set *newSet = [Set MR_createEntity];
-    newSet.name = textField.text;
-    
-    // clear the text field
-    textField.text = @"";
-    [textField resignFirstResponder];
+}
 
-    [self.setNameAlertView dismissWithClickedButtonIndex:0 animated:YES];
-    
-    return YES;
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 1: // OK button
+            
+            if (self.setNameAlertViewTextField.text.length == 0) {
+                return; // <-- !!
+            }
+            
+            if (! self.currentSetForEditing) {
+                self.currentSetForEditing = [Set MR_createEntity];
+            }
+            self.currentSetForEditing.name = self.setNameAlertViewTextField.text;
+            
+            break;
+            
+        default:
+            break;
+    }
+}
 
 #pragma mark - Public Accessors
 
