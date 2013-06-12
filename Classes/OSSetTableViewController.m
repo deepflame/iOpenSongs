@@ -15,6 +15,7 @@
 
 @interface OSSetTableViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
+@property (nonatomic, strong) UITextField *setNameAlertViewTextField;
 @end
 
 @implementation OSSetTableViewController
@@ -134,6 +135,14 @@
         _setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     }
     return _setNameAlertView;
+}
+
+- (UITextField *)setNameAlertViewTextField
+{
+    if (! _setNameAlertViewTextField) {
+        _setNameAlertViewTextField = [self.setNameAlertView textFieldAtIndex:0];
+    }
+    return _setNameAlertViewTextField;
 }
 
 @end
