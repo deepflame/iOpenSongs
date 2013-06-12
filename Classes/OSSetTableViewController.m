@@ -16,6 +16,7 @@
 @interface OSSetTableViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
 @property (nonatomic, strong) UITextField *setNameAlertViewTextField;
+@property (nonatomic, strong) Set *currentSetForEditing;
 @end
 
 @implementation OSSetTableViewController
@@ -34,7 +35,11 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
+    self.tableView.allowsSelectionDuringEditing = YES;
+    
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+        self.currentSetForEditing = nil;
+        self.setNameAlertViewTextField.text = @"";
         self.setNameAlertView.title = @"New Set";
         [self.setNameAlertView show];
     }];
@@ -99,20 +104,21 @@
 {
     Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
-    setItemsTVC.set = set;
-    setItemsTVC.delegate = (OSMainViewController *)self.layeredNavigationController;
-    
-    [self.delegate setTableViewController:self didSelectSet:set];
-    [self.navigationController pushViewController:setItemsTVC animated:YES];
-}
-
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField.text.length == 0) {
-        return NO;
+    if (! tableView.editing) {
+        // display set items
+        OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
+        setItemsTVC.set = set;
+        setItemsTVC.delegate = (OSMainViewController *)self.layeredNavigationController;
+        
+        [self.delegate setTableViewController:self didSelectSet:set];
+        [self.navigationController pushViewController:setItemsTVC animated:YES];
+        
+    } else {
+        // rename set
+        self.currentSetForEditing = set;
+        self.setNameAlertViewTextField.text = set.name;        
+        self.setNameAlertView.title = @"Rename Set";
+        [self.setNameAlertView show];
     }
     
     Set *newSet = [Set MR_createEntity];
