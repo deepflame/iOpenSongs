@@ -122,6 +122,14 @@
     [setVC selectPageAtIndex:index animated:NO];
 }
 
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didDeleteSetItem:(SetItem *)setItem fromSet:(Set *)set
+{
+   self.currentDetailViewController = [[OSSetViewController alloc] init];
+   OSSetViewController *setVC = (OSSetViewController *)[self currentDetailViewController];
+   setVC.delegate = sender;
+   setVC.set = set;
+}
+
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set
 {
     if (itemClass == [SetItemSong class]) {

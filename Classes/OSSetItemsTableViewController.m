@@ -84,7 +84,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // delete object from database
-        [self.set.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.set.managedObjectContext deleteObject:setItem];
+        [self.delegate setItemsTableViewController:self didDeleteSetItem:setItem fromSet:self.set];
     }
 }
 
