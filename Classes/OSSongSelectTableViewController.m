@@ -34,16 +34,22 @@
 {
     [super viewDidLoad];
 
-    // UI
-    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
-    self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
-
     self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:@"Import from"
                                                           delegate:self
                                                  cancelButtonTitle:@"Cancel"
                                             destructiveButtonTitle:nil
                                                  otherButtonTitles:@"iTunes", @"Dropbox", nil];
+    
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+        if ([self.importActionSheet isVisible]) {
+            [self.importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
+        } else {
+            [self.importActionSheet showFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES];
+        }
+    }];
+    
+    self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -127,16 +133,6 @@
 {
     [sender handleImportErrors]; // TODO: do error handling somewhere else
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-#pragma mark - Actions
-
-- (void)addSongs:(id)sender {
-    if ([self.importActionSheet isVisible]) {
-        [self.importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
-    } else {
-        [self.importActionSheet showFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES];        
-    }
 }
 
 @end
