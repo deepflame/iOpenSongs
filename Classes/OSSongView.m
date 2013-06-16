@@ -58,8 +58,8 @@
 #pragma mark - Private Methods
 
 - (void)displaySong
-{
-    NSString* jsString = [NSString stringWithFormat:@"$('#lyrics').openSongLyrics(\"%@\");", [self.song.lyrics escapeJavaScript]];
+{    
+    NSString* jsString = [NSString stringWithFormat:@"new opensong.Song($('#lyrics'), \"%@\");", [self.song.lyrics escapeJavaScript]];
     [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
     
     [self applySongStyle];
