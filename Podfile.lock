@@ -20,7 +20,7 @@ PODS:
   - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - KIF (HEAD based on 0.0.1)
-  - libffi (3.0.11)
+  - libffi (3.0.13)
   - MagicalRecord (2.1)
   - MBProgressHUD (0.6)
   - PonyDebugger (0.3.0):
@@ -28,7 +28,7 @@ PODS:
   - SocketRocket (0.2.0)
   - SYPaginator (1.0.0)
   - TDBadgedCell (2.3)
-  - TestFlightSDK (1.2.4)
+  - TestFlightSDK (1.2.6)
   - uservoice-iphone-sdk (2.0.10)
 
 DEPENDENCIES:
@@ -59,14 +59,14 @@ SPEC CHECKSUMS:
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   GoogleAnalytics-iOS-SDK: ae8e58e771b6dec84c0047154cc0e550a15e6f54
   KIF: 26ce47f3f37660ca9bb0b62f9545597e21eca3fc
-  libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
+  libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   PonyDebugger: 72c2277c30f247390116ae328fe24082e0ed558e
   SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
   TDBadgedCell: dbf1dd2b99c11db97ee66deb889aa5152d8a4198
-  TestFlightSDK: 96d7400f844599dd02677bf8d34f8bdfe3f9b33c
+  TestFlightSDK: 7d9abce62f5a17191c4df84fd88e05797e6776e0
   uservoice-iphone-sdk: 806238f9e392c04d72865d942459fc31bf8da940
 
-COCOAPODS: 0.20.1
+COCOAPODS: 0.20.2
