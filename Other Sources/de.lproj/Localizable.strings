@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  iOpenSongs
+
+  Created by Andreas Böhrnsen on 7/11/13.
+  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
+*/
+
+//
+"Updating Database" = "Datenbank aktualisieren";
+"please wait..." = "bitte warten...";
+
+// Songs
+"Songs" = "Lieder";
+"Search Songs" = "Lieder Suchen";
+"Title" = "Titel";
+"Author" = "Autor";
+"Lyrics" = "Text";
+"Import from" = "Importieren von";
+
+// Sets
+"Sets" = "Sets";
+"New Set" = "Neues Set";
+"Rename Set" = "Set umbenennen";
+"%d Songs" = "%d Lieder";
+"Add Songs" = "Lieder hinzufügen";
+
+// Settings
+"Settings" = "Einstellungen";
+
+// Support
+"Support" = "Support";
+"Fork Me" = "Fork mich";
+"Follow Us" = "Folge uns";
+"About" = "Über";
+
+// common
+"OK" = "OK";
+"Cancel" = "Abbrechen";
+"Close" = "Schießen";
