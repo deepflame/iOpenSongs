@@ -24,7 +24,7 @@
 
 - (NSString *)title
 {
-    return @"Songs";
+    return NSLocalizedString(@"Songs", nil);
 }
 
 - (void)viewDidLoad
@@ -33,8 +33,8 @@
     self.clearsSelectionOnViewWillAppear = NO;
         
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    self.searchBar.placeholder = @"Search Songs";
-    self.searchBar.scopeButtonTitles = @[@"Title", @"Author", @"Lyrics"];
+    self.searchBar.placeholder = NSLocalizedString(@"Search Songs", nil);
+    self.searchBar.scopeButtonTitles = @[NSLocalizedString(@"Title", nil), NSLocalizedString(@"Author", nil), NSLocalizedString(@"Lyrics", nil)];
     self.searchBar.delegate = self;
     
     self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];

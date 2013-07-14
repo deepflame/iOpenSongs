@@ -27,7 +27,7 @@
 
 - (NSString *)title
 {
-    return @"Support";
+    return NSLocalizedString(@"Support", nil);
 }
 
 - (void)viewDidLoad
@@ -56,16 +56,16 @@
     }
     
     if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
-        cell.textLabel.text = @"Feedback and Support";
+        cell.textLabel.text = NSLocalizedString(@"Feedback and Support", nil);
         cell.imageView.image = [UIImage imageNamed:@"glyphicons_244_conversation"];
     } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
-        cell.textLabel.text = @"Fork Me";
+        cell.textLabel.text = NSLocalizedString(@"Fork Me", nil);
         cell.imageView.image = [UIImage imageNamed:@"glyphicons_381_github"];
     } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
-        cell.textLabel.text = @"Follow Us";
+        cell.textLabel.text = NSLocalizedString(@"Follow Us", nil);
         cell.imageView.image = [UIImage imageNamed:@"glyphicons_392_twitter"];
     } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
-        cell.textLabel.text = @"About";
+        cell.textLabel.text = NSLocalizedString(@"About", nil);
         cell.detailTextLabel.text = self.version;
         // push content on Phone
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
@@ -165,7 +165,7 @@
         [self.navigationController pushViewController:aboutVC animated:YES];
     } else {
         // bar button to dismiss modal view
-        UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain handler:^(id sender) {
+        UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStylePlain handler:^(id sender) {
             [self dismissModalViewControllerAnimated:YES];
         }];
         aboutVC.navigationItem.leftBarButtonItem = doneBarButtonItem;

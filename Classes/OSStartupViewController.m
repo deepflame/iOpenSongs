@@ -225,8 +225,8 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Updating Database";
-    hud.detailsLabelText = @"please wait...";
+    hud.labelText = NSLocalizedString(@"Updating Database", nil);
+    hud.detailsLabelText = NSLocalizedString(@"please wait...", nil);
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
     

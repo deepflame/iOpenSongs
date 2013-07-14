@@ -34,9 +34,9 @@
 {
     [super viewDidLoad];
 
-    self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:@"Import from"
+    self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:NSLocalizedString(@"Import from", nil)
                                                           delegate:self
-                                                 cancelButtonTitle:@"Cancel"
+                                                 cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                             destructiveButtonTitle:nil
                                                  otherButtonTitles:@"iTunes", @"Dropbox", nil];
     
