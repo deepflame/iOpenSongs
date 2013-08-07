@@ -492,10 +492,10 @@
 			isa = PBXGroup;
 			children = (
 				3E5E878714DE556C003B645A /* default.css */,
-				3E663A8E14B836CD009F1340 /* index.html */,
-				3E59524F179308B6003C3B01 /* _welcome.html */,
 				3E586F1514E2A8D200345743 /* ios.css */,
+				3E663A8E14B836CD009F1340 /* index.html */,
 				3E5E878A14DE61CB003B645A /* about.html */,
+				3E59524F179308B6003C3B01 /* _welcome.html */,
 				3E545835174BBEA200B4FFF9 /* _set-add-songs.html */,
 			);
 			path = Html;
@@ -917,6 +917,10 @@
 				3EB908F61751870E002125FE /* ios.css in Resources */,
 				3EB908F71751870E002125FE /* index.html in Resources */,
 				3EB908F81751870E002125FE /* about.html in Resources */,
+				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
+				3E595252179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120B517B24962001E2E76 /* opensong.min.js in Resources */,
+				3E9120AD17B240C1001E2E76 /* opensong.css in Resources */,
 				3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */,
 				3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */,
 				3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */,
@@ -933,21 +937,19 @@
 				3EB9090A1751870E002125FE /* Default-568h@2x.png in Resources */,
 				3EB9090B1751870E002125FE /* glyphicons_244_conversation.png in Resources */,
 				3EB9090C1751870E002125FE /* glyphicons_244_conversation@2x.png in Resources */,
-				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
-				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 				3EB9090F1751870E002125FE /* Document-empty-icon.png in Resources */,
 				3EB909101751870E002125FE /* Document-empty-icon@2x.png in Resources */,
 				3EB909111751870E002125FE /* Document-song-icon.png in Resources */,
 				3EB909121751870E002125FE /* Document-song-icon@2x.png in Resources */,
 				3EB909131751870E002125FE /* Folder-icon.png in Resources */,
 				3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */,
-				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
 				3E8028861751F3510022BF3B /* ProgramIcon57-Beta.png in Resources */,
 				3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */,
 				3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */,
 				3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */,
 				3E9200B7178E4A66004C5F8B /* Localizable.strings in Resources */,
-				3E595252179308B6003C3B01 /* _welcome.html in Resources */,
+				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
+				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
