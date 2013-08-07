@@ -12,18 +12,15 @@ pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit'
 pod 'BlocksKit'
 
-# Test
-pod 'TestFlightSDK', '~> 1.2.4'
+# User Services
 pod 'uservoice-iphone-sdk'
-
 pod 'GoogleAnalytics-iOS-SDK'
-
 
 # Development
 pod 'PonyDebugger'
+pod 'TestFlightSDK', '~> 1.2.4'
 
 # Testing
 target :Integration do # (targets are case sensitive)
     pod 'KIF', :head
 end
-
