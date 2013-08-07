@@ -47,10 +47,10 @@
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
         UIViewController *settingsViewController = [[[OSAppDelegate sharedAppDelegate] storyboard] instantiateViewControllerWithIdentifier:@"settings"];
-        
-        UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:@"Songs" image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
-        UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:@"Sets" image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];
-        UITabBarItem *settingsTBI = [[UITabBarItem alloc] initWithTitle:@"Settings" image:[UIImage imageNamed:@"glyphicons_023_cogwheels"] tag:2];
+       
+        UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Songs", nil) image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
+        UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Sets", nil) image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];
+        UITabBarItem *settingsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) image:[UIImage imageNamed:@"glyphicons_023_cogwheels"] tag:2];
         
         songsViewController.tabBarItem = songsTBI;
         setsViewController.tabBarItem = setsTBI;

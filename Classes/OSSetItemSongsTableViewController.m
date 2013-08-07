@@ -17,7 +17,7 @@
 
 - (NSString *)title
 {
-    return @"Add Songs";
+    return NSLocalizedString(@"Add Songs", nil);
 }
 
 - (void)viewDidLoad

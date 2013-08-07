@@ -27,6 +27,11 @@
 
 @implementation OSStyleViewController
 
+- (NSString *)title
+{
+    return NSLocalizedString(@"Settings", nil);
+}
+
 - (void) initSongStyleValues
 {
     OSSongStyle *style = [OSSongStyle defaultStyle];

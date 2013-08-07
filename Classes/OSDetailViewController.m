@@ -27,7 +27,7 @@
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
     UIBarButtonItem *sidebarBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
-    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Support" style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
+    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Support", nil) style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
     self.navigationItem.leftBarButtonItems = @[sidebarBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
 }

@@ -18,7 +18,7 @@
 
 - (NSString *)title
 {
-    return @"About";
+    return NSLocalizedString(@"About", nil);
 }
 
 - (void)loadView

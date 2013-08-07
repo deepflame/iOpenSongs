@@ -18,11 +18,13 @@
 		3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7B717080B26006A9B34 /* OSSongView.m */; };
 		3E3EE7BC17082B5F006A9B34 /* OSHtmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3EE7BB17082B5F006A9B34 /* OSHtmlView.m */; };
 		3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */; };
-		3E545834174BA2C700B4FFF9 /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545833174BA2C700B4FFF9 /* _welcome.html */; };
 		3E545836174BBEA200B4FFF9 /* _set-add-songs.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545835174BBEA200B4FFF9 /* _set-add-songs.html */; };
 		3E56D6B6174D981300F1CDEA /* OSSongStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B5174D981300F1CDEA /* OSSongStyle.m */; };
 		3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */; };
 		3E586F1614E2A8D200345743 /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
+		3E595251179308B6003C3B01 /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E59524F179308B6003C3B01 /* _welcome.html */; };
+		3E595252179308B6003C3B01 /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E59524F179308B6003C3B01 /* _welcome.html */; };
+		3E595253179308B6003C3B01 /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E59524F179308B6003C3B01 /* _welcome.html */; };
 		3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
 		3E5E878814DE556C003B645A /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3E5E878B14DE61CB003B645A /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878A14DE61CB003B645A /* about.html */; };
@@ -50,14 +52,16 @@
 		3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */; };
 		3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */; };
 		3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */; };
+		3E9120AC17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120AD17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120AE17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120B517B24962001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
+		3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
+		3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
+		3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
+		3E9200B7178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
+		3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
 		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
-		3E990C51176DAA6D0079BC1B /* opensong.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3E99F230176DAA600079BC1B /* opensong.min.js */; };
-		3E990C52176DAA6D0079BC1B /* opensong.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3E99F230176DAA600079BC1B /* opensong.min.js */; };
-		3E990C53176DAA6D0079BC1B /* opensong.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 3E99F230176DAA600079BC1B /* opensong.min.js */; };
-		3E993321176DAB0E0079BC1B /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E99331D176DAB0E0079BC1B /* opensong.css */; };
-		3E993322176DAB0E0079BC1B /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E99331D176DAB0E0079BC1B /* opensong.css */; };
-		3E993323176DAB0E0079BC1B /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E99331D176DAB0E0079BC1B /* opensong.css */; };
-		3E993324176DAB370079BC1B /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E99F230176DAA600079BC1B /* opensong.min.js */; };
 		3E9A923A1529648400AA6B57 /* ProgramIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A92391529648400AA6B57 /* ProgramIcon114.png */; };
 		3E9A923C152964F600AA6B57 /* ProgramIcon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A923B152964F600AA6B57 /* ProgramIcon144.png */; };
 		3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
@@ -146,7 +150,6 @@
 		3EB909121751870E002125FE /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
 		3EB909131751870E002125FE /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
 		3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
-		3EB909151751870E002125FE /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545833174BA2C700B4FFF9 /* _welcome.html */; };
 		3EB909161751870E002125FE /* _set-add-songs.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545835174BBEA200B4FFF9 /* _set-add-songs.html */; };
 		3EC11EF016EB0691001747F3 /* Song+AccessorOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */; };
 		3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
@@ -256,7 +259,6 @@
 		3EFC158817510A1D00BFA2BB /* Document-song-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638821711ECB60091891D /* Document-song-icon@2x.png */; };
 		3EFC158917510A1D00BFA2BB /* Folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF6388F1711F1320091891D /* Folder-icon.png */; };
 		3EFC158A17510A1D00BFA2BB /* Folder-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF638901711F1320091891D /* Folder-icon@2x.png */; };
-		3EFC158B17510A1D00BFA2BB /* _welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545833174BA2C700B4FFF9 /* _welcome.html */; };
 		3EFC158C17510A1D00BFA2BB /* _set-add-songs.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E545835174BBEA200B4FFF9 /* _set-add-songs.html */; };
 /* End PBXBuildFile section */
 
@@ -289,13 +291,14 @@
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
 		3E4EF9301709A5DE0063E772 /* OSSongTableViewControllerDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewControllerDataSource.h; sourceTree = "<group>"; };
-		3E545833174BA2C700B4FFF9 /* _welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = _welcome.html; sourceTree = "<group>"; };
 		3E545835174BBEA200B4FFF9 /* _set-add-songs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "_set-add-songs.html"; sourceTree = "<group>"; };
 		3E56D6B4174D981300F1CDEA /* OSSongStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongStyle.h; sourceTree = "<group>"; };
 		3E56D6B5174D981300F1CDEA /* OSSongStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongStyle.m; sourceTree = "<group>"; };
 		3E56D6B7174FB13400F1CDEA /* NSObject+RuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RuntimeAdditions.h"; sourceTree = "<group>"; };
 		3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RuntimeAdditions.m"; sourceTree = "<group>"; };
 		3E586F1514E2A8D200345743 /* ios.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ios.css; sourceTree = "<group>"; };
+		3E59525517930965003C3B01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/_welcome.html; sourceTree = "<group>"; };
+		3E59525617930971003C3B01 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/_welcome.html; sourceTree = "<group>"; };
 		3E5E878314DD7680003B645A /* OSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSAboutViewController.h; sourceTree = "<group>"; };
 		3E5E878414DD7680003B645A /* OSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSAboutViewController.m; sourceTree = "<group>"; };
 		3E5E878714DE556C003B645A /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 		3E65A1D217136348009B2732 /* OSSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSetViewController.m; sourceTree = "<group>"; };
 		3E65A1D417137206009B2732 /* OSSetTableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3E6A04831792F99700A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E6A04851792F9DC00A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
 		3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_158_playlist@2x.png"; path = "Vendor/glyphicons/glyphicons_158_playlist@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E7F1B6115847150008C222F /* OSSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewController.h; sourceTree = "<group>"; };
@@ -334,12 +339,12 @@
 		3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon144-Beta.png"; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E885984175A412300947E32 /* OSImportTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewControllerDelegate.h; sourceTree = "<group>"; };
+		3E9120A917B240C1001E2E76 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = opensong.css; sourceTree = "<group>"; };
+		3E9120AA17B240C1001E2E76 /* opensong.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.min.js; sourceTree = "<group>"; };
+		3E9120AB17B240C1001E2E76 /* opensong.min.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = opensong.min.map; sourceTree = "<group>"; };
+		3E9200B9178E4A66004C5F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
-		3E9902BE176DAA6A0079BC1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		3E99331D176DAB0E0079BC1B /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = opensong.css; sourceTree = "<group>"; };
-		3E99F230176DAA600079BC1B /* opensong.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.min.js; sourceTree = "<group>"; };
-		3E99F233176DAA600079BC1B /* LICENSE-LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-LGPL"; sourceTree = "<group>"; };
 		3E9A92391529648400AA6B57 /* ProgramIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon114.png; sourceTree = "<group>"; };
 		3E9A923B152964F600AA6B57 /* ProgramIcon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon144.png; sourceTree = "<group>"; };
 		3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSFileDescriptor.h; sourceTree = "<group>"; };
@@ -487,10 +492,10 @@
 			isa = PBXGroup;
 			children = (
 				3E5E878714DE556C003B645A /* default.css */,
-				3E663A8E14B836CD009F1340 /* index.html */,
 				3E586F1514E2A8D200345743 /* ios.css */,
+				3E663A8E14B836CD009F1340 /* index.html */,
 				3E5E878A14DE61CB003B645A /* about.html */,
-				3E545833174BA2C700B4FFF9 /* _welcome.html */,
+				3E59524F179308B6003C3B01 /* _welcome.html */,
 				3E545835174BBEA200B4FFF9 /* _set-add-songs.html */,
 			);
 			path = Html;
@@ -566,6 +571,16 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
+		3E9120A817B240C1001E2E76 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				3E9120A917B240C1001E2E76 /* opensong.css */,
+				3E9120AA17B240C1001E2E76 /* opensong.min.js */,
+				3E9120AB17B240C1001E2E76 /* opensong.min.map */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
 		3E92911716F9E1F0002F6ABB /* Import */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,33 +593,6 @@
 				3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */,
 			);
 			name = Import;
-			sourceTree = "<group>";
-		};
-		3E99331B176DAB0E0079BC1B /* src */ = {
-			isa = PBXGroup;
-			children = (
-				3E99331D176DAB0E0079BC1B /* opensong.css */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		3E99EE40176DAA5E0079BC1B /* opensong.js */ = {
-			isa = PBXGroup;
-			children = (
-				3E99331B176DAB0E0079BC1B /* src */,
-				3E99F22F176DAA600079BC1B /* dist */,
-				3E99F233176DAA600079BC1B /* LICENSE-LGPL */,
-				3E9902BE176DAA6A0079BC1B /* README.md */,
-			);
-			path = opensong.js;
-			sourceTree = "<group>";
-		};
-		3E99F22F176DAA600079BC1B /* dist */ = {
-			isa = PBXGroup;
-			children = (
-				3E99F230176DAA600079BC1B /* opensong.min.js */,
-			);
-			path = dist;
 			sourceTree = "<group>";
 		};
 		3EA0BB9516D0CFCF00D7D97D /* Views */ = {
@@ -753,6 +741,7 @@
 				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
 				3EAB665D160EC1D500149DA9 /* iPhone.storyboard */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
+				3E9200BA178E4A66004C5F8B /* Localizable.strings */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 				3E865AF116CF6AEA000E9D98 /* OSDefines.h */,
@@ -764,7 +753,7 @@
 		3EE0DB2D16EBA976005C89C6 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3E99EE40176DAA5E0079BC1B /* opensong.js */,
+				3EF53A231525DD240073FB57 /* opensong.js */,
 				3ECF7F1A1522B4D10061457B /* glyphicons */,
 			);
 			path = Vendor;
@@ -784,6 +773,14 @@
 				3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		3EF53A231525DD240073FB57 /* opensong.js */ = {
+			isa = PBXGroup;
+			children = (
+				3E9120A817B240C1001E2E76 /* dist */,
+			);
+			path = opensong.js;
 			sourceTree = "<group>";
 		};
 		3EFBED3814DF7ADD008EF01D /* Model */ = {
@@ -894,6 +891,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 3EDDA3F314AEC3A300BB781C;
 			productRefGroup = 3EDDA3FF14AEC3A400BB781C /* Products */;
@@ -919,6 +917,10 @@
 				3EB908F61751870E002125FE /* ios.css in Resources */,
 				3EB908F71751870E002125FE /* index.html in Resources */,
 				3EB908F81751870E002125FE /* about.html in Resources */,
+				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
+				3E595252179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120B517B24962001E2E76 /* opensong.min.js in Resources */,
+				3E9120AD17B240C1001E2E76 /* opensong.css in Resources */,
 				3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */,
 				3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */,
 				3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */,
@@ -935,21 +937,19 @@
 				3EB9090A1751870E002125FE /* Default-568h@2x.png in Resources */,
 				3EB9090B1751870E002125FE /* glyphicons_244_conversation.png in Resources */,
 				3EB9090C1751870E002125FE /* glyphicons_244_conversation@2x.png in Resources */,
-				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
-				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 				3EB9090F1751870E002125FE /* Document-empty-icon.png in Resources */,
 				3EB909101751870E002125FE /* Document-empty-icon@2x.png in Resources */,
 				3EB909111751870E002125FE /* Document-song-icon.png in Resources */,
 				3EB909121751870E002125FE /* Document-song-icon@2x.png in Resources */,
 				3EB909131751870E002125FE /* Folder-icon.png in Resources */,
 				3EB909141751870E002125FE /* Folder-icon@2x.png in Resources */,
-				3EB909151751870E002125FE /* _welcome.html in Resources */,
-				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
 				3E8028861751F3510022BF3B /* ProgramIcon57-Beta.png in Resources */,
 				3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */,
 				3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */,
 				3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */,
-				3E993322176DAB0E0079BC1B /* opensong.css in Resources */,
+				3E9200B7178E4A66004C5F8B /* Localizable.strings in Resources */,
+				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
+				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +957,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
 				3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */,
 				3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
@@ -992,10 +993,10 @@
 				3EF6388A1711ECB60091891D /* Document-song-icon@2x.png in Resources */,
 				3EF638911711F1320091891D /* Folder-icon.png in Resources */,
 				3EF638921711F1320091891D /* Folder-icon@2x.png in Resources */,
-				3E545834174BA2C700B4FFF9 /* _welcome.html in Resources */,
 				3E545836174BBEA200B4FFF9 /* _set-add-songs.html in Resources */,
-				3E993324176DAB370079BC1B /* opensong.min.js in Resources */,
-				3E993321176DAB0E0079BC1B /* opensong.css in Resources */,
+				3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */,
+				3E595251179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120AC17B240C1001E2E76 /* opensong.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1004,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */,
 				3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */,
 				3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */,
 				3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */,
@@ -1034,13 +1036,14 @@
 				3EFC158817510A1D00BFA2BB /* Document-song-icon@2x.png in Resources */,
 				3EFC158917510A1D00BFA2BB /* Folder-icon.png in Resources */,
 				3EFC158A17510A1D00BFA2BB /* Folder-icon@2x.png in Resources */,
-				3EFC158B17510A1D00BFA2BB /* _welcome.html in Resources */,
 				3EFC158C17510A1D00BFA2BB /* _set-add-songs.html in Resources */,
 				3EA0720E1754707400048D43 /* ProgramIcon57-Test.png in Resources */,
 				3EA0720F1754707400048D43 /* ProgramIcon72-Test.png in Resources */,
 				3EA072101754707400048D43 /* ProgramIcon114-Test.png in Resources */,
 				3EA072111754707400048D43 /* ProgramIcon144-Test.png in Resources */,
-				3E993323176DAB0E0079BC1B /* opensong.css in Resources */,
+				3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */,
+				3E595253179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120AE17B240C1001E2E76 /* opensong.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1213,7 +1216,6 @@
 				3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */,
 				3EB908E41751870E002125FE /* OSSongStyle.m in Sources */,
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
-				3E990C52176DAA6D0079BC1B /* opensong.min.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1260,7 +1262,6 @@
 				3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */,
 				3E56D6B6174D981300F1CDEA /* OSSongStyle.m in Sources */,
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
-				3E990C51176DAA6D0079BC1B /* opensong.min.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,13 +1309,30 @@
 				3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */,
 				3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */,
 				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
-				3E990C53176DAA6D0079BC1B /* opensong.min.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3E59524F179308B6003C3B01 /* _welcome.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E59525517930965003C3B01 /* en */,
+				3E59525617930971003C3B01 /* de */,
+			);
+			name = _welcome.html;
+			sourceTree = "<group>";
+		};
+		3E9200BA178E4A66004C5F8B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E9200B9178E4A66004C5F8B /* en */,
+				3E6A04831792F99700A07E70 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3EAB665D160EC1D500149DA9 /* iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1335,6 +1353,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3EDDA41514AEC3A400BB781C /* en */,
+				3E6A04851792F9DC00A07E70 /* de */,
 			);
 			name = iPad.storyboard;
 			sourceTree = "<group>";
@@ -1356,7 +1375,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.beta-Info.plist";
@@ -1386,7 +1405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.beta-Info.plist";
@@ -1485,8 +1504,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
-					"$(SDKROOT)/usr/include/libxml2/**",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
@@ -1515,8 +1534,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/iOpenSongs-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
-					"$(SDKROOT)/usr/include/libxml2/**",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
@@ -1550,7 +1569,7 @@
 					"RUN_KIF_TESTS=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.integration-Info.plist";
@@ -1585,7 +1604,7 @@
 					"RUN_KIF_TESTS=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}/**",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/iOpenSongs.integration-Info.plist";

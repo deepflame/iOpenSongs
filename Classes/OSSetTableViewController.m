@@ -25,7 +25,7 @@
 
 - (NSString *)title
 {
-    return @"Sets";
+    return NSLocalizedString(@"Sets", nil);
 }
 
 - (void)viewDidLoad
@@ -40,7 +40,7 @@
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
         self.currentSetForEditing = nil;
         self.setNameAlertViewTextField.text = @"";
-        self.setNameAlertView.title = @"New Set";
+        self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);
         [self.setNameAlertView show];
     }];
 
@@ -76,7 +76,7 @@
     
     Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = set.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Songs", set.items.count];
+    cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d Songs", nil), set.items.count];
     
     return cell;
 }
@@ -117,7 +117,7 @@
         // rename set
         self.currentSetForEditing = set;
         self.setNameAlertViewTextField.text = set.name;        
-        self.setNameAlertView.title = @"Rename Set";
+        self.setNameAlertView.title = NSLocalizedString(@"Rename Set", nil);
         [self.setNameAlertView show];
     }
 }
@@ -150,7 +150,7 @@
 - (UIAlertView *)setNameAlertView
 {
     if (! _setNameAlertView) {
-        _setNameAlertView = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        _setNameAlertView = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
         _setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     }
     return _setNameAlertView;
