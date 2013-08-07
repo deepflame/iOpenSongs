@@ -74,7 +74,6 @@
         NSString *htmlDoc = [NSString stringWithContentsOfURL:self.resourceURL
                                                      encoding:NSUTF8StringEncoding
                                                         error:NULL];
-        NSLog(@"%@", htmlDoc);
         [self.webView loadHTMLString:htmlDoc baseURL:baseURL];
     }
 }
