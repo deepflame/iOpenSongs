@@ -36,9 +36,6 @@
 		3E65A1D317136348009B2732 /* OSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65A1D217136348009B2732 /* OSSetViewController.m */; };
 		3E663A8F14B836CD009F1340 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
 		3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
-		3E6C470F1525EE2200164540 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
-		3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
-		3E6C47151525EE4400164540 /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
 		3E7A5DD3155BFB1F00E16222 /* glyphicons_158_playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */; };
 		3E7A5DD4155BFB1F00E16222 /* glyphicons_158_playlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */; };
 		3E7B9A2A1751D32200C74EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
@@ -55,6 +52,12 @@
 		3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */; };
 		3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */; };
 		3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */; };
+		3E9120AC17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120AD17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120AE17B240C1001E2E76 /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120A917B240C1001E2E76 /* opensong.css */; };
+		3E9120B517B24962001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
+		3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
+		3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
 		3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
 		3E9200B7178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
 		3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9200BA178E4A66004C5F8B /* Localizable.strings */; };
@@ -119,9 +122,6 @@
 		3EB908EF1751870E002125FE /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EB908F01751870E002125FE /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EB908F11751870E002125FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
-		3EB908F21751870E002125FE /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
-		3EB908F31751870E002125FE /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
-		3EB908F41751870E002125FE /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
 		3EB908F51751870E002125FE /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3EB908F61751870E002125FE /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3EB908F71751870E002125FE /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
@@ -231,9 +231,6 @@
 		3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
-		3EFC156817510A1D00BFA2BB /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */; };
-		3EFC156917510A1D00BFA2BB /* opensong.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C47111525EE2C00164540 /* opensong.js */; };
-		3EFC156A17510A1D00BFA2BB /* opensong.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E6C470E1525EE2200164540 /* opensong.css */; };
 		3EFC156B17510A1D00BFA2BB /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3EFC156C17510A1D00BFA2BB /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
 		3EFC156D17510A1D00BFA2BB /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
@@ -320,9 +317,6 @@
 		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3E6A04831792F99700A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E6A04851792F9DC00A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/iPad.storyboard; sourceTree = "<group>"; };
-		3E6C470E1525EE2200164540 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = opensong.css; path = Vendor/opensong.js/stylesheets/opensong.css; sourceTree = SOURCE_ROOT; };
-		3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.7.1.min.js"; path = "Vendor/opensong.js/javascript/jquery-1.7.1.min.js"; sourceTree = SOURCE_ROOT; };
-		3E6C47111525EE2C00164540 /* opensong.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = opensong.js; path = Vendor/opensong.js/javascript/opensong.js; sourceTree = SOURCE_ROOT; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
 		3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_158_playlist@2x.png"; path = "Vendor/glyphicons/glyphicons_158_playlist@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E7F1B6115847150008C222F /* OSSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewController.h; sourceTree = "<group>"; };
@@ -345,6 +339,9 @@
 		3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon144-Beta.png"; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E885984175A412300947E32 /* OSImportTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewControllerDelegate.h; sourceTree = "<group>"; };
+		3E9120A917B240C1001E2E76 /* opensong.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = opensong.css; sourceTree = "<group>"; };
+		3E9120AA17B240C1001E2E76 /* opensong.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.min.js; sourceTree = "<group>"; };
+		3E9120AB17B240C1001E2E76 /* opensong.min.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = opensong.min.map; sourceTree = "<group>"; };
 		3E9200B9178E4A66004C5F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
 		3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDropboxImportTableViewController.m; sourceTree = "<group>"; };
@@ -417,7 +414,6 @@
 		3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail.png"; sourceTree = SOURCE_ROOT; };
 		3EF00CB1153E5F9C000A0C73 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_399_e-mail@2x.png"; path = "Vendor/glyphicons/glyphicons_399_e-mail@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Song+AccessorOverrides.h"; sourceTree = "<group>"; };
-		3EF53A271525DD3D0073FB57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = Vendor/opensong.js/README.md; sourceTree = SOURCE_ROOT; };
 		3EF6387F1711ECB60091891D /* Document-empty-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-empty-icon.png"; sourceTree = "<group>"; };
 		3EF638801711ECB60091891D /* Document-empty-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-empty-icon@2x.png"; sourceTree = "<group>"; };
 		3EF638811711ECB60091891D /* Document-song-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Document-song-icon.png"; sourceTree = "<group>"; };
@@ -573,6 +569,16 @@
 				3E80287C1751D9160022BF3B /* OSTestController.m */,
 			);
 			path = Testing;
+			sourceTree = "<group>";
+		};
+		3E9120A817B240C1001E2E76 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				3E9120A917B240C1001E2E76 /* opensong.css */,
+				3E9120AA17B240C1001E2E76 /* opensong.min.js */,
+				3E9120AB17B240C1001E2E76 /* opensong.min.map */,
+			);
+			path = dist;
 			sourceTree = "<group>";
 		};
 		3E92911716F9E1F0002F6ABB /* Import */ = {
@@ -772,31 +778,10 @@
 		3EF53A231525DD240073FB57 /* opensong.js */ = {
 			isa = PBXGroup;
 			children = (
-				3EF53A241525DD3D0073FB57 /* javascript */,
-				3EF53A271525DD3D0073FB57 /* README.md */,
-				3EF53A281525DD3D0073FB57 /* stylesheets */,
+				3E9120A817B240C1001E2E76 /* dist */,
 			);
 			path = opensong.js;
 			sourceTree = "<group>";
-		};
-		3EF53A241525DD3D0073FB57 /* javascript */ = {
-			isa = PBXGroup;
-			children = (
-				3E6C47101525EE2C00164540 /* jquery-1.7.1.min.js */,
-				3E6C47111525EE2C00164540 /* opensong.js */,
-			);
-			name = javascript;
-			path = opensong.js/javascript;
-			sourceTree = SOURCE_ROOT;
-		};
-		3EF53A281525DD3D0073FB57 /* stylesheets */ = {
-			isa = PBXGroup;
-			children = (
-				3E6C470E1525EE2200164540 /* opensong.css */,
-			);
-			name = stylesheets;
-			path = opensong.js/stylesheets;
-			sourceTree = SOURCE_ROOT;
 		};
 		3EFBED3814DF7ADD008EF01D /* Model */ = {
 			isa = PBXGroup;
@@ -928,9 +913,6 @@
 				3EB908EF1751870E002125FE /* iPad.storyboard in Resources */,
 				3EB908F01751870E002125FE /* iPhone.storyboard in Resources */,
 				3EB908F11751870E002125FE /* InfoPlist.strings in Resources */,
-				3EB908F21751870E002125FE /* jquery-1.7.1.min.js in Resources */,
-				3EB908F31751870E002125FE /* opensong.js in Resources */,
-				3EB908F41751870E002125FE /* opensong.css in Resources */,
 				3EB908F51751870E002125FE /* default.css in Resources */,
 				3EB908F61751870E002125FE /* ios.css in Resources */,
 				3EB908F71751870E002125FE /* index.html in Resources */,
@@ -973,12 +955,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
 				3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */,
 				3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
-				3E6C47141525EE4400164540 /* jquery-1.7.1.min.js in Resources */,
-				3E6C47151525EE4400164540 /* opensong.js in Resources */,
-				3E6C470F1525EE2200164540 /* opensong.css in Resources */,
 				3E5E878814DE556C003B645A /* default.css in Resources */,
 				3E586F1614E2A8D200345743 /* ios.css in Resources */,
 				3E663A8F14B836CD009F1340 /* index.html in Resources */,
@@ -1014,6 +994,7 @@
 				3E545836174BBEA200B4FFF9 /* _set-add-songs.html in Resources */,
 				3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595251179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120AC17B240C1001E2E76 /* opensong.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,12 +1002,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */,
 				3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */,
 				3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */,
 				3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */,
-				3EFC156817510A1D00BFA2BB /* jquery-1.7.1.min.js in Resources */,
-				3EFC156917510A1D00BFA2BB /* opensong.js in Resources */,
-				3EFC156A17510A1D00BFA2BB /* opensong.css in Resources */,
 				3EFC156B17510A1D00BFA2BB /* default.css in Resources */,
 				3EFC156C17510A1D00BFA2BB /* ios.css in Resources */,
 				3EFC156D17510A1D00BFA2BB /* index.html in Resources */,
@@ -1062,6 +1041,7 @@
 				3EA072111754707400048D43 /* ProgramIcon144-Test.png in Resources */,
 				3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595253179308B6003C3B01 /* _welcome.html in Resources */,
+				3E9120AE17B240C1001E2E76 /* opensong.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
