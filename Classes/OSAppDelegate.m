@@ -163,6 +163,9 @@
     
 #ifdef IOPENSONGS_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
+#if TARGET_IPHONE_SIMULATOR
+    [Crashlytics sharedInstance].debugMode = YES;
+#endif
 #endif
 }
 
