@@ -76,6 +76,8 @@
 		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
 		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
+		3EB664C417AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
+		3EB664C517AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
 		3EB908BF1751870E002125FE /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
 		3EB908C01751870E002125FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
 		3EB908C11751870E002125FE /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
@@ -117,7 +119,6 @@
 		3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */; };
 		3EB908E71751870E002125FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EB908E81751870E002125FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
-		3EB908E91751870E002125FE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
 		3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EB908EF1751870E002125FE /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EB908F01751870E002125FE /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
@@ -156,7 +157,6 @@
 		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
 		3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
-		3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
 		3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED468D317510C2800AFEA85 /* libPods-Integration.a */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
@@ -226,7 +226,6 @@
 		3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */; };
 		3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
-		3EFC155F17510A1D00BFA2BB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */; };
 		3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
@@ -362,6 +361,7 @@
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		3EB9091B1751870E002125FE /* iOpenSongs Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOpenSongs Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB9091C1751870F002125FE /* iOpenSongs.beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs.beta-Info.plist"; sourceTree = "<group>"; };
 		3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+PrimitiveAccessors.h"; sourceTree = "<group>"; };
@@ -374,7 +374,6 @@
 		3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDetailViewController.m; sourceTree = "<group>"; };
 		3ED177F517134C3800B303CA /* OSSongPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongPageView.h; sourceTree = "<group>"; };
 		3ED177F617134C3800B303CA /* OSSongPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongPageView.m; sourceTree = "<group>"; };
-		3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		3ED468D317510C2800AFEA85 /* libPods-Integration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-Integration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -433,9 +432,9 @@
 			files = (
 				3EB908E71751870E002125FE /* Foundation.framework in Frameworks */,
 				3EB908E81751870E002125FE /* UIKit.framework in Frameworks */,
-				3EB908E91751870E002125FE /* Crashlytics.framework in Frameworks */,
 				3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */,
 				3E7B9A2B1751D32300C74EBB /* libPods.a in Frameworks */,
+				3EB664C517AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,9 +444,9 @@
 			files = (
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
-				3ED2C91D16CD223E0067C3DA /* Crashlytics.framework in Frameworks */,
 				3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */,
 				3E7B9A2A1751D32200C74EBB /* libPods.a in Frameworks */,
+				3EB664C417AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +456,6 @@
 			files = (
 				3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */,
 				3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */,
-				3EFC155F17510A1D00BFA2BB /* Crashlytics.framework in Frameworks */,
 				3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */,
 				3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */,
 			);
@@ -712,9 +710,9 @@
 		3EDDA40114AEC3A400BB781C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3ED2C91C16CD223E0067C3DA /* Crashlytics.framework */,
 				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
 				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
+				3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */,
 				3EA0BB9716D119B500D7D97D /* libxml2.dylib */,
 				2DAA4B6E5367422FAD72E0EA /* libPods.a */,
 				3ED468D317510C2800AFEA85 /* libPods-Integration.a */,
@@ -821,10 +819,10 @@
 			buildPhases = (
 				3EB908BE1751870E002125FE /* Sources */,
 				3EB908E61751870E002125FE /* Frameworks */,
-				3EB908EC1751870E002125FE /* ShellScript */,
-				3EB908ED1751870E002125FE /* ShellScript */,
+				3EB908EC1751870E002125FE /* Run Script - Add Version */,
 				3EB908EE1751870E002125FE /* Resources */,
 				3EB909171751870E002125FE /* Copy Pods Resources */,
+				3EB664C217AE447400A2F8F2 /* Run Script - Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -841,10 +839,10 @@
 			buildPhases = (
 				3EDDA3FA14AEC3A400BB781C /* Sources */,
 				3EDDA3FB14AEC3A400BB781C /* Frameworks */,
-				3EDA1BF71630711B009F5536 /* ShellScript */,
-				3ED2C91B16CD21D10067C3DA /* ShellScript */,
+				3EDA1BF71630711B009F5536 /* Run Script - Add Version */,
 				3EDDA3FC14AEC3A400BB781C /* Resources */,
 				BA2F0F4A94D9463A9899752C /* Copy Pods Resources */,
+				3EB664C617AE47D700A2F8F2 /* Run Script - Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -861,8 +859,7 @@
 			buildPhases = (
 				3EFC153417510A1D00BFA2BB /* Sources */,
 				3EFC155C17510A1D00BFA2BB /* Frameworks */,
-				3EFC156217510A1D00BFA2BB /* ShellScript */,
-				3EFC156317510A1D00BFA2BB /* ShellScript */,
+				3EFC156217510A1D00BFA2BB /* Run Script - Add Version */,
 				3EFC156417510A1D00BFA2BB /* Resources */,
 				3EFC158D17510A1D00BFA2BB /* Copy Pods Resources */,
 			);
@@ -1050,31 +1047,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3EB908EC1751870E002125FE /* ShellScript */ = {
+		3EB664C217AE447400A2F8F2 /* Run Script - Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script - Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./Vendor/Crashlytics/run.sh;
+		};
+		3EB664C617AE47D700A2F8F2 /* Run Script - Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./Vendor/Crashlytics/run.sh;
+		};
+		3EB908EC1751870E002125FE /* Run Script - Add Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Add Version";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
-		};
-		3EB908ED1751870E002125FE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = ./Vendor/Crashlytics/run.sh;
-			shellScript = "";
 		};
 		3EB909171751870E002125FE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1090,57 +1103,33 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
-		3ED2C91B16CD21D10067C3DA /* ShellScript */ = {
+		3EDA1BF71630711B009F5536 /* Run Script - Add Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = ./Vendor/Crashlytics/run.sh;
-			shellScript = "";
-		};
-		3EDA1BF71630711B009F5536 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
+			name = "Run Script - Add Version";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
-		3EFC156217510A1D00BFA2BB /* ShellScript */ = {
+		3EFC156217510A1D00BFA2BB /* Run Script - Add Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script - Add Version";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\n\n#buildNumber=`git log --pretty=format:'%h' -n 1`\nbuildNumber=`date  \"+%y%m%d\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
-		};
-		3EFC156317510A1D00BFA2BB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = ./Vendor/Crashlytics/run.sh;
-			shellScript = "";
 		};
 		3EFC158D17510A1D00BFA2BB /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

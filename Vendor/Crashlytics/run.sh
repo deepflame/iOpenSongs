@@ -1,1 +1,1 @@
-# ./Crashlytics.framework/run <Crashlytics API Key> 
+# ./Vendor/Crashlytics/Crashlytics.framework/run <Crashlytics API Key>
