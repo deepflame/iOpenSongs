@@ -55,6 +55,12 @@
 		3E8028871751F3510022BF3B /* ProgramIcon72-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028831751F3510022BF3B /* ProgramIcon72-Beta.png */; };
 		3E8028881751F3510022BF3B /* ProgramIcon114-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028841751F3510022BF3B /* ProgramIcon114-Beta.png */; };
 		3E8028891751F3510022BF3B /* ProgramIcon144-Beta.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */; };
+		3E8861C717C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
+		3E8861C817C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
+		3E8861C917C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
+		3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
+		3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
+		3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
 		3E9120B517B24962001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
 		3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
 		3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
@@ -339,6 +345,8 @@
 		3E8028851751F3510022BF3B /* ProgramIcon144-Beta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProgramIcon144-Beta.png"; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
 		3E885984175A412300947E32 /* OSImportTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewControllerDelegate.h; sourceTree = "<group>"; };
+		3E8861C617C35DB200F9B324 /* locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = locales; sourceTree = "<group>"; };
+		3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "i18next-1.6.3.min.js"; sourceTree = "<group>"; };
 		3E9120AA17B240C1001E2E76 /* opensong.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.min.js; sourceTree = "<group>"; };
 		3E9200B9178E4A66004C5F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
@@ -571,6 +579,8 @@
 		3E9120A817B240C1001E2E76 /* dist */ = {
 			isa = PBXGroup;
 			children = (
+				3E8861C617C35DB200F9B324 /* locales */,
+				3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */,
 				3E5AEFE717BF8A510004CF8D /* opensong.min.css */,
 				3E9120AA17B240C1001E2E76 /* opensong.min.js */,
 			);
@@ -905,6 +915,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3EB908EF1751870E002125FE /* iPad.storyboard in Resources */,
 				3EB908F01751870E002125FE /* iPhone.storyboard in Resources */,
 				3EB908F11751870E002125FE /* InfoPlist.strings in Resources */,
@@ -945,6 +956,7 @@
 				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
 				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 				3E5AEFE917BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E8861C817C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +964,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
 				3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */,
 				3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */,
@@ -992,6 +1005,7 @@
 				3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595251179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFE817BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E8861C717C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1013,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */,
 				3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */,
 				3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */,
@@ -1039,6 +1054,7 @@
 				3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595253179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFEA17BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E8861C917C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
