@@ -77,14 +77,9 @@
 
 - (void)loadHtmlTemplate
 {
-    NSString *rootPath = [[NSBundle mainBundle] bundlePath];
-    NSURL *baseURL = [NSURL fileURLWithPath:rootPath];
-    
     NSURL *templateUrl = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    NSString *htmlDoc = [NSString stringWithContentsOfURL:templateUrl
-                                                 encoding:NSUTF8StringEncoding
-                                                    error:nil];
-    [self.songWebView loadHTMLString:htmlDoc baseURL:baseURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:templateUrl];
+    [self.songWebView loadRequest:request];
 }
 
 - (NSString *)introPartialString
