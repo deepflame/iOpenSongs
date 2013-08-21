@@ -61,6 +61,9 @@
 		3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
 		3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
 		3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
+		3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
+		3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
+		3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
 		3E9120B517B24962001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
 		3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
 		3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E9120AA17B240C1001E2E76 /* opensong.min.js */; };
@@ -337,6 +340,8 @@
 		3E885984175A412300947E32 /* OSImportTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E8861C617C35DB200F9B324 /* locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = locales; sourceTree = "<group>"; };
 		3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "i18next-1.6.3.min.js"; sourceTree = "<group>"; };
+		3E8F90F117C4594300FC8621 /* OSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSettingsViewController.h; sourceTree = "<group>"; };
+		3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSettingsViewController.m; sourceTree = "<group>"; };
 		3E9120AA17B240C1001E2E76 /* opensong.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = opensong.min.js; sourceTree = "<group>"; };
 		3E9200B9178E4A66004C5F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E92911216F9E160002F6ABB /* OSDropboxImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDropboxImportTableViewController.h; sourceTree = "<group>"; };
@@ -640,6 +645,8 @@
 		3EA0BB9B16D11B7E00D7D97D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3E8F90F117C4594300FC8621 /* OSSettingsViewController.h */,
+				3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1194,6 +1201,7 @@
 				3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */,
 				3EB908E41751870E002125FE /* OSSongStyle.m in Sources */,
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
+				3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,6 +1247,7 @@
 				3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */,
 				3E56D6B6174D981300F1CDEA /* OSSongStyle.m in Sources */,
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
+				3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,6 +1294,7 @@
 				3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */,
 				3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */,
 				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
+				3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

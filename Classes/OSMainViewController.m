@@ -16,6 +16,7 @@
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
+#import "OSSettingsViewController.h"
 #import <FRLayeredNavigationController/FRLayerController.h>
 #import "FRLayeredNavigationController+ExposePrivate.h"
 
@@ -45,6 +46,7 @@
         OSSongSelectTableViewController *songsViewController = [[OSSongSelectTableViewController alloc] init];
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
+        UIViewController *settingsViewController = [[OSSettingsViewController alloc] init];
        
         UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Songs", nil) image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
         UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Sets", nil) image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];
