@@ -34,12 +34,6 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.storyboard = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
-    } else {
-        self.storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];        
-    }
-    
     // Override point for customization after application launch.
     
     // do not let the device sleep

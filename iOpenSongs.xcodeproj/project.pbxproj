@@ -80,7 +80,6 @@
 		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
 		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
-		3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EAB665F160ECE3100149DA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */; };
 		3EB664C417AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
 		3EB664C517AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
@@ -95,7 +94,6 @@
 		3EB908C71751870E002125FE /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
 		3EB908C81751870E002125FE /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
 		3EB908C91751870E002125FE /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
-		3EB908CA1751870E002125FE /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
 		3EB908CB1751870E002125FE /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
 		3EB908CC1751870E002125FE /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3EB908CD1751870E002125FE /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
@@ -126,8 +124,6 @@
 		3EB908E71751870E002125FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EB908E81751870E002125FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
-		3EB908EF1751870E002125FE /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
-		3EB908F01751870E002125FE /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EB908F11751870E002125FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
 		3EB908F51751870E002125FE /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3EB908F61751870E002125FE /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
@@ -169,7 +165,6 @@
 		3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
 		3EDDA40F14AEC3A400BB781C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA40E14AEC3A400BB781C /* main.m */; };
 		3EDDA41314AEC3A400BB781C /* OSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41214AEC3A400BB781C /* OSAppDelegate.m */; };
-		3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
 		3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA41814AEC3A400BB781C /* OSSongViewController.m */; };
 		3EDDA43F14B0596B00BB781C /* ProgramIcon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */; };
 		3EDDA47A14B098F700BB781C /* OSSongSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */; };
@@ -178,7 +173,6 @@
 		3EE891961521B52D001DA59A /* glyphicons_023_cogwheels@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */; };
 		3EE891991521B53E001DA59A /* glyphicons_017_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */; };
 		3EE891AD1521B9DE001DA59A /* glyphicons_017_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */; };
-		3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
 		3EE891B51521C329001DA59A /* glyphicons_023_cogwheels.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */; };
 		3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */; };
 		3EF00CAE153E5F3E000A0C73 /* glyphicons_392_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF00CAC153E5F3E000A0C73 /* glyphicons_392_twitter.png */; };
@@ -202,7 +196,6 @@
 		3EFC153D17510A1D00BFA2BB /* OSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878414DD7680003B645A /* OSAboutViewController.m */; };
 		3EFC153E17510A1D00BFA2BB /* OSSupportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E878F14DE63B5003B645A /* OSSupportTableViewController.m */; };
 		3EFC153F17510A1D00BFA2BB /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
-		3EFC154017510A1D00BFA2BB /* OSStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE891B11521BBA9001DA59A /* OSStyleViewController.m */; };
 		3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC697E8155E06C400022C0E /* OSSetTableViewController.m */; };
 		3EFC154217510A1D00BFA2BB /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3EFC154317510A1D00BFA2BB /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
@@ -233,8 +226,6 @@
 		3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
 		3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
-		3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA41414AEC3A400BB781C /* iPad.storyboard */; };
-		3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB665D160EC1D500149DA9 /* iPhone.storyboard */; };
 		3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */; };
 		3EFC156B17510A1D00BFA2BB /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E878714DE556C003B645A /* default.css */; };
 		3EFC156C17510A1D00BFA2BB /* ios.css in Resources */ = {isa = PBXBuildFile; fileRef = 3E586F1514E2A8D200345743 /* ios.css */; };
@@ -322,7 +313,6 @@
 		3E65A1D417137206009B2732 /* OSSetTableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3E6A04831792F99700A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E6A04851792F9DC00A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3E7A5DD1155BFB1F00E16222 /* glyphicons_158_playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_158_playlist.png; path = Vendor/glyphicons/glyphicons_158_playlist.png; sourceTree = SOURCE_ROOT; };
 		3E7A5DD2155BFB1F00E16222 /* glyphicons_158_playlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_158_playlist@2x.png"; path = "Vendor/glyphicons/glyphicons_158_playlist@2x.png"; sourceTree = SOURCE_ROOT; };
 		3E7F1B6115847150008C222F /* OSSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewController.h; sourceTree = "<group>"; };
@@ -366,7 +356,6 @@
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
 		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
-		3EAB665C160EC1D500149DA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		3EAB665E160ECE3100149DA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		3EB9091B1751870E002125FE /* iOpenSongs Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOpenSongs Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,7 +380,6 @@
 		3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOpenSongs-Prefix.pch"; sourceTree = "<group>"; };
 		3EDDA41114AEC3A400BB781C /* OSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSAppDelegate.h; sourceTree = "<group>"; };
 		3EDDA41214AEC3A400BB781C /* OSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSAppDelegate.m; sourceTree = "<group>"; };
-		3EDDA41514AEC3A400BB781C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		3EDDA41714AEC3A400BB781C /* OSSongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongViewController.h; sourceTree = "<group>"; };
 		3EDDA41814AEC3A400BB781C /* OSSongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSongViewController.m; sourceTree = "<group>"; };
 		3EDDA43E14B0596B00BB781C /* ProgramIcon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgramIcon72.png; sourceTree = "<group>"; };
@@ -410,8 +398,6 @@
 		3EE891951521B52D001DA59A /* glyphicons_023_cogwheels@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_023_cogwheels@2x.png"; path = "Vendor/glyphicons/glyphicons_023_cogwheels@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891971521B53E001DA59A /* glyphicons_017_music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glyphicons_017_music@2x.png"; path = "Vendor/glyphicons/glyphicons_017_music@2x.png"; sourceTree = SOURCE_ROOT; };
 		3EE891AB1521B9DE001DA59A /* glyphicons_017_music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_017_music.png; path = Vendor/glyphicons/glyphicons_017_music.png; sourceTree = SOURCE_ROOT; };
-		3EE891B01521BBA9001DA59A /* OSStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStyleViewController.h; sourceTree = "<group>"; };
-		3EE891B11521BBA9001DA59A /* OSStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSStyleViewController.m; sourceTree = "<group>"; };
 		3EE891B31521C329001DA59A /* glyphicons_023_cogwheels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glyphicons_023_cogwheels.png; path = Vendor/glyphicons/glyphicons_023_cogwheels.png; sourceTree = SOURCE_ROOT; };
 		3EEC566D16F1D5AA007DE9DE /* UIApplication+Directories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Directories.h"; sourceTree = "<group>"; };
 		3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Directories.m"; sourceTree = "<group>"; };
@@ -654,8 +640,6 @@
 		3EA0BB9B16D11B7E00D7D97D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3EE891B01521BBA9001DA59A /* OSStyleViewController.h */,
-				3EE891B11521BBA9001DA59A /* OSStyleViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -744,8 +728,6 @@
 		3EDDA40914AEC3A400BB781C /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3EDDA41414AEC3A400BB781C /* iPad.storyboard */,
-				3EAB665D160EC1D500149DA9 /* iPhone.storyboard */,
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3E9200BA178E4A66004C5F8B /* Localizable.strings */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
@@ -916,8 +898,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */,
-				3EB908EF1751870E002125FE /* iPad.storyboard in Resources */,
-				3EB908F01751870E002125FE /* iPhone.storyboard in Resources */,
 				3EB908F11751870E002125FE /* InfoPlist.strings in Resources */,
 				3EB908F51751870E002125FE /* default.css in Resources */,
 				3EB908F61751870E002125FE /* ios.css in Resources */,
@@ -966,8 +946,6 @@
 			files = (
 				3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
-				3EDDA41614AEC3A400BB781C /* iPad.storyboard in Resources */,
-				3EAB665B160EC1D500149DA9 /* iPhone.storyboard in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3E5E878814DE556C003B645A /* default.css in Resources */,
 				3E586F1614E2A8D200345743 /* ios.css in Resources */,
@@ -1015,8 +993,6 @@
 			files = (
 				3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */,
-				3EFC156517510A1D00BFA2BB /* iPad.storyboard in Resources */,
-				3EFC156617510A1D00BFA2BB /* iPhone.storyboard in Resources */,
 				3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */,
 				3EFC156B17510A1D00BFA2BB /* default.css in Resources */,
 				3EFC156C17510A1D00BFA2BB /* ios.css in Resources */,
@@ -1191,7 +1167,6 @@
 				3EB908C71751870E002125FE /* OSAboutViewController.m in Sources */,
 				3EB908C81751870E002125FE /* OSSupportTableViewController.m in Sources */,
 				3EB908C91751870E002125FE /* Song+OpenSong.m in Sources */,
-				3EB908CA1751870E002125FE /* OSStyleViewController.m in Sources */,
 				3EB908CB1751870E002125FE /* OSSetTableViewController.m in Sources */,
 				3EB908CC1751870E002125FE /* OSSetItemsTableViewController.m in Sources */,
 				3EB908CD1751870E002125FE /* OSSongTableViewController.m in Sources */,
@@ -1237,7 +1212,6 @@
 				3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */,
 				3E5E879014DE63B5003B645A /* OSSupportTableViewController.m in Sources */,
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
-				3EE891B21521BBA9001DA59A /* OSStyleViewController.m in Sources */,
 				3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */,
 				3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */,
 				3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */,
@@ -1283,7 +1257,6 @@
 				3EFC153D17510A1D00BFA2BB /* OSAboutViewController.m in Sources */,
 				3EFC153E17510A1D00BFA2BB /* OSSupportTableViewController.m in Sources */,
 				3EFC153F17510A1D00BFA2BB /* Song+OpenSong.m in Sources */,
-				3EFC154017510A1D00BFA2BB /* OSStyleViewController.m in Sources */,
 				3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */,
 				3EFC154217510A1D00BFA2BB /* OSSetItemsTableViewController.m in Sources */,
 				3EFC154317510A1D00BFA2BB /* OSSongTableViewController.m in Sources */,
@@ -1336,29 +1309,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		3EAB665D160EC1D500149DA9 /* iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EAB665C160EC1D500149DA9 /* en */,
-			);
-			name = iPhone.storyboard;
-			sourceTree = "<group>";
-		};
 		3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3EDDA40C14AEC3A400BB781C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3EDDA41414AEC3A400BB781C /* iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EDDA41514AEC3A400BB781C /* en */,
-				3E6A04851792F9DC00A07E70 /* de */,
-			);
-			name = iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

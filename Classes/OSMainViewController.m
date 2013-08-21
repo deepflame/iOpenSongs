@@ -11,7 +11,6 @@
 #import "OSSongViewController.h"
 #import "OSSongSelectTableViewController.h"
 
-#import "OSAppDelegate.h"
 #import "SetItemSong.h"
 #import "OSSetViewController.h"
 #import "OSSetTableViewController.h"
@@ -46,7 +45,6 @@
         OSSongSelectTableViewController *songsViewController = [[OSSongSelectTableViewController alloc] init];
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
-        UIViewController *settingsViewController = [[[OSAppDelegate sharedAppDelegate] storyboard] instantiateViewControllerWithIdentifier:@"settings"];
        
         UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Songs", nil) image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
         UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Sets", nil) image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];

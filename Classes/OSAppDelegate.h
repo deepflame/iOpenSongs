@@ -12,8 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UIStoryboard *storyboard;
-
 + (OSAppDelegate *)sharedAppDelegate;
 
 @end
