@@ -27,6 +27,12 @@
 
 // Settings
 "Settings" = "Einstellungen";
+"Night Mode" = "Nachtmodus";
+"Song Style" = "Lied Style";
+"Header" = "Überschrift";
+"Chords" = "Akkorde";
+"Lyrics" = "Liedtext";
+"Comments" = "Kommentare";
 
 // Support
 "Support" = "Support";
