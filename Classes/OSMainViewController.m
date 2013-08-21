@@ -8,15 +8,19 @@
 
 #import "OSMainViewController.h"
 
+// Songs
 #import "OSSongViewController.h"
 #import "OSSongSelectTableViewController.h"
 
+// Sets
 #import "SetItemSong.h"
 #import "OSSetViewController.h"
 #import "OSSetTableViewController.h"
 #import "OSSetItemsTableViewController.h"
 
+// Settings
 #import "OSSettingsViewController.h"
+
 #import <FRLayeredNavigationController/FRLayerController.h>
 #import "FRLayeredNavigationController+ExposePrivate.h"
 
