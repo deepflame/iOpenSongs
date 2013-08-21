@@ -25,6 +25,7 @@ PODS:
   - MBProgressHUD (0.7)
   - PonyDebugger (0.3.0):
     - SocketRocket
+  - QuickDialog (0.8)
   - SocketRocket (0.3.1-beta2)
   - SYPaginator (1.0.0)
   - TDBadgedCell (2.3)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - MagicalRecord
   - MBProgressHUD
   - PonyDebugger
+  - QuickDialog
   - SYPaginator
   - TDBadgedCell (from `TDBadgedCell.podspec`)
   - TestFlightSDK (~> 1.2.4)
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
   MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
   PonyDebugger: bafc25809ade389d0d1c1f1147877145cc26bd78
+  QuickDialog: 465692c7c599ad41a0c46022c55779dd61a4d4fe
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
   TDBadgedCell: dbf1dd2b99c11db97ee66deb889aa5152d8a4198

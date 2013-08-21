@@ -11,6 +11,7 @@ pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit'
 pod 'BlocksKit'
+pod 'QuickDialog'
 
 # User Services
 pod 'uservoice-iphone-sdk'
