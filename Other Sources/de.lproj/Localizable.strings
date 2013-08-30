@@ -16,7 +16,10 @@
 "Title" = "Titel";
 "Author" = "Autor";
 "Lyrics" = "Text";
+
 "Import from" = "Importieren von";
+"iTunes File Sharing" = "iTunes Dateifreigabe";
+"Dropbox" = "Dropbox";
 
 // Sets
 "Sets" = "Sets";
