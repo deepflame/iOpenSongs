@@ -2,21 +2,7 @@ PODS:
   - BlocksKit (1.8.2):
     - libffi
   - Dropbox-iOS-SDK (1.3.5)
-  - FormatterKit (1.2.0):
-    - FormatterKit/AddressFormatter
-    - FormatterKit/ArrayFormatter
-    - FormatterKit/LocationFormatter
-    - FormatterKit/OrdinalNumberFormatter
-    - FormatterKit/TimeIntervalFormatter
-    - FormatterKit/UnitOfInformationFormatter
-    - FormatterKit/URLRequestFormatter
-  - FormatterKit/AddressFormatter (1.2.0)
-  - FormatterKit/ArrayFormatter (1.2.0)
-  - FormatterKit/LocationFormatter (1.2.0)
-  - FormatterKit/OrdinalNumberFormatter (1.2.0)
-  - FormatterKit/TimeIntervalFormatter (1.2.0)
-  - FormatterKit/UnitOfInformationFormatter (1.2.0)
-  - FormatterKit/URLRequestFormatter (1.2.0)
+  - FormatterKit/UnitOfInformationFormatter (1.2.1)
   - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - KIF (HEAD based on 0.0.1)
@@ -35,7 +21,7 @@ PODS:
 DEPENDENCIES:
   - BlocksKit
   - Dropbox-iOS-SDK
-  - FormatterKit
+  - FormatterKit/UnitOfInformationFormatter
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK (= 2.0beta4)
   - KIF (HEAD)
@@ -57,7 +43,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
   Dropbox-iOS-SDK: 08ad3e2c7a29859cf6e8b37b75d83e3e67c3fc1f
-  FormatterKit: 36ec675a04c546948521a4ee3ddb233d17c87a3a
+  FormatterKit: 43c6567e367a872196747fda0c26395c37bd7dd6
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
   KIF: 26ce47f3f37660ca9bb0b62f9545597e21eca3fc

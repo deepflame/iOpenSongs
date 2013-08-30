@@ -9,7 +9,7 @@ pod 'SYPaginator'
 # Core
 pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
-pod 'FormatterKit'
+pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
 pod 'QuickDialog'
 
