@@ -33,12 +33,6 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-
-    self.importActionSheet = [[UIActionSheet alloc ] initWithTitle:NSLocalizedString(@"Import from", nil)
-                                                          delegate:self
-                                                 cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                            destructiveButtonTitle:nil
-                                                 otherButtonTitles:@"iTunes", @"Dropbox", nil];
     
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
         if ([self.importActionSheet isVisible]) {
@@ -106,33 +100,41 @@
     }
 }
 
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    OSImportTableViewController *importTableViewController;
-    
-    if ([buttonTitle isEqualToString:@"iTunes"]) {
-        importTableViewController = [[OSITunesImportTableViewController alloc] init];
-    } else if ([buttonTitle isEqualToString:@"Dropbox"]) {
-        if (! [[DBSession sharedSession] isLinked]) {
-            [[DBSession sharedSession] linkFromController:self];
-            return; // <- !!
-        }
-        importTableViewController = [[OSDropboxImportTableViewController alloc] init];
-    }
-    importTableViewController.delegate = self;
-    
-    [self.navigationController pushViewController:importTableViewController animated:YES];
-}
-
 #pragma mark - OSImportTableViewControllerDelegate
 
 - (void)importTableViewController:(OSImportTableViewController *)sender finishedImportWithErrors:(NSArray *)errors
 {
     [sender handleImportErrors]; // TODO: do error handling somewhere else
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+# pragma mark - Getter implementations
+
+- (UIActionSheet *)importActionSheet
+{
+    if (_importActionSheet == nil) {
+        _importActionSheet = [UIActionSheet actionSheetWithTitle:NSLocalizedString(@"Import from", nil)];
+        OSSongSelectTableViewController *_self = self;
+        
+        // iTunes File Sharing
+        [_importActionSheet addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{
+            OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
+            importTableViewController.delegate = _self;
+            [_self.navigationController pushViewController:importTableViewController animated:YES];
+        }];
+        
+        // Dropbox
+        [_importActionSheet addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
+            if (! [[DBSession sharedSession] isLinked]) {
+                [[DBSession sharedSession] linkFromController:_self];
+                return; // <- !!
+            }
+            OSImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
+            importTableViewController.delegate = _self;
+            [_self.navigationController pushViewController:importTableViewController animated:YES];
+        }];
+    }
+    return _importActionSheet;
 }
 
 @end
