@@ -15,11 +15,11 @@ pod 'QuickDialog'
 
 # User Services
 pod 'uservoice-iphone-sdk'
-pod 'GoogleAnalytics-iOS-SDK'
+pod 'GoogleAnalytics-iOS-SDK', '2.0beta4' # TODO: update to 3.0
 
 # Development
 pod 'PonyDebugger'
-pod 'TestFlightSDK', '~> 1.2.4'
+pod 'TestFlightSDK', '~> 2.0.0'
 
 # Testing
 target :Integration do # (targets are case sensitive)
