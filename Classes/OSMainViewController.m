@@ -126,7 +126,7 @@
     [setVC selectPageAtIndex:index animated:NO];
 }
 
-- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didDeleteSetItem:(SetItem *)setItem fromSet:(Set *)set
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didChangeSet:(Set *)set
 {
    self.currentDetailViewController = [[OSSetViewController alloc] init];
    OSSetViewController *setVC = (OSSetViewController *)[self currentDetailViewController];

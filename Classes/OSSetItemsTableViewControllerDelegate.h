@@ -15,6 +15,6 @@
 @protocol OSSetItemsTableViewControllerDelegate <NSObject>
 @optional
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set;
-- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didDeleteSetItem:(SetItem *)setItem fromSet:(Set *)set;
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didChangeSet:(Set *)set;
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set;
 @end

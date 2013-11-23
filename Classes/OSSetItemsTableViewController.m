@@ -86,7 +86,7 @@
         // delete object from database
         SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.set.managedObjectContext deleteObject:setItem];
-        [self.delegate setItemsTableViewController:self didDeleteSetItem:setItem fromSet:self.set];
+        [self.delegate setItemsTableViewController:self didChangeSet:self.set];
     }
 }
 
@@ -106,7 +106,9 @@
     for (SetItem *si in setItems) {
         si.position = [NSNumber numberWithInt:i++];
     }
-
+    
+    [self.delegate setItemsTableViewController:self didChangeSet:self.set];
+    
     self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
 }
 
