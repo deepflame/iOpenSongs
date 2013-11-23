@@ -38,6 +38,17 @@
     self.view = paginator;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // for iOS 7 (view behind navigation bar)
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        //self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
