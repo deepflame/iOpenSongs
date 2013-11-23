@@ -49,23 +49,6 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    SYPaginatorView *paginatorView = self.paginatorView;
-    [self.set addObserverForKeyPath:@"items" task:^(NSObject *receiver) {
-        [paginatorView reloadData];
-    }];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [self.set removeAllBlockObservers];
-}
-
 #pragma mark - SYPaginatorViewDelegate
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView didScrollToPageAtIndex:(NSInteger)pageIndex
