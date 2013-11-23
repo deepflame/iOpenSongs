@@ -1,22 +1,22 @@
 PODS:
-  - BlocksKit (1.8.2):
+  - BlocksKit (1.8.3):
     - libffi
-  - Dropbox-iOS-SDK (1.3.5)
-  - FormatterKit/UnitOfInformationFormatter (1.2.1)
+  - Dropbox-iOS-SDK (1.3.9)
+  - FormatterKit/UnitOfInformationFormatter (1.3.1)
   - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - KIF (HEAD based on 0.0.1)
   - libffi (3.0.13)
-  - MagicalRecord (2.1)
-  - MBProgressHUD (0.7)
+  - MagicalRecord (2.2)
+  - MBProgressHUD (0.8)
   - PonyDebugger (0.3.0):
     - SocketRocket
-  - QuickDialog (0.8)
+  - QuickDialog (0.9)
   - SocketRocket (0.3.1-beta2)
   - SYPaginator (1.0.0)
   - TDBadgedCell (2.3)
-  - TestFlightSDK (2.0)
-  - uservoice-iphone-sdk (2.0.11)
+  - TestFlightSDK (2.0.2)
+  - uservoice-iphone-sdk (2.0.13)
 
 DEPENDENCIES:
   - BlocksKit
@@ -41,21 +41,22 @@ EXTERNAL SOURCES:
     :podspec: TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
-  BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
-  Dropbox-iOS-SDK: 08ad3e2c7a29859cf6e8b37b75d83e3e67c3fc1f
-  FormatterKit: 43c6567e367a872196747fda0c26395c37bd7dd6
+  BlocksKit: 27257f9cbbec0ea98c80ba83cc2ea7111ae62eb2
+  Dropbox-iOS-SDK: 1a8850056b1bd54bc023bd268e1e6f4d6ee9d7a5
+  FormatterKit: 1238e7a6800c750a5f50f5fec1cc430d8e3b71e7
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
   KIF: 26ce47f3f37660ca9bb0b62f9545597e21eca3fc
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
-  MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
-  MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
-  PonyDebugger: bafc25809ade389d0d1c1f1147877145cc26bd78
-  QuickDialog: 465692c7c599ad41a0c46022c55779dd61a4d4fe
+  MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  MKStoreKit: 5dea8e2966c1218c0d0f0b5c749d2d9317141a2b
+  PonyDebugger: b8b504d18c6fe8cfe904295d8e908b076bdfa291
+  QuickDialog: aea6a7b1a235ba0439065a45e5b124a8422f4e2c
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a
   TDBadgedCell: dbf1dd2b99c11db97ee66deb889aa5152d8a4198
-  TestFlightSDK: 940906d4b2550cf397c6f2d2fcc4ebfdcd8ae858
-  uservoice-iphone-sdk: 684921f549cae339e94a9135d0e12f2e357b59bc
+  TestFlightSDK: 0811097c1f831afb71f68ccd07ae71325cb90f43
+  uservoice-iphone-sdk: f7e81122561535cd7c838e2e069f185222066c91
 
-COCOAPODS: 0.23.0
+COCOAPODS: 0.28.0
