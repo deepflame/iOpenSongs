@@ -96,6 +96,22 @@
     return cell;
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    // add magnifying glass
+    NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
+    return indexTitles;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    // magnifying glass ?
+    if (title == UITableViewIndexSearch) {
+        [self.tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
+    	return -1;
+    }
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
+}
+
 #pragma mark - UISearchBarDelegate
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
