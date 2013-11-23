@@ -130,55 +130,30 @@
                                 task:^(OSSongStyle *style, NSDictionary *change) {
         [self setNightMode:style.nightMode];
     }];
-    // visibility
-    [songStyle addObserverForKeyPath:@"headerVisible"
-                          identifier:@"headerVisible"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleVisible:style.headerVisible withCSSSelector:@".opensong h2"];
-    }];
-    [songStyle addObserverForKeyPath:@"chordsVisible"
-                          identifier:@"chordsVisible"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleVisible:style.chordsVisible withCSSSelector:@".opensong .chords"];
-    }];
-    [songStyle addObserverForKeyPath:@"lyricsVisible"
-                          identifier:@"lyricsVisible"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleVisible:style.lyricsVisible withCSSSelector:@".opensong .lyrics"];
-    }];
-    [songStyle addObserverForKeyPath:@"commentsVisible"
-                          identifier:@"commentsVisible"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleVisible:style.commentsVisible withCSSSelector:@".opensong .comments"];
-    }];
-    // size
-    [songStyle addObserverForKeyPath:@"headerSize"
-                          identifier:@"headerSize"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleSize:style.headerSize withCSSSelector:@".opensong h2"];
-    }];
-    [songStyle addObserverForKeyPath:@"chordsSize"
-                          identifier:@"chordsSize"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleSize:style.chordsSize withCSSSelector:@".opensong .chords"];
-    }];
-    [songStyle addObserverForKeyPath:@"lyricsSize"
-                          identifier:@"lyricsSize"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleSize:style.lyricsSize withCSSSelector:@".opensong .lyrics"];
-    }];
-    [songStyle addObserverForKeyPath:@"commentsSize"
-                          identifier:@"commentsSize"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setStyleSize:style.commentsSize withCSSSelector:@".opensong .comments"];
+
+    // visibility and size
+    [@[@"header", @"chords", @"lyrics", @"comments"] each:^(NSString *part) {
+        NSString *cssSel = [@".opensong ." stringByAppendingString:part];
+
+        // visible
+        NSString* key = [part stringByAppendingString:@"Visible"];
+        [songStyle addObserverForKeyPath:key
+                              identifier:key
+                                 options:NSKeyValueObservingOptionInitial
+                                    task:^(OSSongStyle *style, NSDictionary *change) {
+                                        BOOL isVisible = [[style valueForKey:key] boolValue];
+                                        [self setStyleVisible:isVisible withCSSSelector:cssSel];
+                                    }];
+        
+        // size
+        key = [part stringByAppendingString:@"Size"];
+        [songStyle addObserverForKeyPath:key
+                              identifier:key
+                                 options:NSKeyValueObservingOptionInitial
+                                    task:^(OSSongStyle *style, NSDictionary *change) {
+                                        int size = [[style valueForKey:key] intValue];
+                                        [self setStyleSize:size withCSSSelector:cssSel];
+                                    }];
     }];
 }
 
