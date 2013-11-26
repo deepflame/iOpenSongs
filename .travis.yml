@@ -1,5 +1,7 @@
 language: objective-c
 before_install:
   - git submodule update --init --recursive
+  - npm install grunt-cli
+  - cd Vendor/opensong.js && npm install && grunt
 rvm: 
   - 1.9.3
