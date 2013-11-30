@@ -13,11 +13,11 @@
     #import <Foundation/Foundation.h>
 
     // External Libraries
-    #import <BlocksKit.h>
+    #import <BlocksKit/BlocksKit.h>
 
     //#define MR_SHORTHAND // disabled to clarify when MR is used
     #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
-    #import <CoreData+MagicalRecord.h>
+    #import <MagicalRecord/CoreData+MagicalRecord.h>
 
     #import <TestFlight.h>
     #import <Crashlytics/Crashlytics.h>
