@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
+#import <StoreKit/SKProduct.h>
 
 #import "OSInAppPurchaseIdentifiers.h"
 
@@ -22,6 +22,8 @@
                         failure:(void (^)(NSError *error))failure;
 
 - (void)buyProduct:(SKProduct *)product;
+
+- (void)restorePurchases;
 
 - (BOOL)canUseFeature:(NSString *)identifier;
 

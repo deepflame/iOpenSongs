@@ -100,6 +100,11 @@
     }
 }
 
+- (void)restorePurchases
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 - (BOOL)canUseFeature:(NSString *)identifier
 {
     return YES;
