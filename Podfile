@@ -13,6 +13,7 @@ pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
 pod 'QuickDialog'
 pod 'CargoBay', :podspec => 'Other Sources/podspecs/CargoBay.podspec'
+pod 'Lockbox'
 
 # User Services
 pod 'uservoice-iphone-sdk'

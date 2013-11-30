@@ -27,6 +27,7 @@ PODS:
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - KIF (HEAD based on 0.0.1)
   - libffi (3.0.13)
+  - Lockbox (1.4.4)
   - MagicalRecord (2.2)
   - MBProgressHUD (0.8)
   - PonyDebugger (0.3.0):
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK (= 2.0beta4)
   - KIF (HEAD)
+  - Lockbox
   - MagicalRecord
   - MBProgressHUD
   - PonyDebugger
@@ -73,6 +75,7 @@ SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
   KIF: 26ce47f3f37660ca9bb0b62f9545597e21eca3fc
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
+  Lockbox: 917945068ab8b0802e65527f225e6480937b2106
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   PonyDebugger: b8b504d18c6fe8cfe904295d8e908b076bdfa291
