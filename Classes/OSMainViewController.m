@@ -21,6 +21,9 @@
 // Settings
 #import "OSSettingsViewController.h"
 
+// Shop
+#import "OSShopViewController.h"
+
 #import <FRLayeredNavigationController/FRLayerController.h>
 #import "FRLayeredNavigationController+ExposePrivate.h"
 
@@ -51,19 +54,23 @@
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
         UIViewController *settingsViewController = [[OSSettingsViewController alloc] init];
+        UIViewController *shopViewController = [[OSShopViewController alloc] init];
        
         UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Songs", nil) image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
         UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Sets", nil) image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];
         UITabBarItem *settingsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) image:[UIImage imageNamed:@"glyphicons_023_cogwheels"] tag:2];
+        UITabBarItem *shopTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Shop", nil) image:[UIImage imageNamed:@"glyphicons_202_shopping_cart"] tag:3];
         
         songsViewController.tabBarItem = songsTBI;
         setsViewController.tabBarItem = setsTBI;
         settingsViewController.tabBarItem = settingsTBI;
+        shopViewController.tabBarItem = shopTBI;
         
         NSMutableArray *viewControllers = [NSMutableArray array];
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:songsViewController]];
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:setsViewController]];
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:settingsViewController]];
+        [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopViewController]];
         
         tabBarController.viewControllers = viewControllers;
         
