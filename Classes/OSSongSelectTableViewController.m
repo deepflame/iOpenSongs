@@ -21,6 +21,8 @@
 // TODO: remove dependency
 #import <DropboxSDK/DropboxSDK.h>
 
+#import "OSStoreManager.h"
+
 @interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate>
 @property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
@@ -124,15 +126,18 @@
         }];
         
         // Dropbox
-        [_importActionSheet addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
-            if (! [[DBSession sharedSession] isLinked]) {
-                [[DBSession sharedSession] linkFromController:_self];
-                return; // <- !!
-            }
-            OSImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
-            importTableViewController.delegate = _self;
-            [_self.navigationController pushViewController:importTableViewController animated:YES];
-        }];
+        if ([[OSStoreManager sharedManager] canUseFeature:OS_IAP_DROPBOX]) {
+            [_importActionSheet addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
+                if (! [[DBSession sharedSession] isLinked]) {
+                    [[DBSession sharedSession] linkFromController:_self];
+                    return; // <- !!
+                }
+                OSImportTableViewController *importTableViewController = [[OSDropboxImportTableViewController alloc] init];
+                importTableViewController.delegate = _self;
+                [_self.navigationController pushViewController:importTableViewController animated:YES];
+            }];
+        }
+
     }
     return _importActionSheet;
 }
