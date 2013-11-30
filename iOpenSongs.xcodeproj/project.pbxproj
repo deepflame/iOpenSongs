@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0C37D717C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D517C22B69006E0B78 /* glyphicons_202_shopping_cart.png */; };
+		3E0C37D817C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D517C22B69006E0B78 /* glyphicons_202_shopping_cart.png */; };
+		3E0C37D917C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D517C22B69006E0B78 /* glyphicons_202_shopping_cart.png */; };
+		3E0C37DA17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D617C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png */; };
+		3E0C37DB17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D617C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png */; };
+		3E0C37DC17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0C37D617C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png */; };
+		3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
+		3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
+		3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
@@ -162,6 +171,14 @@
 		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
 		3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
+		3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; };
+		3ED1F8711847BE75009D72F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; };
+		3ED1F8741847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */; };
+		3ED1F8751847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */; };
+		3ED1F8761847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */; };
+		3ED1F879184A0A2E009D72F0 /* OSStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F878184A0A2E009D72F0 /* OSStoreManager.m */; };
+		3ED1F87A184A0A2E009D72F0 /* OSStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F878184A0A2E009D72F0 /* OSStoreManager.m */; };
+		3ED1F87B184A0A2E009D72F0 /* OSStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F878184A0A2E009D72F0 /* OSStoreManager.m */; };
 		3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED468D317510C2800AFEA85 /* libPods-Integration.a */; };
 		3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40414AEC3A400BB781C /* Foundation.framework */; };
@@ -264,6 +281,10 @@
 /* Begin PBXFileReference section */
 		2DAA4B6E5367422FAD72E0EA /* libPods.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = iOpenSongs.entitlements; path = Resources/iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
+		3E0C37D517C22B69006E0B78 /* glyphicons_202_shopping_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_202_shopping_cart.png; sourceTree = "<group>"; };
+		3E0C37D617C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_202_shopping_cart@2x.png"; sourceTree = "<group>"; };
+		3E0C37DE17C22D3B006E0B78 /* OSShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSShopViewController.h; sourceTree = "<group>"; };
+		3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSShopViewController.m; sourceTree = "<group>"; };
 		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRLayeredNavigationController+ExposePrivate.h"; sourceTree = "<group>"; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
@@ -375,6 +396,13 @@
 		3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDetailViewController.m; sourceTree = "<group>"; };
 		3ED177F517134C3800B303CA /* OSSongPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongPageView.h; sourceTree = "<group>"; };
 		3ED177F617134C3800B303CA /* OSSongPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongPageView.m; sourceTree = "<group>"; };
+		3ED1F86918476BBB009D72F0 /* OSInAppPurchaseIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSInAppPurchaseIdentifiers.h; sourceTree = "<group>"; };
+		3ED1F86A18477A53009D72F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3ED1F87018479F6B009D72F0 /* iOpenSongs Beta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOpenSongs Beta.entitlements"; sourceTree = "<group>"; };
+		3ED1F8721847D91E009D72F0 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
+		3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
+		3ED1F877184A0A2E009D72F0 /* OSStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStoreManager.h; sourceTree = "<group>"; };
+		3ED1F878184A0A2E009D72F0 /* OSStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSStoreManager.m; sourceTree = "<group>"; };
 		3ED468D317510C2800AFEA85 /* libPods-Integration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-Integration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOpenSongs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDDA40214AEC3A400BB781C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -428,6 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */,
 				3EB908E71751870E002125FE /* Foundation.framework in Frameworks */,
 				3EB908E81751870E002125FE /* UIKit.framework in Frameworks */,
 				3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */,
@@ -440,6 +469,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED1F8711847BE75009D72F0 /* StoreKit.framework in Frameworks */,
 				3EDDA40514AEC3A400BB781C /* Foundation.framework in Frameworks */,
 				3EDDA40314AEC3A400BB781C /* UIKit.framework in Frameworks */,
 				3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */,
@@ -462,6 +492,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0C37DD17C22CC8006E0B78 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				3E0C37DE17C22D3B006E0B78 /* OSShopViewController.h */,
+				3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */,
+				3ED1F877184A0A2E009D72F0 /* OSStoreManager.h */,
+				3ED1F878184A0A2E009D72F0 /* OSStoreManager.m */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
 		3E120C6714FA276700926A74 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +586,7 @@
 				3EA0BB9916D11B4600D7D97D /* Song */,
 				3EA0BB9A16D11B5000D7D97D /* Set */,
 				3EA0BB9B16D11B7E00D7D97D /* Settings */,
+				3E0C37DD17C22CC8006E0B78 /* Shop */,
 				3E3EE7B917081C93006A9B34 /* Support */,
 				3EE0DB3216EC19F0005C89C6 /* OSStartupViewController.h */,
 				3EE0DB3316EC19F0005C89C6 /* OSStartupViewController.m */,
@@ -663,6 +705,8 @@
 		3ECF7F1A1522B4D10061457B /* glyphicons */ = {
 			isa = PBXGroup;
 			children = (
+				3E0C37D517C22B69006E0B78 /* glyphicons_202_shopping_cart.png */,
+				3E0C37D617C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png */,
 				3E637B0016CFDEF400514793 /* glyphicons_244_conversation.png */,
 				3E637B0116CFDEF400514793 /* glyphicons_244_conversation@2x.png */,
 				3EF00CB0153E5F9C000A0C73 /* glyphicons_399_e-mail.png */,
@@ -709,6 +753,7 @@
 		3EDDA40114AEC3A400BB781C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ED1F86A18477A53009D72F0 /* StoreKit.framework */,
 				3EDDA40414AEC3A400BB781C /* Foundation.framework */,
 				3EDDA40214AEC3A400BB781C /* UIKit.framework */,
 				3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */,
@@ -740,6 +785,7 @@
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 				3E865AF116CF6AEA000E9D98 /* OSDefines.h */,
+				3ED1F86918476BBB009D72F0 /* OSInAppPurchaseIdentifiers.h */,
 				3EDDA40E14AEC3A400BB781C /* main.m */,
 			);
 			path = "Other Sources";
@@ -766,6 +812,8 @@
 				3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */,
 				3E56D6B7174FB13400F1CDEA /* NSObject+RuntimeAdditions.h */,
 				3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */,
+				3ED1F8721847D91E009D72F0 /* SKProduct+LocalizedPrice.h */,
+				3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -943,6 +991,8 @@
 				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
 				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 				3E5AEFE917BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E0C37D817C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */,
+				3E0C37DB17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */,
 				3E8861C817C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -990,6 +1040,8 @@
 				3E9200B6178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595251179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFE817BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E0C37D717C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */,
+				3E0C37DA17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */,
 				3E8861C717C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1037,6 +1089,8 @@
 				3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595253179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFEA17BF8A510004CF8D /* opensong.min.css in Resources */,
+				3E0C37D917C22B69006E0B78 /* glyphicons_202_shopping_cart.png in Resources */,
+				3E0C37DC17C22B69006E0B78 /* glyphicons_202_shopping_cart@2x.png in Resources */,
 				3E8861C917C35DB200F9B324 /* locales in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1180,6 +1234,7 @@
 				3EB908CE1751870E002125FE /* OSSetItemSongsTableViewController.m in Sources */,
 				3EB908CF1751870E002125FE /* SetItem.m in Sources */,
 				3EB908D01751870E002125FE /* SetItemSong.m in Sources */,
+				3ED1F8751847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */,
 				3EB908D11751870E002125FE /* Set.m in Sources */,
 				3EB908D21751870E002125FE /* CoreDataTableViewController.m in Sources */,
 				3EB908D31751870E002125FE /* Song+Import.m in Sources */,
@@ -1188,6 +1243,7 @@
 				3EB908D61751870E002125FE /* Song.m in Sources */,
 				3EB908D71751870E002125FE /* OSStartupViewController.m in Sources */,
 				3EB908D81751870E002125FE /* NSString+SectionIndex.m in Sources */,
+				3ED1F87A184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EB908D91751870E002125FE /* UIApplication+Directories.m in Sources */,
 				3EB908DA1751870E002125FE /* OSDropboxImportTableViewController.m in Sources */,
 				3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */,
@@ -1201,6 +1257,7 @@
 				3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */,
 				3EB908E41751870E002125FE /* OSSongStyle.m in Sources */,
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
+				3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1226,6 +1283,7 @@
 				3E7F1B66158476BC008C222F /* OSSetItemSongsTableViewController.m in Sources */,
 				3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */,
 				3E7F8817160CCCEE004EB8E6 /* SetItemSong.m in Sources */,
+				3ED1F8741847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */,
 				3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */,
 				3EE0CE8616A2870200883F64 /* CoreDataTableViewController.m in Sources */,
 				3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */,
@@ -1234,6 +1292,7 @@
 				3E3872AF16EB1676003A0DCC /* Song.m in Sources */,
 				3EE0DB3416EC19F1005C89C6 /* OSStartupViewController.m in Sources */,
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
+				3ED1F879184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
 				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
 				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
@@ -1247,6 +1306,7 @@
 				3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */,
 				3E56D6B6174D981300F1CDEA /* OSSongStyle.m in Sources */,
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
+				3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1280,6 +1340,7 @@
 				3EFC154C17510A1D00BFA2BB /* Song.m in Sources */,
 				3EFC154D17510A1D00BFA2BB /* OSStartupViewController.m in Sources */,
 				3EFC154E17510A1D00BFA2BB /* NSString+SectionIndex.m in Sources */,
+				3ED1F87B184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EFC154F17510A1D00BFA2BB /* UIApplication+Directories.m in Sources */,
 				3EFC155017510A1D00BFA2BB /* OSDropboxImportTableViewController.m in Sources */,
 				3EFC155117510A1D00BFA2BB /* OSImportTableViewController.m in Sources */,
@@ -1287,6 +1348,7 @@
 				3EFC155317510A1D00BFA2BB /* OSFileDescriptor.m in Sources */,
 				3EFC155417510A1D00BFA2BB /* OSFileDescriptor+Dropbox.m in Sources */,
 				3EFC155517510A1D00BFA2BB /* OSSongView.m in Sources */,
+				3ED1F8761847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */,
 				3EFC155617510A1D00BFA2BB /* OSHtmlView.m in Sources */,
 				3EFC155717510A1D00BFA2BB /* OSSongPageView.m in Sources */,
 				3EFC155817510A1D00BFA2BB /* OSSetViewController.m in Sources */,
@@ -1294,6 +1356,7 @@
 				3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */,
 				3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */,
 				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
+				3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
