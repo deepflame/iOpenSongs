@@ -14,13 +14,14 @@
 
 #import <TargetConditionals.h>
 #import <DropboxSDK/DropboxSDK.h>
+
+#import "OSStoreManager.h"
+
 #import <PonyDebugger.h>
 
 #if RUN_KIF_TESTS
 #import "OSTestController.h"
 #endif
-
-#import "OSStoreManager.h"
 
 @implementation OSAppDelegate
 
@@ -32,22 +33,24 @@
 
 #pragma mark UIApplicationDelegate
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self commonInitialization];
+    
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self commonInitialization];
     
     // Override point for customization after application launch.
     
     // do not let the device sleep
     [application setIdleTimerDisabled:YES];
     
-    [self startCustomerServices];
-    
-    [[OSStoreManager sharedManager] initInAppStore];
-    
-    [self applyStyleSheet];
-    // setup CoreData and display UI
-    self.window.rootViewController = [[OSStartupViewController alloc] init];
+    //[application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+    //[application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     [self.window makeKeyAndVisible];
     
@@ -135,7 +138,36 @@
     [MagicalRecord cleanUp];
 }
 
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
 # pragma mark Private Methods
+
+- (void)commonInitialization
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        [self startCustomerServices];
+        
+        [[OSStoreManager sharedManager] initInAppStore];
+        
+        [self applyStyleSheet];
+        
+        // setup CoreData and display UI
+        self.window.rootViewController = [[OSStartupViewController alloc] init];
+        
+    });
+}
 
 - (void) startCustomerServices
 {
