@@ -3,7 +3,7 @@ platform :ios, '6.0'
 # UI
 pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
 pod 'MBProgressHUD'
-pod 'TDBadgedCell', :podspec => 'TDBadgedCell.podspec'
+pod 'TDBadgedCell', :podspec => 'Other Sources/podspecs/TDBadgedCell.podspec'
 pod 'SYPaginator'
 
 # Core

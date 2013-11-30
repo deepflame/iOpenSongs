@@ -51,7 +51,7 @@ DEPENDENCIES:
   - PonyDebugger
   - QuickDialog
   - SYPaginator
-  - TDBadgedCell (from `TDBadgedCell.podspec`)
+  - TDBadgedCell (from `Other Sources/podspecs/TDBadgedCell.podspec`)
   - TestFlightSDK (~> 2.0.0)
   - uservoice-iphone-sdk
 
@@ -61,7 +61,7 @@ EXTERNAL SOURCES:
   FRLayeredNavigationController:
     :git: https://github.com/deepflame/FRLayeredNavigationController
   TDBadgedCell:
-    :podspec: TDBadgedCell.podspec
+    :podspec: Other Sources/podspecs/TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
