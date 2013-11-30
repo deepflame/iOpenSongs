@@ -10,8 +10,7 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
-#import <CargoBay/CargoBay.h>
-#import "OSInAppPurchaseIdentifiers.h"
+#import "OSStoreManager.h"
 #import "SKProduct+LocalizedPrice.h"
 
 @interface OSShopViewController ()
@@ -55,7 +54,7 @@
     self.root.sections = [[NSMutableArray alloc] init];
     
     NSArray *identifiers = @[OS_IAP_DROPBOX];
-    [[CargoBay sharedManager] productsWithIdentifiers:[NSSet setWithArray:identifiers]
+    [[OSStoreManager sharedManager] productsWithIdentifiers:[NSSet setWithArray:identifiers]
                                               success:^(NSArray *products, NSArray *invalidIdentifiers) {
                                                   
                                                   // buy products
@@ -64,7 +63,7 @@
                                                       QTextElement *description = [[QTextElement alloc] initWithText:product.localizedDescription];
                                                       QButtonElement *purchase = [[QButtonElement alloc] initWithTitle:product.localizedPrice];
                                                       purchase.onSelected = ^ {
-                                                          [self buyProduct:product];
+                                                          [[OSStoreManager sharedManager] buyProduct:product];
                                                       };
                                                       [section addElement:description];
                                                       [section addElement:purchase];
@@ -102,20 +101,6 @@
                                                   [hud hide:YES];
                                               }];
     
-}
-
-- (void)buyProduct:(SKProduct *)product
-{
-    if ([SKPaymentQueue canMakePayments])
-    {
-        SKPayment *payment = [SKPayment paymentWithProduct:product];
-        [[SKPaymentQueue defaultQueue] addPayment:payment];
-    } else {
-        /*
-        [self showAlertWithTitle:NSLocalizedString(@"In-App Purchasing disabled", @"")
-                         message:NSLocalizedString(@"Check your parental control settings and try again later", @"")];
-         */
-    }
 }
 
 @end

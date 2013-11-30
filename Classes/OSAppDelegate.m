@@ -20,6 +20,8 @@
 #import "OSTestController.h"
 #endif
 
+#import "OSStoreManager.h"
+
 @implementation OSAppDelegate
 
 @synthesize window = _window;
@@ -41,8 +43,9 @@
     
     [self startCustomerServices];
     
-    [self applyStyleSheet];
+    [[OSStoreManager sharedManager] initInAppStore];
     
+    [self applyStyleSheet];
     // setup CoreData and display UI
     self.window.rootViewController = [[OSStartupViewController alloc] init];
     
