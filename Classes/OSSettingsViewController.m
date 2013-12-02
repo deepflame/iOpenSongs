@@ -69,7 +69,7 @@
         lyricFloatElem.minimumValue = 8.0;
         lyricFloatElem.maximumValue = 48.0;
         lyricFloatElem.onValueChanged = sizeBlock;
-        commeFloatElem.key = @"commentSize";
+        commeFloatElem.key = @"commentsSize";
         commeFloatElem.minimumValue = 8.0;
         commeFloatElem.maximumValue = 48.0;
         commeFloatElem.onValueChanged = sizeBlock;
