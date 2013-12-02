@@ -75,7 +75,7 @@
                                                   QSection *restoreSec = [[QSection alloc] initWithTitle:NSLocalizedString(@"Previous Purchases", nil)];
                                                   QButtonElement *restoreButton = [[QButtonElement alloc] initWithTitle:NSLocalizedString(@"Restore", nil)];
                                                   restoreButton.onSelected = ^ {
-                                                      [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+                                                      [[OSStoreManager sharedManager] restorePurchases];
                                                   };
                                                   [restoreSec addElement:restoreButton];
                                                   // add to root
