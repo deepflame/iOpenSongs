@@ -165,7 +165,7 @@
         [self.navigationController pushViewController:aboutVC animated:YES];
     } else {
         // bar button to dismiss modal view
-        UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStylePlain handler:^(id sender) {
+        UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStylePlain handler:^(id sender) {
             [self dismissModalViewControllerAnimated:YES];
         }];
         aboutVC.navigationItem.leftBarButtonItem = doneBarButtonItem;

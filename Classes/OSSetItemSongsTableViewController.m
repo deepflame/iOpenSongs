@@ -31,7 +31,7 @@
     self.tableView.allowsSelectionDuringEditing = YES;
     
     // UIBarButtonItems
-    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
         [self.itemsDelegate setItemSongsTableViewController:self finishedEditing:YES];
     }];
     self.navigationItem.rightBarButtonItems = @[doneBarButtonItem];

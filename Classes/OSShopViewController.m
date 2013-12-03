@@ -58,7 +58,7 @@
                                               success:^(NSArray *products, NSArray *invalidIdentifiers) {
                                                   
                                                   // buy products
-                                                  [products each:^(SKProduct *product) {
+                                                  [products bk_each:^(SKProduct *product) {
                                                       QSection *section = [[QSection alloc] initWithTitle:product.localizedTitle];
                                                       QTextElement *description = [[QTextElement alloc] initWithText:product.localizedDescription];
                                                       QButtonElement *purchase = [[QButtonElement alloc] initWithTitle:product.localizedPrice];

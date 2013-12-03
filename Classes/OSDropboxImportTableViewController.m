@@ -86,7 +86,7 @@
     }];
     
     // map to internal format
-    self.contents = [dbContents map:^id(DBMetadata *md) {
+    self.contents = [dbContents bk_map:^id(DBMetadata *md) {
         return [[OSFileDescriptor alloc] initWithDropboxMetadata:md];
     }];
     
@@ -99,7 +99,7 @@
     
     NSLog(@"Error loading metadata: %@", error);
     
-    [UIAlertView showAlertViewWithTitle:@"Error contacting Dropbox"
+    [UIAlertView bk_showAlertViewWithTitle:@"Error contacting Dropbox"
                                 message:@"Make sure that you are connected to the Internet."
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil

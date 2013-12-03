@@ -26,7 +26,7 @@
 - (void)initInAppStore
 {
     [[CargoBay sharedManager] setPaymentQueueUpdatedTransactionsBlock:^(SKPaymentQueue *queue, NSArray *transactions) {
-        [transactions each:^(SKPaymentTransaction *transaction) {
+        [transactions bk_each:^(SKPaymentTransaction *transaction) {
             switch (transaction.transactionState) {
                 case SKPaymentTransactionStatePurchasing: {
                     

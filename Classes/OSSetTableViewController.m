@@ -37,7 +37,7 @@
     
     self.tableView.allowsSelectionDuringEditing = YES;
     
-    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
         self.currentSetForEditing = nil;
         self.setNameAlertViewTextField.text = @"";
         self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);

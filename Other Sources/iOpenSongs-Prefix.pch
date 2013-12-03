@@ -14,6 +14,7 @@
 
     // External Libraries
     #import <BlocksKit/BlocksKit.h>
+    #import <BlocksKit/BlocksKit+UIKit.h>
 
     //#define MR_SHORTHAND // disabled to clarify when MR is used
     #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0

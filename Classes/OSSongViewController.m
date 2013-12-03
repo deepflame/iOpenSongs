@@ -40,7 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // observe default song style (from settings)
-    [[OSSongStyle defaultStyle] addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
+    [[OSSongStyle defaultStyle] bk_addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
                                             identifier:NSStringFromClass([self class])
                                                options:NSKeyValueObservingOptionNew
                                                   task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {
@@ -50,7 +50,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[OSSongStyle defaultStyle] removeObserversWithIdentifier:NSStringFromClass([self class])];
+    [[OSSongStyle defaultStyle] bk_removeObserversWithIdentifier:NSStringFromClass([self class])];
 }
 
 #pragma mark - OSSongViewDelegate

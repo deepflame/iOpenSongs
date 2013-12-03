@@ -121,10 +121,10 @@
 {
     OSSongStyle *songStyle = self.songStyle;
     
-    [songStyle removeAllBlockObservers];
+    [songStyle bk_removeAllBlockObservers];
     
     // night mode
-    [songStyle addObserverForKeyPath:@"nightMode"
+    [songStyle bk_addObserverForKeyPath:@"nightMode"
                           identifier:@"nightMode"
                              options:NSKeyValueObservingOptionInitial
                                 task:^(OSSongStyle *style, NSDictionary *change) {
@@ -132,12 +132,12 @@
     }];
 
     // visibility and size
-    [@[@"header", @"chords", @"lyrics", @"comments"] each:^(NSString *part) {
+    [@[@"header", @"chords", @"lyrics", @"comments"] bk_each:^(NSString *part) {
         NSString *cssSel = [@".opensong ." stringByAppendingString:part];
 
         // visible
         NSString* key = [part stringByAppendingString:@"Visible"];
-        [songStyle addObserverForKeyPath:key
+        [songStyle bk_addObserverForKeyPath:key
                               identifier:key
                                  options:NSKeyValueObservingOptionInitial
                                     task:^(OSSongStyle *style, NSDictionary *change) {
@@ -147,7 +147,7 @@
         
         // size
         key = [part stringByAppendingString:@"Size"];
-        [songStyle addObserverForKeyPath:key
+        [songStyle bk_addObserverForKeyPath:key
                               identifier:key
                                  options:NSKeyValueObservingOptionInitial
                                     task:^(OSSongStyle *style, NSDictionary *change) {

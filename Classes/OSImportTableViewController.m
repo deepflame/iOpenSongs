@@ -201,7 +201,7 @@
         return; // <- !!
     }
     
-    NSArray *filePaths = [self.importErrors map:^id(NSError *error) {
+    NSArray *filePaths = [self.importErrors bk_map:^id(NSError *error) {
         return [[error.userInfo valueForKey:NSFilePathErrorKey] lastPathComponent];
     }];
     
@@ -214,7 +214,7 @@
     [errorInfo setValue:failureReason forKey:NSLocalizedFailureReasonErrorKey];
     [errorInfo setValue:recoverySuggestion forKey:NSLocalizedRecoverySuggestionErrorKey];
     
-    [UIAlertView showAlertViewWithTitle:failureReason
+    [UIAlertView bk_showAlertViewWithTitle:failureReason
                                 message:[NSString stringWithFormat:@"%@\n\n%@", failureDescription, recoverySuggestion]
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil

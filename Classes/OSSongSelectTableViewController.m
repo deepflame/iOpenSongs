@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
         if ([self.importActionSheet isVisible]) {
             [self.importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         } else {
@@ -115,11 +115,11 @@
 - (UIActionSheet *)importActionSheet
 {
     if (_importActionSheet == nil) {
-        _importActionSheet = [UIActionSheet actionSheetWithTitle:NSLocalizedString(@"Import from", nil)];
+        _importActionSheet = [UIActionSheet bk_actionSheetWithTitle:NSLocalizedString(@"Import from", nil)];
         OSSongSelectTableViewController *_self = self;
         
         // iTunes File Sharing
-        [_importActionSheet addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{
+        [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{
             OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
             importTableViewController.delegate = _self;
             [_self.navigationController pushViewController:importTableViewController animated:YES];
@@ -127,7 +127,7 @@
         
         // Dropbox
         if ([[OSStoreManager sharedManager] canUseFeature:OS_IAP_DROPBOX]) {
-            [_importActionSheet addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
+            [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
                 if (! [[DBSession sharedSession] isLinked]) {
                     [[DBSession sharedSession] linkFromController:_self];
                     return; // <- !!

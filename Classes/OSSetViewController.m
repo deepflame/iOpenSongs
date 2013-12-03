@@ -68,8 +68,8 @@
 {
     if ([view isKindOfClass:[OSSongPageView class]]) {
         // observe default song style (from settings)
-        [[OSSongStyle defaultStyle] removeObserversWithIdentifier:NSStringFromClass([self class])];
-        [[OSSongStyle defaultStyle] addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
+        [[OSSongStyle defaultStyle] bk_removeObserversWithIdentifier:NSStringFromClass([self class])];
+        [[OSSongStyle defaultStyle] bk_addObserverForKeyPaths:[[OSSongStyle defaultStyle] propertyNames]
                                                 identifier:NSStringFromClass([self class])
                                                    options:NSKeyValueObservingOptionInitial
                                                       task:^(OSSongStyle *style, NSString *keyPath, NSDictionary *change) {
