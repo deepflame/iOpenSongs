@@ -16,20 +16,9 @@
 		<string>ProgramIcon144-Test.png</string>
 	</array>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>ProgramIcon72-Test.png</string>
-				<string>ProgramIcon57-Test.png</string>
-				<string>ProgramIcon114-Test.png</string>
-				<string>ProgramIcon144-Test.png</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>de.boehrnsen.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
