@@ -24,6 +24,6 @@ pod 'PonyDebugger'
 pod 'TestFlightSDK', '~> 2.0.0'
 
 # Testing
-target :Integration do # (targets are case sensitive)
-    pod 'KIF', :head
+target 'Integration', :exclusive => true do
+  pod 'KIF', '~> 2.0'
 end
