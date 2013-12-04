@@ -93,27 +93,27 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [super sectionIndexTitlesForTableView:tableView];
+    if (tableView == self.tableView) {
+        // add magnifying glass
+        NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+        [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
+        return indexTitles;
     }
     
-    // add magnifying glass
-    NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
-    [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
-    return indexTitles;
+    return [super sectionIndexTitlesForTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [super tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
+    if (tableView == self.tableView) {
+        // magnifying glass ?
+        if (title == UITableViewIndexSearch) {
+            [self.tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
+            return -1;
+        }
+        return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
     }
     
-    // magnifying glass ?
-    if (title == UITableViewIndexSearch) {
-        [self.tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
-    	return -1;
-    }
-    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
+    return [super tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
 }
     
 #pragma mark - UISearchDisplayDelegate
