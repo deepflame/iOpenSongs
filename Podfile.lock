@@ -31,8 +31,6 @@ PODS:
     - RMStore/NSUserDefaultsPersistence
     - RMStore/OpenSSL
     - RMStore/TransactionReceiptVerificator
-  - RMStore/AppReceiptVerificator (0.4.2):
-    - RMStore/Core
   - RMStore/Core (0.4.2)
   - RMStore/KeychainPersistence (0.4.2):
     - RMStore/Core
