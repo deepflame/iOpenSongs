@@ -52,6 +52,9 @@
     //[application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     //[application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
+    // setup CoreData and display UI
+    self.window.rootViewController = [[OSStartupViewController alloc] init];
+    
     [self.window makeKeyAndVisible];
     
 #if RUN_KIF_TESTS
@@ -162,9 +165,6 @@
         [[OSStoreManager sharedManager] initInAppStore];
         
         [self applyStyleSheet];
-        
-        // setup CoreData and display UI
-        self.window.rootViewController = [[OSStartupViewController alloc] init];
         
     });
 }
