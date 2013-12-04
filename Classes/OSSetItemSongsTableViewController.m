@@ -24,9 +24,6 @@
 {
     [super viewDidLoad];
     
-    // FIXME: remove searchbar for now
-    self.tableView.tableHeaderView = nil;
-    
     self.tableView.editing = YES;
     self.tableView.allowsSelectionDuringEditing = YES;
     
@@ -63,7 +60,6 @@
         default:
             break;
     }
-    
 }
 
 #pragma mark - UITableViewDataSource

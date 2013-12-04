@@ -24,6 +24,8 @@
 // The controller (this class fetches nothing if this is not set).
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (strong, nonatomic) UITableView *currentTableView;
+
 // Turn this on before making any changes in the managed object context that
 //  are a one-for-one result of the user manipulating rows directly in the table view.
 // Such changes cause the context to report them (after a brief delay),

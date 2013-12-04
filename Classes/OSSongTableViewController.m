@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-        
+    
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     self.searchBar.placeholder = NSLocalizedString(@"Search Songs", nil);
     self.searchBar.scopeButtonTitles = @[NSLocalizedString(@"Title", nil), NSLocalizedString(@"Author", nil), NSLocalizedString(@"Lyrics", nil)];
@@ -129,6 +129,13 @@
     self.fetchedResultsController = nil; // perform new fetch
     return YES;
 }
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
+{
+    tableView.editing = self.tableView.editing;
+    tableView.allowsSelectionDuringEditing = self.tableView.allowsSelectionDuringEditing;
+}
+
 - (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView
 {
     self.fetchedResultsController = nil; // perform new fetch
@@ -173,7 +180,16 @@
     }
 }
 
-#pragma mark - Private Methods
+#pragma mark - Accessor Implementations
+    
+- (UITableView *)currentTableView
+{
+    if ([self.searchDisplayController isActive]) {
+        return self.searchDisplayController.searchResultsTableView;
+    }
+    
+    return [super currentTableView];
+}
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -190,6 +206,8 @@
     }
     return _fetchedResultsController;
 }
+
+#pragma mark - Private Methods
     
 - (NSPredicate *)predicateForSongSearchBar:(UISearchBar*)searchBar
 {
