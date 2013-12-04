@@ -93,6 +93,10 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [super sectionIndexTitlesForTableView:tableView];
+    }
+    
     // add magnifying glass
     NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
     [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
@@ -100,6 +104,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [super tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
+    }
+    
     // magnifying glass ?
     if (title == UITableViewIndexSearch) {
         [self.tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
