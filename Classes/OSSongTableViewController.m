@@ -11,13 +11,15 @@
 #import <TDBadgedCell.h>
 #import <objc/message.h>
 
-@interface OSSongTableViewController () <UISearchBarDelegate>
+@interface OSSongTableViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
 @property (nonatomic, strong) UIColor *searchBarColorInactive;
 @end
 
 @implementation OSSongTableViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize searchDisplayController;
 
 #pragma mark - UIViewController
@@ -40,6 +42,7 @@
     self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
     self.searchDisplayController.searchResultsDataSource = self;
     self.searchDisplayController.searchResultsDelegate = self;
+    self.searchDisplayController.delegate = self;
 
     // fix scope bar on iPad (with unofficial API... bug in SDK)
     // could be fixed on iPhone as well but the results would only have one row
@@ -51,13 +54,6 @@
     
     // add searchbar to tableview
     self.tableView.tableHeaderView = self.searchBar;
-    
-    // fetch data
-    self.fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
-                                                 withPredicate:nil
-                                                      sortedBy:@"titleSectionIndex,titleNormalized"
-                                                     ascending:YES
-                                                      delegate:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -111,25 +107,35 @@
     }
     return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
 }
+    
+#pragma mark - UISearchDisplayDelegate
+    
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    self.fetchedResultsController = nil; // perform new fetch
+    return YES;
+}
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    self.fetchedResultsController = nil; // perform new fetch
+    return YES;
+}
+    
+// This gets called when you cancel or close the search bar
+- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView
+{
+    self.fetchedResultsController = nil; // perform new fetch
+    [self.tableView reloadData];
+}
+
+    
 #pragma mark - UISearchBarDelegate
-
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
-    [self filterSongs:searchBar];
-}
-
--(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
-{
-    searchBar.text = @"";
-    [self filterSongs:searchBar];
-}
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     // reset table
     searchBar.text = @"";
-    [self filterSongs:searchBar];
 
     // reset searchbar
     searchBar.tintColor = self.searchBarColorInactive;
@@ -163,13 +169,29 @@
 
 #pragma mark - Private Methods
 
--(void)filterSongs:(UISearchBar*)searchBar
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController == nil) {
+        
+        NSPredicate *predicate = [self filterSongs:self.searchDisplayController.searchBar];
+        
+        // fetch data
+        _fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
+                                                 withPredicate:predicate
+                                                      sortedBy:@"titleSectionIndex,titleNormalized"
+                                                     ascending:YES
+                                                      delegate:self];
+    }
+    return _fetchedResultsController;
+}
+    
+- (NSPredicate *)filterSongs:(UISearchBar*)searchBar
 {
     NSPredicate *predicate;
     
     if (searchBar.text.length == 0) {
         
-        predicate =[NSPredicate predicateWithFormat:@"1=1"]; // no filter
+        predicate = nil;
         
     } else {
         
@@ -190,9 +212,7 @@
         
         predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
     }
-    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
-    
-    [[self fetchedResultsController] performFetch:nil];
+    return predicate;
 }
 
 @end
