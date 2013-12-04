@@ -32,11 +32,12 @@
 
 @synthesize window = _window;
 
-+ (OSAppDelegate *)sharedAppDelegate {
++ (OSAppDelegate *)sharedAppDelegate
+{
 	return (OSAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-#pragma mark UIApplicationDelegate
+#pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -72,7 +73,8 @@
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
     if ([[DBSession sharedSession] handleOpenURL:url]) {
         if ([[DBSession sharedSession] isLinked]) {
             NSLog(@"App linked successfully!");
