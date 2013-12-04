@@ -71,6 +71,7 @@
 		3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
 		3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
 		3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */; };
+		3E89F9A1184DEBDE000C057C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; };
 		3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
 		3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
 		3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F90F217C4594300FC8621 /* OSSettingsViewController.m */; };
@@ -164,7 +165,7 @@
 		3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC4B00155E711B0003FFC7 /* OSSetItemsTableViewController.m */; };
 		3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDA7EB1714B7BB0035E2B2 /* OSDetailViewController.m */; };
 		3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED177F617134C3800B303CA /* OSSongPageView.m */; };
-		3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; };
+		3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3ED1F8711847BE75009D72F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED1F86A18477A53009D72F0 /* StoreKit.framework */; };
 		3ED1F8741847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */; };
 		3ED1F8751847D91E009D72F0 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */; };
@@ -437,11 +438,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */,
 				3EB908E71751870E002125FE /* Foundation.framework in Frameworks */,
 				3EB908E81751870E002125FE /* UIKit.framework in Frameworks */,
 				3EB908EA1751870E002125FE /* libxml2.dylib in Frameworks */,
 				3E7B9A2B1751D32300C74EBB /* libPods.a in Frameworks */,
+				3ED1F86B18477A53009D72F0 /* StoreKit.framework in Frameworks */,
 				3EB664C517AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +466,7 @@
 			files = (
 				3EFC155D17510A1D00BFA2BB /* Foundation.framework in Frameworks */,
 				3EFC155E17510A1D00BFA2BB /* UIKit.framework in Frameworks */,
+				3E89F9A1184DEBDE000C057C /* StoreKit.framework in Frameworks */,
 				3EFC156017510A1D00BFA2BB /* libxml2.dylib in Frameworks */,
 				3ED468D417510C2800AFEA85 /* libPods-Integration.a in Frameworks */,
 			);
@@ -905,6 +907,38 @@
 				CLASSPREFIX = OS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Andreas Boehrnsen";
+				TargetAttributes = {
+					3EB908BD1751870E002125FE = {
+						DevelopmentTeam = 337K9A5RH5;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+					3EDDA3FD14AEC3A400BB781C = {
+						DevelopmentTeam = 337K9A5RH5;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+					3EFC153317510A1D00BFA2BB = {
+						DevelopmentTeam = 337K9A5RH5;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 3EDDA3F814AEC3A300BB781C /* Build configuration list for PBXProject "iOpenSongs" */;
 			compatibilityVersion = "Xcode 3.2";
