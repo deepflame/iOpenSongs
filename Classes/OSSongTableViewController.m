@@ -179,7 +179,7 @@
 {
     if (_fetchedResultsController == nil) {
         
-        NSPredicate *predicate = [self filterSongs:self.searchDisplayController.searchBar];
+        NSPredicate *predicate = [self predicateForSongSearchBar:self.searchDisplayController.searchBar];
         
         // fetch data
         _fetchedResultsController = [Song MR_fetchAllGroupedBy:@"titleSectionIndex"
@@ -191,7 +191,7 @@
     return _fetchedResultsController;
 }
     
-- (NSPredicate *)filterSongs:(UISearchBar*)searchBar
+- (NSPredicate *)predicateForSongSearchBar:(UISearchBar*)searchBar
 {
     // do not filter if text is blank
     if (searchBar.text.length == 0) {
