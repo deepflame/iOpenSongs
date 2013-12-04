@@ -91,7 +91,7 @@
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:coreDataStoreFileName];
         
-    [self initializeSongTitleSectionIndex];
+    [self fillSongTitleSectionIndex];
 }
 
 - (BOOL) migrateDataStore:(NSURL *)storeURL error:(NSError **)error
@@ -212,7 +212,7 @@
     [fileMan removeItemAtURL:oldDirUrl error:&error];
 }
 
-- (void) initializeSongTitleSectionIndex
+- (void) fillSongTitleSectionIndex
 {
     NSArray *songsNeedUpdate = [Song MR_findByAttribute:@"titleSectionIndex" withValue:nil];
     
