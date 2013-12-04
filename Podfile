@@ -1,4 +1,4 @@
-platform :ios, '6.0'
+platform :ios, '7.0'
 
 # UI
 pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
@@ -12,8 +12,7 @@ pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
 pod 'QuickDialog'
-pod 'CargoBay', :podspec => 'Other Sources/podspecs/CargoBay.podspec'
-pod 'Lockbox'
+pod 'RMStore'
 
 # User Services
 pod 'uservoice-iphone-sdk'
