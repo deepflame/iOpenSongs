@@ -16,6 +16,9 @@
 		3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
 		3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
 		3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
+		3E108EC9184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
+		3E108ECA184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
+		3E108ECB184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
@@ -276,6 +279,8 @@
 		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRLayeredNavigationController+ExposePrivate.h"; sourceTree = "<group>"; };
+		3E108EC7184F5C46007E1A63 /* OSCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCoreDataManager.h; sourceTree = "<group>"; };
+		3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCoreDataManager.m; sourceTree = "<group>"; };
 		3E120C3014F91DD400926A74 /* Song+OpenSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+OpenSong.h"; sourceTree = "<group>"; };
 		3E120C3114F91DD400926A74 /* Song+OpenSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+OpenSong.m"; sourceTree = "<group>"; };
 		3E120C3414F9203900926A74 /* NSString+JavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaScript.h"; sourceTree = "<group>"; };
@@ -689,6 +694,15 @@
 			path = glyphicons;
 			sourceTree = "<group>";
 		};
+		3ED1F87C184B8AD5009D72F0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3E108EC7184F5C46007E1A63 /* OSCoreDataManager.h */,
+				3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		3EDDA3F314AEC3A300BB781C = {
 			isa = PBXGroup;
 			children = (
@@ -731,6 +745,7 @@
 		3EDDA40814AEC3A400BB781C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3ED1F87C184B8AD5009D72F0 /* Manager */,
 				3EE891AF1521BB50001DA59A /* Categories */,
 				3EFBED3814DF7ADD008EF01D /* Model */,
 				3E7F1B6B158487EF008C222F /* Controller */,
@@ -925,6 +940,7 @@
 				3EB909161751870E002125FE /* _set-add-songs.html in Resources */,
 				3E595252179308B6003C3B01 /* _welcome.html in Resources */,
 				3E9120B517B24962001E2E76 /* opensong.min.js in Resources */,
+				3E5AEFE917BF8A510004CF8D /* opensong.min.css in Resources */,
 				3EB908FD1751870E002125FE /* nav_menu_icon@2x.png in Resources */,
 				3EB908FE1751870E002125FE /* glyphicons_023_cogwheels@2x.png in Resources */,
 				3EB908FF1751870E002125FE /* glyphicons_017_music@2x.png in Resources */,
@@ -1198,6 +1214,7 @@
 				3EB908D91751870E002125FE /* UIApplication+Directories.m in Sources */,
 				3EB908DA1751870E002125FE /* OSDropboxImportTableViewController.m in Sources */,
 				3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */,
+				3E108ECA184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
 				3EB908DC1751870E002125FE /* OSITunesImportTableViewController.m in Sources */,
 				3EB908DD1751870E002125FE /* OSFileDescriptor.m in Sources */,
 				3EB908DE1751870E002125FE /* OSFileDescriptor+Dropbox.m in Sources */,
@@ -1247,6 +1264,7 @@
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
 				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
 				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
+				3E108EC9184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
 				3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */,
 				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
 				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
@@ -1284,6 +1302,7 @@
 				3EFC154517510A1D00BFA2BB /* SetItem.m in Sources */,
 				3EFC154617510A1D00BFA2BB /* SetItemSong.m in Sources */,
 				3EFC154717510A1D00BFA2BB /* Set.m in Sources */,
+				3E108ECB184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
 				3EFC154817510A1D00BFA2BB /* CoreDataTableViewController.m in Sources */,
 				3EFC154917510A1D00BFA2BB /* Song+Import.m in Sources */,
 				3EFC154A17510A1D00BFA2BB /* OSUserVoiceStyleSheet.m in Sources */,

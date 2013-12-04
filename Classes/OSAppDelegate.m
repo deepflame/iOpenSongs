@@ -9,6 +9,8 @@
 #import "OSAppDelegate.h"
 #import "OSStartupViewController.h"
 
+#import "UIApplication+Directories.h"
+
 #import "OSDefines.h" // can be removed if not found
 #import "GAI.h"
 
@@ -16,6 +18,7 @@
 #import <DropboxSDK/DropboxSDK.h>
 
 #import "OSStoreManager.h"
+#import "OSCoreDataManager.h"
 
 #if DEBUG
 #import <PonyDebugger.h>
@@ -54,8 +57,8 @@
     //[application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     //[application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
-    // setup CoreData and display UI
     self.window.rootViewController = [[OSStartupViewController alloc] init];
+    // additional CoreData migration
     
     [self.window makeKeyAndVisible];
     
@@ -164,10 +167,13 @@
         
         [self startCustomerServices];
         
-        [[OSStoreManager sharedManager] initInAppStore];
-        
         [self applyStyleSheet];
         
+        [self copySampleSongsToDocumentsDirectory];
+        
+        // init CoreData and StoreKit
+        [[OSCoreDataManager sharedManager] setupAndMigrateCoreData];
+        [[OSStoreManager sharedManager] initInAppStore];
     });
 }
 
@@ -213,6 +219,23 @@
     // search bar
     [[UISearchBar appearance] setTintColor:[UIColor whiteColor]];
     [[UISearchBar appearance] setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+
+- (void)copySampleSongsToDocumentsDirectory
+{
+    NSString *sampleSong = @"Amazing Grace"; // TODO make more generic or use constant
+    
+    NSString *documentsDirectoryPath = [UIApplication documentsDirectoryPath];
+    NSMutableArray *documentsDirectoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectoryPath error:NULL].mutableCopy;
+    
+    [documentsDirectoryContents removeObject:@".DS_Store"]; // fix for simulator
+    
+    if (documentsDirectoryContents.count == 0) {
+        NSString *songSrcPath = [[NSBundle mainBundle] pathForResource:sampleSong ofType:@"" inDirectory:nil];
+        NSString *songDstPath = [documentsDirectoryPath stringByAppendingPathComponent:sampleSong];
+        
+        NSFileManager *fileMan = [NSFileManager defaultManager];
+        [fileMan copyItemAtPath:songSrcPath toPath:songDstPath error:nil];
+    }
 }
 
 @end
