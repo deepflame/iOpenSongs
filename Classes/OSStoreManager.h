@@ -15,6 +15,8 @@
 
 + (instancetype)sharedManager;
 
++ (BOOL)isEnabled;
+
 - (void)initInAppStore;
 
 - (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success

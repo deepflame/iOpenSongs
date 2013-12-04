@@ -70,7 +70,11 @@
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:songsViewController]];
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:setsViewController]];
         [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:settingsViewController]];
-        [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopViewController]];
+        
+        // enable shop?
+        if ([OSStoreManager isEnabled]) {
+            [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopViewController]];
+        }
         
         tabBarController.viewControllers = viewControllers;
         

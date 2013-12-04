@@ -32,6 +32,13 @@
     return _sharedManager;
 }
 
++ (BOOL)isEnabled
+{
+    BOOL isBetaVersion = [[[[NSBundle mainBundle] bundleIdentifier] lowercaseString] hasSuffix:@"beta"];
+    
+    return ! isBetaVersion; // disable shop in Beta version
+}
+
 - (void)initInAppStore
 {
     self.featureIdentifiers = [NSSet setWithArray:@[OS_IAP_DROPBOX]];
@@ -63,10 +70,8 @@
 
 - (BOOL)canUseFeature:(NSString *)identifier
 {
-    BOOL isBetaVersion = [[[[NSBundle mainBundle] bundleIdentifier] lowercaseString] hasSuffix:@"beta"];
-    
-    // open all features in Beta
-    if (isBetaVersion) {
+    // open all features if shop disabled
+    if (! [[self class] isEnabled]) {
         return YES; // <- !!
     }
     
