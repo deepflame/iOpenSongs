@@ -138,6 +138,10 @@
             }];
         }
 
+        // Cancel Button
+        [_importActionSheet bk_setCancelButtonWithTitle:nil handler:^ {
+            [_importActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
+        }];
     }
     return _importActionSheet;
 }
