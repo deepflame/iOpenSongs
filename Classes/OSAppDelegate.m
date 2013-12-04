@@ -17,7 +17,9 @@
 
 #import "OSStoreManager.h"
 
+#if DEBUG
 #import <PonyDebugger.h>
+#endif
 
 #if RUN_KIF_TESTS
 #import "OSTestController.h"
