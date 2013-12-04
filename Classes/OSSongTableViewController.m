@@ -129,8 +129,6 @@
     self.fetchedResultsController = nil; // perform new fetch
     return YES;
 }
-    
-// This gets called when you cancel or close the search bar
 - (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView
 {
     self.fetchedResultsController = nil; // perform new fetch
@@ -195,31 +193,27 @@
     
 - (NSPredicate *)filterSongs:(UISearchBar*)searchBar
 {
-    NSPredicate *predicate;
-    
+    // do not filter if text is blank
     if (searchBar.text.length == 0) {
-        
-        predicate = nil;
-        
-    } else {
-        
-        NSString *filterBy;
-        switch (searchBar.selectedScopeButtonIndex) {
-            case 0:
-                filterBy = @"title";
-                break;
-                
-            case 1:
-                filterBy = @"author";
-                break;
-                
-            default:
-                filterBy = @"lyrics";
-                break;
-        }
-        
-        predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
+        return nil; // <-- !!
     }
+    
+    NSString *filterBy;
+    switch (searchBar.selectedScopeButtonIndex) {
+        case 0:
+            filterBy = @"title";
+            break;
+                
+        case 1:
+            filterBy = @"author";
+            break;
+                
+        default:
+            filterBy = @"lyrics";
+            break;
+    }
+        
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
     return predicate;
 }
 
