@@ -63,9 +63,14 @@
 
 - (BOOL)canUseFeature:(NSString *)identifier
 {
-    //return [self.persistence isPurchasedProductOfIdentifier:identifier];
-
-    return YES;
+    BOOL isBetaVersion = [[[[NSBundle mainBundle] bundleIdentifier] lowercaseString] hasSuffix:@"beta"];
+    
+    // open all features in Beta
+    if (isBetaVersion) {
+        return YES; // <- !!
+    }
+    
+    return [self.persistence isPurchasedProductOfIdentifier:identifier];
 }
 
 @end
