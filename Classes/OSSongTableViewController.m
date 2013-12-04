@@ -216,22 +216,12 @@
         return nil; // <-- !!
     }
     
-    NSString *filterBy;
-    switch (searchBar.selectedScopeButtonIndex) {
-        case 0:
-            filterBy = @"title";
-            break;
-                
-        case 1:
-            filterBy = @"author";
-            break;
-                
-        default:
-            filterBy = @"lyrics";
-            break;
-    }
+    NSArray *filters = @[@"title", @"author", @"lyrics"];
+    
+    NSString *filterBy = [filters objectAtIndex:searchBar.selectedScopeButtonIndex];
+    NSString *filterText = searchBar.text;
         
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", filterBy, filterText];
     return predicate;
 }
 
