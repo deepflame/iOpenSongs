@@ -8,8 +8,17 @@
 
 #import "OSStoreManager.h"
 
-#import <CargoBay/CargoBay.h>
-#import <Lockbox/Lockbox.h>
+#import <RMStore/RMStore.h>
+#import <RMStore/RMStoreKeychainPersistence.h>
+#import <RMStore/RMStoreAppReceiptVerificator.h> // for iOS 7
+#import <RMStore/RMStoreTransactionReceiptVerificator.h>
+
+@interface OSStoreManager()
+@property (nonatomic, strong) NSSet *featureIdentifiers;
+
+@property id<RMStoreReceiptVerificator> receiptVerificator;
+@property RMStoreKeychainPersistence *persistence;
+@end
 
 @implementation OSStoreManager
 
@@ -25,88 +34,37 @@
 
 - (void)initInAppStore
 {
-    [[CargoBay sharedManager] setPaymentQueueUpdatedTransactionsBlock:^(SKPaymentQueue *queue, NSArray *transactions) {
-        [transactions bk_each:^(SKPaymentTransaction *transaction) {
-            switch (transaction.transactionState) {
-                case SKPaymentTransactionStatePurchasing: {
-                    
-                    break;
-                }
-                case SKPaymentTransactionStatePurchased: {
-                    NSSet *set = [Lockbox setForKey:OS_IAP];
-                    if (set == nil) {
-                        set = [NSSet set];
-                    }
-                    
-                    [Lockbox setSet:[NSSet set] forKey:OS_IAP];
-                    
-                    //transaction.transactionReceipt;
-                    break;
-                }
-                case SKPaymentTransactionStateRestored: {
-                    NSSet *set = [Lockbox setForKey:OS_IAP];
-                    //transaction.transactionIdentifier
-                    
-                    break;
-                }
-                case SKPaymentTransactionStateFailed: {
-                    NSError *error = transaction.error;
-                    
-                    //NSLocalizedDescriptionKey
-                    
-                    [queue finishTransaction:transaction];
-                    break;
-                }
-                default: {
-                    ;
-                }
-            }
-        }];
-    }];
+    self.featureIdentifiers = [NSSet setWithArray:@[OS_IAP_DROPBOX]];
     
-    [[CargoBay sharedManager] setPaymentQueueRemovedTransactionsBlock:^(SKPaymentQueue *queue, NSArray *transactions) {
-        
-    }];
+    const BOOL iOS7OrHigher = floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1;
+    self.receiptVerificator = iOS7OrHigher ? [[RMStoreAppReceiptVerificator alloc] init] : [[RMStoreTransactionReceiptVerificator alloc] init];
+    [RMStore defaultStore].receiptVerificator = self.receiptVerificator;
     
-    [[CargoBay sharedManager] setPaymentQueueRestoreCompletedTransactionsWithSuccess:^(SKPaymentQueue *queue) {
-        
-    } failure:^(SKPaymentQueue *queue, NSError *error) {
-        
-    }];
-    
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:[CargoBay sharedManager]];
+    self.persistence = [[RMStoreKeychainPersistence alloc] init];
+    [RMStore defaultStore].transactionPersistor = self.persistence;
 }
 
-
-- (void)productsWithIdentifiers:(NSSet *)identifiers
-                        success:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
-                        failure:(void (^)(NSError *error))failure
+- (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
+                         failure:(void (^)(NSError *error))failure
 {
-    [[CargoBay sharedManager] productsWithIdentifiers:identifiers success:success failure:failure];
+    [[RMStore defaultStore] requestProducts:self.featureIdentifiers success:success failure:failure];
 }
 
 
 - (void)buyProduct:(SKProduct *)product
 {
-    if ([SKPaymentQueue canMakePayments])
-    {
-        SKPayment *payment = [SKPayment paymentWithProduct:product];
-        [[SKPaymentQueue defaultQueue] addPayment:payment];
-    } else {
-        /*
-         [self showAlertWithTitle:NSLocalizedString(@"In-App Purchasing disabled", @"")
-         message:NSLocalizedString(@"Check your parental control settings and try again later", @"")];
-         */
-    }
+
 }
 
 - (void)restorePurchases
 {
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    
 }
 
 - (BOOL)canUseFeature:(NSString *)identifier
 {
+    //return [self.persistence isPurchasedProductOfIdentifier:identifier];
+
     return YES;
 }
 

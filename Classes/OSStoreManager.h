@@ -17,8 +17,7 @@
 
 - (void)initInAppStore;
 
-- (void)productsWithIdentifiers:(NSSet *)identifiers
-                        success:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
+- (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
                         failure:(void (^)(NSError *error))failure;
 
 - (void)buyProduct:(SKProduct *)product;

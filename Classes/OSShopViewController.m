@@ -53,9 +53,7 @@
     // reset sections
     self.root.sections = [[NSMutableArray alloc] init];
     
-    NSArray *identifiers = @[OS_IAP_DROPBOX];
-    [[OSStoreManager sharedManager] productsWithIdentifiers:[NSSet setWithArray:identifiers]
-                                              success:^(NSArray *products, NSArray *invalidIdentifiers) {
+    [[OSStoreManager sharedManager] requestProductsOnSuccess:^(NSArray *products, NSArray *invalidIdentifiers) {
                                                   
                                                   // buy products
                                                   [products bk_each:^(SKProduct *product) {
