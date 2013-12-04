@@ -180,6 +180,7 @@
 - (void) startCustomerServices
 {
 
+// Dropbox
 #ifndef IOPENSONGS_DROPBOX_APP_KEY
 #define IOPENSONGS_DROPBOX_APP_KEY @""
 #define IOPENSONGS_DROPBOX_APP_SECRET @""
@@ -189,20 +190,27 @@
                                                    appSecret:IOPENSONGS_DROPBOX_APP_SECRET
                                                         root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
     [DBSession setSharedSession:dbSession];
-    
+
+#ifndef DEBUG // just enable when in the wild
+
+// Google Analytics
 #ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
     [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
 #endif
-    
+
+// Test Flight
 #ifdef IOPENSONGS_TESTFLIGHT_KEY
     [TestFlight takeOff:IOPENSONGS_TESTFLIGHT_KEY];
 #endif
-    
+
+// Crashlytics
 #ifdef IOPENSONGS_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:IOPENSONGS_CRASHLYTICS_KEY];
 #if TARGET_IPHONE_SIMULATOR
     [Crashlytics sharedInstance].debugMode = YES;
 #endif
+#endif
+
 #endif
 }
 
