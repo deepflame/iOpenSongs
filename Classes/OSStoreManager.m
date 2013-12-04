@@ -22,7 +22,8 @@
 
 @implementation OSStoreManager
 
-+ (instancetype)sharedManager {
++ (instancetype)sharedManager
+{
     static id _sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
