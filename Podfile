@@ -11,7 +11,7 @@ pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
-pod 'QuickDialog'
+pod 'QuickDialog', '~> 0.8.0'
 pod 'RMStore'
 
 # User Services
