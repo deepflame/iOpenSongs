@@ -41,14 +41,16 @@
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self commonInitialization];
+    // place all initialization code here that needs to be called "before" state restoration occurs
+    [self commonLaunchInitialization:launchOptions];
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self commonInitialization];
+    // place all code that should occur "after" state restoration occurs (like password entry login, etc.)
+    [self commonLaunchInitialization:launchOptions];
     
     // Override point for customization after application launch.
     
@@ -158,9 +160,10 @@
     return YES;
 }
 
-# pragma mark Private Methods
 
-- (void)commonInitialization
+#pragma mark - Private Methods
+
+- (void) commonLaunchInitialization:(NSDictionary *)launchOptions
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
