@@ -52,6 +52,9 @@
 		3E7F881A160CCCEE004EB8E6 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F8819160CCCEE004EB8E6 /* Set.m */; };
 		3E80287D1751D9160022BF3B /* OSTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E80287C1751D9160022BF3B /* OSTestController.m */; };
 		3E832DA3185096E5002EE80F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
+		3E88433C184CAC5500EC95EF /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */; };
+		3E88433D184CAC5500EC95EF /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */; };
+		3E88433E184CAC5500EC95EF /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */; };
 		3E8861C717C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
 		3E8861C817C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
 		3E8861C917C35DB200F9B324 /* locales in Resources */ = {isa = PBXBuildFile; fileRef = 3E8861C617C35DB200F9B324 /* locales */; };
@@ -272,6 +275,8 @@
 		3E832DA81850A9DE002EE80F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E832DA91850A9DE002EE80F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/_welcome.html; sourceTree = "<group>"; };
 		3E865AF116CF6AEA000E9D98 /* OSDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDefines.h; sourceTree = "<group>"; };
+		3E88433A184CAC5500EC95EF /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Error.h"; sourceTree = "<group>"; };
+		3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Error.m"; sourceTree = "<group>"; };
 		3E885984175A412300947E32 /* OSImportTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E8861C617C35DB200F9B324 /* locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = locales; sourceTree = "<group>"; };
 		3E8861CA17C35F5E00F9B324 /* i18next-1.6.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "i18next-1.6.3.min.js"; sourceTree = "<group>"; };
@@ -682,6 +687,8 @@
 				3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */,
 				3ED1F8721847D91E009D72F0 /* SKProduct+LocalizedPrice.h */,
 				3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */,
+				3E88433A184CAC5500EC95EF /* UIAlertView+Error.h */,
+				3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1081,6 +1088,7 @@
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */,
+				3E88433D184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,6 +1139,7 @@
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */,
+				3E88433C184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1142,6 +1151,7 @@
 				3EFC153617510A1D00BFA2BB /* main.m in Sources */,
 				3EFC153717510A1D00BFA2BB /* NSString+JavaScript.m in Sources */,
 				3EFC153817510A1D00BFA2BB /* RKXMLParserLibXML.m in Sources */,
+				3E88433E184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 				3EFC153917510A1D00BFA2BB /* OSMainViewController.m in Sources */,
 				3EFC153A17510A1D00BFA2BB /* OSAppDelegate.m in Sources */,
 				3EFC153B17510A1D00BFA2BB /* OSSongViewController.m in Sources */,
