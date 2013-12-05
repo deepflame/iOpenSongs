@@ -436,6 +436,7 @@
 			children = (
 				3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */,
 				3E5E878914DE6166003B645A /* Html */,
+				3E832DAA1850B30D002EE80F /* Strings */,
 				3EA0BB9C16D1219C00D7D97D /* Songs */,
 				3EDDA40A14AEC3A400BB781C /* iOpenSongs-Info.plist */,
 				3EB9091C1751870F002125FE /* iOpenSongs.beta-Info.plist */,
@@ -473,6 +474,15 @@
 				3E80287C1751D9160022BF3B /* OSTestController.m */,
 			);
 			path = Testing;
+			sourceTree = "<group>";
+		};
+		3E832DAA1850B30D002EE80F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
+				3E9200BA178E4A66004C5F8B /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		3E9120A817B240C1001E2E76 /* dist */ = {
@@ -640,8 +650,6 @@
 		3EDDA40914AEC3A400BB781C /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
-				3E9200BA178E4A66004C5F8B /* Localizable.strings */,
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 				3E865AF116CF6AEA000E9D98 /* OSDefines.h */,
