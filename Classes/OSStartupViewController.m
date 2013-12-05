@@ -12,7 +12,6 @@
 #import "Song.h"
 
 #import "OSMainViewController.h"
-#import "UIApplication+Directories.h"
 
 @interface OSStartupViewController ()
 
