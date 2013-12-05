@@ -310,7 +310,6 @@
 		3ED177F617134C3800B303CA /* OSSongPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongPageView.m; sourceTree = "<group>"; };
 		3ED1F86918476BBB009D72F0 /* OSInAppPurchaseIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSInAppPurchaseIdentifiers.h; sourceTree = "<group>"; };
 		3ED1F86A18477A53009D72F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		3ED1F87018479F6B009D72F0 /* iOpenSongs Beta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOpenSongs Beta.entitlements"; sourceTree = "<group>"; };
 		3ED1F8721847D91E009D72F0 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
 		3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
 		3ED1F877184A0A2E009D72F0 /* OSStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSStoreManager.h; sourceTree = "<group>"; };
@@ -1284,8 +1283,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "iOpenSongs Beta";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "88646BAA-64AD-44C3-A1C2-129901B3A245";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88646BAA-64AD-44C3-A1C2-129901B3A245";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1417,8 +1416,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = iOpenSongs;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "6BCD9842-032C-45DE-A64A-32565AFB6C04";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6BCD9842-032C-45DE-A64A-32565AFB6C04";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
