@@ -1,0 +1,53 @@
+/*
+ Localizable.strings
+ iOpenSongs
+ 
+ Portuguese translation is licensed under:
+ 
+ Creative Commons Attribution 4.0 International License.
+ 
+ Author: Paulo Neto
+ Date  : 03/12/2013
+ */
+
+//
+"Updating Database" = "Atualizando banco de dados";
+"please wait..." = "aguarde...";
+
+// Songs
+"Songs" = "Músicas";
+"Search Songs" = "Buscar Músicas";
+"Title" = "Título";
+"Author" = "Autor";
+"Lyrics" = "Letra";
+
+"Import from" = "Importar de";
+"iTunes File Sharing" = "Compartilhamento do iTunes";
+"Dropbox" = "Dropbox";
+
+// Sets
+"Sets" = "Grupos";
+"New Set" = "Novo Grupo";
+"Rename Set" = "Renomear Grupo";
+"%d Songs" = "%d Músicas";
+"Add Songs" = "Adicionar Músicas";
+
+// Settings
+"Settings" = "Ajustes";
+"Night Mode" = "Modo Noturno";
+"Song Style" = "Estilo da Música";
+"Header" = "Cabeçalho";
+"Chords" = "Coro";
+"Lyrics" = "Letra";
+"Comments" = "Comentários";
+
+// Support
+"Support" = "Suporte";
+"Fork Me" = "Avisa-me";
+"Follow Us" = "Siga-nos";
+"About" = "Sobre";
+
+// common
+"OK" = "OK";
+"Cancel" = "Cancelar";
+"Close" = "Fechar";
