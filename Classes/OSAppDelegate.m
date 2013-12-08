@@ -7,7 +7,9 @@
 //
 
 #import "OSAppDelegate.h"
+
 #import "OSStartupViewController.h"
+#import "OSMainViewController.h"
 
 #import "UIApplication+Directories.h"
 
@@ -52,18 +54,11 @@
     // place all code that should occur "after" state restoration occurs (like password entry login, etc.)
     [self commonLaunchInitialization:launchOptions];
     
-    // Override point for customization after application launch.
-    
     // do not let the device sleep
     [application setIdleTimerDisabled:YES];
     
     //[application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     //[application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    
-    self.window.rootViewController = [[OSStartupViewController alloc] init];
-    // additional CoreData migration
-    
-    [self.window makeKeyAndVisible];
     
 #if RUN_KIF_TESTS
     [[OSTestController sharedInstance] startTestingWithCompletionBlock:^{
@@ -177,17 +172,23 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        
         [self startCustomerServices];
-        
-        [self applyStyleSheet];
         
         [self copySampleSongsToDocumentsDirectory];
         
         // init CoreData and StoreKit
         [[OSCoreDataManager sharedManager] setupAndMigrateCoreData];
         [[OSStoreManager sharedManager] initInAppStore];
+        
+        [self applyStyleSheet];
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+        // additional CoreData migration
+        self.window.rootViewController = [[OSStartupViewController alloc] init];
+        //self.window.rootViewController = [[OSMainViewController alloc] init];
+        
+        [self.window makeKeyAndVisible];
     });
 }
 
@@ -241,6 +242,7 @@
     // search bar
     [[UISearchBar appearance] setTintColor:[UIColor whiteColor]];
     [[UISearchBar appearance] setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+}
 
 - (void)copySampleSongsToDocumentsDirectory
 {
