@@ -79,6 +79,7 @@
     
     if (itemMetaData.isDirectory) {
         OSImportTableViewController *fileTableViewController = [[self.class alloc] initWithPath:newPath];
+        fileTableViewController.delegate = self.delegate;
         [self.navigationController pushViewController:fileTableViewController animated:YES];
     } else {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
