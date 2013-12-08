@@ -32,6 +32,17 @@
 
 #pragma mark - UIViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+    }
+    if ([self respondsToSelector:@selector(restorationIdentifier)]) {
+        self.restorationIdentifier = NSStringFromClass([self class]);
+    }
+    return self;
+}
+
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
@@ -46,6 +57,11 @@
     
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
+    
+    // state restoration (iOS6)
+    if ([self respondsToSelector:@selector(restorationIdentifier)]) {
+        self.view.restorationIdentifier = @"View";
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

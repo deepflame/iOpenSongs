@@ -25,6 +25,10 @@
     self = [super init];
     if (self) {
     }
+    // state restoration (iOS6)
+    if ([self respondsToSelector:@selector(restorationIdentifier)]) {
+        self.restorationIdentifier = NSStringFromClass([self class]);
+    }
     return self;
 }
 
@@ -80,4 +84,25 @@
         self.songView.song = song;
     }
 }
+
+#pragma mark - State Restoration
+
+#define kSongTitleKey @"SongTitle"
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.song.title forKey:kSongTitleKey];
+    
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSString *songTitle = [coder decodeObjectForKey:kSongTitleKey];
+    Song *song = [Song MR_findFirstByAttribute:@"title" withValue:songTitle];
+    self.song = song;
+    
+    [super decodeRestorableStateWithCoder:coder];
+}
+
 @end

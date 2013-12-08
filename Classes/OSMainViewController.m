@@ -88,6 +88,18 @@
         
         tabBarController.viewControllers = tabBarViewControllers;
         
+        // state restoration (iOS6)
+        if ([self respondsToSelector:@selector(restorationIdentifier)]) {
+            self.restorationIdentifier = NSStringFromClass([self class]);
+            
+            tabBarController.restorationIdentifier = @"tabBarController";
+            
+            songsNavigationController.restorationIdentifier = @"songsViewController navigationController";
+            setsNavigationController.restorationIdentifier = @"setsViewController navigationController";
+            settingsNavigationController.restorationIdentifier = @"settingsViewController navigationController";
+            shopNavigationController.restorationIdentifier = @"shopViewController navigationController";
+        }
+        
         // song view controller
         OSSongViewController *songVC = [[OSSongViewController alloc] init];
         songVC.introPartialName = @"welcome";
@@ -218,6 +230,11 @@
     BOOL wasExpanded = [self detailViewControllerIsExpanded];
     
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
+    // state restoration (iOS6)
+    if ([uiVC respondsToSelector:@selector(restorationIdentifier)]) {
+        uiVC.restorationIdentifier = @"currentDetailViewController navigationController";
+    }
+    
     [self popToRootViewControllerAnimated:NO];
     [self pushViewController:uiVC inFrontOf:self.topViewController maximumWidth:YES animated:NO configuration:^(FRLayeredNavigationItem *item) {
         item.hasChrome = NO;
@@ -234,6 +251,42 @@
 {
     CGPoint prevTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
     return prevTopViewPosition.x > 0;
+}
+
+#pragma mark - UIViewControllerRestoration
+
+#define kRootViewController @"rootViewController"
+#define kDetailViewController @"detailViewController"
+#define kViewControllerExpanded @"viewControllerExpanded"
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    // save the two VCs (also to propagate saving)
+    [coder encodeObject:self.rootViewController forKey:kRootViewController];
+    [coder encodeObject:self.currentDetailViewController forKey:kDetailViewController];
+ 
+    // detail view is open?
+    BOOL isExpanded = [self detailViewControllerIsExpanded];
+    [coder encodeObject:[NSNumber numberWithBool:isExpanded] forKey:kViewControllerExpanded];
+    
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    // restore VC
+    UIViewController *vc = [coder decodeObjectForKey:kDetailViewController];
+    if (vc) {
+        self.currentDetailViewController = vc;
+    }
+    
+    // detail view was open?
+    NSNumber *isExpanded = [coder decodeObjectForKey:kViewControllerExpanded];
+    if ([isExpanded boolValue]) {
+        [self.layeredNavigationController expandViewControllersAnimated:NO];
+    }
+    
+    [super decodeRestorableStateWithCoder:coder];
 }
 
 @end
