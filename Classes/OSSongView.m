@@ -41,9 +41,15 @@
 {
     if (self.song) {
         [self displaySong];
-    } else {
-        [self displayIntro];
+        return; // <-- !!
     }
+    
+    if ([self introPartialString]) {
+        [self displayIntro];
+        return; // <-- !!
+    }
+    
+    self.songWebView.hidden = YES;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -63,16 +69,16 @@
     [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
     
     [self applySongStyle];
+    
+    self.songWebView.hidden = NO; // unhide webview
 }
 
 - (void)displayIntro
 {
-    if (! [self introPartialString]) {
-        return; // no partial found
-    }
-    
     NSString* jsString = [NSString stringWithFormat:@"$('#intro').append(\"%@\");", [[self introPartialString] escapeJavaScript]];
     [self.songWebView stringByEvaluatingJavaScriptFromString:jsString];
+    
+    self.songWebView.hidden = NO; // unhide webview
 }
 
 - (void)loadHtmlTemplate
@@ -165,6 +171,7 @@
         _song = song;
         
         [self.delegate songView:self didChangeSong:_song];
+        
         [self displaySong];
     }
 }
