@@ -38,6 +38,7 @@
 - (id)init
 {
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
+
     CGFloat sideBarWidth;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         sideBarWidth = 305.0;
@@ -50,13 +51,14 @@
         item.nextItemDistance = 0;
     }];
     if (self) {
-        // build tabbar
+        // build viewControllers for the tabBar
         OSSongSelectTableViewController *songsViewController = [[OSSongSelectTableViewController alloc] init];
         songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
         UIViewController *settingsViewController = [[OSSettingsViewController alloc] init];
         UIViewController *shopViewController = [[OSShopViewController alloc] init];
-       
+        
+        // setting tabBarItems
         UITabBarItem *songsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Songs", nil) image:[UIImage imageNamed:@"glyphicons_017_music"] tag:0];
         UITabBarItem *setsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Sets", nil) image:[UIImage imageNamed:@"glyphicons_158_playlist"] tag:1];
         UITabBarItem *settingsTBI = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) image:[UIImage imageNamed:@"glyphicons_023_cogwheels"] tag:2];
@@ -67,17 +69,24 @@
         settingsViewController.tabBarItem = settingsTBI;
         shopViewController.tabBarItem = shopTBI;
         
-        NSMutableArray *viewControllers = [NSMutableArray array];
-        [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:songsViewController]];
-        [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:setsViewController]];
-        [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:settingsViewController]];
+        // adding navigationControllers
+        UINavigationController *songsNavigationController = [[UINavigationController alloc] initWithRootViewController:songsViewController];
+        UINavigationController *setsNavigationController = [[UINavigationController alloc] initWithRootViewController:setsViewController];
+        UINavigationController *settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:settingsViewController];
+        UINavigationController *shopNavigationController = [[UINavigationController alloc] initWithRootViewController:shopViewController];
+
+        // adding them to the tabBar
+        NSMutableArray *tabBarViewControllers = [NSMutableArray array];
+        [tabBarViewControllers addObject:songsNavigationController];
+        [tabBarViewControllers addObject:setsNavigationController];
+        [tabBarViewControllers addObject:settingsNavigationController];
         
         // enable shop?
         if ([OSStoreManager isEnabled]) {
-            [viewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopViewController]];
+            [tabBarViewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopNavigationController]];
         }
         
-        tabBarController.viewControllers = viewControllers;
+        tabBarController.viewControllers = tabBarViewControllers;
         
         // song view controller
         OSSongViewController *songVC = [[OSSongViewController alloc] init];
