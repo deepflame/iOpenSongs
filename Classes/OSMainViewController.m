@@ -23,6 +23,7 @@
 
 // Shop
 #import "OSShopViewController.h"
+#import "OSStoreManager.h"
 
 #import <FRLayeredNavigationController/FRLayerController.h>
 #import "FRLayeredNavigationController+ExposePrivate.h"
@@ -80,7 +81,7 @@
         
         // song view controller
         OSSongViewController *songVC = [[OSSongViewController alloc] init];
-        songVC.songView.introPartialName = @"welcome";
+        songVC.introPartialName = @"welcome";
         
         // top view controller
         self.currentDetailViewController = songVC;
@@ -111,7 +112,7 @@
         self.currentDetailViewController = [[OSSongViewController alloc] init];
     }
     OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
-    songVC.songView.song = song;
+    songVC.song = song;
 }
 
 #pragma mark - OSSetItemsTableViewControllerDelegate
@@ -150,7 +151,7 @@
     if (itemClass == [SetItemSong class]) {
         if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
             OSSongViewController *songVC = [[OSSongViewController alloc] init];
-            songVC.songView.introPartialName = @"set-add-songs";
+            //songVC.introPartialName = @"set-add-songs";
             self.currentDetailViewController = songVC;
         }
     }

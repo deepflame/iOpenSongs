@@ -8,21 +8,22 @@
 
 #import "OSSongViewController.h"
 
+#import "OSSongView.h"
+
 #import "OSSupportTableViewController.h"
 
 #import "NSObject+RuntimeAdditions.h"
 
 @interface OSSongViewController () <UIWebViewDelegate, OSSongViewDelegate>
-@property (nonatomic, strong) Song *song;
+
 @end
 
 @implementation OSSongViewController
 
-- (id)initWithSong:(Song *)song
+- (id)init
 {
     self = [super init];
     if (self) {
-        _song = song;
     }
     return self;
 }
@@ -34,6 +35,7 @@
     OSSongView *songView = [[OSSongView alloc] init];
     songView.delegate = self;
     songView.song = self.song;
+    songView.introPartialName = self.introPartialName;
     self.view = songView;
 }
 
@@ -60,11 +62,22 @@
     self.title = song.title;
 }
 
-#pragma mark - Public Accessors
+#pragma mark - Private Methods
 
 - (OSSongView *)songView
 {
     return (OSSongView *)self.view;
 }
 
+#pragma mark - Public Accessors
+
+- (void)setSong:(Song *)song
+{
+    if (_song != song) {
+        _song = song;
+    }
+    if (self.view) {
+        self.songView.song = song;
+    }
+}
 @end

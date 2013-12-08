@@ -9,10 +9,10 @@
 #import "OSDetailViewController.h"
 
 #import "Song.h"
-#import "OSSongView.h"
 
 @interface OSSongViewController : OSDetailViewController
 
-@property (nonatomic, strong, readonly) OSSongView *songView;
+@property (nonatomic, copy) Song *song;
+@property (nonatomic, strong) NSString *introPartialName;
 
 @end
