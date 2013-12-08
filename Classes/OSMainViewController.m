@@ -205,8 +205,7 @@
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController
 {
-    // order matters (needs to be on top)
-    CGPoint prevTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
+    BOOL wasExpanded = [self detailViewControllerIsExpanded];
     
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self popToRootViewControllerAnimated:NO];
@@ -216,9 +215,15 @@
     }];
     
     // make sure the new controller is open if the previous was
-    if (prevTopViewPosition.x > 0) {
+    if (wasExpanded) {
         [self.layeredNavigationController expandViewControllersAnimated:NO];
     }
+}
+
+- (BOOL)detailViewControllerIsExpanded
+{
+    CGPoint prevTopViewPosition = self.topViewController.layeredNavigationItem.currentViewPosition;
+    return prevTopViewPosition.x > 0;
 }
 
 @end
