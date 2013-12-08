@@ -160,6 +160,15 @@
     return YES;
 }
 
+- (void) application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder
+{
+
+}
+
+- (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
+{
+
+}
 
 #pragma mark - Private Methods
 
