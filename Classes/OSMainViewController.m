@@ -125,6 +125,12 @@
     return [self.topViewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    self.songViewController = nil;
+    self.setViewController = nil;
+}
+
 #pragma mark - OSSongTableViewControllerDelegate
 
 - (void)songTableViewController:(id)sender didSelectSong:(Song *)song
