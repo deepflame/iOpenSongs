@@ -10,7 +10,6 @@
 
 #import <RMStore/RMStore.h>
 #import <RMStore/RMStoreKeychainPersistence.h>
-#import <RMStore/RMStoreAppReceiptVerificator.h> // for iOS 7
 #import <RMStore/RMStoreTransactionReceiptVerificator.h>
 
 #import "UIAlertView+Error.h"
@@ -46,8 +45,7 @@
 {
     self.featureIdentifiers = [NSSet setWithArray:@[OS_IAP_DROPBOX]];
     
-    const BOOL iOS7OrHigher = floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1;
-    self.receiptVerificator = iOS7OrHigher ? [[RMStoreAppReceiptVerificator alloc] init] : [[RMStoreTransactionReceiptVerificator alloc] init];
+    self.receiptVerificator = [[RMStoreTransactionReceiptVerificator alloc] init];
     [RMStore defaultStore].receiptVerificator = self.receiptVerificator;
     
     self.persistence = [[RMStoreKeychainPersistence alloc] init];
