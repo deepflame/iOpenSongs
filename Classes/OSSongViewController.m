@@ -87,7 +87,7 @@
 
 #pragma mark - State Restoration
 
-#define kSongTitleKey @"SongTitle"
+#define kSongTitleKey @"song.title"
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder
 {
