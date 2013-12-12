@@ -77,14 +77,14 @@
     }];
 }
 
-- (BOOL)canUseFeature:(NSString *)identifier
+- (BOOL)canUseFeature:(NSString *)productIdentifier
 {
     // open all features if shop disabled
     if (! [[self class] isEnabled]) {
         return YES; // <- !!
     }
     
-    return [self.persistence isPurchasedProductOfIdentifier:identifier];
+    return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
 }
 
 @end
