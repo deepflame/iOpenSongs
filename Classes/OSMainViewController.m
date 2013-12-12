@@ -208,6 +208,11 @@
 
 - (UIViewController *)currentDetailViewController
 {
+    if (self.layeredViewControllers.count < 2)
+    {
+        return nil; // <-- !!t
+    }
+    
     FRLayerController *detailLayerController = self.layeredViewControllers[1]; // the detailVC is always at 1
     UIViewController *detailVC = detailLayerController.contentViewController;
     
