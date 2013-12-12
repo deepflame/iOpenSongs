@@ -83,7 +83,7 @@
         
         // enable shop?
         if ([OSStoreManager isEnabled]) {
-            [tabBarViewControllers addObject:[[UINavigationController alloc] initWithRootViewController:shopNavigationController]];
+            [tabBarViewControllers addObject:shopNavigationController];
         }
         
         tabBarController.viewControllers = tabBarViewControllers;
