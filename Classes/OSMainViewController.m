@@ -30,6 +30,8 @@
 
 @interface OSMainViewController ()
 @property (nonatomic, strong) UIViewController *currentDetailViewController;
+@property (nonatomic, strong) OSSongViewController *songViewController;
+@property (nonatomic, strong) OSSetViewController *setViewController;
 @property (nonatomic, strong) UIViewController *rootViewController;
 @end
 
@@ -100,13 +102,9 @@
             shopNavigationController.restorationIdentifier = @"shopViewController navigationController";
         }
         
-        // song view controller
-        OSSongViewController *songVC = [[OSSongViewController alloc] init];
-        songVC.introPartialName = @"welcome";
-        
         // top view controller
-        self.currentDetailViewController = songVC;
         self.rootViewController = tabBarController;
+        self.currentDetailViewController = self.songViewController;
     }
     return self;
 }
@@ -116,6 +114,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.songViewController.introPartialName = @"welcome";
     
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 }
@@ -129,11 +129,8 @@
 
 - (void)songTableViewController:(id)sender didSelectSong:(Song *)song
 {
-    if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
-        self.currentDetailViewController = [[OSSongViewController alloc] init];
-    }
-    OSSongViewController *songVC = (OSSongViewController *)[self currentDetailViewController];
-    songVC.song = song;
+    self.songViewController.song = song;
+    self.currentDetailViewController = self.songViewController;
 }
 
 #pragma mark - OSSetItemsTableViewControllerDelegate
@@ -145,36 +142,28 @@
         return; // <- !!
     }
     
-    if (! [self.currentDetailViewController isMemberOfClass:[OSSetViewController class]]) {
-        self.currentDetailViewController = [[OSSetViewController alloc] init];
-    }
-    OSSetViewController *setVC = (OSSetViewController *)[self currentDetailViewController];
-    setVC.delegate = sender;
-    setVC.set = set;
+    self.setViewController.delegate = sender;
+    self.setViewController.set = set; // TODO why do I set the set every time?
     
     // FIXME: setitem positions not consistent...
     NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", set]];
     NSUInteger index = [setItems indexOfObject:setItem];
-        
-    [setVC selectPageAtIndex:index animated:NO];
+    [self.setViewController selectPageAtIndex:index animated:NO];
+    
+    self.currentDetailViewController = self.setViewController;
 }
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didChangeSet:(Set *)set
 {
-   self.currentDetailViewController = [[OSSetViewController alloc] init];
-   OSSetViewController *setVC = (OSSetViewController *)[self currentDetailViewController];
-   setVC.delegate = sender;
-   setVC.set = set;
+    self.setViewController.delegate = sender;
+    self.setViewController.set = set;
+    self.currentDetailViewController = self.setViewController;
 }
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set
 {
     if (itemClass == [SetItemSong class]) {
-        if (! [self.currentDetailViewController isMemberOfClass:[OSSongViewController class]]) {
-            OSSongViewController *songVC = [[OSSongViewController alloc] init];
-            //songVC.introPartialName = @"set-add-songs";
-            self.currentDetailViewController = songVC;
-        }
+        self.currentDetailViewController = self.songViewController;
     }
 }
 
@@ -215,7 +204,7 @@
     return  touchX > 0;
 }
 
-#pragma mark - Private Methods
+#pragma mark - Accessor Implementations
 
 - (UIViewController *)currentDetailViewController
 {
@@ -227,6 +216,10 @@
 
 - (void)setCurrentDetailViewController:(UIViewController *)viewController
 {
+    if ([self.currentDetailViewController isEqual:viewController]) {
+        return; // <-- !!
+    }
+    
     BOOL wasExpanded = [self detailViewControllerIsExpanded];
     
     UIViewController *uiVC = [[UINavigationController alloc] initWithRootViewController:viewController];
@@ -246,6 +239,24 @@
         [self.layeredNavigationController expandViewControllersAnimated:NO];
     }
 }
+
+- (OSSongViewController *)songViewController
+{
+    if (! _songViewController) {
+        _songViewController = [[OSSongViewController alloc] init];
+    }
+    return _songViewController;
+}
+
+- (OSSetViewController *)setViewController
+{
+    if (! _setViewController) {
+        _setViewController = [[OSSetViewController alloc] init];
+    }
+    return _setViewController;
+}
+
+#pragma mark - Private Methods
 
 - (BOOL)detailViewControllerIsExpanded
 {
