@@ -13,6 +13,8 @@
 #import <RMStore/RMStoreAppReceiptVerificator.h> // for iOS 7
 #import <RMStore/RMStoreTransactionReceiptVerificator.h>
 
+#import "UIAlertView+Error.h"
+
 @interface OSStoreManager()
 @property (nonatomic, strong) NSSet *featureIdentifiers;
 
@@ -58,15 +60,23 @@
     [[RMStore defaultStore] requestProducts:self.featureIdentifiers success:success failure:failure];
 }
 
-
-- (void)buyProduct:(SKProduct *)product
+- (void)buyProduct:(NSString *)productIdentifier
 {
-
+    [[RMStore defaultStore] addPayment:productIdentifier
+                               success:^(SKPaymentTransaction *transaction) {
+                                   
+                               } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+                                   [UIAlertView showWithError:error];
+                               }];
 }
 
 - (void)restorePurchases
 {
-    
+    [[RMStore defaultStore] restoreTransactionsOnSuccess:^ {
+        
+    } failure:^(NSError *error) {
+        [UIAlertView showWithError:error];
+    }];
 }
 
 - (BOOL)canUseFeature:(NSString *)identifier

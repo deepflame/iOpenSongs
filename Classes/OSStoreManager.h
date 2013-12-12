@@ -22,7 +22,7 @@
 - (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
                         failure:(void (^)(NSError *error))failure;
 
-- (void)buyProduct:(SKProduct *)product;
+- (void)buyProduct:(NSString *)productIdentifier;
 
 - (void)restorePurchases;
 
