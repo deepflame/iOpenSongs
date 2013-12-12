@@ -84,8 +84,8 @@
                                               } failure:^(NSError *error) {
                                                   
                                                   // retry contacting the app store
-                                                  QSection *section = [[QSection alloc] initWithTitle:NSLocalizedString(@"Error", nil)];
-                                                  QTextElement *description = [[QTextElement alloc] initWithText:NSLocalizedString(@"Cannot contact", nil)];
+                                                  QSection *section = [[QSection alloc] initWithTitle:nil];
+                                                  QTextElement *description = [[QTextElement alloc] initWithText:error.localizedDescription];
                                                   QButtonElement *retryButton = [[QButtonElement alloc] initWithTitle:NSLocalizedString(@"Retry", nil)];
                                                   retryButton.onSelected = ^ {
                                                       [self refreshProductList];
