@@ -61,7 +61,7 @@
                                                       QTextElement *description = [[QTextElement alloc] initWithText:product.localizedDescription];
                                                       QButtonElement *purchase = [[QButtonElement alloc] initWithTitle:product.localizedPrice];
                                                       purchase.onSelected = ^ {
-                                                          [[OSStoreManager sharedManager] buyProduct:product];
+                                                          [[OSStoreManager sharedManager] buyProduct:product.productIdentifier];
                                                       };
                                                       [section addElement:description];
                                                       [section addElement:purchase];
