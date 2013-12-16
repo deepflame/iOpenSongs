@@ -8,7 +8,10 @@
 
 #import "OSSetTableViewController.h"
 
+#import "NSManagedObject+Cloning.h"
+
 #import "Set.h"
+#import "SetItem.h"
 #import "OSSetItemsTableViewController.h"
 
 #import "OSMainViewController.h"
@@ -16,6 +19,7 @@
 typedef NS_ENUM(NSInteger, SetActionType) {
     SetActionNew,
     SetActionEdit,
+    SetActionClone
 };
 
 @interface OSSetTableViewController () <UIAlertViewDelegate>
@@ -187,6 +191,13 @@ typedef NS_ENUM(NSInteger, SetActionType) {
             [self.setNameAlertView show];
         }];
         
+        // Duplicate Set
+        [_editSetActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Duplicate Set", nil) handler:^{
+            self.setNameAlertViewTextField.text = self.currentSetForEditing.name;
+            self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);
+            self.setActionType = SetActionClone;
+            [self.setNameAlertView show];
+        }];
         
         // Cancel Button
         [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:^ {
