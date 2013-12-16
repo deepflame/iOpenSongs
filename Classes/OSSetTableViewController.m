@@ -129,13 +129,15 @@ typedef NS_ENUM(NSInteger, SetActionType) {
     }
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - Public Accessors
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (UIAlertView *)setNameAlertView
 {
-    switch (buttonIndex) {
-        case 1: // OK button
-            
+    if (! _setNameAlertView) {
+        _setNameAlertView = [UIAlertView bk_alertViewWithTitle:nil];
+        _setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+        [_setNameAlertView bk_addButtonWithTitle:NSLocalizedString(@"OK", nil) handler:^ {
             if (self.setNameAlertViewTextField.text.length == 0) {
                 return; // <-- !!
             }
@@ -152,22 +154,14 @@ typedef NS_ENUM(NSInteger, SetActionType) {
                 default:
                     break;
             }
+            
             self.currentSetForEditing.name = self.setNameAlertViewTextField.text;
-            
-            break;
-            
-        default:
-            break;
-    }
-}
+        }];
+        
+        [_setNameAlertView bk_setCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) handler:^ {
+            [_setNameAlertView dismissWithClickedButtonIndex:-1 animated:YES];
+        }];
 
-#pragma mark - Public Accessors
-
-- (UIAlertView *)setNameAlertView
-{
-    if (! _setNameAlertView) {
-        _setNameAlertView = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
-        _setNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     }
     return _setNameAlertView;
 }
