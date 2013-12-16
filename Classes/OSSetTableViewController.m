@@ -145,7 +145,7 @@ typedef NS_ENUM(NSInteger, SetActionType) {
                     break;
                     
                 case SetActionClone:
-                    [self.currentSetForEditing clone];
+                    self.currentSetForEditing = [self.currentSetForEditing clone];
                     break;
                 
                 default:
