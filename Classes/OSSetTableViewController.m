@@ -13,11 +13,17 @@
 
 #import "OSMainViewController.h"
 
+typedef NS_ENUM(NSInteger, SetActionType) {
+    SetActionNew,
+    SetActionEdit,
+};
+
 @interface OSSetTableViewController () <UIAlertViewDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
 @property (nonatomic, strong) UITextField *setNameAlertViewTextField;
 @property (nonatomic, strong) UIActionSheet *editSetActionSheet;
 @property (nonatomic, strong) Set *currentSetForEditing;
+@property (nonatomic)         NSInteger setActionType;
 @end
 
 @implementation OSSetTableViewController
@@ -42,6 +48,7 @@
         self.currentSetForEditing = nil;
         self.setNameAlertViewTextField.text = @"";
         self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);
+        self.setActionType = SetActionNew;
         [self.setNameAlertView show];
     }];
 
@@ -133,8 +140,17 @@
                 return; // <-- !!
             }
             
-            if (! self.currentSetForEditing) {
-                self.currentSetForEditing = [Set MR_createEntity];
+            switch (self.setActionType) {
+                case SetActionNew:
+                    self.currentSetForEditing = [Set MR_createEntity];
+                    break;
+                    
+                case SetActionClone:
+                    [self.currentSetForEditing clone];
+                    break;
+                
+                default:
+                    break;
             }
             self.currentSetForEditing.name = self.setNameAlertViewTextField.text;
             
@@ -173,6 +189,7 @@
         [_editSetActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Rename Set", nil) handler:^{
             self.setNameAlertViewTextField.text = self.currentSetForEditing.name;
             self.setNameAlertView.title = NSLocalizedString(@"Rename Set", nil);
+            self.setActionType = SetActionEdit;
             [self.setNameAlertView show];
         }];
         
