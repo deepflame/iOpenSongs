@@ -16,6 +16,7 @@
 @interface OSSetTableViewController () <UIAlertViewDelegate>
 @property (nonatomic, strong) UIAlertView *setNameAlertView;
 @property (nonatomic, strong) UITextField *setNameAlertViewTextField;
+@property (nonatomic, strong) UIActionSheet *editSetActionSheet;
 @property (nonatomic, strong) Set *currentSetForEditing;
 @end
 
@@ -114,11 +115,10 @@
         [self.navigationController pushViewController:setItemsTVC animated:YES];
         
     } else {
-        // rename set
         self.currentSetForEditing = set;
-        self.setNameAlertViewTextField.text = set.name;        
-        self.setNameAlertView.title = NSLocalizedString(@"Rename Set", nil);
-        [self.setNameAlertView show];
+        
+        CGRect rect = [tableView rectForRowAtIndexPath:indexPath];
+        [self.editSetActionSheet showFromRect:rect inView:tableView animated:YES];
     }
 }
 
@@ -162,6 +162,28 @@
         _setNameAlertViewTextField = [self.setNameAlertView textFieldAtIndex:0];
     }
     return _setNameAlertViewTextField;
+}
+
+- (UIActionSheet *)editSetActionSheet
+{
+    if (! _editSetActionSheet) {
+        _editSetActionSheet = [UIActionSheet bk_actionSheetWithTitle:nil];
+        
+        // Rename Set
+        [_editSetActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Rename Set", nil) handler:^{
+            self.setNameAlertViewTextField.text = self.currentSetForEditing.name;
+            self.setNameAlertView.title = NSLocalizedString(@"Rename Set", nil);
+            [self.setNameAlertView show];
+        }];
+        
+        
+        // Cancel Button
+        [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:^ {
+            [_editSetActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
+        }];
+        
+    }
+    return _editSetActionSheet;
 }
 
 @end
