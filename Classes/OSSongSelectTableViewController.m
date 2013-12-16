@@ -24,7 +24,6 @@
 #import "OSStoreManager.h"
 
 @interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate>
-@property (nonatomic, strong) NSIndexPath *currentSelection;
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
 @end
 
@@ -55,6 +54,8 @@
         }
     }];
     
+    self.clearsSelectionOnViewWillAppear = NO;
+    
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
     
@@ -66,12 +67,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // select previous song
-    [self.tableView selectRowAtIndexPath:self.currentSelection animated:false scrollPosition:UITableViewScrollPositionNone];
-    Song *song = [self.fetchedResultsController objectAtIndexPath:self.currentSelection];
-    [self.delegate songTableViewController:self didSelectSong:song];
-    
     [super viewWillAppear:animated];
+    
+    // select previous item (e.g. if selected from state restoration)
+    Song *song = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    if (song) {
+        [self.delegate songTableViewController:self didSelectSong:song];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -95,10 +97,6 @@
         // delete object from database
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         [song MR_deleteEntity];
-        // delete curent selection if it was deleted
-        if ([self.currentSelection isEqual:indexPath]) {
-            self.currentSelection = nil;
-        }
     }
 }
 
@@ -107,9 +105,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
-    // save current selection
-    self.currentSelection = indexPath;
     
     // close sliding view controller if on Phone in portrait mode
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
