@@ -20,7 +20,7 @@
 - (void)initInAppStore;
 
 - (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
-                        failure:(void (^)(NSError *error))failure;
+                         failure:(void (^)(NSError *error))failure;
 
 - (void)buyProduct:(NSString *)productIdentifier;
 
