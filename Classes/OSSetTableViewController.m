@@ -155,10 +155,8 @@ typedef NS_ENUM(NSInteger, SetActionType) {
             self.currentSetForEditing.name = self.setNameAlertViewTextField.text;
         }];
         
-        [_setNameAlertView bk_setCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) handler:^ {
-            [_setNameAlertView dismissWithClickedButtonIndex:-1 animated:YES];
-        }];
-
+        // Cancel Button
+        [_setNameAlertView bk_setCancelButtonWithTitle:nil handler:nil];
     }
     return _setNameAlertView;
 }
@@ -193,10 +191,7 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         }];
         
         // Cancel Button
-        [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:^ {
-            [_editSetActionSheet dismissWithClickedButtonIndex:-1 animated:YES];
-        }];
-        
+        [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:nil];
     }
     return _editSetActionSheet;
 }
