@@ -91,6 +91,11 @@
     }];
 }
 
+- (BOOL)isPurchased:(NSString *)productIdentifier
+{
+    return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
+}
+
 - (BOOL)canUseFeature:(NSString *)productIdentifier
 {
     // open all features if shop disabled
@@ -98,7 +103,8 @@
         return YES; // <- !!
     }
     
-    return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
+    return [self isPurchased:productIdentifier];
+}
 
 - (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block
 {
