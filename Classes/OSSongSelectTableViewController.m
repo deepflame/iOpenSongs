@@ -147,6 +147,10 @@
                 importTableViewController.delegate = _self;
                 [_self.navigationController pushViewController:importTableViewController animated:YES];
             }];
+        } else {
+            [[OSStoreManager sharedManager] whenPurchasedOrRestored:OS_IAP_DROPBOX execute:^ {
+                self.importActionSheet = nil; // reload action sheet
+            }];
         }
 
         // Cancel Button
