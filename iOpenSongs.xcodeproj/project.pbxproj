@@ -16,10 +16,19 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3E14407A185F199D00E68FCE /* Set+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E144079185F199D00E68FCE /* Set+Cloning.m */; };
+		3E14407B185F199D00E68FCE /* Set+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E144079185F199D00E68FCE /* Set+Cloning.m */; };
+		3E14407C185F199D00E68FCE /* Set+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E144079185F199D00E68FCE /* Set+Cloning.m */; };
+		3E1440831860447500E68FCE /* SetItemSong+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1440821860447500E68FCE /* SetItemSong+Cloning.m */; };
+		3E1440841860447500E68FCE /* SetItemSong+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1440821860447500E68FCE /* SetItemSong+Cloning.m */; };
+		3E1440851860447500E68FCE /* SetItemSong+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1440821860447500E68FCE /* SetItemSong+Cloning.m */; };
 		3E14408A1860885800E68FCE /* Images-Beta.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1440891860885800E68FCE /* Images-Beta.xcassets */; };
 		3E14408C1860890700E68FCE /* Images-Release.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408B1860890700E68FCE /* Images-Release.xcassets */; };
 		3E14408E1860897200E68FCE /* Images-Integration.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408D1860897200E68FCE /* Images-Integration.xcassets */; };
 		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
+		3E2B6C07185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
+		3E2B6C08185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
+		3E2B6C09185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
 		3E2F5596184D31F3002472F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
 		3E2F5597184D31F3002472F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
 		3E35844B151E100E00137FC4 /* OSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35844A151E100E00137FC4 /* OSMainViewController.m */; };
@@ -225,11 +234,17 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
+		3E144078185F199D00E68FCE /* Set+Cloning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Set+Cloning.h"; sourceTree = "<group>"; };
+		3E144079185F199D00E68FCE /* Set+Cloning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Set+Cloning.m"; sourceTree = "<group>"; };
+		3E1440811860447500E68FCE /* SetItemSong+Cloning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SetItemSong+Cloning.h"; sourceTree = "<group>"; };
+		3E1440821860447500E68FCE /* SetItemSong+Cloning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SetItemSong+Cloning.m"; sourceTree = "<group>"; };
 		3E1440891860885800E68FCE /* Images-Beta.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Beta.xcassets"; sourceTree = "<group>"; };
 		3E14408B1860890700E68FCE /* Images-Release.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Release.xcassets"; sourceTree = "<group>"; };
 		3E14408D1860897200E68FCE /* Images-Integration.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Integration.xcassets"; sourceTree = "<group>"; };
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
+		3E2B6C05185E584D0055CABD /* NSManagedObject+Cloning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Cloning.h"; sourceTree = "<group>"; };
+		3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Cloning.m"; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* OSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMainViewController.h; sourceTree = "<group>"; };
 		3E35844A151E100E00137FC4 /* OSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSMainViewController.m; sourceTree = "<group>"; };
 		3E3872AD16EB1676003A0DCC /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -684,6 +699,8 @@
 		3EE891AF1521BB50001DA59A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3E2B6C05185E584D0055CABD /* NSManagedObject+Cloning.h */,
+				3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */,
 				3E120C3414F9203900926A74 /* NSString+JavaScript.h */,
 				3E120C3514F9203900926A74 /* NSString+JavaScript.m */,
 				3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */,
@@ -715,12 +732,6 @@
 				3E120C6714FA276700926A74 /* Parsers */,
 				3E3872AD16EB1676003A0DCC /* Song.h */,
 				3E3872AE16EB1676003A0DCC /* Song.m */,
-				3E7F8818160CCCEE004EB8E6 /* Set.h */,
-				3E7F8819160CCCEE004EB8E6 /* Set.m */,
-				3E7F8815160CCCEE004EB8E6 /* SetItemSong.h */,
-				3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */,
-				3E7F8812160CCCED004EB8E6 /* SetItem.h */,
-				3E7F8813160CCCED004EB8E6 /* SetItem.m */,
 				3EA890DB16A32B3600218AE7 /* Song+Import.h */,
 				3EA890DC16A32B3600218AE7 /* Song+Import.m */,
 				3E120C3014F91DD400926A74 /* Song+OpenSong.h */,
@@ -728,6 +739,16 @@
 				3EC11EEE16EB0691001747F3 /* Song+PrimitiveAccessors.h */,
 				3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */,
 				3EC11EEF16EB0691001747F3 /* Song+AccessorOverrides.m */,
+				3E7F8818160CCCEE004EB8E6 /* Set.h */,
+				3E7F8819160CCCEE004EB8E6 /* Set.m */,
+				3E144078185F199D00E68FCE /* Set+Cloning.h */,
+				3E144079185F199D00E68FCE /* Set+Cloning.m */,
+				3E7F8815160CCCEE004EB8E6 /* SetItemSong.h */,
+				3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */,
+				3E1440811860447500E68FCE /* SetItemSong+Cloning.h */,
+				3E1440821860447500E68FCE /* SetItemSong+Cloning.m */,
+				3E7F8812160CCCED004EB8E6 /* SetItem.h */,
+				3E7F8813160CCCED004EB8E6 /* SetItem.m */,
 				3E9BA2F6170063AE004AC165 /* OSFileDescriptor.h */,
 				3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */,
 				3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */,
@@ -1091,11 +1112,14 @@
 				3EB908DD1751870E002125FE /* OSFileDescriptor.m in Sources */,
 				3EB908DE1751870E002125FE /* OSFileDescriptor+Dropbox.m in Sources */,
 				3EB908DF1751870E002125FE /* OSSongView.m in Sources */,
+				3E14407B185F199D00E68FCE /* Set+Cloning.m in Sources */,
 				3EB908E01751870E002125FE /* OSHtmlView.m in Sources */,
+				3E2B6C08185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */,
 				3EB908E11751870E002125FE /* OSSongPageView.m in Sources */,
 				3EB908E21751870E002125FE /* OSSetViewController.m in Sources */,
 				3EB908E31751870E002125FE /* OSDetailViewController.m in Sources */,
 				3EB908E41751870E002125FE /* OSSongStyle.m in Sources */,
+				3E1440841860447500E68FCE /* SetItemSong+Cloning.m in Sources */,
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */,
@@ -1142,11 +1166,14 @@
 				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
 				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
 				3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */,
+				3E14407A185F199D00E68FCE /* Set+Cloning.m in Sources */,
 				3E3EE7BC17082B5F006A9B34 /* OSHtmlView.m in Sources */,
+				3E2B6C07185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */,
 				3ED177F717134C3800B303CA /* OSSongPageView.m in Sources */,
 				3E65A1D317136348009B2732 /* OSSetViewController.m in Sources */,
 				3ECDA7EC1714B7BC0035E2B2 /* OSDetailViewController.m in Sources */,
 				3E56D6B6174D981300F1CDEA /* OSSongStyle.m in Sources */,
+				3E1440831860447500E68FCE /* SetItemSong+Cloning.m in Sources */,
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */,
@@ -1165,9 +1192,11 @@
 				3E88433E184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 				3EFC153917510A1D00BFA2BB /* OSMainViewController.m in Sources */,
 				3EFC153A17510A1D00BFA2BB /* OSAppDelegate.m in Sources */,
+				3E1440851860447500E68FCE /* SetItemSong+Cloning.m in Sources */,
 				3EFC153B17510A1D00BFA2BB /* OSSongViewController.m in Sources */,
 				3EFC153C17510A1D00BFA2BB /* OSSongSelectTableViewController.m in Sources */,
 				3EFC153D17510A1D00BFA2BB /* OSAboutViewController.m in Sources */,
+				3E14407C185F199D00E68FCE /* Set+Cloning.m in Sources */,
 				3EFC153E17510A1D00BFA2BB /* OSSupportTableViewController.m in Sources */,
 				3EFC153F17510A1D00BFA2BB /* Song+OpenSong.m in Sources */,
 				3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */,
@@ -1200,6 +1229,7 @@
 				3EFC155917510A1D00BFA2BB /* OSDetailViewController.m in Sources */,
 				3EFC155A17510A1D00BFA2BB /* OSSongStyle.m in Sources */,
 				3EFC155B17510A1D00BFA2BB /* NSObject+RuntimeAdditions.m in Sources */,
+				3E2B6C09185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */,
 				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
 				3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */,
 				3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */,
