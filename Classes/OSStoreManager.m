@@ -48,6 +48,12 @@
     
     self.persistence = [[RMStoreKeychainPersistence alloc] init];
     [RMStore defaultStore].transactionPersistor = self.persistence;
+    
+#if DEBUG
+    // reset transactions in DEBUG
+    [self.persistence removeTransactions];
+#endif
+    
     self.purchasedOrRestoredBlocks = [NSMutableDictionary dictionary];
 }
 
