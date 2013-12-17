@@ -19,6 +19,7 @@
 
 @property id<RMStoreReceiptVerificator> receiptVerificator;
 @property RMStoreKeychainPersistence *persistence;
+@property NSMutableDictionary *purchasedOrRestoredBlocks;
 @end
 
 @implementation OSStoreManager
@@ -50,6 +51,7 @@
     
     self.persistence = [[RMStoreKeychainPersistence alloc] init];
     [RMStore defaultStore].transactionPersistor = self.persistence;
+    self.purchasedOrRestoredBlocks = [NSMutableDictionary dictionary];
 }
 
 - (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
@@ -62,6 +64,12 @@
 {
     [[RMStore defaultStore] addPayment:productIdentifier
                                success:^(SKPaymentTransaction *transaction) {
+                                   // execute product purchase block
+                                   id value = [self.purchasedOrRestoredBlocks objectForKey:productIdentifier];
+                                   if (value) {
+                                       void (^ block)() = value;
+                                       block();
+                                   }
                                    
                                } failure:^(SKPaymentTransaction *transaction, NSError *error) {
                                    [UIAlertView showWithError:error];
@@ -72,6 +80,12 @@
 {
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^ {
         
+        [self.purchasedOrRestoredBlocks bk_each:^(NSString *productIdentifier, id value) {
+            if (value) {
+                void (^ block)() = value;
+                block();
+            }
+        }];
     } failure:^(NSError *error) {
         [UIAlertView showWithError:error];
     }];
@@ -85,6 +99,10 @@
     }
     
     return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
+
+- (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block
+{
+    [self.purchasedOrRestoredBlocks setObject:block forKey:productIdentifier];
 }
 
 @end

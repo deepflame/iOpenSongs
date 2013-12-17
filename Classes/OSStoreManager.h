@@ -25,6 +25,8 @@
 - (void)buyProduct:(NSString *)productIdentifier;
 
 - (void)restorePurchases;
+- (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block;
+
 
 - (BOOL)canUseFeature:(NSString *)identifier;
 
