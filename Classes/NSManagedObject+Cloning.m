@@ -24,27 +24,13 @@
                                insertNewObjectForEntityForName:entityName
                                inManagedObjectContext:context];
     
-    // set attributes
+    // clone only attributes
     NSDictionary *attributes = [[NSEntityDescription
                                  entityForName:entityName
                                  inManagedObjectContext:context] attributesByName];
     
     for (NSString *attr in attributes) {
         [cloned setValue:[self valueForKey:attr] forKey:attr];
-    }
-    
-    // set relationships (only one-to-one)
-    NSDictionary *relationships = [[NSEntityDescription
-                                    entityForName:entityName
-                                    inManagedObjectContext:context] relationshipsByName];
-    
-    for (NSString *relName in [relationships allKeys]) {
-        
-        NSRelationshipDescription *rel = [relationships objectForKey:relName];
-        if (! [rel isToMany]) {
-            [cloned setValue:[self valueForKey:relName] forKey:relName];
-        }
-        
     }
     
     return cloned;
