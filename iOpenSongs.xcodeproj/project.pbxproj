@@ -16,6 +16,9 @@
 		3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3114F91DD400926A74 /* Song+OpenSong.m */; };
 		3E120C3614F9203900926A74 /* NSString+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C3514F9203900926A74 /* NSString+JavaScript.m */; };
 		3E120C6414FA1C3900926A74 /* iOpenSongs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */; };
+		3E14408A1860885800E68FCE /* Images-Beta.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1440891860885800E68FCE /* Images-Beta.xcassets */; };
+		3E14408C1860890700E68FCE /* Images-Release.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408B1860890700E68FCE /* Images-Release.xcassets */; };
+		3E14408E1860897200E68FCE /* Images-Integration.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408D1860897200E68FCE /* Images-Integration.xcassets */; };
 		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
 		3E2F5596184D31F3002472F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
 		3E2F5597184D31F3002472F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
@@ -222,6 +225,9 @@
 		3E120C6514FA270F00926A74 /* RKXMLParserLibXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKXMLParserLibXML.h; sourceTree = "<group>"; };
 		3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		3E120C6814FA27B900926A74 /* RKParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKParser.h; sourceTree = "<group>"; };
+		3E1440891860885800E68FCE /* Images-Beta.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Beta.xcassets"; sourceTree = "<group>"; };
+		3E14408B1860890700E68FCE /* Images-Release.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Release.xcassets"; sourceTree = "<group>"; };
+		3E14408D1860897200E68FCE /* Images-Integration.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Integration.xcassets"; sourceTree = "<group>"; };
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* OSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMainViewController.h; sourceTree = "<group>"; };
@@ -439,6 +445,9 @@
 			isa = PBXGroup;
 			children = (
 				3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */,
+				3E14408B1860890700E68FCE /* Images-Release.xcassets */,
+				3E1440891860885800E68FCE /* Images-Beta.xcassets */,
+				3E14408D1860897200E68FCE /* Images-Integration.xcassets */,
 				3E5E878914DE6166003B645A /* Html */,
 				3E832DAA1850B30D002EE80F /* Strings */,
 				3EA0BB9C16D1219C00D7D97D /* Songs */,
@@ -873,8 +882,9 @@
 				3EB9090D1751870E002125FE /* Amazing Grace in Resources */,
 				3EB9090E1751870E002125FE /* Sample Song in Resources */,
 				3E9200B7178E4A66004C5F8B /* Localizable.strings in Resources */,
-				3E2F5596184D31F3002472F1 /* Images.xcassets in Resources */,
 				3E8861C817C35DB200F9B324 /* locales in Resources */,
+				3E2F5596184D31F3002472F1 /* Images.xcassets in Resources */,
+				3E14408A1860885800E68FCE /* Images-Beta.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,7 +893,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */,
-				3E832DA3185096E5002EE80F /* Images.xcassets in Resources */,
 				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
 				3E5E878814DE556C003B645A /* default.css in Resources */,
@@ -897,6 +906,8 @@
 				3E595251179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFE817BF8A510004CF8D /* opensong.min.css in Resources */,
 				3E8861C717C35DB200F9B324 /* locales in Resources */,
+				3E832DA3185096E5002EE80F /* Images.xcassets in Resources */,
+				3E14408C1860890700E68FCE /* Images-Release.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,11 +925,12 @@
 				3EFC158317510A1D00BFA2BB /* Amazing Grace in Resources */,
 				3EFC158417510A1D00BFA2BB /* Sample Song in Resources */,
 				3EFC158C17510A1D00BFA2BB /* _set-add-songs.html in Resources */,
-				3E2F5597184D31F3002472F1 /* Images.xcassets in Resources */,
 				3E9200B8178E4A66004C5F8B /* Localizable.strings in Resources */,
 				3E595253179308B6003C3B01 /* _welcome.html in Resources */,
 				3E5AEFEA17BF8A510004CF8D /* opensong.min.css in Resources */,
 				3E8861C917C35DB200F9B324 /* locales in Resources */,
+				3E2F5597184D31F3002472F1 /* Images.xcassets in Resources */,
+				3E14408E1860897200E68FCE /* Images-Integration.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,7 +1244,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Beta";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1264,7 +1276,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Beta";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -1437,7 +1449,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Integration";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1474,7 +1486,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83DDE2BF561849B48BA5F099 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Integration";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
