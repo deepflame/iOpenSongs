@@ -75,8 +75,12 @@
                                                               [UIAlertView showWithError:error];
                                                           }];
                                                       };
+                                                      QButtonElement *purchased = [[QButtonElement alloc] initWithTitle:NSLocalizedString(@"Purchased", nil)];
+                                                      
+                                                      BOOL isPurchased = [[OSStoreManager sharedManager] isPurchased:product.productIdentifier];
+                                                      
                                                       [section addElement:description];
-                                                      [section addElement:purchase];
+                                                      [section addElement:isPurchased ? purchased : purchase];
                                                       
                                                       [self.root addSection:section];
                                                   }];
