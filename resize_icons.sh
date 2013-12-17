@@ -9,7 +9,7 @@ do
   echo $i
   j=$(( $i * 2 )) # for 2x resolution
   gm convert -size $ix$i $image_file -resize $ix$i "$output_folder/Icon-$i.png"
-  gm convert -size $jx$j $image_file -resize $ix$i "$output_folder/Icon-$i@2x.png"
+  gm convert -size $jx$j $image_file -resize $jx$j "$output_folder/Icon-$i@2x.png"
 done
 
 echo iTunesArtwork
