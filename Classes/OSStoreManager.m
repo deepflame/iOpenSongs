@@ -61,6 +61,8 @@
 }
 
 - (void)buyProduct:(NSString *)productIdentifier
+           success:(void (^)(void))successBlock
+           failure:(void (^)(NSError *error))failureBlock
 {
     [[RMStore defaultStore] addPayment:productIdentifier
                                success:^(SKPaymentTransaction *transaction) {
@@ -71,12 +73,15 @@
                                        block();
                                    }
                                    
+                                   successBlock();
                                } failure:^(SKPaymentTransaction *transaction, NSError *error) {
                                    [UIAlertView showWithError:error];
+                                   failureBlock(error);
                                }];
 }
 
-- (void)restorePurchases
+- (void)restoreTransactionsOnSuccess:(void (^)(void))successBlock
+                             failure:(void (^)(NSError *error))failureBlock
 {
     [[RMStore defaultStore] restoreTransactionsOnSuccess:^ {
         
@@ -86,8 +91,11 @@
                 block();
             }
         }];
+        
+        successBlock();
     } failure:^(NSError *error) {
         [UIAlertView showWithError:error];
+        failureBlock(error);
     }];
 }
 

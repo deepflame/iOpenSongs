@@ -61,7 +61,10 @@
                                                       QTextElement *description = [[QTextElement alloc] initWithText:product.localizedDescription];
                                                       QButtonElement *purchase = [[QButtonElement alloc] initWithTitle:product.localizedPrice];
                                                       purchase.onSelected = ^ {
-                                                          [[OSStoreManager sharedManager] buyProduct:product.productIdentifier];
+                                                          // buy product
+                                                          [[OSStoreManager sharedManager] buyProduct:product.productIdentifier success:^ {
+                                                          } failure:^(NSError *error) {
+                                                          }];
                                                       };
                                                       [section addElement:description];
                                                       [section addElement:purchase];
@@ -73,7 +76,10 @@
                                                   QSection *restoreSec = [[QSection alloc] initWithTitle:NSLocalizedString(@"Previous Purchases", nil)];
                                                   QButtonElement *restoreButton = [[QButtonElement alloc] initWithTitle:NSLocalizedString(@"Restore", nil)];
                                                   restoreButton.onSelected = ^ {
-                                                      [[OSStoreManager sharedManager] restorePurchases];
+                                                      // restore purchases
+                                                      [[OSStoreManager sharedManager] restoreTransactionsOnSuccess:^ {
+                                                      } failure:^(NSError *error) {
+                                                      }];
                                                   };
                                                   [restoreSec addElement:restoreButton];
                                                   // add to root

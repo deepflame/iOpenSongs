@@ -22,9 +22,13 @@
 - (void)requestProductsOnSuccess:(void (^)(NSArray *products, NSArray *invalidIdentifiers))success
                          failure:(void (^)(NSError *error))failure;
 
-- (void)buyProduct:(NSString *)productIdentifier;
+- (void)buyProduct:(NSString *)productIdentifier
+           success:(void (^)(void))successBlock
+           failure:(void (^)(NSError *error))failureBlock;
 
-- (void)restorePurchases;
+- (void)restoreTransactionsOnSuccess:(void (^)(void))successBlock
+                             failure:(void (^)(NSError *error))failureBlock;
+
 - (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block;
 
 - (BOOL)isPurchased:(NSString *)productIdentifier;
