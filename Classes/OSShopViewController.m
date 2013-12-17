@@ -13,6 +13,8 @@
 #import "OSStoreManager.h"
 #import "SKProduct+LocalizedPrice.h"
 
+#import "UIAlertView+Error.h"
+
 @interface OSShopViewController ()
 
 @end
@@ -63,7 +65,14 @@
                                                       purchase.onSelected = ^ {
                                                           // buy product
                                                           [[OSStoreManager sharedManager] buyProduct:product.productIdentifier success:^ {
+                                                              [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Thank you!", nil)
+                                                                                             message:NSLocalizedString(@"'...' successfully purchased.", nil)
+                                                                                   cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
+                                                                                   otherButtonTitles:nil handler:nil];
+                                                              
+                                                              [self refreshProductList];
                                                           } failure:^(NSError *error) {
+                                                              [UIAlertView showWithError:error];
                                                           }];
                                                       };
                                                       [section addElement:description];
@@ -78,7 +87,14 @@
                                                   restoreButton.onSelected = ^ {
                                                       // restore purchases
                                                       [[OSStoreManager sharedManager] restoreTransactionsOnSuccess:^ {
+                                                          [UIAlertView bk_showAlertViewWithTitle:nil
+                                                                                         message:NSLocalizedString(@"Purchases successfully restored", nil)
+                                                                               cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
+                                                                               otherButtonTitles:nil handler:nil];
+                                                          
+                                                          [self refreshProductList];
                                                       } failure:^(NSError *error) {
+                                                          [UIAlertView showWithError:error];
                                                       }];
                                                   };
                                                   [restoreSec addElement:restoreButton];

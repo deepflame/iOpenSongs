@@ -12,11 +12,8 @@
 #import <RMStore/RMStoreKeychainPersistence.h>
 #import <RMStore/RMStoreTransactionReceiptVerificator.h>
 
-#import "UIAlertView+Error.h"
-
 @interface OSStoreManager()
 @property (nonatomic, strong) NSSet *featureIdentifiers;
-
 @property id<RMStoreReceiptVerificator> receiptVerificator;
 @property RMStoreKeychainPersistence *persistence;
 @property NSMutableDictionary *purchasedOrRestoredBlocks;
@@ -75,7 +72,7 @@
                                    
                                    successBlock();
                                } failure:^(SKPaymentTransaction *transaction, NSError *error) {
-                                   [UIAlertView showWithError:error];
+                                   
                                    failureBlock(error);
                                }];
 }
@@ -94,7 +91,7 @@
         
         successBlock();
     } failure:^(NSError *error) {
-        [UIAlertView showWithError:error];
+        
         failureBlock(error);
     }];
 }
