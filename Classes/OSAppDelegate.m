@@ -221,6 +221,15 @@
 - (void) startCustomerServices
 {
 
+// Google Analytics
+#ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
+    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
+#if DEBUG
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    [GAI sharedInstance].dryRun = YES;
+#endif
+#endif
+    
 // Dropbox
 #ifndef IOPENSONGS_DROPBOX_APP_KEY
 #define IOPENSONGS_DROPBOX_APP_KEY @""
@@ -263,11 +272,6 @@
 
 
 #ifndef DEBUG // just enable when in the wild
-
-// Google Analytics
-#ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
-    [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
-#endif
 
 // Test Flight
 #ifdef IOPENSONGS_TESTFLIGHT_KEY
