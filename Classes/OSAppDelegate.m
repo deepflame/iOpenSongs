@@ -13,16 +13,17 @@
 
 #import "UIApplication+Directories.h"
 
-#import "OSDefines.h" // can be removed if not found
-#import "GAI.h"
-
-#import <TargetConditionals.h>
-#import <DropboxSDK/DropboxSDK.h>
-
 #import "OSStoreManager.h"
 #import "OSCoreDataManager.h"
+
+#import "OSDefines.h" // can be removed if not found
+
+#import <TargetConditionals.h>
+
 #import <iNotify/iNotify.h>
 #import <Appirater/Appirater.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <DropboxSDK/DropboxSDK.h>
 
 #if DEBUG
 #import <PonyDebugger.h>
