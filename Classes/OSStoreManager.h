@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/SKProduct.h>
+#import <StoreKit/SKPaymentTransaction.h>
 
 #import "OSInAppPurchaseIdentifiers.h"
 
@@ -23,8 +24,8 @@
                          failure:(void (^)(NSError *error))failure;
 
 - (void)buyProduct:(NSString *)productIdentifier
-           success:(void (^)(void))successBlock
-           failure:(void (^)(NSError *error))failureBlock;
+           success:(void (^)(SKPaymentTransaction *transaction))successBlock
+           failure:(void (^)(SKPaymentTransaction *transaction, NSError *error))failureBlock;
 
 - (void)restoreTransactionsOnSuccess:(void (^)(void))successBlock
                              failure:(void (^)(NSError *error))failureBlock;

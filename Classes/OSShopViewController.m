@@ -64,14 +64,14 @@
                                                       QButtonElement *purchase = [[QButtonElement alloc] initWithTitle:product.localizedPrice];
                                                       purchase.onSelected = ^ {
                                                           // buy product
-                                                          [[OSStoreManager sharedManager] buyProduct:product.productIdentifier success:^ {
+                                                          [[OSStoreManager sharedManager] buyProduct:product.productIdentifier success:^(SKPaymentTransaction *transaction) {
                                                               [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Thank you!", nil)
                                                                                              message:NSLocalizedString(@"'...' successfully purchased.", nil)
                                                                                    cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
                                                                                    otherButtonTitles:nil handler:nil];
                                                               
                                                               [self refreshProductList];
-                                                          } failure:^(NSError *error) {
+                                                          } failure:^(SKPaymentTransaction *transaction, NSError *error) {
                                                               [UIAlertView showWithError:error];
                                                           }];
                                                       };
