@@ -98,7 +98,7 @@
                                                                                                                        currencyCode:[product.priceLocale objectForKey:NSLocaleCurrencyCode]] build]];
                                                               
                                                               [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Thank you!", nil)
-                                                                                             message:NSLocalizedString(@"'...' successfully purchased.", nil)
+                                                                                             message:[NSString stringWithFormat:NSLocalizedString(@"'%@' successfully purchased.", nil), product.localizedTitle]
                                                                                    cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
                                                                                    otherButtonTitles:nil handler:nil];
                                                               
