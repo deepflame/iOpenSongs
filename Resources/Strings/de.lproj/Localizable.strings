@@ -52,3 +52,7 @@
 "OK" = "OK";
 "Cancel" = "Abbrechen";
 "Close" = "Schießen";
+
+// notification settings
+"https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications.plist" = "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/de.lproj/Notifications.plist";
+"https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications-Beta.plist" = "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/de.lproj/Notifications-Beta.plist";
