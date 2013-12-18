@@ -37,7 +37,6 @@
 @property (nonatomic) BOOL appiraterAlertShowing;
 @end
 
-@synthesize window = _window;
 
 @implementation OSAppDelegate
 
