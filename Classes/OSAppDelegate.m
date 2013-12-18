@@ -330,7 +330,7 @@
     [Appirater setDelegate:self];
     self.appiraterAlertShowing = NO;
 #if DEBUG
-    [Appirater setDebug:YES];
+    [Appirater setDebug:NO];
 #endif
 
 
