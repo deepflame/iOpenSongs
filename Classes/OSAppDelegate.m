@@ -21,6 +21,8 @@
 
 #import "OSStoreManager.h"
 #import "OSCoreDataManager.h"
+#import <iNotify/iNotify.h>
+#import <Appirater/Appirater.h>
 
 #if DEBUG
 #import <PonyDebugger.h>
@@ -30,9 +32,12 @@
 #import "OSTestController.h"
 #endif
 
-@implementation OSAppDelegate
+@interface OSAppDelegate () <iNotifyDelegate, AppiraterDelegate>
+@end
 
 @synthesize window = _window;
+
+@implementation OSAppDelegate
 
 + (OSAppDelegate *)sharedAppDelegate
 {
@@ -59,6 +64,8 @@
     
     //[application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     //[application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
+    [Appirater appLaunched:YES];
     
 #if RUN_KIF_TESTS
     [[OSTestController sharedInstance] startTestingWithCompletionBlock:^{
@@ -107,6 +114,7 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -205,6 +213,36 @@
                                                    appSecret:IOPENSONGS_DROPBOX_APP_SECRET
                                                         root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
     [DBSession setSharedSession:dbSession];
+
+// iNotify
+#if PRODUCTION
+#define IOPENSONGS_INOTIFY_URL NSLocalizedString(@"https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications.plist", @"iNotify plist URL")
+#else
+#define IOPENSONGS_INOTIFY_URL NSLocalizedString(@"https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications-Beta.plist", @"iNotify plist URL")
+#endif
+    [iNotify sharedInstance].notificationsPlistURL = IOPENSONGS_INOTIFY_URL;
+    [iNotify sharedInstance].showOnFirstLaunch = NO;
+    [iNotify sharedInstance].delegate = self;
+    [iNotify sharedInstance].okButtonLabel = NSLocalizedString(@"OK", nil);
+    [iNotify sharedInstance].ignoreButtonLabel = NSLocalizedString(@"Ignore", nil);
+    [iNotify sharedInstance].remindButtonLabel = NSLocalizedString(@"Remind Me Later", nil);
+    [iNotify sharedInstance].defaultActionButtonLabel = NSLocalizedString(@"More Info", nil);
+#if DEBUG
+    [iNotify sharedInstance].debug = YES;
+#endif
+
+// Appirater
+    [Appirater setAppId:@"501589566"];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:10];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDelegate:self];
+    self.appiraterAlertShowing = NO;
+#if DEBUG
+    [Appirater setDebug:YES];
+#endif
+
 
 #ifndef DEBUG // just enable when in the wild
 
