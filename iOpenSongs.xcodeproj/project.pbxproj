@@ -314,6 +314,8 @@
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
+		3EA6681E1861ADB700BFC325 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Notifications.plist; sourceTree = "<group>"; };
+		3EA668201861ADC100BFC325 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/Notifications.plist; sourceTree = "<group>"; };
 		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 			children = (
 				3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */,
 				3E9200BA178E4A66004C5F8B /* Localizable.strings */,
+				3EA6681F1861ADB700BFC325 /* Notifications.plist */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -1257,6 +1260,15 @@
 				3E832DA81850A9DE002EE80F /* pt */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3EA6681F1861ADB700BFC325 /* Notifications.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EA6681E1861ADB700BFC325 /* en */,
+				3EA668201861ADC100BFC325 /* de */,
+			);
+			name = Notifications.plist;
 			sourceTree = "<group>";
 		};
 		3EDDA40B14AEC3A400BB781C /* InfoPlist.strings */ = {

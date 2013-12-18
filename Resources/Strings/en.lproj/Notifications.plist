@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2013/02/01</key>
+	<dict>
+		<key>Title</key>
+		<string>Some notification title</string>
+		<key>Message</key>
+		<string>Some notification message</string>
+	</dict>
+	<key>2013/01/22</key>
+	<dict>
+		<key>Title</key>
+		<string>Some other notification title</string>
+		<key>Message</key>
+		<string>Some other notification message</string>
+		<key>ActionButton</key>
+		<string>Find Out More...</string>
+		<key>ActionURL</key>
+		<string>http://example.com/somepage.html</string>
+	</dict>
+</dict>
+</plist>
