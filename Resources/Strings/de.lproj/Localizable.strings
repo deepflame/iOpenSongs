@@ -53,6 +53,10 @@
 "Cancel" = "Abbrechen";
 "Close" = "Schießen";
 
-// notification settings
+// iNotify settings
+//"OK" = "OK";
+"Ignore" = "Ignorieren";
+"Remind Me Later" = "Später erinnern";
+"More Info" = "Mehr Infos";
 "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications.plist" = "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/de.lproj/Notifications.plist";
 "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications-Beta.plist" = "https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/de.lproj/Notifications-Beta.plist";
