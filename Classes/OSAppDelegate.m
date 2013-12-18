@@ -34,6 +34,7 @@
 #endif
 
 @interface OSAppDelegate () <iNotifyDelegate, AppiraterDelegate>
+@property (nonatomic) BOOL appiraterAlertShowing;
 @end
 
 @synthesize window = _window;
@@ -172,6 +173,23 @@
 - (void)application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
 {
 
+}
+
+#pragma mark - AppiraterDelegate
+
+- (void)appiraterDidDisplayAlert:(Appirater *)appirater
+{
+    self.appiraterAlertShowing = YES;
+}
+
+#pragma mark - iNofifyDelegate
+
+- (BOOL)iNotifyShouldDisplayNotificationWithKey:(NSString *)key details:(NSDictionary *)details
+{
+    if (self.appiraterAlertShowing) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - Private Methods
