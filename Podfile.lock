@@ -17,6 +17,7 @@ PODS:
   - FormatterKit/UnitOfInformationFormatter (1.3.1)
   - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - iNotify (1.5.5)
   - KIF (2.0.0)
   - libffi (3.0.13)
   - MagicalRecord (2.2)
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - FormatterKit/UnitOfInformationFormatter
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK (= 2.0beta4)
+  - iNotify
   - KIF (~> 2.0)
   - MagicalRecord
   - MBProgressHUD
@@ -74,6 +76,7 @@ SPEC CHECKSUMS:
   FormatterKit: 1238e7a6800c750a5f50f5fec1cc430d8e3b71e7
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
   GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
+  iNotify: ba25d4a32c1e9407acc565a252f0d9cc7bc6ffbc
   KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
