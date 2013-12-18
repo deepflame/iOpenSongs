@@ -9,8 +9,6 @@
 #ifndef OSInAppPurchaseIdentifiers_h
 #define OSInAppPurchaseIdentifiers_h
 
-#define OS_IAP @"de.boehrnsen.iopensongs.inapp"
-
 #define OS_IAP_DROPBOX @"de.boehrnsen.iopensongs.inapp.dropbox"
 
 #endif
