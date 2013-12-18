@@ -16,6 +16,7 @@ pod 'RMStore'
 
 # User Services
 pod 'iNotify'
+pod 'Appirater'
 pod 'uservoice-iphone-sdk'
 pod 'GoogleAnalytics-iOS-SDK', '2.0beta4' # TODO: update to 3.0
 

@@ -1,4 +1,5 @@
 PODS:
+  - Appirater (2.0.2)
   - BlocksKit (2.0.0):
     - BlocksKit/All
   - BlocksKit/All (2.0.0):
@@ -47,6 +48,7 @@ PODS:
   - uservoice-iphone-sdk (2.0.13)
 
 DEPENDENCIES:
+  - Appirater
   - BlocksKit
   - Dropbox-iOS-SDK
   - FormatterKit/UnitOfInformationFormatter
@@ -71,6 +73,7 @@ EXTERNAL SOURCES:
     :podspec: Other Sources/podspecs/TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
+  Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
   Dropbox-iOS-SDK: 1a8850056b1bd54bc023bd268e1e6f4d6ee9d7a5
   FormatterKit: 1238e7a6800c750a5f50f5fec1cc430d8e3b71e7
