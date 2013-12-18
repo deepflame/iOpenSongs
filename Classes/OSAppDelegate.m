@@ -23,6 +23,7 @@
 #import <iNotify/iNotify.h>
 #import <Appirater/Appirater.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 #import <DropboxSDK/DropboxSDK.h>
 
 #if DEBUG
@@ -35,6 +36,7 @@
 
 @interface OSAppDelegate () <iNotifyDelegate, AppiraterDelegate>
 @property (nonatomic) BOOL appiraterAlertShowing;
+@property (nonatomic, strong) id<GAITracker> tracker;
 @end
 
 
@@ -181,6 +183,33 @@
     self.appiraterAlertShowing = YES;
 }
 
+- (void)appiraterDidOptToRate:(Appirater *)appirater
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                               action:@"rate"
+                                                                label:nil
+                                                                value:nil] build]];
+}
+
+- (void)appiraterDidOptToRemindLater:(Appirater *)appirater
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                               action:@"remind me"
+                                                                label:nil
+                                                                value:nil] build]];
+}
+
+- (void)appiraterDidDeclineToRate:(Appirater *)appirater
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                               action:@"decline"
+                                                                label:nil
+                                                                value:nil] build]];
+}
+
 #pragma mark - iNofifyDelegate
 
 - (BOOL)iNotifyShouldDisplayNotificationWithKey:(NSString *)key details:(NSDictionary *)details
@@ -189,6 +218,40 @@
         return NO;
     }
     return YES;
+}
+
+- (void)iNotifyUserDidIgnoreNotificationWithKey:(NSString *)key details:(NSDictionary *)details
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"iNotify"
+                                                               action:@"ignore"
+                                                                label:key
+                                                                value:nil] build]];
+}
+
+- (void)iNotifyUserDidRequestReminderForNotificationWithKey:(NSString *)key details:(NSDictionary *)details
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"iNotify"
+                                                               action:@"remind me"
+                                                                label:key
+                                                                value:nil] build]];
+}
+
+- (void)iNotifyUserDidViewActionURLForNotificationWithKey:(NSString *)key details:(NSDictionary *)details
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"iNotify"
+                                                               action:@"view action-url"
+                                                                label:key
+                                                                value:nil] build]];
+}
+
+- (void)iNotifyNotificationsCheckDidFailWithError:(NSError *)error
+{
+    // Google Analytics
+    [self.tracker send:[[GAIDictionaryBuilder createExceptionWithDescription:[error description]
+                                                                   withFatal:@0] build]];
 }
 
 #pragma mark - Private Methods
