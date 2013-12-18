@@ -29,6 +29,7 @@
 "Sets" = "Grupos";
 "New Set" = "Novo Grupo";
 "Rename Set" = "Renomear Grupo";
+"Duplicate Set" = "Duplicar Grupo";
 "%d Songs" = "%d Músicas";
 "Add Songs" = "Adicionar Músicas";
 
@@ -41,6 +42,16 @@
 "Lyrics" = "Letra";
 "Comments" = "Comentários";
 
+// Shop
+"Shop" = "Loja";
+"Thank you!" = "Obrigado!";
+"'%@' successfully purchased." = "'%@' comprado com sucesso.";
+"Purchased" = "Compra";
+"Previous Purchases" = "Compras Anteriores";
+"Restore" = "Restaurar";
+"Purchases successfully restored" = "Compras restaurados com sucesso";
+"Retry" = "Tentar Novamente";
+
 // Support
 "Feedback and Support" = "Feedback e Suporte";
 "Support" = "Suporte";
@@ -52,3 +63,5 @@
 "OK" = "OK";
 "Cancel" = "Cancelar";
 "Close" = "Fechar";
+"Dismiss" = "Fechar";
+

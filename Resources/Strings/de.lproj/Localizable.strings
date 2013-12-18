@@ -29,6 +29,7 @@
 "Sets" = "Sets";
 "New Set" = "Neues Set";
 "Rename Set" = "Set umbenennen";
+"Duplicate Set" = "Set duplizieren";
 "%d Songs" = "%d Lieder";
 "Add Songs" = "Lieder hinzufügen";
 
@@ -41,6 +42,16 @@
 "Lyrics" = "Liedtext";
 "Comments" = "Kommentare";
 
+// Shop
+"Shop" = "Shop";
+"Thank you!" = "Vielen Dank!";
+"'%@' successfully purchased." = "'%@' erfolgreich gekauft.";
+"Purchased" = "Gekauft";
+"Previous Purchases" = "Vorige Einkäufe";
+"Restore" = "Wiederherstellen";
+"Purchases successfully restored" = "Einkäufe erfolgreich wiederhergestellt";
+"Retry" = "Wiederholen";
+
 // Support
 "Feedback and Support" = "Feedback und Support";
 "Support" = "Support";
@@ -52,6 +63,7 @@
 "OK" = "OK";
 "Cancel" = "Abbrechen";
 "Close" = "Schießen";
+"Dismiss" = "Schließen";
 
 // iNotify settings
 //"OK" = "OK";
