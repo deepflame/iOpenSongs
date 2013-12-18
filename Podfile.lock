@@ -17,7 +17,7 @@ PODS:
   - Dropbox-iOS-SDK (1.3.9)
   - FormatterKit/UnitOfInformationFormatter (1.3.1)
   - FRLayeredNavigationController (0.4.4)
-  - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - GoogleAnalytics-iOS-SDK (3.0.2)
   - iNotify (1.5.5)
   - KIF (2.0.0)
   - libffi (3.0.13)
@@ -53,7 +53,7 @@ DEPENDENCIES:
   - Dropbox-iOS-SDK
   - FormatterKit/UnitOfInformationFormatter
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
-  - GoogleAnalytics-iOS-SDK (= 2.0beta4)
+  - GoogleAnalytics-iOS-SDK
   - iNotify
   - KIF (~> 2.0)
   - MagicalRecord
@@ -78,7 +78,7 @@ SPEC CHECKSUMS:
   Dropbox-iOS-SDK: 1a8850056b1bd54bc023bd268e1e6f4d6ee9d7a5
   FormatterKit: 1238e7a6800c750a5f50f5fec1cc430d8e3b71e7
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
-  GoogleAnalytics-iOS-SDK: acf0f1ac4dcac408d17e7766454918b7e9e2b03a
+  GoogleAnalytics-iOS-SDK: 86393b99f7328ae8d8e975fcaa8632a39dafafe8
   iNotify: ba25d4a32c1e9407acc565a252f0d9cc7bc6ffbc
   KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
