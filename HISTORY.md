@@ -1,3 +1,13 @@
+## 2.0 (131219)
+
+- added in-app store (to support development)
+- added dropbox integration (in-app purchase)
+- added new icon for iOS 7
+- added splash screens
+- feature to duplicate sets
+- started to save and restore app state
+- bugfixes
+
 ## 1.9 (131205)
 
 - added Brazilian Portuguese translation (thanks to Paulo Neto)
@@ -24,3 +34,4 @@
 - song selection during song import 
 - unified UI 
 - updated icon
+
