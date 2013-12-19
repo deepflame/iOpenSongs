@@ -150,13 +150,12 @@
     
     self.setViewController.delegate = sender;
     self.setViewController.set = set; // TODO why do I set the set every time?
+    self.currentDetailViewController = self.setViewController;
     
     // FIXME: setitem positions not consistent...
     NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", set]];
     NSUInteger index = [setItems indexOfObject:setItem];
     [self.setViewController selectPageAtIndex:index animated:NO];
-    
-    self.currentDetailViewController = self.setViewController;
 }
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didChangeSet:(Set *)set
