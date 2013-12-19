@@ -332,7 +332,7 @@
     [iNotify sharedInstance].remindButtonLabel = NSLocalizedString(@"Remind Me Later", nil);
     [iNotify sharedInstance].defaultActionButtonLabel = NSLocalizedString(@"More Info", nil);
 #if DEBUG
-    [iNotify sharedInstance].debug = YES;
+    [iNotify sharedInstance].debug = NO;
 #endif
 
 // Appirater
