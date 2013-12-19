@@ -51,7 +51,7 @@
     
 #if DEBUG
     // reset transactions in DEBUG
-    [self.persistence removeTransactions];
+    //[self.persistence removeTransactions];
 #endif
     
     self.purchasedOrRestoredBlocks = [NSMutableDictionary dictionary];
