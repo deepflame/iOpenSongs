@@ -163,6 +163,15 @@
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {
+    // ignore if device ideom does not match
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    UIUserInterfaceIdiom restorationInterfaceIdiom = [[coder decodeObjectForKey:UIApplicationStateRestorationUserInterfaceIdiomKey] integerValue];
+    UIUserInterfaceIdiom currentInterfaceIdiom = currentDevice.userInterfaceIdiom;
+    if (restorationInterfaceIdiom != currentInterfaceIdiom) {
+        NSLog(@"Ignoring restoration data for interface idiom: %d", restorationInterfaceIdiom);
+        return NO;
+    }
+    
     return YES;
 }
 
