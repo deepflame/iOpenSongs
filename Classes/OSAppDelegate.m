@@ -185,6 +185,11 @@
 
 }
 
+- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    return nil;
+}
+
 #pragma mark - AppiraterDelegate
 
 - (void)appiraterDidDisplayAlert:(Appirater *)appirater
@@ -312,7 +317,7 @@
                                                    appSecret:IOPENSONGS_DROPBOX_APP_SECRET
                                                         root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
     [DBSession setSharedSession:dbSession];
-
+    
 // iNotify
 #if PRODUCTION
 #define IOPENSONGS_INOTIFY_URL NSLocalizedString(@"https://raw.github.com/deepflame/iOpenSongs/master/Resources/Strings/en.lproj/Notifications.plist", @"iNotify plist URL")
