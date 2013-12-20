@@ -167,8 +167,15 @@
 
 - (void)setSong:(Song *)song
 {
+    [_song bk_removeAllBlockObservers];
+    
     if (_song != song) {
         _song = song;
+        
+        // update if lyrics change
+        [_song bk_addObserverForKeyPath:@"lyrics" task:^(id target) {
+            [self displaySong];
+        }];
         
         [self.delegate songView:self didChangeSong:_song];
         
