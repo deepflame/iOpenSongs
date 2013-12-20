@@ -12,5 +12,5 @@
 #import "OSSetTableViewControllerDelegate.h"
 
 @interface OSSetTableViewController : CoreDataTableViewController
-@property id<OSSetTableViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<OSSetTableViewControllerDelegate> delegate;
 @end

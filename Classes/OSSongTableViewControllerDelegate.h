@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Song.h"
-
-@class OSSongTableViewController;
+@class OSSongTableViewController, Song;
 
 @protocol OSSongTableViewControllerDelegate <NSObject>
 - (void)songTableViewController:(OSSongTableViewController *)sender didSelectSong:(Song *)song;

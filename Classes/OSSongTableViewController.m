@@ -8,6 +8,8 @@
 
 #import "OSSongTableViewController.h"
 
+#import "Song.h"
+
 #import <TDBadgedCell.h>
 #import <objc/message.h>
 
