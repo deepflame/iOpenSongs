@@ -8,6 +8,7 @@
 
 #import "OSSongSelectTableViewController.h"
 #import "OSSongViewController.h"
+#import "OSSongEditorViewController.h"
 
 #import "Song+Import.h"
 
@@ -23,8 +24,9 @@
 
 #import "OSStoreManager.h"
 
-@interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate>
+@interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate, OSSongEditorViewControllerDelegate>
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
+@property (nonatomic, strong) OSSongEditorViewController *songEditorViewController;
 @end
 
 @implementation OSSongSelectTableViewController
@@ -55,6 +57,7 @@
     }];
     
     self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.allowsSelectionDuringEditing = YES;
     
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
@@ -104,13 +107,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
-    // close sliding view controller if on Phone in portrait mode
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
-        UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-        [self.layeredNavigationController compressViewControllers:YES];
+    if (! [tableView isEditing]) {
+        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+        
+        // close sliding view controller if on Phone in portrait mode
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
+            UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+            [self.layeredNavigationController compressViewControllers:YES];
+        }
+    } else {
+        Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        self.songEditorViewController.song = song;
+        
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.songEditorViewController];
+        navController.modalPresentationStyle = UIModalPresentationFormSheet;
+        navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        [self presentViewController:navController animated:YES completion:^ {
+            
+        }];
     }
+    
 }
 
 #pragma mark - OSImportTableViewControllerDelegate
@@ -119,6 +136,13 @@
 {
     [sender handleImportErrors]; // TODO: do error handling somewhere else
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+#pragma mark - OSSongEditorViewControllerDelegate
+
+- (void)songEditorViewController:(OSSongEditorViewController *)sender finishedEditingSong:(Song *)song
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 # pragma mark - Getter implementations
@@ -157,6 +181,15 @@
         [_importActionSheet bk_setCancelButtonWithTitle:nil handler:nil];
     }
     return _importActionSheet;
+}
+
+- (OSSongEditorViewController *)songEditorViewController
+{
+    if (! _songEditorViewController) {
+        _songEditorViewController = [[OSSongEditorViewController alloc] init];
+        _songEditorViewController.delegate = self;
+    }
+    return _songEditorViewController;
 }
 
 @end
