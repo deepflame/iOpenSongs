@@ -52,6 +52,21 @@
         title = @"Dropbox";
     }
     self.title = title;
+    // toolbar items
+    UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *unlinkDropboxButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Unlink Dropbox", nil) style:UIBarButtonItemStyleBordered handler:^(id sender) {
+        [UIAlertView bk_showAlertViewWithTitle:@""
+                                       message:NSLocalizedString(@"Unlink Dropbox?", nil)
+                             cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                             otherButtonTitles:@[NSLocalizedString(@"OK", nil)]
+                                       handler:^(UIAlertView *sender, NSInteger buttonIndex) {
+                                           if (buttonIndex == 1) {
+                                               [[DBSession sharedSession] unlinkAll];
+                                               [self.navigationController popToRootViewControllerAnimated:YES];
+                                           }
+        }];
+    }];
+    self.toolbarItems = @[flexibleItem, unlinkDropboxButtonItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,6 +76,10 @@
     // access Dropbox
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self.restClient loadMetadata:self.initialPath];
+    
+    // show toolbar only for root path
+    // TODO: make this self contained (hide again when leaving import, could not get this to work yet)
+    [self.navigationController setToolbarHidden:![self isRootPath] animated:animated];
 }
 
 #pragma mark - DBRestClientDelegate

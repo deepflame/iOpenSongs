@@ -83,6 +83,10 @@
 {
     [super viewDidAppear:animated];
     
+    // hide toolbar (e.g. from import)
+    // TODO: make this self contained in import
+    [self.navigationController setToolbarHidden:YES animated:animated];
+    
     // import songs from application sharing if no songs found
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         OSITunesImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
