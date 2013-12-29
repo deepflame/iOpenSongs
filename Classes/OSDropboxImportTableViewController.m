@@ -47,11 +47,10 @@
 {
     [super viewDidLoad];
 
-    NSString *title = self.initialPath.lastPathComponent;
-    if ([title isEqualToString:@"/"]) {
-        title = @"Dropbox";
+    if ([self isRootPath]) {
+        self.title = @"Dropbox";
     }
-    self.title = title;
+
     // toolbar items
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *unlinkDropboxButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Unlink Dropbox", nil) style:UIBarButtonItemStyleBordered handler:^(id sender) {
