@@ -21,6 +21,7 @@
 - (void)deselectAllItems;
 - (void)importAllSelectedItems;
 - (void)handleImportErrors;
+- (BOOL)isRootPath;
 
 @property (nonatomic, weak) id<OSImportTableViewControllerDelegate> delegate;
 

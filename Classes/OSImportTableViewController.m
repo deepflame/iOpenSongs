@@ -222,6 +222,26 @@
                                 handler:nil];
 }
 
+- (BOOL)isRootPath
+{
+    if (! self.navigationController) {
+        return YES; // <- !!
+    }
+    
+    NSUInteger currIndex = [self.navigationController.viewControllers indexOfObject:self];
+    if (currIndex == 0) {
+        return YES; // <- !!
+    }
+    
+    NSUInteger prevIndex = currIndex - 1;
+    UIViewController *prevController = self.navigationController.viewControllers[prevIndex];
+    if (! [prevController isKindOfClass:[OSImportTableViewController class]]) {
+        return YES; // <- !!
+    }
+    
+    return NO;
+}
+
 #pragma mark - Private Methods
 
 - (void)performSelectorOnSelectedIndexPaths:(SEL)aSelector
