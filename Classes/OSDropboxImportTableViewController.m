@@ -22,7 +22,6 @@
 @implementation OSDropboxImportTableViewController
 
 @synthesize restClient = _restClient;
-@synthesize filesToImport = _filesToImport;
 
 #pragma mark -
 
