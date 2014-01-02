@@ -16,11 +16,9 @@
 #import "UIAlertView+Error.h"
 
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 #import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 
 @interface OSShopViewController ()
-@property (nonatomic, strong) id<GAITracker> tracker;
 @end
 
 @implementation OSShopViewController
@@ -33,9 +31,6 @@
         root.title = NSLocalizedString(@"Shop", nil);
         root.grouped = YES;
         self.root = root;
-        
-        // Google Analytics
-        self.tracker = [[GAI sharedInstance] defaultTracker];
     }
     return self;
 }
@@ -47,17 +42,10 @@
     [self refreshProductList];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.tracker set:kGAIScreenName value:NSStringFromClass([self class])];
-    [self.tracker send:[[GAIDictionaryBuilder createAppView] build]];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self trackScreen:@"Shop"];
 }
 
 #pragma mark - Private Methods
@@ -80,22 +68,13 @@
                                                       purchase.onSelected = ^ {
                                                           
                                                           // Google Analytics
-                                                          [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:NSStringFromClass([self class])
-                                                                                                                     action:@"button"
-                                                                                                                      label:@"buy"
-                                                                                                                      value:nil] build]];
+                                                          [self trackEventWithAction:@"purchase" label:product.productIdentifier value:nil];
                                                           
                                                           // buy product
                                                           [[OSStoreManager sharedManager] buyProduct:product.productIdentifier success:^(SKPaymentTransaction *transaction) {
                                                               
                                                               // Google Analytics
-                                                              [self.tracker send:[[GAIDictionaryBuilder createItemWithTransactionId:transaction.transactionIdentifier
-                                                                                                                               name:product.productIdentifier
-                                                                                                                                sku:product.productIdentifier
-                                                                                                                           category:@""
-                                                                                                                              price:product.price
-                                                                                                                           quantity:@1
-                                                                                                                       currencyCode:[product.priceLocale objectForKey:NSLocaleCurrencyCode]] build]];
+                                                              [self trackItemWithTransaction:transaction product:product];
                                                               
                                                               [UIAlertView bk_showAlertViewWithTitle:NSLocalizedString(@"Thank you!", nil)
                                                                                              message:[NSString stringWithFormat:NSLocalizedString(@"'%@' successfully purchased.", nil), product.localizedTitle]
@@ -107,8 +86,7 @@
                                                           } failure:^(SKPaymentTransaction *transaction, NSError *error) {
                                                               
                                                               // Google Analytics
-                                                              [self.tracker send:[[GAIDictionaryBuilder createExceptionWithDescription:[error description]
-                                                                                                                             withFatal:@0] build]];
+                                                              [self trackError:error];
                                                               
                                                               [UIAlertView showWithError:error];
                                                           }];
@@ -130,10 +108,7 @@
                                                   restoreButton.onSelected = ^ {
                                                       
                                                       // Google Analytics
-                                                      [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:NSStringFromClass([self class])
-                                                                                                                 action:@"button"
-                                                                                                                  label:@"restore purchases"
-                                                                                                                  value:nil] build]];
+                                                      [self trackEventWithAction:@"restore"];
                                                       
                                                       // restore purchases
                                                       [[OSStoreManager sharedManager] restoreTransactionsOnSuccess:^ {
@@ -146,8 +121,7 @@
                                                       } failure:^(NSError *error) {
                                                           
                                                           // Google Analytics
-                                                          [self.tracker send:[[GAIDictionaryBuilder createExceptionWithDescription:[error description]
-                                                                                                                         withFatal:@0] build]];
+                                                          [self trackError:error];
                                                           
                                                           [UIAlertView showWithError:error];
                                                       }];
@@ -162,8 +136,7 @@
                                               } failure:^(NSError *error) {
                                                   
                                                   // Google Analytics
-                                                  [self.tracker send:[[GAIDictionaryBuilder createExceptionWithDescription:[error description]
-                                                                                                                 withFatal:@0] build]];
+                                                  [self trackError:error];
                                                   
                                                   // retry contacting the app store
                                                   QSection *section = [[QSection alloc] initWithTitle:nil];
