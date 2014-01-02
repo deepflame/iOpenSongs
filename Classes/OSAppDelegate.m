@@ -108,6 +108,9 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
+    // dispatch all unsent tracking info
+    [[GAI sharedInstance] dispatch];
+    
     // save all changes to the data
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
 }
@@ -150,6 +153,9 @@
      See also applicationDidEnterBackground:.
      */
 
+    // dispatch all unsent tracking info
+    [[GAI sharedInstance] dispatch];
+    
     // save all changes to the data
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
     
@@ -301,8 +307,10 @@
 // Google Analytics
 #ifdef IOPENSONGS_GOOGLEANALYTICS_KEY
     self.tracker = [[GAI sharedInstance] trackerWithTrackingId:IOPENSONGS_GOOGLEANALYTICS_KEY];
+    [GAI sharedInstance].dispatchInterval = 30;
 #if DEBUG
-    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    //[[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    [GAI sharedInstance].dispatchInterval = 5;
     [GAI sharedInstance].dryRun = YES;
 #endif
 #endif

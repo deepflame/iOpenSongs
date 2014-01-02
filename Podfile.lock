@@ -1,4 +1,5 @@
 PODS:
+  - AMScrollingNavbar (0.4.1)
   - Appirater (2.0.2)
   - BlocksKit (2.0.0):
     - BlocksKit/All
@@ -48,6 +49,7 @@ PODS:
   - uservoice-iphone-sdk (2.0.15)
 
 DEPENDENCIES:
+  - AMScrollingNavbar
   - Appirater
   - BlocksKit
   - Dropbox-iOS-SDK
@@ -73,6 +75,7 @@ EXTERNAL SOURCES:
     :podspec: Other Sources/podspecs/TDBadgedCell.podspec
 
 SPEC CHECKSUMS:
+  AMScrollingNavbar: d56590aa89706c409d1f37c3d806b9d138af507a
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
   Dropbox-iOS-SDK: 1a8850056b1bd54bc023bd268e1e6f4d6ee9d7a5
@@ -93,4 +96,4 @@ SPEC CHECKSUMS:
   TestFlightSDK: 0811097c1f831afb71f68ccd07ae71325cb90f43
   uservoice-iphone-sdk: c2e2bd41f27c0653efbf1c4a619f3a8fd6736e0f
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.29.0

@@ -5,6 +5,7 @@ pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLay
 pod 'MBProgressHUD'
 pod 'TDBadgedCell', :podspec => 'Other Sources/podspecs/TDBadgedCell.podspec'
 pod 'SYPaginator'
+pod 'AMScrollingNavbar'
 
 # Core
 pod 'MagicalRecord'
