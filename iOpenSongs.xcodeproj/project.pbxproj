@@ -86,6 +86,9 @@
 		3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92911316F9E160002F6ABB /* OSDropboxImportTableViewController.m */; };
 		3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */; };
 		3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */; };
+		3E9BC9F9187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BC9F8187592A100846A5E /* UIViewController+GoogleAnalytics.m */; };
+		3E9BC9FA187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BC9F8187592A100846A5E /* UIViewController+GoogleAnalytics.m */; };
+		3E9BC9FB187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BC9F8187592A100846A5E /* UIViewController+GoogleAnalytics.m */; };
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
@@ -311,13 +314,15 @@
 		3E9BA2F7170063AE004AC165 /* OSFileDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSFileDescriptor.m; sourceTree = "<group>"; };
 		3E9BA2F91700669F004AC165 /* OSFileDescriptor+Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSFileDescriptor+Dropbox.h"; sourceTree = "<group>"; };
 		3E9BA2FA1700669F004AC165 /* OSFileDescriptor+Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OSFileDescriptor+Dropbox.m"; sourceTree = "<group>"; };
+		3E9BC9F7187592A100846A5E /* UIViewController+GoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GoogleAnalytics.h"; sourceTree = "<group>"; };
+		3E9BC9F8187592A100846A5E /* UIViewController+GoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GoogleAnalytics.m"; sourceTree = "<group>"; };
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
 		3EA6681E1861ADB700BFC325 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Notifications.plist; sourceTree = "<group>"; };
 		3EA668201861ADC100BFC325 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Notifications.plist; sourceTree = "<group>"; };
-		3EA668221861CDB300BFC325 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = "en.lproj/Notifications-Beta.plist"; sourceTree = "<group>"; };
-		3EA668241861CDC700BFC325 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = "de.lproj/Notifications-Beta.plist"; sourceTree = "<group>"; };
+		3EA668221861CDB300BFC325 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/Notifications-Beta.plist"; sourceTree = "<group>"; };
+		3EA668241861CDC700BFC325 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = "de.lproj/Notifications-Beta.plist"; sourceTree = "<group>"; };
 		3EA890DB16A32B3600218AE7 /* Song+Import.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Song+Import.h"; sourceTree = "<group>"; };
 		3EA890DC16A32B3600218AE7 /* Song+Import.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Song+Import.m"; sourceTree = "<group>"; };
 		3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
@@ -720,6 +725,8 @@
 				3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */,
 				3E88433A184CAC5500EC95EF /* UIAlertView+Error.h */,
 				3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */,
+				3E9BC9F7187592A100846A5E /* UIViewController+GoogleAnalytics.h */,
+				3E9BC9F8187592A100846A5E /* UIViewController+GoogleAnalytics.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1111,6 +1118,7 @@
 				3EB908D81751870E002125FE /* NSString+SectionIndex.m in Sources */,
 				3ED1F87A184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EB908D91751870E002125FE /* UIApplication+Directories.m in Sources */,
+				3E9BC9FA187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */,
 				3EB908DA1751870E002125FE /* OSDropboxImportTableViewController.m in Sources */,
 				3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */,
 				3E108ECA184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
@@ -1165,6 +1173,7 @@
 				3E61E7E116EED0230012D34A /* NSString+SectionIndex.m in Sources */,
 				3ED1F879184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EEC566F16F1D5AA007DE9DE /* UIApplication+Directories.m in Sources */,
+				3E9BC9F9187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */,
 				3E92911516F9E160002F6ABB /* OSDropboxImportTableViewController.m in Sources */,
 				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
 				3E108EC9184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
@@ -1238,6 +1247,7 @@
 				3E2B6C09185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */,
 				3E80287D1751D9160022BF3B /* OSTestController.m in Sources */,
 				3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */,
+				3E9BC9FB187592A100846A5E /* UIViewController+GoogleAnalytics.m in Sources */,
 				3E8F90F517C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+    // Categories
+    #import "UIViewController+GoogleAnalytics.h"
+
     // External Libraries
     #import <BlocksKit/BlocksKit.h>
     #import <BlocksKit/BlocksKit+UIKit.h>
