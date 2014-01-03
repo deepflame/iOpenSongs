@@ -46,6 +46,12 @@
     [self selectSetItemAtIndexPath:[self.tableView indexPathForSelectedRow]];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self trackScreen:@"Set Items"];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -183,6 +189,8 @@
 
 -(void)addSongs:(id)sender
 {
+    [self trackEventWithAction:@"add songs"];
+    
     OSSetItemSongsTableViewController *setItemSongsTVC = [[OSSetItemSongsTableViewController alloc] init];
     setItemSongsTVC.delegate = self;
     setItemSongsTVC.dataSource = self;
@@ -208,6 +216,8 @@
 
 - (void)selectSetItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self trackEventWithAction:@"select"];
+
     SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.delegate setItemsTableViewController:self didSelectSetItem:setItem fromSet:self.set];
 }

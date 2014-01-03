@@ -38,6 +38,12 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self trackScreen:@"Support"];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
@@ -97,12 +103,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
+        [self trackEventWithAction:@"show UserVoice"];
         [self showUserVoice];
     } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
+        [self trackEventWithAction:@"show Github"];
         [self showGithub];
     } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
+        [self trackEventWithAction:@"show Twitter"];
         [self showTwitter];
     } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
+        [self trackEventWithAction:@"show About"];
         [self showAbout];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

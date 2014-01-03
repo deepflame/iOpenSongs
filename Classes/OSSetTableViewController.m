@@ -49,6 +49,8 @@ typedef NS_ENUM(NSInteger, SetActionType) {
     self.tableView.allowsSelectionDuringEditing = YES;
     
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender){
+        [self trackEventWithAction:@"new"];
+
         self.currentSetForEditing = nil;
         self.setNameAlertViewTextField.text = @"";
         self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);
@@ -66,6 +68,12 @@ typedef NS_ENUM(NSInteger, SetActionType) {
                                                withPredicate:nil
                                                      groupBy:nil
                                                     delegate:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self trackScreen:@"Sets"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -110,6 +118,8 @@ typedef NS_ENUM(NSInteger, SetActionType) {
     Set *set = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if (! tableView.editing) {
+        [self trackEventWithAction:@"select"];
+
         // display set items
         OSSetItemsTableViewController *setItemsTVC = [[OSSetItemsTableViewController alloc] init];
         setItemsTVC.set = set;
@@ -119,8 +129,9 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         [self.navigationController pushViewController:setItemsTVC animated:YES];
         
     } else {
-        self.currentSetForEditing = set;
+        [self trackEventWithAction:@"edit"];
         
+        self.currentSetForEditing = set;
         CGRect rect = [tableView rectForRowAtIndexPath:indexPath];
         [self.editSetActionSheet showFromRect:rect inView:tableView animated:YES];
     }
@@ -148,15 +159,21 @@ typedef NS_ENUM(NSInteger, SetActionType) {
                     self.currentSetForEditing = [self.currentSetForEditing clone];
                     break;
                 
+                case SetActionEdit:
+                    break;
+                    
                 default:
                     break;
             }
             
+            [self trackEventWithAction:@"ok"];
             self.currentSetForEditing.name = self.setNameAlertViewTextField.text;
         }];
         
         // Cancel Button
-        [_setNameAlertView bk_setCancelButtonWithTitle:nil handler:nil];
+        [_setNameAlertView bk_setCancelButtonWithTitle:nil handler:^ {
+            [self trackEventWithAction:@"cancel"];
+        }];
     }
     return _setNameAlertView;
 }
@@ -176,6 +193,8 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         
         // Rename Set
         [_editSetActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Rename Set", nil) handler:^{
+            [self trackEventWithAction:@"rename"];
+            
             self.setNameAlertViewTextField.text = self.currentSetForEditing.name;
             self.setNameAlertView.title = NSLocalizedString(@"Rename Set", nil);
             self.setActionType = SetActionEdit;
@@ -184,6 +203,8 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         
         // Duplicate Set
         [_editSetActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Duplicate Set", nil) handler:^{
+            [self trackEventWithAction:@"duplicate"];
+            
             self.setNameAlertViewTextField.text = self.currentSetForEditing.name;
             self.setNameAlertView.title = NSLocalizedString(@"New Set", nil);
             self.setActionType = SetActionClone;
@@ -191,7 +212,9 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         }];
         
         // Cancel Button
-        [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:nil];
+        [_editSetActionSheet bk_setCancelButtonWithTitle:nil handler:^ {
+            [self trackEventWithAction:@"cancel"];
+        }];
     }
     return _editSetActionSheet;
 }
