@@ -383,6 +383,8 @@
     
     // navigation bar
     [[UINavigationBar appearance] setTintColor:osColor];
+    
+    [[UIToolbar appearance] setTintColor:osColor];
 
     // search bar
     [[UISearchBar appearance] setTintColor:[UIColor whiteColor]];
