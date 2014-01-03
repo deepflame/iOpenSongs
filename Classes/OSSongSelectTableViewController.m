@@ -82,6 +82,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self trackScreen:@"Songs"];
     
     // hide toolbar (e.g. from import)
     // TODO: make this self contained in import
@@ -101,6 +102,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self trackEventWithAction:@"delete"];
+        
         // delete object from database
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         [song MR_deleteEntity];
@@ -113,6 +116,7 @@
 {
     if (! [tableView isEditing]) {
         [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+        [self trackEventWithAction:@"select"];
         
         // close sliding view controller if on Phone in portrait mode
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
@@ -120,6 +124,8 @@
             [self.layeredNavigationController compressViewControllers:YES];
         }
     } else {
+        [self trackEventWithAction:@"edit"];
+        
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         self.songEditorViewController.song = song;
         
@@ -159,6 +165,7 @@
         
         // iTunes File Sharing
         [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{
+            [self trackEventWithAction:@"import" label:@"itunes" value:nil];
             OSImportTableViewController *importTableViewController = [[OSITunesImportTableViewController alloc] init];
             importTableViewController.delegate = _self;
             [_self.navigationController pushViewController:importTableViewController animated:YES];
@@ -167,6 +174,7 @@
         // Dropbox
         if ([[OSStoreManager sharedManager] canUseFeature:OS_IAP_DROPBOX]) {
             [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
+                [self trackEventWithAction:@"import" label:@"dropbox" value:nil];
                 if (! [[DBSession sharedSession] isLinked]) {
                     [[DBSession sharedSession] linkFromController:_self];
                     return; // <- !!
