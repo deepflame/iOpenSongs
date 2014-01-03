@@ -1,4 +1,4 @@
-platform :ios, '5.1.1'
+platform :ios, '5.1'
 
 # UI
 pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
@@ -14,6 +14,7 @@ pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
 pod 'QuickDialog', '~> 0.8.0'
 pod 'RMStore'
+#pod 'WebViewJavascriptBridge'
 
 # User Services
 pod 'iNotify'
