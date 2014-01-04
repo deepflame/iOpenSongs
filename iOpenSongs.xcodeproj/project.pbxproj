@@ -55,6 +55,9 @@
 		3E65A1D317136348009B2732 /* OSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65A1D217136348009B2732 /* OSSetViewController.m */; };
 		3E663A8F14B836CD009F1340 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E663A8E14B836CD009F1340 /* index.html */; };
 		3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E120C6614FA270F00926A74 /* RKXMLParserLibXML.m */; };
+		3E6F72AF187892030014766E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F72AE187892030014766E /* NSString+Additions.m */; };
+		3E6F72B0187892030014766E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F72AE187892030014766E /* NSString+Additions.m */; };
+		3E6F72B1187892030014766E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F72AE187892030014766E /* NSString+Additions.m */; };
 		3E7B9A2A1751D32200C74EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 		3E7B9A2B1751D32300C74EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAA4B6E5367422FAD72E0EA /* libPods.a */; };
 		3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F1B6215847150008C222F /* OSSongTableViewController.m */; };
@@ -287,6 +290,8 @@
 		3E65A1D417137206009B2732 /* OSSetTableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E663A8E14B836CD009F1340 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3E6A04831792F99700A07E70 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E6F72AD187892030014766E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		3E6F72AE187892030014766E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		3E7F1B6115847150008C222F /* OSSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewController.h; sourceTree = "<group>"; };
 		3E7F1B6215847150008C222F /* OSSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongTableViewController.m; sourceTree = "<group>"; };
 		3E7F1B64158476BC008C222F /* OSSetItemSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSetItemSongsTableViewController.h; sourceTree = "<group>"; };
@@ -721,6 +726,8 @@
 			children = (
 				3E2B6C05185E584D0055CABD /* NSManagedObject+Cloning.h */,
 				3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */,
+				3E6F72AD187892030014766E /* NSString+Additions.h */,
+				3E6F72AE187892030014766E /* NSString+Additions.m */,
 				3E120C3414F9203900926A74 /* NSString+JavaScript.h */,
 				3E120C3514F9203900926A74 /* NSString+JavaScript.m */,
 				3E61E7DF16EED0230012D34A /* NSString+SectionIndex.h */,
@@ -1133,6 +1140,7 @@
 				3EB908DB1751870E002125FE /* OSImportTableViewController.m in Sources */,
 				3E108ECA184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
 				3EB908DC1751870E002125FE /* OSITunesImportTableViewController.m in Sources */,
+				3E6F72B0187892030014766E /* NSString+Additions.m in Sources */,
 				3EB908DD1751870E002125FE /* OSFileDescriptor.m in Sources */,
 				3EB908DE1751870E002125FE /* OSFileDescriptor+Dropbox.m in Sources */,
 				3EB908DF1751870E002125FE /* OSSongView.m in Sources */,
@@ -1243,6 +1251,7 @@
 				3EFC154E17510A1D00BFA2BB /* NSString+SectionIndex.m in Sources */,
 				3ED1F87B184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EFC154F17510A1D00BFA2BB /* UIApplication+Directories.m in Sources */,
+				3E6F72B1187892030014766E /* NSString+Additions.m in Sources */,
 				3EFC155017510A1D00BFA2BB /* OSDropboxImportTableViewController.m in Sources */,
 				3EFC155117510A1D00BFA2BB /* OSImportTableViewController.m in Sources */,
 				3EFC155217510A1D00BFA2BB /* OSITunesImportTableViewController.m in Sources */,
