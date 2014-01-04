@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class OSSongEditorViewController, Song;
+@class Song;
 
 @protocol OSSongEditorViewControllerDelegate <NSObject>
-- (void)songEditorViewController:(OSSongEditorViewController *)sender finishedEditingSong:(Song *)song;
+- (void)songEditorViewController:(id)sender finishedEditingSong:(Song *)song;
 @end
