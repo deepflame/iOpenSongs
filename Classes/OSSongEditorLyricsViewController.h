@@ -12,7 +12,7 @@
 
 #import "Song.h"
 
-@interface OSSongEditorViewController : UIViewController
+@interface OSSongEditorLyricsViewController : UIViewController
 
 - (id)initWithSong:(Song *)song;
 

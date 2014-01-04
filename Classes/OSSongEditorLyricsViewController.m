@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSSongEditorViewController.h"
+#import "OSSongEditorLyricsViewController.h"
 
-@interface OSSongEditorViewController ()
+@interface OSSongEditorLyricsViewController ()
 @property (nonatomic, strong) Song *song;
 @property (nonatomic, strong) UITextView *textView;
 @end
 
-@implementation OSSongEditorViewController
+@implementation OSSongEditorLyricsViewController
 
 - (id)initWithSong:(Song *)song
 {
@@ -28,8 +28,8 @@
         UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCancel handler:^(id sender) {
             [self.delegate songEditorViewController:self finishedEditingSong:self.song];
         }];
-        self.navigationItem.leftBarButtonItems = @[saveBarButton, cancelBarButton];
         
+        self.navigationItem.leftBarButtonItems = @[saveBarButton, cancelBarButton];
     }
     return self;
 }
