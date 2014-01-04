@@ -10,6 +10,9 @@
 		3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
 		3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
 		3E0C37E217C22D3B006E0B78 /* OSShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */; };
+		3E0E38B118775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E38B018775F5C00BCFB56 /* OSSongEditorValuesViewController.m */; };
+		3E0E38B218775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E38B018775F5C00BCFB56 /* OSSongEditorValuesViewController.m */; };
+		3E0E38B318775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E38B018775F5C00BCFB56 /* OSSongEditorValuesViewController.m */; };
 		3E108EC9184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
 		3E108ECA184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
 		3E108ECB184F5C46007E1A63 /* OSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E108EC8184F5C46007E1A63 /* OSCoreDataManager.m */; };
@@ -95,9 +98,9 @@
 		3EA0BB9816D119B500D7D97D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA0BB9716D119B500D7D97D /* libxml2.dylib */; };
 		3EA0BB9F16D121C800D7D97D /* Amazing Grace in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9D16D121C800D7D97D /* Amazing Grace */; };
 		3EA0BBA016D121C800D7D97D /* Sample Song in Resources */ = {isa = PBXBuildFile; fileRef = 3EA0BB9E16D121C800D7D97D /* Sample Song */; };
-		3EA1A3B318644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorViewController.m */; };
-		3EA1A3B418644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorViewController.m */; };
-		3EA1A3B518644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorViewController.m */; };
+		3EA1A3B318644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorLyricsViewController.m */; };
+		3EA1A3B418644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorLyricsViewController.m */; };
+		3EA1A3B518644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A3B118644B7F00AB77F4 /* OSSongEditorLyricsViewController.m */; };
 		3EA890DD16A32B3600218AE7 /* Song+Import.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA890DC16A32B3600218AE7 /* Song+Import.m */; };
 		3EB664C417AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
 		3EB664C517AE44F400A2F8F2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB664C317AE44F400A2F8F2 /* Crashlytics.framework */; };
@@ -230,6 +233,8 @@
 		3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = iOpenSongs.entitlements; path = Resources/iOpenSongs.entitlements; sourceTree = SOURCE_ROOT; };
 		3E0C37DE17C22D3B006E0B78 /* OSShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSShopViewController.h; sourceTree = "<group>"; };
 		3E0C37DF17C22D3B006E0B78 /* OSShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSShopViewController.m; sourceTree = "<group>"; };
+		3E0E38AF18775F5C00BCFB56 /* OSSongEditorValuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongEditorValuesViewController.h; sourceTree = "<group>"; };
+		3E0E38B018775F5C00BCFB56 /* OSSongEditorValuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongEditorValuesViewController.m; sourceTree = "<group>"; };
 		3E0E6E31171998D8007493F5 /* OSSetViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetViewControllerDelegate.h; sourceTree = "<group>"; };
 		3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E0F56CB1745E014001DC326 /* FRLayeredNavigationController+ExposePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRLayeredNavigationController+ExposePrivate.h"; sourceTree = "<group>"; };
@@ -327,8 +332,8 @@
 		3EA0BB9716D119B500D7D97D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EA0BB9D16D121C800D7D97D /* Amazing Grace */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Amazing Grace"; sourceTree = "<group>"; };
 		3EA0BB9E16D121C800D7D97D /* Sample Song */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Song"; sourceTree = "<group>"; };
-		3EA1A3B018644B7F00AB77F4 /* OSSongEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongEditorViewController.h; sourceTree = "<group>"; };
-		3EA1A3B118644B7F00AB77F4 /* OSSongEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongEditorViewController.m; sourceTree = "<group>"; };
+		3EA1A3B018644B7F00AB77F4 /* OSSongEditorLyricsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongEditorLyricsViewController.h; sourceTree = "<group>"; };
+		3EA1A3B118644B7F00AB77F4 /* OSSongEditorLyricsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSongEditorLyricsViewController.m; sourceTree = "<group>"; };
 		3EA1A3B918645B5C00AB77F4 /* OSSongEditorViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongEditorViewControllerDelegate.h; sourceTree = "<group>"; };
 		3EA6681E1861ADB700BFC325 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Notifications.plist; sourceTree = "<group>"; };
 		3EA668201861ADC100BFC325 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Notifications.plist; sourceTree = "<group>"; };
@@ -587,8 +592,10 @@
 				3EDDA47914B098F700BB781C /* OSSongSelectTableViewController.m */,
 				3EDDA41714AEC3A400BB781C /* OSSongViewController.h */,
 				3EDDA41814AEC3A400BB781C /* OSSongViewController.m */,
-				3EA1A3B018644B7F00AB77F4 /* OSSongEditorViewController.h */,
-				3EA1A3B118644B7F00AB77F4 /* OSSongEditorViewController.m */,
+				3EA1A3B018644B7F00AB77F4 /* OSSongEditorLyricsViewController.h */,
+				3EA1A3B118644B7F00AB77F4 /* OSSongEditorLyricsViewController.m */,
+				3E0E38AF18775F5C00BCFB56 /* OSSongEditorValuesViewController.h */,
+				3E0E38B018775F5C00BCFB56 /* OSSongEditorValuesViewController.m */,
 				3EA1A3B918645B5C00AB77F4 /* OSSongEditorViewControllerDelegate.h */,
 			);
 			name = Song;
@@ -1112,7 +1119,7 @@
 				3EB908C21751870E002125FE /* RKXMLParserLibXML.m in Sources */,
 				3EB908C31751870E002125FE /* OSMainViewController.m in Sources */,
 				3EB908C41751870E002125FE /* OSAppDelegate.m in Sources */,
-				3EA1A3B418644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */,
+				3EA1A3B418644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */,
 				3EB908C51751870E002125FE /* OSSongViewController.m in Sources */,
 				3EB908C61751870E002125FE /* OSSongSelectTableViewController.m in Sources */,
 				3EB908C71751870E002125FE /* OSAboutViewController.m in Sources */,
@@ -1120,6 +1127,7 @@
 				3EB908C91751870E002125FE /* Song+OpenSong.m in Sources */,
 				3EB908CB1751870E002125FE /* OSSetTableViewController.m in Sources */,
 				3EB908CC1751870E002125FE /* OSSetItemsTableViewController.m in Sources */,
+				3E0E38B218775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */,
 				3EB908CD1751870E002125FE /* OSSongTableViewController.m in Sources */,
 				3EB908CE1751870E002125FE /* OSSetItemSongsTableViewController.m in Sources */,
 				3EB908CF1751870E002125FE /* SetItem.m in Sources */,
@@ -1169,7 +1177,7 @@
 				3E6C470A1525EDAA00164540 /* RKXMLParserLibXML.m in Sources */,
 				3E35844B151E100E00137FC4 /* OSMainViewController.m in Sources */,
 				3EDDA41314AEC3A400BB781C /* OSAppDelegate.m in Sources */,
-				3EA1A3B318644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */,
+				3EA1A3B318644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */,
 				3EDDA41914AEC3A400BB781C /* OSSongViewController.m in Sources */,
 				3EDDA47A14B098F700BB781C /* OSSongSelectTableViewController.m in Sources */,
 				3E5E878514DD7680003B645A /* OSAboutViewController.m in Sources */,
@@ -1177,6 +1185,7 @@
 				3E120C3214F91DD400926A74 /* Song+OpenSong.m in Sources */,
 				3EC697E9155E06C500022C0E /* OSSetTableViewController.m in Sources */,
 				3ECC4B01155E711C0003FFC7 /* OSSetItemsTableViewController.m in Sources */,
+				3E0E38B118775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */,
 				3E7F1B6315847150008C222F /* OSSongTableViewController.m in Sources */,
 				3E7F1B66158476BC008C222F /* OSSetItemSongsTableViewController.m in Sources */,
 				3E7F8814160CCCED004EB8E6 /* SetItem.m in Sources */,
@@ -1197,6 +1206,7 @@
 				3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */,
 				3E108EC9184F5C46007E1A63 /* OSCoreDataManager.m in Sources */,
 				3E3FFF8916FE046000E6381A /* OSITunesImportTableViewController.m in Sources */,
+				3E6F72AF187892030014766E /* NSString+Additions.m in Sources */,
 				3E9BA2F8170063AE004AC165 /* OSFileDescriptor.m in Sources */,
 				3E9BA2FB1700669F004AC165 /* OSFileDescriptor+Dropbox.m in Sources */,
 				3E3EE7B817080B26006A9B34 /* OSSongView.m in Sources */,
@@ -1236,8 +1246,9 @@
 				3EFC154117510A1D00BFA2BB /* OSSetTableViewController.m in Sources */,
 				3EFC154217510A1D00BFA2BB /* OSSetItemsTableViewController.m in Sources */,
 				3EFC154317510A1D00BFA2BB /* OSSongTableViewController.m in Sources */,
-				3EA1A3B518644B7F00AB77F4 /* OSSongEditorViewController.m in Sources */,
+				3EA1A3B518644B7F00AB77F4 /* OSSongEditorLyricsViewController.m in Sources */,
 				3EFC154417510A1D00BFA2BB /* OSSetItemSongsTableViewController.m in Sources */,
+				3E0E38B318775F5C00BCFB56 /* OSSongEditorValuesViewController.m in Sources */,
 				3EFC154517510A1D00BFA2BB /* SetItem.m in Sources */,
 				3EFC154617510A1D00BFA2BB /* SetItemSong.m in Sources */,
 				3EFC154717510A1D00BFA2BB /* Set.m in Sources */,
