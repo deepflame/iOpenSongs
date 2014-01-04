@@ -151,6 +151,9 @@
 
 - (void)songEditorViewController:(OSSongEditorLyricsViewController *)sender finishedEditingSong:(Song *)song
 {
+    if (! [song isInserted]) {
+        [[NSManagedObjectContext MR_defaultContext] insertObject:song];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -161,6 +164,19 @@
     if (_importActionSheet == nil) {
         _importActionSheet = [UIActionSheet bk_actionSheetWithTitle:NSLocalizedString(@"Import from", nil)];
         OSSongSelectTableViewController *_self = self;
+        
+        // New Song
+        [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"New Song", nil) handler:^{
+            Song *newSong = [[Song alloc] initWithEntity:[Song MR_entityDescription] insertIntoManagedObjectContext:nil];
+            
+            OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:newSong];
+            songEditorViewController.delegate = self;
+            
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:songEditorViewController];
+            navController.modalPresentationStyle = UIModalPresentationFormSheet;
+            navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self presentModalViewController:navController animated:YES];
+        }];
         
         // iTunes File Sharing
         [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{
