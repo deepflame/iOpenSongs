@@ -19,6 +19,14 @@
 {
     self = [super init];
     if (self) {
+        UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemSave handler:^(id sender) {
+            //self.song.lyrics = self.textView.text;
+            [self.delegate songEditorViewController:self finishedEditingSong:self.song];
+        }];
+        UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCancel handler:^(id sender) {
+            [self.delegate songEditorViewController:self finishedEditingSong:self.song];
+        }];
+        self.navigationItem.leftBarButtonItems = @[saveBarButton, cancelBarButton];
         self.song = song;
     }
     return self;
