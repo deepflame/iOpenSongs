@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 Andreas Boehrnsen. All rights reserved.
 //
 
-#import "OSSongOptionsViewController.h"
+#import "OSSongEditorValuesViewController.h"
 
-@interface OSSongOptionsViewController ()
 
+@interface OSSongEditorValuesViewController () <OSSongEditorViewControllerDelegate>
+@property (nonatomic, strong) Song *song;
 @end
 
-@implementation OSSongOptionsViewController
+@implementation OSSongEditorValuesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithSong:(Song *)song
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        self.song = song;
     }
     return self;
 }

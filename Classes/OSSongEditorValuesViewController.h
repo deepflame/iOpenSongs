@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuickDialog/QuickDialog.h>
 
-@interface OSSongOptionsViewController : UITableViewController
+#import "Song.h"
+@interface OSSongEditorValuesViewController : QuickDialogController
 
+- (id)initWithSong:(Song *)song;
 @end
