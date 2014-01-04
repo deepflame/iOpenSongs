@@ -5,7 +5,6 @@ pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLay
 pod 'MBProgressHUD'
 pod 'TDBadgedCell', :podspec => 'Other Sources/podspecs/TDBadgedCell.podspec'
 pod 'SYPaginator'
-pod 'AMScrollingNavbar'
 
 # Core
 pod 'MagicalRecord'
@@ -19,7 +18,7 @@ pod 'RMStore'
 # User Services
 pod 'iNotify'
 pod 'Appirater'
-pod 'uservoice-iphone-sdk'
+pod 'uservoice-iphone-sdk', '~> 2.0.15'
 pod 'GoogleAnalytics-iOS-SDK'
 
 # Development
