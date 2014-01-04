@@ -24,9 +24,9 @@ PODS:
   - libffi (3.0.13)
   - MagicalRecord (2.2)
   - MBProgressHUD (0.8)
-  - PonyDebugger (0.3.0):
+  - PonyDebugger (0.3.1):
     - SocketRocket
-  - QuickDialog (0.8)
+  - QuickDialog (0.9.1)
   - RMStore (0.4.2):
     - RMStore/AppReceiptVerificator
     - RMStore/Core
@@ -61,7 +61,7 @@ DEPENDENCIES:
   - MagicalRecord
   - MBProgressHUD
   - PonyDebugger
-  - QuickDialog (~> 0.8.0)
+  - QuickDialog
   - RMStore
   - SYPaginator
   - TDBadgedCell (from `Other Sources/podspecs/TDBadgedCell.podspec`)
@@ -87,8 +87,8 @@ SPEC CHECKSUMS:
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  PonyDebugger: b8b504d18c6fe8cfe904295d8e908b076bdfa291
-  QuickDialog: 465692c7c599ad41a0c46022c55779dd61a4d4fe
+  PonyDebugger: d31607145d785b2315cd6f6a4ebaa378eb0c1340
+  QuickDialog: fa9f2641b1c2028667e115add0005530c77193a3
   RMStore: 5f2b9b125b2d05670a5d11327d56bc6205ef0fd1
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
   SYPaginator: 067fbdbdbd1bb282228e28e87b992d21cf70f90a

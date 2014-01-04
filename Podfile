@@ -12,7 +12,7 @@ pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit/UnitOfInformationFormatter'
 pod 'BlocksKit'
-pod 'QuickDialog', '~> 0.8.0'
+pod 'QuickDialog'
 pod 'RMStore'
 #pod 'WebViewJavascriptBridge'
 
