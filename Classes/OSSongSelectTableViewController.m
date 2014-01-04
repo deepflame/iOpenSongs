@@ -8,7 +8,8 @@
 
 #import "OSSongSelectTableViewController.h"
 #import "OSSongViewController.h"
-#import "OSSongEditorViewController.h"
+#import "OSSongEditorLyricsViewController.h"
+#import "OSSongEditorValuesViewController.h"
 
 #import "Song+Import.h"
 
@@ -26,7 +27,6 @@
 
 @interface OSSongSelectTableViewController () <UIActionSheetDelegate, OSImportTableViewControllerDelegate, OSSongEditorViewControllerDelegate>
 @property (nonatomic, strong) UIActionSheet *importActionSheet;
-@property (nonatomic, strong) OSSongEditorViewController *songEditorViewController;
 @end
 
 @implementation OSSongSelectTableViewController
@@ -127,15 +127,14 @@
         [self trackEventWithAction:@"edit"];
         
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-        self.songEditorViewController.song = song;
+        OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:song];
+        songEditorViewController.delegate = self;
         
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.songEditorViewController];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:songEditorViewController];
         navController.modalPresentationStyle = UIModalPresentationFormSheet;
         navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
-        [self presentViewController:navController animated:YES completion:^ {
-            
-        }];
+        [self presentViewController:navController animated:YES completion:nil];
     }
     
 }
@@ -150,7 +149,7 @@
 
 #pragma mark - OSSongEditorViewControllerDelegate
 
-- (void)songEditorViewController:(OSSongEditorViewController *)sender finishedEditingSong:(Song *)song
+- (void)songEditorViewController:(OSSongEditorLyricsViewController *)sender finishedEditingSong:(Song *)song
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -193,15 +192,6 @@
         [_importActionSheet bk_setCancelButtonWithTitle:nil handler:nil];
     }
     return _importActionSheet;
-}
-
-- (OSSongEditorViewController *)songEditorViewController
-{
-    if (! _songEditorViewController) {
-        _songEditorViewController = [[OSSongEditorViewController alloc] init];
-        _songEditorViewController.delegate = self;
-    }
-    return _songEditorViewController;
 }
 
 @end
