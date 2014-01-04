@@ -60,6 +60,7 @@
 {
     if (! _textView) {
         _textView = [[UITextView alloc] init];
+        _textView.font = [UIFont fontWithName:@"CourierNewPSMT" size:18.0];
     }
     return _textView;
 }
