@@ -14,7 +14,7 @@
 
 @interface OSSongEditorViewController : UIViewController
 
-@property (nonatomic, copy) Song* song;
+- (id)initWithSong:(Song *)song;
 
 @property (nonatomic, weak) id<OSSongEditorViewControllerDelegate> delegate;
 

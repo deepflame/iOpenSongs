@@ -9,15 +9,17 @@
 #import "OSSongEditorViewController.h"
 
 @interface OSSongEditorViewController ()
+@property (nonatomic, strong) Song *song;
 @property (nonatomic, strong) UITextView *textView;
 @end
 
 @implementation OSSongEditorViewController
 
-- (id)init
+- (id)initWithSong:(Song *)song
 {
     self = [super init];
     if (self) {
+        self.song = song;
         
         UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemSave handler:^(id sender) {
             self.song.lyrics = self.textView.text;
@@ -41,23 +43,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = self.song.title;
+    self.textView.text = self.song.lyrics;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Public Accessor Implementations
-
-- (void)setSong:(Song *)song
-{
-    if (_song != song) {
-        _song = song;
-        self.textView.text = _song.lyrics;
-    }
 }
 
 #pragma mark - Private Accessor Implementations
