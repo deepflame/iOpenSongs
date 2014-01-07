@@ -145,31 +145,30 @@
     self.root.sections = [[NSMutableArray alloc] init];
     
     [[OSStoreManager sharedManager] requestProductsOnSuccess:^(NSArray *products, NSArray *invalidIdentifiers) {
-                                                  
-                                                  // buy products
-                                                  [products bk_each:^(SKProduct *product) {
-                                                      QSection *section = [self sectionForPurchasingProduct:product];
-                                                      [self.root addSection:section];
-                                                  }];
+        // buy products
+        [products bk_each:^(SKProduct *product) {
+            QSection *section = [self sectionForPurchasingProduct:product];
+            [self.root addSection:section];
+        }];
         
-                                                  // restore previous purchases
-                                                  QSection *section = [self sectionForRestore];
-                                                  [self.root addSection:section];
+        // restore previous purchases
+        QSection *section = [self sectionForRestore];
+        [self.root addSection:section];
         
-                                                  [self.quickDialogTableView reloadData];
-                                                  [hud hide:YES];
-                                              } failure:^(NSError *error) {
-                                                  
-                                                  // Google Analytics
-                                                  [self trackError:error];
-                                                  
-                                                  // retry contacting the app store
-                                                  QSection *section = [self sectionForRefreshWithError:error];
-                                                  [self.root addSection:section];
-                                                  
-                                                  [self.quickDialogTableView reloadData];
-                                                  [hud hide:YES];
-                                              }];
+        [self.quickDialogTableView reloadData];
+        [hud hide:YES];
+    } failure:^(NSError *error) {
+        
+        // Google Analytics
+        [self trackError:error];
+        
+        // retry contacting the app store
+        QSection *section = [self sectionForRefreshWithError:error];
+        [self.root addSection:section];
+        
+        [self.quickDialogTableView reloadData];
+        [hud hide:YES];
+    }];
     
 }
 
