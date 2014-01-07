@@ -32,8 +32,7 @@
 
 - (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block;
 
-- (BOOL)isPurchased:(NSString *)productIdentifier;
 
-- (BOOL)canUseFeature:(NSString *)identifier;
+- (BOOL)isPurchased:(NSString *)productIdentifier;
 
 @end

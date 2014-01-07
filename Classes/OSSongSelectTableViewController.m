@@ -187,7 +187,7 @@
         }];
         
         // Dropbox
-        if ([[OSStoreManager sharedManager] canUseFeature:OS_IAP_DROPBOX]) {
+        if ([[OSStoreManager sharedManager] isPurchased:OS_IAP_DROPBOX]) {
             [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"Dropbox", nil) handler:^{
                 [self trackEventWithAction:@"import" label:@"dropbox" value:nil];
                 if (! [[DBSession sharedSession] isLinked]) {

@@ -104,17 +104,13 @@
 
 - (BOOL)isPurchased:(NSString *)productIdentifier
 {
-    return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
-}
-
-- (BOOL)canUseFeature:(NSString *)productIdentifier
-{
     // open all features if shop disabled
     if (! [[self class] isEnabled]) {
         return YES; // <- !!
     }
     
-    return [self isPurchased:productIdentifier];
+    return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
+}
 }
 
 - (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block
