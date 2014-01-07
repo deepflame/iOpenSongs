@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
     
-    [self refreshProductList];
+    [self fetchAndDisplayProductList];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -71,7 +71,7 @@
                                  cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
                                  otherButtonTitles:nil handler:nil];
             
-            [self refreshProductList];
+            [self fetchAndDisplayProductList];
             
         } failure:^(SKPaymentTransaction *transaction, NSError *error) {
             
@@ -107,7 +107,7 @@
                                            message:NSLocalizedString(@"Purchases successfully restored", nil)
                                  cancelButtonTitle:NSLocalizedString(@"Dismiss", nil)
                                  otherButtonTitles:nil handler:nil];
-            [self refreshProductList];
+            [self fetchAndDisplayProductList];
             
         } failure:^(NSError *error) {
             
@@ -128,7 +128,7 @@
     QTextElement *description = [[QTextElement alloc] initWithText:error.localizedDescription];
     QButtonElement *retryButton = [[QButtonElement alloc] initWithTitle:NSLocalizedString(@"Retry", nil)];
     retryButton.onSelected = ^ {
-        [self refreshProductList];
+        [self fetchAndDisplayProductList];
     };
     [section addElement:description];
     [section addElement:retryButton];
@@ -136,7 +136,7 @@
     return section;
 }
 
-- (void)refreshProductList
+- (void)fetchAndDisplayProductList
 {
     // show HUD
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
