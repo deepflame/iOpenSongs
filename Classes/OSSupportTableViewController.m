@@ -9,7 +9,12 @@
 #import "OSSupportTableViewController.h"
 #import "OSAboutViewController.h"
 
-#import <UserVoice.h>
+#import <uservoice-iphone-sdk/UserVoice.h>
+#import <uservoice-iphone-sdk/UVRootViewController.h>
+#import <uservoice-iphone-sdk/UVNavigationController.h>
+#import <uservoice-iphone-sdk/UVBabayaga.h>
+#import <uservoice-iphone-sdk/UVSession.h>
+#import <uservoice-iphone-sdk/UVUtils.h>
 #import "OSDefines.h"
 #import "OSUserVoiceStyleSheet.h"
 
@@ -100,6 +105,18 @@
 {
 #if defined IOPENSONGS_USERVOICE_CONFIG
     [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
+    
+    NSString *viewToLoad = @"welcome";
+    UVRootViewController *userVoiceViewController = [[UVRootViewController alloc] initWithViewToLoad:viewToLoad];
+    
+    [UVBabayaga track:VIEW_CHANNEL];
+    [UVSession currentSession].isModal = YES;
+    UINavigationController *navigationController = [[UVNavigationController alloc] init];
+    [UVUtils applyStylesheetToNavigationController:navigationController];
+    navigationController.viewControllers = @[userVoiceViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController:navigationController animated:YES];
 #else
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
