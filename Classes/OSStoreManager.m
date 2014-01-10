@@ -12,6 +12,8 @@
 #import <RMStore/RMStoreKeychainPersistence.h>
 #import <RMStore/RMStoreTransactionReceiptVerificator.h>
 
+#import "SKProduct+Plist.h"
+
 @interface OSStoreManager()
 @property (nonatomic, strong) NSSet *featureIdentifiers;
 @property id<RMStoreReceiptVerificator> receiptVerificator;
@@ -65,20 +67,10 @@
         [[RMStore defaultStore] requestProducts:self.featureIdentifiers success:success failure:failure];        
     } else {
         // build product data from plist file
-        NSMutableArray *products = [NSMutableArray array];
-        
         NSString *rootPath = [[NSBundle mainBundle] bundlePath];
         NSString *pListPath = [rootPath stringByAppendingPathComponent:@"Products.plist"];
-       
-        NSArray *pInfos = [NSArray arrayWithContentsOfFile:pListPath];
-        for (NSDictionary *pInfo in pInfos) {
-            SKProduct *product = [[SKProduct alloc] init];
-            [product setValue:[pInfo valueForKey:@"productIdentifier"] forKey:@"productIdentifier"];
-            [product setValue:[pInfo valueForKey:@"localizedTitle"] forKey:@"localizedTitle"];
-            [product setValue:[pInfo valueForKey:@"localizedDescription"] forKey:@"localizedDescription"];
-            
-            [products addObject:product];
-        }
+        
+        NSArray *products = [SKProduct productsWithContentsOfFile:pListPath];
         success(products, @[]);
     }
 }
