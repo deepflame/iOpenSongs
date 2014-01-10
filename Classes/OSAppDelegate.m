@@ -24,6 +24,7 @@
 #import <Appirater/Appirater.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
+#import <uservoice-iphone-sdk/UserVoice.h>
 #import <DropboxSDK/DropboxSDK.h>
 
 #if DEBUG
@@ -355,6 +356,10 @@
     [Appirater setDebug:NO];
 #endif
 
+// UserVoice
+#ifdef IOPENSONGS_USERVOICE_CONFIG
+    [UserVoice initialize:IOPENSONGS_USERVOICE_CONFIG];
+#endif
 
 #ifndef DEBUG // just enable when in the wild
 
