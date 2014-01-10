@@ -13,29 +13,79 @@
 #import "OSDefines.h"
 #import "OSUserVoiceStyleSheet.h"
 
-#define INDEXPATH_USER_VOICE [NSIndexPath indexPathForRow:0 inSection:0]
-#define INDEXPATH_GITHUB     [NSIndexPath indexPathForRow:0 inSection:1]
-#define INDEXPATH_TWITTER    [NSIndexPath indexPathForRow:1 inSection:1]
-#define INDEXPATH_ABOUT      [NSIndexPath indexPathForRow:0 inSection:2]
-
 @interface OSSupportTableViewController ()
 @end
 
 @implementation OSSupportTableViewController
 
-#pragma mark - UIViewController
-
-- (NSString *)title
+- (OSSupportTableViewController *)init
 {
-    return NSLocalizedString(@"Support", nil);
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc] init];
+        root.title = NSLocalizedString(@"Support", nil);
+        root.grouped = YES;
+        
+        QLabelElement *feedackButton = [[QLabelElement alloc] initWithTitle:NSLocalizedString(@"Feedback and Support", nil) Value:nil];
+        feedackButton.image = [UIImage imageNamed:@"glyphicons_244_conversation"];
+        feedackButton.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        feedackButton.keepSelected = NO;
+        feedackButton.onSelected = ^ {
+            [self trackEventWithAction:@"show UserVoice"];
+            [self showUserVoice];
+        };
+
+        QLabelElement *githubButton = [[QLabelElement alloc] initWithTitle:NSLocalizedString(@"Fork Me", nil) Value:nil];
+        githubButton.image = [UIImage imageNamed:@"glyphicons_381_github"];
+        githubButton.onSelected = ^ {
+            [self trackEventWithAction:@"show Github"];
+            [self showGithub];
+        };
+
+        QLabelElement *twitterButton = [[QLabelElement alloc] initWithTitle:NSLocalizedString(@"Follow Us", nil) Value:nil];
+        twitterButton.image = [UIImage imageNamed:@"glyphicons_392_twitter"];
+        twitterButton.onSelected = ^ {
+            [self trackEventWithAction:@"show Twitter"];
+            [self showTwitter];
+        };
+
+        QLabelElement *aboutButton = [[QLabelElement alloc] initWithTitle:NSLocalizedString(@"About", nil) Value:self.version];
+        aboutButton.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        aboutButton.onSelected = ^ {
+            [self trackEventWithAction:@"show About"];
+            [self showAbout];
+        };
+        
+        QSection *section1 = [[QSection alloc] initWithTitle:nil];
+        [section1 addElement:feedackButton];
+        
+        QSection *section2 = [[QSection alloc] initWithTitle:nil];
+        [section2 addElement:githubButton];
+        [section2 addElement:twitterButton];
+        
+        QSection *section3 = [[QSection alloc] initWithTitle:nil];
+        [section3 addElement:aboutButton];
+        
+        [root addSection:section1];
+        [root addSection:section2];
+        [root addSection:section3];
+        
+        self.root = root;
+    }
+    return self;
 }
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.contentSizeForViewInPopover = CGSizeMake(320, 320);
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStyleDone handler:^(id sender) {
+        [self.delegate supportViewController:self shouldFinishDisplaying:YES];
+    }];
+    self.navigationItem.leftBarButtonItems = @[doneItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,90 +94,12 @@
     [self trackScreen:@"Support"];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return YES;
-}
-
-#pragma mark - UITableViewDelegate
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                      reuseIdentifier:CellIdentifier];
-    }
-    
-    if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
-        cell.textLabel.text = NSLocalizedString(@"Feedback and Support", nil);
-        cell.imageView.image = [UIImage imageNamed:@"glyphicons_244_conversation"];
-    } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
-        cell.textLabel.text = NSLocalizedString(@"Fork Me", nil);
-        cell.imageView.image = [UIImage imageNamed:@"glyphicons_381_github"];
-    } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
-        cell.textLabel.text = NSLocalizedString(@"Follow Us", nil);
-        cell.imageView.image = [UIImage imageNamed:@"glyphicons_392_twitter"];
-    } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
-        cell.textLabel.text = NSLocalizedString(@"About", nil);
-        cell.detailTextLabel.text = self.version;
-        // push content on Phone
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-    }
-    
-    return cell;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 3;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    switch (section) {
-        case 0:
-            return 1;
-        case 1:
-            return 2;
-        case 2:
-            return 1;
-    }
-    return NSNotFound;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-    if ([indexPath isEqual:INDEXPATH_USER_VOICE]) {
-        [self trackEventWithAction:@"show UserVoice"];
-        [self showUserVoice];
-    } else if ([indexPath isEqual:INDEXPATH_GITHUB]) {
-        [self trackEventWithAction:@"show Github"];
-        [self showGithub];
-    } else if ([indexPath isEqual:INDEXPATH_TWITTER]) {
-        [self trackEventWithAction:@"show Twitter"];
-        [self showTwitter];
-    } else if ([indexPath isEqual:INDEXPATH_ABOUT]) {
-        [self trackEventWithAction:@"show About"];
-        [self showAbout];
-    }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 #pragma mark - Private Methods
 
 - (void)showUserVoice
 {
 #if defined IOPENSONGS_USERVOICE_CONFIG
     [UVStyleSheet setStyleSheet:[[OSUserVoiceStyleSheet alloc] init]];
-    [UserVoice presentUserVoiceInterfaceForParentViewController:self andConfig:IOPENSONGS_USERVOICE_CONFIG];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.delegate supportViewController:self willPresentModalViewController:nil];
-    }
 #else
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iopensongs.uservoice.com"]];
 #endif
@@ -170,24 +142,7 @@
 - (void)showAbout
 {
     OSAboutViewController *aboutVC = [[OSAboutViewController alloc] init];
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self.navigationController pushViewController:aboutVC animated:YES];
-    } else {
-        // bar button to dismiss modal view
-        UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStylePlain handler:^(id sender) {
-            [self dismissModalViewControllerAnimated:YES];
-        }];
-        aboutVC.navigationItem.leftBarButtonItem = doneBarButtonItem;
-        
-        // configure modal view
-        UINavigationController *aboutNC = [[UINavigationController alloc] initWithRootViewController:aboutVC];
-        aboutNC.modalPresentationStyle = UIModalPresentationFormSheet;
-        aboutNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        [self.delegate supportViewController:self willPresentModalViewController:aboutNC];
-        [self presentViewController:aboutNC animated:YES completion:nil];
-    }
+    [self.navigationController pushViewController:aboutVC animated:YES];
 }
 
 - (NSString *)version

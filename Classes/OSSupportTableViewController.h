@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import <QuickDialog/QuickDialog.h>
+
 #import "OSSupportViewControllerDelegate.h"
 
-@interface OSSupportTableViewController : UITableViewController
+@interface OSSupportTableViewController : QuickDialogController
 @property (nonatomic, weak) id<OSSupportViewControllerDelegate> delegate;
 @end

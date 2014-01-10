@@ -11,5 +11,5 @@
 @class OSSupportTableViewController;
 
 @protocol OSSupportViewControllerDelegate <NSObject>
-- (void)supportViewController:(OSSupportTableViewController *)sender willPresentModalViewController:(UIViewController *)controller;
+- (void)supportViewController:(OSSupportTableViewController *)sender shouldFinishDisplaying:(BOOL)animated;
 @end
