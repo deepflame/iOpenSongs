@@ -12,7 +12,6 @@
 #import "OSSupportTableViewController.h"
 
 @interface OSDetailViewController () <OSSupportViewControllerDelegate>
-@property (nonatomic, strong) UIPopoverController *extrasPopoverController;
 @property (nonatomic, strong) OSSupportTableViewController *extrasTableViewController;
 @end
 
@@ -39,9 +38,13 @@
 
 #pragma mark - OSSupportViewControllerDelegate
 
-- (void)supportViewController:(OSSupportTableViewController *)sender willPresentModalViewController:(UIViewController *)controller
+- (void)supportViewController:(OSSupportTableViewController *)sender shouldFinishDisplaying:(BOOL)animated
 {
-    [self.extrasPopoverController dismissPopoverAnimated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self dismissModalViewControllerAnimated:animated];
+    } else {
+        [self.navigationController popViewControllerAnimated:animated];
+    }
 }
 
 #pragma mark - Actions
@@ -49,13 +52,10 @@
 - (void)showSupportInfo:(id)sender
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if (self.extrasPopoverController.popoverVisible) {
-            [self.extrasPopoverController dismissPopoverAnimated:YES];
-        } else {
-            [self.extrasPopoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItems[0]
-                                                 permittedArrowDirections:UIPopoverArrowDirectionAny
-                                                                 animated:YES];
-        }
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
+        navController.modalPresentationStyle = UIModalPresentationFormSheet;
+        navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentModalViewController:navController animated:YES];
     } else {
         [self.navigationController pushViewController:self.extrasTableViewController animated:YES];
     }
@@ -79,15 +79,6 @@
         _extrasTableViewController.delegate = self;
     }
     return _extrasTableViewController;
-}
-
-- (UIPopoverController *)extrasPopoverController
-{
-    if (!_extrasPopoverController) {
-        UINavigationController *extrasNC = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
-        _extrasPopoverController = [[UIPopoverController alloc] initWithContentViewController:extrasNC];
-    }
-    return _extrasPopoverController;
 }
 
 @end
