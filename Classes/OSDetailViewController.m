@@ -12,7 +12,7 @@
 #import "OSSupportTableViewController.h"
 
 @interface OSDetailViewController () <OSSupportViewControllerDelegate>
-@property (nonatomic, strong) OSSupportTableViewController *extrasTableViewController;
+@property (nonatomic, strong) OSSupportTableViewController *supportViewController;
 @end
 
 @implementation OSDetailViewController
@@ -52,12 +52,12 @@
 - (void)showSupportInfo:(id)sender
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.extrasTableViewController];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.supportViewController];
         navController.modalPresentationStyle = UIModalPresentationFormSheet;
         navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentModalViewController:navController animated:YES];
     } else {
-        [self.navigationController pushViewController:self.extrasTableViewController animated:YES];
+        [self.navigationController pushViewController:self.supportViewController animated:YES];
     }
 }
 
@@ -72,13 +72,13 @@
 
 #pragma mark - Private Accessors
 
-- (OSSupportTableViewController *)extrasTableViewController
+- (OSSupportTableViewController *)supportViewController
 {
-    if (!_extrasTableViewController) {
-        _extrasTableViewController = [[OSSupportTableViewController alloc] init];
-        _extrasTableViewController.delegate = self;
+    if (!_supportViewController) {
+        _supportViewController = [[OSSupportTableViewController alloc] init];
+        _supportViewController.delegate = self;
     }
-    return _extrasTableViewController;
+    return _supportViewController;
 }
 
 @end
