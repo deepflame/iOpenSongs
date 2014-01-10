@@ -128,13 +128,7 @@
         
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:song];
-        songEditorViewController.delegate = self;
-        
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:songEditorViewController];
-        navController.modalPresentationStyle = UIModalPresentationFormSheet;
-        navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        [self presentViewController:navController animated:YES completion:nil];
+        [songEditorViewController presentFromViewController:self animated:YES completion:nil];
     }
     
 }

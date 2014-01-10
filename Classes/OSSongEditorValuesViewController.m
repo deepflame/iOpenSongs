@@ -98,7 +98,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - 
+
+
+- (void)presentFromViewController:(id<OSSongEditorViewControllerDelegate>)viewController animated:(BOOL)flag completion:(void (^)(void))completion
+{
+    self.delegate = viewController;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [(UIViewController *)viewController presentViewController:navController animated:flag completion:completion];
+}
+
+#pragma mark - OSSongEditorViewControllerDelegate
 
 - (void)songEditorViewController:(OSSongEditorLyricsViewController *)sender finishedEditingSong:(Song *)song
 {

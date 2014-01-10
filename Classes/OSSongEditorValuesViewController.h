@@ -17,6 +17,8 @@
 
 - (id)initWithSong:(Song *)song;
 
+- (void)presentFromViewController:(id<OSSongEditorViewControllerDelegate>)viewController animated:(BOOL)flag completion:(void (^)(void))completion;
+
 @property (nonatomic, weak) id<OSSongEditorViewControllerDelegate> delegate;
 
 @end
