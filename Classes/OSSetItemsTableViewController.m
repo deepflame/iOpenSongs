@@ -12,12 +12,13 @@
 #import "Song.h"
 
 #import "OSSongViewController.h"
+#import "OSSongEditorValuesViewController.h"
 #import "OSSetItemSongsTableViewController.h"
 #import "OSMainViewController.h"
 
 #import <objc/message.h>
 
-@interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate>
+@interface OSSetItemsTableViewController () <OSSongTableViewControllerDelegate, OSSongTableViewControllerDataSource, OSSetItemSongsTableViewControllerDelegate, OSSongEditorViewControllerDelegate>
 
 @end
 
@@ -31,6 +32,8 @@
 
     // preserve selection between presentations
     self.clearsSelectionOnViewWillAppear = NO;
+    
+    self.tableView.allowsSelectionDuringEditing = YES;
  
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSongs:)];
     self.navigationItem.leftBarButtonItems = @[addButtonItem];
@@ -122,12 +125,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self selectSetItemAtIndexPath:indexPath];
+    if (! [tableView isEditing]) {
+      [self selectSetItemAtIndexPath:indexPath];
     
-    // close sliding view controller if on Phone in portrait mode
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && 
-        UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-        [self.layeredNavigationController compressViewControllers:YES];
+      // close sliding view controller if on Phone in portrait mode
+      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
+          UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+          [self.layeredNavigationController compressViewControllers:YES];
+      }
+    } else {
+        [self trackEventWithAction:@"edit"];
+        
+        SetItemSong* setItem = (SetItemSong *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:setItem.song];
+        [songEditorViewController presentFromViewController:self animated:YES completion:nil];
     }
 }
 
@@ -183,6 +194,13 @@
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
     [self.navigationController popViewControllerAnimated:animated];
+}
+
+#pragma mark - OSSongEditorViewControllerDelegate
+
+- (void)songEditorViewController:(id)sender finishedEditingSong:(Song *)song
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Actions
