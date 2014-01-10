@@ -29,6 +29,12 @@
 		3E14408C1860890700E68FCE /* Images-Release.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408B1860890700E68FCE /* Images-Release.xcassets */; };
 		3E14408E1860897200E68FCE /* Images-Integration.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E14408D1860897200E68FCE /* Images-Integration.xcassets */; };
 		3E19FF6216FD4A08005E0630 /* OSImportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */; };
+		3E23C93F187C8C000061B80E /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E23C93E187C8C000061B80E /* Products.plist */; };
+		3E23C940187C8C000061B80E /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E23C93E187C8C000061B80E /* Products.plist */; };
+		3E23C941187C8C000061B80E /* Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E23C93E187C8C000061B80E /* Products.plist */; };
+		3E23C949187CA8AA0061B80E /* SKProduct+Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */; };
+		3E23C94A187CA8AA0061B80E /* SKProduct+Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */; };
+		3E23C94B187CA8AA0061B80E /* SKProduct+Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */; };
 		3E2B6C07185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
 		3E2B6C08185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
 		3E2B6C09185E584D0055CABD /* NSManagedObject+Cloning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */; };
@@ -257,6 +263,11 @@
 		3E14408D1860897200E68FCE /* Images-Integration.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-Integration.xcassets"; sourceTree = "<group>"; };
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
+		3E23C93E187C8C000061B80E /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
+		3E23C942187CA7EF0061B80E /* SKProduct+Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Videos.h"; sourceTree = "<group>"; };
+		3E23C943187CA7EF0061B80E /* SKProduct+Videos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Videos.m"; sourceTree = "<group>"; };
+		3E23C947187CA8AA0061B80E /* SKProduct+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Plist.h"; sourceTree = "<group>"; };
+		3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Plist.m"; sourceTree = "<group>"; };
 		3E2B6C05185E584D0055CABD /* NSManagedObject+Cloning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Cloning.h"; sourceTree = "<group>"; };
 		3E2B6C06185E584D0055CABD /* NSManagedObject+Cloning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Cloning.m"; sourceTree = "<group>"; };
 		3E358449151E100E00137FC4 /* OSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMainViewController.h; sourceTree = "<group>"; };
@@ -495,6 +506,7 @@
 				3EB9091C1751870F002125FE /* iOpenSongs.beta-Info.plist */,
 				3EFC159217510A1E00BFA2BB /* iOpenSongs.integration-Info.plist */,
 				3E0AFE551533183C00B45224 /* iOpenSongs.entitlements */,
+				3E23C93E187C8C000061B80E /* Products.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -746,6 +758,8 @@
 				3E56D6B8174FB13400F1CDEA /* NSObject+RuntimeAdditions.m */,
 				3ED1F8721847D91E009D72F0 /* SKProduct+LocalizedPrice.h */,
 				3ED1F8731847D91E009D72F0 /* SKProduct+LocalizedPrice.m */,
+				3E23C947187CA8AA0061B80E /* SKProduct+Plist.h */,
+				3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */,
 				3E88433A184CAC5500EC95EF /* UIAlertView+Error.h */,
 				3E88433B184CAC5500EC95EF /* UIAlertView+Error.m */,
 				3E9BC9F7187592A100846A5E /* UIViewController+GoogleAnalytics.h */,
@@ -929,6 +943,7 @@
 				3E8861CF17C3615500F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3EB908F11751870E002125FE /* InfoPlist.strings in Resources */,
 				3EB908F51751870E002125FE /* default.css in Resources */,
+				3E23C940187C8C000061B80E /* Products.plist in Resources */,
 				3EB908F61751870E002125FE /* ios.css in Resources */,
 				3EB908F71751870E002125FE /* index.html in Resources */,
 				3EB908F81751870E002125FE /* about.html in Resources */,
@@ -952,6 +967,7 @@
 				3E8861CE17C3613F00F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B617B249B7001E2E76 /* opensong.min.js in Resources */,
 				3EDDA40D14AEC3A400BB781C /* InfoPlist.strings in Resources */,
+				3E23C93F187C8C000061B80E /* Products.plist in Resources */,
 				3E5E878814DE556C003B645A /* default.css in Resources */,
 				3E586F1614E2A8D200345743 /* ios.css in Resources */,
 				3E663A8F14B836CD009F1340 /* index.html in Resources */,
@@ -975,6 +991,7 @@
 				3E8861D017C3616200F9B324 /* i18next-1.6.3.min.js in Resources */,
 				3E9120B717B249CA001E2E76 /* opensong.min.js in Resources */,
 				3EFC156717510A1D00BFA2BB /* InfoPlist.strings in Resources */,
+				3E23C941187C8C000061B80E /* Products.plist in Resources */,
 				3EFC156B17510A1D00BFA2BB /* default.css in Resources */,
 				3EFC156C17510A1D00BFA2BB /* ios.css in Resources */,
 				3EFC156D17510A1D00BFA2BB /* index.html in Resources */,
@@ -1162,6 +1179,7 @@
 				3E1440841860447500E68FCE /* SetItemSong+Cloning.m in Sources */,
 				3EB908E51751870E002125FE /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E117C22D3B006E0B78 /* OSShopViewController.m in Sources */,
+				3E23C94A187CA8AA0061B80E /* SKProduct+Plist.m in Sources */,
 				3E8F90F417C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 				3E88433D184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 			);
@@ -1220,6 +1238,7 @@
 				3E1440831860447500E68FCE /* SetItemSong+Cloning.m in Sources */,
 				3E56D6B9174FB13400F1CDEA /* NSObject+RuntimeAdditions.m in Sources */,
 				3E0C37E017C22D3B006E0B78 /* OSShopViewController.m in Sources */,
+				3E23C949187CA8AA0061B80E /* SKProduct+Plist.m in Sources */,
 				3E8F90F317C4594300FC8621 /* OSSettingsViewController.m in Sources */,
 				3E88433C184CAC5500EC95EF /* UIAlertView+Error.m in Sources */,
 			);
@@ -1259,6 +1278,7 @@
 				3EFC154B17510A1D00BFA2BB /* Song+AccessorOverrides.m in Sources */,
 				3EFC154C17510A1D00BFA2BB /* Song.m in Sources */,
 				3EFC154D17510A1D00BFA2BB /* OSStartupViewController.m in Sources */,
+				3E23C94B187CA8AA0061B80E /* SKProduct+Plist.m in Sources */,
 				3EFC154E17510A1D00BFA2BB /* NSString+SectionIndex.m in Sources */,
 				3ED1F87B184A0A2E009D72F0 /* OSStoreManager.m in Sources */,
 				3EFC154F17510A1D00BFA2BB /* UIApplication+Directories.m in Sources */,
