@@ -128,8 +128,8 @@
 {
     if (_set != set) {
         _set = set;
-        [self.paginatorView reloadData];
     }
+    [self.paginatorView reloadData];
 }
 
 - (SYPaginatorView *)paginatorView
