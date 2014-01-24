@@ -141,7 +141,9 @@
 
     [debugger enableViewHierarchyDebugging];
     
-    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+    if (! [self isRunningInTest]) {
+        [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+    }
 #endif
 
 }
@@ -282,8 +284,10 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        [self startCustomerServices];
-        
+        if (! [self isRunningInTest]) {
+            [self startCustomerServices];
+        }
+
         [self copySampleSongsToDocumentsDirectory];
         
         // init CoreData and StoreKit
@@ -412,6 +416,11 @@
         NSFileManager *fileMan = [NSFileManager defaultManager];
         [fileMan copyItemAtPath:songSrcPath toPath:songDstPath error:nil];
     }
+}
+
+- (id)isRunningInTest
+{
+    return [[[NSProcessInfo processInfo] environment] objectForKey:@"Test"];
 }
 
 @end
