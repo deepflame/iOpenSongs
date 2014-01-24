@@ -26,6 +26,6 @@ pod 'PonyDebugger'
 pod 'TestFlightSDK', '~> 2.0.0'
 
 # Testing
-target 'Integration', :exclusive => true do
+target 'Acceptance Tests', :exclusive => true do
   pod 'KIF', '~> 2.0'
 end
