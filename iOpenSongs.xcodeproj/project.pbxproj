@@ -971,8 +971,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "OSDEFINES_FILE=\"Other Sources/OSDefines.h\"\n\nif [ ! -f $OSDEFINES_FILE ]; then\n  touch $OSDEFINES_FILE\nfi";
+			shellPath = /bin/bash;
+			shellScript = "OSDEFINES_FILE=\"Other Sources/OSDefines.h\"\n\nif [[ ! -f $OSDEFINES_FILE ]]; then\n  touch \"$OSDEFINES_FILE\"\nfi";
 		};
 		3EB664C217AE447400A2F8F2 /* Run Script - Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
