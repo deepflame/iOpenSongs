@@ -123,6 +123,13 @@
     
     return [self.persistence isPurchasedProductOfIdentifier:productIdentifier];
 }
+
+- (BOOL)canRestorePurchases
+{
+    if ([self.class isEnabled]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)whenPurchasedOrRestored:(NSString *)productIdentifier execute:(void (^)(void))block
