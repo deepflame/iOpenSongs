@@ -1,7 +1,8 @@
+/build/
 /Pods/
 /iOpenSongs.xcodeproj/xcuserdata/
 /iOpenSongs.xcodeproj/project.xcworkspace/
 /iOpenSongs.xcworkspace/
 /Other Sources/OSDefines.h
 /Vendor/bundle
-/Vendor/glyphicons*
+
