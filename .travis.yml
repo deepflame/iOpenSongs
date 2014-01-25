@@ -1,6 +1,10 @@
 language: objective-c
 xcode_workspace: iOpenSongs.xcworkspace
 xcode_scheme: Beta
+xcode_sdk:
+  - iphonesimulator5.1
+  - iphonesimulator6.1
+  - iphonesimulator7.0
 rvm: 
   - 1.9.3
 before_install:
