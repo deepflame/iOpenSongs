@@ -804,6 +804,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EB909181751870E002125FE /* Build configuration list for PBXNativeTarget "Beta" */;
 			buildPhases = (
+				3E848EC118945BD400CBD409 /* Run Script - init OSDefines.h */,
 				3EB908BE1751870E002125FE /* Sources */,
 				3EB908E61751870E002125FE /* Frameworks */,
 				3EB908EC1751870E002125FE /* Run Script - Add Version */,
@@ -959,6 +960,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3E848EC118945BD400CBD409 /* Run Script - init OSDefines.h */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - init OSDefines.h";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OSDEFINES_FILE=\"Other Sources/OSDefines.h\"\n\nif [ ! -f $OSDEFINES_FILE ]; then\n  touch $OSDEFINES_FILE\nfi";
+		};
 		3EB664C217AE447400A2F8F2 /* Run Script - Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
