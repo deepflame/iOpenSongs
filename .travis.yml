@@ -3,7 +3,5 @@ rvm:
   - 1.9.3
 before_install:
   - git submodule update --init --recursive
-  - brew update
-  - brew install xctool
 script: ./bin/ci-test.sh
 
