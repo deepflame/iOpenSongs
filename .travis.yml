@@ -1,7 +1,8 @@
 language: objective-c
+xcode_workspace: iOpenSongs.xcworkspace
+xcode_scheme: Beta
 rvm: 
   - 1.9.3
 before_install:
   - git submodule update --init --recursive
-script: ./bin/ci-test.sh
 
