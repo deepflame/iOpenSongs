@@ -27,6 +27,9 @@
     
     UIBarButtonItem *sidebarBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
     UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Support", nil) style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
+
+    sidebarBarButtonItem.accessibilityLabel = @"Sidebar";
+    supportBarButtonItem.accessibilityLabel = @"Support";
     self.navigationItem.leftBarButtonItems = @[sidebarBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
 }
