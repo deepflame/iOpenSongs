@@ -82,11 +82,7 @@
         [tabBarViewControllers addObject:songsNavigationController];
         [tabBarViewControllers addObject:setsNavigationController];
         [tabBarViewControllers addObject:settingsNavigationController];
-        
-        // enable shop?
-        if ([OSStoreManager isEnabled]) {
-            [tabBarViewControllers addObject:shopNavigationController];
-        }
+        [tabBarViewControllers addObject:shopNavigationController];
         
         tabBarController.viewControllers = tabBarViewControllers;
         
