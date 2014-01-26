@@ -7,4 +7,4 @@ env:
   - TEST_SDK=iphonesimulator6.1 SIMULATOR=iphone
   - TEST_SDK=iphonesimulator6.1 SIMULATOR=ipad
 script:
-  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk $TEST_SDK -simulator $SIMULATOR
+  - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR

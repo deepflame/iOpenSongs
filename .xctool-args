@@ -1,0 +1,7 @@
+[
+  "-workspace", "iOpenSongs.xcworkspace",
+  "-scheme", "Beta",
+  "-configuration", "Debug",
+  "-sdk", "iphonesimulator",
+  "-arch", "i386"
+]
