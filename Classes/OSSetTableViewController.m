@@ -57,6 +57,7 @@ typedef NS_ENUM(NSInteger, SetActionType) {
         self.setActionType = SetActionNew;
         [self.setNameAlertView show];
     }];
+    addBarButtonItem.accessibilityLabel = @"Add Set";
 
     // barButtonItems
     self.navigationItem.leftBarButtonItems = @[addBarButtonItem];
