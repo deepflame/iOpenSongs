@@ -1,10 +1,8 @@
 language: objective-c
-xcode_workspace: iOpenSongs.xcworkspace
-xcode_scheme: Beta
-xcode_sdk:
-  - iphonesimulator7.0
 rvm: 
   - 1.9.3
 before_install:
   - git submodule update --init --recursive
-
+script:
+  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk iphonesimulator5.1 -simulator ipad
+  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk iphonesimulator6.1 -simulator iphone
