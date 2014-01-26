@@ -3,6 +3,9 @@ rvm:
   - 1.9.3
 before_install:
   - git submodule update --init --recursive
+env:
+  matrix:
+    - TEST_SDK=iphonesimulator5.1 
+    - TEST_SDK=iphonesimulator6.1 
 script:
-  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk iphonesimulator5.1 -simulator ipad
-  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk iphonesimulator6.1 -simulator iphone
+  - xctool -workspace iOpenSongs.xcworkspace -scheme Beta -sdk iphonesimulator test -test-sdk $TEST_SDK -simulator ipad
