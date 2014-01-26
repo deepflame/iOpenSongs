@@ -26,10 +26,10 @@
 
 - (void)testExample
 {
-    [tester tapViewWithAccessibilityLabel:@"Songs"];
-    [tester tapViewWithAccessibilityLabel:@"Sets"];
-    [tester tapViewWithAccessibilityLabel:@"Settings"];
-    [tester tapViewWithAccessibilityLabel:@"Shop"];
+    [tester tapViewWithAccessibilityLabel:@"Songs" traits:UIAccessibilityTraitButton];
+    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
+    [tester tapViewWithAccessibilityLabel:@"Settings" traits:UIAccessibilityTraitButton];
+    [tester tapViewWithAccessibilityLabel:@"Shop" traits:UIAccessibilityTraitButton];
 }
 
 @end

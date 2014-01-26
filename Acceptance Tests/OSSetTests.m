@@ -17,7 +17,7 @@
 - (void)beforeAll
 {
     [tester toggleSideBar];
-    [tester tapViewWithAccessibilityLabel:@"Sets"];
+    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
 }
 
 - (void)afterAll
@@ -27,7 +27,7 @@
 
 - (void)testAdd
 {
-    [tester tapViewWithAccessibilityLabel:@"Add Set"];
+    [tester tapViewWithAccessibilityLabel:@"Add Set" traits:UIAccessibilityTraitButton];
     [tester enterTextIntoCurrentFirstResponder:@"New Set"];
 }
 
