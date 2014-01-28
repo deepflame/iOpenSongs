@@ -1,10 +1,5 @@
 language: objective-c
 rvm:
-  - 1.9.3
-env:
-  - TEST_SDK=iphonesimulator5.1 SIMULATOR=iphone
-  - TEST_SDK=iphonesimulator5.1 SIMULATOR=ipad
-  - TEST_SDK=iphonesimulator6.1 SIMULATOR=iphone
-  - TEST_SDK=iphonesimulator6.1 SIMULATOR=ipad
+- 1.9.3
 script:
-  - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
+- xctool build
