@@ -17,27 +17,30 @@
 - (void)beforeAll
 {
     NSLog(@"KIF: beforeAll");
+    // not called when running in TravisCI
 }
 
 - (void)afterAll
 {
     NSLog(@"KIF: afterAll");
+    // not called when running in TravisCI
 }
 
 - (void)beforeEach
 {
     NSLog(@"KIF: beforeEach");
+    [tester toggleSideBar];
+    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
 }
 
 - (void)afterEach
 {
     NSLog(@"KIF: afterEach");
+    [tester toggleSideBar];
 }
 
 - (void)testAdd
 {
-    [tester toggleSideBar];
-    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
     [tester tapViewWithAccessibilityLabel:@"Add Set" traits:UIAccessibilityTraitButton];
     [tester enterTextIntoCurrentFirstResponder:@"New Set"];
 }

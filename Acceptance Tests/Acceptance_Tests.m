@@ -14,13 +14,27 @@
 
 @implementation Acceptance_Tests
 
--(void)beforeAll
+- (void)beforeAll
 {
+    NSLog(@"KIF: beforeAll");
+    // not called when running in TravisCI
+}
+
+- (void)afterAll
+{
+    NSLog(@"KIF: afterAll");
+    // not called when running in TravisCI
+}
+
+- (void)beforeEach
+{
+    NSLog(@"KIF: beforeEach");
     [tester toggleSideBar];
 }
 
--(void)afterAll
+- (void)afterEach
 {
+    NSLog(@"KIF: afterEach");
     [tester toggleSideBar];
 }
 
