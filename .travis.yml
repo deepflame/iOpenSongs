@@ -17,6 +17,5 @@ before_script:
 script:
   - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
 after_failure:
-  - ls -l $KIF_SCREENSHOTS
   - s3cmd put --guess-mime-type --config=.s3cfg $KIF_SCREENSHOTS/* s3://travis-iopensongs/$TRAVIS_JOB_NUMBER/ --verbose
 
