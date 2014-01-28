@@ -13,7 +13,7 @@ install:
   - brew update
   - brew install s3cmd
 before_script:
-  - mkdir $KIF_SCREENSHOTS
+  - mkdir -p $KIF_SCREENSHOTS
 script:
   - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
 after_failure:
