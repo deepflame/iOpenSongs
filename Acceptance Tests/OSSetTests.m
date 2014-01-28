@@ -16,17 +16,28 @@
 
 - (void)beforeAll
 {
-    [tester toggleSideBar];
-    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
+    NSLog(@"KIF: beforeAll");
 }
 
 - (void)afterAll
 {
-    [tester toggleSideBar];
+    NSLog(@"KIF: afterAll");
+}
+
+- (void)beforeEach
+{
+    NSLog(@"KIF: beforeEach");
+}
+
+- (void)afterEach
+{
+    NSLog(@"KIF: afterEach");
 }
 
 - (void)testAdd
 {
+    [tester toggleSideBar];
+    [tester tapViewWithAccessibilityLabel:@"Sets" traits:UIAccessibilityTraitButton];
     [tester tapViewWithAccessibilityLabel:@"Add Set" traits:UIAccessibilityTraitButton];
     [tester enterTextIntoCurrentFirstResponder:@"New Set"];
 }

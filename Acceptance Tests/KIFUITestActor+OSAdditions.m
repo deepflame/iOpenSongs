@@ -12,7 +12,7 @@
 
 - (void)toggleSideBar
 {
-    [tester tapViewWithAccessibilityLabel:@"Sidebar"];
+    [tester tapViewWithAccessibilityLabel:@"Sidebar" traits:UIAccessibilityTraitButton];
 }
 
 @end
