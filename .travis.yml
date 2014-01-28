@@ -1,10 +1,21 @@
 language: objective-c
 rvm:
-- 1.9.3
+  - 1.9.3
 env:
-- TEST_SDK=iphonesimulator5.1 SIMULATOR=iphone
-- TEST_SDK=iphonesimulator5.1 SIMULATOR=ipad
-- TEST_SDK=iphonesimulator6.1 SIMULATOR=iphone
-- TEST_SDK=iphonesimulator6.1 SIMULATOR=ipad
+  global:
+    - KIF_SCREENSHOTS="${TRAVIS_BUILD_DIR}/Screenshots/${TRAVIS_BUILD_NUMBER}"
+  matrix:
+    - TEST_SDK=iphonesimulator5.1 SIMULATOR=iphone
+    - TEST_SDK=iphonesimulator5.1 SIMULATOR=ipad
+    - TEST_SDK=iphonesimulator6.1 SIMULATOR=iphone
+    - TEST_SDK=iphonesimulator6.1 SIMULATOR=ipad
+install:
+  - brew update
+  - brew install s3cmd
+before_script:
+  - mkdir $KIF_SCREENSHOTS
 script:
-- xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
+  - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
+after_failure:
+  - s3cmd put --guess-mime-type --config=.s3cfg "$KIF_SCREENSHOTS/*" s3://travis-iopensongs/$TRAVIS_JOB_ID/
+
