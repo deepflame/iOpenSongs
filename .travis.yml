@@ -3,6 +3,7 @@ rvm:
   - 1.9.3
 env:
   global:
+    - LANG=en_US.UTF-8
     - KIF_SCREENSHOTS="${TRAVIS_BUILD_DIR}/Screenshots/${TRAVIS_BUILD_NUMBER}"
     - secure: N0tEZ7I8Flu1LPxHqG2a4hdZsq/i/X3nz3vbFZWdO9OW9PAm2BXh6Ndqp0W2CyKTnHuLt1l+6RvoaHW9UxHjpSElYcTHB7f61XDV6ldQ6JCk/B2V9z90imKbBN0v1yijjCN2qYSzwV6vAi+QEMyRyFTUKAKanQAng0cUfFsgT00=
   matrix:
@@ -10,6 +11,7 @@ env:
     - TEST_SDK=iphonesimulator7.0 SIMULATOR=iphone
     - TEST_SDK=iphonesimulator7.0 SIMULATOR=ipad
 before_install:
+  - gem install cocoapods # update to newest version
   - brew update
   - brew install s3cmd
 before_script:
