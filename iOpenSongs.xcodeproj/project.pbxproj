@@ -349,7 +349,6 @@
 		3EEC566E16F1D5AA007DE9DE /* UIApplication+Directories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Directories.m"; sourceTree = "<group>"; };
 		3EF0462416EB22930036A923 /* Song+AccessorOverrides.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Song+AccessorOverrides.h"; sourceTree = "<group>"; };
 		3EFC159217510A1E00BFA2BB /* iOpenSongs.integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOpenSongs.integration-Info.plist"; sourceTree = "<group>"; };
-		6CC12721D98D44BA93A177E6 /* Pods-Integration.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Integration.xcconfig"; path = "Pods/Pods-Integration.xcconfig"; sourceTree = SOURCE_ROOT; };
 		83DDE2BF561849B48BA5F099 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F9D89E5C1FC64525BEDEDAF5 /* libPods-Acceptance Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Acceptance Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
