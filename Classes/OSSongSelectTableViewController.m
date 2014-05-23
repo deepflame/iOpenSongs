@@ -73,9 +73,15 @@
     [super viewWillAppear:animated];
     
     // select previous item (e.g. if selected from state restoration)
-    Song *song = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    if (song) {
-        [self.delegate songTableViewController:self didSelectSong:song];
+    // not sure exactly when and why this crashes here so often for others
+    @try {
+        NSIndexPath *songPath = [self.tableView indexPathForSelectedRow];
+        Song *song = [self.fetchedResultsController objectAtIndexPath:songPath];
+        if (song) {
+            [self.delegate songTableViewController:self didSelectSong:song];
+        }
+    }
+    @catch (NSException *exception) {
     }
 }
 
