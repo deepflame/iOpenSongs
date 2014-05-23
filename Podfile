@@ -27,5 +27,5 @@ pod 'TestFlightSDK', '~> 2.0.0'
 
 # Testing
 target 'Acceptance Tests', :exclusive => true do
-  pod 'KIF', :head
+  pod 'KIF', '~> 3.0.0'
 end

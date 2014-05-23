@@ -19,7 +19,9 @@ PODS:
   - FRLayeredNavigationController (0.4.4)
   - GoogleAnalytics-iOS-SDK (3.0.2)
   - iNotify (1.5.5)
-  - KIF (HEAD based on 2.0.0)
+  - KIF (3.0.4):
+    - KIF/XCTest
+  - KIF/XCTest (3.0.4)
   - libffi (3.0.13)
   - MagicalRecord (2.2)
   - MBProgressHUD (0.8)
@@ -55,7 +57,7 @@ DEPENDENCIES:
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
   - GoogleAnalytics-iOS-SDK
   - iNotify
-  - KIF (HEAD)
+  - KIF (~> 3.0.0)
   - MagicalRecord
   - MBProgressHUD
   - PonyDebugger
