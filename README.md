@@ -44,6 +44,12 @@ The project has added support for Square's [PonyDebugger](https://github.com/squ
 So install their Python server and connect with Chrome to
 
     http://localhost:9000
+
+## Special Thanks
+
+### Translation
+
+Brazilian Portuguese: Paulo Neto (www.layout.com.br)
     
 ## License
 
