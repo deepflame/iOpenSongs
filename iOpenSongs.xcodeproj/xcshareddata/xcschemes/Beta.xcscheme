@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E8289CA1892C13900A0DFA7"
-               BuildableName = "Acceptance Tests.octest"
+               BuildableName = "Acceptance Tests.xctest"
                BlueprintName = "Acceptance Tests"
                ReferencedContainer = "container:iOpenSongs.xcodeproj">
             </BuildableReference>
