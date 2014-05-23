@@ -17,6 +17,7 @@ before_install:
 before_script:
   - mkdir -p $KIF_SCREENSHOTS
 script:
+  - xctool --version
   - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
 after_failure:
   - echo "secret_key = $AWS_SECRET" >> .s3cfg
