@@ -65,7 +65,6 @@
 		3E8289CE1892C13900A0DFA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDA40214AEC3A400BB781C /* UIKit.framework */; };
 		3E8289D41892C13900A0DFA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E8289D21892C13900A0DFA7 /* InfoPlist.strings */; };
 		3E8289D61892C13900A0DFA7 /* Acceptance_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8289D51892C13900A0DFA7 /* Acceptance_Tests.m */; };
-		3E8289DE1892CD9700A0DFA7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8289B51892BE2200A0DFA7 /* SenTestingKit.framework */; };
 		3E8289E11892D07000A0DFA7 /* KIFUITestActor+OSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8289E01892D07000A0DFA7 /* KIFUITestActor+OSAdditions.m */; };
 		3E8289E31892D4E900A0DFA7 /* OSSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8289E21892D4E900A0DFA7 /* OSSetTests.m */; };
 		3E832DA3185096E5002EE80F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F15EF17EB0DBA00CDF046 /* Images.xcassets */; };
@@ -262,8 +261,7 @@
 		3E7F8816160CCCEE004EB8E6 /* SetItemSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemSong.m; sourceTree = "<group>"; };
 		3E7F8818160CCCEE004EB8E6 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Set.h; sourceTree = "<group>"; };
 		3E7F8819160CCCEE004EB8E6 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
-		3E8289B51892BE2200A0DFA7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3E8289CB1892C13900A0DFA7 /* Acceptance Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Acceptance Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8289CB1892C13900A0DFA7 /* Acceptance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Acceptance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8289D11892C13900A0DFA7 /* Acceptance Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Acceptance Tests-Info.plist"; sourceTree = "<group>"; };
 		3E8289D31892C13900A0DFA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E8289D51892C13900A0DFA7 /* Acceptance_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Acceptance_Tests.m; sourceTree = "<group>"; };
@@ -361,7 +359,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E8289DE1892CD9700A0DFA7 /* SenTestingKit.framework in Frameworks */,
 				3E8289CE1892C13900A0DFA7 /* UIKit.framework in Frameworks */,
 				3E8289CD1892C13900A0DFA7 /* Foundation.framework in Frameworks */,
 				41922BC226F64F86B1988D8A /* libPods-Acceptance Tests.a in Frameworks */,
@@ -641,7 +638,6 @@
 				3EE0DB2D16EBA976005C89C6 /* Vendor */,
 				3EDDA3FF14AEC3A400BB781C /* Products */,
 				83DDE2BF561849B48BA5F099 /* Pods.xcconfig */,
-				6CC12721D98D44BA93A177E6 /* Pods-Integration.xcconfig */,
 				198AC5A543364949A8BFDFC7 /* Pods-Acceptance Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -651,7 +647,7 @@
 			children = (
 				3EDDA3FE14AEC3A400BB781C /* iOpenSongs.app */,
 				3EB9091B1751870E002125FE /* iOpenSongs Beta.app */,
-				3E8289CB1892C13900A0DFA7 /* Acceptance Tests.octest */,
+				3E8289CB1892C13900A0DFA7 /* Acceptance Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -667,7 +663,6 @@
 				2DAA4B6E5367422FAD72E0EA /* libPods.a */,
 				3ED468D317510C2800AFEA85 /* libPods-Integration.a */,
 				3ED9A041189181C8001FE86D /* XCTest.framework */,
-				3E8289B51892BE2200A0DFA7 /* SenTestingKit.framework */,
 				F9D89E5C1FC64525BEDEDAF5 /* libPods-Acceptance Tests.a */,
 			);
 			name = Frameworks;
@@ -797,8 +792,8 @@
 			);
 			name = "Acceptance Tests";
 			productName = "Acceptance Tests";
-			productReference = 3E8289CB1892C13900A0DFA7 /* Acceptance Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 3E8289CB1892C13900A0DFA7 /* Acceptance Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3EB908BD1751870E002125FE /* Beta */ = {
 			isa = PBXNativeTarget;
@@ -1312,7 +1307,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1341,7 +1335,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
