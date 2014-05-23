@@ -14,6 +14,7 @@ before_install:
   - gem install cocoapods # update to newest version
   - brew update
   - brew install s3cmd
+  - brew install xctool
 before_script:
   - mkdir -p $KIF_SCREENSHOTS
 script:
