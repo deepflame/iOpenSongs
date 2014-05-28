@@ -116,7 +116,8 @@
         si.position = [NSNumber numberWithInt:i++];
     }
     
-    [self.delegate setItemsTableViewController:self didChangeSet:self.set];
+    // seems to make app more stable when reordering items
+    //[self.delegate setItemsTableViewController:self didChangeSet:self.set];
     
     self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
 }
