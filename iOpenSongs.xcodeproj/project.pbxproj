@@ -207,8 +207,6 @@
 		3E19FF6016FD4A08005E0630 /* OSImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSImportTableViewController.h; sourceTree = "<group>"; };
 		3E19FF6116FD4A08005E0630 /* OSImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSImportTableViewController.m; sourceTree = "<group>"; };
 		3E23C93E187C8C000061B80E /* Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Products.plist; sourceTree = "<group>"; };
-		3E23C942187CA7EF0061B80E /* SKProduct+Videos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Videos.h"; sourceTree = "<group>"; };
-		3E23C943187CA7EF0061B80E /* SKProduct+Videos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Videos.m"; sourceTree = "<group>"; };
 		3E23C947187CA8AA0061B80E /* SKProduct+Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Plist.h"; sourceTree = "<group>"; };
 		3E23C948187CA8AA0061B80E /* SKProduct+Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Plist.m"; sourceTree = "<group>"; };
 		3E2B6C05185E584D0055CABD /* NSManagedObject+Cloning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Cloning.h"; sourceTree = "<group>"; };
