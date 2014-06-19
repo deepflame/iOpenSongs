@@ -52,6 +52,14 @@ body#help h3
   background-color: black;
 }
 
+.song-section {
+  display: block;
+}
+
+.two-columns .song-section {
+  display: inline-block;
+}
+
 /*  
  *  color chords
  *  http://colorschemedesigner.com/#4W61Tw0gqw0w0

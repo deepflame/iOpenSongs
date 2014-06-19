@@ -17,6 +17,7 @@
 - (void)saveAsUserDefaults;
 
 @property (nonatomic) BOOL nightMode;
+@property (nonatomic) BOOL twoColumns;
 
 @property (nonatomic) BOOL headerVisible;
 @property (nonatomic) BOOL chordsVisible;

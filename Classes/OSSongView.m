@@ -108,6 +108,15 @@
     }
 }
 
+- (void)setTwoColumns:(BOOL)state
+{
+    if (state == YES) {
+        [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('body').addClass('two-columns');"];
+    } else {
+        [self.songWebView stringByEvaluatingJavaScriptFromString:@"$('body').removeClass('two-columns');"];
+    }
+}
+
 -(void)setStyleVisible:(BOOL)isVisible withCSSSelector:(NSString *)cssSel
 {
     if (isVisible) {
@@ -136,6 +145,13 @@
                                 task:^(OSSongStyle *style, NSDictionary *change) {
         [self setNightMode:style.nightMode];
     }];
+    // two columns
+    [songStyle bk_addObserverForKeyPath:@"twoColumns"
+                             identifier:@"twoColumns"
+                                options:NSKeyValueObservingOptionInitial
+                                   task:^(OSSongStyle *style, NSDictionary *change) {
+                                       [self setTwoColumns:style.twoColumns];
+                                   }];
 
     // visibility and size
     [@[@"header", @"chords", @"lyrics", @"comments"] bk_each:^(NSString *part) {

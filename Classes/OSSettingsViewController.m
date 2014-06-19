@@ -22,14 +22,22 @@
     if (self) {
         OSSongStyle *style = [OSSongStyle defaultStyle];
         
-        // Section 1: Night Mode
+        // Section 1: General
         QBooleanElement *nightModeElem = [[QBooleanElement alloc] initWithTitle:NSLocalizedString(@"Night Mode", nil) BoolValue:style.nightMode];
         nightModeElem.onValueChanged = ^(QRootElement *elem) {
             QBooleanElement *boolElem = (QBooleanElement *)elem;
             style.nightMode = boolElem.boolValue;
         };
+        QBooleanElement *twoColumnsElem = [[QBooleanElement alloc] initWithTitle:NSLocalizedString(@"Two Columns", nil) BoolValue:style.twoColumns];
+        twoColumnsElem.onValueChanged = ^(QRootElement *elem) {
+            QBooleanElement *boolElem = (QBooleanElement *)elem;
+            style.twoColumns = boolElem.boolValue;
+        };
+        
         QSection *section1 = [[QSection alloc] init];
+        section1.title = NSLocalizedString(@"General", nil);
         [section1 addElement:nightModeElem];
+        [section1 addElement:twoColumnsElem];
         
         // Section 2: Song Style
         void (^visibilityBlock)(QRootElement *) = ^(QRootElement *elem) {

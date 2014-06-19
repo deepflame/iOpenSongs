@@ -30,6 +30,7 @@
 - (void)resetStyle
 {
     self.nightMode = NO;
+    self.twoColumns = YES;
     
     self.headerVisible = YES;
     self.chordsVisible = YES;
