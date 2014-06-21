@@ -140,11 +140,11 @@
     
     // night mode
     [songStyle bk_addObserverForKeyPath:@"nightMode"
-                          identifier:@"nightMode"
-                             options:NSKeyValueObservingOptionInitial
-                                task:^(OSSongStyle *style, NSDictionary *change) {
-        [self setNightMode:style.nightMode];
-    }];
+                             identifier:@"nightMode"
+                                options:NSKeyValueObservingOptionInitial
+                                   task:^(OSSongStyle *style, NSDictionary *change) {
+                                       [self setNightMode:style.nightMode];
+                                   }];
     // two columns
     [songStyle bk_addObserverForKeyPath:@"twoColumns"
                              identifier:@"twoColumns"

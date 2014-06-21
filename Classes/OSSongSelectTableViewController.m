@@ -80,8 +80,8 @@
         if (song) {
             [self.delegate songTableViewController:self didSelectSong:song];
         }
-    }
-    @catch (NSException *exception) {
+    } @catch(NSException *ex) {
+        // can throw NSRangeException (not sure why, but Crashlytics says so)
     }
 }
 
