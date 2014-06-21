@@ -55,17 +55,19 @@
     [self trackScreen:@"Set Items"];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
-    
-    // save all changes to the data
-    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
     return YES;
+    [super setEditing:editing animated:animated];
+    
+    if (editing == NO) {
+        // save all changes when leaving editing mode
+        [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
+    }
 }
 
 #pragma mark - UITableViewDataSource
