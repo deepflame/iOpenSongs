@@ -197,6 +197,9 @@
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
     [self.navigationController popViewControllerAnimated:animated];
+    
+    // save changes
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
 }
 
 #pragma mark - OSSongEditorViewControllerDelegate
