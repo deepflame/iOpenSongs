@@ -55,13 +55,13 @@
     [self trackScreen:@"Set Items"];
 }
 
-{
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
     return YES;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
     [super setEditing:editing animated:animated];
     
     if (editing == NO) {
