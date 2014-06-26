@@ -35,6 +35,12 @@
     paginator.scrollView.alwaysBounceVertical = (paginator.paginationDirection == SYPageViewPaginationDirectionHorizontal);
     paginator.scrollView.directionalLockEnabled = YES;
     
+    // for iOS 6 (tint pageControl)
+    if ([paginator.pageControl.pageControl respondsToSelector:@selector(pageIndicatorTintColor)]) {
+        paginator.pageControl.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+        paginator.pageControl.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+    }
+    
     self.view = paginator;
 }
 
