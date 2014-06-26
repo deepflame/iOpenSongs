@@ -14,7 +14,7 @@
 
 #import "NSObject+RuntimeAdditions.h"
 
-@interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate>
+@interface OSSetViewController () <SYPaginatorViewDataSource, SYPaginatorViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, readonly) SYPaginatorView *paginatorView;
 @end
 
@@ -47,6 +47,20 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
         //self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    
+    // add single tap to scroll view
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc ]initWithTarget:self action:@selector(handleSingleTapGesture:)];
+    singleTapGestureRecognizer.numberOfTapsRequired = 1;
+    singleTapGestureRecognizer.cancelsTouchesInView = YES;
+    singleTapGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer*)otherGestureRecognizer
+{
+    return YES;
 }
 
 #pragma mark - SYPaginatorViewDelegate
@@ -113,6 +127,31 @@
     }
     
     return nil;
+}
+
+#pragma mark - Private Methods
+
+- (void)handleSingleTapGesture:(UITapGestureRecognizer *)sender
+{
+    CGPoint tapLocation = [sender locationInView:self.view];
+    
+    CGFloat viewWidth = self.view.bounds.size.width;
+    CGFloat tapSpace = viewWidth * 0.3; // take 30% off the whole width for one tapping area
+    
+    NSInteger currentPageIndex = self.paginatorView.currentPageIndex;
+    
+    if (tapLocation.x < tapSpace) {
+        // tapped left
+        if (currentPageIndex > 0) {
+            self.paginatorView.currentPageIndex = currentPageIndex - 1;
+        }
+    } else if (tapLocation.x > viewWidth - tapSpace) {
+        // tapped right
+        if (currentPageIndex < self.paginatorView.numberOfPages - 1) {
+            self.paginatorView.currentPageIndex = currentPageIndex + 1;
+        }
+    }
+    
 }
 
 #pragma mark - Public Methods
