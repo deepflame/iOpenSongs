@@ -172,6 +172,12 @@
     [self.paginatorView setCurrentPageIndex:index animated:animated];
 }
 
+- (void)reloadSet
+{
+    self.title = @"";
+    [self.paginatorView reloadData];
+}
+
 #pragma mark - Public Accessors
 
 - (void)setSet:(Set *)set

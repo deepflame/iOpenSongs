@@ -65,6 +65,9 @@
     [super setEditing:editing animated:animated];
     
     if (editing == NO) {
+        // propagate edit
+        [self.delegate setItemsTableViewController:self didModifySet:self.set];
+        
         // save all changes when leaving editing mode
         [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];
     }
@@ -97,7 +100,6 @@
         // delete object from database
         SetItem *setItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.set.managedObjectContext deleteObject:setItem];
-        [self.delegate setItemsTableViewController:self didChangeSet:self.set];
     }
 }
 
@@ -117,9 +119,6 @@
     for (SetItem *si in setItems) {
         si.position = [NSNumber numberWithInt:i++];
     }
-    
-    // seems to make app more stable when reordering items
-    //[self.delegate setItemsTableViewController:self didChangeSet:self.set];
     
     self.suspendAutomaticTrackingOfChangesInManagedObjectContext = NO;
 }
@@ -197,6 +196,9 @@
 -(void)setItemSongsTableViewController:(OSSetItemSongsTableViewController *)sender finishedEditing:(BOOL)animated
 {
     [self.navigationController popViewControllerAnimated:animated];
+    
+    // propagate changes
+    [self.delegate setItemsTableViewController:self didModifySet:self.set];
     
     // save changes
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];

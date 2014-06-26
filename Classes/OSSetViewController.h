@@ -14,6 +14,7 @@
 @interface OSSetViewController : OSDetailViewController
 
 - (void)selectPageAtIndex:(NSUInteger)index animated:(BOOL)animated;
+- (void)reloadSet;
 
 @property (nonatomic, strong) Set *set;
 @property (nonatomic, weak) id<OSSetViewControllerDelegate>delegate;

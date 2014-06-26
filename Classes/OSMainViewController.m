@@ -170,6 +170,11 @@
     self.currentDetailViewController = self.setViewController;
 }
 
+- (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didModifySet:(Set *)set
+{
+    [self.setViewController reloadSet];
+}
+
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender willAddSetItemsOfClass:(Class)itemClass toSet:(Set *)set
 {
     if (itemClass == [SetItemSong class]) {
