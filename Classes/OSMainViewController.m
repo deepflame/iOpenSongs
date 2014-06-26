@@ -55,7 +55,6 @@
     if (self) {
         // build viewControllers for the tabBar
         OSSongSelectTableViewController *songsViewController = [[OSSongSelectTableViewController alloc] init];
-        songsViewController.delegate = self;
         OSSetTableViewController *setsViewController = [[OSSetTableViewController alloc] init];
         UIViewController *settingsViewController = [[OSSettingsViewController alloc] init];
         UIViewController *shopViewController = [[OSShopViewController alloc] init];
@@ -85,6 +84,10 @@
         [tabBarViewControllers addObject:shopNavigationController];
         
         tabBarController.viewControllers = tabBarViewControllers;
+        
+        // setting delegates
+        songsViewController.delegate = self;
+        setsViewController.delegate = self;
         
         // state restoration (iOS6)
         if ([self respondsToSelector:@selector(restorationIdentifier)]) {
@@ -135,6 +138,13 @@
     self.currentDetailViewController = self.songViewController;
 }
 
+#pragma mark - OSSetTableViewControllerDelegate
+
+- (void)setTableViewController:(OSSetTableViewController *)sender didSelectSet:(Set *)set
+{
+    self.setViewController.set = set;
+}
+
 #pragma mark - OSSetItemsTableViewControllerDelegate
 
 - (void)setItemsTableViewController:(OSSetItemsTableViewController *)sender didSelectSetItem:(SetItem *)setItem fromSet:(Set *)set
@@ -145,7 +155,6 @@
     }
     
     self.setViewController.delegate = sender;
-    self.setViewController.set = set; // TODO why do I set the set every time?
     self.currentDetailViewController = self.setViewController;
     
     // FIXME: setitem positions not consistent...
