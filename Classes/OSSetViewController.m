@@ -167,8 +167,11 @@
 {
     if (_set != set) {
         _set = set;
+
+        [self.paginatorView setCurrentPageIndex:0 animated:NO]; // hack to preload first time
+        [self.paginatorView reloadData];
+        [self.paginatorView setCurrentPageIndex:-1 animated:NO];
     }
-    [self.paginatorView reloadData];
 }
 
 - (SYPaginatorView *)paginatorView
