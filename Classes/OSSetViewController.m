@@ -29,7 +29,7 @@
     paginator.dataSource = self;
     paginator.delegate = self;
     paginator.pageGapWidth = 1.0f;
-    paginator.numberOfPagesToPreload = 2;
+    paginator.numberOfPagesToPreload = 3;
     
     paginator.scrollView.alwaysBounceHorizontal = (paginator.paginationDirection == SYPageViewPaginationDirectionVertical);
     paginator.scrollView.alwaysBounceVertical = (paginator.paginationDirection == SYPageViewPaginationDirectionHorizontal);
@@ -179,9 +179,8 @@
     if (_set != set) {
         _set = set;
 
-        [self.paginatorView setCurrentPageIndex:0 animated:NO]; // hack to preload first time
         [self.paginatorView reloadData];
-        [self.paginatorView setCurrentPageIndex:-1 animated:NO];
+        [self.paginatorView setCurrentPageIndex:-1 animated:NO]; // do not return to last pageIndex
     }
 }
 
