@@ -67,6 +67,12 @@
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView didScrollToPageAtIndex:(NSInteger)pageIndex
 {
+    // only if pageIndex is valid
+    if (pageIndex < 0) {
+        self.title = @"";
+        return; // <-- !!
+    }
+    
     // FIXME: setitem positions not consistent...
     NSArray *setItems = [SetItem MR_findAllSortedBy:@"position" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"set == %@", self.set]];
     SetItem *setItem = setItems[pageIndex];
@@ -80,6 +86,11 @@
 
 - (void)paginatorView:(SYPaginatorView *)paginatorView willDisplayView:(UIView *)view atIndex:(NSInteger)pageIndex
 {
+    // only if pageIndex is valid
+    if (pageIndex < 0) {
+        return; // <-- !!
+    }
+    
     if ([view isKindOfClass:[OSSongPageView class]]) {
         // observe default song style (from settings)
         [[OSSongStyle defaultStyle] bk_removeObserversWithIdentifier:NSStringFromClass([self class])];
