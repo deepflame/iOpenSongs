@@ -129,13 +129,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (! [tableView isEditing]) {
-      [self selectSetItemAtIndexPath:indexPath];
-    
-      // close sliding view controller if on Phone in portrait mode
-      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
-          UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-          [self.layeredNavigationController compressViewControllers:YES];
-      }
+        [self selectSetItemAtIndexPath:indexPath];
+        
+        // close sliding view controller if on Phone in portrait mode
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
+            UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+            [self.layeredNavigationController compressViewControllers:YES];
+        }
         
     } else if ([[OSStoreManager sharedManager] isPurchased:OS_IAP_EDITOR]) {
         // edit song
