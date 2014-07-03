@@ -11,4 +11,6 @@
 
 #define OS_IAP_DROPBOX @"de.boehrnsen.iopensongs.inapp.dropbox"
 
+#define OS_IAP_EDITOR @"de.boehrnsen.iopensongs.inapp.editor"
+
 #endif
