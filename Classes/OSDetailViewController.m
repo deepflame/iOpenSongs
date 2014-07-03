@@ -10,6 +10,7 @@
 
 #import <FRLayeredNavigation.h>
 #import "OSSupportTableViewController.h"
+#import "OSMacros.h"
 
 @interface OSDetailViewController () <OSSupportViewControllerDelegate>
 @property (nonatomic, strong) OSSupportTableViewController *supportViewController;
@@ -26,10 +27,20 @@
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
     UIBarButtonItem *sidebarBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
-    UIBarButtonItem *supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Support", nil) style:UIBarButtonItemStylePlain target:self action:@selector(showSupportInfo:)];
+    UIBarButtonItem *supportBarButtonItem;
+ 
+    // show icon in iOS 7
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        supportBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphicons_194_circle_question_mark"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    } else {
+        supportBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Support", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+    }
+    supportBarButtonItem.target = self;
+    supportBarButtonItem.action = @selector(showSupportInfo:);
 
     sidebarBarButtonItem.accessibilityLabel = @"Sidebar";
     supportBarButtonItem.accessibilityLabel = @"Support";
+    
     self.navigationItem.leftBarButtonItems = @[sidebarBarButtonItem];
     self.navigationItem.rightBarButtonItems = @[supportBarButtonItem];
 }
