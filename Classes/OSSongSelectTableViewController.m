@@ -129,12 +129,16 @@
             UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
             [self.layeredNavigationController compressViewControllers:YES];
         }
-    } else {
+        
+    } else if ([[OSStoreManager sharedManager] isPurchased:OS_IAP_EDITOR]) {
+        // edit song
         [self trackEventWithAction:@"edit"];
         
         Song* song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:song];
         [songEditorViewController presentFromViewController:self animated:YES completion:nil];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     
 }
@@ -166,17 +170,23 @@
         OSSongSelectTableViewController *_self = self;
         
         // New Song
-        [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"New Song", nil) handler:^{
-            Song *newSong = [[Song alloc] initWithEntity:[Song MR_entityDescription] insertIntoManagedObjectContext:nil];
-            
-            OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:newSong];
-            songEditorViewController.delegate = self;
-            
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:songEditorViewController];
-            navController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self presentModalViewController:navController animated:YES];
-        }];
+        if ([[OSStoreManager sharedManager] isPurchased:OS_IAP_EDITOR]) {
+            [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"New Song", nil) handler:^{
+                Song *newSong = [[Song alloc] initWithEntity:[Song MR_entityDescription] insertIntoManagedObjectContext:nil];
+                
+                OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:newSong];
+                songEditorViewController.delegate = self;
+                
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:songEditorViewController];
+                navController.modalPresentationStyle = UIModalPresentationFormSheet;
+                navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self presentModalViewController:navController animated:YES];
+            }];
+        } else {
+            [[OSStoreManager sharedManager] whenPurchasedOrRestored:OS_IAP_EDITOR execute:^ {
+                self.importActionSheet = nil; // reload action sheet
+            }];
+        }
         
         // iTunes File Sharing
         [_importActionSheet bk_addButtonWithTitle:NSLocalizedString(@"iTunes File Sharing", nil) handler:^{

@@ -15,6 +15,7 @@
 #import "OSSongEditorValuesViewController.h"
 #import "OSSetItemSongsTableViewController.h"
 #import "OSMainViewController.h"
+#import "OSStoreManager.h"
 
 #import <objc/message.h>
 
@@ -135,13 +136,18 @@
           UIInterfaceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
           [self.layeredNavigationController compressViewControllers:YES];
       }
-    } else {
+        
+    } else if ([[OSStoreManager sharedManager] isPurchased:OS_IAP_EDITOR]) {
+        // edit song
         [self trackEventWithAction:@"edit"];
         
         SetItemSong* setItem = (SetItemSong *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         OSSongEditorValuesViewController *songEditorViewController = [[OSSongEditorValuesViewController alloc] initWithSong:setItem.song];
         [songEditorViewController presentFromViewController:self animated:YES completion:nil];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+    
 }
 
 #pragma mark - OSSetViewControllerDelegate
