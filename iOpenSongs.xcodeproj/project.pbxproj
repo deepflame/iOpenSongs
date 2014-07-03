@@ -222,6 +222,7 @@
 		3E3FFF8716FE046000E6381A /* OSITunesImportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSITunesImportTableViewController.h; sourceTree = "<group>"; };
 		3E3FFF8816FE046000E6381A /* OSITunesImportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSITunesImportTableViewController.m; sourceTree = "<group>"; };
 		3E41E03F155D2F8D0023E599 /* iOpenSongs 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOpenSongs 2.xcdatamodel"; sourceTree = "<group>"; };
+		3E4BCD741963504500B059E3 /* OSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMacros.h; sourceTree = "<group>"; };
 		3E4EF9301709A5DE0063E772 /* OSSongTableViewControllerDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSongTableViewControllerDataSource.h; sourceTree = "<group>"; };
 		3E545835174BBEA200B4FFF9 /* _set-add-songs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "_set-add-songs.html"; sourceTree = "<group>"; };
 		3E56D6B4174D981300F1CDEA /* OSSongStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSongStyle.h; sourceTree = "<group>"; };
@@ -685,6 +686,7 @@
 				3E120C6214FA1C3900926A74 /* iOpenSongs.xcdatamodeld */,
 				3EDDA41014AEC3A400BB781C /* iOpenSongs-Prefix.pch */,
 				3E865AF116CF6AEA000E9D98 /* OSDefines.h */,
+				3E4BCD741963504500B059E3 /* OSMacros.h */,
 				3ED1F86918476BBB009D72F0 /* OSInAppPurchaseIdentifiers.h */,
 				3EDDA40E14AEC3A400BB781C /* main.m */,
 			);
