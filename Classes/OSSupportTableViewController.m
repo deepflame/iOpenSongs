@@ -87,10 +87,15 @@
     [super viewDidLoad];
     self.contentSizeForViewInPopover = CGSizeMake(320, 320);
     
-    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStyleDone handler:^(id sender) {
-        [self.delegate supportViewController:self shouldFinishDisplaying:YES];
-    }];
-    self.navigationItem.leftBarButtonItems = @[doneItem];
+    // iPad: done button for popup
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] bk_initWithTitle:NSLocalizedString(@"Close", nil) style:UIBarButtonItemStyleDone handler:^(id sender) {
+            [self.delegate supportViewController:self shouldFinishDisplaying:YES];
+        }];
+        self.navigationItem.leftBarButtonItems = @[doneItem];
+    }
+
+    self.navigationItem.leftItemsSupplementBackButton = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
