@@ -7,6 +7,7 @@
 //
 
 #import "OSMainViewController.h"
+#import "OSMacros.h"
 
 // Songs
 #import "OSSongViewController.h"
@@ -81,7 +82,11 @@
         [tabBarViewControllers addObject:songsNavigationController];
         [tabBarViewControllers addObject:setsNavigationController];
         [tabBarViewControllers addObject:settingsNavigationController];
-        [tabBarViewControllers addObject:shopNavigationController];
+        
+        // adding shop only for > iOS6
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0.0")) {
+            [tabBarViewControllers addObject:shopNavigationController];
+        }
         
         tabBarController.viewControllers = tabBarViewControllers;
         
