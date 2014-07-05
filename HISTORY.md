@@ -1,3 +1,10 @@
+## 2.1 (140705)
+
+- Feature: tap to go to previous or next song 
+- Feature: two-column layout setting 
+- Performance and stability improvements 
+- Bugfixes 
+
 ## 2.0 (131219)
 
 - added in-app store (to support development)
