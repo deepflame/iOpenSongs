@@ -10,9 +10,11 @@ pod 'SYPaginator'
 pod 'MagicalRecord'
 pod 'Dropbox-iOS-SDK'
 pod 'FormatterKit/UnitOfInformationFormatter'
-pod 'BlocksKit', :git => 'https://github.com/zwaldowski/BlocksKit.git', :commit => '95833bdfb61587a143232d721642322919b21a37'
+pod 'BlocksKit'
 pod 'QuickDialog'
 pod 'RMStore'
+pod 'RMStore/KeychainPersistence'
+pod 'RMStore/TransactionReceiptVerificator'
 #pod 'WebViewJavascriptBridge'
 
 # User Services

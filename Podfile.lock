@@ -1,24 +1,24 @@
 PODS:
   - Appirater (2.0.2)
-  - BlocksKit (2.1.0):
+  - BlocksKit (2.2.5):
     - BlocksKit/All
-  - BlocksKit/All (2.1.0):
+  - BlocksKit/All (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
     - BlocksKit/MessageUI
     - BlocksKit/UIKit
-  - BlocksKit/Core (2.1.0)
-  - BlocksKit/DynamicDelegate (2.1.0):
-    - BlocksKit/MiniFFI
-  - BlocksKit/MessageUI (2.1.0):
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - BlocksKit/MiniFFI (2.1.0)
-  - BlocksKit/UIKit (2.1.0):
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - Dropbox-iOS-SDK (1.3.9)
+  - Dropbox-iOS-SDK (1.3.11)
   - FormatterKit/UnitOfInformationFormatter (1.4.0)
   - FRLayeredNavigationController (0.4.4)
-  - GoogleAnalytics-iOS-SDK (3.0.2)
+  - GoogleAnalytics-iOS-SDK (3.0.7)
   - iNotify (1.5.5)
   - KIF (3.0.4):
     - KIF/XCTest
@@ -27,23 +27,15 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - MBProgressHUD (0.8)
-  - PonyDebugger (0.3.1):
+  - PonyDebugger (0.4.0):
     - SocketRocket
   - QuickDialog (0.9.1)
-  - RMStore (0.4.2):
-    - RMStore/AppReceiptVerificator
+  - RMStore (0.5.2):
     - RMStore/Core
-    - RMStore/KeychainPersistence
-    - RMStore/NSUserDefaultsPersistence
-    - RMStore/OpenSSL
-    - RMStore/TransactionReceiptVerificator
-  - RMStore/Core (0.4.2)
-  - RMStore/KeychainPersistence (0.4.2):
+  - RMStore/Core (0.5.2)
+  - RMStore/KeychainPersistence (0.5.2):
     - RMStore/Core
-  - RMStore/NSUserDefaultsPersistence (0.4.2):
-    - RMStore/Core
-  - RMStore/OpenSSL (0.4.2)
-  - RMStore/TransactionReceiptVerificator (0.4.2):
+  - RMStore/TransactionReceiptVerificator (0.5.2):
     - RMStore/Core
   - SocketRocket (0.3.1-beta2)
   - SYPaginator (1.0.0)
@@ -53,7 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - Appirater
-  - BlocksKit (from `https://github.com/zwaldowski/BlocksKit.git`, commit `95833bdfb61587a143232d721642322919b21a37`)
+  - BlocksKit
   - Dropbox-iOS-SDK
   - FormatterKit/UnitOfInformationFormatter
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
@@ -65,15 +57,14 @@ DEPENDENCIES:
   - PonyDebugger
   - QuickDialog
   - RMStore
+  - RMStore/KeychainPersistence
+  - RMStore/TransactionReceiptVerificator
   - SYPaginator
   - TDBadgedCell (from `Other Sources/podspecs/TDBadgedCell.podspec`)
   - TestFlightSDK (~> 2.0.0)
   - uservoice-iphone-sdk (~> 2.0.15)
 
 EXTERNAL SOURCES:
-  BlocksKit:
-    :commit: 95833bdfb61587a143232d721642322919b21a37
-    :git: https://github.com/zwaldowski/BlocksKit.git
   FRLayeredNavigationController:
     :git: https://github.com/deepflame/FRLayeredNavigationController
   TDBadgedCell:
@@ -81,18 +72,18 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Appirater: a5e00fb01d47a9a6acf4b2f22323b4ccf4f23fbb
-  BlocksKit: 20086a023551c742d2278771e47c36e05f17b662
-  Dropbox-iOS-SDK: f13a65a4ed51fc387e8ca105c17e0bbd7eeba5d5
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  Dropbox-iOS-SDK: 3bd81e7abfeb66b8fced09768db0166286a90f3f
   FormatterKit: 611a66bf5e35633949626538c53f190fddc7a1e3
   FRLayeredNavigationController: 04fb7520e6b06ff33702aaff7e9034040068005e
-  GoogleAnalytics-iOS-SDK: 092c6c87301bb419ed44c1992cad87bc214de9ae
+  GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
   iNotify: 892c0bc5be71187e5eefe212f5f611df4a3ca4c0
   KIF: 443c517d14fc2a99d27d3df170bc274cdf288241
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
-  PonyDebugger: 256e19c15c093e15f950f92b1a5017f3feb3c87e
+  PonyDebugger: 4f43d7c2f67aa5e26ca00ce6983421608a6eca6d
   QuickDialog: 8e6cb91067913194dfa187e339dc20dee8ee250f
-  RMStore: ae902cb6bdb29a3552a0151e8adce75b156b068a
+  RMStore: 2b0b5e5cba616ee33ad8f0eda85d31de9286817c
   SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
   SYPaginator: 08770ab0a34c7b391be405634e1a8ebdb93b877c
   TDBadgedCell: dbf1dd2b99c11db97ee66deb889aa5152d8a4198
