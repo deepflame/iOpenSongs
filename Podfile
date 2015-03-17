@@ -1,5 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.1'
+
+link_with 'Release', 'Beta', 'Acceptance Tests'
 
 # UI
 pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
