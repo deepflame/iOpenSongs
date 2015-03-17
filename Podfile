@@ -1,4 +1,5 @@
-platform :ios, '7.1'
+
+platform :ios, '8.1'
 
 # UI
 pod 'FRLayeredNavigationController', :git => 'https://github.com/deepflame/FRLayeredNavigationController'
