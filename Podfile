@@ -24,7 +24,7 @@ pod 'RMStore/TransactionReceiptVerificator'
 # User Services
 pod 'iNotify'
 pod 'Appirater'
-pod 'uservoice-iphone-sdk', '~> 2.0.15'
+pod 'uservoice-iphone-sdk'
 pod 'GoogleAnalytics'
 
 # Development
@@ -35,3 +35,4 @@ pod 'TestFlightSDK', '~> 2.0.0'
 target 'Acceptance Tests', :exclusive => true do
   pod 'KIF', '~> 3.0.0'
 end
+

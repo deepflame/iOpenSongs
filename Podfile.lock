@@ -98,6 +98,6 @@ SPEC CHECKSUMS:
   SocketRocket: 6c9cfd1592bea82262b4283dcda3a7de166af3b6
   SYPaginator: 08770ab0a34c7b391be405634e1a8ebdb93b877c
   TDBadgedCell: f1166a7e3afd4a0c2fec7800a1f8dd8c093897fc
-  uservoice-iphone-sdk: 02d974352f04d8457ee39b8514d1c58ef0e2c860
+  uservoice-iphone-sdk: 349d9ef36d3c43939d28390b9e86bb32b65fe983
 
 COCOAPODS: 0.38.2
