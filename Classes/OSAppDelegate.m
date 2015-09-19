@@ -22,8 +22,8 @@
 
 #import <iNotify/iNotify.h>
 #import <Appirater/Appirater.h>
-#import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <uservoice-iphone-sdk/UserVoice.h>
 #import <DropboxSDK/DropboxSDK.h>
 

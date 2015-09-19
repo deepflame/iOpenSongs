@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <GoogleAnalytics-iOS-SDK/GAITracker.h>
+#import <GoogleAnalytics/GAITracker.h>
 
 #import <StoreKit/SKPaymentTransaction.h>
 #import <StoreKit/SKProduct.h>

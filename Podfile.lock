@@ -18,9 +18,7 @@ PODS:
   - Dropbox-iOS-SDK (1.3.13)
   - FormatterKit/UnitOfInformationFormatter (1.8.0)
   - FRLayeredNavigationController (0.4.4)
-  - GoogleAnalytics-iOS-SDK (3.10):
-    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
-  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - GoogleAnalytics (3.13.0)
   - iNotify (1.5.5)
   - KIF (3.0.8):
     - KIF/XCTest (= 3.0.8)
@@ -52,7 +50,7 @@ DEPENDENCIES:
   - Dropbox-iOS-SDK
   - FormatterKit/UnitOfInformationFormatter
   - FRLayeredNavigationController (from `https://github.com/deepflame/FRLayeredNavigationController`)
-  - GoogleAnalytics-iOS-SDK
+  - GoogleAnalytics
   - iNotify
   - KIF (~> 3.0.0)
   - MagicalRecord
@@ -91,12 +89,12 @@ SPEC CHECKSUMS:
   Dropbox-iOS-SDK: 367160c05e279e7fa3205f3233d1873b7a986ee6
   FormatterKit: 547a808c41172136a3f3acb424ac9361d38bb32f
   FRLayeredNavigationController: 192857470c7d6f59b901f956cf03171bce14be0e
-  GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   iNotify: 892c0bc5be71187e5eefe212f5f611df4a3ca4c0
   KIF: 2db5e8cf59136dd1267d49cca0d55883389b09d3
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
   PonyDebugger: 4e382f345ac61b77bcecf1fef385b35a7b592f26
+  GoogleAnalytics: fcf1f1cad57ae1a9a53520018f0f680ceeeb8b49
   QuickDialog: c15166b0041a30ce2d304ff6ce374805f9506051
   RMStore: 034bacb5f8d8807866f80e53907db47b9cefd984
   SocketRocket: 6c9cfd1592bea82262b4283dcda3a7de166af3b6
@@ -104,4 +102,4 @@ SPEC CHECKSUMS:
   TDBadgedCell: f1166a7e3afd4a0c2fec7800a1f8dd8c093897fc
   uservoice-iphone-sdk: 02d974352f04d8457ee39b8514d1c58ef0e2c860
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.38.2

@@ -25,7 +25,7 @@ pod 'RMStore/TransactionReceiptVerificator'
 pod 'iNotify'
 pod 'Appirater'
 pod 'uservoice-iphone-sdk', '~> 2.0.15'
-pod 'GoogleAnalytics-iOS-SDK'
+pod 'GoogleAnalytics'
 
 # Development
 pod 'PonyDebugger'

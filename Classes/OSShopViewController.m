@@ -15,8 +15,8 @@
 
 #import "UIAlertView+Error.h"
 
-#import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
 
 @interface OSShopViewController ()
 @end
