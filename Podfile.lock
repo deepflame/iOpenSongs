@@ -82,21 +82,21 @@ CHECKOUT OPTIONS:
     :git: https://github.com/deepflame/TDBadgedCell.git
 
 SPEC CHECKSUMS:
-  Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
-  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
-  Dropbox-iOS-SDK: 367160c05e279e7fa3205f3233d1873b7a986ee6
-  FormatterKit: 547a808c41172136a3f3acb424ac9361d38bb32f
+  Appirater: 8783318c36414e8de3ea023443028df94c1b784b
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Dropbox-iOS-SDK: e0c9b08d1604b39cb78c1d0333251de0f6bdec60
+  FormatterKit: bddde83e054edf9d9ee14f9de3b3a5103db256f4
   FRLayeredNavigationController: 192857470c7d6f59b901f956cf03171bce14be0e
-  iNotify: 892c0bc5be71187e5eefe212f5f611df4a3ca4c0
-  KIF: 2db5e8cf59136dd1267d49cca0d55883389b09d3
-  MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
-  PonyDebugger: 4e382f345ac61b77bcecf1fef385b35a7b592f26
   GoogleAnalytics: fcf1f1cad57ae1a9a53520018f0f680ceeeb8b49
+  iNotify: 89065b916d4f8c45013ebe11140f19225909d218
+  KIF: 3c2cb8e66fb216f9c3abcd714699411f0256f767
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  PonyDebugger: a88115fac4d849d1b18aa9cd24f4d1bce3006b4f
   QuickDialog: c15166b0041a30ce2d304ff6ce374805f9506051
-  RMStore: 034bacb5f8d8807866f80e53907db47b9cefd984
-  SocketRocket: 6c9cfd1592bea82262b4283dcda3a7de166af3b6
-  SYPaginator: 08770ab0a34c7b391be405634e1a8ebdb93b877c
+  RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
+  SocketRocket: 54a4ac2f354c4e8c51ef5dcd4a13bc556d4f2b7c
+  SYPaginator: 83bdba3d18e6c06c01a8c59106986c2ffd54a067
   TDBadgedCell: f1166a7e3afd4a0c2fec7800a1f8dd8c093897fc
   uservoice-iphone-sdk: 349d9ef36d3c43939d28390b9e86bb32b65fe983
 

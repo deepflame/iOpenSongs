@@ -29,7 +29,6 @@ pod 'GoogleAnalytics'
 
 # Development
 pod 'PonyDebugger'
-pod 'TestFlightSDK', '~> 2.0.0'
 
 # Testing
 target 'Acceptance Tests', :exclusive => true do
