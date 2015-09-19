@@ -23,9 +23,7 @@ PODS:
   - KIF (3.0.8):
     - KIF/XCTest (= 3.0.8)
   - KIF/XCTest (3.0.8)
-  - MagicalRecord (2.2):
-    - MagicalRecord/Core (= 2.2)
-  - MagicalRecord/Core (2.2)
+  - MagicalRecord (2.3.0)
   - MBProgressHUD (0.9.1)
   - PonyDebugger (0.4.2):
     - SocketRocket
@@ -91,10 +89,10 @@ SPEC CHECKSUMS:
   FRLayeredNavigationController: 192857470c7d6f59b901f956cf03171bce14be0e
   iNotify: 892c0bc5be71187e5eefe212f5f611df4a3ca4c0
   KIF: 2db5e8cf59136dd1267d49cca0d55883389b09d3
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
   PonyDebugger: 4e382f345ac61b77bcecf1fef385b35a7b592f26
   GoogleAnalytics: fcf1f1cad57ae1a9a53520018f0f680ceeeb8b49
+  MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   QuickDialog: c15166b0041a30ce2d304ff6ce374805f9506051
   RMStore: 034bacb5f8d8807866f80e53907db47b9cefd984
   SocketRocket: 6c9cfd1592bea82262b4283dcda3a7de166af3b6
